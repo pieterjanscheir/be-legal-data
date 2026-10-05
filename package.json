@@ -1,0 +1,34 @@
+{
+    "name": "be-legal-data",
+    "version": "0.1.0",
+    "private": true,
+    "description": "Gedeelde Belgische juridische referentiedata (rechtbanken, interestvoeten) voor eigen projecten.",
+    "type": "module",
+    "packageManager": "pnpm@11.7.0",
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        },
+        "./data/*": "./data/*"
+    },
+    "files": [
+        "dist",
+        "data"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "test": "vitest run",
+        "typecheck": "tsc --noEmit",
+        "check": "pnpm typecheck && pnpm test && pnpm build && git diff --exit-code -- dist"
+    },
+    "devDependencies": {
+        "tsup": "^8.5.0",
+        "typescript": "^5.9.0",
+        "vitest": "^3.2.0"
+    }
+}

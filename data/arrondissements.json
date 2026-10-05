@@ -1,0 +1,18 @@
+[
+  {
+    "id": "EastFlanders",
+    "name": {
+      "nl": "Oost-Vlaanderen",
+      "fr": "Flandre orientale",
+      "de": "Ostflandern"
+    }
+  },
+  {
+    "id": "WestFlanders",
+    "name": {
+      "nl": "West-Vlaanderen",
+      "fr": "Flandre occidentale",
+      "de": "Westflandern"
+    }
+  }
+]
