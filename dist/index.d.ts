@@ -1,11 +1,71 @@
 type Locale = 'nl' | 'fr' | 'de';
 /** A name in the three national languages */
 type Translated = Record<Locale, string>;
+/** A name as the Judicial Code gives it, in Dutch and French */
+type Bilingual = Record<'nl' | 'fr', string>;
+/** Area of a court of appeal (rechtsgebied): Antwerpen, Brussel, Gent, Luik or Bergen */
+interface JudicialArea {
+    /** Stable key, e.g. 'Ghent' */
+    id: string;
+    name: Translated;
+}
 interface Arrondissement {
     /** Stable key, e.g. 'EastFlanders' */
     id: string;
     name: Translated;
+    /** Id of the judicial area the arrondissement belongs to */
+    judicialArea: string;
 }
+interface Municipality {
+    /** Statbel REFNIS (NIS) code, e.g. '44021' for Gent */
+    refnis: string;
+    name: Bilingual;
+    /** REFNIS code of the province, or '04000' for the Brussels-Capital Region */
+    province: string;
+}
+/** A judicial canton: the area of one justice of the peace */
+interface Canton {
+    /**
+     * Stable key, e.g. 'Gent1' or 'MerelbekeMelle'. The justice of the peace of a canton has
+     * the id 'Vredegerecht' + canton id.
+     */
+    id: string;
+    /** Id of the judicial arrondissement */
+    arrondissement: string;
+    /** Name of the canton; usually the seat, but not always ('Oudergem' sits in Etterbeek) */
+    name: Bilingual;
+    /** Canton number for places with several cantons (Gent 1–5, …) */
+    number?: number;
+    /** Where the justice of the peace sits */
+    seat: Bilingual;
+    /**
+     * The municipalities the canton covers. `partial` marks a municipality that is split over
+     * several cantons; `territory` then says which part belongs to this one.
+     */
+    municipalities: {
+        refnis: string;
+        partial?: boolean;
+    }[];
+    /** The canton's area, verbatim from the annex to the Judicial Code */
+    territory: Bilingual;
+    /** Where in the annex to the Judicial Code the canton is defined */
+    source: string;
+}
+declare const judicialAreas: JudicialArea[];
+declare const arrondissements: Arrondissement[];
+declare const municipalities: Municipality[];
+declare const cantons: Canton[];
+declare function getJudicialArea(id: string): JudicialArea | undefined;
+declare function getArrondissement(id: string): Arrondissement | undefined;
+declare function getMunicipality(refnis: string): Municipality | undefined;
+declare function getCanton(id: string): Canton | undefined;
+/**
+ * The cantons that cover a municipality. One canton for most municipalities; several for
+ * cities that are split (Antwerpen, Gent, Brussel, …), in which case the street address decides
+ * and each canton's `territory` describes its part.
+ */
+declare function getCantonsForMunicipality(refnis: string): Canton[];
+
 interface Address {
     building?: string;
     street: string;
@@ -43,9 +103,7 @@ interface EnterpriseCourtDivision extends CourtBase {
 }
 type Court = JusticeOfThePeace | EnterpriseCourtDivision;
 type CourtType = Court['type'];
-declare const arrondissements: Arrondissement[];
 declare const courts: Court[];
-declare function getArrondissement(id: string): Arrondissement | undefined;
 declare function getCourt(id: string): Court | undefined;
 declare function findCourts(filter: {
     type?: CourtType;
@@ -100,4 +158,4 @@ declare function getInterestRate(date: Date | string, type: InterestType, option
 /** Last day for which a rate is on file, YYYY-MM-DD */
 declare function getLatestKnownRateDate(type: InterestType): string;
 
-export { type Address, type Arrondissement, type Contact, type Court, type CourtType, type EnterpriseCourtDivision, type InterestRatePeriod, type InterestRateResult, type InterestRateSeries, type InterestType, type JusticeOfThePeace, type Locale, type Translated, arrondissements, courts, findCourts, formatCourtName, getArrondissement, getContact, getCourt, getInterestRate, getLatestKnownRateDate, interestRates };
+export { type Address, type Arrondissement, type Bilingual, type Canton, type Contact, type Court, type CourtType, type EnterpriseCourtDivision, type InterestRatePeriod, type InterestRateResult, type InterestRateSeries, type InterestType, type JudicialArea, type JusticeOfThePeace, type Locale, type Municipality, type Translated, arrondissements, cantons, courts, findCourts, formatCourtName, getArrondissement, getCanton, getCantonsForMunicipality, getContact, getCourt, getInterestRate, getJudicialArea, getLatestKnownRateDate, getMunicipality, interestRates, judicialAreas, municipalities };

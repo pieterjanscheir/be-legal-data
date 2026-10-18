@@ -1,11 +1,57 @@
 [
   {
+    "id": "Antwerp",
+    "name": {
+      "nl": "Antwerpen",
+      "fr": "Anvers",
+      "de": "Antwerpen"
+    },
+    "judicialArea": "Antwerp"
+  },
+  {
+    "id": "Limburg",
+    "name": {
+      "nl": "Limburg",
+      "fr": "Limbourg",
+      "de": "Limburg"
+    },
+    "judicialArea": "Antwerp"
+  },
+  {
+    "id": "Brussels",
+    "name": {
+      "nl": "Brussel",
+      "fr": "Bruxelles",
+      "de": "Brüssel"
+    },
+    "judicialArea": "Brussels"
+  },
+  {
+    "id": "Leuven",
+    "name": {
+      "nl": "Leuven",
+      "fr": "Louvain",
+      "de": "Löwen"
+    },
+    "judicialArea": "Brussels"
+  },
+  {
+    "id": "WalloonBrabant",
+    "name": {
+      "nl": "Waals-Brabant",
+      "fr": "Brabant wallon",
+      "de": "Wallonisch-Brabant"
+    },
+    "judicialArea": "Brussels"
+  },
+  {
     "id": "EastFlanders",
     "name": {
       "nl": "Oost-Vlaanderen",
       "fr": "Flandre orientale",
       "de": "Ostflandern"
-    }
+    },
+    "judicialArea": "Ghent"
   },
   {
     "id": "WestFlanders",
@@ -13,6 +59,52 @@
       "nl": "West-Vlaanderen",
       "fr": "Flandre occidentale",
       "de": "Westflandern"
-    }
+    },
+    "judicialArea": "Ghent"
+  },
+  {
+    "id": "Liege",
+    "name": {
+      "nl": "Luik",
+      "fr": "Liège",
+      "de": "Lüttich"
+    },
+    "judicialArea": "Liege"
+  },
+  {
+    "id": "Eupen",
+    "name": {
+      "nl": "Eupen",
+      "fr": "Eupen",
+      "de": "Eupen"
+    },
+    "judicialArea": "Liege"
+  },
+  {
+    "id": "Luxembourg",
+    "name": {
+      "nl": "Luxemburg",
+      "fr": "Luxembourg",
+      "de": "Luxemburg"
+    },
+    "judicialArea": "Liege"
+  },
+  {
+    "id": "Namur",
+    "name": {
+      "nl": "Namen",
+      "fr": "Namur",
+      "de": "Namur"
+    },
+    "judicialArea": "Liege"
+  },
+  {
+    "id": "Hainaut",
+    "name": {
+      "nl": "Henegouwen",
+      "fr": "Hainaut",
+      "de": "Hennegau"
+    },
+    "judicialArea": "Mons"
   }
 ]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "Antwerp",
+    "name": {
+      "nl": "Antwerpen",
+      "fr": "Anvers",
+      "de": "Antwerpen"
+    }
+  },
+  {
+    "id": "Brussels",
+    "name": {
+      "nl": "Brussel",
+      "fr": "Bruxelles",
+      "de": "Brüssel"
+    }
+  },
+  {
+    "id": "Ghent",
+    "name": {
+      "nl": "Gent",
+      "fr": "Gand",
+      "de": "Gent"
+    }
+  },
+  {
+    "id": "Liege",
+    "name": {
+      "nl": "Luik",
+      "fr": "Liège",
+      "de": "Lüttich"
+    }
+  },
+  {
+    "id": "Mons",
+    "name": {
+      "nl": "Bergen",
+      "fr": "Mons",
+      "de": "Mons"
+    }
+  }
+]

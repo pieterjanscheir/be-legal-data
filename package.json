@@ -22,6 +22,7 @@
     ],
     "scripts": {
         "build": "tsup",
+        "build:cantons": "node scripts/build-cantons.ts",
         "test": "vitest run",
         "typecheck": "tsc --noEmit",
         "check": "pnpm typecheck && pnpm test && pnpm build && git diff --exit-code -- dist"

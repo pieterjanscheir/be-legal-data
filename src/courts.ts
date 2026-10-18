@@ -1,16 +1,5 @@
-import arrondissementsData from '../data/arrondissements.json'
 import courtsData from '../data/courts.json'
-
-export type Locale = 'nl' | 'fr' | 'de'
-
-/** A name in the three national languages */
-export type Translated = Record<Locale, string>
-
-export interface Arrondissement {
-    /** Stable key, e.g. 'EastFlanders' */
-    id: string
-    name: Translated
-}
+import type { Locale, Translated } from './territory'
 
 export interface Address {
     building?: string
@@ -55,12 +44,7 @@ export interface EnterpriseCourtDivision extends CourtBase {
 export type Court = JusticeOfThePeace | EnterpriseCourtDivision
 export type CourtType = Court['type']
 
-export const arrondissements = arrondissementsData as Arrondissement[]
 export const courts = courtsData as Court[]
-
-export function getArrondissement(id: string): Arrondissement | undefined {
-    return arrondissements.find((a) => a.id === id)
-}
 
 export function getCourt(id: string): Court | undefined {
     return courts.find((c) => c.id === id)

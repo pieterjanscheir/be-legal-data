@@ -1,0 +1,373 @@
+/**
+ * Rebuilds data/municipalities.json and data/cantons.json from the official sources:
+ *
+ * - The annex to the Judicial Code ("Bijvoegsel: Gebiedsomschrijving en zetel van hoven en
+ *   rechtbanken", Justel 1967101007), in Dutch and French. It lists every judicial canton,
+ *   its seat, and the municipalities (or parts of them) it covers.
+ * - Statbel's population-by-municipality file, for the current municipalities and their
+ *   REFNIS codes (CC BY 4.0).
+ *
+ * The Dutch and French texts are parsed independently and must agree, and every municipality
+ * must be covered exactly once (or split over several cantons). The script refuses to write
+ * anything otherwise.
+ *
+ * Run with `pnpm build:cantons`. Needs network access and the `unzip` command.
+ */
+import { execFileSync } from 'node:child_process'
+import { mkdtempSync, writeFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
+
+const JUSTEL_ID = '1967101007'
+const STATBEL_YEAR = 2026
+const STATBEL_URL = `https://statbel.fgov.be/sites/default/files/files/opendata/bevolking%20naar%20woonplaats%2C%20nationaliteit%20burgelijke%20staat%20%2C%20leeftijd%20en%20geslacht/TF_SOC_POP_STRUCT_${STATBEL_YEAR}.zip`
+
+type Lang = 'nl' | 'fr'
+
+interface Municipality {
+    refnis: string
+    name: Record<Lang, string>
+    /** REFNIS code of the province, or the Brussels-Capital Region */
+    province: string
+}
+
+// Statbel puts the Brussels-Capital Region where other municipalities have their province
+const BRUSSELS = '04000'
+
+// Annex section ("afdeling") → arrondissement, whether the area is French-speaking (ids then
+// use the French name), and the province (REFNIS) whose municipalities it lists. Matching
+// names only within the province keeps "Saint-Nicolas" (Sint-Niklaas) apart from
+// Saint-Nicolas near Liège. Sections 4, 5 and 8 hold more than one arrondissement; see
+// `arrondissementOf`.
+const sections: Record<number, { arrondissement: string; french: boolean; province: string }> = {
+    1: { arrondissement: 'Antwerp', french: false, province: '10000' },
+    2: { arrondissement: 'Limburg', french: false, province: '70000' },
+    3: { arrondissement: 'WalloonBrabant', french: true, province: '20002' },
+    4: { arrondissement: 'Brussels', french: false, province: BRUSSELS },
+    5: { arrondissement: 'Leuven', french: false, province: '20001' },
+    6: { arrondissement: 'EastFlanders', french: false, province: '40000' },
+    7: { arrondissement: 'WestFlanders', french: false, province: '30000' },
+    8: { arrondissement: 'Liege', french: true, province: '60000' },
+    9: { arrondissement: 'Luxembourg', french: true, province: '80000' },
+    10: { arrondissement: 'Namur', french: true, province: '90000' },
+    11: { arrondissement: 'Hainaut', french: true, province: '50000' },
+}
+
+// Art. 4 of the annex: the Flemish-Brabant cantons that belong to Brussels, and the two
+// German-speaking cantons that form the arrondissement Eupen.
+const brusselsCantonsInFlemishBrabant = ['Asse', 'Halle', 'Lennik', 'Meise', 'Sint-Genesius-Rode', 'Vilvoorde', 'Zaventem']
+
+function arrondissementOf(section: number, nameNl: string): string {
+    if (section === 5 && brusselsCantonsInFlemishBrabant.includes(nameNl)) return 'Brussels'
+    if (section === 8 && nameNl === 'Eupen-Sankt-Vith') return 'Eupen'
+    return sections[section].arrondissement
+}
+
+// Names the annex uses that Statbel doesn't have (exonyms, older spellings), by REFNIS code.
+const aliases: Record<string, string[]> = {
+    '23077': ['Leeuw-Saint-Pierre'], // Sint-Pieters-Leeuw
+    '25123': ['Roosbeek'], // Rebecq
+    '38014': ['Coxyde'], // Koksijde
+    '46021': ['Saint-Nicolas'], // Sint-Niklaas
+    '92142': ['Gembloers'], // Gembloux
+}
+
+// Municipalities a canton's text names only as a boundary, in a way the parser can't tell apart.
+const boundaryOnly: Record<string, string[]> = {
+    '8.10': ['62051'], // Luik 3: "begrensd ten noorden door … en de gemeente Herstal"
+}
+
+// Typos in the annex itself.
+const typos: Record<Lang, Record<string, string>> = {
+    nl: { 'stad Aast': 'stad Aalst', Herenhout: 'Herenthout' },
+    fr: {},
+}
+
+const ordinals: Record<Lang, Record<string, number>> = {
+    nl: { eerste: 1, tweede: 2, derde: 3, vierde: 4, vijfde: 5, zesde: 6, zevende: 7, achtste: 8, negende: 9, tiende: 10 },
+    fr: {
+        premier: 1, second: 2, deuxième: 2, troisième: 3, quatrième: 4, cinquième: 5,
+        sixième: 6, septième: 7, huitième: 8, neuvième: 9, dixième: 10,
+    },
+}
+
+// ---------------------------------------------------------------------------------------------
+
+async function fetchText(url: string, encoding = 'utf-8'): Promise<string> {
+    const res = await fetch(url)
+    if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`)
+    return new TextDecoder(encoding).decode(await res.arrayBuffer())
+}
+
+async function fetchAnnex(lang: Lang): Promise<string> {
+    const url = `https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=${lang}&lg_txt=${lang[0]}&cn_search=${JUSTEL_ID}&caller=list`
+    const html = await fetchText(url, 'windows-1252')
+    if (html.includes('HTTP Request throttled')) throw new Error('Justel is throttling; try again in a minute')
+    const text = html
+        .replace(/<br\s*\/?>/gi, ' ')
+        .replace(/<[^>]+>/g, '')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&amp;/g, '&')
+        .replace(/&nbsp;/g, ' ')
+        .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+        .replace(/\s+/g, ' ')
+    // The article text starts at the first fictive article; the table of contents doesn't list it
+    const start = text.indexOf('Art. M1.')
+    if (start === -1) throw new Error(`Annex text (${lang}) not found`)
+    return text.slice(start)
+}
+
+async function fetchMunicipalities(): Promise<Municipality[]> {
+    const dir = mkdtempSync(join(tmpdir(), 'statbel-'))
+    const zip = join(dir, 'pop.zip')
+    const res = await fetch(STATBEL_URL)
+    if (!res.ok) throw new Error(`Statbel: HTTP ${res.status}`)
+    writeFileSync(zip, Buffer.from(await res.arrayBuffer()))
+    const csv = execFileSync('unzip', ['-p', zip], { maxBuffer: 1 << 30 }).toString('utf-8')
+    const [header, ...rows] = csv.replace(/^﻿/, '').split(/\r?\n/)
+    const col = Object.fromEntries(header.split('|').map((h, i) => [h, i]))
+    const byCode = new Map<string, Municipality>()
+    for (const row of rows) {
+        if (!row) continue
+        const f = row.split('|')
+        const refnis = f[col.CD_REFNIS]
+        if (byCode.has(refnis)) continue
+        byCode.set(refnis, {
+            refnis,
+            name: { nl: f[col.TX_DESCR_NL], fr: f[col.TX_DESCR_FR] },
+            province: f[col.CD_PROV_REFNIS],
+        })
+    }
+    return [...byCode.values()].sort((a, b) => a.refnis.localeCompare(b.refnis))
+}
+
+// ---------------------------------------------------------------------------------------------
+
+interface Item {
+    section: number
+    index: number
+    text: string
+}
+
+/** Splits article 1 (fictive articles M1–M11) into its numbered items. */
+function splitItems(body: string, lang: Lang): Item[] {
+    const art1 = body.slice(body.indexOf('Art. M1.'), body.indexOf('Art. 2.'))
+    const sectionWord = lang === 'nl' ? 'Afdeling' : 'Section'
+    const items: Item[] = []
+    for (const part of art1.split(/Art\. M\d+\./).slice(1)) {
+        const start = part.search(new RegExp(`${sectionWord} \\d+(?:ere)?\\. - `))
+        // Text runs until the footnotes; drop amendment markers and deleted-text placeholders
+        let text = part.slice(start, part.indexOf('----------'))
+        text = text
+            .replace(/\['>\d+ ?/g, '')
+            .replace(/\]'>\d+/g, '')
+            .replace(/\](\d{2}-\d{2}-\d{4}, (voor zover|dans la mesure)[\s\S]*)$/, '')
+            .replace(/ \.\.\./g, '')
+            .replace(/\s+/g, ' ')
+            .trim()
+        for (const [typo, fix] of Object.entries(typos[lang])) text = text.replaceAll(typo, fix)
+        // French numbers the first section "1ere"
+        const m = text.match(new RegExp(`^${sectionWord} (\\d+)(?:ere)?\\. - [^\\d]+? (?=1\\. )`))
+        if (!m) throw new Error(`Cannot read section header: ${text.slice(0, 80)}`)
+        const section = Number(m[1])
+        const rest = text.slice(m[0].length)
+        // Items are "1. … 2. …"; only split on the next expected number to avoid street numbers
+        let index = 1
+        let pos = 0
+        while (pos < rest.length) {
+            const next = rest.indexOf(` ${index + 1}. `, pos)
+            const end = next === -1 ? rest.length : next
+            const text = rest.slice(pos + `${index}. `.length, end).trim()
+            // Brussels and Flemish Brabant also name their administrative arrondissements
+            if (!/administratie(?:f|ve) arrondissement|arrondissement administratif/.test(text)) {
+                items.push({ section, index, text })
+            }
+            pos = end + 1
+            index++
+        }
+    }
+    return items
+}
+
+interface ParsedCanton {
+    name: string
+    number?: number
+    seat: string
+    territory: string
+    whole: Set<string>
+    partial: Set<string>
+}
+
+const normalise = (s: string) =>
+    s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[’`]/g, "'")
+
+const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+
+function parseItem(item: Item, lang: Lang, municipalities: Municipality[]): ParsedCanton {
+    const text = item.text.replace(/\.$/, '')
+    let territory: string, name: string | undefined, number: number | undefined, seat: string
+    if (lang === 'nl') {
+        const m = text.match(
+            new RegExp(`^(.*?)(?: vorm(?:t|en)|,) (?:het (?:(${Object.keys(ordinals.nl).join('|')}) )?(?:gerechtelijk )?kanton ([^;:]+)|een gerechtelijk kanton) ?[;:] de zetel van (?:het )?gerecht is gevestigd te (.+)$`, 'u'),
+        )
+        if (!m) throw new Error(`nl ${item.section}.${item.index}: unexpected form: …${text.slice(-160)}`)
+        ;[, territory, , name, seat] = m
+        number = m[2] ? ordinals.nl[m[2]] : undefined
+        if (m[2] && !number) throw new Error(`nl ${item.section}.${item.index}: unknown ordinal ${m[2]}`)
+    } else {
+        const m = text.match(
+            new RegExp(`^(.*) forme(?:nt)? (?:le (?:(${Object.keys(ordinals.fr).join('|')}) )?canton(?: judiciaire)? (?:de |d'|du )?([^;:]+) ?[;:] le siège en est établi|un canton judiciaire dont le siège est(?: établi)?) (?:à|au) (.+)$`, 'u'),
+        )
+        if (!m) throw new Error(`fr ${item.section}.${item.index}: unexpected form: …${text.slice(-160)}`)
+        ;[, territory, , name, seat] = m
+        number = m[2] ? ordinals.fr[m[2]] : undefined
+        if (m[2] && !number) throw new Error(`fr ${item.section}.${item.index}: unknown ordinal ${m[2]}`)
+    }
+
+    // Find municipalities. Longest names first, so "Sint-Pieters-Woluwe" wins over "Woluwe".
+    const names = municipalities
+        .filter((mu) => mu.province === sections[item.section].province)
+        // Either language: Statbel often gives Flemish municipalities their Dutch name in French
+        .flatMap((mu) => [mu.name.nl, mu.name.fr, ...(aliases[mu.refnis] ?? [])].map((name) => ({ refnis: mu.refnis, name })))
+        .sort((a, b) => b.name.length - a.name.length)
+    // The annex and Statbel spell some names differently ("Hélecine"/"Hélécine",
+    // "Sankt-Vith"/"Sankt Vith"), so match on a normalised form
+    const alt = names.map((n) => escape(normalise(n.name)).replace(/[- ]/g, '[- ]')).join('|')
+    const NAME = `(?<![\\p{L}\\-])(?:${alt})(?![\\p{L}\\-])`
+    const key = (s: string) => normalise(s).toLowerCase().replace(/-/g, ' ')
+    const byKey = new Map(names.map((n) => [key(n.name), n.refnis]))
+    const byName = { has: (s: string) => byKey.has(key(s)), get: (s: string) => byKey.get(key(s)) }
+    const kw =
+        lang === 'nl' ?
+            { area: `(?:stad|gemeente|steden|gemeenten)`, of: '', and: ' en ' }
+        :   { area: `(?:ville|commune|villes|communes)`, of: `(?:de |d'|du )?`, and: ' et ' }
+    // The French text once omits the comma ("de Gavere Merelbeke-Melle")
+    const list = `${kw.of}${NAME}(?:(?:, |${kw.and}| )${kw.of}${NAME})*`
+    const nameIn = (s: string) => [...s.matchAll(new RegExp(NAME, 'giu'))].map((x) => byName.get(x[0])!)
+
+    let rest = normalise(territory)
+    const partial = new Set<string>()
+    const take = (re: RegExp, into: Set<string> | null) => {
+        rest = rest.replace(re, (all, ...groups) => {
+            const named = groups.find((g) => typeof g === 'string' && byName.has(g))
+            if (into && named) into.add(byName.get(named)!)
+            return ' '.repeat(all.length)
+        })
+    }
+    if (lang === 'nl') {
+        // Borders with neighbouring municipalities are not part of the canton
+        take(new RegExp(`(?:\\p{L}*grens|scheidingslijn) (?:met|van|tussen) (?:de )?(?:deel)?${kw.area} ${list}(?: en (?:de )?${kw.area} ${list})?`, 'giu'), null)
+        // "het gedeelte van het grondgebied van de stad Gent …", "de deelgemeenten X en Y van de stad Aalst"
+        take(new RegExp(`deelgemeenten? [^;]*? van de ${kw.area} (${NAME})`, 'giu'), partial)
+        // "het (ge)deel(te) van het grondgebied van de stad", "heel het grondgebied van de stad … gelegen tussen"
+        take(new RegExp(`grondgebied van de (?:vroegere )?${kw.area} (${NAME})`, 'giu'), partial)
+    } else {
+        take(new RegExp(`(?:limites?(?: nord| sud| est| ouest)?|frontieres?|ligne de separation) (?:avec|de|des|entre) (?:la |les )?(?:ancienne |anciennes )?${kw.area} ${list}(?: et (?:la |les )?${kw.area} ${list})?`, 'giu'), null)
+        take(new RegExp(`anciennes? communes? [^;]*? de la ${kw.area} ${kw.of}(${NAME})`, 'giu'), partial)
+        take(new RegExp(`territoire de (?:la|l'ancienne) ${kw.area} ${kw.of}(${NAME})`, 'giu'), partial)
+    }
+    // What's left are whole municipalities, as long as they're introduced as such
+    const whole = new Set<string>()
+    for (const m of rest.matchAll(new RegExp(`${kw.area} ${list}`, 'giu'))) {
+        for (const r of nameIn(m[0])) whole.add(r)
+    }
+    // "De steden Bastenaken en Houffalize, de deelgemeente Bertogne van de stad Bastenaken": all of it
+    for (const r of whole) partial.delete(r)
+    for (const r of boundaryOnly[`${item.section}.${item.index}`] ?? []) whole.delete(r)
+    return { name: (name ?? seat).trim(), number, seat: seat.trim(), territory, whole, partial }
+}
+
+function idFrom(name: string, number?: number): string {
+    const base = name
+        .normalize('NFD')
+        .replace(/[̀-ͯ]/g, '')
+        .split(/[^A-Za-z0-9]+/)
+        .filter(Boolean)
+        .map((w) => w[0].toUpperCase() + w.slice(1))
+        .join('')
+    return number ? `${base}${number}` : base
+}
+
+// ---------------------------------------------------------------------------------------------
+
+const municipalities = await fetchMunicipalities()
+const nlBody = await fetchAnnex('nl')
+await new Promise((r) => setTimeout(r, 2000))
+const frBody = await fetchAnnex('fr')
+
+const nlItems = splitItems(nlBody, 'nl')
+const frItems = splitItems(frBody, 'fr')
+if (nlItems.length !== frItems.length) throw new Error(`nl has ${nlItems.length} cantons, fr ${frItems.length}`)
+
+const errors: string[] = []
+const cantons = nlItems.map((nlItem, i) => {
+    const frItem = frItems[i]
+    const ref = `${nlItem.section}.${nlItem.index}`
+    if (frItem.section !== nlItem.section || frItem.index !== nlItem.index) throw new Error(`Misaligned at ${ref}`)
+    let nl: ParsedCanton, fr: ParsedCanton
+    try {
+        nl = parseItem(nlItem, 'nl', municipalities)
+        fr = parseItem(frItem, 'fr', municipalities)
+    } catch (e) {
+        errors.push((e as Error).message)
+        return null
+    }
+    const same = (a: Set<string>, b: Set<string>) => a.size === b.size && [...a].every((x) => b.has(x))
+    if (!same(nl.whole, fr.whole) || !same(nl.partial, fr.partial)) {
+        errors.push(`${ref}: nl and fr disagree (nl whole ${[...nl.whole]} partial ${[...nl.partial]}; fr whole ${[...fr.whole]} partial ${[...fr.partial]})`)
+    }
+    if (nl.number !== fr.number) errors.push(`${ref}: canton number nl ${nl.number}, fr ${fr.number}`)
+    if (nl.whole.size + nl.partial.size === 0) errors.push(`${ref}: no municipalities found`)
+    const arrondissement = arrondissementOf(nlItem.section, nl.name)
+    // Ids follow the local language; the Dutch text uses the German names around Eupen
+    const french = sections[nlItem.section].french && arrondissement !== 'Eupen'
+    return {
+        id: idFrom(french ? fr.name : nl.name, nl.number),
+        arrondissement,
+        name: { nl: nl.name, fr: fr.name },
+        ...(nl.number ? { number: nl.number } : {}),
+        seat: { nl: nl.seat, fr: fr.seat },
+        municipalities: [
+            ...[...nl.whole].map((refnis) => ({ refnis })),
+            ...[...nl.partial].map((refnis) => ({ refnis, partial: true })),
+        ].sort((a, b) => a.refnis.localeCompare(b.refnis)),
+        territory: { nl: nl.territory, fr: fr.territory },
+        source: `Ger.W. bijvoegsel art. 1, afdeling ${ref}`,
+    }
+})
+
+// Every municipality lies wholly in one canton, or is split over several
+const parsed = cantons.filter((c) => c !== null)
+const coverage = new Map<string, { whole: string[]; partial: string[] }>()
+for (const c of parsed) {
+    for (const m of c.municipalities) {
+        const e = coverage.get(m.refnis) ?? { whole: [], partial: [] }
+        ;(m.partial ? e.partial : e.whole).push(c.id)
+        coverage.set(m.refnis, e)
+    }
+}
+for (const mu of municipalities) {
+    const e = coverage.get(mu.refnis)
+    const label = `${mu.name.nl} (${mu.refnis})`
+    if (!e) errors.push(`${label} is in no canton`)
+    else if (e.whole.length > 1) errors.push(`${label} is wholly in ${e.whole.join(', ')}`)
+    else if (e.whole.length === 1 && e.partial.length) errors.push(`${label} is wholly in ${e.whole[0]} and partly in ${e.partial.join(', ')}`)
+    else if (e.whole.length === 0 && e.partial.length < 2) errors.push(`${label} is only partly covered, by ${e.partial.join(', ')}`)
+}
+const ids = parsed.map((c) => c.id)
+for (const id of ids.filter((id, i) => ids.indexOf(id) !== i)) errors.push(`Duplicate id ${id}`)
+
+if (errors.length) {
+    console.error(errors.join('\n'))
+    process.exit(1)
+}
+
+const write = (file: string, data: unknown) =>
+    writeFileSync(new URL(`../data/${file}`, import.meta.url), JSON.stringify(data, null, 2) + '\n')
+write(
+    'municipalities.json',
+    municipalities.map(({ refnis, name, province }) => ({ refnis, name, province })),
+)
+write('cantons.json', parsed)
+console.log(`${parsed.length} cantons, ${municipalities.length} municipalities`)
