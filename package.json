@@ -1,10 +1,35 @@
 {
     "name": "be-legal-data",
-    "version": "0.1.0",
-    "private": true,
-    "description": "Gedeelde Belgische juridische referentiedata (rechtbanken, interestvoeten) voor eigen projecten.",
+    "version": "0.2.0",
+    "description": "Belgian legal reference data: courts, judicial cantons and arrondissements, municipalities, and legal and commercial interest rates.",
+    "keywords": [
+        "belgium",
+        "belgian",
+        "legal",
+        "courts",
+        "judicial-cantons",
+        "arrondissements",
+        "municipalities",
+        "refnis",
+        "interest-rates",
+        "vredegerecht",
+        "justice-of-the-peace"
+    ],
+    "license": "MIT AND CC-BY-4.0",
+    "author": "Pieter-Jan Scheir",
+    "homepage": "https://github.com/pieterjanscheir/be-legal-data#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pieterjanscheir/be-legal-data.git"
+    },
+    "bugs": {
+        "url": "https://github.com/pieterjanscheir/be-legal-data/issues"
+    },
     "type": "module",
     "packageManager": "pnpm@11.7.0",
+    "engines": {
+        "node": ">=18"
+    },
     "main": "./dist/index.cjs",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
@@ -14,18 +39,21 @@
             "import": "./dist/index.js",
             "require": "./dist/index.cjs"
         },
-        "./data/*": "./data/*"
+        "./data/*": "./data/*",
+        "./package.json": "./package.json"
     },
     "files": [
         "dist",
-        "data"
+        "data",
+        "LICENSE-DATA"
     ],
     "scripts": {
         "build": "tsup",
         "build:cantons": "node scripts/build-cantons.ts",
         "test": "vitest run",
         "typecheck": "tsc --noEmit",
-        "check": "pnpm typecheck && pnpm test && pnpm build && git diff --exit-code -- dist"
+        "check": "pnpm typecheck && pnpm test && pnpm build && git diff --exit-code -- dist",
+        "prepublishOnly": "pnpm check"
     },
     "devDependencies": {
         "tsup": "^8.5.0",

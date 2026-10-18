@@ -1,9 +1,10 @@
 # be-legal-data
 
-One place for the Belgian legal reference data my projects share: courts and interest rates.
-Change it here once, then bump the dependency in each project.
+Belgian legal reference data as JSON, with TypeScript types and helpers: courts, judicial
+cantons and arrondissements, municipalities, and the legal and commercial interest rates.
+Every dataset records where it comes from.
 
-Private, for my own projects. Every dataset records where it comes from.
+It's reference data, not legal advice: check the official sources before relying on it.
 
 ## What's in it
 
@@ -24,10 +25,8 @@ Municipality data © Statbel, [CC BY 4.0](https://creativecommons.org/licenses/b
 
 ### TypeScript / JavaScript
 
-Install it from GitHub. Pin a tag so an update is always a conscious choice:
-
 ```bash
-pnpm add github:pieterjanscheir/be-legal-data#v0.1.0
+pnpm add be-legal-data
 ```
 
 ```ts
@@ -58,17 +57,28 @@ The raw files are also exported: `import courts from 'be-legal-data/data/courts.
 
 ### Python and anything else
 
-Read the JSON files in `data/` directly, for example from a git submodule or a pinned raw URL.
+Read the JSON files in `data/` directly: from the npm package, a git submodule, or a raw URL
+pinned to a tag (`https://raw.githubusercontent.com/pieterjanscheir/be-legal-data/v0.2.0/data/cantons.json`).
 
 ## Updating data
 
 1. Edit the JSON in `data/`. Keep the existing ids: projects store them.
 2. `pnpm check`: typecheck, tests, build, and a check that `dist/` is committed and up to date.
-3. Commit (including `dist/`), bump `version` in `package.json`, and tag it: `git tag v0.1.1 && git push --tags`.
-4. Update the tag in the projects that use it.
+3. Commit (including `dist/`).
 
-`dist/` is committed on purpose: pnpm doesn't run build scripts of git dependencies, so the
-built files have to be in the repo.
+`dist/` is committed so projects can still install straight from GitHub: pnpm doesn't run
+build scripts of git dependencies.
+
+### Releasing
+
+Ids are public API, so versions follow these rules: adding data is a minor version, fixing a
+value is a patch, and removing or renaming an id is a major version.
+
+1. Bump `version` in `package.json` and commit.
+2. Tag it and push: `git tag v0.2.1 && git push && git push --tags`.
+
+The [release workflow](.github/workflows/release.yml) runs `pnpm check` and publishes the tag
+to npm with provenance. The tag has to match `version`.
 
 ### Cantons and municipalities
 
@@ -107,3 +117,8 @@ of the peace of canton `X` has id `VredegerechtX`.
   (`Beveren-Cruybeke-Zwijndrecht`) differs from the annex (`Beveren-Kruibeke-Zwijndrecht`).
 - Phone numbers are stored as found, in mixed formats.
 - The Ondernemingsrechtbank Gent, division Oostende, has no house number (Canadaplein).
+
+## Licence
+
+The code is [MIT](LICENSE). The data in `data/` is [CC BY 4.0](LICENSE-DATA): reuse it freely,
+including commercially, with credit to this project and to the sources listed there.

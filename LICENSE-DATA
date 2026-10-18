@@ -1,0 +1,24 @@
+The data in data/ is licensed under the Creative Commons Attribution 4.0
+International licence (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Copyright (c) 2026 Pieter-Jan Scheir
+
+You may share and adapt the data for any purpose, including commercially, as
+long as you give appropriate credit, link to the licence, and indicate if
+changes were made. Credit "be-legal-data (https://github.com/pieterjanscheir/be-legal-data)"
+and pass on the source attributions below.
+
+Sources:
+
+- Municipalities (data/municipalities.json) and the REFNIS codes in
+  data/cantons.json: © Statbel (Directorate-general Statistics - Statistics
+  Belgium), CC BY 4.0, https://statbel.fgov.be/
+- Cantons, arrondissements and judicial areas: the annex to the Belgian
+  Judicial Code, as consolidated on Justel (https://www.ejustice.just.fgov.be/).
+  Official acts are not protected by copyright in Belgium (art. XI.172 §2 WER).
+- Interest rates: FOD Financiën and the Belgisch Staatsblad.
+- Court addresses and contacts: the courts' own websites and just.fgov.be.
+
+The data is provided as is, without warranty. It is reference data, not legal
+advice: check the official sources before relying on it.
