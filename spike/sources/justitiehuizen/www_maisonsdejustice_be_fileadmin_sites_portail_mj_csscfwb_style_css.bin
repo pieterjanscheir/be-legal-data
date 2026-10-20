@@ -1,0 +1,1535 @@
+/******************** RESET ***************/
+html,body{
+    width:100%;
+    font:1em verdana,arial,sans-serif;
+    line-height:20px;
+}
+a{
+    text-decoration:none;
+    color:black;
+}
+.center,#content{width:1200px;
+    margin:0 auto;
+}
+.clearboth{
+    clear:both;
+    float: none !important;
+    display: block !important;
+}
+.center p sub {
+font-size: .7em;
+line-height: .8em;
+} 
+/************* HEADER ***************/
+
+#extheader, #extheader .center {
+    background-color:#d9d9d9;
+    height:25px;  
+    clear:both;  
+}
+#menuextheader{
+    float:right;
+}
+header .center div, header .center p,header .center h1,.lang{
+    font:0.85em DrescherGroteskBT-SmallSizes,verdana,arial,sans-serif;
+    text-transform:uppercase;
+    line-height:25px;
+    vertical-align:middle;
+    display:inline;
+}
+header .center h1, .lang, header .center p {
+    font: 0.75em/25px DrescherGroteskBT-SmallSizes,verdana,arial,sans-serif;
+}
+
+header #extheader .center div, header .center p,.lang{
+    margin-right:65px;
+    float:right;
+}
+header #extheader .center #AddThis div{margin-right:0px;}
+
+header #extheader .center .tx-solr{
+  margin-right: 0px;
+}
+header #extheader .center .tx-solr-searchbox{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+header .center:nth-of-type(2){
+    border-bottom:2px solid black;
+    margin-bottom:15px;
+}
+.lang li{
+    display:inline-block;
+    text-transform:uppercase;
+}
+.lang a{
+    color:grey;
+    float:none!important;
+}
+.lang .langactif a{
+    color:black;
+}
+.tx-solr-searchbox{
+    background-color:#d9d9d9;
+    height:50px;
+    text-align:center;
+}
+/*
+#search_form{
+    position:relative;
+    border:0;
+}
+*/
+
+#extheader .tx-solr form input {padding-top:0px;padding-bottom:0px;}
+#extheader .tx-solr input.tx-solr-q {height:30px;}
+
+#submit_search{
+    width:30px;
+    height:30px;
+    /*position:absolute;*/
+}
+.psearch{
+    width: 100%;
+    margin-right: 0!important;
+}
+.psearch a{
+    text-transform:none;
+    margin:auto 8px auto 0;
+    font:0.85em verdana,arial,sans-serif;
+    float: none !important;
+}
+#inputText{
+    height:30px;
+    border:none;
+    font:0.85em verdana,arial,sans-serif;
+    text-transform:uppercase;
+    padding-left:8px;
+    width:90%;
+  width: 185px;
+}
+.img_header_logo{
+    margin:35px 0;
+    float:left;
+}
+
+#AddThis {
+  padding-right:50px;}
+
+#AddThis div{
+  margin-right: 5px;
+  float:right;
+}
+
+.partage #AddThis {overflow: auto;}
+
+.partage #AddThis li {list-style: none; float: left; margin-right: 5px;}
+
+.partage #AddThis #moreAddThis a {width: 50px !important;}
+
+
+/*.addthis_toolbox,.addthis_default_style{
+    clear:both;
+    margin-top:-25px;
+    text-align:center;
+}
+.addthis_toolbox,.addthis_default_style img{
+    border:0;
+}
+.at16nc, .at300bs, .at15nc, .at15t_facebook, .at16t_facebook{
+    display:inline;
+}*/
+/*header .center a:first-child{
+    display: inline-block;
+    float: left;
+}*/
+/*************** CONTENU *************/
+section#content{
+    width:100%;
+}
+section#center,section#left, #navleft{
+    float:left;
+}
+#sectionright{
+    float:right;
+}
+#navleft,#sectionright{
+    width:19.2%;
+}
+.annonces_gauche{
+  width: 230px;
+}
+.bodytext i{
+    font-style: italic;
+}
+#sectionright,#navleft{
+}
+#center{
+    /*margin:0 1%;*/
+    width:60.6%;
+}
+#navleft a:hover,#navleft a:active,#sectionright a:hover,#section a:active{
+    color:rgba(0,0,0,0.5);
+}
+/************** NAV PORTAILS ***************/
+
+header nav, footer + nav{
+    height:40px;
+    padding-bottom:15px;
+    width:100%;
+    clear:both;
+}
+header nav ul,footer + nav ul{
+    display:inline-block;
+    width:100%;
+}
+header nav ul li,footer + nav ul li{
+    display:inline-block;
+    font:0.85em DrescherGroteskBT-SmallSizes,verdana,arial,sans-serif;
+    text-transform:uppercase;
+    line-height:25px;
+    text-align:center;
+    border-left:1px solid black;
+    padding-left:4%;
+    background-size:25px;
+}
+header nav ul li a, footer + nav ul li a{
+    vertical-align:middle;
+    
+}
+header .center div.navresp,nav.center div.navresp{
+    clear:both;
+    margin-right:0;
+}
+#socialtoolbar {/*padding-right:40px;padding-top:0px;padding-left:40px;float:right; display: none;*/}
+#socialtoolbar {margin-top:3px;}
+#socialtoolbar a {padding:0px 4px;}
+
+.navportail{
+    width:15%;
+    padding-left:0%;
+    /*background:url('../pictures/mini_logo_enseignement.png') no-repeat 7% 50%; */
+  border-left:none;
+}
+
+.navenseignement{
+    width:13%;
+    padding-left:0%;
+    /*background:url('../pictures/mini_logo_enseignement.png') no-repeat 7% 50%; */
+}
+.navculture{
+    width:10%;
+    padding-left:0%;
+    /*background:url('../pictures/mini_logo_culture.png') no-repeat 7% 50%; */
+}
+.navsport{
+    width:12%;
+    padding-left:0%;
+    /*background:url('../pictures/mini_logo_sport.png') no-repeat 7% 50%; */
+}
+
+/*TEST JDU*/
+.navsport a{
+   white-space: nowrap;
+}
+
+
+.navjeunesse{
+    width:14%;
+    padding-left:0%;
+    /*background:url('../pictures/mini_logo_jeunesse.png') no-repeat 7% 50%; */
+}
+.navrecherche{
+    width:18%;
+    padding-left:0%;
+    /*background:url('../pictures/mini_logo_recherche.png') no-repeat 7% 50%; */
+}
+.navjustice{
+    width:15%;
+    padding-left:0%;
+    /*background:url('../pictures/mini_logo_justice.png') no-repeat 7% 50%; */
+}
+
+.navresp_header .navenseignement{
+  width:15%;
+}
+.navresp_header .navculture{
+  width:12%;
+}
+.navresp_header .navsport{
+  width:14%;
+}
+.navresp_header .navjeunesse{
+  width:17%;
+}
+.navresp_header .navrecherche{
+  width:21%;
+}
+.navresp_header .navjustice{
+  width:18%;
+}
+
+.navportail a{
+    background:url('../pictures/projet-portail-culture230OKnotes_20.jpg') no-repeat 0% 50%;
+    padding:15px 0px 15px 30px;padding-right:150px;
+}
+
+.navenseignement a{
+    background:url('../pictures/mini_logo_enseignement.png') no-repeat 0% 50%;
+    padding:10px 0px 10px 30px;
+}
+.navculture a{
+    background:url('../pictures/mini_logo_culture.png') no-repeat 0% 50%;
+    padding:10px 0px 10px 30px;
+}
+.navsport a{
+    background:url('../pictures/mini_logo_sport.png') no-repeat 0% 50%;
+    padding:10px 0px 10px 30px;
+}
+.navjeunesse a{
+    background:url('../pictures/mini_logo_jeunesse.png') no-repeat 0% 50%;
+    padding:10px 0px 10px 30px;
+}
+.navrecherche a{
+    background:url('../pictures/mini_logo_recherche.png') no-repeat 0% 50%;
+    padding:10px 0px 10px 30px;
+}
+.navjustice a{
+    background:url('../pictures/mini_logo_justice.png') no-repeat 0% 50%;
+    padding:10px 0px 10px 30px;
+}
+
+footer + nav{
+    padding-top:10px;
+    line-height: 1;
+}
+nav.center ul{
+    margin:10px auto;
+    display:block;
+}
+/************** NAV LEFT **************/
+
+
+/*a {
+    color: #0066cc;
+    text-decoration: underline;
+}*/
+a:hover{
+    color:grey;
+}
+#navleft{
+    width:230px;
+    display:block!important;
+}
+
+/* supprimé par MMI 20150302 
+#navleft #mainMenu{
+  margin-top:15px;
+}*/
+
+.button_hidden{
+    display:none;
+}
+.menu, .navsize:first-child{
+    border-top:2px solid black;
+    padding-bottom:50px;
+    font-family:DrescherGroteskBT-SmallSizes,verdana,arial,sans-serif;
+    padding-top: 0px;
+    margin-top: 15px;
+}
+#navleft h2{
+    line-height:50px;
+    vertical-align:middle;
+    font-weight:normal;
+}
+.navsize a{
+    border-bottom: 1px solid #cacaca;
+    display: block;
+}
+.menu:first-child,.navsize:first-child{
+    border-top:none;
+}
+
+.sousmenu{
+    border-bottom:1px solid #cacaca;
+    text-transform:uppercase;
+    line-height:24px;
+  font-size: 0.65rem;
+}
+#navleft .sousmenu li:last-child a{
+    border-bottom: none;
+}
+.sousmenu li{
+    margin-left:15px;
+}
+.actif_navleft ul li{
+    font-weight:normal;
+    padding-left: 15px;
+}
+.actif_navleft ul li:last-child{
+    border-bottom:1px solid #cacaca;
+}
+.current {
+    background:url('../pictures/bullet.png') no-repeat scroll left top 7px / 7px auto rgba(0, 0, 0, 0);
+    background-size:10px;
+    padding-left: 13px;
+    font-weight: bold;
+    line-height: 2;
+}
+.current a{
+  font-weight: normal;
+}
+.current > a, .actif_navleft{
+    font-weight:bold;
+}
+.actif_navleft ul li.current {
+    font-weight: bold;
+}
+
+#navleft .slicknav_menu .navsize:first-child{
+  border: 0px;   
+}
+
+#navleft .slicknav_menu h2{
+  font-size: 14px;
+}
+
+#navleft .slicknav_menu li {
+  padding-bottom:0px;
+}
+#navleft .slicknav_menu li a {
+  font-size: 12px;
+  border-bottom:none;
+}
+
+#navleft .slicknav_menu ul {
+  border-bottom:none;
+}
+
+/*********************** MENU DEROULANT ********************/
+
+.button_hidden,.button_hidden + div{
+    display:none;
+}
+
+#trigger-search{
+  display:none;
+}
+
+#navleft .tx-solr{
+  display:none;
+}
+
+.slicknav_menu {
+  display:none;
+  margin-right: 4em;
+}
+
+.icon-search:before{
+  content: "";
+}
+
+.icon-search {
+  font-family: icomoon;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: none;
+}
+.tx-solr-q {
+    border: 1px solid #cfcecf;
+    padding: 5px;
+    width: 80%;
+}
+#tx-solr-sorting {
+    float: right;
+    margin-right: 17px;
+    margin-top: 3px;
+}
+
+
+/*********************** CONTENT CENTER *******************/
+.slideshow{
+    padding-bottom: 0px;
+    width:98.35%;
+    margin-bottom:30px;
+    margin-top:15px;
+    margin-left:12px;
+}
+div.owl-page{
+    display:inline-block;
+    cursor:pointer;
+}
+div.owl-page.active span{
+    background-color:black;
+}
+.owl-page span{
+    display:block;
+    width:12px;
+    height:12px;
+    margin:0 7px;
+    border:1px solid black;
+    border-radius:20px;
+    webkit-border-radius:20px;
+    -moz-border-radius: 20px;
+}
+.owl-pagination {
+    display: block;
+    position: relative;
+    top: -25px;
+}
+.slidecontent img{
+    width:80%;
+    margin: 0 auto;
+}
+.slideshow ul.slides,#center .slideshow ul.slides figure{
+  width:100%;  
+  /* supprimé par mmi 20150302 
+  padding-bottom: 15px; */
+}
+.slideshow ul.slides div.text-block,#center .slideshow ul.slides figcaption{
+  padding:5px;
+  min-width:30%;
+  display:inline;
+}
+.slideshow ul.slides img {
+  height:auto;
+  float:left;
+  width: 100%;
+  margin-right: 10px;
+}
+#center .slideshow ul.slides figcaption p {
+    padding-left: 15px;
+}
+.slider_design_0{
+  color:black;
+}
+
+.slider_design_1{
+  color:black;
+}
+
+.slider_design_2{
+  color:black;
+}
+.slideshow ul.slides figure{
+  margin-bottom: -35px;
+  margin-top: 0;
+  padding: 0;
+}
+.slideshow{
+background-color:#cacaca;
+}
+div .owl-controls{
+float:right;}
+
+/************************* ARTICLES ******************/
+.theme{
+  float: left;
+  font-size: 0.85em;
+}
+#contentnews{
+    width:100%;
+}
+#pagefocus p i {
+    font-style: italic;
+}
+article{
+    width:230px;        
+    float:left;
+    margin-bottom:10px;
+    margin-left:12px;
+}
+
+article .article-content{
+  padding:10px;
+}
+
+#contentnews article time{
+    float:right;
+    text-align: right;
+    font-size: 0.6rem;
+    padding-right: 3px;
+}
+article h2 {
+        font-family: DrescherGroteskBT-SmallSizes
+}
+article img{
+    width:auto;
+    clear:both;
+  margin-top: 8px;
+}
+.tx-cfwbarticlefe #contentnews-intern a img{
+    width: 210px;
+}
+
+/* supprimé par mmi 20150302
+.tx-cfwbarticlefe article#pagecontent {
+  padding-top:20px;
+} */
+
+.tx-cfwbarticlefe ol {list-style:decimal;}
+
+article p, article time,article span,#bioxpress p{
+    font: 0.7rem verdana,arial,sans-serif;
+    /*font: 0.7rem trebuchet ms; */
+    line-height:20px;
+}
+
+a article {
+    font:0.75em verdana,arial,sans-serif;
+}
+a article h1 {
+    font:0.9em verdana,arial,sans-serif;
+    font-weight:bold;
+}
+article p{
+    margin-bottom:0;
+}
+.partage{
+  float:right;
+  margin-top: 5px;
+}
+.articleenseignement .article-content{
+    background:url('../pictures/mini_logo_enseignement.png') no-repeat 5px 5px rgba(42,110,204,0.2);
+    background-size:20px;
+}
+.articleenseignement a:nth-of-type(2),.articleenseignement h1 a:hover,.articleenseignement h1 a:active,.navenseignement a:hover{
+    color:#2a6ecc;
+}
+.articleculture .article-content{
+    background:url('../pictures/mini_logo_culture.png') no-repeat 5px 5px rgba(231,0,51,0.2);
+    background-size:20px;
+}
+.articleculture a:nth-of-type(2),.articleculture h1 a:hover,.articleculture h1 a:active,.navculture a:hover{
+    color:#e70033;
+}
+.articlesport .article-content{
+    background:url('../pictures/mini_logo_sport.png') no-repeat 5px 5px rgba(255,91,0,0.2);
+    background-size:20px;
+}
+.articlesport a:nth-of-type(2),.articlesport h1 a:hover,.articlesport h1 a:active,.navsport a:hover{
+    color:#ff5b00;
+}
+.articlejeunesse .article-content{
+    background:url('../pictures/mini_logo_jeunesse.png') no-repeat 5px 5px rgba(61,155,53,0.2);
+    background-size:20px;
+}
+.articlejeunesse a:nth-of-type(2),.articlejeunesse h1 a:hover,.articlejeunesse h1 a:active,.navjeunesse a:hover{
+    color:#3d9b35;
+}
+.articlerecherche .article-content{
+    background:url('../pictures/mini_logo_recherche.png') no-repeat 5px 5px  rgba(0,163,171,0.2);
+    background-size:20px;
+}
+.articlerecherche a:nth-of-type(2),.articlerecherche h1 a:hover,.articlerecherche h1 a:active,.navrecherche a:hover{
+    color:#00a3ab;
+}
+.articlejustice .article-content{
+    background:url('../pictures/mini_logo_justice.png') no-repeat 5px 5px rgba(145,33,141,0.2);
+    background-size:20px;
+}
+.articlejustice a:nth-of-type(2),.articlejustice h1 a:hover,.articlejustice h1 a:active,.articlejustice h1 a:hover,.navjustice a:hover{
+    color:#91218d;
+}
+
+.articledefault .article-content{
+    background-color:rgba(0,0,0,0.2);
+}
+.articledefault a{
+    color:black;
+}
+.articledefault a:hover{
+    color:gray;
+}
+
+article p a{
+  font: 0.75rem verdana,arial,sans-serif;
+    text-decoration: underline;
+    color: #0066cc;
+}
+article ul a{
+  font: 0.75rem verdana,arial,sans-serif;
+    text-decoration: underline;
+    color: #0066cc;
+}
+article span a{
+  font: 0.75rem verdana,arial,sans-serif;
+    text-decoration: underline;
+    color: #0066cc;
+}
+article a .articlejeunesse masonryitem {
+    margin: 0;
+}
+.articlejeunesse masonryitem a {
+  color: 3d9b35;
+}
+
+.link_articles {margin-left:12px;padding-top:10px;}
+.link_articles a {font: 0.85rem verdana,arial,sans-serif;;}
+
+.logoenseignement{
+    background:url('../pictures/mini_logo_enseignement.png') no-repeat 5px 5px ;
+    background-size:20px;
+}
+
+.logoculture{
+    background:url('../pictures/mini_logo_culture.png') no-repeat 5px 5px;
+    background-size:20px;
+}
+
+.logosport{
+    background:url('../pictures/mini_logo_sport.png') no-repeat 5px 5px;
+    background-size:20px;
+}
+
+.logojeunesse{
+    background:url('../pictures/mini_logo_jeunesse.png') no-repeat 5px 5px ;
+    background-size:20px;
+}
+
+.logorecherche{
+    background:url('../pictures/mini_logo_recherche.png') no-repeat 5px 5px;
+    background-size:20px;
+}
+
+.logojustice{
+    background:url('../pictures/mini_logo_justice.png') no-repeat 5px 5px ;
+    background-size:20px;
+}
+
+/******************** SECTION RIGHT ***********************/
+
+#sectionright div{
+    padding-bottom: 0px;
+    margin-top: 0px;
+    border-top: none;
+}
+/* en principe plus besoin 10/10/14 mmi */
+/* #sectionright div:first-child{
+    border-top: medium none;
+    font-size: 0.95em;
+  margin-top: 15px;
+}*/
+
+#sectionright .modules, #sectionright #modules, #sectionright #la-une {
+  border-top: 2px solid black; 
+/* mis en commentaire par mmi 20150302
+   margin-top: 15px; */
+}
+
+#sectionright .annonces, #sectionright #annonces {
+  margin-top: 15px;
+  border-top: 2px solid black; 
+}
+
+#sectionright .csc-frame-frame1{
+  margin-top: 15px;
+  border-top: 2px solid black; 
+}
+
+#sectionright #liensthema, #sectionright #actuother, #sectionright #archive{
+  margin-top: 15px;
+  border-top: 2px solid black; 
+}
+
+#la-une{
+    /*height:490px;*/
+}
+
+#sectionright h2{
+    font-family:DrescherGroteskBT-SmallSizes,verdana,arial,sans-serif;
+  /* border-top: 2px solid black; */
+    font-size: 1rem;
+    margin: 5px 0;
+}
+#sectionright h3{
+    text-transform:uppercase;
+    font-size: 0.7em;
+}
+.telnumber{
+    color:green;
+    font-size:1em;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+#sectionright #question p{
+    color: #b2b2b2;
+    font-size: 0.8em;
+}
+#sectionright h2{
+    margin:10px 0 0;
+  padding-top: 10px;
+}
+#newsletter form{
+    padding:5px;
+    background-color:rgba(0,0,0,0.1);
+}
+#newsletter input[type="submit"]{
+    margin:10px 0;
+}
+#sectionright li{
+  background-size:10px;
+  /*background: url("../pictures/bullet.png") no-repeat scroll left 6px top 17px / 7px auto rgba(0, 0, 0, 0);*/
+  background: none;
+  border-bottom: 1px dotted #ffffff;
+  font-size: 0.7em;
+  min-height: 25px;
+  padding: 10px 0 10px 0px;
+}
+.annonces div{
+    border-top:none;
+}
+.annonces div a img{
+    width:100%;
+}
+/******************* SECTION IMAGE ****************/
+.sectionimg{
+    clear:both;
+    width:100%;
+    line-height:115px;
+}
+/* supprimé par MMI car plus besoin. Le logo du MFW-B se retrouve en bas */
+/*.sectionimg img{
+    vertical-align:middle;
+    display:inline-block;
+} */
+.sectionimg .up{
+    display: inline-block;
+    float: right;
+    width:19.2%;
+}
+/*********************** PAGE PORTRAIT/FOCUS/CONTENT/CARTOUCHE ******************/
+#centerportrait,#centerfocus{
+    float:left;
+    margin:0 1%;
+    padding-top:10px;
+}
+.chapeau{
+    font-weight: normal !important;
+    margin-top:20px;
+    font-size:0.9em;
+    margin-bottom:10px;
+}
+figure{
+  margin-top: 40px;
+}
+#centerportrait figcaption,#centerfocus figcaption,#pagecontent figcaption{
+    background-color:#cacaca;
+    margin-top:-3px;
+}
+#centerportrait figure img,#centerfocus figure img,#pagecontent figure img{
+    margin-bottom:0;
+    width:100%;
+    clear:both;
+    padding-top: 25px; 
+}
+/* mmi ajout le 05/02/2015 */
+#pagecontent figure {  margin-top:10px;
+}
+
+#centerportrait figcaption,#centerfocus figcaption,#pagecontent figcaption{
+    font-size:0.85em;
+}
+#pagecontent > h1,#centerfocus > h1,#centerportrait > h1,#pagecartouche > h1,#solrsearch > h1{
+    font: 1.3em DrescherGroteskBT-SmallSizes,verdana,arial,sans-serif;
+    margin-top: 17px;
+    padding-left: 10px;
+}
+article h1 {
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 1rem;
+    margin: 12px 0;
+}
+article h1 a {
+    font: bold 0.7rem verdana,arial,sans-serif;
+}
+#centerportrait p,#centerfocus p{
+    text-align: justify;
+}
+#pagecontent time,#centerportrait time,#centerfocus time{
+    display:inline-block;
+    float: right;
+    font-size:0.85em;
+}
+#pagecontent ul {
+  list-style : disc outside none;
+  margin-bottom: 12px;
+    margin-top: 12px;
+    padding-left: 40px;
+}
+#liensthema h2,#la-une h2,#portraitother h2,#bioxpress h2,#focusother h2,#focusplus h2,#actuother h2,#archive h2{
+    border-bottom:1px solid #000;
+    line-height:44px;
+    vertical-align:middle;
+    font-size:1.2em;
+    margin:0;
+}
+#pagecontent{
+    width:auto;
+    padding:0;
+    margin-top:10px;
+}
+#pageportrait,#pagefocus{
+  width:60%;
+  padding:0;
+  margin-top:0px;
+}
+#bioxpress,#focusplus{
+    width:33%;
+    float:left;
+    border-top:2px solid black;
+    margin-left: 2%;
+    margin-top:20px;
+    margin-bottom: 10px;
+}
+
+#bioxpress em{
+    font-weight:bold;
+}
+#la-une div{
+    background-color:#cacaca;
+    border-top:none;
+    padding:4px;
+}
+#la-une img{
+    width:60%;
+}
+#la-une time{
+    font-size:0.7em;
+    float:right;
+}
+#la-une a{
+    text-decoration: none;
+}
+
+#focusplus li {
+    background: url("../pictures/bullet.png") no-repeat scroll left 9px / 7px auto rgba(0, 0, 0, 0);
+    font: 0.9em verdana,arial,sans-serif;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-top: 5px
+}
+#focusplus a {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+#focusplus ul li a {
+    color: #0066cc;
+    text-decoration: underline;
+}
+#pagecartouche{
+    width:99%;
+}
+
+#pagecartouche ul li{
+    font:0.75rem verdana,arial,sans-serif;
+    background: url("../pictures/bullet.png") no-repeat left 5px;
+    background-size:10px;
+    padding-left: 15px;
+    padding-bottom:10px;
+}
+
+/*#pagecartouche ul.csc-menu{
+    border:2px solid black;
+    width:98%;
+    margin:1%;
+    padding:10px;
+}*/
+/* Modif page Matière santé - modifié Jde 21062019*/
+#pagecartouche ul.csc-menu {
+    border-bottom: 1px solid black;
+    width: 98%;
+    margin-top: 1%;
+    margin-right: 1%;
+    margin-bottom: 3%;
+    margin-left: 1%;
+    padding: 2px;
+}
+.tx-felogin-pi1 fieldset {
+    padding-left: 25px;
+    padding-top: 5px;
+    background-color: #ececec;
+    padding-bottom: 10px;
+}
+.tx-felogin-pi1 h3 {
+    font-family: DrescherGroteskBT-SmallSizes;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+/* fin Modif page Matière santé */
+
+#pagecartouche ul.csc-menu-3{
+   /* border:none; */
+}
+
+#pagecartouche ul.csc-menu li{
+    width: 33%;
+    margin:1%;
+    display:inline-block;
+}
+
+#pagecartouche ul.csc-menu-3 li{
+    width: 100%;
+}
+
+/* mmi 2014-11-24 */
+/* changé csc-textpic par csc-textpic-imagewrap car sur la page */
+/* http://www.maisonsdejustice.be/index.php?id=4657 les bullets doivent apparaitre */
+/* ATTENTION, peut-être effet de bord ailleurs */
+
+#pagecartouche .csc-textpic-imagewrap ul li{
+  background-image:none;
+  margin-left: 10px;
+}
+
+.breadcrumb{
+  font-size: 0.65rem;
+  margin-top: 5px;
+  margin-bottom: 0;
+  width:100%;
+  height:auto;
+  padding-left: 24px;
+  padding-top: 0px;
+}
+.breadcrumb a {
+   text-decoration: underline;
+}
+/*********************** FOOTER **********************/
+
+footer.institut{
+    padding-top:15px;
+    clear:both;
+    background-color:#d9d9d9;
+  padding-bottom: 10px;
+  
+  font-size: 0.75em;
+    text-align: center;
+}
+footer.institut ul li p{
+    line-height:1;
+    width: 100%;
+}
+footer li{
+    float:left;
+    width:19.2%;
+    margin-bottom:15px;
+}
+footer li:first-child{
+    margin-right:1%;
+}
+footer li:nth-of-type(2){
+    width:19.2%
+}
+.footerthema{    
+    clear: both;http://www.portail.t3.cfwb.be/typo3/file_edit.php?target=%2Fvar%2Fwww%2Fhtml%2FT3_PORTAIL%2Ffileadmin%2Fsites%2Fportail%2Fcss%2Fstyle.css&returnUrl=%2Ftypo3%2Fsysext%2Ffilelist%2Fmod1%2Ffile_list.php%3Fid%3D%252Fvar%252Fwww%252Fhtml%252FT3_PORTAIL%252Ffileadmin%252Fsites%252Fportail%252Fcss%252F#
+    display: block;
+    font-size: 0.8em;
+    height: auto;
+    text-align: center;
+    border-top: 1px solid black;
+    width:100%;
+    margin:0 auto;
+}
+.footerthema ul li ul li {
+  width:100%;
+  margin-bottom:0px;
+}
+.footerthema ul li a {
+  /* display:none; */
+  
+}
+.footerthema ul li ul li a {
+  display:inline-block;
+}
+
+.foot2, .foot3, .foot4, .foot5, .thematique_n1 {
+   margin-left:1%;
+}
+
+.thematique_n1:first-child {
+ margin-left:0px;
+}  
+
+nav.center div.navresp{
+    display:inline;
+    font: 0.85em/25px DrescherGroteskBT-SmallSizes,verdana,arial,sans-serif;
+}
+.copyright{
+  text-align:center;
+  font-size: 0.7em;
+    margin: 40px;
+}
+.copyright span{
+position:absolute;
+top:-2000px;}
+.up p {
+    font-size: 0.75em;
+    text-align: left;
+}
+footer.institut ul li p a {
+   text-decoration: underline;
+}
+.navresp li {
+    font-weight: normal;
+}
+#solrsearch {
+    width: 99%;
+}
+#fourcols {
+    width: 80%;
+}
+#fourcols div.tx-solr div#tx-solr-search{
+ width:72%;
+  float: left;
+}
+#fourcols div.tx-solr div#tx-solr-search-functions {
+    float: right;
+    width: 25%;
+}
+
+a.external-link-new-window {
+  padding-right:20px;
+  background:url('../pictures/lien-externe.png') no-repeat 100% 50%;
+}
+
+#center p, #centerfocus #pagefocus ul li {
+    font-size: 0.75rem;
+    padding: 5px 0px;
+    font-family: arial;
+}
+#center b{
+    font-weight: bold;
+}
+#center ul {
+    font-size: 0.75rem;
+    padding: 0px 0px 8px;
+}
+#pagecontent ul {
+   padding-left: 40px;
+  list-style: outside none disc;
+}
+#centerfocus ul {
+   padding-left: 40px;
+  list-style: outside none disc;
+}
+element.style {
+    top: 354px;
+}
+DIV.csc-textpic DIV.csc-textpic-imagewrap .csc-textpic-image .csc-textpic-caption {
+    color: #999999;
+    font-size: 0.7rem;
+    padding-left: 15px;
+}
+.news-single-item {
+    margin-bottom: 5px;
+    padding: 10px 50px;
+    width: 725px;
+}
+.news-single-item ul li{
+    font-size: 0.75rem
+}
+.news-single-item h1 {
+    font-family: DrescherGroteskBT-SmallSizes;
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+.news-single-img {float:none;}
+.news-single-img img {
+    height: 100%;
+    width: 100%;
+}
+.news-single-backlink {
+    font-size: 0.8em;
+    padding: 0;
+    text-align: right;
+}
+.tx-felogin-pi1 h3 {
+    font-family: DrescherGroteskBT-SmallSizes;
+    font-size: 1.1rem;
+}
+.tx-felogin-pi1 fieldset{
+    padding-left: 25px;
+    padding-top: 5px;
+}
+.tx-felogin-pi1 div {
+    font-size: 0.75rem;
+    color: #f90800;
+    padding-top: 5px;
+}
+.tx-felogin-pi1 label {
+    color: #000000;
+    display: block;
+}
+.tx-felogin-pi1 legend submit {
+    font-weight: bold;
+}
+.tx-felogin-pi1 legend {
+    display: none;
+}
+#content p.actu {
+    border: 1px solid black;
+    display: inline-block;
+    font-size: 0.7em !important;
+    margin: 5px 0 5px 2px;
+    padding: 5px 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.articletheme2.masonryitem span {
+   text-decoration: underline;
+   color : #107532 !important;
+}
+/*.articlejeunesse.masonryitem span {
+   text-decoration: underline;
+   color : #107532 !important;
+}*/
+.articlejustice.masonryitem span {
+   text-decoration: underline;
+   color : #91218d;
+}
+.articleenseignement.masonryitem span {
+   text-decoration: underline;
+   color : #0068A1;
+}
+.articlesport.masonryitem span {
+   text-decoration: underline;
+   color : #9E520B;
+}
+.articleculture.masonryitem span {
+   text-decoration: underline;
+   color : #B52429;
+}
+.articledefault.masonryitem span {
+   text-decoration: underline;
+   color : black;
+}
+.slide-content slide-text p {
+    padding: 0 15px;
+}
+.text-block h1 {
+    font-family: DrescherGroteskBT-SmallSizes;
+    font-size: 1rem;
+    padding: 0px 5px 20px 8px;
+}
+.csc-textpic-text p {
+    font-size: 0.8em;
+}
+.csc-header csc-header-n2 p{
+    font-size: 0.8em;
+}
+
+
+section #navleft, section#fourcols {
+    float: left;
+}
+
+#solrsearch {
+    width: 99%;
+}
+#fourcols {
+    width: 80%;
+}
+#fourcols div.tx-solr div#tx-solr-search{
+ width:72%;
+  float: left;
+}
+#fourcols div.tx-solr div#tx-solr-search-functions {
+    float: right;
+    width: 25%;
+}
+
+.articleliens {
+    /*font-size: 0.7em;*/
+}
+
+/******************** RECRUTEMENT ***************/
+#before_content_block .submenu li a {
+    display: block;
+}
+#before_content_block .submenu {
+    background-color: #ececec;
+    clear: both;
+    color: #76848c;
+    float: left;
+    height: 1%;
+    list-style: none outside none;
+    margin: 0 0 15px;
+    padding: 4px 0;
+    width: 99%;
+}
+#before_content_block .submenu li {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 8px 0;
+    width: 99%;
+}
+#before_content_block .submenu li a {
+    color: #c81d1b;
+    padding: 0 8px 0 26px;
+}
+#before_content_block .submenu li a:visited {
+    color: #704588;
+}
+#before_content_block {
+    clear: both;
+    color: #4a4a4a;
+    float: left;
+    height: 1%;
+    overflow: visible;
+    padding: 0 23px;
+    width: 99%;
+}
+#before_content_block h2 {
+    clear: both;
+    color: #76848c;
+    display: block;
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0 15px;
+    padding: 0;
+    text-transform: uppercase;
+}
+#before_content_block h3 {
+    clear: both;
+    color: #7797a9;
+    display: block;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 10px 0 15px;
+    padding: 0;
+    text-transform: uppercase;
+}
+#before_content_block h4 {
+    color: #7797a9;
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    margin: 10px 0 15px;
+    padding: 0;
+    text-transform: uppercase;
+}
+#before_content_block ul {
+    clear: both;
+    float: left;
+    list-style: none outside none;
+    margin: 3px 0;
+    padding: 0 0 0 75px;
+}
+#before_content_block li {
+    margin: 0;
+    padding: 0 0 0 11px;
+}
+#before_content_block p {
+    clear: both;
+    margin: 10px 0;
+    padding: 0;
+    width: 99%;
+}
+#before_content_block .content_hat {
+    clear: both;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+#before_content_block {
+    clear: both;
+    color: #4a4a4a;
+    float: left;
+    padding: 0 23px;
+    width: 99%;
+}
+#before_content_block .submenu ul {background-color:#fff;}
+#before_content_block .submenu li a {border-left: 0px solid #B6B6B6;}
+#before_content_block ul.submenu li { background:url(../pictures//main_ctnt_itm_space_02_chip.png) 8px 10px no-repeat; }
+#before_content_block .submenu {background-color:#fff; border: 1px solid #4a637d;width:99%;}
+#before_content_block ul.submenu li {background:transparent url(../pictures//puces_liste.jpg) no-repeat scroll 5px 10px;margin:0px 10px 0px 8px;width: 31%;}
+#before_content_block ul.submenu li a {padding : 0 0 0 0;color:#000;font-size:1em;padding:0 0 0 22px;}
+#before_content_block ul.submenu li a:visited {padding : 0 0 0 0;color:#1e495c;font-size:1em;padding:0 0 0 22px;}
+#before_content_block ul.submenu li a:hover {padding : 0 0 0 0;color:#1e495c;font-size:1em;padding:0 0 0 22px;}
+
+
+#pagecartouche a{
+ color: #0066cc;
+ text-decoration: underline; 
+}
+/* supprimé par mmi 20150302
+#focusplus ul{
+  list-style : outside none none;
+}*/
+
+
+#sectionright #tx-fwbabcdemarches {margin-top:20px;}
+#sectionright #tx-fwbabcdemarches #top-search {display:none;}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home #steps #publics_cible {
+  width: 230px;
+  background:#f5f5f5 url(../pictures/abc_background.png) 15px 50px no-repeat;
+  border: solid 2px #ddd;
+  padding: 15px 10px 0 10px;
+  font-family: DrescherGroteskBT-SmallSizes,verdana,arial,sans-serif!important;
+}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home #steps #publics_cible h3 { 
+  font-weight: bold; 
+  font-family: DrescherGroteskBT-SmallSizes,verdana,arial,sans-serif!important; 
+  padding-top:0px; 
+  padding-left: 8px;
+  font-size:1em;
+  margin-left:0px; 
+  margin-top:0px; 
+  color:#000;
+}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home #steps #publics_cible p.abc_chapeau {
+  padding:18px 0 0 50px; 
+  font-size: 15px; 
+  font-weight: bold; 
+  font-family: DrescherGroteskBT-SmallSizes,verdana,arial,sans-serif!important;
+  color:#000;
+}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home #steps #publics_cible .menu {
+  margin-top:5px!important;
+}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home #steps #publics_cible ul {
+  padding-left:50px; 
+  border:none;
+  margin-left:0px;
+  padding-bottom:8px;
+}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home #steps #publics_cible .menu li {
+  background:url(../pictures/abc_fleche.png) 0 2px no-repeat; 
+  padding:0 0 0 20px!important;
+  font:0.8rem/20px trebuchet ms;min-height:inherit;
+}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home #steps #publics_cible .menu li a {
+  text-decoration:none;
+  color:#000;
+}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home #steps #publics_cible .menu li a:hover {
+  text-decoration:underline;
+}
+
+
+/*   manu 2017 05 24 */
+#abc-demarches #top-search { background-color:  none;}
+#explorez {width: 205px; background: #f5f5f5 url(../pictures/abc_fleche.png) right 51% no-repeat; border: solid 2px #dddddd; padding: 13px 20px 13px 5px; font-size: 13px;}
+ 
+ 
+.demarche strong {font-weight:600;}
+.demarche ol li {font-size:0.9em;}
+#abc-demarches #detail_demarche ol li ul li {font-size:inherit;}
+
+
+.tx-fwbsdgrfiches .liste-demarches {margin-top:20px; margin-left:15px;}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+    }
+
+/* ------------------Modifs accessibilité -------------------*/
+
+.tx-pagebrowse li a {
+    text-decoration: none;
+    color: #000 !important;
+}
+.tx-pagebrowse-current {
+    color: #000;
+    font-weight: 700;
+    text-decoration: underline overline;
+}
+
+
+#abc-demarches #detail_demarche .demarche .content .section-content ul li:has(ul){
+    padding-left: 5px;
+    list-style: none;
+    color: #000;
+    background: none;
+}
+
+/* page 268 */
+/*#c1120 {width:80%;
+  border:1px solid black;
+  padding:10px;
+  margin:auto;
+  margin-bottom:15px;
+  background-color:#f5f5f5;
+}*/
+
+
+ul.list-custom{
+  display: block;
+  padding-left: 10px !important;
+  font: 0.8rem/20px trebuchet ms;
+}
+
+ul.list-custom li{
+  list-style-type: none !important;
+  background: transparent !important;
+  background-image:none !important;
+}
+
+ul.list-custom li:before{
+  content: "\2022";  
+  color: #000; 
+  font-weight: bold; 
+  display: inline-block; 
+  width: 1em; 
+  margin-left: -1em;
+}
+
+ul.list-custom li::marker {
+    content: none;
+}
+
+.frame-custom-grey{
+    width: 80%;
+    border: 1px solid black;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 15px;
+    background-color: #f5f5f5;
+}
+
+.btn-custom-blue{
+  font-family: "roboto";
+  border: 0px solid #1533db;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #0956c8;
+  display: inline-block;
+  text-decoration: none !important;
+  color: #fff !important;
+  transition-duration: .5s;
+  font-size: 16px;
+}
+
+.btn-custom-blue:hover{
+  background-color: #0e2397;
+}
+
+.align-center{
+  text-align: center;
+}
+
+
+.indent
+{ padding-left:30px;}
+
+.default-css p{
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}

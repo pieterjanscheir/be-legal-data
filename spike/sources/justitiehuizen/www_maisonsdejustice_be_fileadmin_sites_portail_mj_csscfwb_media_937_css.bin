@@ -1,0 +1,15 @@
+/* CSS Document */
+@media only screen and (max-width: 937px) {
+#contentnews article{
+    width:98.35%;
+}
+#contentnews article div{
+  margin-top:18px;
+}
+#AddThis{
+  display: none;
+}
+
+.navportail {width:230px;}
+
+}

@@ -1,0 +1,277 @@
+/* CSS Document */
+@media screen and (max-width: 800px) {
+.tx-solr-q {
+  width : 65%;
+}
+  /* #menu is the original menu */
+  #mainMenu {
+    display:none;
+  }
+
+  #navleft{
+    position:relative;
+  }
+  
+  .slicknav_menu {
+    display:block;
+  }
+
+
+  .tx-solr-searchbox{
+    margin-right: 1em;
+    padding-top: 0.6em;
+    text-align: left;
+    width: 100%;
+  }
+
+  .tx-solr-searchbox form{
+    margin-right: 0.2em;
+    padding-left: 10px;
+  
+  }
+
+  .tx-solr-searchbox form #inputText{
+    width: 75%;
+  }
+
+  #submit_search{
+    float: right;
+    position: inherit;
+    border: medium none;
+    color: #000000;
+    cursor: pointer;
+    background-color: #e6e6e6;
+    background-image: -moz-linear-gradient(center top , #fff, #e6e6e6);
+    background-repeat: repeat-x;
+    margin-right: 1.5em;
+  }
+
+  #submit_search:hover{
+    background-color: #d9d9d9;
+    background-image: -moz-linear-gradient(center top , #f2f2f2, #d9d9d9);
+    background-repeat: repeat-x;
+  }
+
+  #trigger-search{
+    background-clip: padding-box;
+    background-color: #cacaca;
+    border-radius: 50%;
+    display: block;
+    height: 3em;
+    padding: 0.9em;
+    position: absolute;
+    right: 15px;
+    text-align: center;
+    top: 5px;
+    width: 3em;
+  }
+
+  #navleft .tx-solr{
+    display:block;
+  }
+
+  .addthis_toolbox{
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+.tx-solr-q {
+  width : 65%;
+}
+#tx-solr-sorting {
+    margin-right: 10px;
+}
+
+body,html{
+    font-size:0.9em;
+}
+#extheader{
+    padding-left:1%;
+    padding-right:1%;
+}
+#contentnews{
+    width:100%!important;
+}
+#contentnews article{
+    float:left;
+    background-size:15px;
+  width:100%;
+}
+.lang{
+    margin-right:0;
+}
+.navicon{
+    display:block;
+}
+/* footer li, footer li:nth-of-type(2){
+    width:25%;
+}
+*/
+footer.footerthema li {
+  margin-top:0px;
+  font-size:1.1em;
+  line-height:12px;
+}
+
+footer li:first-child{
+margin-right:0;
+  
+}
+#liensthema{
+    margin-top: 0;
+}
+.institut li.foot5{
+    clear:both;
+}
+div.menu-button p{
+    display:inline;
+    font:0.85em DrescherGroteskBT-SmallSizes,verdana,arial,sans-serif;
+    font-weight:normal;
+}
+.contentfocusportrait{
+    width:60%;
+    margin:0 1%;
+}
+#center{
+    width:60%;
+}
+#sectionright{
+    width:37%;
+    margin-right:1%;
+}
+.nomportail{
+    margin-left:100px;
+}
+header .center div, header .center p, .lang{
+    font-size:1em;
+}
+#la-une{
+   height: 385px;
+}
+#contentnews article{
+  width:98.35%;
+}
+article a img{
+    width:auto;
+    float:left;
+    margin:5px;
+    clear:none;
+}
+article a img{
+  /*width:auto;*/
+  max-height: 105px;
+    max-width: 210px;
+  float:left;
+  margin:5px;
+  clear:none;
+  
+}
+#center .slideshow ul.slides figure{
+  position:relative;
+}
+#center .slideshow ul.slides figcaption{
+ display:none;
+}
+#center .slideshow ul.slides img{
+  float:none;
+}
+.text-block{
+   position:absolute;
+  bottom:3px;
+  left:0;
+}
+#center .slideshow ul.slides figure .text-block{
+  background-color:rgba(0,0,0,0.5);
+  padding:0;
+  min-width: 100%;
+}
+#center .slideshow ul.slides figure h1{
+  font-size:1.5em;
+  opacity:1;
+}
+.slider_design_0{
+  color:black;
+}
+
+.slider_design_1{
+  color:black;
+}
+
+.slider_design_2{
+  color:black;
+}
+
+.annonces_gauche{
+display:none;}
+/********************** MENU DEROULANT *****************/
+.researchtop{
+    display:none !important;
+}
+#navleft{
+    width:100%;
+    float:none;
+    margin-left:1%;
+    border-top:none;
+}
+.cache{
+    width:100%;
+/*    position:absolute;
+    top:70px;
+    left:0;*/
+    display:none;
+}
+.button_hidden{
+    background-color:red;
+    padding:20px;
+    display:block;
+    width:18%;
+    clear:both;
+    cursor:pointer;
+    margin: 0 1%;
+}
+.researchnav div{
+    display:block;
+    width:100%;
+}
+.navoutils .cache,.navbread .cache,.navcontact .cache,.navsearch .cache{
+    margin-top:50px;
+    margin-left:1%;
+    width:98%;
+}
+.navoutils+.cache,.navbread+.cache{
+    height:50px;
+    background-color:green;
+}
+#menu_resp{
+    position:relative;
+}
+.navleft{
+    position:absolute;
+    top:1%;
+    left:1%;
+}
+.navsearch{
+    position:absolute;
+    top:1%;
+    left:21%;
+}
+.navcontact{
+    position:absolute;
+    top:1%;
+    left:41%;
+}
+.navoutils{
+    position:absolute;
+    top:1%;
+    left:61%;
+}
+.navbread{
+    position:absolute;
+    top:1%;
+    left:81%;
+}
+}
+
+

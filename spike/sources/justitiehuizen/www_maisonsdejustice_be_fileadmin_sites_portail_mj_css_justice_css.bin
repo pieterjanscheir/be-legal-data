@@ -1,0 +1,284 @@
+.nomportail{
+    font:1.250em drescher_grotesk_bt_smallsiRg,verdana,arial,sans-serif !important;
+    line-height:75px !important;
+    float:left;
+    border-left:2px solid black;
+    margin-left:60px;
+    margin-top:35px;
+    padding-left:60px;
+}
+.nomportail img{
+    height:40px;
+    margin-right:30px;
+    line-height:40px;
+    vertical-align:middle;
+}
+.slideshow{
+    background-color:#be80b6;
+}
+.current, #navleft a:active,#content a:hover, #sectionright a:hover, #section a:active,.nomportail a:hover,.current a,#navleft a:hover,.footerthema a:hover{
+    color:#91218d;
+}
+.articlejustice .article-content{
+    background-image:none;
+}
+#centerportrait figcaption,#centerfocus figcaption,#pagecontent figcaption,#la-une{
+    background-color:#ebd5ea;
+}
+#pagecartouche ul{
+    border:0px solid #91218d;
+}
+#pagecartouche ul li {
+    background: rgba(0, 0, 0, 0) url("../pictures/bullet.png") no-repeat scroll left 8px / 7px auto;
+    font: 0.8rem/20px trebuchet ms;
+}
+.tx-smileglossary-pi1 h2.terme {
+    color: #91218d;
+}
+/*#pagecartouche ul li.csc-textpic-image csc-textpic-firstcol {
+    width: 285px !important;
+}*/
+#centerportrait, #centerfocus,#pagecontent{
+}
+#pagecontent .élément{
+    width: 285px;
+}
+
+
+
+/* ***********CEPIGE*********** */
+
+.slideshow a {
+  text-decoration:none;
+}
+.slideshow ul.owl-carousel figure {
+    
+    padding: 2%;
+}
+
+.slideshow ul.owl-carousel .owl-pagination .owl-page span{
+  border-color: #fff;
+}
+
+.slideshow ul.owl-carousel .owl-pagination .owl-page.active span{
+  background-color: #fff;
+}
+
+.slideshow  .text-block h1 { 
+    color: #fff;
+    padding-bottom: 5px;
+}
+
+
+/* ***********CEPIGE*********** */
+ /*  APL */ 
+
+tr{
+border :thin solid;
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (max-width: 1200px) { 
+.nomportail{
+    width: 298px;
+}
+}
+
+.sousmenu {
+    border-bottom: 1px solid #cacaca;
+    font-size: 0.65rem;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+.breadcrumb {
+    font-size: 0.65rem;
+}
+#contentnews article time {
+    font-size: 0.6rem;
+    padding-right: 3px;
+}
+article img {
+    margin-top: 8px;
+}
+article h1 a {
+    font: bold 0.7rem verdana,arial,sans-serif;
+}
+article p, article time, article span, #bioxpress p {
+    font: 0.7rem verdana,arial,sans-serif;
+}
+
+
+
+/* *********************************************************************************** */
+/*                                      CEPIGE                                         */
+/* *********************************************************************************** */
+
+/*..........  Menu de gauche  ..........*/
+
+
+.current ul li a {
+    color: #000000;
+    font-weight: normal;
+}
+
+/*.......  Fin du Menu de gauche  ......*/
+
+
+/*.......  Cartouche  ......*/
+
+#pagecartouche ul.csc-menu li {
+    width: 47%;
+}
+
+#pagecartouche ul.submenu {
+     margin-bottom: 15px;
+     border:2px solid #91218d;
+     padding:10px;
+}
+/*#pagecartouche ul li {
+     width: 100%;
+     border:0;
+  
+}*/
+#pagecartouche a.current {
+    color: #fff;
+    background-color: #91218d;
+}
+
+.tx-cfwbarticlefe #pagecontent h3 span {
+    font-weight:bold;
+  
+}
+
+
+.tx-cfwbarticlefe  .chapeau {
+    
+    margin-bottom: 20px;
+}
+
+#sectionright .annonces {margin-top:0px;}
+/*
+#annonces  img {
+    height: 70%;
+     width: 160px;
+}
+
+
+
+.annonces div a img {
+    height: 70%;
+    width: 160px;
+}
+
+#sectionright DIV.csc-textpic DIV.csc-textpic-single-image IMG  {
+      height: 70%;
+     width: 160px;
+}
+*/
+#center #pagecartouche ul.submenu li a {
+text-decoration: underline;
+}
+
+
+.navenseignement {width:16%;}
+.navculture {width:13%;}
+.navsport {width:15%;}
+.navjeunesse {width:18%;}
+.navrecherche {width:20%;}
+
+
+/*debut slider */
+
+
+/* *********************************************************************************** */
+/*                                      CEPIGE                                         */
+/* *********************************************************************************** */
+
+#center strong {font-weight: bold;}
+
+#sectionright #tx-fwbabcdemarches {margin-top:20px;}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home {background-color:#fff !important;}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home #steps #publics_cible {
+  width: 230px;
+  background:#f5f5f5 url(../pictures/abc_background.png) 15px 50px no-repeat;
+  border: solid 2px #ddd;
+  padding: 15px 10px 0 10px;
+  font-family: DrescherGroteskBT-SmallSizes,verdana,arial,sans-serif!important;
+}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home #steps #publics_cible h3 { 
+  font-weight: bold; 
+  font-family: DrescherGroteskBT-SmallSizes,verdana,arial,sans-serif!important; 
+  padding-top:0px; 
+  padding-left: 8px;
+  font-size:1em;
+  margin-left:0px; 
+  margin-top:0px; 
+  color:#000;
+}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home #steps #publics_cible p.abc_chapeau {
+  padding:18px 0 0 50px; 
+  font-size: 15px; 
+  font-weight: bold; 
+  font-family: DrescherGroteskBT-SmallSizes,verdana,arial,sans-serif!important;
+}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home #steps #publics_cible .menu {
+  margin-top:5px!important;
+}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home #steps #publics_cible ul {
+  padding-left:50px; 
+  border:none;
+  margin-left:0px;
+  padding-bottom:8px;
+}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home #steps #publics_cible .menu li {
+  background:url(../pictures/abc_fleche.png) 0 2px no-repeat; 
+  padding:0 0 0 20px!important;
+  font:0.8rem/20px trebuchet ms;min-height:inherit;
+}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home #steps #publics_cible .menu li a {
+  text-decoration:none;
+  color:#000;
+}
+#sectionright #tx-fwbabcdemarches #abc-demarches-home #steps #publics_cible .menu li a:hover {
+  text-decoration:underline;
+}
+
+
+/* *********************************************************************************** */
+/*                                        Lexique                                      */
+/* *********************************************************************************** */
+
+
+#pagecartouche .alphabet a {color: #91218d;}
+#pagecartouche .alphabet a:hover {color: #91218d; text-decoration: none;}
+#pagecartouche .alphabet ul li {background: transparent; text-decoration: none; padding-left: 0px; padding-bottom:10px; }
+#pagecartouche .alphabet ul li a{background-color: transparent; color: #000; border-radius:3px; border: 0px;}
+#pagecartouche .alphabet ul li a.current {background: none; background-color: #91218d; color: #fff;}
+#pagecartouche .alphabet ul li a.current:hover {color: #fff;}
+#pagecartouche .alphabet li {color: #91218d; border-radius: 3px; border: 1px solid #91218d; background-color: #fff; text-decoration: none; width: 20px;}
+#pagecartouche .alphabet li a.current {background: none; background-color: #91218d; padding-left: 0px; border:none;}
+#pagecartouche .alphabet a {color: #fff; font-weight: bold; border-radius: 3px; border: 0px; background-color: #91218d; text-decoration: none;}
+#pagecartouche .alphabet a:hover {color: #91218d; font-weight: bold; background-color: #fff; text-decoration: none;}
+
+/*carrousel*/
+.slideshow .text-block h1{color:#000;}
+.slideshow ul.slides .owl-page.active span {
+  border-color: #000;
+  background-color: #000;
+}
+.slideshow ul.slides .owl-page span {
+  border-color: #000;
+}
+
+.slideshow ul.owl-carousel .owl-pagination .owl-page span {
+  border-color: #000;
+}
+
+.slideshow ul.owl-carousel .owl-pagination .owl-page.active span {
+  background-color: #000;
+}
+
+#gallery-10768 {
+	margin:auto;
+	margin-top:40px;
+}

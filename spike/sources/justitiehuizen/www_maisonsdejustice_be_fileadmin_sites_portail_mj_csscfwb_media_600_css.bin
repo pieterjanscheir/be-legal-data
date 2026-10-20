@@ -1,0 +1,49 @@
+/* CSS Document */
+@media only screen and (max-width: 600px) {
+.tx-solr-q {
+  width : 65%;
+}
+body,html{
+    font-size:0.9em;
+}
+ul li{
+    border: none;
+}
+#titreportail{
+    float:left;
+}
+.pextheader_resp{
+    clear:both;
+    float:left!important;
+    margin-left:0;
+}
+header .center div, header .center p{
+    margin-left:0;
+    margin-right:40px;
+}
+.lang{
+    margin-right:40px;
+}
+#pagecartouche ul li{
+  background: url("../pictures/bullet.png") no-repeat scroll left top 6px / 7px auto rgba(0, 0, 0, 0);
+  display: inline-block;
+  font-size: 0.75rem;
+  margin: 0%;
+  padding-left: 15px;
+  width:100%;
+}
+#pagecartouche ul li a {
+    color: #0066cc;
+    text-decoration: underline;
+}
+.nomportail,.img_header_logo{
+    min-width:300px;
+    clear:both;
+}
+
+#extheader{
+    margin-bottom: 20px;
+}
+
+
+}

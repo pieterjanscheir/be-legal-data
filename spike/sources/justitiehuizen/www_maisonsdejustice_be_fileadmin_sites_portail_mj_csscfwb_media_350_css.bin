@@ -1,0 +1,58 @@
+/* CSS Document */
+@media only screen and (max-width: 350px) {
+
+header .center p,.lang{
+    margin-right:20px;
+    font-size:0.85em;
+  }
+header .center div, header .center p{
+    margin-left:0;
+  }
+footer li,footer li:nth-of-type(2),footer li:first-child{
+    float:none;
+    width:90%!important;
+  /*  margin:10px auto; */
+  }
+.institut li p{
+    margin-left:0;
+  }
+
+.foot5{
+    margin-top:0!important;
+  }
+header .center a img{
+    width:100px;
+    margin:15px;
+  }
+nav.center div.navresp{
+    float: none;
+margin-right: 0;
+  }
+.tx-solr-q {
+  width : 65%;
+  }
+
+#socialtoolbar img
+{
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+
+#socialtoolbar
+{
+  float:none;
+  padding-left: 70px;
+  padding-top: 4px;
+  padding-right: 0;
+}
+
+header #extheader .center div, header .center p, .lang {
+    float: none;
+    margin-right: 0px;
+}
+div.center:nth-child(2){
+margin-top: 25px;
+  }
+}

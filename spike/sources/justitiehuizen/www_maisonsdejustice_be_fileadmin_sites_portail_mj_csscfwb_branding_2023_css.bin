@@ -1,0 +1,154 @@
+/*------------------------*/
+/* Ajout pour le branding */
+/*------------------------*/
+
+header nav ul li, footer+nav ul li {
+  border-left:none;
+  text-transform:none;
+}
+
+.img_header_logo {width:300px;}
+
+.menu, .navsize:first-child {
+  border-top:none;
+}
+
+header .center:nth-of-type(2) {
+  border-bottom:1px solid lightgray;
+}
+
+footer+nav ul li.navportail {
+  display:none;
+}
+
+.navenseignement a{
+    background:url('https://www.maisonsdejustice.be/fileadmin/sites/portail_mj/pictures/mini_logo_enseignement.svg') no-repeat 0% 50%;
+}
+.navculture a{
+    background:url('https://www.maisonsdejustice.be/fileadmin/sites/portail_mj/pictures/mini_logo_culture.svg') no-repeat 0% 50%;
+}
+.navsport a{
+    background:url('https://www.maisonsdejustice.be/fileadmin/sites/portail_mj/pictures/mini_logo_sport.svg') no-repeat 0% 50%;
+}
+.navjeunesse a{
+    background:url('https://www.maisonsdejustice.be/fileadmin/sites/portail_mj/pictures/mini_logo_jeunesse.svg') no-repeat 0% 50%;
+}
+.navrecherche a{
+    background:url('https://www.maisonsdejustice.be/fileadmin/sites/portail_mj/pictures/mini_logo_recherche.svg') no-repeat 0% 50%;
+}
+.navjustice a{
+    background:url('https://www.maisonsdejustice.be/fileadmin/sites/portail_mj/pictures/mini_logo_justice.svg') no-repeat 0% 50%;
+}
+
+.navenseignement{
+    width:19%;
+}
+
+.navculture{
+    width:16%;
+}
+
+.navsport{
+    width:18%;
+}
+
+.navjeunesse{
+    width:20%;
+}
+
+.navrecherche{
+    width:22%;
+}
+
+.navjustice{
+    width:20%;
+}
+
+.copyright a {
+  position:relative;
+  top:28px;
+  left:-10px;
+}
+
+.copyright a img {
+  width:60px;
+}
+
+
+article .article-content {
+  background-color:rgba(66,85,99,0.15) !important;
+  border-radius:20px;
+}
+
+.article-content a:hover{color:inherit;text-decoration:underline;}
+
+.articleenseignement .article-content, .articletheme3 .article-content{
+    background:url('https://www.federation-wallonie-bruxelles.be/fileadmin/sites/xportail/pictures/mini_logo_enseignement.svg') no-repeat 10px 10px rgba(58,151,201,0.15) !important;
+}
+.articleculture .article-content, .articletheme1 .article-content{
+    background:url('https://www.federation-wallonie-bruxelles.be/fileadmin/sites/xportail/pictures/mini_logo_culture.svg') no-repeat 10px 10px rgba(227,114,118,0.15) !important;
+}
+.articlesport .article-content, .articletheme4 .article-content{
+    background:url('https://www.federation-wallonie-bruxelles.be/fileadmin/sites/xportail/pictures/mini_logo_sport.svg') no-repeat 10px 10px rgba(237,158,65,0.15) !important;
+}
+.articlejeunesse .article-content, .articletheme2 .article-content{
+    background:url('https://www.federation-wallonie-bruxelles.be/fileadmin/sites/xportail/pictures/mini_logo_jeunesse.svg') no-repeat 10px 10px rgba(133,195,142,0.15) !important;
+}
+.articlerecherche .article-content, .articletheme5 .article-content{
+    background:url('https://www.federation-wallonie-bruxelles.be/fileadmin/sites/xportail/pictures/mini_logo_recherche.svg') no-repeat 10px 10px  rgba(66,160,158,0.15) !important;
+}
+.articlejustice .article-content, .articletheme6 .article-content{
+    background:url('https://www.federation-wallonie-bruxelles.be/fileadmin/sites/xportail/pictures/mini_logo_justice.svg') no-repeat 10px 10px rgba(190,128,182,0.15) !important;
+}
+
+
+
+.articleenseignement a:nth-of-type(2),.articleenseignement h1 a:hover,.articleenseignement h1 a:active,.navenseignement a:hover{
+    color:#000 !important; text-decoration: underline;
+}
+.articleculture a:nth-of-type(2),.articleculture h1 a:hover,.articleculture h1 a:active,.navculture a:hover{
+    color:#000 !important; text-decoration: underline;
+}
+.articlesport a:nth-of-type(2),.articlesport h1 a:hover,.articlesport h1 a:active,.navsport a:hover{
+    color:#000 !important; text-decoration: underline;
+}
+.articlejeunesse a:nth-of-type(2),.articlejeunesse h1 a:hover,.articlejeunesse h1 a:active,.navjeunesse a:hover{
+    color:#000 !important; text-decoration: underline;
+}
+.articlerecherche a:nth-of-type(2),.articlerecherche h1 a:hover,.articlerecherche h1 a:active,.navrecherche a:hover{
+    color:#000 !important; text-decoration: underline;
+}
+.articlejustice a:nth-of-type(2),.articlejustice h1 a:hover,.articlejustice h1 a:active,.articlejustice h1 a:hover,.navjustice a:hover{
+    color:#000 !important; text-decoration: underline;
+}
+
+footer.institut {background-color:#efefef;}
+
+.masonryitem .article-content span {color:#000 !important;}
+
+
+#content .article-content a:hover, #content .article-content H1 {
+  color:#000;
+  }
+
+/* #content a:hover {
+  color:#000;
+  }
+*/
+
+article .article-content h2 {
+  padding-top:25px;
+}
+
+.nomportail {margin-left:26px; padding-left:0px;line-height:64px !important;border-width:1px;}
+.nomportail img {
+    height: 64px;
+  }
+
+/*--------------------------*/
+/* Ajout de la font poppins */
+/*--------------------------*/
+
+
+nav .navresp li a {font-family:poppins;font-size:16px;font-weight:400;}
+

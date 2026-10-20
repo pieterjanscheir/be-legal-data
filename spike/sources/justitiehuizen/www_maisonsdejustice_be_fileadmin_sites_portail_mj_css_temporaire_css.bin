@@ -1,0 +1,22 @@
+
+.footerthema ul li a {
+  display:none;
+}
+#navleft h2 {
+    line-height: 2em;
+}
+table {
+border : 2px solid #91218d
+}
+#pagecartouche a {
+    font-weight: bold;
+}
+#pagecartouche ul li {
+    margin-right: 0px;
+}
+#pagecartouche .csc-textpic-imagewrap {
+    width: 88%;
+}
+a.linkToLexique{
+    font-weight: bold;
+}

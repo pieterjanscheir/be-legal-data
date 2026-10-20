@@ -1,0 +1,122 @@
+/* CSS Document */
+/* Portrait tablet to landscape and desktop */
+@media only screen and (max-width: 1200px) {
+
+body,html,header,footer,nav,section,.center,footer.center,#content,footer.sectionimg,header nav ul,footer+nav ul,.navsize,header .center:nth-of-type(2),#contentnews{
+    width:100%;
+}
+/*header .center a img{
+    width:300px;
+    margin:30px;
+    display:block;
+}
+*/
+header nav,footer+nav{
+    height:86px;
+    width:auto;
+}
+
+header nav,footer+nav{
+    float: left;
+    clear: none;
+    margin:30px;
+}
+footer+nav{
+    width:100%;
+    float: none;
+    margin:10px auto;
+}
+footer+nav.center{
+    width:100%;
+    margin:10px auto;
+}
+html body div#content section section#center div.tx-cfwbarticlefe section#centerfocus article#pagefocus p i{
+  font-style:italic!important;
+}
+.nomportail{
+    margin:30px 30px!important;
+}
+.img_header_logo{
+    margin:10px 0;
+}
+.contentfocusportrait{
+    width:50%;
+    float:left;
+    margin:0 1%;
+}
+#pageportrait, #pagefocus,#focusplus,#bioxpress{
+    width:98%;
+}
+#centerfocus,#centerportrait{
+    width:100%;
+    margin:0;
+}
+#centercontent{
+    width:100%;
+}
+#bioxpress,#focusplus{
+   width: 99%;
+   margin-left: 0;
+   margin-bottom:10px;
+}
+header .center{
+    float:left;
+}
+.tx-solr-searchbox{
+    display:none;
+}
+.navenseignement,.navculture,.navsport,.navjeunesse,.navrecherche,.navjustice{
+    background-size:20px;
+    background-position:7% 0%;
+    float: none;
+    border: none;
+    padding-left: 30px;
+    padding-top:4px;
+    padding-bottom:4px;
+  display: block;
+}
+.navportail {
+    padding-left: 30px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+header .center div.navresp,nav.center div.navresp{
+    float:left;
+    margin-right: 5px;
+    clear:none;
+}
+.navresp:nth-of-type(2){
+    margin-left:15px;
+}
+#content{
+    clear:both;
+}
+header .center div, header .center p {
+    margin-left: 30px;
+    margin-right: 0;
+}
+#navleft,#sectionright{
+    width:19.2%;
+}
+/* #navleft, #sectionright div {width:100%;} */
+footer li,footer li:nth-of-type(2){
+    width:19%;
+}
+footer{
+    padding-left:10px;
+}
+#contentnews article{
+    /*width:45%;*/
+    height:auto;
+    /*padding:15px;*/
+}
+#center .slideshow ul.slides img{
+  width:100%;
+}
+#AddThis img{
+  height: 16px;
+  width: 16px;
+  margin: 0;
+}
+}

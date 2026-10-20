@@ -1,0 +1,157 @@
+.logoculture {
+    margin-top: 16px;
+}
+ol li{
+    font-family: trebuchet ms;
+    font-size: 0.8rem;
+    list-style: outside none decimal;
+    margin-left: 25px;
+}
+ol li ul li{
+    font-family: trebuchet ms;
+    font-size: 0.8rem;
+    list-style: outside none;
+    margin-left: 25px;
+}
+
+
+element.style {
+    font-family: Trebuchet MS, arial;
+    font-size: 0.85rem;
+}
+.at300b img, .at300bo img{
+    margin-top: 3px;
+}
+.lien_1_footer {
+    font-weight: bold;
+    padding-top: 5px;
+}
+.lien_2_footer  {
+    font-weight: normal;
+}
+footer.institut li {
+    width: 19.2%;
+}
+
+/* 144 */
+#sectionright {
+    margin-top: 15px;
+}
+/* 309 */
+.current {
+    background: url("../pictures/bullet.png") no-repeat scroll left top 7px / 7px auto rgba(0, 0, 0, 0);
+}
+/* 560 */
+article p, article time, article span, #bioxpress p {
+    font: 0.8rem/20px trebuchet ms;
+}
+/* 572 */
+article h2 {
+    padding: 10px 10px;
+    font-weight: bold;
+}
+/* 584 */
+.tx-cfwbarticlefe article#pagecontent {
+    padding-top: 0;
+}
+/* 626 */
+article p a {
+    font: 0.8rem trebuchet ms;
+}
+/* 764 */
+#sectionright h2 {
+    padding: 10px 0 0 6px;
+}
+/* 790 */
+.sectionimg {
+    line-height: 45px;
+}
+/* 805 */
+#pagecontent > h1, #centerfocus > h1, #centerportrait > h1, #pagecartouche > h1 {
+    padding-left: 10px;
+    margin-top: 29px;
+}
+/* 820 */
+figure {
+    margin-top: 35px;
+}
+/* 827 */
+#centerportrait figure img, #centerfocus figure img, #pagecontent figure img {
+    margin-bottom: 0;
+    padding-top: 0;
+}
+/* 833 */
+#centerportrait figcaption, #centerfocus figcaption, #pagecontent figcaption {
+    padding: 5px 0 8px 5px;
+    margin-bottom: 10px;
+}
+/* 853 */
+#pagecontent time, #centerportrait time, #centerfocus time {
+    padding-top: 20px;
+}
+/* 907 */
+.breadcrumb {
+    margin-top: 0px;
+    padding-left: 15px;
+}
+/* 919 */
+#pagecartouche ul li {
+    background: rgba(0, 0, 0, 0) url("../pictures/bullet.png") no-repeat scroll left 8px / 7px auto;
+    font: 0.8rem/20px trebuchet ms;
+    margin: 0px;
+}
+/* 921 */
+footer.institut {
+    font-weight: bold;
+    text-align: left;
+}
+/* 939 */
+/* modifié par mmi 20141215 */
+ footer.footerthema li:first-child, footer.institut li:first-child {
+    margin-right: 0px;
+}
+/* ajouté par mmi 20141215 */
+ footer.footerthema ul li ul li:first-child, footer.institut ul li ul li:first-child {
+    margin-left: 0px;
+}
+
+/* 945 */
+.footerthema {
+    border-top: medium none;
+    background-color: #d9d9d9;
+    text-align: left;
+}
+/* 983 */
+footer.institut ul li p a {
+    text-decoration: none;
+}
+
+/* 1008 */
+.sectionimg div.right {
+  float:right;
+  width:21%;
+}
+.up p a {padding-left:15px;
+  background: url("../pictures/fleche_haut.jpg") no-repeat 0px 3px;
+}
+
+/* 1510 */
+#center p {
+    padding: 5px 5px 5px 10px;
+    font-family: trebuchet ms;
+    font-size: 0.8rem;
+}
+
+p.actu {padding:5px;}
+
+/* 1525 */
+
+DIV.csc-textpic DIV.csc-textpic-imagewrap .csc-textpic-image .csc-textpic-caption {
+    padding-left: 0;
+}
+
+
+#pagecartouche a#pix {
+	color:#fff;
+}
+

@@ -1,0 +1,71 @@
+body header form #submit_search{
+    background-image:url('../pictures/search_ie.jpg');
+  font-size:5px;
+}
+
+header #extheader .center .tx-solr form input{
+  margin-top: 0px;
+  vertical-align:center;
+}
+
+h2, h2 a {font-size:16px;}
+#navleft ul li a { font-size:10px;
+}
+#navleft ul li h2 a { font-size:16px;
+}
+
+.breadcrumb {font-size:10px;}
+
+#navleft ul li a:hover,#navleft ul li a:active,#sectionright a:hover,#section a:active{
+  color:#cacaca;
+}
+.articleenseignement{
+    background-color:#d4e2f5;
+}
+
+.articleculture{
+    background-color:#faccd6;
+}
+
+.articlesport{
+    background-color:#ffdecc;
+}
+
+.articlejeunesse{
+    background-color:#d8ebd7;
+}
+
+.articlerecherche{
+    background-color:#ccedee;
+}
+
+.articlejustice{
+    background-color:#e9d3e8;
+}
+
+.articledefault{
+    background-color:#cccccc;
+}
+#newsletter form{
+  background-color:#e5e5e5;
+}
+.imgcontent{
+  background-color:#d8ebd7;
+}
+.current,#sectionright li,#focusplus li{
+    background:url('../pictures/bullet_ie.png') no-repeat left center;
+}
+
+.article-content span {font-size:11px;}
+p, #center #pagecartouche .csc-textpic ul li  {font-size:12px;}
+#sectionright .annonces .csc-textpic {height:auto;}
+
+form input {padding:0px;}
+input.tx-solr-q {height:30px;}
+
+#centerfocus #pagefocus ul li {
+    font-size: 0.75em;
+    padding: 5px;
+    font-family: arial;
+}
+

@@ -1,0 +1,42 @@
+{
+ "retrieved": "2026-10-20T20:26:23.975Z",
+ "pages": [
+  {
+   "url": "https://www.gerechtsdeurwaarders.be/",
+   "final": "https://www.gerechtsdeurwaarders.be/",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "www_gerechtsdeurwaarders_be_.html",
+   "bytes": 149554,
+   "sha256": "996c04a795d0009b039e5a9658c6c027972d8b3634dd0aa074f99b1cf115a45b"
+  },
+  {
+   "url": "https://www.gerechtsdeurwaarders.be/bailiff",
+   "final": "https://www.gerechtsdeurwaarders.be/bailiff",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "www_gerechtsdeurwaarders_be_bailiff.html",
+   "bytes": 131425,
+   "sha256": "162bccae5d726f031e393514116c7eb1b0ec203ab680499ef77b4c60430b30fc"
+  },
+  {
+   "url": "https://www.gerechtsdeurwaarders.be/home",
+   "final": "https://www.gerechtsdeurwaarders.be/",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "www_gerechtsdeurwaarders_be_home.html",
+   "bytes": 149554,
+   "sha256": "996c04a795d0009b039e5a9658c6c027972d8b3634dd0aa074f99b1cf115a45b"
+  },
+  {
+   "url": "https://www.gerechtsdeurwaarders.be/de-gerechtsdeurwaarder/taken",
+   "final": "https://www.gerechtsdeurwaarders.be/de-gerechtsdeurwaarder/taken",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "www_gerechtsdeurwaarders_be_de_gerechtsdeurwaarder_taken.html",
+   "bytes": 147280,
+   "sha256": "32502c2efc5179b02ef1608254bd5195198385351f24110ce5093f7ce4589143"
+  }
+ ],
+ "unvisited": []
+}

@@ -1,0 +1,681 @@
+{
+ "retrieved": "2026-10-20T20:20:26.784Z",
+ "pages": [
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen.html",
+   "bytes": 42040,
+   "sha256": "a9f06bef872ea44e8e51648b07b89723fdbfc6dae031f9145ed7017bf85dd453"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_paifve",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_paifve",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_paifve.html",
+   "bytes": 33886,
+   "sha256": "58af4248789b84c31e5a4cd3bf7067ddc1edf7442477662c3847b1c041d176d9"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_aarlen",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_aarlen",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_aarlen.html",
+   "bytes": 33797,
+   "sha256": "598ff8180eec612fc3c22f475e42af613f8f21e5a8e4c63f002f0f341430ef75"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_andenne",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_andenne",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_andenne.html",
+   "bytes": 36863,
+   "sha256": "3197b4d4ba0f01679156120aeec83243037d98004e09326e19fcf23cba7505f1"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_antwerpen_0",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_antwerpen_0",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_antwerpen_0.html",
+   "bytes": 34457,
+   "sha256": "d74addc62f56c6382a547d3a3cb0df532d81d85f9eb9a3d52a6c565ff0b2c00e"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_mons",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_mons",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_mons.html",
+   "bytes": 37199,
+   "sha256": "0977e1d364e01a297147ae91dd8b0b37411bcbd211162d51bee3e53d8371a429"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_beveren",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_beveren",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_beveren.html",
+   "bytes": 34297,
+   "sha256": "700fc521b78a3711b19c6eb651a0ae828873f029ce079866a2f154a7075e484b"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_brugge",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_brugge",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_brugge.html",
+   "bytes": 43455,
+   "sha256": "fd454b6e2c4b932297212fdaef6b06a9dac28030c990b07124f3d2d47042a22e"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_dendermonde",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_dendermonde",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_dendermonde.html",
+   "bytes": 41364,
+   "sha256": "28a32fb4cec3be7922cae7e40b58d3d954420f434acfcfc06defe816d9c42eae"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_dendemonde_hulp",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_dendemonde_hulp",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_dendemonde_hulp.html",
+   "bytes": 33716,
+   "sha256": "a389dedb1d1cc021c2feb65a94dbd203db5cea7ff554c8f72b8eaa1ad3ca988a"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_dinant",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_dinant",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_dinant.html",
+   "bytes": 33439,
+   "sha256": "bf13daebc6990af0a7b8fb612fc456848d7a821e179d57e176c3d6df579f5a67"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_tournai",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_tournai",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_tournai.html",
+   "bytes": 34305,
+   "sha256": "197856d35f7cc8da9ff611055396de4a9cc55859e7f53499ee0ea952abb99dbe"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_gent",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_gent",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_gent.html",
+   "bytes": 42641,
+   "sha256": "1c6e3b61973f57c222268c6d2776379f888c71a32ad802be3ace7c57b9e40df3"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_hasselt",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_hasselt",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_hasselt.html",
+   "bytes": 36335,
+   "sha256": "7b2200376768c1df0fdacec89afa751a4e4cfd3989787a1a1a3714f6a2a1da21"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_haren",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_haren",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_haren.html",
+   "bytes": 35918,
+   "sha256": "86a91506a7ee093f043dae739cd627fa1ef56b862b6a539db7fa515abafb68e7"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_hoei",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_hoei",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_hoei.html",
+   "bytes": 35731,
+   "sha256": "ad533f703c1a0e5bf95673eea2df8f4fcd5504b068ccc917326fcb474e5403d2"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_hoogstraten",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_hoogstraten",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_hoogstraten.html",
+   "bytes": 33897,
+   "sha256": "a6dbb471eb2b5d77d1b3590da34b07742c6b8c2a49aae430626e13b59d278981"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_ieper",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_ieper",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_ieper.html",
+   "bytes": 34746,
+   "sha256": "e7b56cac017ab3f846865d33f732cec82b74295095745c08ad4dc7c60d0c8318"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_ittre",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_ittre",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_ittre.html",
+   "bytes": 36050,
+   "sha256": "d25467e97c8780f1ea6e83e4cc82982a8f7acef12516224ff87dfc70b5a6640a"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_jamioulx",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_jamioulx",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_jamioulx.html",
+   "bytes": 34150,
+   "sha256": "72163642a966044a522725fc6560631769c481cae243037bde225c42134a0261"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/detentiehuizen/adres_detentiehuis_kortrijk",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/detentiehuizen/adres_detentiehuis_kortrijk",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_detentiehuizen_adres_detentiehuis_kortrijk.html",
+   "bytes": 36596,
+   "sha256": "f80a90211f8a096ecec52f6313f702374680d66194a1b5e62a3ab7bf5c1273f0"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_lantin",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_lantin",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_lantin.html",
+   "bytes": 40788,
+   "sha256": "d4692719cba1ade29b33bdde13ca199513b928e370748ea6d48c18e130ef2f3d"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_leuven",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_leuven",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_leuven.html",
+   "bytes": 35273,
+   "sha256": "a2efc62e16340a5955dccf2006d2216c0b66cb02f0c2563ad8c9f90cec04cdd0"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_leuvenhulp",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_leuvenhulp",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_leuvenhulp.html",
+   "bytes": 38881,
+   "sha256": "81f0c6edfb2368b6f7bc2824b2c5da8e2d47464470f035d543dbe9ddc1026a13"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_leuze",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_leuze",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_leuze.html",
+   "bytes": 35694,
+   "sha256": "86a08fd66f1440d52fc07e6f10e907e68f8f0ede9c8313440c54020b946f33c9"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_marche-en-famenne",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_marche-en-famenne",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_marche_en_famenne.html",
+   "bytes": 35809,
+   "sha256": "814698a24f587c862f25310f676c1e6c83a30aabf9fe55bfd2a5e7aa4c005d28"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_marneffe",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_marneffe",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_marneffe.html",
+   "bytes": 34085,
+   "sha256": "7b781cfa84a92a6eb5e718ea6c7fdf8f3c8332cc08a8257193f181808009d3c5"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_mechelen",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_mechelen",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_mechelen.html",
+   "bytes": 56278,
+   "sha256": "9a6b251b69339443972a77d228d7cf1eab3f0f0cc926ecea9b7d02cee260dcde"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_merksplas",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_merksplas",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_merksplas.html",
+   "bytes": 35058,
+   "sha256": "01f332498908af247cb3c5dacf3fc0d20f0b78765df23d834ab74d4537a319ef"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_namen",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_namen",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_namen.html",
+   "bytes": 36652,
+   "sha256": "4805e7922e488d735318d998a8142f6a7067a7934a7bb87eed86f4ef1f68d4f1"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_nijvel",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_nijvel",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_nijvel.html",
+   "bytes": 36059,
+   "sha256": "2e9828bdfdc6f2c9aa6296a75722ea05b0839ab3980ce4a667b4fe8bbd36c0fe"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/detentiehuizen/adres_detentiehuis_olen",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/detentiehuizen/adres_detentiehuis_olen",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_detentiehuizen_adres_detentiehuis_olen.html",
+   "bytes": 34618,
+   "sha256": "900b0f96c519a91ccea93afda2247ef140328ffd23a7573ffa2272b085333338"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_oudenaarde",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_oudenaarde",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_oudenaarde.html",
+   "bytes": 38401,
+   "sha256": "91088fece575dc1a34131ea57c2782c085a88cef8a6981a96872f5488ad1023b"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_ruiselede",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_ruiselede",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_ruiselede.html",
+   "bytes": 34438,
+   "sha256": "c015fb1acea4b2ce63298cfa8147618726fdbf91dcf1b1ddd6d0e4a348ff3951"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_stgillis",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_stgillis",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_stgillis.html",
+   "bytes": 39695,
+   "sha256": "17cbff0f45f50efbcd6c8d344605e36cc927e8c83cb1df8fca354e972888b3a4"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_sthubert",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_sthubert",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_sthubert.html",
+   "bytes": 34881,
+   "sha256": "c04b1a4f97ed3329848aa202a926c18ce52804affa75f6d5434bac5fb49c0b2a"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_tongeren",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_tongeren",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_tongeren.html",
+   "bytes": 32232,
+   "sha256": "d8c46f334e946d538909137de0fba70a3874a5d8124339b983113f2941b6b527"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_turnhout",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_turnhout",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_turnhout.html",
+   "bytes": 37990,
+   "sha256": "654eda87434dfe5115d2b2ca0fdcf7a3e0b697b7510e743c8766feb17296a4eb"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/detentiehuizen/adres_detentiehuis_vorst",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/detentiehuizen/adres_detentiehuis_vorst",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_detentiehuizen_adres_detentiehuis_vorst.html",
+   "bytes": 33863,
+   "sha256": "ea2f5728bd65038a3743da97d9cea2305add82876840f6ea0a15a0be5164d0d9"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_wortel",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_wortel",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_adres_gevangenis_wortel.html",
+   "bytes": 34375,
+   "sha256": "01de6f6138cfc2ba66b4046cf5bce9affb1beba0c8841767cd5fd9507d90983a"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/paifve",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/paifve",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_paifve.html",
+   "bytes": 30945,
+   "sha256": "fb5d0c7459261262672f2e3fbefb91c7e0df4fc2d840cbdd5ff76a61397c145d"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/arlon",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/arlon",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_arlon.html",
+   "bytes": 29085,
+   "sha256": "f29a03640ced5a30c7a56ad27e748b8464132284978fdc03a8ddc10ee0977996"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/andenne",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/andenne",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_andenne.html",
+   "bytes": 29449,
+   "sha256": "2cbfa7a03957149c7a911ad943b1cf2ae8f7bef85b28017cd0a2773a7983bc47"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/antwerpen",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/antwerpen",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_antwerpen.html",
+   "bytes": 29697,
+   "sha256": "eb282e97ecaa4f27cdd99117e6290c69109735b877349543cf605879eac6923f"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/mons",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/mons",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_mons.html",
+   "bytes": 30095,
+   "sha256": "6479e37c44e8413dc292c8c3d58383d75710fe0f7a8f6b8c1904812c6404ee34"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/copy_of_marche-en-famenne",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/copy_of_marche-en-famenne",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_copy_of_marche_en_famenne.html",
+   "bytes": 32197,
+   "sha256": "d61849beca5b732b022248ca2448e046f12589c6ebf0edb2e89d5c050fce02e0"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/brugge",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/brugge",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_brugge.html",
+   "bytes": 30442,
+   "sha256": "383cd108b15b463a16c3a115641d70fc84100e6d2ffc0e1ddf5a2fd24420eb7b"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/dendermonde_hulp",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/dendermonde_hulp",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_dendermonde_hulp.html",
+   "bytes": 31941,
+   "sha256": "4c86587cab5f9e6fa33e9aaa532707aa5a4c5ea79b00eb76e849ff59236f871c"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/dinant",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/dinant",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_dinant.html",
+   "bytes": 31002,
+   "sha256": "bb1ad090b90e56d7a4155791eefbe8fef78e0644241aa9b1adfcdcf7de114415"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/gent",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/gent",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_gent.html",
+   "bytes": 29399,
+   "sha256": "92b982b4c8115876169b80917d163c490c8c40a7869d75f83792b6b3ec64e57a"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/hasselt",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/hasselt",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_hasselt.html",
+   "bytes": 30430,
+   "sha256": "c0d5b06bbb8b70a7387406787eb116ee9510dbc63e51a8c87967a9232eb2b4f9"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/huy",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/huy",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_huy.html",
+   "bytes": 31147,
+   "sha256": "71634f6c7166445c8548536689ffb4c8512021d01c148e7f793b1611dbc0d5c2"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/hoogstraten",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/hoogstraten",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_hoogstraten.html",
+   "bytes": 31139,
+   "sha256": "55cfa0340d5ab7efd446b4fe5e4ba375e0ada9b749dfa36a09ef20c43fa2e4c4"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/ieper",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/ieper",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_ieper.html",
+   "bytes": 30918,
+   "sha256": "b2b92e8411bae423ea743158ffc0050b26540f43b0ca92357b0a9573cfde0dda"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/ittre",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/ittre",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_ittre.html",
+   "bytes": 31937,
+   "sha256": "980eec15a09143a9cfb3bfee5fb91dcf204a759764692e94faf4e8c525c80acd"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/jamioulx",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/jamioulx",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_jamioulx.html",
+   "bytes": 31133,
+   "sha256": "cd99432d60e024ae2429b4256cb96c4cf12d89629248ed421eba40c0865a0c44"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/lantin",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/lantin",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_lantin.html",
+   "bytes": 33017,
+   "sha256": "ddb21ef43d72ba1dffb4537bb84c41b45ae994f2ad7348894b401d1c4e2552cb"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/leuven_centraal",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/leuven_centraal",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_leuven_centraal.html",
+   "bytes": 29428,
+   "sha256": "761262e4878ec6f43fc28c2704527afc1d32f1ac8d6bab667f8c92846b5a34a3"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/leuven_hulp",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/leuven_hulp",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_leuven_hulp.html",
+   "bytes": 29530,
+   "sha256": "fb354e846b24eaf5c457eae468c787195c17f6ba9fa9b75881797dc40bdfe07c"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/leuze",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/leuze",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_leuze.html",
+   "bytes": 33569,
+   "sha256": "38224db4af255ac1441ace0b1e5cd0f3ca9efa7721a65985b5fd74be8e3d3614"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/copy_of_dinant",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/copy_of_dinant",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_copy_of_dinant.html",
+   "bytes": 31370,
+   "sha256": "fd65091e5e5f1c0e476bb06c86209177c03ff1cbfcc984682941849d8c472993"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/marneffe",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/marneffe",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_marneffe.html",
+   "bytes": 29256,
+   "sha256": "6e61bdbdb9a31e9f902ce8f6f80931820217fc3c1d2178174399a226033704b4"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/mechelen",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/mechelen",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_mechelen.html",
+   "bytes": 28900,
+   "sha256": "0b63b4cb81e995cf693a2ba3074c04a2dba26e26aab5c921ff6a22bf02a19e9e"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/merksplas",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/merksplas",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_merksplas.html",
+   "bytes": 29630,
+   "sha256": "49921de2e6e965152e99e5fe8b822639e1373328b709e9fec3133fcff640353f"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/namur",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/namur",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_namur.html",
+   "bytes": 30667,
+   "sha256": "a4df3525f80ecbef350ee54de3d848d1c264d9158f780b4d6f68a8073a10b506"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/nivelles",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/nivelles",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_nivelles.html",
+   "bytes": 31002,
+   "sha256": "0c8d0aebf934b23dfded34822f95248ce517845439450c76b076e3013aa957b3"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/oudenaarde",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/oudenaarde",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_oudenaarde.html",
+   "bytes": 28639,
+   "sha256": "20c038c429b47187db675782b6ffd93f9e8914ceafd9a33924af1bb80790a2f8"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/ruiselede",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/ruiselede",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_ruiselede.html",
+   "bytes": 31058,
+   "sha256": "21fdeb61a4420d2e4414cef91b4cdf7ada596fa1e61cb14140c29dd158ade407"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/st-gillis",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/st-gillis",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_st_gillis.html",
+   "bytes": 29505,
+   "sha256": "fef0d5e0ef623e07f383f098a0739a534ee19281787cc892024e5f4d13446557"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/st-hubert",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/st-hubert",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_st_hubert.html",
+   "bytes": 32077,
+   "sha256": "a754aba46f356f6183f9770d3cfc344a397fa3d3c9a8e9512a5ee661aa8df99b"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/tongeren",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/tongeren",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_tongeren.html",
+   "bytes": 28890,
+   "sha256": "fe6a470ee10003bb0184ccd630c475b2018eaa21482b2082c8be5fc10bfeb743"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/turnhout",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/turnhout",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_turnhout.html",
+   "bytes": 29711,
+   "sha256": "896e44a7888743f888ede37d67a0e18ea2bf8695c5ce41886de4e7719c49f8cd"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/detentiehuizen/forestmaisondedetention.adm.epi@just.fgov.be",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/detentiehuizen/forestmaisondedetention.adm.epi@just.fgov.be",
+   "status": 404,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_detentiehuizen_forestmaisondedetention_adm_epi_just_fgov_be.html",
+   "bytes": 26065,
+   "sha256": "a6a7c809e933bbc05cf3b9be9b78c05f5533a52361af1e70dfbe88f7291bf5db"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/wortel",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info/wortel",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info_wortel.html",
+   "bytes": 28189,
+   "sha256": "eeaa05c317f1a6c3e059cff8c82976a5f799496ac225fbb7b62924487e39a0d7"
+  },
+  {
+   "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info",
+   "final": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/meer_info",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "justitie_belgium_be_nl_themas_en_dossiers_gevangenissen_belgische_gevangenissen_gevangenissen_meer_info.html",
+   "bytes": 26036,
+   "sha256": "90488f842e67d919698db3a2ccb6a3817aca35e1b5a513ad5f600a9d4f9987c4"
+  }
+ ],
+ "unvisited": []
+}

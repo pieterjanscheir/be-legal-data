@@ -1,0 +1,418 @@
+{
+ "retrieved": "2026-10-20T20:27:48.561Z",
+ "pages": [
+  {
+   "url": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/geografie",
+   "final": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/geografie",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_over_statbel_methodologie_classificaties_geografie.html",
+   "bytes": 140925,
+   "sha256": "428b2bdbeed5dd9f29fe6662ec9cd0b2edcf8369e95618383539683e8a872e1d"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis",
+   "final": "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_category_All_keys_refnis.html",
+   "bytes": 157030,
+   "sha256": "2cd7c8c74aaa92b3bf150b6f8c3516db90cd3f98c2e80a22dbc5b90a407b1a85"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties",
+   "final": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_over_statbel_methodologie_classificaties.html",
+   "bytes": 131410,
+   "sha256": "915c236300860c7ff429afaac56988b5fa14287dc540288a831326b4527ad416"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/nace-bel-2025",
+   "final": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/nace-bel-2025",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_over_statbel_methodologie_classificaties_nace_bel_2025.html",
+   "bytes": 132965,
+   "sha256": "4fbd21fa38bf5423830bdf4bca99a6fa7ca39f01a7914fa1b98bbf996d30565a"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/nace-bel-2008",
+   "final": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/nace-bel-2008",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_over_statbel_methodologie_classificaties_nace_bel_2008.html",
+   "bytes": 133339,
+   "sha256": "ab586ebc60ad92d09c45e103ec446dcd7c0728b6c3dcf1c4a925ba43435765b2"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/prodcom",
+   "final": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/prodcom",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_over_statbel_methodologie_classificaties_prodcom.html",
+   "bytes": 131329,
+   "sha256": "96365cb0a42914765ac8efdd4e39908c80db8d93827eb1d11d374b2b2ab82121"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/landencodes",
+   "final": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/landencodes",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_over_statbel_methodologie_classificaties_landencodes.html",
+   "bytes": 132391,
+   "sha256": "10f050b5f815ada52746a9a24c7764fdfb1322e4a7487ec991baea1336c5f2a3"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/statistische-sectoren",
+   "final": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/statistische-sectoren",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_over_statbel_methodologie_classificaties_statistische_sectoren.html",
+   "bytes": 131075,
+   "sha256": "792626b69d57051ea4b52a6eb13081ddc1e7676010854f043e264ea954e51e6c"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/internationale-standaard-beroepen-classificatie-isco-08",
+   "final": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/internationale-standaard-beroepen-classificatie-isco-08",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_over_statbel_methodologie_classificaties_internationale_standaard_beroepen_classificatie_isco_08.html",
+   "bytes": 131961,
+   "sha256": "76c320829559671c6faa15d11f1533fc3222a2ebe91bfcbfd1ace5f9933eda72"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/internationale-standaard-classificatie-voor-opleidingen",
+   "final": "https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/internationale-standaard-classificatie-voor-opleidingen",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_over_statbel_methodologie_classificaties_internationale_standaard_classificatie_voor_opleidingen.html",
+   "bytes": 131421,
+   "sha256": "5fe7767c069368fac038309dd21dc2a0c7db57e6c82160665bdc0b173830e761"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data?category=191",
+   "final": "https://statbel.fgov.be/nl/open-data?category=191",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_category_191.html",
+   "bytes": 155672,
+   "sha256": "4d6670f74e1348a7d25287deaa92e57b9426d73a43049fda17ee4a9afe51df05"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/nuts-codes-2024",
+   "final": "https://statbel.fgov.be/nl/open-data/nuts-codes-2024",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_nuts_codes_2024.html",
+   "bytes": 125088,
+   "sha256": "4db5b26185c3de0927f42037f9378c7cf8d02cd9ef42b1c61773c2b30564459d"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data",
+   "final": "https://statbel.fgov.be/nl/open-data",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data.html",
+   "bytes": 155863,
+   "sha256": "f1121e5f89c541f9e81ee2a593bb02cf0ac078853e87381e42e5d58e513c4c29"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/plus",
+   "final": "https://statbel.fgov.be/nl/open-data/plus",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_plus.html",
+   "bytes": 124902,
+   "sha256": "4e4f2b53c1080c95d74ab5325600d33d127c8e862395fd824376b69e5b543529"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/geolocalisatie-van-de-verkeersongevallen-2017-2024",
+   "final": "https://statbel.fgov.be/nl/open-data/geolocalisatie-van-de-verkeersongevallen-2017-2024",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_geolocalisatie_van_de_verkeersongevallen_2017_2024.html",
+   "bytes": 128050,
+   "sha256": "dd7c5250e8e634c83e210cbe305a56cb65af440ea721217f983dc1ba53aa9ed2"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/indexen-productgroep",
+   "final": "https://statbel.fgov.be/nl/open-data/indexen-productgroep",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_indexen_productgroep.html",
+   "bytes": 125499,
+   "sha256": "221913329f411e07128dd143a217b679d4a013f6a8934aca21eaf690bcc254ab"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/consumptieprijsindex-en-gezondheidsindex",
+   "final": "https://statbel.fgov.be/nl/open-data/consumptieprijsindex-en-gezondheidsindex",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_consumptieprijsindex_en_gezondheidsindex.html",
+   "bytes": 125817,
+   "sha256": "7b24f7583127d252cf445b639305b3a9ea10e6b8f5851388da05f815ff0a2576"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/monitoring-van-levensomstandigheden",
+   "final": "https://statbel.fgov.be/nl/open-data/monitoring-van-levensomstandigheden",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_monitoring_van_levensomstandigheden.html",
+   "bytes": 126066,
+   "sha256": "d649f6043a6f36666139e6027321e3fe588cf7f7bd0ceadd0896c587e6e18a0d"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/nuts-codes-2027",
+   "final": "https://statbel.fgov.be/nl/open-data/nuts-codes-2027",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_nuts_codes_2027.html",
+   "bytes": 125090,
+   "sha256": "9b4a27b41a5c9a053ad554a4e0b71cf8aec81a839de993061749b05cc3093049"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/statistische-sectoren-2026",
+   "final": "https://statbel.fgov.be/nl/open-data/statistische-sectoren-2026",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_statistische_sectoren_2026.html",
+   "bytes": 128577,
+   "sha256": "b9aee42ca1530f906f4bb1f97629a44fc053390bd92fa2f0d2aab688f32555e4"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/bevolking-naar-woonplaats-nationaliteit-burgerlijke-staat-leeftijd-en-geslacht-14",
+   "final": "https://statbel.fgov.be/nl/open-data/bevolking-naar-woonplaats-nationaliteit-burgerlijke-staat-leeftijd-en-geslacht-14",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_bevolking_naar_woonplaats_nationaliteit_burgerlijke_staat_leeftijd_en_geslacht_14.html",
+   "bytes": 127430,
+   "sha256": "42c650313240a19545906d5124f538ea99535ab018004d134c155ba7e9e9122f"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/voornamen-van-de-totale-bevolking-gemeente-16",
+   "final": "https://statbel.fgov.be/nl/open-data/voornamen-van-de-totale-bevolking-gemeente-16",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_voornamen_van_de_totale_bevolking_gemeente_16.html",
+   "bytes": 126906,
+   "sha256": "9c12a6823a358a9cfd7e25cf4aceb3e40089efbaa491aea8ce30dfac23189d37"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/familienamen-van-de-totale-bevolking-gemeente",
+   "final": "https://statbel.fgov.be/nl/open-data/familienamen-van-de-totale-bevolking-gemeente",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_familienamen_van_de_totale_bevolking_gemeente.html",
+   "bytes": 125759,
+   "sha256": "20a43cfe6b96dd8501512ae393fbe01e0f6832012514b708703982fc0c822e3a"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/maandevolutie-van-de-btw-plichtige-ondernemingen-volgens-nace-2025",
+   "final": "https://statbel.fgov.be/nl/open-data/maandevolutie-van-de-btw-plichtige-ondernemingen-volgens-nace-2025",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_maandevolutie_van_de_btw_plichtige_ondernemingen_volgens_nace_2025.html",
+   "bytes": 125765,
+   "sha256": "23da3aef02990cd510d717acd70c4e15fae4480d1f8c18f648bce6e0355c5785"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=0",
+   "final": "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=0",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_category_All_keys_refnis_page_0.html",
+   "bytes": 157333,
+   "sha256": "55a004b7aa7a9da9c3be89b78f7c1fb3458c115b1764f8952b05182ec9a88fa4"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=1",
+   "final": "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=1",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_category_All_keys_refnis_page_1.html",
+   "bytes": 158087,
+   "sha256": "ce4f75a90fca5813bc56c88aed4d7f96f2e58d451860a111bcab1981ed05e94a"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=2",
+   "final": "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=2",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_category_All_keys_refnis_page_2.html",
+   "bytes": 156187,
+   "sha256": "34e77971c186edca8a4c6555f3c47fbbb0420f24ce63e3e1c9121bac8999e3dc"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=3",
+   "final": "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=3",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_category_All_keys_refnis_page_3.html",
+   "bytes": 156901,
+   "sha256": "dc5f306bc544e2315c0c0c5ac4e42fd34338e14a0771589e6d2f934e52289a6c"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=4",
+   "final": "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=4",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_category_All_keys_refnis_page_4.html",
+   "bytes": 156229,
+   "sha256": "f239200c1b64baf4da087f79eab07ea84df627ab8682598e4cb2d5ec79eccaa0"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=49",
+   "final": "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=49",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_category_All_keys_refnis_page_49.html",
+   "bytes": 140064,
+   "sha256": "b1aba8191e2515be8f71cba0bc40696308f34b8ba83ae7b6618af40fff45d90f"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/statistical-classification-products-activity-european-economic-community-versie-2008",
+   "final": "https://statbel.fgov.be/nl/open-data/statistical-classification-products-activity-european-economic-community-versie-2008",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_statistical_classification_products_activity_european_economic_community_versie_2008.html",
+   "bytes": 127594,
+   "sha256": "4d7e9804f972a3d5db87e5673f1934e2a89c5f2a3d8ca8723a632b335cb0e18e"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data?category=209",
+   "final": "https://statbel.fgov.be/nl/open-data?category=209",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_category_209.html",
+   "bytes": 157735,
+   "sha256": "ea8c137e7db9fa3fae2a61637ed569992cd26f2939297946c18f9d49566f93dd"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/statistische-sectoren-2025",
+   "final": "https://statbel.fgov.be/nl/open-data/statistische-sectoren-2025",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_statistische_sectoren_2025.html",
+   "bytes": 128601,
+   "sha256": "41c27b275d662543aa6cbf0ec642136d7986c92b0b0ff417a00ff1a085791f81"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/adressenbestand-met-statistische-sector-1",
+   "final": "https://statbel.fgov.be/nl/open-data/adressenbestand-met-statistische-sector-1",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_adressenbestand_met_statistische_sector_1.html",
+   "bytes": 125600,
+   "sha256": "e0871de0abac4a6659e5f6b9cdb3b6e62f65bc0741b91bb6a90544ee2607598a"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/bevolkingscijfers-gerechtelijke-kantons-2",
+   "final": "https://statbel.fgov.be/nl/open-data/bevolkingscijfers-gerechtelijke-kantons-2",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_bevolkingscijfers_gerechtelijke_kantons_2.html",
+   "bytes": 126423,
+   "sha256": "0714a8c72686e4a5ef8248a3bf3221c54e4a37b53b76070d4a8758c1dc5b2f26"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/datalab-grid-van-de-bevolking-met-cellen-van-variabele-grootte-2025",
+   "final": "https://statbel.fgov.be/nl/open-data/datalab-grid-van-de-bevolking-met-cellen-van-variabele-grootte-2025",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_datalab_grid_van_de_bevolking_met_cellen_van_variabele_grootte_2025.html",
+   "bytes": 126768,
+   "sha256": "8ec7f826a185ba8172492517e6f499c65b0f084abd57d03c22104037f2d8b4bf"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/refnis-code-0",
+   "final": "https://statbel.fgov.be/nl/open-data/refnis-code-0",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_refnis_code_0.html",
+   "bytes": 125095,
+   "sha256": "098f66ce761d4f86e8731fe3259eed7b0bd8f42423cc6dea58e72e3477b09096"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/bevolkingscijfers-gerechtelijke-kantons-1",
+   "final": "https://statbel.fgov.be/nl/open-data/bevolkingscijfers-gerechtelijke-kantons-1",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_bevolkingscijfers_gerechtelijke_kantons_1.html",
+   "bytes": 126423,
+   "sha256": "e1d630d2a81d6ad4826e843c2a3b42ef8b6b735189178452be6492462007734c"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/adressenbestand-met-statistische-sector-0",
+   "final": "https://statbel.fgov.be/nl/open-data/adressenbestand-met-statistische-sector-0",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_adressenbestand_met_statistische_sector_0.html",
+   "bytes": 125745,
+   "sha256": "1e9f9d83775618c0812fe9dd8a695c3dd4b5ce6f55aed96c0b30c0ff3d8b4528"
+  },
+  {
+   "url": "https://statbel.fgov.be/nl/open-data/datalab-grid-van-de-bevolking-met-cellen-van-variabele-grootte-2024",
+   "final": "https://statbel.fgov.be/nl/open-data/datalab-grid-van-de-bevolking-met-cellen-van-variabele-grootte-2024",
+   "status": 200,
+   "type": "text/html; charset=UTF-8",
+   "file": "statbel_fgov_be_nl_open_data_datalab_grid_van_de_bevolking_met_cellen_van_variabele_grootte_2024.html",
+   "bytes": 126760,
+   "sha256": "6479e4b671a3c4555a5b3cab5739013c0e7b5a12c7a20c5cf4feb44620b79503"
+  }
+ ],
+ "unvisited": [
+  "https://statbel.fgov.be/nl/open-data?category=191&page=0",
+  "https://statbel.fgov.be/nl/open-data?category=191&page=1",
+  "https://statbel.fgov.be/nl/open-data?category=191&page=2",
+  "https://statbel.fgov.be/nl/open-data?page=0",
+  "https://statbel.fgov.be/nl/open-data?page=1",
+  "https://statbel.fgov.be/nl/open-data?page=2",
+  "https://statbel.fgov.be/nl/open-data?page=3",
+  "https://statbel.fgov.be/nl/open-data?page=4",
+  "https://statbel.fgov.be/nl/open-data?page=49",
+  "https://statbel.fgov.be/nl/open-data/verkeersongevallen-type-voertuig-2025",
+  "https://statbel.fgov.be/nl/open-data/voornamen-van-de-totale-bevolking-gemeente-15",
+  "https://statbel.fgov.be/nl/open-data/geografische-indelingen-2025",
+  "https://statbel.fgov.be/nl/open-data/aantal-wagens-huishouden-statistische-sector-2025",
+  "https://statbel.fgov.be/nl/open-data/btw-plichtige-ondernemingen-volgens-werknemersklasse-15",
+  "https://statbel.fgov.be/nl/open-data/bevolking-naar-woonplaats-nationaliteit-burgerlijke-staat-leeftijd-en-geslacht-16",
+  "https://statbel.fgov.be/nl/open-data/aantal-wagens-huishouden-statistische-sector-2025-0",
+  "https://statbel.fgov.be/nl/open-data/btw-plichtige-ondernemingen-volgens-rechtsvorm-15",
+  "https://statbel.fgov.be/nl/open-data/kadastrale-statistiek-van-het-bestand-van-de-gebouwen-24",
+  "https://statbel.fgov.be/nl/open-data/bevolking-statistische-sector-12",
+  "https://statbel.fgov.be/nl/open-data/verkeersslachtoffers-2025",
+  "https://statbel.fgov.be/nl/open-data/aantal-personen-geboortedag-0",
+  "https://statbel.fgov.be/nl/open-data/transport-zeebassin",
+  "https://statbel.fgov.be/nl/open-data/voornamen-van-de-totale-bevolking-gemeente-14",
+  "https://statbel.fgov.be/nl/open-data/bevolking-statistische-sector-2024",
+  "https://statbel.fgov.be/nl/open-data/verkeersongevallen-type-voertuig-2024",
+  "https://statbel.fgov.be/nl/open-data/statistische-sectoren-2024",
+  "https://statbel.fgov.be/nl/open-data/geografische-indelingen-2024",
+  "https://statbel.fgov.be/nl/open-data/kadastrale-statistiek-van-het-bestand-van-de-gebouwen-25",
+  "https://statbel.fgov.be/nl/open-data/btw-plichtige-ondernemingen-volgens-rechtsvorm-16",
+  "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=5",
+  "https://statbel.fgov.be/nl/open-data/bevolking-naar-woonplaats-nationaliteit-burgerlijke-staat-leeftijd-en-geslacht-15",
+  "https://statbel.fgov.be/nl/open-data/verkeersongevallen-2024",
+  "https://statbel.fgov.be/nl/open-data/btw-plichtige-ondernemingen-volgens-werknemersklasse-16",
+  "https://statbel.fgov.be/nl/open-data/bevolking-naar-woonplaats-nationaliteit-burgerlijke-staat-leeftijd-en-geslacht-11",
+  "https://statbel.fgov.be/nl/open-data/verkeersslachtoffers-2023",
+  "https://statbel.fgov.be/nl/open-data/datalab-grid-van-de-bevolking-met-cellen-van-variabele-grootte-0",
+  "https://statbel.fgov.be/nl/open-data/verkeersongevallen-2023",
+  "https://statbel.fgov.be/nl/open-data/bevolking-statistische-sector-11",
+  "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=6",
+  "https://statbel.fgov.be/nl/open-data/dcat-catalogus-archiefpublicaties-statbel",
+  "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=48",
+  "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=45",
+  "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=46",
+  "https://statbel.fgov.be/nl/open-data?category=All&keys=refnis&page=47",
+  "https://statbel.fgov.be/nl/open-data/adressenbestand-met-statistische-sector",
+  "https://statbel.fgov.be/nl/open-data?category=209&page=0",
+  "https://statbel.fgov.be/nl/open-data?category=209&page=1",
+  "https://statbel.fgov.be/nl/open-data?category=209&page=2",
+  "https://statbel.fgov.be/nl/open-data?category=209&page=3",
+  "https://statbel.fgov.be/nl/open-data?category=209&page=4",
+  "https://statbel.fgov.be/nl/open-data?category=209&page=7"
+ ]
+}
