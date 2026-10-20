@@ -27,7 +27,9 @@ const splitCantons = cantons.filter((c) => c.municipalities.some((m) => m.partia
             </tr>
             <tr>
                 <td>Cantons</td>
-                <td>{{ cantons.length }} ({{ splitCantons }} cover part of a split municipality)</td>
+                <td>
+                    {{ cantons.length }} ({{ splitCantons }} cover part of a split municipality)
+                </td>
                 <td><a :href="withBase('/data/territory#cantons')">Territory</a></td>
             </tr>
             <tr>

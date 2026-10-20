@@ -46,14 +46,14 @@ def interest_rate(day: str, kind: str, contract_after_20130316: bool = False) ->
 
 ## Files
 
-| File | Contents |
-| --- | --- |
-| `data/judicial-areas.json` | The 5 judicial areas (courts of appeal) |
-| `data/arrondissements.json` | The 12 judicial arrondissements and their judicial area |
-| `data/cantons.json` | All 162 judicial cantons |
-| `data/municipalities.json` | The 565 municipalities with REFNIS code and province |
-| `data/courts.json` | Justices of the peace in East and West Flanders, and the divisions of the Ondernemingsrechtbank Gent |
-| `data/interest-rates.json` | Legal and commercial-transaction interest rates |
+| File                        | Contents                                                                                             |
+| --------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `data/judicial-areas.json`  | The 5 judicial areas (courts of appeal)                                                              |
+| `data/arrondissements.json` | The 12 judicial arrondissements and their judicial area                                              |
+| `data/cantons.json`         | All 162 judicial cantons                                                                             |
+| `data/municipalities.json`  | The 565 municipalities with REFNIS code and province                                                 |
+| `data/courts.json`          | Justices of the peace in East and West Flanders, and the divisions of the Ondernemingsrechtbank Gent |
+| `data/interest-rates.json`  | Legal and commercial-transaction interest rates                                                      |
 
 The shapes are described on the [data pages](/data/territory) and in the [API reference](/api#types).
 

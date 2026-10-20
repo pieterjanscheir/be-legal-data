@@ -1,0 +1,10 @@
+dist/
+coverage/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+pnpm-lock.yaml
+src/ids.generated.ts
+# Generated and committed as written by their scripts
+data/cantons.json
+data/municipalities.json
+schema/

@@ -116,3 +116,12 @@ export function getCanton(id: string): Canton | undefined {
 export function getCantonsForMunicipality(id: string): Canton[] {
     return [...(cantonsByMunicipality.get(id) ?? [])]
 }
+
+/**
+ * The judicial arrondissement a municipality lies in, by REFNIS code. Every municipality lies in
+ * exactly one, even a city split over several cantons.
+ */
+export function getArrondissementForMunicipality(id: string): Arrondissement | undefined {
+    const canton = cantonsByMunicipality.get(id)?.[0]
+    return canton && getArrondissement(canton.arrondissement)
+}

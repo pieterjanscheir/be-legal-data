@@ -90,16 +90,18 @@ describe('id types', () => {
     })
 
     it('may return undefined for any other string', () => {
-        const id: string = 'gent-1'
-        expectTypeOf(getCanton(id)).toEqualTypeOf<Canton | undefined>()
+        const lookup = (id: string) => getCanton(id)
+        expectTypeOf(lookup).returns.toEqualTypeOf<Canton | undefined>()
         expectTypeOf(getCanton('no-such-canton')).toEqualTypeOf<Canton | undefined>()
     })
 
     it('type the links between datasets', () => {
         expectTypeOf<Canton['arrondissement']>().toEqualTypeOf<ArrondissementId>()
-        expectTypeOf<Canton['municipalities'][number]['municipality']>().toEqualTypeOf<MunicipalityId>()
+        expectTypeOf<
+            Canton['municipalities'][number]['municipality']
+        >().toEqualTypeOf<MunicipalityId>()
         // @ts-expect-error: not a canton id
         const typo: CantonId = 'gent1'
-        void typo
+        expect(typo).toBe('gent1')
     })
 })

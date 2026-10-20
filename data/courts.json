@@ -19,15 +19,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "053 82 07 01"
+        "value": "+3253820701"
       },
       {
         "type": "email",
         "value": "vred.aalst@just.fgov.be"
       }
     ],
-    "bankAccount": "BE73 6792 0084 4560",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE73679200844560",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-aalst-2",
@@ -49,15 +49,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "053 82 07 01"
+        "value": "+3253820701"
       },
       {
         "type": "email",
         "value": "vred.aalst@just.fgov.be"
       }
     ],
-    "bankAccount": "BE73 6792 0084 4560",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE73679200844560",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-beveren-kruibeke-zwijndrecht",
@@ -78,15 +78,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "03 775 70 87"
+        "value": "+3237757087"
       },
       {
         "type": "email",
         "value": "vred.beveren@just.fgov.be"
       }
     ],
-    "bankAccount": "BE29 6792 0084 4964",
-    "openingHours": "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE29679200844964",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-deinze",
@@ -107,15 +107,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "09 386 26 34"
+        "value": "+3293862634"
       },
       {
         "type": "email",
         "value": "vred.deinze@just.fgov.be"
       }
     ],
-    "bankAccount": "BE74 6792 0084 8907",
-    "openingHours": "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE74679200848907",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-dendermonde",
@@ -136,15 +136,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "052 25 96 00"
+        "value": "+3252259600"
       },
       {
         "type": "email",
         "value": "vred.dendermonde@just.fgov.be"
       }
     ],
-    "bankAccount": "BE93 6792 0084 5267",
-    "openingHours": "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE93679200845267",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-eeklo",
@@ -165,15 +165,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "09 377 17 00"
+        "value": "+3293771700"
       },
       {
         "type": "email",
         "value": "vred.eeklo@just.fgov.be"
       }
     ],
-    "bankAccount": "BE52 6792 0084 9109",
-    "openingHours": "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE52679200849109",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-gent-1",
@@ -195,15 +195,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "09 234 55 00"
+        "value": "+3292345500"
       },
       {
         "type": "email",
         "value": "vred.gent1@just.fgov.be"
       }
     ],
-    "bankAccount": "BE12 6792 0084 7792",
-    "openingHours": "ma - vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE12679200847792",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-gent-2",
@@ -225,15 +225,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "09 234 55 00"
+        "value": "+3292345500"
       },
       {
         "type": "email",
         "value": "vred.gent2@just.fgov.be"
       }
     ],
-    "bankAccount": "BE12 6792 0084 7792",
-    "openingHours": "ma - vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE12679200847792",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-gent-3",
@@ -255,15 +255,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "09 234 55 00"
+        "value": "+3292345500"
       },
       {
         "type": "email",
         "value": "vred.gent3@just.fgov.be"
       }
     ],
-    "bankAccount": "BE12 6792 0084 7792",
-    "openingHours": "ma - vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE12679200847792",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-gent-4",
@@ -285,15 +285,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "09 234 55 00"
+        "value": "+3292345500"
       },
       {
         "type": "email",
         "value": "vred.gent4@just.fgov.be"
       }
     ],
-    "bankAccount": "BE12 6792 0084 7792",
-    "openingHours": "ma - vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE12679200847792",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-gent-5",
@@ -315,15 +315,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "09 234 55 00"
+        "value": "+3292345500"
       },
       {
         "type": "email",
         "value": "vred.gent5@just.fgov.be"
       }
     ],
-    "bankAccount": "BE12 6792 0084 7792",
-    "openingHours": "ma - vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE12679200847792",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-geraardsbergen",
@@ -344,15 +344,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "055 42 34 25"
+        "value": "+3255423425"
       },
       {
         "type": "email",
         "value": "vred.geraardsbergen@just.fgov.be"
       }
     ],
-    "bankAccount": "BE79 6792 0084 1833",
-    "openingHours": "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE79679200841833",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-hamme",
@@ -373,15 +373,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "052 25 01 80"
+        "value": "+3252250180"
       },
       {
         "type": "email",
         "value": "vred.hamme@just.fgov.be"
       }
     ],
-    "bankAccount": "BE60 6792 0084 5570",
-    "openingHours": "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE60679200845570",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-herzele",
@@ -402,15 +402,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "053 62 21 08"
+        "value": "+3253622108"
       },
       {
         "type": "email",
         "value": "vred.herzele@just.fgov.be"
       }
     ],
-    "bankAccount": "BE57 6792 0084 2035",
-    "openingHours": "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE57679200842035",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-lokeren",
@@ -431,15 +431,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "09 348 25 44"
+        "value": "+3293482544"
       },
       {
         "type": "email",
         "value": "vred.lokeren@just.fgov.be"
       }
     ],
-    "bankAccount": "BE82 6792 0084 5368",
-    "openingHours": "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE82679200845368",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-merelbeke-melle",
@@ -460,15 +460,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "09 210 49 10"
+        "value": "+3292104910"
       },
       {
         "type": "email",
         "value": "vred.merelbeke@just.fgov.be"
       }
     ],
-    "bankAccount": "BE10 6792 0084 8604",
-    "openingHours": "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE10679200848604",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-ninove",
@@ -489,15 +489,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "054 33 78 56"
+        "value": "+3254337856"
       },
       {
         "type": "email",
         "value": "vred.ninove@just.fgov.be"
       }
     ],
-    "bankAccount": "BE38 6792 0084 5772",
-    "openingHours": "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE38679200845772",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-oudenaarde",
@@ -518,15 +518,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "055 33 55 00"
+        "value": "+3255335500"
       },
       {
         "type": "email",
         "value": "vred.oudenaarde@just.fgov.be"
       }
     ],
-    "bankAccount": "BE13 6792 0084 2439",
-    "openingHours": "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE13679200842439",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-sint-niklaas",
@@ -547,15 +547,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "03 760 94 32"
+        "value": "+3237609432"
       },
       {
         "type": "email",
         "value": "vred.stniklaas@just.fgov.be"
       }
     ],
-    "bankAccount": "BE16 6792 0084 5974",
-    "openingHours": "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE16679200845974",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-wetteren",
@@ -576,15 +576,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "02 542 83 76"
+        "value": "+3225428376"
       },
       {
         "type": "email",
         "value": "vred.wetteren@just.fgov.be"
       }
     ],
-    "bankAccount": "BE69 6792 0084 6378",
-    "openingHours": "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE69679200846378",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-zelzate",
@@ -605,15 +605,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "09 345 72 32"
+        "value": "+3293457232"
       },
       {
         "type": "email",
         "value": "vred.zelzate@just.fgov.be"
       }
     ],
-    "bankAccount": "BE30 6792 0084 9311",
-    "openingHours": "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE30679200849311",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-brugge-1",
@@ -635,12 +635,12 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "050 47 33 50",
+        "value": "+3250473350",
         "label": "A-rol"
       },
       {
         "type": "phone",
-        "value": "050 47 33 60",
+        "value": "+3250473360",
         "label": "B-rol"
       },
       {
@@ -648,8 +648,8 @@
         "value": "vred.brugge@just.fgov.be"
       }
     ],
-    "bankAccount": "BE47 6792 0083 6880",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE47679200836880",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-brugge-2",
@@ -671,12 +671,12 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "050 47 33 50",
+        "value": "+3250473350",
         "label": "A-rol"
       },
       {
         "type": "phone",
-        "value": "050 47 33 60",
+        "value": "+3250473360",
         "label": "B-rol"
       },
       {
@@ -684,8 +684,8 @@
         "value": "vred.brugge@just.fgov.be"
       }
     ],
-    "bankAccount": "BE47 6792 0083 6880",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE47679200836880",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-brugge-3",
@@ -707,12 +707,12 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "050 47 33 50",
+        "value": "+3250473350",
         "label": "A-rol"
       },
       {
         "type": "phone",
-        "value": "050 47 33 60",
+        "value": "+3250473360",
         "label": "B-rol"
       },
       {
@@ -720,8 +720,8 @@
         "value": "vred.brugge@just.fgov.be"
       }
     ],
-    "bankAccount": "BE47 6792 0083 6880",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE47679200836880",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-brugge-4",
@@ -743,12 +743,12 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "050 47 33 50",
+        "value": "+3250473350",
         "label": "A-rol"
       },
       {
         "type": "phone",
-        "value": "050 47 33 60",
+        "value": "+3250473360",
         "label": "B-rol"
       },
       {
@@ -756,8 +756,8 @@
         "value": "vred.brugge@just.fgov.be"
       }
     ],
-    "bankAccount": "BE47 6792 0083 6880",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE47679200836880",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-ieper",
@@ -778,15 +778,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "057/224 050"
+        "value": "+3257224050"
       },
       {
         "type": "email",
         "value": "vred.ieper@just.fgov.be"
       }
     ],
-    "bankAccount": "BE50 6792 0084 0318",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE50679200840318",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-izegem",
@@ -807,15 +807,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "051 30 26 10"
+        "value": "+3251302610"
       },
       {
         "type": "email",
         "value": "vred.izegem@just.fgov.be"
       }
     ],
-    "bankAccount": "BE10 6792 0083 8904",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE10679200838904",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-kortrijk-1",
@@ -838,11 +838,11 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "056 26 96 68"
+        "value": "+3256269668"
       },
       {
         "type": "phone",
-        "value": "056 269 885",
+        "value": "+3256269885",
         "label": "B-rol"
       },
       {
@@ -850,8 +850,8 @@
         "value": "vred.kortrijk@just.fgov.be"
       }
     ],
-    "bankAccount": "BE41 6792 0083 9510",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE41679200839510",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-kortrijk-2",
@@ -874,11 +874,11 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "056 26 96 68"
+        "value": "+3256269668"
       },
       {
         "type": "phone",
-        "value": "056 269 885",
+        "value": "+3256269885",
         "label": "B-rol"
       },
       {
@@ -886,8 +886,8 @@
         "value": "vred.kortrijk@just.fgov.be"
       }
     ],
-    "bankAccount": "BE41 6792 0083 9510",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE41679200839510",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-menen",
@@ -908,15 +908,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "02 557 42 90"
+        "value": "+3225574290"
       },
       {
         "type": "email",
         "value": "vred.menen@just.fgov.be"
       }
     ],
-    "bankAccount": "BE19 6792 0083 9712",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE19679200839712",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-oostende-1",
@@ -938,15 +938,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "059 55 36 00"
+        "value": "+3259553600"
       },
       {
         "type": "email",
         "value": "vred.oostende@just.fgov.be"
       }
     ],
-    "bankAccount": "BE14 6792 0083 7183",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE14679200837183",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-oostende-2",
@@ -968,15 +968,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "059 55 36 00"
+        "value": "+3259553600"
       },
       {
         "type": "email",
         "value": "vred.oostende@just.fgov.be"
       }
     ],
-    "bankAccount": "BE14 6792 0083 7183",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE14679200837183",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-poperinge",
@@ -997,15 +997,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "057 33 38 10"
+        "value": "+3257333810"
       },
       {
         "type": "email",
         "value": "vred.poperinge@just.fgov.be"
       }
     ],
-    "bankAccount": "BE06 6792 0084 0722",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE06679200840722",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-roeselare",
@@ -1026,15 +1026,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "051 26 92 20"
+        "value": "+3251269220"
       },
       {
         "type": "email",
         "value": "vred.roeselare@just.fgov.be"
       }
     ],
-    "bankAccount": "BE63 6792 0083 9308",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE63679200839308",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-tielt",
@@ -1055,15 +1055,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "051 26 92 20"
+        "value": "+3251269220"
       },
       {
         "type": "email",
         "value": "vred.tielt@just.fgov.be"
       }
     ],
-    "bankAccount": "BE89 6792 0083 7385",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE89679200837385",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-torhout",
@@ -1084,15 +1084,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "050 21 22 02"
+        "value": "+3250212202"
       },
       {
         "type": "email",
         "value": "vred.torhout@just.fgov.be"
       }
     ],
-    "bankAccount": "BE67 6792 0083 7587",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE67679200837587",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-veurne",
@@ -1113,15 +1113,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "058 29 64 20"
+        "value": "+3258296420"
       },
       {
         "type": "email",
         "value": "vred.veurne@just.fgov.be"
       }
     ],
-    "bankAccount": "BE50 6792 0085 0018",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE50679200850018",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "justice-of-the-peace-waregem",
@@ -1142,15 +1142,15 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "056/67.60.60"
+        "value": "+3256676060"
       },
       {
         "type": "email",
         "value": "vred.waregem@just.fgov.be"
       }
     ],
-    "bankAccount": "BE85 6792 0083 9106",
-    "openingHours": "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
+    "bankAccount": "BE85679200839106",
+    "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00"
   },
   {
     "id": "enterprise-court-gent-brugge",
@@ -1175,7 +1175,7 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "050 47 30 50",
+        "value": "+3250473050",
         "label": "griffie"
       },
       {
@@ -1185,7 +1185,7 @@
       },
       {
         "type": "phone",
-        "value": "050 47 30 40",
+        "value": "+3250473040",
         "label": "rechtspersonenregister"
       },
       {
@@ -1218,7 +1218,7 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "02/682.06.81",
+        "value": "+3226820681",
         "label": "griffie"
       },
       {
@@ -1228,7 +1228,7 @@
       },
       {
         "type": "phone",
-        "value": "02/682.06.81",
+        "value": "+3226820681",
         "label": "rechtspersonenregister"
       },
       {
@@ -1261,7 +1261,7 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "02 682 01 58",
+        "value": "+3226820158",
         "label": "griffie"
       },
       {
@@ -1271,7 +1271,7 @@
       },
       {
         "type": "phone",
-        "value": "02 682 01 58",
+        "value": "+3226820158",
         "label": "rechtspersonenregister"
       },
       {
@@ -1304,7 +1304,7 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "02/682.05.06",
+        "value": "+3226820506",
         "label": "griffie"
       },
       {
@@ -1314,7 +1314,7 @@
       },
       {
         "type": "phone",
-        "value": "02/682.05.06",
+        "value": "+3226820506",
         "label": "rechtspersonenregister"
       },
       {
@@ -1347,7 +1347,7 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "056 26 96 01",
+        "value": "+3256269601",
         "label": "griffie"
       },
       {
@@ -1357,7 +1357,7 @@
       },
       {
         "type": "phone",
-        "value": "056 26 96 00",
+        "value": "+3256269600",
         "label": "rechtspersonenregister"
       },
       {
@@ -1389,7 +1389,7 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "059 55 36 40",
+        "value": "+3259553640",
         "label": "griffie"
       },
       {
@@ -1399,7 +1399,7 @@
       },
       {
         "type": "phone",
-        "value": "059 55 36 46",
+        "value": "+3259553646",
         "label": "rechtspersonenregister"
       },
       {
@@ -1432,7 +1432,7 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "02/682.05.12",
+        "value": "+3226820512",
         "label": "griffie"
       },
       {
@@ -1442,7 +1442,7 @@
       },
       {
         "type": "phone",
-        "value": "02/682.05.12",
+        "value": "+3226820512",
         "label": "rechtspersonenregister"
       },
       {
@@ -1475,7 +1475,7 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "058 29 64 39",
+        "value": "+3258296439",
         "label": "griffie"
       },
       {
@@ -1485,7 +1485,7 @@
       },
       {
         "type": "phone",
-        "value": "058 29 64 41",
+        "value": "+3258296441",
         "label": "rechtspersonenregister"
       },
       {

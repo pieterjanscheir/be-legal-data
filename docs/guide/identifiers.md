@@ -8,7 +8,7 @@ what happens when the law changes the thing an id names.
 
 1. **Every record has an `id` field**, and it is unique within its dataset. Generic code (an
    index, a cache, a form) treats every dataset the same way.
-2. **An official code wins.** Where the authorities assign a code, the id *is* that code:
+2. **An official code wins.** Where the authorities assign a code, the id _is_ that code:
    municipalities use their Statbel REFNIS code (`44021` for Gent). Future datasets follow
    suit: police zones by zone number, organisations by enterprise (KBO) number.
 3. **Otherwise, lowercase kebab-case ASCII**: `^[a-z0-9]+(-[a-z0-9]+)*$`, built by
@@ -32,14 +32,14 @@ All of these are enforced by tests (`test/ids.test.ts`) and by the
 
 ## The ids
 
-| Dataset | Examples | Rule |
-| --- | --- | --- |
-| Judicial areas | `antwerpen`, `brussel`, `gent`, `liege`, `mons` | Local name |
-| Arrondissements | `oost-vlaanderen`, `brabant-wallon`, `eupen` | Local name |
-| Cantons | `gent-1`, `merelbeke-melle`, `wavre-1`, `oudergem`, `eupen-sankt-vith-1` | Local name + number |
-| Municipalities | `44021`, `21004` | REFNIS code |
-| Courts | `justice-of-the-peace-gent-1`, `enterprise-court-gent-brugge` | Type + place |
-| Interest rates | `legal`, `commercial` | Fixed keys |
+| Dataset         | Examples                                                                 | Rule                |
+| --------------- | ------------------------------------------------------------------------ | ------------------- |
+| Judicial areas  | `antwerpen`, `brussel`, `gent`, `liege`, `mons`                          | Local name          |
+| Arrondissements | `oost-vlaanderen`, `brabant-wallon`, `eupen`                             | Local name          |
+| Cantons         | `gent-1`, `merelbeke-melle`, `wavre-1`, `oudergem`, `eupen-sankt-vith-1` | Local name + number |
+| Municipalities  | `44021`, `21004`                                                         | REFNIS code         |
+| Courts          | `justice-of-the-peace-gent-1`, `enterprise-court-gent-brugge`            | Type + place        |
+| Interest rates  | `legal`, `commercial`                                                    | Fixed keys          |
 
 ## Why these choices
 

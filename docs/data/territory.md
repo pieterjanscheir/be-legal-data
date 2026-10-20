@@ -26,13 +26,13 @@ legal text for the cases where only the text can decide.
 
 ## Source and updates
 
-| | |
-| --- | --- |
-| Source | Annex to the Judicial Code, "Gebiedsomschrijving en zetel van hoven en rechtbanken" ([Justel 1967101007](https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel)), Dutch and French; Statbel open data for municipalities |
-| Built by | `pnpm build:cantons` (cantons, municipalities); by hand (areas, arrondissements) |
-| Changes when | A law amends the annex; municipalities merge (2019, 2025) |
-| Checked | Weekly, by regenerating from the live sources ([data quality](/guide/data-quality)) |
-| Licence | CC BY 4.0; municipality data © Statbel, CC BY 4.0 |
+|              |                                                                                                                                                                                                                                           |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Source       | Annex to the Judicial Code, "Gebiedsomschrijving en zetel van hoven en rechtbanken" ([Justel 1967101007](https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel)), Dutch and French; Statbel open data for municipalities |
+| Built by     | `pnpm build:cantons` (cantons, municipalities); by hand (areas, arrondissements)                                                                                                                                                          |
+| Changes when | A law amends the annex; municipalities merge (2019, 2025)                                                                                                                                                                                 |
+| Checked      | Weekly, by regenerating from the live sources ([data quality](/guide/data-quality))                                                                                                                                                       |
+| Licence      | CC BY 4.0; municipality data © Statbel, CC BY 4.0                                                                                                                                                                                         |
 
 ## Find the canton for a municipality
 
@@ -89,16 +89,16 @@ All 162 judicial cantons: the area of one justice of the peace each. File: `data
 
 ### Fields
 
-| Field | Type | Description |
-| --- | --- | --- |
-| `id` | `CantonId` | Stable id in the local language, with a number for multi-canton places: `gent-1`, `merelbeke-melle`, `wavre-1` |
-| `arrondissement` | string | Arrondissement id |
-| `name` | `{ nl, fr }` | Name of the canton as the annex gives it |
-| `number` | number? | Canton number in places with several (Gent 1–5) |
-| `seat` | `{ nl, fr }` | Where the justice of the peace sits; can differ from the name |
-| `municipalities` | `{ municipality, partial? }[]` | Municipalities covered, by REFNIS code; `partial: true` when only part is |
-| `territory` | `{ nl, fr }` | The canton's area, verbatim from the annex |
-| `legalBasis` | string | Section of the annex, e.g. `Ger.W. bijvoegsel art. 1, afdeling 6.15` (Gent 4) |
+| Field            | Type                           | Description                                                                                                    |
+| ---------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| `id`             | `CantonId`                     | Stable id in the local language, with a number for multi-canton places: `gent-1`, `merelbeke-melle`, `wavre-1` |
+| `arrondissement` | string                         | Arrondissement id                                                                                              |
+| `name`           | `{ nl, fr }`                   | Name of the canton as the annex gives it                                                                       |
+| `number`         | number?                        | Canton number in places with several (Gent 1–5)                                                                |
+| `seat`           | `{ nl, fr }`                   | Where the justice of the peace sits; can differ from the name                                                  |
+| `municipalities` | `{ municipality, partial? }[]` | Municipalities covered, by REFNIS code; `partial: true` when only part is                                      |
+| `territory`      | `{ nl, fr }`                   | The canton's area, verbatim from the annex                                                                     |
+| `legalBasis`     | string                         | Section of the annex, e.g. `Ger.W. bijvoegsel art. 1, afdeling 6.15` (Gent 4)                                  |
 
 ```ts
 interface Canton {
@@ -141,16 +141,16 @@ interface Municipality {
 }
 ```
 
-| Province code | Province |
-| --- | --- |
-| `04000` | Brussels-Capital Region |
-| `10000` | Antwerpen |
-| `20001` | Vlaams-Brabant |
-| `20002` | Brabant wallon |
-| `30000` | West-Vlaanderen |
-| `40000` | Oost-Vlaanderen |
-| `50000` | Hainaut |
-| `60000` | Liège |
-| `70000` | Limburg |
-| `80000` | Luxembourg |
-| `90000` | Namur |
+| Province code | Province                |
+| ------------- | ----------------------- |
+| `04000`       | Brussels-Capital Region |
+| `10000`       | Antwerpen               |
+| `20001`       | Vlaams-Brabant          |
+| `20002`       | Brabant wallon          |
+| `30000`       | West-Vlaanderen         |
+| `40000`       | Oost-Vlaanderen         |
+| `50000`       | Hainaut                 |
+| `60000`       | Liège                   |
+| `70000`       | Limburg                 |
+| `80000`       | Luxembourg              |
+| `90000`       | Namur                   |
