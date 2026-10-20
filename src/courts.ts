@@ -1,10 +1,11 @@
 import courtsData from '../data/courts.json'
-import type { Locale, Translated } from './territory'
+import type { Locale, SourceRef, Translated } from './common'
 
 export interface Address {
     building?: string
     street: string
     houseNumber?: string
+    /** @pattern ^\d{4}$ */
     postalCode: string
     city: string
 }
@@ -17,7 +18,10 @@ export interface Contact {
 }
 
 interface CourtBase {
-    /** Stable key, e.g. 'VredegerechtGent1' or 'OndernemingsrechtbankGentBrugge' */
+    /**
+     * Stable key, e.g. 'VredegerechtGent1' or 'OndernemingsrechtbankGentBrugge'
+     * @pattern ^[A-Z][A-Za-z0-9]*$
+     */
     id: string
     /** Id of the judicial arrondissement the court lies in */
     arrondissement: string
@@ -27,6 +31,13 @@ interface CourtBase {
     contacts: Contact[]
     bankAccount?: string
     openingHours?: string
+    /**
+     * The court's own web page
+     * @format uri
+     */
+    website?: string
+    /** Where the record's data comes from */
+    sources?: SourceRef[]
 }
 
 export interface JusticeOfThePeace extends CourtBase {
@@ -44,10 +55,21 @@ export interface EnterpriseCourtDivision extends CourtBase {
 export type Court = JusticeOfThePeace | EnterpriseCourtDivision
 export type CourtType = Court['type']
 
-export const courts = courtsData as Court[]
+export const courts = courtsData as readonly Court[]
+
+const courtsById = new Map(courts.map((c) => [c.id, c]))
 
 export function getCourt(id: string): Court | undefined {
-    return courts.find((c) => c.id === id)
+    return courtsById.get(id)
+}
+
+/**
+ * The justice of the peace of a canton, by canton id ('Gent1', 'MerelbekeMelle'). `undefined`
+ * when the canton's court isn't in the data yet; see the known gaps.
+ */
+export function getJusticeOfThePeace(cantonId: string): JusticeOfThePeace | undefined {
+    const court = courtsById.get(`Vredegerecht${cantonId}`)
+    return court?.type === 'justice-of-the-peace' ? court : undefined
 }
 
 export function findCourts(filter: {

@@ -44,6 +44,39 @@ describe('data integrity', () => {
             }
         },
     )
+
+    // A gap would make getInterestRate return null for days inside the series
+    it.each(['legal', 'commercial'] as InterestType[])('has no gaps in the %s series', (type) => {
+        const periods = interestRates[type].periods
+        for (let i = 1; i < periods.length; i++) {
+            const next = new Date(`${periods[i - 1].to}T00:00:00Z`)
+            next.setUTCDate(next.getUTCDate() + 1)
+            expect(periods[i].from, periods[i - 1].to).toBe(next.toISOString().slice(0, 10))
+        }
+    })
+
+    it('sets the legal rate per calendar year since 2007', () => {
+        for (const p of interestRates.legal.periods.filter((p) => p.from >= '2007')) {
+            expect([p.from.slice(5), p.to.slice(5)], p.from).toEqual(['01-01', '12-31'])
+            expect(p.from.slice(0, 4), p.from).toBe(p.to.slice(0, 4))
+        }
+    })
+
+    it('sets the commercial rate per semester', () => {
+        for (const p of interestRates.commercial.periods) {
+            // 2015 is split on 16 March, when the contract-date rule ended
+            if (p.from.startsWith('2015-01') || p.from === '2015-03-16') continue
+            expect(['01-01', '07-01'], p.from).toContain(p.from.slice(5))
+            expect(['06-30', '12-31'], p.to).toContain(p.to.slice(5))
+        }
+    })
+
+    it('only has an older-contracts rate between 2013 and 15 March 2015', () => {
+        for (const p of interestRates.commercial.periods) {
+            if (p.rateForContractsBefore20130316 === undefined) continue
+            expect(p.from >= '2013-01-01' && p.to <= '2015-03-15', p.from).toBe(true)
+        }
+    })
 })
 
 describe('courts', () => {

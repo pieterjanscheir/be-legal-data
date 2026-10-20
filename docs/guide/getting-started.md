@@ -18,7 +18,21 @@ yarn add be-legal-data
 
 :::
 
-The package works with ESM and CommonJS, ships its own type definitions, and needs Node 18 or later.
+The package works with ESM and CommonJS, ships its own type definitions, has no runtime
+dependencies, and runs on Node 18 or later and in browsers. It's tested on Node 18, 20, 22
+and 24.
+
+### Import only what you need
+
+The data is bundled into the JavaScript, so importing from the package root loads every
+dataset (about 250 KB, mostly the legal text of the cantons). Each dataset has its own entry
+point:
+
+```ts
+import { getInterestRate } from 'be-legal-data/interest-rates' // 12 KB
+import { getCourt } from 'be-legal-data/courts' // 32 KB
+import { getCanton } from 'be-legal-data/territory'
+```
 
 ## A first look
 
@@ -47,15 +61,14 @@ getInterestRate(new Date(2014, 5, 15), 'commercial', { contractAfter20130316: tr
 
 ### Which justice of the peace handles an address?
 
-Look up the municipality's REFNIS code and get its cantons. The justice of the peace of canton
-`X` has the id `VredegerechtX`.
+Look up the municipality's REFNIS code and get its cantons, then the canton's court.
 
 ```ts
-import { getCantonsForMunicipality, getCourt } from 'be-legal-data'
+import { getCantonsForMunicipality, getJusticeOfThePeace } from 'be-legal-data'
 
-const [canton, ...others] = getCantonsForMunicipality('44088')
-if (others.length === 0) {
-    const court = getCourt(`Vredegerecht${canton.id}`) // undefined outside East and West Flanders, for now
+const cantons = getCantonsForMunicipality('44088')
+if (cantons.length === 1) {
+    const court = getJusticeOfThePeace(cantons[0].id) // undefined outside East and West Flanders, for now
 }
 ```
 
@@ -75,7 +88,8 @@ if (!result) {
 ```
 
 `getInterestRate` returns `null` for a day with no rate on file, so you can warn instead of
-silently using 0 %.
+silently using 0 %. It throws a `RangeError` for a malformed day such as `'2024-6-1'`: pass
+`YYYY-MM-DD` or a `Date`.
 
 ### Court names in another language
 
@@ -94,8 +108,8 @@ import courts from 'be-legal-data/data/courts.json'
 
 ## Ids are public API
 
-Projects store ids such as `VredegerechtGent1` or `EastFlanders`, so versions follow these
-rules:
+Projects store ids such as `VredegerechtGent1` or `EastFlanders`, so they never change within a
+major version (see [identifiers](./identifiers)), and versions follow these rules:
 
 | Change | Version |
 | --- | --- |

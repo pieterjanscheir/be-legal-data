@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://pieterjanscheir.github.io/be-legal-data/schema/judicial-areas.schema.json",
+  "title": "be-legal-data: data/judicial-areas.json",
+  "$ref": "#/definitions/JudicialAreasFile",
+  "definitions": {
+    "JudicialAreasFile": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/JudicialArea"
+      }
+    },
+    "JudicialArea": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable key, e.g. 'Ghent'",
+          "pattern": "^[A-Z][A-Za-z0-9]*$"
+        },
+        "name": {
+          "$ref": "#/definitions/Translated"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "additionalProperties": false,
+      "description": "Area of a court of appeal (rechtsgebied): Antwerpen, Brussel, Gent, Luik or Bergen"
+    },
+    "Translated": {
+      "type": "object",
+      "properties": {
+        "nl": {
+          "type": "string"
+        },
+        "fr": {
+          "type": "string"
+        },
+        "de": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nl",
+        "fr",
+        "de"
+      ],
+      "additionalProperties": false,
+      "description": "A name in the three national languages"
+    }
+  }
+}

@@ -329,7 +329,7 @@ const cantons = nlItems.map((nlItem, i) => {
         ...(nl.number ? { number: nl.number } : {}),
         seat: { nl: nl.seat, fr: fr.seat },
         municipalities: [
-            ...[...nl.whole].map((refnis) => ({ refnis })),
+            ...[...nl.whole].map((refnis): { refnis: string; partial?: boolean } => ({ refnis })),
             ...[...nl.partial].map((refnis) => ({ refnis, partial: true })),
         ].sort((a, b) => a.refnis.localeCompare(b.refnis)),
         territory: { nl: nl.territory, fr: fr.territory },

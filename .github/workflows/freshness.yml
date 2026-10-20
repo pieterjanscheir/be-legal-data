@@ -1,0 +1,81 @@
+name: Data freshness
+
+# Weekly: is a newly published interest rate missing, is a dataset overdue for review, are the
+# official sources still online, and do the generated datasets still match the law and Statbel?
+# Opens (or updates) one issue labelled data-freshness when something needs attention.
+on:
+    schedule:
+        - cron: '17 6 * * 1'
+    workflow_dispatch:
+
+permissions:
+    contents: read
+    issues: write
+
+jobs:
+    freshness:
+        runs-on: ubuntu-latest
+        steps:
+            # The issue step gets its token explicitly; don't leave one in .git/config while
+            # dependencies and scripts run
+            - uses: actions/checkout@v4
+              with:
+                  persist-credentials: false
+            - uses: pnpm/action-setup@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 24
+                  cache: pnpm
+            - run: pnpm install --frozen-lockfile
+
+            - name: Rates and review dates
+              id: rates
+              continue-on-error: true
+              run: |
+                  set -o pipefail
+                  pnpm test:freshness 2>&1 | tee rates.log
+
+            - name: Source URLs
+              id: sources
+              continue-on-error: true
+              env:
+                  FRESHNESS_ONLINE: '1'
+              run: |
+                  set -o pipefail
+                  pnpm vitest run --config vitest.freshness.config.ts test/freshness/sources.test.ts 2>&1 | tee sources.log
+
+            - name: Regenerate cantons and municipalities
+              id: cantons
+              continue-on-error: true
+              run: |
+                  set -o pipefail
+                  pnpm build:cantons 2>&1 | tee cantons.log
+                  git diff --stat --exit-code -- data | tee -a cantons.log
+
+            - name: Open or update the freshness issue
+              if: steps.rates.outcome == 'failure' || steps.sources.outcome == 'failure' || steps.cantons.outcome == 'failure'
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+              run: |
+                  {
+                    echo "The weekly freshness check found something to look at: $RUN_URL"
+                    echo
+                    for step in rates sources cantons; do
+                      echo "### $step"
+                      echo '```'
+                      grep -E "FAIL|×|AssertionError|expected|Error|changed|insertion|deletion" "$step.log" | head -40 || true
+                      echo '```'
+                    done
+                  } > body.md
+                  gh label create data-freshness --color FBCA04 --description "Data may be out of date" 2>/dev/null || true
+                  number=$(gh issue list --label data-freshness --state open --json number --jq '.[0].number')
+                  if [ -n "$number" ]; then
+                    gh issue comment "$number" --body-file body.md
+                  else
+                    gh issue create --title "Data freshness check needs attention" --label data-freshness --body-file body.md
+                  fi
+
+            - name: Fail the run when something is out of date
+              if: steps.rates.outcome == 'failure' || steps.sources.outcome == 'failure' || steps.cantons.outcome == 'failure'
+              run: exit 1

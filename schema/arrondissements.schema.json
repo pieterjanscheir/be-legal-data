@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://pieterjanscheir.github.io/be-legal-data/schema/arrondissements.schema.json",
+  "title": "be-legal-data: data/arrondissements.json",
+  "$ref": "#/definitions/ArrondissementsFile",
+  "definitions": {
+    "ArrondissementsFile": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Arrondissement"
+      }
+    },
+    "Arrondissement": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable key, e.g. 'EastFlanders'",
+          "pattern": "^[A-Z][A-Za-z0-9]*$"
+        },
+        "name": {
+          "$ref": "#/definitions/Translated"
+        },
+        "judicialArea": {
+          "type": "string",
+          "description": "Id of the judicial area the arrondissement belongs to"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "judicialArea"
+      ],
+      "additionalProperties": false
+    },
+    "Translated": {
+      "type": "object",
+      "properties": {
+        "nl": {
+          "type": "string"
+        },
+        "fr": {
+          "type": "string"
+        },
+        "de": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nl",
+        "fr",
+        "de"
+      ],
+      "additionalProperties": false,
+      "description": "A name in the three national languages"
+    }
+  }
+}

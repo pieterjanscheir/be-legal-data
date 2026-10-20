@@ -2,6 +2,29 @@
 
 File: `data/interest-rates.json`. Source: FOD Financiën, published in the Belgisch Staatsblad.
 
+## Why it's useful
+
+Interest on a late payment is part of almost every claim, and the rate depends on the day:
+
+- **Legal interest** (wettelijke interest) applies to debts in general, and is what courts
+  award as moratory interest unless a contract or a special law says otherwise.
+- **Commercial interest** (Wet 2 augustus 2002) applies to late payment between businesses
+  and towards public authorities, unless the contract sets a higher rate.
+
+A claim that runs over several years crosses several periods, each with its own rate. Getting
+one period wrong changes the amount claimed, and the 2013–2015 transition (below) is easy to
+miss. `getInterestRate` gives the right rate for a day, and returns `null` instead of guessing
+when the rate isn't published yet.
+
+## Source and updates
+
+| | |
+| --- | --- |
+| Source | [FOD Financiën](https://financien.belgium.be/nl/over_de_fod/structuur_en_diensten/algemene_administraties/thesaurie/rentevoet_betalingsachterstand_handelstransacties) (commercial); annual notice in the Belgisch Staatsblad (legal) |
+| Built by | Hand: add a period when a new rate is published |
+| Changes when | Every calendar year (legal); every semester (commercial) |
+| Checked | Weekly: the freshness check opens an issue when today, or the next two weeks, has no rate |
+
 - **Legal** (`legal`, wettelijke interest, Wet 5 mei 1865): set per calendar year; on file since 1970.
 - **Commercial** (`commercial`, late payment in commercial transactions, Wet 2 augustus 2002):
   set per semester; on file since 2002.
