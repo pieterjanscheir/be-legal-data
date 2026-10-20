@@ -103,7 +103,7 @@ formatCourtName(getCourt('enterprise-court-gent-brugge')) // 'Ondernemingsrechtb
 The data files are exported too:
 
 ```ts
-import courts from 'be-legal-data/data/courts.json'
+import courts from 'be-legal-data/data/courts.json' with { type: 'json' }
 ```
 
 ## Ids are public API

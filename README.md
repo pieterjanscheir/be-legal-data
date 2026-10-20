@@ -68,7 +68,7 @@ gives the last day that is covered.
 Import a single dataset to keep bundles small: `be-legal-data/interest-rates`,
 `be-legal-data/courts`, `be-legal-data/territory`.
 
-The raw files are also exported: `import courts from 'be-legal-data/data/courts.json'`.
+The raw files are also exported: `import courts from 'be-legal-data/data/courts.json' with { type: 'json' }`.
 
 ### Python and anything else
 
@@ -78,9 +78,11 @@ pinned to a tag (`https://raw.githubusercontent.com/pieterjanscheir/be-legal-dat
 ## Updating data
 
 1. Edit the JSON in `data/`. Keep the existing ids: projects store them.
-2. `pnpm check`: typecheck, schemas, build, tests, package lint, and a check that `dist/` and
-   `schema/` are committed and up to date.
-3. Add a line to [`CHANGELOG.md`](CHANGELOG.md) and commit (including `dist/` and `schema/`).
+2. `pnpm check`: regenerate the id types and schemas, typecheck, lint, build, tests with
+   coverage, the built-package smoke tests and package lint. It fails when the generated files
+   (`schema/`, `src/ids.generated.ts`) aren't committed.
+3. Add a line to [`CHANGELOG.md`](CHANGELOG.md) and commit, including the generated files. The
+   build output isn't committed: releases build it.
 
 A [weekly freshness check](.github/workflows/freshness.yml) opens an issue when a new interest
 rate is missing, a dataset is overdue for review, a source URL is dead, or the Judicial Code or

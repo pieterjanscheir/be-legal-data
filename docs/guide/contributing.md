@@ -58,15 +58,16 @@ Every dataset gets the same treatment, so users can rely on it:
 
 ## Checks
 
-| Command                     | What it does                                                                                                                                  |
-| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `pnpm check`                | Everything CI runs: `generate`, `typecheck`, `lint`, `build`, `test:coverage`, `lint:package`, and a check that generated files are committed |
-| `pnpm test`                 | Unit, integrity, schema, type and package tests                                                                                               |
-| `pnpm test:coverage`        | The same, failing below 100 % coverage of `src/`                                                                                              |
-| `pnpm lint` / `pnpm format` | ESLint and Prettier: check / fix                                                                                                              |
-| `pnpm generate`             | Regenerate `src/ids.generated.ts` (id types) and `schema/` from the data and types                                                            |
-| `pnpm lint:package`         | `publint` and `arethetypeswrong` on the packed package                                                                                        |
-| `pnpm test:freshness`       | Date-based checks: missing rates, overdue reviews. Not part of `check`; `FRESHNESS_ONLINE=1` also checks the source URLs                      |
+| Command                     | What it does                                                                                                                                                  |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `pnpm check`                | Everything CI runs: `generate`, `typecheck`, `lint`, `build`, `test:coverage`, `test:package`, `lint:package`, and a check that generated files are committed |
+| `pnpm test`                 | Unit, integrity, schema and type tests on the source (no build needed)                                                                                        |
+| `pnpm test:package`         | Smoke tests of the built package with `import` and `require()`: run `pnpm build` first                                                                        |
+| `pnpm test:coverage`        | The same, failing below 100 % coverage of `src/`                                                                                                              |
+| `pnpm lint` / `pnpm format` | ESLint and Prettier: check / fix                                                                                                                              |
+| `pnpm generate`             | Regenerate `src/ids.generated.ts` (id types) and `schema/` from the data and types                                                                            |
+| `pnpm lint:package`         | `publint` and `arethetypeswrong` on the packed package                                                                                                        |
+| `pnpm test:freshness`       | Date-based checks: missing rates, overdue reviews. Not part of `check`; `FRESHNESS_ONLINE=1` also checks the source URLs                                      |
 
 ## Releasing
 

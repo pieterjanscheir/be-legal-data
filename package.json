@@ -66,7 +66,7 @@
         "build:cantons": "node scripts/build-cantons.ts",
         "test": "vitest run",
         "typecheck": "tsc --noEmit",
-        "check": "pnpm generate && pnpm typecheck && pnpm lint && pnpm build && pnpm test:coverage && pnpm lint:package && git diff --exit-code -- schema src/ids.generated.ts",
+        "check": "pnpm generate && pnpm typecheck && pnpm lint && pnpm build && pnpm test:coverage && pnpm test:package && pnpm lint:package && git diff --exit-code -- schema src/ids.generated.ts",
         "prepublishOnly": "pnpm check",
         "docs:dev": "vitepress dev docs",
         "docs:build": "vitepress build docs",
@@ -78,7 +78,8 @@
         "generate": "pnpm build:ids && pnpm build:schemas",
         "lint": "eslint . && prettier --check .",
         "format": "prettier --write .",
-        "test:coverage": "vitest run --coverage"
+        "test:coverage": "vitest run --coverage",
+        "test:package": "node test/smoke/esm.mjs && node test/smoke/cjs.cjs"
     },
     "devDependencies": {
         "@arethetypeswrong/cli": "^0.18.5",

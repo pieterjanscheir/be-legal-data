@@ -38,8 +38,8 @@ validate(courts, schema)
 ```ts [TypeScript]
 import { Ajv } from 'ajv'
 import addFormats from 'ajv-formats'
-import courts from 'be-legal-data/data/courts.json'
-import schema from 'be-legal-data/schema/courts.schema.json'
+import courts from 'be-legal-data/data/courts.json' with { type: 'json' }
+import schema from 'be-legal-data/schema/courts.schema.json' with { type: 'json' }
 
 const ajv = new Ajv()
 addFormats(ajv)
