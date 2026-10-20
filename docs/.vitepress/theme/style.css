@@ -1,0 +1,83 @@
+/* Belgian-flag accents on top of the default theme */
+:root {
+    --vp-c-brand-1: #b8860b;
+    --vp-c-brand-2: #a0740a;
+    --vp-c-brand-3: #8a6408;
+    --vp-c-brand-soft: rgba(253, 218, 36, 0.16);
+    --vp-home-hero-name-color: transparent;
+    --vp-home-hero-name-background: linear-gradient(120deg, #1a1a1a 10%, #fdda24 50%, #ef3340 90%);
+}
+
+.dark {
+    --vp-c-brand-1: #fdda24;
+    --vp-c-brand-2: #e8c51b;
+    --vp-c-brand-3: #cfae12;
+    --vp-home-hero-name-background: linear-gradient(120deg, #f5f5f5 10%, #fdda24 50%, #ef3340 90%);
+}
+
+/* Shared styles for the interactive components */
+.bld-panel {
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    background: var(--vp-c-bg-soft);
+}
+
+.bld-panel input,
+.bld-panel select {
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 6px;
+    padding: 6px 10px;
+    background: var(--vp-c-bg);
+    color: var(--vp-c-text-1);
+    font: inherit;
+    max-width: 100%;
+}
+
+.bld-panel input:focus,
+.bld-panel select:focus {
+    outline: 2px solid var(--vp-c-brand-1);
+    outline-offset: 1px;
+}
+
+.bld-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    align-items: center;
+}
+
+.bld-controls label {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.bld-muted {
+    color: var(--vp-c-text-2);
+    font-size: 14px;
+}
+
+.bld-badge {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 0 8px;
+    border-radius: 9px;
+    background: var(--vp-c-brand-soft);
+    color: var(--vp-c-text-1);
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.bld-result {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 8px 0 0;
+}
+
+.vp-doc .bld-panel table {
+    margin: 12px 0 0;
+}
