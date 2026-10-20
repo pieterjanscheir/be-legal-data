@@ -29,7 +29,7 @@ mentions it can't tell apart are listed at the top of the script.
 
 Rerun it after a law changes the annex or municipalities merge. Canton ids follow the local
 language (Dutch in Flanders and Brussels, French in Wallonia, German around Eupen); the justice of
-the peace of canton `X` has id `VredegerechtX`.
+the peace of canton `x` has id `justice-of-the-peace-x` and links to it through its `canton` field.
 
 ### New interest rates
 
@@ -43,7 +43,7 @@ Every dataset gets the same treatment, so users can rely on it:
 
 1. **Data**: `data/<name>.json`, an array of records. Every value from an official source.
 2. **Ids**: follow the [identifier rules](./identifiers): an official code when one exists,
-   otherwise PascalCase ASCII from the local-language name.
+   otherwise lowercase kebab-case from the local-language name (`scripts/id.ts`).
 3. **Links, not copies**: refer to arrondissements, cantons and municipalities by id, and reuse
    the shared types (`Translated`, `Address`, `Contact`, `SourceRef`).
 4. **Sources**: a `sources: [{ url, retrieved }]` on each record, and an entry in

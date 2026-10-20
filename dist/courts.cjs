@@ -5,7 +5,7 @@
 
 
 
-var _chunkXBMGXQC5cjs = require('./chunk-XBMGXQC5.cjs');
+var _chunkRX5A244Pcjs = require('./chunk-RX5A244P.cjs');
 
 
 
@@ -13,4 +13,4 @@ var _chunkXBMGXQC5cjs = require('./chunk-XBMGXQC5.cjs');
 
 
 
-exports.courts = _chunkXBMGXQC5cjs.courts; exports.findCourts = _chunkXBMGXQC5cjs.findCourts; exports.formatCourtName = _chunkXBMGXQC5cjs.formatCourtName; exports.getContact = _chunkXBMGXQC5cjs.getContact; exports.getCourt = _chunkXBMGXQC5cjs.getCourt; exports.getJusticeOfThePeace = _chunkXBMGXQC5cjs.getJusticeOfThePeace;
+exports.courts = _chunkRX5A244Pcjs.courts; exports.findCourts = _chunkRX5A244Pcjs.findCourts; exports.formatCourtName = _chunkRX5A244Pcjs.formatCourtName; exports.getContact = _chunkRX5A244Pcjs.getContact; exports.getCourt = _chunkRX5A244Pcjs.getCourt; exports.getJusticeOfThePeace = _chunkRX5A244Pcjs.getJusticeOfThePeace;

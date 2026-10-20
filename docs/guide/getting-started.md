@@ -46,12 +46,12 @@ import {
     getInterestRate,
 } from 'be-legal-data'
 
-formatCourtName(getCourt('VredegerechtGent1')!) // 'Vredegerecht 1e kanton Gent'
-findCourts({ type: 'enterprise-court', arrondissement: 'WestFlanders' })
+formatCourtName(getCourt('justice-of-the-peace-gent-1')) // 'Vredegerecht 1e kanton Gent'
+findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' })
 
-getCantonsForMunicipality('44088') // [Canton MerelbekeMelle]
+getCantonsForMunicipality('44088') // [Canton merelbeke-melle]
 getCantonsForMunicipality('44021') // Gent 1–5: split city, see each canton's `territory`
-getCanton('Oudergem')!.seat.nl // 'Etterbeek'
+getCanton('oudergem').seat.nl // 'Etterbeek'
 
 getInterestRate('2024-06-15', 'legal') // { rate: 5.75, period: { from: '2024-01-01', to: '2024-12-31' } }
 getInterestRate(new Date(2014, 5, 15), 'commercial', { contractAfter20130316: true }) // { rate: 8.5, … }
@@ -94,8 +94,8 @@ silently using 0 %. It throws a `RangeError` for a malformed day such as `'2024-
 ### Court names in another language
 
 ```ts
-formatCourtName(getCourt('VredegerechtGent1')!, 'fr') // 'Tribunal de paix 1e canton Gand'
-formatCourtName(getCourt('OndernemingsrechtbankGentBrugge')!) // 'Ondernemingsrechtbank Gent - afdeling Brugge'
+formatCourtName(getCourt('justice-of-the-peace-gent-1'), 'fr') // 'Tribunal de paix 1e canton Gand'
+formatCourtName(getCourt('enterprise-court-gent-brugge')) // 'Ondernemingsrechtbank Gent - afdeling Brugge'
 ```
 
 ## Raw JSON
@@ -108,7 +108,7 @@ import courts from 'be-legal-data/data/courts.json'
 
 ## Ids are public API
 
-Projects store ids such as `VredegerechtGent1` or `EastFlanders`, so they never change within a
+Projects store ids such as `justice-of-the-peace-gent-1` or `oost-vlaanderen`, so they never change within a
 major version (see [identifiers](./identifiers)), and versions follow these rules:
 
 | Change | Version |

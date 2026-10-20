@@ -8,7 +8,7 @@
 
 
 
-var _chunk2YN2CFZMcjs = require('./chunk-2YN2CFZM.cjs');
+var _chunkKAB3LQHHcjs = require('./chunk-KAB3LQHH.cjs');
 
 
 
@@ -19,4 +19,4 @@ var _chunk2YN2CFZMcjs = require('./chunk-2YN2CFZM.cjs');
 
 
 
-exports.arrondissements = _chunk2YN2CFZMcjs.arrondissements; exports.cantons = _chunk2YN2CFZMcjs.cantons; exports.getArrondissement = _chunk2YN2CFZMcjs.getArrondissement; exports.getCanton = _chunk2YN2CFZMcjs.getCanton; exports.getCantonsForMunicipality = _chunk2YN2CFZMcjs.getCantonsForMunicipality; exports.getJudicialArea = _chunk2YN2CFZMcjs.getJudicialArea; exports.getMunicipality = _chunk2YN2CFZMcjs.getMunicipality; exports.judicialAreas = _chunk2YN2CFZMcjs.judicialAreas; exports.municipalities = _chunk2YN2CFZMcjs.municipalities;
+exports.arrondissements = _chunkKAB3LQHHcjs.arrondissements; exports.cantons = _chunkKAB3LQHHcjs.cantons; exports.getArrondissement = _chunkKAB3LQHHcjs.getArrondissement; exports.getCanton = _chunkKAB3LQHHcjs.getCanton; exports.getCantonsForMunicipality = _chunkKAB3LQHHcjs.getCantonsForMunicipality; exports.getJudicialArea = _chunkKAB3LQHHcjs.getJudicialArea; exports.getMunicipality = _chunkKAB3LQHHcjs.getMunicipality; exports.judicialAreas = _chunkKAB3LQHHcjs.judicialAreas; exports.municipalities = _chunkKAB3LQHHcjs.municipalities;

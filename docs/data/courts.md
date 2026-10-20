@@ -33,11 +33,12 @@ or bank account on the court's website before relying on it.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `id` | string | Stable id: `Vredegerecht` + canton id, or `Ondernemingsrechtbank` + seat + division |
+| `id` | `CourtId` | Stable id: the `type`, then the place: `justice-of-the-peace-gent-1`, `enterprise-court-gent-brugge` |
 | `type` | `'justice-of-the-peace'` \| `'enterprise-court'` | Kind of court; more types will be added ([#4](https://github.com/pieterjanscheir/be-legal-data/issues/4)) |
-| `arrondissement` | string | Arrondissement id |
+| `arrondissement` | `ArrondissementId` | Arrondissement id |
 | `name` | `{ nl, fr, de }` | Place name of the court or division |
-| `canton` | number? | Canton number (justices of the peace in multi-canton places) |
+| `canton` | `CantonId` | The canton the justice of the peace serves (justices of the peace only) |
+| `number` | number? | The canton's number in multi-canton places, part of the official name (justices of the peace only) |
 | `seat` | `{ nl, fr, de }` | Seat of the court (enterprise court divisions) |
 | `address` | `Address` | Street, house number, postal code, city, and building if any |
 | `contacts` | `Contact[]` | Phone numbers and e-mail addresses, with a `label` for what they're for |
@@ -61,10 +62,11 @@ type Court = JusticeOfThePeace | EnterpriseCourtDivision
 
 interface JusticeOfThePeace {
     type: 'justice-of-the-peace'
-    id: string // 'VredegerechtGent1' = 'Vredegerecht' + canton id
-    arrondissement: string
+    id: CourtId // 'justice-of-the-peace-gent-1': type + canton id
+    canton: CantonId // the canton it serves
+    arrondissement: ArrondissementId
     name: Translated // place name
-    canton?: number // for places with several cantons
+    number?: number // the canton's number, for places with several cantons
     address: Address
     contacts: Contact[]
     bankAccount?: string
@@ -73,8 +75,8 @@ interface JusticeOfThePeace {
 
 interface EnterpriseCourtDivision {
     type: 'enterprise-court'
-    id: string // 'OndernemingsrechtbankGentBrugge'
-    arrondissement: string
+    id: CourtId // 'enterprise-court-gent-brugge'
+    arrondissement: ArrondissementId
     name: Translated // the division
     seat: Translated // the court's seat
     address: Address
@@ -101,9 +103,9 @@ interface Contact {
 ## Helpers
 
 ```ts
-getCourt('VredegerechtGent1')
-getJusticeOfThePeace('Gent1') // same court, by canton id
-findCourts({ type: 'justice-of-the-peace', arrondissement: 'EastFlanders' })
+getCourt('justice-of-the-peace-gent-1')
+getJusticeOfThePeace('gent-1') // same court, by canton id
+findCourts({ type: 'justice-of-the-peace', arrondissement: 'oost-vlaanderen' })
 getContact(court, 'email', 'griffie') // first matching contact's value
 formatCourtName(court, 'fr') // official-style name in nl (default), fr or de
 ```

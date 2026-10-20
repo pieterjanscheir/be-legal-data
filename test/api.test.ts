@@ -1,8 +1,17 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, expectTypeOf, it } from 'vitest'
 
 import {
+    type ArrondissementId,
+    type Canton,
+    type CantonId,
+    type Court,
+    type Municipality,
+    type MunicipalityId,
     cantons,
     courts,
+    getCanton,
+    getCourt,
+    getMunicipality,
     formatCourtName,
     getCantonsForMunicipality,
     getInterestRate,
@@ -40,11 +49,11 @@ describe('getInterestRate input validation', () => {
 
 describe('getJusticeOfThePeace', () => {
     it('finds the court of a canton', () => {
-        expect(getJusticeOfThePeace('Gent1')?.id).toBe('VredegerechtGent1')
+        expect(getJusticeOfThePeace('gent-1')?.id).toBe('justice-of-the-peace-gent-1')
     })
 
     it('returns undefined for a canton whose court is not on file', () => {
-        expect(getJusticeOfThePeace('Antwerpen1')).toBeUndefined()
+        expect(getJusticeOfThePeace('antwerpen-1')).toBeUndefined()
         expect(getJusticeOfThePeace('NoSuchCanton')).toBeUndefined()
     })
 })
@@ -57,8 +66,8 @@ describe('lookups', () => {
 
     it('find every canton through each of its municipalities', () => {
         for (const canton of cantons) {
-            for (const { refnis } of canton.municipalities) {
-                expect(getCantonsForMunicipality(refnis), canton.id).toContain(canton)
+            for (const { municipality } of canton.municipalities) {
+                expect(getCantonsForMunicipality(municipality), canton.id).toContain(canton)
             }
         }
     })
@@ -70,5 +79,27 @@ describe('formatCourtName', () => {
             const name = formatCourtName(court, locale)
             expect(name, court.id).not.toMatch(/undefined|\s{2}|^\s|\s$/)
         }
+    })
+})
+
+describe('id types', () => {
+    it('return a record, not undefined, for a known id', () => {
+        expectTypeOf(getCanton('gent-1')).toEqualTypeOf<Canton>()
+        expectTypeOf(getCourt('justice-of-the-peace-gent-1')).toEqualTypeOf<Court>()
+        expectTypeOf(getMunicipality('44021')).toEqualTypeOf<Municipality>()
+    })
+
+    it('may return undefined for any other string', () => {
+        const id: string = 'gent-1'
+        expectTypeOf(getCanton(id)).toEqualTypeOf<Canton | undefined>()
+        expectTypeOf(getCanton('no-such-canton')).toEqualTypeOf<Canton | undefined>()
+    })
+
+    it('type the links between datasets', () => {
+        expectTypeOf<Canton['arrondissement']>().toEqualTypeOf<ArrondissementId>()
+        expectTypeOf<Canton['municipalities'][number]['municipality']>().toEqualTypeOf<MunicipalityId>()
+        // @ts-expect-error: not a canton id
+        const typo: CantonId = 'gent1'
+        void typo
     })
 })

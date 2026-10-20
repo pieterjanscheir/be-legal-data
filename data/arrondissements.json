@@ -1,110 +1,110 @@
 [
   {
-    "id": "Antwerp",
+    "id": "antwerpen",
     "name": {
       "nl": "Antwerpen",
       "fr": "Anvers",
       "de": "Antwerpen"
     },
-    "judicialArea": "Antwerp"
+    "judicialArea": "antwerpen"
   },
   {
-    "id": "Limburg",
+    "id": "limburg",
     "name": {
       "nl": "Limburg",
       "fr": "Limbourg",
       "de": "Limburg"
     },
-    "judicialArea": "Antwerp"
+    "judicialArea": "antwerpen"
   },
   {
-    "id": "Brussels",
+    "id": "brussel",
     "name": {
       "nl": "Brussel",
       "fr": "Bruxelles",
       "de": "Brüssel"
     },
-    "judicialArea": "Brussels"
+    "judicialArea": "brussel"
   },
   {
-    "id": "Leuven",
+    "id": "leuven",
     "name": {
       "nl": "Leuven",
       "fr": "Louvain",
       "de": "Löwen"
     },
-    "judicialArea": "Brussels"
+    "judicialArea": "brussel"
   },
   {
-    "id": "WalloonBrabant",
+    "id": "brabant-wallon",
     "name": {
       "nl": "Waals-Brabant",
       "fr": "Brabant wallon",
       "de": "Wallonisch-Brabant"
     },
-    "judicialArea": "Brussels"
+    "judicialArea": "brussel"
   },
   {
-    "id": "EastFlanders",
+    "id": "oost-vlaanderen",
     "name": {
       "nl": "Oost-Vlaanderen",
       "fr": "Flandre orientale",
       "de": "Ostflandern"
     },
-    "judicialArea": "Ghent"
+    "judicialArea": "gent"
   },
   {
-    "id": "WestFlanders",
+    "id": "west-vlaanderen",
     "name": {
       "nl": "West-Vlaanderen",
       "fr": "Flandre occidentale",
       "de": "Westflandern"
     },
-    "judicialArea": "Ghent"
+    "judicialArea": "gent"
   },
   {
-    "id": "Liege",
+    "id": "liege",
     "name": {
       "nl": "Luik",
       "fr": "Liège",
       "de": "Lüttich"
     },
-    "judicialArea": "Liege"
+    "judicialArea": "liege"
   },
   {
-    "id": "Eupen",
+    "id": "eupen",
     "name": {
       "nl": "Eupen",
       "fr": "Eupen",
       "de": "Eupen"
     },
-    "judicialArea": "Liege"
+    "judicialArea": "liege"
   },
   {
-    "id": "Luxembourg",
+    "id": "luxembourg",
     "name": {
       "nl": "Luxemburg",
       "fr": "Luxembourg",
       "de": "Luxemburg"
     },
-    "judicialArea": "Liege"
+    "judicialArea": "liege"
   },
   {
-    "id": "Namur",
+    "id": "namur",
     "name": {
       "nl": "Namen",
       "fr": "Namur",
       "de": "Namur"
     },
-    "judicialArea": "Liege"
+    "judicialArea": "liege"
   },
   {
-    "id": "Hainaut",
+    "id": "hainaut",
     "name": {
       "nl": "Henegouwen",
       "fr": "Hainaut",
       "de": "Hennegau"
     },
-    "judicialArea": "Mons"
+    "judicialArea": "mons"
   }
 ]

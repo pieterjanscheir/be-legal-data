@@ -14,9 +14,8 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string",
-          "description": "Stable key, e.g. 'Ghent'",
-          "pattern": "^[A-Z][A-Za-z0-9]*$"
+          "$ref": "#/definitions/JudicialAreaId",
+          "description": "Stable id from the local-language name, e.g. 'gent'"
         },
         "name": {
           "$ref": "#/definitions/Translated"
@@ -28,6 +27,17 @@
       ],
       "additionalProperties": false,
       "description": "Area of a court of appeal (rechtsgebied): Antwerpen, Brussel, Gent, Luik or Bergen"
+    },
+    "JudicialAreaId": {
+      "type": "string",
+      "enum": [
+        "antwerpen",
+        "brussel",
+        "gent",
+        "liege",
+        "mons"
+      ],
+      "description": "Id of a record in data/judicial-areas.json"
     },
     "Translated": {
       "type": "object",

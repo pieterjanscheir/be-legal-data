@@ -4,7 +4,7 @@ import {
     municipalities,
     getCantonsForMunicipality,
     getArrondissement,
-    getCourt,
+    getJusticeOfThePeace,
     formatCourtName,
     getContact,
 } from '../../../src'
@@ -35,7 +35,7 @@ const matches = computed(() => {
     return municipalities
         .filter(
             (m) =>
-                m.refnis.startsWith(q) ||
+                m.id.startsWith(q) ||
                 normalize(m.name.nl).includes(q) ||
                 normalize(m.name.fr).includes(q),
         )
@@ -43,12 +43,12 @@ const matches = computed(() => {
 })
 
 const municipality = computed(() => {
-    const refnis = selected.value ?? matches.value[0]?.refnis
-    return municipalities.find((m) => m.refnis === refnis)
+    const id = selected.value ?? matches.value[0]?.id
+    return municipalities.find((m) => m.id === id)
 })
 
 const cantons = computed(() =>
-    municipality.value ? getCantonsForMunicipality(municipality.value.refnis) : [],
+    municipality.value ? getCantonsForMunicipality(municipality.value.id) : [],
 )
 
 function label(m: { name: { nl: string; fr: string } }) {
@@ -66,8 +66,8 @@ function label(m: { name: { nl: string; fr: string } }) {
             <label v-if="matches.length > 1">
                 Match
                 <select v-model="selected">
-                    <option v-for="m in matches" :key="m.refnis" :value="m.refnis">
-                        {{ label(m) }} ({{ m.refnis }})
+                    <option v-for="m in matches" :key="m.id" :value="m.id">
+                        {{ label(m) }} ({{ m.id }})
                     </option>
                 </select>
             </label>
@@ -78,7 +78,7 @@ function label(m: { name: { nl: string; fr: string } }) {
             <p>
                 <strong>{{ label(municipality) }}</strong>
                 <span class="bld-muted">
-                    · REFNIS {{ municipality.refnis }} · {{ provinces[municipality.province] }}
+                    · REFNIS {{ municipality.id }} · {{ provinces[municipality.province] }}
                 </span>
                 <span v-if="cantons.length > 1" class="bld-badge">split over {{ cantons.length }} cantons</span>
             </p>
@@ -97,9 +97,9 @@ function label(m: { name: { nl: string; fr: string } }) {
                         <td>{{ c.seat.nl }}<span v-if="c.seat.fr !== c.seat.nl"> / {{ c.seat.fr }}</span></td>
                         <td>{{ getArrondissement(c.arrondissement)?.name.nl }}</td>
                         <td>
-                            <template v-if="getCourt('Vredegerecht' + c.id)">
-                                {{ formatCourtName(getCourt('Vredegerecht' + c.id)!) }}<br />
-                                <span class="bld-muted">{{ getContact(getCourt('Vredegerecht' + c.id)!, 'email') }}</span>
+                            <template v-if="getJusticeOfThePeace(c.id)">
+                                {{ formatCourtName(getJusticeOfThePeace(c.id)!) }}<br />
+                                <span class="bld-muted">{{ getContact(getJusticeOfThePeace(c.id)!, 'email') }}</span>
                             </template>
                             <span v-else class="bld-muted">not in courts.json yet</span>
                         </td>

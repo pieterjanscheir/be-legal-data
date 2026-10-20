@@ -34,7 +34,7 @@ features:
 ```ts
 import { getCantonsForMunicipality, getInterestRate } from 'be-legal-data'
 
-getCantonsForMunicipality('44088') // [Canton MerelbekeMelle]
+getCantonsForMunicipality('44088') // [Canton merelbeke-melle]
 getInterestRate('2024-06-15', 'legal') // { rate: 5.75, period: { from: '2024-01-01', to: '2024-12-31' } }
 ```
 

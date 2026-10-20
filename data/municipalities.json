@@ -1,6 +1,6 @@
 [
   {
-    "refnis": "11001",
+    "id": "11001",
     "name": {
       "nl": "Aartselaar",
       "fr": "Aartselaar"
@@ -8,7 +8,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11002",
+    "id": "11002",
     "name": {
       "nl": "Antwerpen",
       "fr": "Anvers"
@@ -16,7 +16,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11004",
+    "id": "11004",
     "name": {
       "nl": "Boechout",
       "fr": "Boechout"
@@ -24,7 +24,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11005",
+    "id": "11005",
     "name": {
       "nl": "Boom",
       "fr": "Boom"
@@ -32,7 +32,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11008",
+    "id": "11008",
     "name": {
       "nl": "Brasschaat",
       "fr": "Brasschaat"
@@ -40,7 +40,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11009",
+    "id": "11009",
     "name": {
       "nl": "Brecht",
       "fr": "Brecht"
@@ -48,7 +48,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11013",
+    "id": "11013",
     "name": {
       "nl": "Edegem",
       "fr": "Edegem"
@@ -56,7 +56,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11016",
+    "id": "11016",
     "name": {
       "nl": "Essen",
       "fr": "Essen"
@@ -64,7 +64,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11018",
+    "id": "11018",
     "name": {
       "nl": "Hemiksem",
       "fr": "Hemiksem"
@@ -72,7 +72,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11021",
+    "id": "11021",
     "name": {
       "nl": "Hove",
       "fr": "Hove"
@@ -80,7 +80,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11022",
+    "id": "11022",
     "name": {
       "nl": "Kalmthout",
       "fr": "Kalmthout"
@@ -88,7 +88,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11023",
+    "id": "11023",
     "name": {
       "nl": "Kapellen",
       "fr": "Kapellen"
@@ -96,7 +96,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11024",
+    "id": "11024",
     "name": {
       "nl": "Kontich",
       "fr": "Kontich"
@@ -104,7 +104,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11025",
+    "id": "11025",
     "name": {
       "nl": "Lint",
       "fr": "Lint"
@@ -112,7 +112,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11029",
+    "id": "11029",
     "name": {
       "nl": "Mortsel",
       "fr": "Mortsel"
@@ -120,7 +120,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11030",
+    "id": "11030",
     "name": {
       "nl": "Niel",
       "fr": "Niel"
@@ -128,7 +128,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11035",
+    "id": "11035",
     "name": {
       "nl": "Ranst",
       "fr": "Ranst"
@@ -136,7 +136,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11037",
+    "id": "11037",
     "name": {
       "nl": "Rumst",
       "fr": "Rumst"
@@ -144,7 +144,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11038",
+    "id": "11038",
     "name": {
       "nl": "Schelle",
       "fr": "Schelle"
@@ -152,7 +152,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11039",
+    "id": "11039",
     "name": {
       "nl": "Schilde",
       "fr": "Schilde"
@@ -160,7 +160,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11040",
+    "id": "11040",
     "name": {
       "nl": "Schoten",
       "fr": "Schoten"
@@ -168,7 +168,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11044",
+    "id": "11044",
     "name": {
       "nl": "Stabroek",
       "fr": "Stabroek"
@@ -176,7 +176,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11050",
+    "id": "11050",
     "name": {
       "nl": "Wijnegem",
       "fr": "Wijnegem"
@@ -184,7 +184,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11052",
+    "id": "11052",
     "name": {
       "nl": "Wommelgem",
       "fr": "Wommelgem"
@@ -192,7 +192,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11053",
+    "id": "11053",
     "name": {
       "nl": "Wuustwezel",
       "fr": "Wuustwezel"
@@ -200,7 +200,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11054",
+    "id": "11054",
     "name": {
       "nl": "Zandhoven",
       "fr": "Zandhoven"
@@ -208,7 +208,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11055",
+    "id": "11055",
     "name": {
       "nl": "Zoersel",
       "fr": "Zoersel"
@@ -216,7 +216,7 @@
     "province": "10000"
   },
   {
-    "refnis": "11057",
+    "id": "11057",
     "name": {
       "nl": "Malle",
       "fr": "Malle"
@@ -224,7 +224,7 @@
     "province": "10000"
   },
   {
-    "refnis": "12002",
+    "id": "12002",
     "name": {
       "nl": "Berlaar",
       "fr": "Berlaar"
@@ -232,7 +232,7 @@
     "province": "10000"
   },
   {
-    "refnis": "12005",
+    "id": "12005",
     "name": {
       "nl": "Bonheiden",
       "fr": "Bonheiden"
@@ -240,7 +240,7 @@
     "province": "10000"
   },
   {
-    "refnis": "12007",
+    "id": "12007",
     "name": {
       "nl": "Bornem",
       "fr": "Bornem"
@@ -248,7 +248,7 @@
     "province": "10000"
   },
   {
-    "refnis": "12009",
+    "id": "12009",
     "name": {
       "nl": "Duffel",
       "fr": "Duffel"
@@ -256,7 +256,7 @@
     "province": "10000"
   },
   {
-    "refnis": "12014",
+    "id": "12014",
     "name": {
       "nl": "Heist-op-den-Berg",
       "fr": "Heist-op-den-Berg"
@@ -264,7 +264,7 @@
     "province": "10000"
   },
   {
-    "refnis": "12021",
+    "id": "12021",
     "name": {
       "nl": "Lier",
       "fr": "Lierre"
@@ -272,7 +272,7 @@
     "province": "10000"
   },
   {
-    "refnis": "12025",
+    "id": "12025",
     "name": {
       "nl": "Mechelen",
       "fr": "Malines"
@@ -280,7 +280,7 @@
     "province": "10000"
   },
   {
-    "refnis": "12026",
+    "id": "12026",
     "name": {
       "nl": "Nijlen",
       "fr": "Nijlen"
@@ -288,7 +288,7 @@
     "province": "10000"
   },
   {
-    "refnis": "12029",
+    "id": "12029",
     "name": {
       "nl": "Putte",
       "fr": "Putte"
@@ -296,7 +296,7 @@
     "province": "10000"
   },
   {
-    "refnis": "12035",
+    "id": "12035",
     "name": {
       "nl": "Sint-Katelijne-Waver",
       "fr": "Sint-Katelijne-Waver"
@@ -304,7 +304,7 @@
     "province": "10000"
   },
   {
-    "refnis": "12040",
+    "id": "12040",
     "name": {
       "nl": "Willebroek",
       "fr": "Willebroek"
@@ -312,7 +312,7 @@
     "province": "10000"
   },
   {
-    "refnis": "12041",
+    "id": "12041",
     "name": {
       "nl": "Puurs-Sint-Amands",
       "fr": "Puurs-Sint-Amands"
@@ -320,7 +320,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13001",
+    "id": "13001",
     "name": {
       "nl": "Arendonk",
       "fr": "Arendonk"
@@ -328,7 +328,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13002",
+    "id": "13002",
     "name": {
       "nl": "Baarle-Hertog",
       "fr": "Baerle-Duc"
@@ -336,7 +336,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13003",
+    "id": "13003",
     "name": {
       "nl": "Balen",
       "fr": "Balen"
@@ -344,7 +344,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13004",
+    "id": "13004",
     "name": {
       "nl": "Beerse",
       "fr": "Beerse"
@@ -352,7 +352,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13006",
+    "id": "13006",
     "name": {
       "nl": "Dessel",
       "fr": "Dessel"
@@ -360,7 +360,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13008",
+    "id": "13008",
     "name": {
       "nl": "Geel",
       "fr": "Geel"
@@ -368,7 +368,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13010",
+    "id": "13010",
     "name": {
       "nl": "Grobbendonk",
       "fr": "Grobbendonk"
@@ -376,7 +376,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13011",
+    "id": "13011",
     "name": {
       "nl": "Herentals",
       "fr": "Herentals"
@@ -384,7 +384,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13012",
+    "id": "13012",
     "name": {
       "nl": "Herenthout",
       "fr": "Herenthout"
@@ -392,7 +392,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13013",
+    "id": "13013",
     "name": {
       "nl": "Herselt",
       "fr": "Herselt"
@@ -400,7 +400,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13014",
+    "id": "13014",
     "name": {
       "nl": "Hoogstraten",
       "fr": "Hoogstraten"
@@ -408,7 +408,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13016",
+    "id": "13016",
     "name": {
       "nl": "Hulshout",
       "fr": "Hulshout"
@@ -416,7 +416,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13017",
+    "id": "13017",
     "name": {
       "nl": "Kasterlee",
       "fr": "Kasterlee"
@@ -424,7 +424,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13019",
+    "id": "13019",
     "name": {
       "nl": "Lille",
       "fr": "Lille"
@@ -432,7 +432,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13021",
+    "id": "13021",
     "name": {
       "nl": "Meerhout",
       "fr": "Meerhout"
@@ -440,7 +440,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13023",
+    "id": "13023",
     "name": {
       "nl": "Merksplas",
       "fr": "Merksplas"
@@ -448,7 +448,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13025",
+    "id": "13025",
     "name": {
       "nl": "Mol",
       "fr": "Mol"
@@ -456,7 +456,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13029",
+    "id": "13029",
     "name": {
       "nl": "Olen",
       "fr": "Olen"
@@ -464,7 +464,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13031",
+    "id": "13031",
     "name": {
       "nl": "Oud-Turnhout",
       "fr": "Oud-Turnhout"
@@ -472,7 +472,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13035",
+    "id": "13035",
     "name": {
       "nl": "Ravels",
       "fr": "Ravels"
@@ -480,7 +480,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13036",
+    "id": "13036",
     "name": {
       "nl": "Retie",
       "fr": "Retie"
@@ -488,7 +488,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13037",
+    "id": "13037",
     "name": {
       "nl": "Rijkevorsel",
       "fr": "Rijkevorsel"
@@ -496,7 +496,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13040",
+    "id": "13040",
     "name": {
       "nl": "Turnhout",
       "fr": "Turnhout"
@@ -504,7 +504,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13044",
+    "id": "13044",
     "name": {
       "nl": "Vorselaar",
       "fr": "Vorselaar"
@@ -512,7 +512,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13046",
+    "id": "13046",
     "name": {
       "nl": "Vosselaar",
       "fr": "Vosselaar"
@@ -520,7 +520,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13049",
+    "id": "13049",
     "name": {
       "nl": "Westerlo",
       "fr": "Westerlo"
@@ -528,7 +528,7 @@
     "province": "10000"
   },
   {
-    "refnis": "13053",
+    "id": "13053",
     "name": {
       "nl": "Laakdal",
       "fr": "Laakdal"
@@ -536,7 +536,7 @@
     "province": "10000"
   },
   {
-    "refnis": "21001",
+    "id": "21001",
     "name": {
       "nl": "Anderlecht",
       "fr": "Anderlecht"
@@ -544,7 +544,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21002",
+    "id": "21002",
     "name": {
       "nl": "Oudergem",
       "fr": "Auderghem"
@@ -552,7 +552,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21003",
+    "id": "21003",
     "name": {
       "nl": "Sint-Agatha-Berchem",
       "fr": "Berchem-Sainte-Agathe"
@@ -560,7 +560,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21004",
+    "id": "21004",
     "name": {
       "nl": "Brussel",
       "fr": "Bruxelles"
@@ -568,7 +568,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21005",
+    "id": "21005",
     "name": {
       "nl": "Etterbeek",
       "fr": "Etterbeek"
@@ -576,7 +576,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21006",
+    "id": "21006",
     "name": {
       "nl": "Evere",
       "fr": "Evere"
@@ -584,7 +584,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21007",
+    "id": "21007",
     "name": {
       "nl": "Vorst",
       "fr": "Forest"
@@ -592,7 +592,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21008",
+    "id": "21008",
     "name": {
       "nl": "Ganshoren",
       "fr": "Ganshoren"
@@ -600,7 +600,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21009",
+    "id": "21009",
     "name": {
       "nl": "Elsene",
       "fr": "Ixelles"
@@ -608,7 +608,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21010",
+    "id": "21010",
     "name": {
       "nl": "Jette",
       "fr": "Jette"
@@ -616,7 +616,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21011",
+    "id": "21011",
     "name": {
       "nl": "Koekelberg",
       "fr": "Koekelberg"
@@ -624,7 +624,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21012",
+    "id": "21012",
     "name": {
       "nl": "Sint-Jans-Molenbeek",
       "fr": "Molenbeek-Saint-Jean"
@@ -632,7 +632,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21013",
+    "id": "21013",
     "name": {
       "nl": "Sint-Gillis",
       "fr": "Saint-Gilles"
@@ -640,7 +640,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21014",
+    "id": "21014",
     "name": {
       "nl": "Sint-Joost-ten-Node",
       "fr": "Saint-Josse-ten-Noode"
@@ -648,7 +648,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21015",
+    "id": "21015",
     "name": {
       "nl": "Schaarbeek",
       "fr": "Schaerbeek"
@@ -656,7 +656,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21016",
+    "id": "21016",
     "name": {
       "nl": "Ukkel",
       "fr": "Uccle"
@@ -664,7 +664,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21017",
+    "id": "21017",
     "name": {
       "nl": "Watermaal-Bosvoorde",
       "fr": "Watermael-Boitsfort"
@@ -672,7 +672,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21018",
+    "id": "21018",
     "name": {
       "nl": "Sint-Lambrechts-Woluwe",
       "fr": "Woluwe-Saint-Lambert"
@@ -680,7 +680,7 @@
     "province": "04000"
   },
   {
-    "refnis": "21019",
+    "id": "21019",
     "name": {
       "nl": "Sint-Pieters-Woluwe",
       "fr": "Woluwe-Saint-Pierre"
@@ -688,7 +688,7 @@
     "province": "04000"
   },
   {
-    "refnis": "23002",
+    "id": "23002",
     "name": {
       "nl": "Asse",
       "fr": "Asse"
@@ -696,7 +696,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23003",
+    "id": "23003",
     "name": {
       "nl": "Beersel",
       "fr": "Beersel"
@@ -704,7 +704,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23009",
+    "id": "23009",
     "name": {
       "nl": "Bever",
       "fr": "Biévène"
@@ -712,7 +712,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23016",
+    "id": "23016",
     "name": {
       "nl": "Dilbeek",
       "fr": "Dilbeek"
@@ -720,7 +720,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23025",
+    "id": "23025",
     "name": {
       "nl": "Grimbergen",
       "fr": "Grimbergen"
@@ -728,7 +728,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23027",
+    "id": "23027",
     "name": {
       "nl": "Halle",
       "fr": "Hal"
@@ -736,7 +736,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23033",
+    "id": "23033",
     "name": {
       "nl": "Hoeilaart",
       "fr": "Hoeilaart"
@@ -744,7 +744,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23038",
+    "id": "23038",
     "name": {
       "nl": "Kampenhout",
       "fr": "Kampenhout"
@@ -752,7 +752,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23039",
+    "id": "23039",
     "name": {
       "nl": "Kapelle-op-den-Bos",
       "fr": "Kapelle-op-den-Bos"
@@ -760,7 +760,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23044",
+    "id": "23044",
     "name": {
       "nl": "Liedekerke",
       "fr": "Liedekerke"
@@ -768,7 +768,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23045",
+    "id": "23045",
     "name": {
       "nl": "Londerzeel",
       "fr": "Londerzeel"
@@ -776,7 +776,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23047",
+    "id": "23047",
     "name": {
       "nl": "Machelen",
       "fr": "Machelen"
@@ -784,7 +784,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23050",
+    "id": "23050",
     "name": {
       "nl": "Meise",
       "fr": "Meise"
@@ -792,7 +792,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23052",
+    "id": "23052",
     "name": {
       "nl": "Merchtem",
       "fr": "Merchtem"
@@ -800,7 +800,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23060",
+    "id": "23060",
     "name": {
       "nl": "Opwijk",
       "fr": "Opwijk"
@@ -808,7 +808,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23062",
+    "id": "23062",
     "name": {
       "nl": "Overijse",
       "fr": "Overijse"
@@ -816,7 +816,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23064",
+    "id": "23064",
     "name": {
       "nl": "Pepingen",
       "fr": "Pepingen"
@@ -824,7 +824,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23077",
+    "id": "23077",
     "name": {
       "nl": "Sint-Pieters-Leeuw",
       "fr": "Sint-Pieters-Leeuw"
@@ -832,7 +832,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23081",
+    "id": "23081",
     "name": {
       "nl": "Steenokkerzeel",
       "fr": "Steenokkerzeel"
@@ -840,7 +840,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23086",
+    "id": "23086",
     "name": {
       "nl": "Ternat",
       "fr": "Ternat"
@@ -848,7 +848,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23088",
+    "id": "23088",
     "name": {
       "nl": "Vilvoorde",
       "fr": "Vilvorde"
@@ -856,7 +856,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23094",
+    "id": "23094",
     "name": {
       "nl": "Zaventem",
       "fr": "Zaventem"
@@ -864,7 +864,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23096",
+    "id": "23096",
     "name": {
       "nl": "Zemst",
       "fr": "Zemst"
@@ -872,7 +872,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23097",
+    "id": "23097",
     "name": {
       "nl": "Roosdaal",
       "fr": "Roosdaal"
@@ -880,7 +880,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23098",
+    "id": "23098",
     "name": {
       "nl": "Drogenbos",
       "fr": "Drogenbos"
@@ -888,7 +888,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23099",
+    "id": "23099",
     "name": {
       "nl": "Kraainem",
       "fr": "Kraainem"
@@ -896,7 +896,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23100",
+    "id": "23100",
     "name": {
       "nl": "Linkebeek",
       "fr": "Linkebeek"
@@ -904,7 +904,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23101",
+    "id": "23101",
     "name": {
       "nl": "Sint-Genesius-Rode",
       "fr": "Rhode-Saint-Genèse"
@@ -912,7 +912,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23102",
+    "id": "23102",
     "name": {
       "nl": "Wemmel",
       "fr": "Wemmel"
@@ -920,7 +920,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23103",
+    "id": "23103",
     "name": {
       "nl": "Wezembeek-Oppem",
       "fr": "Wezembeek-Oppem"
@@ -928,7 +928,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23104",
+    "id": "23104",
     "name": {
       "nl": "Lennik",
       "fr": "Lennik"
@@ -936,7 +936,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23105",
+    "id": "23105",
     "name": {
       "nl": "Affligem",
       "fr": "Affligem"
@@ -944,7 +944,7 @@
     "province": "20001"
   },
   {
-    "refnis": "23106",
+    "id": "23106",
     "name": {
       "nl": "Pajottegem",
       "fr": "Pajottegem"
@@ -952,7 +952,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24001",
+    "id": "24001",
     "name": {
       "nl": "Aarschot",
       "fr": "Aarschot"
@@ -960,7 +960,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24007",
+    "id": "24007",
     "name": {
       "nl": "Begijnendijk",
       "fr": "Begijnendijk"
@@ -968,7 +968,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24008",
+    "id": "24008",
     "name": {
       "nl": "Bekkevoort",
       "fr": "Bekkevoort"
@@ -976,7 +976,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24009",
+    "id": "24009",
     "name": {
       "nl": "Bertem",
       "fr": "Bertem"
@@ -984,7 +984,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24011",
+    "id": "24011",
     "name": {
       "nl": "Bierbeek",
       "fr": "Bierbeek"
@@ -992,7 +992,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24014",
+    "id": "24014",
     "name": {
       "nl": "Boortmeerbeek",
       "fr": "Boortmeerbeek"
@@ -1000,7 +1000,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24016",
+    "id": "24016",
     "name": {
       "nl": "Boutersem",
       "fr": "Boutersem"
@@ -1008,7 +1008,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24020",
+    "id": "24020",
     "name": {
       "nl": "Diest",
       "fr": "Diest"
@@ -1016,7 +1016,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24028",
+    "id": "24028",
     "name": {
       "nl": "Geetbets",
       "fr": "Geetbets"
@@ -1024,7 +1024,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24033",
+    "id": "24033",
     "name": {
       "nl": "Haacht",
       "fr": "Haacht"
@@ -1032,7 +1032,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24038",
+    "id": "24038",
     "name": {
       "nl": "Herent",
       "fr": "Herent"
@@ -1040,7 +1040,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24041",
+    "id": "24041",
     "name": {
       "nl": "Hoegaarden",
       "fr": "Hoegaarden"
@@ -1048,7 +1048,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24043",
+    "id": "24043",
     "name": {
       "nl": "Holsbeek",
       "fr": "Holsbeek"
@@ -1056,7 +1056,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24045",
+    "id": "24045",
     "name": {
       "nl": "Huldenberg",
       "fr": "Huldenberg"
@@ -1064,7 +1064,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24048",
+    "id": "24048",
     "name": {
       "nl": "Keerbergen",
       "fr": "Keerbergen"
@@ -1072,7 +1072,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24054",
+    "id": "24054",
     "name": {
       "nl": "Kortenaken",
       "fr": "Kortenaken"
@@ -1080,7 +1080,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24055",
+    "id": "24055",
     "name": {
       "nl": "Kortenberg",
       "fr": "Kortenberg"
@@ -1088,7 +1088,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24059",
+    "id": "24059",
     "name": {
       "nl": "Landen",
       "fr": "Landen"
@@ -1096,7 +1096,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24062",
+    "id": "24062",
     "name": {
       "nl": "Leuven",
       "fr": "Louvain"
@@ -1104,7 +1104,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24066",
+    "id": "24066",
     "name": {
       "nl": "Lubbeek",
       "fr": "Lubbeek"
@@ -1112,7 +1112,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24086",
+    "id": "24086",
     "name": {
       "nl": "Oud-Heverlee",
       "fr": "Oud-Heverlee"
@@ -1120,7 +1120,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24094",
+    "id": "24094",
     "name": {
       "nl": "Rotselaar",
       "fr": "Rotselaar"
@@ -1128,7 +1128,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24104",
+    "id": "24104",
     "name": {
       "nl": "Tervuren",
       "fr": "Tervuren"
@@ -1136,7 +1136,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24107",
+    "id": "24107",
     "name": {
       "nl": "Tienen",
       "fr": "Tirlemont"
@@ -1144,7 +1144,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24109",
+    "id": "24109",
     "name": {
       "nl": "Tremelo",
       "fr": "Tremelo"
@@ -1152,7 +1152,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24130",
+    "id": "24130",
     "name": {
       "nl": "Zoutleeuw",
       "fr": "Léau"
@@ -1160,7 +1160,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24133",
+    "id": "24133",
     "name": {
       "nl": "Linter",
       "fr": "Linter"
@@ -1168,7 +1168,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24134",
+    "id": "24134",
     "name": {
       "nl": "Scherpenheuvel-Zichem",
       "fr": "Montaigu-Zichem"
@@ -1176,7 +1176,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24135",
+    "id": "24135",
     "name": {
       "nl": "Tielt-Winge",
       "fr": "Tielt-Winge"
@@ -1184,7 +1184,7 @@
     "province": "20001"
   },
   {
-    "refnis": "24137",
+    "id": "24137",
     "name": {
       "nl": "Glabbeek",
       "fr": "Glabbeek"
@@ -1192,7 +1192,7 @@
     "province": "20001"
   },
   {
-    "refnis": "25005",
+    "id": "25005",
     "name": {
       "nl": "Bevekom",
       "fr": "Beauvechain"
@@ -1200,7 +1200,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25014",
+    "id": "25014",
     "name": {
       "nl": "Eigenbrakel",
       "fr": "Braine-l’Alleud"
@@ -1208,7 +1208,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25015",
+    "id": "25015",
     "name": {
       "nl": "Kasteelbrakel",
       "fr": "Braine-le-Château"
@@ -1216,7 +1216,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25018",
+    "id": "25018",
     "name": {
       "nl": "Chaumont-Gistoux",
       "fr": "Chaumont-Gistoux"
@@ -1224,7 +1224,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25023",
+    "id": "25023",
     "name": {
       "nl": "Court-Saint-Etienne",
       "fr": "Court-Saint-Etienne"
@@ -1232,7 +1232,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25031",
+    "id": "25031",
     "name": {
       "nl": "Genepiën",
       "fr": "Genappe"
@@ -1240,7 +1240,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25037",
+    "id": "25037",
     "name": {
       "nl": "Graven",
       "fr": "Grez-Doiceau"
@@ -1248,7 +1248,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25043",
+    "id": "25043",
     "name": {
       "nl": "Incourt",
       "fr": "Incourt"
@@ -1256,7 +1256,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25044",
+    "id": "25044",
     "name": {
       "nl": "Itter",
       "fr": "Ittre"
@@ -1264,7 +1264,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25048",
+    "id": "25048",
     "name": {
       "nl": "Geldenaken",
       "fr": "Jodoigne"
@@ -1272,7 +1272,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25050",
+    "id": "25050",
     "name": {
       "nl": "Terhulpen",
       "fr": "La Hulpe"
@@ -1280,7 +1280,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25068",
+    "id": "25068",
     "name": {
       "nl": "Mont-Saint-Guibert",
       "fr": "Mont-Saint-Guibert"
@@ -1288,7 +1288,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25072",
+    "id": "25072",
     "name": {
       "nl": "Nijvel",
       "fr": "Nivelles"
@@ -1296,7 +1296,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25084",
+    "id": "25084",
     "name": {
       "nl": "Perwijs",
       "fr": "Perwez"
@@ -1304,7 +1304,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25091",
+    "id": "25091",
     "name": {
       "nl": "Rixensart",
       "fr": "Rixensart"
@@ -1312,7 +1312,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25105",
+    "id": "25105",
     "name": {
       "nl": "Tubeke",
       "fr": "Tubize"
@@ -1320,7 +1320,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25107",
+    "id": "25107",
     "name": {
       "nl": "Villers-la-Ville",
       "fr": "Villers-la-Ville"
@@ -1328,7 +1328,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25110",
+    "id": "25110",
     "name": {
       "nl": "Waterloo",
       "fr": "Waterloo"
@@ -1336,7 +1336,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25112",
+    "id": "25112",
     "name": {
       "nl": "Waver",
       "fr": "Wavre"
@@ -1344,7 +1344,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25117",
+    "id": "25117",
     "name": {
       "nl": "Chastre",
       "fr": "Chastre"
@@ -1352,7 +1352,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25118",
+    "id": "25118",
     "name": {
       "nl": "Hélécine",
       "fr": "Hélécine"
@@ -1360,7 +1360,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25119",
+    "id": "25119",
     "name": {
       "nl": "Lasne",
       "fr": "Lasne"
@@ -1368,7 +1368,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25120",
+    "id": "25120",
     "name": {
       "nl": "Orp-Jauche",
       "fr": "Orp-Jauche"
@@ -1376,7 +1376,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25121",
+    "id": "25121",
     "name": {
       "nl": "Ottignies-Louvain-la-Neuve",
       "fr": "Ottignies-Louvain-la-Neuve"
@@ -1384,7 +1384,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25122",
+    "id": "25122",
     "name": {
       "nl": "Ramillies",
       "fr": "Ramillies"
@@ -1392,7 +1392,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25123",
+    "id": "25123",
     "name": {
       "nl": "Rebecq",
       "fr": "Rebecq"
@@ -1400,7 +1400,7 @@
     "province": "20002"
   },
   {
-    "refnis": "25124",
+    "id": "25124",
     "name": {
       "nl": "Walhain",
       "fr": "Walhain"
@@ -1408,7 +1408,7 @@
     "province": "20002"
   },
   {
-    "refnis": "31003",
+    "id": "31003",
     "name": {
       "nl": "Beernem",
       "fr": "Beernem"
@@ -1416,7 +1416,7 @@
     "province": "30000"
   },
   {
-    "refnis": "31004",
+    "id": "31004",
     "name": {
       "nl": "Blankenberge",
       "fr": "Blankenberge"
@@ -1424,7 +1424,7 @@
     "province": "30000"
   },
   {
-    "refnis": "31005",
+    "id": "31005",
     "name": {
       "nl": "Brugge",
       "fr": "Bruges"
@@ -1432,7 +1432,7 @@
     "province": "30000"
   },
   {
-    "refnis": "31006",
+    "id": "31006",
     "name": {
       "nl": "Damme",
       "fr": "Damme"
@@ -1440,7 +1440,7 @@
     "province": "30000"
   },
   {
-    "refnis": "31012",
+    "id": "31012",
     "name": {
       "nl": "Jabbeke",
       "fr": "Jabbeke"
@@ -1448,7 +1448,7 @@
     "province": "30000"
   },
   {
-    "refnis": "31022",
+    "id": "31022",
     "name": {
       "nl": "Oostkamp",
       "fr": "Oostkamp"
@@ -1456,7 +1456,7 @@
     "province": "30000"
   },
   {
-    "refnis": "31033",
+    "id": "31033",
     "name": {
       "nl": "Torhout",
       "fr": "Torhout"
@@ -1464,7 +1464,7 @@
     "province": "30000"
   },
   {
-    "refnis": "31040",
+    "id": "31040",
     "name": {
       "nl": "Zedelgem",
       "fr": "Zedelgem"
@@ -1472,7 +1472,7 @@
     "province": "30000"
   },
   {
-    "refnis": "31042",
+    "id": "31042",
     "name": {
       "nl": "Zuienkerke",
       "fr": "Zuienkerke"
@@ -1480,7 +1480,7 @@
     "province": "30000"
   },
   {
-    "refnis": "31043",
+    "id": "31043",
     "name": {
       "nl": "Knokke-Heist",
       "fr": "Knokke-Heist"
@@ -1488,7 +1488,7 @@
     "province": "30000"
   },
   {
-    "refnis": "32003",
+    "id": "32003",
     "name": {
       "nl": "Diksmuide",
       "fr": "Dixmude"
@@ -1496,7 +1496,7 @@
     "province": "30000"
   },
   {
-    "refnis": "32006",
+    "id": "32006",
     "name": {
       "nl": "Houthulst",
       "fr": "Houthulst"
@@ -1504,7 +1504,7 @@
     "province": "30000"
   },
   {
-    "refnis": "32010",
+    "id": "32010",
     "name": {
       "nl": "Koekelare",
       "fr": "Koekelare"
@@ -1512,7 +1512,7 @@
     "province": "30000"
   },
   {
-    "refnis": "32011",
+    "id": "32011",
     "name": {
       "nl": "Kortemark",
       "fr": "Kortemark"
@@ -1520,7 +1520,7 @@
     "province": "30000"
   },
   {
-    "refnis": "32030",
+    "id": "32030",
     "name": {
       "nl": "Lo-Reninge",
       "fr": "Lo-Reninge"
@@ -1528,7 +1528,7 @@
     "province": "30000"
   },
   {
-    "refnis": "33011",
+    "id": "33011",
     "name": {
       "nl": "Ieper",
       "fr": "Ypres"
@@ -1536,7 +1536,7 @@
     "province": "30000"
   },
   {
-    "refnis": "33016",
+    "id": "33016",
     "name": {
       "nl": "Mesen",
       "fr": "Messines"
@@ -1544,7 +1544,7 @@
     "province": "30000"
   },
   {
-    "refnis": "33021",
+    "id": "33021",
     "name": {
       "nl": "Poperinge",
       "fr": "Poperinge"
@@ -1552,7 +1552,7 @@
     "province": "30000"
   },
   {
-    "refnis": "33029",
+    "id": "33029",
     "name": {
       "nl": "Wervik",
       "fr": "Wervik"
@@ -1560,7 +1560,7 @@
     "province": "30000"
   },
   {
-    "refnis": "33037",
+    "id": "33037",
     "name": {
       "nl": "Zonnebeke",
       "fr": "Zonnebeke"
@@ -1568,7 +1568,7 @@
     "province": "30000"
   },
   {
-    "refnis": "33039",
+    "id": "33039",
     "name": {
       "nl": "Heuvelland",
       "fr": "Heuvelland"
@@ -1576,7 +1576,7 @@
     "province": "30000"
   },
   {
-    "refnis": "33040",
+    "id": "33040",
     "name": {
       "nl": "Langemark-Poelkapelle",
       "fr": "Langemark-Poelkapelle"
@@ -1584,7 +1584,7 @@
     "province": "30000"
   },
   {
-    "refnis": "33041",
+    "id": "33041",
     "name": {
       "nl": "Vleteren",
       "fr": "Vleteren"
@@ -1592,7 +1592,7 @@
     "province": "30000"
   },
   {
-    "refnis": "34002",
+    "id": "34002",
     "name": {
       "nl": "Anzegem",
       "fr": "Anzegem"
@@ -1600,7 +1600,7 @@
     "province": "30000"
   },
   {
-    "refnis": "34003",
+    "id": "34003",
     "name": {
       "nl": "Avelgem",
       "fr": "Avelgem"
@@ -1608,7 +1608,7 @@
     "province": "30000"
   },
   {
-    "refnis": "34009",
+    "id": "34009",
     "name": {
       "nl": "Deerlijk",
       "fr": "Deerlijk"
@@ -1616,7 +1616,7 @@
     "province": "30000"
   },
   {
-    "refnis": "34013",
+    "id": "34013",
     "name": {
       "nl": "Harelbeke",
       "fr": "Harelbeke"
@@ -1624,7 +1624,7 @@
     "province": "30000"
   },
   {
-    "refnis": "34022",
+    "id": "34022",
     "name": {
       "nl": "Kortrijk",
       "fr": "Courtrai"
@@ -1632,7 +1632,7 @@
     "province": "30000"
   },
   {
-    "refnis": "34023",
+    "id": "34023",
     "name": {
       "nl": "Kuurne",
       "fr": "Kuurne"
@@ -1640,7 +1640,7 @@
     "province": "30000"
   },
   {
-    "refnis": "34025",
+    "id": "34025",
     "name": {
       "nl": "Lendelede",
       "fr": "Lendelede"
@@ -1648,7 +1648,7 @@
     "province": "30000"
   },
   {
-    "refnis": "34027",
+    "id": "34027",
     "name": {
       "nl": "Menen",
       "fr": "Menin"
@@ -1656,7 +1656,7 @@
     "province": "30000"
   },
   {
-    "refnis": "34040",
+    "id": "34040",
     "name": {
       "nl": "Waregem",
       "fr": "Waregem"
@@ -1664,7 +1664,7 @@
     "province": "30000"
   },
   {
-    "refnis": "34041",
+    "id": "34041",
     "name": {
       "nl": "Wevelgem",
       "fr": "Wevelgem"
@@ -1672,7 +1672,7 @@
     "province": "30000"
   },
   {
-    "refnis": "34042",
+    "id": "34042",
     "name": {
       "nl": "Zwevegem",
       "fr": "Zwevegem"
@@ -1680,7 +1680,7 @@
     "province": "30000"
   },
   {
-    "refnis": "34043",
+    "id": "34043",
     "name": {
       "nl": "Spiere-Helkijn",
       "fr": "Espierres-Helchin"
@@ -1688,7 +1688,7 @@
     "province": "30000"
   },
   {
-    "refnis": "35002",
+    "id": "35002",
     "name": {
       "nl": "Bredene",
       "fr": "Bredene"
@@ -1696,7 +1696,7 @@
     "province": "30000"
   },
   {
-    "refnis": "35005",
+    "id": "35005",
     "name": {
       "nl": "Gistel",
       "fr": "Gistel"
@@ -1704,7 +1704,7 @@
     "province": "30000"
   },
   {
-    "refnis": "35006",
+    "id": "35006",
     "name": {
       "nl": "Ichtegem",
       "fr": "Ichtegem"
@@ -1712,7 +1712,7 @@
     "province": "30000"
   },
   {
-    "refnis": "35011",
+    "id": "35011",
     "name": {
       "nl": "Middelkerke",
       "fr": "Middelkerke"
@@ -1720,7 +1720,7 @@
     "province": "30000"
   },
   {
-    "refnis": "35013",
+    "id": "35013",
     "name": {
       "nl": "Oostende",
       "fr": "Ostende"
@@ -1728,7 +1728,7 @@
     "province": "30000"
   },
   {
-    "refnis": "35014",
+    "id": "35014",
     "name": {
       "nl": "Oudenburg",
       "fr": "Oudenburg"
@@ -1736,7 +1736,7 @@
     "province": "30000"
   },
   {
-    "refnis": "35029",
+    "id": "35029",
     "name": {
       "nl": "De Haan",
       "fr": "De Haan"
@@ -1744,7 +1744,7 @@
     "province": "30000"
   },
   {
-    "refnis": "36006",
+    "id": "36006",
     "name": {
       "nl": "Hooglede",
       "fr": "Hooglede"
@@ -1752,7 +1752,7 @@
     "province": "30000"
   },
   {
-    "refnis": "36007",
+    "id": "36007",
     "name": {
       "nl": "Ingelmunster",
       "fr": "Ingelmunster"
@@ -1760,7 +1760,7 @@
     "province": "30000"
   },
   {
-    "refnis": "36008",
+    "id": "36008",
     "name": {
       "nl": "Izegem",
       "fr": "Izegem"
@@ -1768,7 +1768,7 @@
     "province": "30000"
   },
   {
-    "refnis": "36010",
+    "id": "36010",
     "name": {
       "nl": "Ledegem",
       "fr": "Ledegem"
@@ -1776,7 +1776,7 @@
     "province": "30000"
   },
   {
-    "refnis": "36011",
+    "id": "36011",
     "name": {
       "nl": "Lichtervelde",
       "fr": "Lichtervelde"
@@ -1784,7 +1784,7 @@
     "province": "30000"
   },
   {
-    "refnis": "36012",
+    "id": "36012",
     "name": {
       "nl": "Moorslede",
       "fr": "Moorslede"
@@ -1792,7 +1792,7 @@
     "province": "30000"
   },
   {
-    "refnis": "36015",
+    "id": "36015",
     "name": {
       "nl": "Roeselare",
       "fr": "Roulers"
@@ -1800,7 +1800,7 @@
     "province": "30000"
   },
   {
-    "refnis": "36019",
+    "id": "36019",
     "name": {
       "nl": "Staden",
       "fr": "Staden"
@@ -1808,7 +1808,7 @@
     "province": "30000"
   },
   {
-    "refnis": "37002",
+    "id": "37002",
     "name": {
       "nl": "Dentergem",
       "fr": "Dentergem"
@@ -1816,7 +1816,7 @@
     "province": "30000"
   },
   {
-    "refnis": "37010",
+    "id": "37010",
     "name": {
       "nl": "Oostrozebeke",
       "fr": "Oostrozebeke"
@@ -1824,7 +1824,7 @@
     "province": "30000"
   },
   {
-    "refnis": "37011",
+    "id": "37011",
     "name": {
       "nl": "Pittem",
       "fr": "Pittem"
@@ -1832,7 +1832,7 @@
     "province": "30000"
   },
   {
-    "refnis": "37017",
+    "id": "37017",
     "name": {
       "nl": "Wielsbeke",
       "fr": "Wielsbeke"
@@ -1840,7 +1840,7 @@
     "province": "30000"
   },
   {
-    "refnis": "37020",
+    "id": "37020",
     "name": {
       "nl": "Ardooie",
       "fr": "Ardooie"
@@ -1848,7 +1848,7 @@
     "province": "30000"
   },
   {
-    "refnis": "37021",
+    "id": "37021",
     "name": {
       "nl": "Wingene",
       "fr": "Wingene"
@@ -1856,7 +1856,7 @@
     "province": "30000"
   },
   {
-    "refnis": "37022",
+    "id": "37022",
     "name": {
       "nl": "Tielt",
       "fr": "Tielt"
@@ -1864,7 +1864,7 @@
     "province": "30000"
   },
   {
-    "refnis": "38002",
+    "id": "38002",
     "name": {
       "nl": "Alveringem",
       "fr": "Alveringem"
@@ -1872,7 +1872,7 @@
     "province": "30000"
   },
   {
-    "refnis": "38008",
+    "id": "38008",
     "name": {
       "nl": "De Panne",
       "fr": "La Panne"
@@ -1880,7 +1880,7 @@
     "province": "30000"
   },
   {
-    "refnis": "38014",
+    "id": "38014",
     "name": {
       "nl": "Koksijde",
       "fr": "Koksijde"
@@ -1888,7 +1888,7 @@
     "province": "30000"
   },
   {
-    "refnis": "38016",
+    "id": "38016",
     "name": {
       "nl": "Nieuwpoort",
       "fr": "Nieuport"
@@ -1896,7 +1896,7 @@
     "province": "30000"
   },
   {
-    "refnis": "38025",
+    "id": "38025",
     "name": {
       "nl": "Veurne",
       "fr": "Furnes"
@@ -1904,7 +1904,7 @@
     "province": "30000"
   },
   {
-    "refnis": "41002",
+    "id": "41002",
     "name": {
       "nl": "Aalst",
       "fr": "Alost"
@@ -1912,7 +1912,7 @@
     "province": "40000"
   },
   {
-    "refnis": "41011",
+    "id": "41011",
     "name": {
       "nl": "Denderleeuw",
       "fr": "Denderleeuw"
@@ -1920,7 +1920,7 @@
     "province": "40000"
   },
   {
-    "refnis": "41018",
+    "id": "41018",
     "name": {
       "nl": "Geraardsbergen",
       "fr": "Grammont"
@@ -1928,7 +1928,7 @@
     "province": "40000"
   },
   {
-    "refnis": "41024",
+    "id": "41024",
     "name": {
       "nl": "Haaltert",
       "fr": "Haaltert"
@@ -1936,7 +1936,7 @@
     "province": "40000"
   },
   {
-    "refnis": "41027",
+    "id": "41027",
     "name": {
       "nl": "Herzele",
       "fr": "Herzele"
@@ -1944,7 +1944,7 @@
     "province": "40000"
   },
   {
-    "refnis": "41034",
+    "id": "41034",
     "name": {
       "nl": "Lede",
       "fr": "Lede"
@@ -1952,7 +1952,7 @@
     "province": "40000"
   },
   {
-    "refnis": "41048",
+    "id": "41048",
     "name": {
       "nl": "Ninove",
       "fr": "Ninove"
@@ -1960,7 +1960,7 @@
     "province": "40000"
   },
   {
-    "refnis": "41063",
+    "id": "41063",
     "name": {
       "nl": "Sint-Lievens-Houtem",
       "fr": "Sint-Lievens-Houtem"
@@ -1968,7 +1968,7 @@
     "province": "40000"
   },
   {
-    "refnis": "41081",
+    "id": "41081",
     "name": {
       "nl": "Zottegem",
       "fr": "Zottegem"
@@ -1976,7 +1976,7 @@
     "province": "40000"
   },
   {
-    "refnis": "41082",
+    "id": "41082",
     "name": {
       "nl": "Erpe-Mere",
       "fr": "Erpe-Mere"
@@ -1984,7 +1984,7 @@
     "province": "40000"
   },
   {
-    "refnis": "42003",
+    "id": "42003",
     "name": {
       "nl": "Berlare",
       "fr": "Berlare"
@@ -1992,7 +1992,7 @@
     "province": "40000"
   },
   {
-    "refnis": "42004",
+    "id": "42004",
     "name": {
       "nl": "Buggenhout",
       "fr": "Buggenhout"
@@ -2000,7 +2000,7 @@
     "province": "40000"
   },
   {
-    "refnis": "42006",
+    "id": "42006",
     "name": {
       "nl": "Dendermonde",
       "fr": "Termonde"
@@ -2008,7 +2008,7 @@
     "province": "40000"
   },
   {
-    "refnis": "42008",
+    "id": "42008",
     "name": {
       "nl": "Hamme",
       "fr": "Hamme"
@@ -2016,7 +2016,7 @@
     "province": "40000"
   },
   {
-    "refnis": "42010",
+    "id": "42010",
     "name": {
       "nl": "Laarne",
       "fr": "Laarne"
@@ -2024,7 +2024,7 @@
     "province": "40000"
   },
   {
-    "refnis": "42011",
+    "id": "42011",
     "name": {
       "nl": "Lebbeke",
       "fr": "Lebbeke"
@@ -2032,7 +2032,7 @@
     "province": "40000"
   },
   {
-    "refnis": "42023",
+    "id": "42023",
     "name": {
       "nl": "Waasmunster",
       "fr": "Waasmunster"
@@ -2040,7 +2040,7 @@
     "province": "40000"
   },
   {
-    "refnis": "42025",
+    "id": "42025",
     "name": {
       "nl": "Wetteren",
       "fr": "Wetteren"
@@ -2048,7 +2048,7 @@
     "province": "40000"
   },
   {
-    "refnis": "42026",
+    "id": "42026",
     "name": {
       "nl": "Wichelen",
       "fr": "Wichelen"
@@ -2056,7 +2056,7 @@
     "province": "40000"
   },
   {
-    "refnis": "42028",
+    "id": "42028",
     "name": {
       "nl": "Zele",
       "fr": "Zele"
@@ -2064,7 +2064,7 @@
     "province": "40000"
   },
   {
-    "refnis": "43002",
+    "id": "43002",
     "name": {
       "nl": "Assenede",
       "fr": "Assenede"
@@ -2072,7 +2072,7 @@
     "province": "40000"
   },
   {
-    "refnis": "43005",
+    "id": "43005",
     "name": {
       "nl": "Eeklo",
       "fr": "Eeklo"
@@ -2080,7 +2080,7 @@
     "province": "40000"
   },
   {
-    "refnis": "43007",
+    "id": "43007",
     "name": {
       "nl": "Kaprijke",
       "fr": "Kaprijke"
@@ -2088,7 +2088,7 @@
     "province": "40000"
   },
   {
-    "refnis": "43010",
+    "id": "43010",
     "name": {
       "nl": "Maldegem",
       "fr": "Maldegem"
@@ -2096,7 +2096,7 @@
     "province": "40000"
   },
   {
-    "refnis": "43014",
+    "id": "43014",
     "name": {
       "nl": "Sint-Laureins",
       "fr": "Sint-Laureins"
@@ -2104,7 +2104,7 @@
     "province": "40000"
   },
   {
-    "refnis": "43018",
+    "id": "43018",
     "name": {
       "nl": "Zelzate",
       "fr": "Zelzate"
@@ -2112,7 +2112,7 @@
     "province": "40000"
   },
   {
-    "refnis": "44013",
+    "id": "44013",
     "name": {
       "nl": "Destelbergen",
       "fr": "Destelbergen"
@@ -2120,7 +2120,7 @@
     "province": "40000"
   },
   {
-    "refnis": "44019",
+    "id": "44019",
     "name": {
       "nl": "Evergem",
       "fr": "Evergem"
@@ -2128,7 +2128,7 @@
     "province": "40000"
   },
   {
-    "refnis": "44020",
+    "id": "44020",
     "name": {
       "nl": "Gavere",
       "fr": "Gavere"
@@ -2136,7 +2136,7 @@
     "province": "40000"
   },
   {
-    "refnis": "44021",
+    "id": "44021",
     "name": {
       "nl": "Gent",
       "fr": "Gand"
@@ -2144,7 +2144,7 @@
     "province": "40000"
   },
   {
-    "refnis": "44052",
+    "id": "44052",
     "name": {
       "nl": "Oosterzele",
       "fr": "Oosterzele"
@@ -2152,7 +2152,7 @@
     "province": "40000"
   },
   {
-    "refnis": "44064",
+    "id": "44064",
     "name": {
       "nl": "Sint-Martens-Latem",
       "fr": "Sint-Martens-Latem"
@@ -2160,7 +2160,7 @@
     "province": "40000"
   },
   {
-    "refnis": "44081",
+    "id": "44081",
     "name": {
       "nl": "Zulte",
       "fr": "Zulte"
@@ -2168,7 +2168,7 @@
     "province": "40000"
   },
   {
-    "refnis": "44083",
+    "id": "44083",
     "name": {
       "nl": "Deinze",
       "fr": "Deinze"
@@ -2176,7 +2176,7 @@
     "province": "40000"
   },
   {
-    "refnis": "44084",
+    "id": "44084",
     "name": {
       "nl": "Aalter",
       "fr": "Aalter"
@@ -2184,7 +2184,7 @@
     "province": "40000"
   },
   {
-    "refnis": "44085",
+    "id": "44085",
     "name": {
       "nl": "Lievegem",
       "fr": "Lievegem"
@@ -2192,7 +2192,7 @@
     "province": "40000"
   },
   {
-    "refnis": "44086",
+    "id": "44086",
     "name": {
       "nl": "Nazareth-De Pinte",
       "fr": "Nazareth-De Pinte"
@@ -2200,7 +2200,7 @@
     "province": "40000"
   },
   {
-    "refnis": "44087",
+    "id": "44087",
     "name": {
       "nl": "Lochristi",
       "fr": "Lochristi"
@@ -2208,7 +2208,7 @@
     "province": "40000"
   },
   {
-    "refnis": "44088",
+    "id": "44088",
     "name": {
       "nl": "Merelbeke-Melle",
       "fr": "Merelbeke-Melle"
@@ -2216,7 +2216,7 @@
     "province": "40000"
   },
   {
-    "refnis": "45035",
+    "id": "45035",
     "name": {
       "nl": "Oudenaarde",
       "fr": "Audenarde"
@@ -2224,7 +2224,7 @@
     "province": "40000"
   },
   {
-    "refnis": "45041",
+    "id": "45041",
     "name": {
       "nl": "Ronse",
       "fr": "Renaix"
@@ -2232,7 +2232,7 @@
     "province": "40000"
   },
   {
-    "refnis": "45059",
+    "id": "45059",
     "name": {
       "nl": "Brakel",
       "fr": "Brakel"
@@ -2240,7 +2240,7 @@
     "province": "40000"
   },
   {
-    "refnis": "45060",
+    "id": "45060",
     "name": {
       "nl": "Kluisbergen",
       "fr": "Kluisbergen"
@@ -2248,7 +2248,7 @@
     "province": "40000"
   },
   {
-    "refnis": "45061",
+    "id": "45061",
     "name": {
       "nl": "Wortegem-Petegem",
       "fr": "Wortegem-Petegem"
@@ -2256,7 +2256,7 @@
     "province": "40000"
   },
   {
-    "refnis": "45062",
+    "id": "45062",
     "name": {
       "nl": "Horebeke",
       "fr": "Horebeke"
@@ -2264,7 +2264,7 @@
     "province": "40000"
   },
   {
-    "refnis": "45063",
+    "id": "45063",
     "name": {
       "nl": "Lierde",
       "fr": "Lierde"
@@ -2272,7 +2272,7 @@
     "province": "40000"
   },
   {
-    "refnis": "45064",
+    "id": "45064",
     "name": {
       "nl": "Maarkedal",
       "fr": "Maarkedal"
@@ -2280,7 +2280,7 @@
     "province": "40000"
   },
   {
-    "refnis": "45065",
+    "id": "45065",
     "name": {
       "nl": "Zwalm",
       "fr": "Zwalin"
@@ -2288,7 +2288,7 @@
     "province": "40000"
   },
   {
-    "refnis": "45068",
+    "id": "45068",
     "name": {
       "nl": "Kruisem",
       "fr": "Kruisem"
@@ -2296,7 +2296,7 @@
     "province": "40000"
   },
   {
-    "refnis": "46020",
+    "id": "46020",
     "name": {
       "nl": "Sint-Gillis-Waas",
       "fr": "Sint-Gillis-Waas"
@@ -2304,7 +2304,7 @@
     "province": "40000"
   },
   {
-    "refnis": "46021",
+    "id": "46021",
     "name": {
       "nl": "Sint-Niklaas",
       "fr": "Sint-Niklaas"
@@ -2312,7 +2312,7 @@
     "province": "40000"
   },
   {
-    "refnis": "46024",
+    "id": "46024",
     "name": {
       "nl": "Stekene",
       "fr": "Stekene"
@@ -2320,7 +2320,7 @@
     "province": "40000"
   },
   {
-    "refnis": "46025",
+    "id": "46025",
     "name": {
       "nl": "Temse",
       "fr": "Tamise"
@@ -2328,7 +2328,7 @@
     "province": "40000"
   },
   {
-    "refnis": "46029",
+    "id": "46029",
     "name": {
       "nl": "Lokeren",
       "fr": "Lokeren"
@@ -2336,7 +2336,7 @@
     "province": "40000"
   },
   {
-    "refnis": "46030",
+    "id": "46030",
     "name": {
       "nl": "Beveren-Kruibeke-Zwijndrecht",
       "fr": "Beveren-Kruibeke-Zwijndrecht"
@@ -2344,7 +2344,7 @@
     "province": "40000"
   },
   {
-    "refnis": "51004",
+    "id": "51004",
     "name": {
       "nl": "Aat",
       "fr": "Ath"
@@ -2352,7 +2352,7 @@
     "province": "50000"
   },
   {
-    "refnis": "51008",
+    "id": "51008",
     "name": {
       "nl": "Beloeil",
       "fr": "Beloeil"
@@ -2360,7 +2360,7 @@
     "province": "50000"
   },
   {
-    "refnis": "51009",
+    "id": "51009",
     "name": {
       "nl": "Bernissart",
       "fr": "Bernissart"
@@ -2368,7 +2368,7 @@
     "province": "50000"
   },
   {
-    "refnis": "51012",
+    "id": "51012",
     "name": {
       "nl": "Brugelette",
       "fr": "Brugelette"
@@ -2376,7 +2376,7 @@
     "province": "50000"
   },
   {
-    "refnis": "51014",
+    "id": "51014",
     "name": {
       "nl": "Chièvres",
       "fr": "Chièvres"
@@ -2384,7 +2384,7 @@
     "province": "50000"
   },
   {
-    "refnis": "51017",
+    "id": "51017",
     "name": {
       "nl": "Elzele",
       "fr": "Ellezelles"
@@ -2392,7 +2392,7 @@
     "province": "50000"
   },
   {
-    "refnis": "51019",
+    "id": "51019",
     "name": {
       "nl": "Vloesberg",
       "fr": "Flobecq"
@@ -2400,7 +2400,7 @@
     "province": "50000"
   },
   {
-    "refnis": "51065",
+    "id": "51065",
     "name": {
       "nl": "Frasnes-lez-Anvaing",
       "fr": "Frasnes-lez-Anvaing"
@@ -2408,7 +2408,7 @@
     "province": "50000"
   },
   {
-    "refnis": "51067",
+    "id": "51067",
     "name": {
       "nl": "Edingen",
       "fr": "Enghien"
@@ -2416,7 +2416,7 @@
     "province": "50000"
   },
   {
-    "refnis": "51068",
+    "id": "51068",
     "name": {
       "nl": "Opzullik",
       "fr": "Silly"
@@ -2424,7 +2424,7 @@
     "province": "50000"
   },
   {
-    "refnis": "51069",
+    "id": "51069",
     "name": {
       "nl": "Lessen",
       "fr": "Lessines"
@@ -2432,7 +2432,7 @@
     "province": "50000"
   },
   {
-    "refnis": "52010",
+    "id": "52010",
     "name": {
       "nl": "Chapelle-lez-Herlaimont",
       "fr": "Chapelle-lez-Herlaimont"
@@ -2440,7 +2440,7 @@
     "province": "50000"
   },
   {
-    "refnis": "52011",
+    "id": "52011",
     "name": {
       "nl": "Charleroi",
       "fr": "Charleroi"
@@ -2448,7 +2448,7 @@
     "province": "50000"
   },
   {
-    "refnis": "52012",
+    "id": "52012",
     "name": {
       "nl": "Châtelet",
       "fr": "Châtelet"
@@ -2456,7 +2456,7 @@
     "province": "50000"
   },
   {
-    "refnis": "52015",
+    "id": "52015",
     "name": {
       "nl": "Courcelles",
       "fr": "Courcelles"
@@ -2464,7 +2464,7 @@
     "province": "50000"
   },
   {
-    "refnis": "52018",
+    "id": "52018",
     "name": {
       "nl": "Farciennes",
       "fr": "Farciennes"
@@ -2472,7 +2472,7 @@
     "province": "50000"
   },
   {
-    "refnis": "52021",
+    "id": "52021",
     "name": {
       "nl": "Fleurus",
       "fr": "Fleurus"
@@ -2480,7 +2480,7 @@
     "province": "50000"
   },
   {
-    "refnis": "52022",
+    "id": "52022",
     "name": {
       "nl": "Fontaine-l’Evêque",
       "fr": "Fontaine-l’Evêque"
@@ -2488,7 +2488,7 @@
     "province": "50000"
   },
   {
-    "refnis": "52025",
+    "id": "52025",
     "name": {
       "nl": "Gerpinnes",
       "fr": "Gerpinnes"
@@ -2496,7 +2496,7 @@
     "province": "50000"
   },
   {
-    "refnis": "52048",
+    "id": "52048",
     "name": {
       "nl": "Montigny-le-Tilleul",
       "fr": "Montigny-le-Tilleul"
@@ -2504,7 +2504,7 @@
     "province": "50000"
   },
   {
-    "refnis": "52055",
+    "id": "52055",
     "name": {
       "nl": "Pont-à-Celles",
       "fr": "Pont-à-Celles"
@@ -2512,7 +2512,7 @@
     "province": "50000"
   },
   {
-    "refnis": "52074",
+    "id": "52074",
     "name": {
       "nl": "Aiseau-Presles",
       "fr": "Aiseau-Presles"
@@ -2520,7 +2520,7 @@
     "province": "50000"
   },
   {
-    "refnis": "52075",
+    "id": "52075",
     "name": {
       "nl": "Les Bons Villers",
       "fr": "Les Bons Villers"
@@ -2528,7 +2528,7 @@
     "province": "50000"
   },
   {
-    "refnis": "53014",
+    "id": "53014",
     "name": {
       "nl": "Boussu",
       "fr": "Boussu"
@@ -2536,7 +2536,7 @@
     "province": "50000"
   },
   {
-    "refnis": "53020",
+    "id": "53020",
     "name": {
       "nl": "Dour",
       "fr": "Dour"
@@ -2544,7 +2544,7 @@
     "province": "50000"
   },
   {
-    "refnis": "53028",
+    "id": "53028",
     "name": {
       "nl": "Frameries",
       "fr": "Frameries"
@@ -2552,7 +2552,7 @@
     "province": "50000"
   },
   {
-    "refnis": "53039",
+    "id": "53039",
     "name": {
       "nl": "Hensies",
       "fr": "Hensies"
@@ -2560,7 +2560,7 @@
     "province": "50000"
   },
   {
-    "refnis": "53044",
+    "id": "53044",
     "name": {
       "nl": "Jurbeke",
       "fr": "Jurbise"
@@ -2568,7 +2568,7 @@
     "province": "50000"
   },
   {
-    "refnis": "53046",
+    "id": "53046",
     "name": {
       "nl": "Lens",
       "fr": "Lens"
@@ -2576,7 +2576,7 @@
     "province": "50000"
   },
   {
-    "refnis": "53053",
+    "id": "53053",
     "name": {
       "nl": "Bergen",
       "fr": "Mons"
@@ -2584,7 +2584,7 @@
     "province": "50000"
   },
   {
-    "refnis": "53065",
+    "id": "53065",
     "name": {
       "nl": "Quaregnon",
       "fr": "Quaregnon"
@@ -2592,7 +2592,7 @@
     "province": "50000"
   },
   {
-    "refnis": "53068",
+    "id": "53068",
     "name": {
       "nl": "Quiévrain",
       "fr": "Quiévrain"
@@ -2600,7 +2600,7 @@
     "province": "50000"
   },
   {
-    "refnis": "53070",
+    "id": "53070",
     "name": {
       "nl": "Saint-Ghislain",
       "fr": "Saint-Ghislain"
@@ -2608,7 +2608,7 @@
     "province": "50000"
   },
   {
-    "refnis": "53082",
+    "id": "53082",
     "name": {
       "nl": "Colfontaine",
       "fr": "Colfontaine"
@@ -2616,7 +2616,7 @@
     "province": "50000"
   },
   {
-    "refnis": "53083",
+    "id": "53083",
     "name": {
       "nl": "Honnelles",
       "fr": "Honnelles"
@@ -2624,7 +2624,7 @@
     "province": "50000"
   },
   {
-    "refnis": "53084",
+    "id": "53084",
     "name": {
       "nl": "Quévy",
       "fr": "Quévy"
@@ -2632,7 +2632,7 @@
     "province": "50000"
   },
   {
-    "refnis": "55004",
+    "id": "55004",
     "name": {
       "nl": "’s Gravenbrakel",
       "fr": "Braine-le-Comte"
@@ -2640,7 +2640,7 @@
     "province": "50000"
   },
   {
-    "refnis": "55035",
+    "id": "55035",
     "name": {
       "nl": "Le Roeulx",
       "fr": "Le Roeulx"
@@ -2648,7 +2648,7 @@
     "province": "50000"
   },
   {
-    "refnis": "55040",
+    "id": "55040",
     "name": {
       "nl": "Zinnik",
       "fr": "Soignies"
@@ -2656,7 +2656,7 @@
     "province": "50000"
   },
   {
-    "refnis": "55050",
+    "id": "55050",
     "name": {
       "nl": "Ecaussinnes",
       "fr": "Ecaussinnes"
@@ -2664,7 +2664,7 @@
     "province": "50000"
   },
   {
-    "refnis": "55085",
+    "id": "55085",
     "name": {
       "nl": "Seneffe",
       "fr": "Seneffe"
@@ -2672,7 +2672,7 @@
     "province": "50000"
   },
   {
-    "refnis": "55086",
+    "id": "55086",
     "name": {
       "nl": "Manage",
       "fr": "Manage"
@@ -2680,7 +2680,7 @@
     "province": "50000"
   },
   {
-    "refnis": "56001",
+    "id": "56001",
     "name": {
       "nl": "Anderlues",
       "fr": "Anderlues"
@@ -2688,7 +2688,7 @@
     "province": "50000"
   },
   {
-    "refnis": "56005",
+    "id": "56005",
     "name": {
       "nl": "Beaumont",
       "fr": "Beaumont"
@@ -2696,7 +2696,7 @@
     "province": "50000"
   },
   {
-    "refnis": "56016",
+    "id": "56016",
     "name": {
       "nl": "Chimay",
       "fr": "Chimay"
@@ -2704,7 +2704,7 @@
     "province": "50000"
   },
   {
-    "refnis": "56022",
+    "id": "56022",
     "name": {
       "nl": "Erquelinnes",
       "fr": "Erquelinnes"
@@ -2712,7 +2712,7 @@
     "province": "50000"
   },
   {
-    "refnis": "56029",
+    "id": "56029",
     "name": {
       "nl": "Froidchapelle",
       "fr": "Froidchapelle"
@@ -2720,7 +2720,7 @@
     "province": "50000"
   },
   {
-    "refnis": "56044",
+    "id": "56044",
     "name": {
       "nl": "Lobbes",
       "fr": "Lobbes"
@@ -2728,7 +2728,7 @@
     "province": "50000"
   },
   {
-    "refnis": "56049",
+    "id": "56049",
     "name": {
       "nl": "Merbes-le-Château",
       "fr": "Merbes-le-Château"
@@ -2736,7 +2736,7 @@
     "province": "50000"
   },
   {
-    "refnis": "56051",
+    "id": "56051",
     "name": {
       "nl": "Momignies",
       "fr": "Momignies"
@@ -2744,7 +2744,7 @@
     "province": "50000"
   },
   {
-    "refnis": "56078",
+    "id": "56078",
     "name": {
       "nl": "Thuin",
       "fr": "Thuin"
@@ -2752,7 +2752,7 @@
     "province": "50000"
   },
   {
-    "refnis": "56086",
+    "id": "56086",
     "name": {
       "nl": "Ham-sur-Heure-Nalinnes",
       "fr": "Ham-sur-Heure-Nalinnes"
@@ -2760,7 +2760,7 @@
     "province": "50000"
   },
   {
-    "refnis": "56088",
+    "id": "56088",
     "name": {
       "nl": "Sivry-Rance",
       "fr": "Sivry-Rance"
@@ -2768,7 +2768,7 @@
     "province": "50000"
   },
   {
-    "refnis": "57003",
+    "id": "57003",
     "name": {
       "nl": "Antoing",
       "fr": "Antoing"
@@ -2776,7 +2776,7 @@
     "province": "50000"
   },
   {
-    "refnis": "57018",
+    "id": "57018",
     "name": {
       "nl": "Celles",
       "fr": "Celles"
@@ -2784,7 +2784,7 @@
     "province": "50000"
   },
   {
-    "refnis": "57027",
+    "id": "57027",
     "name": {
       "nl": "Estaimpuis",
       "fr": "Estaimpuis"
@@ -2792,7 +2792,7 @@
     "province": "50000"
   },
   {
-    "refnis": "57062",
+    "id": "57062",
     "name": {
       "nl": "Pecq",
       "fr": "Pecq"
@@ -2800,7 +2800,7 @@
     "province": "50000"
   },
   {
-    "refnis": "57064",
+    "id": "57064",
     "name": {
       "nl": "Péruwelz",
       "fr": "Péruwelz"
@@ -2808,7 +2808,7 @@
     "province": "50000"
   },
   {
-    "refnis": "57072",
+    "id": "57072",
     "name": {
       "nl": "Rumes",
       "fr": "Rumes"
@@ -2816,7 +2816,7 @@
     "province": "50000"
   },
   {
-    "refnis": "57081",
+    "id": "57081",
     "name": {
       "nl": "Doornik",
       "fr": "Tournai"
@@ -2824,7 +2824,7 @@
     "province": "50000"
   },
   {
-    "refnis": "57093",
+    "id": "57093",
     "name": {
       "nl": "Brunehaut",
       "fr": "Brunehaut"
@@ -2832,7 +2832,7 @@
     "province": "50000"
   },
   {
-    "refnis": "57094",
+    "id": "57094",
     "name": {
       "nl": "Leuze-en-Hainaut",
       "fr": "Leuze-en-Hainaut"
@@ -2840,7 +2840,7 @@
     "province": "50000"
   },
   {
-    "refnis": "57095",
+    "id": "57095",
     "name": {
       "nl": "Mont-de-l’Enclus",
       "fr": "Mont-de-l’Enclus"
@@ -2848,7 +2848,7 @@
     "province": "50000"
   },
   {
-    "refnis": "57096",
+    "id": "57096",
     "name": {
       "nl": "Moeskroen",
       "fr": "Mouscron"
@@ -2856,7 +2856,7 @@
     "province": "50000"
   },
   {
-    "refnis": "57097",
+    "id": "57097",
     "name": {
       "nl": "Komen-Waasten",
       "fr": "Comines-Warneton"
@@ -2864,7 +2864,7 @@
     "province": "50000"
   },
   {
-    "refnis": "58001",
+    "id": "58001",
     "name": {
       "nl": "La Louvière",
       "fr": "La Louvière"
@@ -2872,7 +2872,7 @@
     "province": "50000"
   },
   {
-    "refnis": "58002",
+    "id": "58002",
     "name": {
       "nl": "Binche",
       "fr": "Binche"
@@ -2880,7 +2880,7 @@
     "province": "50000"
   },
   {
-    "refnis": "58003",
+    "id": "58003",
     "name": {
       "nl": "Estinnes",
       "fr": "Estinnes"
@@ -2888,7 +2888,7 @@
     "province": "50000"
   },
   {
-    "refnis": "58004",
+    "id": "58004",
     "name": {
       "nl": "Morlanwelz",
       "fr": "Morlanwelz"
@@ -2896,7 +2896,7 @@
     "province": "50000"
   },
   {
-    "refnis": "61003",
+    "id": "61003",
     "name": {
       "nl": "Amay",
       "fr": "Amay"
@@ -2904,7 +2904,7 @@
     "province": "60000"
   },
   {
-    "refnis": "61010",
+    "id": "61010",
     "name": {
       "nl": "Burdinne",
       "fr": "Burdinne"
@@ -2912,7 +2912,7 @@
     "province": "60000"
   },
   {
-    "refnis": "61012",
+    "id": "61012",
     "name": {
       "nl": "Clavier",
       "fr": "Clavier"
@@ -2920,7 +2920,7 @@
     "province": "60000"
   },
   {
-    "refnis": "61019",
+    "id": "61019",
     "name": {
       "nl": "Ferrières",
       "fr": "Ferrières"
@@ -2928,7 +2928,7 @@
     "province": "60000"
   },
   {
-    "refnis": "61024",
+    "id": "61024",
     "name": {
       "nl": "Hamoir",
       "fr": "Hamoir"
@@ -2936,7 +2936,7 @@
     "province": "60000"
   },
   {
-    "refnis": "61028",
+    "id": "61028",
     "name": {
       "nl": "Héron",
       "fr": "Héron"
@@ -2944,7 +2944,7 @@
     "province": "60000"
   },
   {
-    "refnis": "61031",
+    "id": "61031",
     "name": {
       "nl": "Hoei",
       "fr": "Huy"
@@ -2952,7 +2952,7 @@
     "province": "60000"
   },
   {
-    "refnis": "61039",
+    "id": "61039",
     "name": {
       "nl": "Marchin",
       "fr": "Marchin"
@@ -2960,7 +2960,7 @@
     "province": "60000"
   },
   {
-    "refnis": "61041",
+    "id": "61041",
     "name": {
       "nl": "Modave",
       "fr": "Modave"
@@ -2968,7 +2968,7 @@
     "province": "60000"
   },
   {
-    "refnis": "61043",
+    "id": "61043",
     "name": {
       "nl": "Nandrin",
       "fr": "Nandrin"
@@ -2976,7 +2976,7 @@
     "province": "60000"
   },
   {
-    "refnis": "61048",
+    "id": "61048",
     "name": {
       "nl": "Ouffet",
       "fr": "Ouffet"
@@ -2984,7 +2984,7 @@
     "province": "60000"
   },
   {
-    "refnis": "61063",
+    "id": "61063",
     "name": {
       "nl": "Verlaine",
       "fr": "Verlaine"
@@ -2992,7 +2992,7 @@
     "province": "60000"
   },
   {
-    "refnis": "61068",
+    "id": "61068",
     "name": {
       "nl": "Villers-Le-Bouillet",
       "fr": "Villers-Le-Bouillet"
@@ -3000,7 +3000,7 @@
     "province": "60000"
   },
   {
-    "refnis": "61072",
+    "id": "61072",
     "name": {
       "nl": "Wanze",
       "fr": "Wanze"
@@ -3008,7 +3008,7 @@
     "province": "60000"
   },
   {
-    "refnis": "61079",
+    "id": "61079",
     "name": {
       "nl": "Anthisnes",
       "fr": "Anthisnes"
@@ -3016,7 +3016,7 @@
     "province": "60000"
   },
   {
-    "refnis": "61080",
+    "id": "61080",
     "name": {
       "nl": "Engis",
       "fr": "Engis"
@@ -3024,7 +3024,7 @@
     "province": "60000"
   },
   {
-    "refnis": "61081",
+    "id": "61081",
     "name": {
       "nl": "Tinlot",
       "fr": "Tinlot"
@@ -3032,7 +3032,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62003",
+    "id": "62003",
     "name": {
       "nl": "Ans",
       "fr": "Ans"
@@ -3040,7 +3040,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62006",
+    "id": "62006",
     "name": {
       "nl": "Awans",
       "fr": "Awans"
@@ -3048,7 +3048,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62009",
+    "id": "62009",
     "name": {
       "nl": "Aywaille",
       "fr": "Aywaille"
@@ -3056,7 +3056,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62011",
+    "id": "62011",
     "name": {
       "nl": "Bitsingen",
       "fr": "Bassenge"
@@ -3064,7 +3064,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62015",
+    "id": "62015",
     "name": {
       "nl": "Beyne-Heusay",
       "fr": "Beyne-Heusay"
@@ -3072,7 +3072,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62022",
+    "id": "62022",
     "name": {
       "nl": "Chaudfontaine",
       "fr": "Chaudfontaine"
@@ -3080,7 +3080,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62026",
+    "id": "62026",
     "name": {
       "nl": "Comblain-au-Pont",
       "fr": "Comblain-au-Pont"
@@ -3088,7 +3088,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62027",
+    "id": "62027",
     "name": {
       "nl": "Dalhem",
       "fr": "Dalhem"
@@ -3096,7 +3096,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62032",
+    "id": "62032",
     "name": {
       "nl": "Esneux",
       "fr": "Esneux"
@@ -3104,7 +3104,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62038",
+    "id": "62038",
     "name": {
       "nl": "Fléron",
       "fr": "Fléron"
@@ -3112,7 +3112,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62051",
+    "id": "62051",
     "name": {
       "nl": "Herstal",
       "fr": "Herstal"
@@ -3120,7 +3120,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62060",
+    "id": "62060",
     "name": {
       "nl": "Juprelle",
       "fr": "Juprelle"
@@ -3128,7 +3128,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62063",
+    "id": "62063",
     "name": {
       "nl": "Luik",
       "fr": "Liège"
@@ -3136,7 +3136,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62079",
+    "id": "62079",
     "name": {
       "nl": "Oupeye",
       "fr": "Oupeye"
@@ -3144,7 +3144,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62093",
+    "id": "62093",
     "name": {
       "nl": "Saint-Nicolas",
       "fr": "Saint-Nicolas"
@@ -3152,7 +3152,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62096",
+    "id": "62096",
     "name": {
       "nl": "Seraing",
       "fr": "Seraing"
@@ -3160,7 +3160,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62099",
+    "id": "62099",
     "name": {
       "nl": "Soumagne",
       "fr": "Soumagne"
@@ -3168,7 +3168,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62100",
+    "id": "62100",
     "name": {
       "nl": "Sprimont",
       "fr": "Sprimont"
@@ -3176,7 +3176,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62108",
+    "id": "62108",
     "name": {
       "nl": "Wezet",
       "fr": "Visé"
@@ -3184,7 +3184,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62118",
+    "id": "62118",
     "name": {
       "nl": "Grâce-Hollogne",
       "fr": "Grâce-Hollogne"
@@ -3192,7 +3192,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62119",
+    "id": "62119",
     "name": {
       "nl": "Blegny",
       "fr": "Blegny"
@@ -3200,7 +3200,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62120",
+    "id": "62120",
     "name": {
       "nl": "Flémalle",
       "fr": "Flémalle"
@@ -3208,7 +3208,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62121",
+    "id": "62121",
     "name": {
       "nl": "Neupré",
       "fr": "Neupré"
@@ -3216,7 +3216,7 @@
     "province": "60000"
   },
   {
-    "refnis": "62122",
+    "id": "62122",
     "name": {
       "nl": "Trooz",
       "fr": "Trooz"
@@ -3224,7 +3224,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63001",
+    "id": "63001",
     "name": {
       "nl": "Amel",
       "fr": "Amblève"
@@ -3232,7 +3232,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63003",
+    "id": "63003",
     "name": {
       "nl": "Aubel",
       "fr": "Aubel"
@@ -3240,7 +3240,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63004",
+    "id": "63004",
     "name": {
       "nl": "Baelen",
       "fr": "Baelen"
@@ -3248,7 +3248,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63012",
+    "id": "63012",
     "name": {
       "nl": "Büllingen",
       "fr": "Bullange"
@@ -3256,7 +3256,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63013",
+    "id": "63013",
     "name": {
       "nl": "Bütgenbach",
       "fr": "Butgenbach"
@@ -3264,7 +3264,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63020",
+    "id": "63020",
     "name": {
       "nl": "Dison",
       "fr": "Dison"
@@ -3272,7 +3272,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63023",
+    "id": "63023",
     "name": {
       "nl": "Eupen",
       "fr": "Eupen"
@@ -3280,7 +3280,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63035",
+    "id": "63035",
     "name": {
       "nl": "Herve",
       "fr": "Herve"
@@ -3288,7 +3288,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63038",
+    "id": "63038",
     "name": {
       "nl": "Jalhay",
       "fr": "Jalhay"
@@ -3296,7 +3296,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63040",
+    "id": "63040",
     "name": {
       "nl": "Kelmis",
       "fr": "La Calamine"
@@ -3304,7 +3304,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63045",
+    "id": "63045",
     "name": {
       "nl": "Lierneux",
       "fr": "Lierneux"
@@ -3312,7 +3312,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63046",
+    "id": "63046",
     "name": {
       "nl": "Limburg",
       "fr": "Limbourg"
@@ -3320,7 +3320,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63048",
+    "id": "63048",
     "name": {
       "nl": "Lontzen",
       "fr": "Lontzen"
@@ -3328,7 +3328,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63049",
+    "id": "63049",
     "name": {
       "nl": "Malmedy",
       "fr": "Malmedy"
@@ -3336,7 +3336,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63057",
+    "id": "63057",
     "name": {
       "nl": "Olne",
       "fr": "Olne"
@@ -3344,7 +3344,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63058",
+    "id": "63058",
     "name": {
       "nl": "Pepinster",
       "fr": "Pepinster"
@@ -3352,7 +3352,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63061",
+    "id": "63061",
     "name": {
       "nl": "Raeren",
       "fr": "Raeren"
@@ -3360,7 +3360,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63067",
+    "id": "63067",
     "name": {
       "nl": "Sankt Vith",
       "fr": "Saint-Vith"
@@ -3368,7 +3368,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63072",
+    "id": "63072",
     "name": {
       "nl": "Spa",
       "fr": "Spa"
@@ -3376,7 +3376,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63073",
+    "id": "63073",
     "name": {
       "nl": "Stavelot",
       "fr": "Stavelot"
@@ -3384,7 +3384,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63075",
+    "id": "63075",
     "name": {
       "nl": "Stoumont",
       "fr": "Stoumont"
@@ -3392,7 +3392,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63076",
+    "id": "63076",
     "name": {
       "nl": "Theux",
       "fr": "Theux"
@@ -3400,7 +3400,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63079",
+    "id": "63079",
     "name": {
       "nl": "Verviers",
       "fr": "Verviers"
@@ -3408,7 +3408,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63080",
+    "id": "63080",
     "name": {
       "nl": "Weismes",
       "fr": "Waimes"
@@ -3416,7 +3416,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63084",
+    "id": "63084",
     "name": {
       "nl": "Welkenraedt",
       "fr": "Welkenraedt"
@@ -3424,7 +3424,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63086",
+    "id": "63086",
     "name": {
       "nl": "Trois-Ponts",
       "fr": "Trois-Ponts"
@@ -3432,7 +3432,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63087",
+    "id": "63087",
     "name": {
       "nl": "Burg-Reuland",
       "fr": "Burg-Reuland"
@@ -3440,7 +3440,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63088",
+    "id": "63088",
     "name": {
       "nl": "Plombières",
       "fr": "Plombières"
@@ -3448,7 +3448,7 @@
     "province": "60000"
   },
   {
-    "refnis": "63089",
+    "id": "63089",
     "name": {
       "nl": "Thimister-Clermont",
       "fr": "Thimister-Clermont"
@@ -3456,7 +3456,7 @@
     "province": "60000"
   },
   {
-    "refnis": "64008",
+    "id": "64008",
     "name": {
       "nl": "Berloz",
       "fr": "Berloz"
@@ -3464,7 +3464,7 @@
     "province": "60000"
   },
   {
-    "refnis": "64015",
+    "id": "64015",
     "name": {
       "nl": "Braives",
       "fr": "Braives"
@@ -3472,7 +3472,7 @@
     "province": "60000"
   },
   {
-    "refnis": "64021",
+    "id": "64021",
     "name": {
       "nl": "Crisnée",
       "fr": "Crisnée"
@@ -3480,7 +3480,7 @@
     "province": "60000"
   },
   {
-    "refnis": "64023",
+    "id": "64023",
     "name": {
       "nl": "Donceel",
       "fr": "Donceel"
@@ -3488,7 +3488,7 @@
     "province": "60000"
   },
   {
-    "refnis": "64025",
+    "id": "64025",
     "name": {
       "nl": "Fexhe-le-Haut-Clocher",
       "fr": "Fexhe-le-Haut-Clocher"
@@ -3496,7 +3496,7 @@
     "province": "60000"
   },
   {
-    "refnis": "64029",
+    "id": "64029",
     "name": {
       "nl": "Geer",
       "fr": "Geer"
@@ -3504,7 +3504,7 @@
     "province": "60000"
   },
   {
-    "refnis": "64034",
+    "id": "64034",
     "name": {
       "nl": "Hannuit",
       "fr": "Hannut"
@@ -3512,7 +3512,7 @@
     "province": "60000"
   },
   {
-    "refnis": "64047",
+    "id": "64047",
     "name": {
       "nl": "Lijsem",
       "fr": "Lincent"
@@ -3520,7 +3520,7 @@
     "province": "60000"
   },
   {
-    "refnis": "64056",
+    "id": "64056",
     "name": {
       "nl": "Oerle",
       "fr": "Oreye"
@@ -3528,7 +3528,7 @@
     "province": "60000"
   },
   {
-    "refnis": "64063",
+    "id": "64063",
     "name": {
       "nl": "Remicourt",
       "fr": "Remicourt"
@@ -3536,7 +3536,7 @@
     "province": "60000"
   },
   {
-    "refnis": "64065",
+    "id": "64065",
     "name": {
       "nl": "Saint-Georges-sur-Meuse",
       "fr": "Saint-Georges-sur-Meuse"
@@ -3544,7 +3544,7 @@
     "province": "60000"
   },
   {
-    "refnis": "64074",
+    "id": "64074",
     "name": {
       "nl": "Borgworm",
       "fr": "Waremme"
@@ -3552,7 +3552,7 @@
     "province": "60000"
   },
   {
-    "refnis": "64075",
+    "id": "64075",
     "name": {
       "nl": "Wasseiges",
       "fr": "Wasseiges"
@@ -3560,7 +3560,7 @@
     "province": "60000"
   },
   {
-    "refnis": "64076",
+    "id": "64076",
     "name": {
       "nl": "Faimes",
       "fr": "Faimes"
@@ -3568,7 +3568,7 @@
     "province": "60000"
   },
   {
-    "refnis": "71002",
+    "id": "71002",
     "name": {
       "nl": "As",
       "fr": "As"
@@ -3576,7 +3576,7 @@
     "province": "70000"
   },
   {
-    "refnis": "71004",
+    "id": "71004",
     "name": {
       "nl": "Beringen",
       "fr": "Beringen"
@@ -3584,7 +3584,7 @@
     "province": "70000"
   },
   {
-    "refnis": "71011",
+    "id": "71011",
     "name": {
       "nl": "Diepenbeek",
       "fr": "Diepenbeek"
@@ -3592,7 +3592,7 @@
     "province": "70000"
   },
   {
-    "refnis": "71016",
+    "id": "71016",
     "name": {
       "nl": "Genk",
       "fr": "Genk"
@@ -3600,7 +3600,7 @@
     "province": "70000"
   },
   {
-    "refnis": "71017",
+    "id": "71017",
     "name": {
       "nl": "Gingelom",
       "fr": "Gingelom"
@@ -3608,7 +3608,7 @@
     "province": "70000"
   },
   {
-    "refnis": "71020",
+    "id": "71020",
     "name": {
       "nl": "Halen",
       "fr": "Halen"
@@ -3616,7 +3616,7 @@
     "province": "70000"
   },
   {
-    "refnis": "71024",
+    "id": "71024",
     "name": {
       "nl": "Herk-de-Stad",
       "fr": "Herck-la-Ville"
@@ -3624,7 +3624,7 @@
     "province": "70000"
   },
   {
-    "refnis": "71034",
+    "id": "71034",
     "name": {
       "nl": "Leopoldsburg",
       "fr": "Bourg-Léopold"
@@ -3632,7 +3632,7 @@
     "province": "70000"
   },
   {
-    "refnis": "71037",
+    "id": "71037",
     "name": {
       "nl": "Lummen",
       "fr": "Lummen"
@@ -3640,7 +3640,7 @@
     "province": "70000"
   },
   {
-    "refnis": "71045",
+    "id": "71045",
     "name": {
       "nl": "Nieuwerkerken",
       "fr": "Nieuwerkerken"
@@ -3648,7 +3648,7 @@
     "province": "70000"
   },
   {
-    "refnis": "71053",
+    "id": "71053",
     "name": {
       "nl": "Sint-Truiden",
       "fr": "Saint-Trond"
@@ -3656,7 +3656,7 @@
     "province": "70000"
   },
   {
-    "refnis": "71066",
+    "id": "71066",
     "name": {
       "nl": "Zonhoven",
       "fr": "Zonhoven"
@@ -3664,7 +3664,7 @@
     "province": "70000"
   },
   {
-    "refnis": "71067",
+    "id": "71067",
     "name": {
       "nl": "Zutendaal",
       "fr": "Zutendaal"
@@ -3672,7 +3672,7 @@
     "province": "70000"
   },
   {
-    "refnis": "71070",
+    "id": "71070",
     "name": {
       "nl": "Heusden-Zolder",
       "fr": "Heusden-Zolder"
@@ -3680,7 +3680,7 @@
     "province": "70000"
   },
   {
-    "refnis": "71071",
+    "id": "71071",
     "name": {
       "nl": "Tessenderlo-Ham",
       "fr": "Tessenderlo-Ham"
@@ -3688,7 +3688,7 @@
     "province": "70000"
   },
   {
-    "refnis": "71072",
+    "id": "71072",
     "name": {
       "nl": "Hasselt",
       "fr": "Hasselt"
@@ -3696,7 +3696,7 @@
     "province": "70000"
   },
   {
-    "refnis": "72003",
+    "id": "72003",
     "name": {
       "nl": "Bocholt",
       "fr": "Bocholt"
@@ -3704,7 +3704,7 @@
     "province": "70000"
   },
   {
-    "refnis": "72004",
+    "id": "72004",
     "name": {
       "nl": "Bree",
       "fr": "Bree"
@@ -3712,7 +3712,7 @@
     "province": "70000"
   },
   {
-    "refnis": "72018",
+    "id": "72018",
     "name": {
       "nl": "Kinrooi",
       "fr": "Kinrooi"
@@ -3720,7 +3720,7 @@
     "province": "70000"
   },
   {
-    "refnis": "72020",
+    "id": "72020",
     "name": {
       "nl": "Lommel",
       "fr": "Lommel"
@@ -3728,7 +3728,7 @@
     "province": "70000"
   },
   {
-    "refnis": "72021",
+    "id": "72021",
     "name": {
       "nl": "Maaseik",
       "fr": "Maaseik"
@@ -3736,7 +3736,7 @@
     "province": "70000"
   },
   {
-    "refnis": "72030",
+    "id": "72030",
     "name": {
       "nl": "Peer",
       "fr": "Peer"
@@ -3744,7 +3744,7 @@
     "province": "70000"
   },
   {
-    "refnis": "72037",
+    "id": "72037",
     "name": {
       "nl": "Hamont-Achel",
       "fr": "Hamont-Achel"
@@ -3752,7 +3752,7 @@
     "province": "70000"
   },
   {
-    "refnis": "72038",
+    "id": "72038",
     "name": {
       "nl": "Hechtel-Eksel",
       "fr": "Hechtel-Eksel"
@@ -3760,7 +3760,7 @@
     "province": "70000"
   },
   {
-    "refnis": "72039",
+    "id": "72039",
     "name": {
       "nl": "Houthalen-Helchteren",
       "fr": "Houthalen-Helchteren"
@@ -3768,7 +3768,7 @@
     "province": "70000"
   },
   {
-    "refnis": "72041",
+    "id": "72041",
     "name": {
       "nl": "Dilsen-Stokkem",
       "fr": "Dilsen-Stokkem"
@@ -3776,7 +3776,7 @@
     "province": "70000"
   },
   {
-    "refnis": "72042",
+    "id": "72042",
     "name": {
       "nl": "Oudsbergen",
       "fr": "Oudsbergen"
@@ -3784,7 +3784,7 @@
     "province": "70000"
   },
   {
-    "refnis": "72043",
+    "id": "72043",
     "name": {
       "nl": "Pelt",
       "fr": "Pelt"
@@ -3792,7 +3792,7 @@
     "province": "70000"
   },
   {
-    "refnis": "73001",
+    "id": "73001",
     "name": {
       "nl": "Alken",
       "fr": "Alken"
@@ -3800,7 +3800,7 @@
     "province": "70000"
   },
   {
-    "refnis": "73022",
+    "id": "73022",
     "name": {
       "nl": "Heers",
       "fr": "Heers"
@@ -3808,7 +3808,7 @@
     "province": "70000"
   },
   {
-    "refnis": "73028",
+    "id": "73028",
     "name": {
       "nl": "Herstappe",
       "fr": "Herstappe"
@@ -3816,7 +3816,7 @@
     "province": "70000"
   },
   {
-    "refnis": "73042",
+    "id": "73042",
     "name": {
       "nl": "Lanaken",
       "fr": "Lanaken"
@@ -3824,7 +3824,7 @@
     "province": "70000"
   },
   {
-    "refnis": "73066",
+    "id": "73066",
     "name": {
       "nl": "Riemst",
       "fr": "Riemst"
@@ -3832,7 +3832,7 @@
     "province": "70000"
   },
   {
-    "refnis": "73098",
+    "id": "73098",
     "name": {
       "nl": "Wellen",
       "fr": "Wellen"
@@ -3840,7 +3840,7 @@
     "province": "70000"
   },
   {
-    "refnis": "73107",
+    "id": "73107",
     "name": {
       "nl": "Maasmechelen",
       "fr": "Maasmechelen"
@@ -3848,7 +3848,7 @@
     "province": "70000"
   },
   {
-    "refnis": "73109",
+    "id": "73109",
     "name": {
       "nl": "Voeren",
       "fr": "Fourons"
@@ -3856,7 +3856,7 @@
     "province": "70000"
   },
   {
-    "refnis": "73110",
+    "id": "73110",
     "name": {
       "nl": "Bilzen-Hoeselt",
       "fr": "Bilzen-Hoeselt"
@@ -3864,7 +3864,7 @@
     "province": "70000"
   },
   {
-    "refnis": "73111",
+    "id": "73111",
     "name": {
       "nl": "Tongeren-Borgloon",
       "fr": "Tongres-Looz"
@@ -3872,7 +3872,7 @@
     "province": "70000"
   },
   {
-    "refnis": "81001",
+    "id": "81001",
     "name": {
       "nl": "Aarlen",
       "fr": "Arlon"
@@ -3880,7 +3880,7 @@
     "province": "80000"
   },
   {
-    "refnis": "81003",
+    "id": "81003",
     "name": {
       "nl": "Attert",
       "fr": "Attert"
@@ -3888,7 +3888,7 @@
     "province": "80000"
   },
   {
-    "refnis": "81004",
+    "id": "81004",
     "name": {
       "nl": "Aubange",
       "fr": "Aubange"
@@ -3896,7 +3896,7 @@
     "province": "80000"
   },
   {
-    "refnis": "81013",
+    "id": "81013",
     "name": {
       "nl": "Martelange",
       "fr": "Martelange"
@@ -3904,7 +3904,7 @@
     "province": "80000"
   },
   {
-    "refnis": "81015",
+    "id": "81015",
     "name": {
       "nl": "Messancy",
       "fr": "Messancy"
@@ -3912,7 +3912,7 @@
     "province": "80000"
   },
   {
-    "refnis": "82009",
+    "id": "82009",
     "name": {
       "nl": "Fauvillers",
       "fr": "Fauvillers"
@@ -3920,7 +3920,7 @@
     "province": "80000"
   },
   {
-    "refnis": "82014",
+    "id": "82014",
     "name": {
       "nl": "Houffalize",
       "fr": "Houffalize"
@@ -3928,7 +3928,7 @@
     "province": "80000"
   },
   {
-    "refnis": "82032",
+    "id": "82032",
     "name": {
       "nl": "Vielsalm",
       "fr": "Vielsalm"
@@ -3936,7 +3936,7 @@
     "province": "80000"
   },
   {
-    "refnis": "82036",
+    "id": "82036",
     "name": {
       "nl": "Vaux-sur-Sûre",
       "fr": "Vaux-sur-Sûre"
@@ -3944,7 +3944,7 @@
     "province": "80000"
   },
   {
-    "refnis": "82037",
+    "id": "82037",
     "name": {
       "nl": "Gouvy",
       "fr": "Gouvy"
@@ -3952,7 +3952,7 @@
     "province": "80000"
   },
   {
-    "refnis": "82038",
+    "id": "82038",
     "name": {
       "nl": "Sainte-Ode",
       "fr": "Sainte-Ode"
@@ -3960,7 +3960,7 @@
     "province": "80000"
   },
   {
-    "refnis": "82039",
+    "id": "82039",
     "name": {
       "nl": "Bastenaken",
       "fr": "Bastogne"
@@ -3968,7 +3968,7 @@
     "province": "80000"
   },
   {
-    "refnis": "83012",
+    "id": "83012",
     "name": {
       "nl": "Durbuy",
       "fr": "Durbuy"
@@ -3976,7 +3976,7 @@
     "province": "80000"
   },
   {
-    "refnis": "83013",
+    "id": "83013",
     "name": {
       "nl": "Erezée",
       "fr": "Erezée"
@@ -3984,7 +3984,7 @@
     "province": "80000"
   },
   {
-    "refnis": "83028",
+    "id": "83028",
     "name": {
       "nl": "Hotton",
       "fr": "Hotton"
@@ -3992,7 +3992,7 @@
     "province": "80000"
   },
   {
-    "refnis": "83031",
+    "id": "83031",
     "name": {
       "nl": "La Roche-en-Ardenne",
       "fr": "La Roche-en-Ardenne"
@@ -4000,7 +4000,7 @@
     "province": "80000"
   },
   {
-    "refnis": "83034",
+    "id": "83034",
     "name": {
       "nl": "Marche-en-Famenne",
       "fr": "Marche-en-Famenne"
@@ -4008,7 +4008,7 @@
     "province": "80000"
   },
   {
-    "refnis": "83040",
+    "id": "83040",
     "name": {
       "nl": "Nassogne",
       "fr": "Nassogne"
@@ -4016,7 +4016,7 @@
     "province": "80000"
   },
   {
-    "refnis": "83044",
+    "id": "83044",
     "name": {
       "nl": "Rendeux",
       "fr": "Rendeux"
@@ -4024,7 +4024,7 @@
     "province": "80000"
   },
   {
-    "refnis": "83049",
+    "id": "83049",
     "name": {
       "nl": "Tenneville",
       "fr": "Tenneville"
@@ -4032,7 +4032,7 @@
     "province": "80000"
   },
   {
-    "refnis": "83055",
+    "id": "83055",
     "name": {
       "nl": "Manhay",
       "fr": "Manhay"
@@ -4040,7 +4040,7 @@
     "province": "80000"
   },
   {
-    "refnis": "84009",
+    "id": "84009",
     "name": {
       "nl": "Bertrix",
       "fr": "Bertrix"
@@ -4048,7 +4048,7 @@
     "province": "80000"
   },
   {
-    "refnis": "84010",
+    "id": "84010",
     "name": {
       "nl": "Bouillon",
       "fr": "Bouillon"
@@ -4056,7 +4056,7 @@
     "province": "80000"
   },
   {
-    "refnis": "84016",
+    "id": "84016",
     "name": {
       "nl": "Daverdisse",
       "fr": "Daverdisse"
@@ -4064,7 +4064,7 @@
     "province": "80000"
   },
   {
-    "refnis": "84029",
+    "id": "84029",
     "name": {
       "nl": "Herbeumont",
       "fr": "Herbeumont"
@@ -4072,7 +4072,7 @@
     "province": "80000"
   },
   {
-    "refnis": "84033",
+    "id": "84033",
     "name": {
       "nl": "Léglise",
       "fr": "Léglise"
@@ -4080,7 +4080,7 @@
     "province": "80000"
   },
   {
-    "refnis": "84035",
+    "id": "84035",
     "name": {
       "nl": "Libin",
       "fr": "Libin"
@@ -4088,7 +4088,7 @@
     "province": "80000"
   },
   {
-    "refnis": "84043",
+    "id": "84043",
     "name": {
       "nl": "Neufchâteau",
       "fr": "Neufchâteau"
@@ -4096,7 +4096,7 @@
     "province": "80000"
   },
   {
-    "refnis": "84050",
+    "id": "84050",
     "name": {
       "nl": "Paliseul",
       "fr": "Paliseul"
@@ -4104,7 +4104,7 @@
     "province": "80000"
   },
   {
-    "refnis": "84059",
+    "id": "84059",
     "name": {
       "nl": "Saint-Hubert",
       "fr": "Saint-Hubert"
@@ -4112,7 +4112,7 @@
     "province": "80000"
   },
   {
-    "refnis": "84068",
+    "id": "84068",
     "name": {
       "nl": "Tellin",
       "fr": "Tellin"
@@ -4120,7 +4120,7 @@
     "province": "80000"
   },
   {
-    "refnis": "84075",
+    "id": "84075",
     "name": {
       "nl": "Wellin",
       "fr": "Wellin"
@@ -4128,7 +4128,7 @@
     "province": "80000"
   },
   {
-    "refnis": "84077",
+    "id": "84077",
     "name": {
       "nl": "Libramont-Chevigny",
       "fr": "Libramont-Chevigny"
@@ -4136,7 +4136,7 @@
     "province": "80000"
   },
   {
-    "refnis": "85007",
+    "id": "85007",
     "name": {
       "nl": "Chiny",
       "fr": "Chiny"
@@ -4144,7 +4144,7 @@
     "province": "80000"
   },
   {
-    "refnis": "85009",
+    "id": "85009",
     "name": {
       "nl": "Etalle",
       "fr": "Etalle"
@@ -4152,7 +4152,7 @@
     "province": "80000"
   },
   {
-    "refnis": "85011",
+    "id": "85011",
     "name": {
       "nl": "Florenville",
       "fr": "Florenville"
@@ -4160,7 +4160,7 @@
     "province": "80000"
   },
   {
-    "refnis": "85024",
+    "id": "85024",
     "name": {
       "nl": "Meix-devant-Virton",
       "fr": "Meix-devant-Virton"
@@ -4168,7 +4168,7 @@
     "province": "80000"
   },
   {
-    "refnis": "85026",
+    "id": "85026",
     "name": {
       "nl": "Musson",
       "fr": "Musson"
@@ -4176,7 +4176,7 @@
     "province": "80000"
   },
   {
-    "refnis": "85034",
+    "id": "85034",
     "name": {
       "nl": "Saint-Léger",
       "fr": "Saint-Léger"
@@ -4184,7 +4184,7 @@
     "province": "80000"
   },
   {
-    "refnis": "85039",
+    "id": "85039",
     "name": {
       "nl": "Tintigny",
       "fr": "Tintigny"
@@ -4192,7 +4192,7 @@
     "province": "80000"
   },
   {
-    "refnis": "85045",
+    "id": "85045",
     "name": {
       "nl": "Virton",
       "fr": "Virton"
@@ -4200,7 +4200,7 @@
     "province": "80000"
   },
   {
-    "refnis": "85046",
+    "id": "85046",
     "name": {
       "nl": "Habay",
       "fr": "Habay"
@@ -4208,7 +4208,7 @@
     "province": "80000"
   },
   {
-    "refnis": "85047",
+    "id": "85047",
     "name": {
       "nl": "Rouvroy",
       "fr": "Rouvroy"
@@ -4216,7 +4216,7 @@
     "province": "80000"
   },
   {
-    "refnis": "91005",
+    "id": "91005",
     "name": {
       "nl": "Anhée",
       "fr": "Anhée"
@@ -4224,7 +4224,7 @@
     "province": "90000"
   },
   {
-    "refnis": "91013",
+    "id": "91013",
     "name": {
       "nl": "Beauraing",
       "fr": "Beauraing"
@@ -4232,7 +4232,7 @@
     "province": "90000"
   },
   {
-    "refnis": "91015",
+    "id": "91015",
     "name": {
       "nl": "Bièvre",
       "fr": "Bièvre"
@@ -4240,7 +4240,7 @@
     "province": "90000"
   },
   {
-    "refnis": "91030",
+    "id": "91030",
     "name": {
       "nl": "Ciney",
       "fr": "Ciney"
@@ -4248,7 +4248,7 @@
     "province": "90000"
   },
   {
-    "refnis": "91034",
+    "id": "91034",
     "name": {
       "nl": "Dinant",
       "fr": "Dinant"
@@ -4256,7 +4256,7 @@
     "province": "90000"
   },
   {
-    "refnis": "91054",
+    "id": "91054",
     "name": {
       "nl": "Gedinne",
       "fr": "Gedinne"
@@ -4264,7 +4264,7 @@
     "province": "90000"
   },
   {
-    "refnis": "91059",
+    "id": "91059",
     "name": {
       "nl": "Hamois",
       "fr": "Hamois"
@@ -4272,7 +4272,7 @@
     "province": "90000"
   },
   {
-    "refnis": "91064",
+    "id": "91064",
     "name": {
       "nl": "Havelange",
       "fr": "Havelange"
@@ -4280,7 +4280,7 @@
     "province": "90000"
   },
   {
-    "refnis": "91072",
+    "id": "91072",
     "name": {
       "nl": "Houyet",
       "fr": "Houyet"
@@ -4288,7 +4288,7 @@
     "province": "90000"
   },
   {
-    "refnis": "91103",
+    "id": "91103",
     "name": {
       "nl": "Onhaye",
       "fr": "Onhaye"
@@ -4296,7 +4296,7 @@
     "province": "90000"
   },
   {
-    "refnis": "91114",
+    "id": "91114",
     "name": {
       "nl": "Rochefort",
       "fr": "Rochefort"
@@ -4304,7 +4304,7 @@
     "province": "90000"
   },
   {
-    "refnis": "91120",
+    "id": "91120",
     "name": {
       "nl": "Somme-Leuze",
       "fr": "Somme-Leuze"
@@ -4312,7 +4312,7 @@
     "province": "90000"
   },
   {
-    "refnis": "91141",
+    "id": "91141",
     "name": {
       "nl": "Yvoir",
       "fr": "Yvoir"
@@ -4320,7 +4320,7 @@
     "province": "90000"
   },
   {
-    "refnis": "91142",
+    "id": "91142",
     "name": {
       "nl": "Hastière",
       "fr": "Hastière"
@@ -4328,7 +4328,7 @@
     "province": "90000"
   },
   {
-    "refnis": "91143",
+    "id": "91143",
     "name": {
       "nl": "Vresse-sur-Semois",
       "fr": "Vresse-sur-Semois"
@@ -4336,7 +4336,7 @@
     "province": "90000"
   },
   {
-    "refnis": "92003",
+    "id": "92003",
     "name": {
       "nl": "Andenne",
       "fr": "Andenne"
@@ -4344,7 +4344,7 @@
     "province": "90000"
   },
   {
-    "refnis": "92006",
+    "id": "92006",
     "name": {
       "nl": "Assesse",
       "fr": "Assesse"
@@ -4352,7 +4352,7 @@
     "province": "90000"
   },
   {
-    "refnis": "92035",
+    "id": "92035",
     "name": {
       "nl": "Eghezée",
       "fr": "Eghezée"
@@ -4360,7 +4360,7 @@
     "province": "90000"
   },
   {
-    "refnis": "92045",
+    "id": "92045",
     "name": {
       "nl": "Floreffe",
       "fr": "Floreffe"
@@ -4368,7 +4368,7 @@
     "province": "90000"
   },
   {
-    "refnis": "92048",
+    "id": "92048",
     "name": {
       "nl": "Fosses-la-Ville",
       "fr": "Fosses-la-Ville"
@@ -4376,7 +4376,7 @@
     "province": "90000"
   },
   {
-    "refnis": "92054",
+    "id": "92054",
     "name": {
       "nl": "Gesves",
       "fr": "Gesves"
@@ -4384,7 +4384,7 @@
     "province": "90000"
   },
   {
-    "refnis": "92087",
+    "id": "92087",
     "name": {
       "nl": "Mettet",
       "fr": "Mettet"
@@ -4392,7 +4392,7 @@
     "province": "90000"
   },
   {
-    "refnis": "92094",
+    "id": "92094",
     "name": {
       "nl": "Namen",
       "fr": "Namur"
@@ -4400,7 +4400,7 @@
     "province": "90000"
   },
   {
-    "refnis": "92097",
+    "id": "92097",
     "name": {
       "nl": "Ohey",
       "fr": "Ohey"
@@ -4408,7 +4408,7 @@
     "province": "90000"
   },
   {
-    "refnis": "92101",
+    "id": "92101",
     "name": {
       "nl": "Profondeville",
       "fr": "Profondeville"
@@ -4416,7 +4416,7 @@
     "province": "90000"
   },
   {
-    "refnis": "92114",
+    "id": "92114",
     "name": {
       "nl": "Sombreffe",
       "fr": "Sombreffe"
@@ -4424,7 +4424,7 @@
     "province": "90000"
   },
   {
-    "refnis": "92137",
+    "id": "92137",
     "name": {
       "nl": "Sambreville",
       "fr": "Sambreville"
@@ -4432,7 +4432,7 @@
     "province": "90000"
   },
   {
-    "refnis": "92138",
+    "id": "92138",
     "name": {
       "nl": "Fernelmont",
       "fr": "Fernelmont"
@@ -4440,7 +4440,7 @@
     "province": "90000"
   },
   {
-    "refnis": "92140",
+    "id": "92140",
     "name": {
       "nl": "Jemeppe-sur-Sambre",
       "fr": "Jemeppe-sur-Sambre"
@@ -4448,7 +4448,7 @@
     "province": "90000"
   },
   {
-    "refnis": "92141",
+    "id": "92141",
     "name": {
       "nl": "La Bruyère",
       "fr": "La Bruyère"
@@ -4456,7 +4456,7 @@
     "province": "90000"
   },
   {
-    "refnis": "92142",
+    "id": "92142",
     "name": {
       "nl": "Gembloux",
       "fr": "Gembloux"
@@ -4464,7 +4464,7 @@
     "province": "90000"
   },
   {
-    "refnis": "93010",
+    "id": "93010",
     "name": {
       "nl": "Cerfontaine",
       "fr": "Cerfontaine"
@@ -4472,7 +4472,7 @@
     "province": "90000"
   },
   {
-    "refnis": "93014",
+    "id": "93014",
     "name": {
       "nl": "Couvin",
       "fr": "Couvin"
@@ -4480,7 +4480,7 @@
     "province": "90000"
   },
   {
-    "refnis": "93018",
+    "id": "93018",
     "name": {
       "nl": "Doische",
       "fr": "Doische"
@@ -4488,7 +4488,7 @@
     "province": "90000"
   },
   {
-    "refnis": "93022",
+    "id": "93022",
     "name": {
       "nl": "Florennes",
       "fr": "Florennes"
@@ -4496,7 +4496,7 @@
     "province": "90000"
   },
   {
-    "refnis": "93056",
+    "id": "93056",
     "name": {
       "nl": "Philippeville",
       "fr": "Philippeville"
@@ -4504,7 +4504,7 @@
     "province": "90000"
   },
   {
-    "refnis": "93088",
+    "id": "93088",
     "name": {
       "nl": "Walcourt",
       "fr": "Walcourt"
@@ -4512,7 +4512,7 @@
     "province": "90000"
   },
   {
-    "refnis": "93090",
+    "id": "93090",
     "name": {
       "nl": "Viroinval",
       "fr": "Viroinval"

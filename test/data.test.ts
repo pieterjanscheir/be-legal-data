@@ -81,16 +81,16 @@ describe('data integrity', () => {
 
 describe('courts', () => {
     it('formats justice of the peace names', () => {
-        expect(formatCourtName(getCourt('VredegerechtGent1')!)).toBe(
+        expect(formatCourtName(getCourt('justice-of-the-peace-gent-1'))).toBe(
             'Vredegerecht 1e kanton Gent',
         )
-        expect(formatCourtName(getCourt('VredegerechtDeinze')!, 'fr')).toBe(
+        expect(formatCourtName(getCourt('justice-of-the-peace-deinze'), 'fr')).toBe(
             'Tribunal de paix canton Deinze',
         )
     })
 
     it('formats enterprise court division names', () => {
-        const brugge = getCourt('OndernemingsrechtbankGentBrugge')!
+        const brugge = getCourt('enterprise-court-gent-brugge')
         expect(formatCourtName(brugge)).toBe(
             'Ondernemingsrechtbank Gent - afdeling Brugge',
         )
@@ -100,7 +100,7 @@ describe('courts', () => {
     })
 
     it('filters by type and arrondissement', () => {
-        const result = findCourts({ type: 'enterprise-court', arrondissement: 'EastFlanders' })
+        const result = findCourts({ type: 'enterprise-court', arrondissement: 'oost-vlaanderen' })
         expect(result.map((c) => c.name.nl).sort()).toEqual([
             'Dendermonde',
             'Gent',
@@ -109,7 +109,7 @@ describe('courts', () => {
     })
 
     it('finds a contact by label', () => {
-        const gent = getCourt('OndernemingsrechtbankGentGent')!
+        const gent = getCourt('enterprise-court-gent-gent')
         expect(getContact(gent, 'email', 'griffie')).toBe('orb.gent.griffie@just.fgov.be')
     })
 })

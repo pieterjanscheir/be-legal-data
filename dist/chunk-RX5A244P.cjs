@@ -1,15 +1,16 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }// data/courts.json
 var courts_default = [
   {
-    id: "VredegerechtAalst1",
+    id: "justice-of-the-peace-aalst-1",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "aalst-1",
     name: {
       nl: "Aalst",
       fr: "Alost",
       de: "Aalst"
     },
-    canton: 1,
+    number: 1,
     address: {
       street: "Dokter Andr\xE9 Sierensstraat",
       houseNumber: "16 bus 3B",
@@ -30,15 +31,16 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtAalst2",
+    id: "justice-of-the-peace-aalst-2",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "aalst-2",
     name: {
       nl: "Aalst",
       fr: "Alost",
       de: "Aalst"
     },
-    canton: 2,
+    number: 2,
     address: {
       street: "Dokter Andr\xE9 Sierensstraat",
       houseNumber: "16 bus 3C",
@@ -59,9 +61,10 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtBeverenKruibekeZwijndrecht",
+    id: "justice-of-the-peace-beveren-kruibeke-zwijndrecht",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "beveren-kruibeke-zwijndrecht",
     name: {
       nl: "Beveren-Kruibeke-Zwijndrecht",
       fr: "Beveren-Cruybeke-Zwijndrecht",
@@ -87,9 +90,10 @@ var courts_default = [
     openingHours: "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtDeinze",
+    id: "justice-of-the-peace-deinze",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "deinze",
     name: {
       nl: "Deinze",
       fr: "Deinze",
@@ -115,9 +119,10 @@ var courts_default = [
     openingHours: "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtDendermonde",
+    id: "justice-of-the-peace-dendermonde",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "dendermonde",
     name: {
       nl: "Dendermonde",
       fr: "Termonde",
@@ -143,9 +148,10 @@ var courts_default = [
     openingHours: "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtEeklo",
+    id: "justice-of-the-peace-eeklo",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "eeklo",
     name: {
       nl: "Eeklo",
       fr: "Eeklo",
@@ -171,15 +177,16 @@ var courts_default = [
     openingHours: "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtGent1",
+    id: "justice-of-the-peace-gent-1",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "gent-1",
     name: {
       nl: "Gent",
       fr: "Gand",
       de: "Gent"
     },
-    canton: 1,
+    number: 1,
     address: {
       street: "Opge\xEBistenlaan",
       houseNumber: "401/F",
@@ -200,15 +207,16 @@ var courts_default = [
     openingHours: "ma - vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtGent2",
+    id: "justice-of-the-peace-gent-2",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "gent-2",
     name: {
       nl: "Gent",
       fr: "Gand",
       de: "Gent"
     },
-    canton: 2,
+    number: 2,
     address: {
       street: "Opge\xEBistenlaan",
       houseNumber: "401/F",
@@ -229,15 +237,16 @@ var courts_default = [
     openingHours: "ma - vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtGent3",
+    id: "justice-of-the-peace-gent-3",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "gent-3",
     name: {
       nl: "Gent",
       fr: "Gand",
       de: "Gent"
     },
-    canton: 3,
+    number: 3,
     address: {
       street: "Opge\xEBistenlaan",
       houseNumber: "401/F",
@@ -258,15 +267,16 @@ var courts_default = [
     openingHours: "ma - vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtGent4",
+    id: "justice-of-the-peace-gent-4",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "gent-4",
     name: {
       nl: "Gent",
       fr: "Gand",
       de: "Gent"
     },
-    canton: 4,
+    number: 4,
     address: {
       street: "Opge\xEBistenlaan",
       houseNumber: "401/F",
@@ -287,15 +297,16 @@ var courts_default = [
     openingHours: "ma - vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtGent5",
+    id: "justice-of-the-peace-gent-5",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "gent-5",
     name: {
       nl: "Gent",
       fr: "Gand",
       de: "Gent"
     },
-    canton: 5,
+    number: 5,
     address: {
       street: "Opge\xEBistenlaan",
       houseNumber: "401/F",
@@ -316,9 +327,10 @@ var courts_default = [
     openingHours: "ma - vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtGeraardsbergen",
+    id: "justice-of-the-peace-geraardsbergen",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "geraardsbergen",
     name: {
       nl: "Geraardsbergen",
       fr: "Grammont",
@@ -344,9 +356,10 @@ var courts_default = [
     openingHours: "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtHamme",
+    id: "justice-of-the-peace-hamme",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "hamme",
     name: {
       nl: "Hamme",
       fr: "Hamme",
@@ -372,9 +385,10 @@ var courts_default = [
     openingHours: "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtHerzele",
+    id: "justice-of-the-peace-herzele",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "herzele",
     name: {
       nl: "Herzele",
       fr: "Herzele",
@@ -400,9 +414,10 @@ var courts_default = [
     openingHours: "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtLokeren",
+    id: "justice-of-the-peace-lokeren",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "lokeren",
     name: {
       nl: "Lokeren",
       fr: "Lokeren",
@@ -428,9 +443,10 @@ var courts_default = [
     openingHours: "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtMerelbekeMelle",
+    id: "justice-of-the-peace-merelbeke-melle",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "merelbeke-melle",
     name: {
       nl: "Merelbeke-Melle",
       fr: "Merelbeke-Melle",
@@ -456,9 +472,10 @@ var courts_default = [
     openingHours: "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtNinove",
+    id: "justice-of-the-peace-ninove",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "ninove",
     name: {
       nl: "Ninove",
       fr: "Ninove",
@@ -484,9 +501,10 @@ var courts_default = [
     openingHours: "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtOudenaarde",
+    id: "justice-of-the-peace-oudenaarde",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "oudenaarde",
     name: {
       nl: "Oudenaarde",
       fr: "Audenarde",
@@ -512,9 +530,10 @@ var courts_default = [
     openingHours: "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtSintNiklaas",
+    id: "justice-of-the-peace-sint-niklaas",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "sint-niklaas",
     name: {
       nl: "Sint-Niklaas",
       fr: "Saint-Nicolas",
@@ -540,9 +559,10 @@ var courts_default = [
     openingHours: "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtWetteren",
+    id: "justice-of-the-peace-wetteren",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "wetteren",
     name: {
       nl: "Wetteren",
       fr: "Wetteren",
@@ -568,9 +588,10 @@ var courts_default = [
     openingHours: "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtZelzate",
+    id: "justice-of-the-peace-zelzate",
     type: "justice-of-the-peace",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
+    canton: "zelzate",
     name: {
       nl: "Zelzate",
       fr: "Zelzate",
@@ -596,15 +617,16 @@ var courts_default = [
     openingHours: "ma-vrij: 08u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtBrugge1",
+    id: "justice-of-the-peace-brugge-1",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "brugge-1",
     name: {
       nl: "Brugge",
       fr: "Bruges",
       de: "Br\xFCgge"
     },
-    canton: 1,
+    number: 1,
     address: {
       street: "Kazernevest",
       houseNumber: "4",
@@ -631,15 +653,16 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtBrugge2",
+    id: "justice-of-the-peace-brugge-2",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "brugge-2",
     name: {
       nl: "Brugge",
       fr: "Bruges",
       de: "Br\xFCgge"
     },
-    canton: 2,
+    number: 2,
     address: {
       street: "Kazernevest",
       houseNumber: "4",
@@ -666,15 +689,16 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtBrugge3",
+    id: "justice-of-the-peace-brugge-3",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "brugge-3",
     name: {
       nl: "Brugge",
       fr: "Bruges",
       de: "Br\xFCgge"
     },
-    canton: 3,
+    number: 3,
     address: {
       street: "Kazernevest",
       houseNumber: "4",
@@ -701,15 +725,16 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtBrugge4",
+    id: "justice-of-the-peace-brugge-4",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "brugge-4",
     name: {
       nl: "Brugge",
       fr: "Bruges",
       de: "Br\xFCgge"
     },
-    canton: 4,
+    number: 4,
     address: {
       street: "Kazernevest",
       houseNumber: "4",
@@ -736,9 +761,10 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtIeper",
+    id: "justice-of-the-peace-ieper",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "ieper",
     name: {
       nl: "Ieper",
       fr: "Ypres",
@@ -764,9 +790,10 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtIzegem",
+    id: "justice-of-the-peace-izegem",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "izegem",
     name: {
       nl: "Izegem",
       fr: "Izegem",
@@ -792,15 +819,16 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtKortrijk1",
+    id: "justice-of-the-peace-kortrijk-1",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "kortrijk-1",
     name: {
       nl: "Kortrijk",
       fr: "Courtrai",
       de: "Kortrijk"
     },
-    canton: 1,
+    number: 1,
     address: {
       building: "Gerechtsgebouw II",
       street: "Beheerstraat",
@@ -827,15 +855,16 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtKortrijk2",
+    id: "justice-of-the-peace-kortrijk-2",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "kortrijk-2",
     name: {
       nl: "Kortrijk",
       fr: "Courtrai",
       de: "Kortrijk"
     },
-    canton: 2,
+    number: 2,
     address: {
       building: "Gerechtsgebouw II",
       street: "Beheerstraat",
@@ -862,9 +891,10 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtMenen",
+    id: "justice-of-the-peace-menen",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "menen",
     name: {
       nl: "Menen",
       fr: "Menin",
@@ -890,15 +920,16 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtOostende1",
+    id: "justice-of-the-peace-oostende-1",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "oostende-1",
     name: {
       nl: "Oostende",
       fr: "Ostende",
       de: "Ostende"
     },
-    canton: 1,
+    number: 1,
     address: {
       street: "Canadaplein",
       houseNumber: "1",
@@ -919,15 +950,16 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtOostende2",
+    id: "justice-of-the-peace-oostende-2",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "oostende-2",
     name: {
       nl: "Oostende",
       fr: "Ostende",
       de: "Ostende"
     },
-    canton: 2,
+    number: 2,
     address: {
       street: "Canadaplein",
       houseNumber: "1",
@@ -948,9 +980,10 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtPoperinge",
+    id: "justice-of-the-peace-poperinge",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "poperinge",
     name: {
       nl: "Poperinge",
       fr: "Poperinge",
@@ -976,9 +1009,10 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtRoeselare",
+    id: "justice-of-the-peace-roeselare",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "roeselare",
     name: {
       nl: "Roeselare",
       fr: "Roulers",
@@ -1004,9 +1038,10 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtTielt",
+    id: "justice-of-the-peace-tielt",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "tielt",
     name: {
       nl: "Tielt",
       fr: "Tielt",
@@ -1032,9 +1067,10 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtTorhout",
+    id: "justice-of-the-peace-torhout",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "torhout",
     name: {
       nl: "Torhout",
       fr: "Torhout",
@@ -1060,9 +1096,10 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtVeurne",
+    id: "justice-of-the-peace-veurne",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "veurne",
     name: {
       nl: "Veurne",
       fr: "Furnes",
@@ -1088,9 +1125,10 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "VredegerechtWaregem",
+    id: "justice-of-the-peace-waregem",
     type: "justice-of-the-peace",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
+    canton: "waregem",
     name: {
       nl: "Waregem",
       fr: "Waregem",
@@ -1116,9 +1154,9 @@ var courts_default = [
     openingHours: "ma-vrij: 8u30 - 12u30 en 13u30 - 16u00"
   },
   {
-    id: "OndernemingsrechtbankGentBrugge",
+    id: "enterprise-court-gent-brugge",
     type: "enterprise-court",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Brugge",
       fr: "Bruges",
@@ -1159,9 +1197,9 @@ var courts_default = [
     ]
   },
   {
-    id: "OndernemingsrechtbankGentDendermonde",
+    id: "enterprise-court-gent-dendermonde",
     type: "enterprise-court",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Dendermonde",
       fr: "Termonde",
@@ -1202,9 +1240,9 @@ var courts_default = [
     ]
   },
   {
-    id: "OndernemingsrechtbankGentGent",
+    id: "enterprise-court-gent-gent",
     type: "enterprise-court",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Gent",
       fr: "Gand",
@@ -1245,9 +1283,9 @@ var courts_default = [
     ]
   },
   {
-    id: "OndernemingsrechtbankGentIeper",
+    id: "enterprise-court-gent-ieper",
     type: "enterprise-court",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Ieper",
       fr: "Ypres",
@@ -1288,9 +1326,9 @@ var courts_default = [
     ]
   },
   {
-    id: "OndernemingsrechtbankGentKortrijk",
+    id: "enterprise-court-gent-kortrijk",
     type: "enterprise-court",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Kortrijk",
       fr: "Courtrai",
@@ -1331,9 +1369,9 @@ var courts_default = [
     ]
   },
   {
-    id: "OndernemingsrechtbankGentOostende",
+    id: "enterprise-court-gent-oostende",
     type: "enterprise-court",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Oostende",
       fr: "Ostende",
@@ -1373,9 +1411,9 @@ var courts_default = [
     ]
   },
   {
-    id: "OndernemingsrechtbankGentOudenaarde",
+    id: "enterprise-court-gent-oudenaarde",
     type: "enterprise-court",
-    arrondissement: "EastFlanders",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Oudenaarde",
       fr: "Audenarde",
@@ -1416,9 +1454,9 @@ var courts_default = [
     ]
   },
   {
-    id: "OndernemingsrechtbankGentVeurne",
+    id: "enterprise-court-gent-veurne",
     type: "enterprise-court",
-    arrondissement: "WestFlanders",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Veurne",
       fr: "Furnes",
@@ -1463,12 +1501,15 @@ var courts_default = [
 // src/courts.ts
 var courts = courts_default;
 var courtsById = new Map(courts.map((c) => [c.id, c]));
+var justicesOfThePeaceByCanton = /* @__PURE__ */ new Map();
+for (const court of courts) {
+  if (court.type === "justice-of-the-peace") justicesOfThePeaceByCanton.set(court.canton, court);
+}
 function getCourt(id) {
   return courtsById.get(id);
 }
 function getJusticeOfThePeace(cantonId) {
-  const court = courtsById.get(`Vredegerecht${cantonId}`);
-  return _optionalChain([court, 'optionalAccess', _ => _.type]) === "justice-of-the-peace" ? court : void 0;
+  return justicesOfThePeaceByCanton.get(cantonId);
 }
 function findCourts(filter) {
   return courts.filter(
@@ -1476,9 +1517,9 @@ function findCourts(filter) {
   );
 }
 function getContact(court, type, label) {
-  return _optionalChain([court, 'access', _2 => _2.contacts, 'access', _3 => _3.find, 'call', _4 => _4(
+  return _optionalChain([court, 'access', _ => _.contacts, 'access', _2 => _2.find, 'call', _3 => _3(
     (c) => c.type === type && (label === void 0 || c.label === label)
-  ), 'optionalAccess', _5 => _5.value]);
+  ), 'optionalAccess', _4 => _4.value]);
 }
 var courtNameParts = {
   nl: {
@@ -1508,7 +1549,7 @@ function formatCourtName(court, locale = "nl") {
   if (court.type === "enterprise-court") {
     return `${t.enterprise} ${t.of}${court.seat[locale]} - ${t.division} ${court.name[locale]}`;
   }
-  return court.canton ? `${t.peace} ${court.canton}e ${t.canton} ${court.name[locale]}` : `${t.peace} ${t.canton} ${court.name[locale]}`;
+  return court.number ? `${t.peace} ${court.number}e ${t.canton} ${court.name[locale]}` : `${t.peace} ${t.canton} ${court.name[locale]}`;
 }
 
 

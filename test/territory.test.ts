@@ -12,18 +12,18 @@ import {
 
 // Statbel province codes per arrondissement. Brussels also has the Halle-Vilvoorde cantons.
 const provincesOf: Record<string, string[]> = {
-    Antwerp: ['10000'],
-    Limburg: ['70000'],
-    Brussels: ['04000', '20001'],
-    Leuven: ['20001'],
-    WalloonBrabant: ['20002'],
-    EastFlanders: ['40000'],
-    WestFlanders: ['30000'],
-    Liege: ['60000'],
-    Eupen: ['60000'],
-    Luxembourg: ['80000'],
-    Namur: ['90000'],
-    Hainaut: ['50000'],
+    antwerpen: ['10000'],
+    limburg: ['70000'],
+    brussel: ['04000', '20001'],
+    leuven: ['20001'],
+    'brabant-wallon': ['20002'],
+    'oost-vlaanderen': ['40000'],
+    'west-vlaanderen': ['30000'],
+    liege: ['60000'],
+    eupen: ['60000'],
+    luxembourg: ['80000'],
+    namur: ['90000'],
+    hainaut: ['50000'],
 }
 
 describe('territory', () => {
@@ -41,51 +41,51 @@ describe('territory', () => {
 
     it('has the number of cantons per arrondissement that art. 4 of the annex lists', () => {
         const count = (id: string) => cantons.filter((c) => c.arrondissement === id).length
-        expect(count('Brussels')).toBe(26)
-        expect(count('Leuven')).toBe(7)
-        expect(count('WalloonBrabant')).toBe(5)
-        expect(count('Eupen')).toBe(2)
+        expect(count('brussel')).toBe(26)
+        expect(count('leuven')).toBe(7)
+        expect(count('brabant-wallon')).toBe(5)
+        expect(count('eupen')).toBe(2)
     })
 
     it('puts every municipality wholly in one canton, or splits it over several', () => {
         expect(municipalities).toHaveLength(565)
         for (const m of municipalities) {
             const entries = cantons.flatMap((c) =>
-                c.municipalities.filter((x) => x.refnis === m.refnis),
+                c.municipalities.filter((x) => x.municipality === m.id),
             )
             const whole = entries.filter((e) => !e.partial).length
             const partial = entries.filter((e) => e.partial).length
-            const label = `${m.name.nl} (${m.refnis})`
+            const label = `${m.name.nl} (${m.id})`
             if (whole) expect({ whole, partial }, label).toEqual({ whole: 1, partial: 0 })
             else expect(partial, label).toBeGreaterThanOrEqual(2)
         }
     })
 
     it('keeps cantons within their arrondissement', () => {
-        const byRefnis = new Map(municipalities.map((m) => [m.refnis, m]))
+        const byId = new Map(municipalities.map((m) => [m.id, m]))
         for (const c of cantons) {
-            for (const { refnis } of c.municipalities) {
-                expect(byRefnis.has(refnis), `${c.id}: ${refnis}`).toBe(true)
-                expect(provincesOf[c.arrondissement], `${c.id}: ${refnis}`).toContain(
-                    byRefnis.get(refnis)!.province,
+            for (const { municipality } of c.municipalities) {
+                expect(byId.has(municipality), `${c.id}: ${municipality}`).toBe(true)
+                expect(provincesOf[c.arrondissement], `${c.id}: ${municipality}`).toContain(
+                    byId.get(municipality)!.province,
                 )
             }
         }
     })
 
     it('finds the cantons for a municipality', () => {
-        expect(getCantonsForMunicipality('44088').map((c) => c.id)).toEqual(['MerelbekeMelle'])
+        expect(getCantonsForMunicipality('44088').map((c) => c.id)).toEqual(['merelbeke-melle'])
         expect(getCantonsForMunicipality('44021').map((c) => c.id)).toEqual([
-            'Gent1',
-            'Gent2',
-            'Gent3',
-            'Gent4',
-            'Gent5',
+            'gent-1',
+            'gent-2',
+            'gent-3',
+            'gent-4',
+            'gent-5',
         ])
     })
 
     it('distinguishes a canton name from its seat', () => {
-        expect(getCanton('Oudergem')).toMatchObject({
+        expect(getCanton('oudergem')).toMatchObject({
             name: { nl: 'Oudergem', fr: 'Auderghem' },
             seat: { nl: 'Etterbeek', fr: 'Etterbeek' },
         })
@@ -95,22 +95,24 @@ describe('territory', () => {
 describe('justices of the peace', () => {
     const peace = courts.filter((c) => c.type === 'justice-of-the-peace')
 
-    it('match a canton in the same arrondissement', () => {
+    it('each serve one canton, in the same arrondissement', () => {
+        const served = peace.map((c) => c.canton)
+        expect(new Set(served).size).toBe(served.length)
         for (const court of peace) {
-            const canton = getCanton(court.id.replace(/^Vredegerecht/, ''))
+            const canton = getCanton(court.canton)
             expect(canton, court.id).toBeDefined()
             expect(canton!.arrondissement, court.id).toBe(court.arrondissement)
-            expect(court.canton, court.id).toBe(canton!.number)
+            expect(court.number, court.id).toBe(canton!.number)
         }
     })
 
     // Arrondissements whose justices of the peace are all in data/courts.json
-    it.each(['EastFlanders', 'WestFlanders'])('cover every canton in %s', (arrondissement) => {
-        const ids = new Set(peace.map((c) => c.id))
+    it.each(['oost-vlaanderen', 'west-vlaanderen'])('cover every canton in %s', (arrondissement) => {
+        const served = new Set(peace.map((c) => c.canton))
         const missing = cantons
             .filter((c) => c.arrondissement === arrondissement)
-            .map((c) => `Vredegerecht${c.id}`)
-            .filter((id) => !ids.has(id))
+            .map((c) => c.id)
+            .filter((id) => !served.has(id))
         expect(missing).toEqual([])
     })
 })
