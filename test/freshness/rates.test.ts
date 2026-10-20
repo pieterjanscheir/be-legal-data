@@ -43,8 +43,11 @@ describe('review dates', () => {
     it.each(resources.map((r: Resource) => [r.name, r] as [string, Resource]))(
         '%s was reviewed recently enough',
         (_name: string, r: Resource) => {
-            const due = new Date(`${r.lastReviewed}T00:00:00Z`)
-            due.setUTCMonth(due.getUTCMonth() + r.reviewEveryMonths)
+            const [y, m, d] = r.lastReviewed.split('-').map(Number)
+            // Day 0 of the month after is the last day of the target month: 31 August plus
+            // 6 months is due on 28 (or 29) February, not rolled over into March
+            const lastDay = new Date(Date.UTC(y, m - 1 + r.reviewEveryMonths + 1, 0)).getUTCDate()
+            const due = new Date(Date.UTC(y, m - 1 + r.reviewEveryMonths, Math.min(d, lastDay)))
             const dueDay = due.toISOString().slice(0, 10)
             expect(
                 today <= dueDay,

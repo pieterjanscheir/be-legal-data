@@ -14,8 +14,9 @@ can't drift apart: CI fails when any of the three disagree.
 | `data/interest-rates.json` | [`interest-rates.schema.json`](/schema/interest-rates.schema.json){target="_self"} |
 
 Each schema's `$id` is its URL on this site, e.g.
-`https://pieterjanscheir.github.io/be-legal-data/schema/courts.schema.json`. They're also in the
-npm package: `be-legal-data/schema/courts.schema.json`.
+`https://pieterjanscheir.github.io/be-legal-data/schema/courts.schema.json`. From the next
+release they're also in the npm package as `be-legal-data/schema/courts.schema.json` (0.2.0
+doesn't include them).
 
 ## Validating the data
 
@@ -26,7 +27,8 @@ import json
 from urllib.request import urlopen
 from jsonschema import validate  # pip install jsonschema
 
-TAG = "v0.2.0"
+# Pin a release tag that includes schema/; until the first one is out, use main
+TAG = "main"
 BASE = f"https://raw.githubusercontent.com/pieterjanscheir/be-legal-data/{TAG}"
 courts = json.load(urlopen(f"{BASE}/data/courts.json"))
 schema = json.load(urlopen(f"{BASE}/schema/courts.schema.json"))

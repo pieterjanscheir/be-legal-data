@@ -16,7 +16,11 @@ jobs:
     freshness:
         runs-on: ubuntu-latest
         steps:
+            # The issue step gets its token explicitly; don't leave one in .git/config while
+            # dependencies and scripts run
             - uses: actions/checkout@v4
+              with:
+                  persist-credentials: false
             - uses: pnpm/action-setup@v4
             - uses: actions/setup-node@v4
               with:

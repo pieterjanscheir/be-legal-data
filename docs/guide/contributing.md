@@ -65,7 +65,7 @@ Every dataset gets the same treatment, so users can rely on it:
 | `pnpm test:freshness` | Date-based checks: missing rates, overdue reviews; `FRESHNESS_ONLINE=1` also checks source URLs |
 | `pnpm build:schemas` | Regenerate `schema/` from the types |
 | `pnpm lint:package` | `publint` and `arethetypeswrong` on the packed package |
-| `pnpm check` | All of the above that run offline, as CI does |
+| `pnpm check` | Typecheck, schemas, build, `pnpm test` and `pnpm lint:package`, as CI does. Not the freshness checks: run `pnpm test:freshness` separately |
 
 ## Releasing
 
