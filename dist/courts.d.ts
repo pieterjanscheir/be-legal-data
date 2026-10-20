@@ -54,6 +54,7 @@ interface EnterpriseCourtDivision extends CourtBase {
 type Court = JusticeOfThePeace | EnterpriseCourtDivision;
 type CourtType = Court['type'];
 declare const courts: readonly Court[];
+/** A court by id, e.g. 'justice-of-the-peace-gent-1' */
 declare function getCourt(id: CourtId): Court;
 declare function getCourt(id: string): Court | undefined;
 /**
@@ -61,10 +62,12 @@ declare function getCourt(id: string): Court | undefined;
  * when the canton's court isn't in the data yet; see the known gaps.
  */
 declare function getJusticeOfThePeace(cantonId: string): JusticeOfThePeace | undefined;
+/** The courts of a type and/or in an arrondissement; an empty filter gives every court */
 declare function findCourts(filter: {
     type?: CourtType;
     arrondissement?: string;
 }): Court[];
+/** The value of a court's first contact of a type, optionally with a label ('griffie', …) */
 declare function getContact(court: Court, type: Contact['type'], label?: string): string | undefined;
 /**
  * Full official-style name, e.g. 'Vredegerecht 1e kanton Gent' or

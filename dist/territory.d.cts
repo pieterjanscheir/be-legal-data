@@ -53,13 +53,16 @@ declare const judicialAreas: readonly JudicialArea[];
 declare const arrondissements: readonly Arrondissement[];
 declare const municipalities: readonly Municipality[];
 declare const cantons: readonly Canton[];
+/** A judicial area by id, e.g. 'gent' */
 declare function getJudicialArea(id: JudicialAreaId): JudicialArea;
 declare function getJudicialArea(id: string): JudicialArea | undefined;
+/** A judicial arrondissement by id, e.g. 'oost-vlaanderen' */
 declare function getArrondissement(id: ArrondissementId): Arrondissement;
 declare function getArrondissement(id: string): Arrondissement | undefined;
-/** A municipality by its REFNIS code */
+/** A municipality by its REFNIS code, e.g. '44021' for Gent */
 declare function getMunicipality(id: MunicipalityId): Municipality;
 declare function getMunicipality(id: string): Municipality | undefined;
+/** A judicial canton by id, e.g. 'gent-1' */
 declare function getCanton(id: CantonId): Canton;
 declare function getCanton(id: string): Canton | undefined;
 /**

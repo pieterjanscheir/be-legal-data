@@ -83,25 +83,28 @@ for (const canton of cantons) {
 // Each lookup has two signatures: a known id (a literal, or a value typed with the id union)
 // always finds its record; any other string may not.
 
+/** A judicial area by id, e.g. 'gent' */
 export function getJudicialArea(id: JudicialAreaId): JudicialArea
 export function getJudicialArea(id: string): JudicialArea | undefined
 export function getJudicialArea(id: string): JudicialArea | undefined {
     return judicialAreasById.get(id)
 }
 
+/** A judicial arrondissement by id, e.g. 'oost-vlaanderen' */
 export function getArrondissement(id: ArrondissementId): Arrondissement
 export function getArrondissement(id: string): Arrondissement | undefined
 export function getArrondissement(id: string): Arrondissement | undefined {
     return arrondissementsById.get(id)
 }
 
-/** A municipality by its REFNIS code */
+/** A municipality by its REFNIS code, e.g. '44021' for Gent */
 export function getMunicipality(id: MunicipalityId): Municipality
 export function getMunicipality(id: string): Municipality | undefined
 export function getMunicipality(id: string): Municipality | undefined {
     return municipalitiesById.get(id)
 }
 
+/** A judicial canton by id, e.g. 'gent-1' */
 export function getCanton(id: CantonId): Canton
 export function getCanton(id: string): Canton | undefined
 export function getCanton(id: string): Canton | undefined {
