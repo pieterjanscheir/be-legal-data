@@ -17,7 +17,7 @@
     ],
     "license": "MIT AND CC-BY-4.0",
     "author": "Pieter-Jan Scheir",
-    "homepage": "https://github.com/pieterjanscheir/be-legal-data#readme",
+    "homepage": "https://pieterjanscheir.github.io/be-legal-data/",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/pieterjanscheir/be-legal-data.git"
@@ -53,11 +53,15 @@
         "test": "vitest run",
         "typecheck": "tsc --noEmit",
         "check": "pnpm typecheck && pnpm test && pnpm build && git diff --exit-code -- dist",
-        "prepublishOnly": "pnpm check"
+        "prepublishOnly": "pnpm check",
+        "docs:dev": "vitepress dev docs",
+        "docs:build": "vitepress build docs",
+        "docs:preview": "vitepress preview docs"
     },
     "devDependencies": {
         "tsup": "^8.5.0",
         "typescript": "^5.9.0",
+        "vitepress": "^1.6.4",
         "vitest": "^3.2.0"
     }
 }

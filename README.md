@@ -4,6 +4,8 @@ Belgian legal reference data as JSON, with TypeScript types and helpers: courts,
 cantons and arrondissements, municipalities, and the legal and commercial interest rates.
 Every dataset records where it comes from.
 
+Documentation, with a canton lookup and interest-rate tables: **https://pieterjanscheir.github.io/be-legal-data/**
+
 It's reference data, not legal advice: check the official sources before relying on it.
 
 ## What's in it
@@ -104,6 +106,11 @@ of the peace of canton `X` has id `VredegerechtX`.
 - **Commercial**: FOD Financiën publishes the rate per semester. Add a period with `from`, `to`,
   `rate`, and the Staatsblad date in `note`.
 - **Legal**: published per calendar year. Add a period for the year.
+
+### Documentation site
+
+The site in `docs/` is built with VitePress and deployed to GitHub Pages on every push to `main`.
+Run it locally with `pnpm docs:dev`.
 
 ## Known gaps
 
