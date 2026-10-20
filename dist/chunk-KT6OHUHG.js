@@ -1,120 +1,120 @@
-"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _nullishCoalesce(lhs, rhsFn) { if (lhs != null) { return lhs; } else { return rhsFn(); } }// data/arrondissements.json
+// data/arrondissements.json
 var arrondissements_default = [
   {
-    id: "Antwerp",
+    id: "antwerpen",
     name: {
       nl: "Antwerpen",
       fr: "Anvers",
       de: "Antwerpen"
     },
-    judicialArea: "Antwerp"
+    judicialArea: "antwerpen"
   },
   {
-    id: "Limburg",
+    id: "limburg",
     name: {
       nl: "Limburg",
       fr: "Limbourg",
       de: "Limburg"
     },
-    judicialArea: "Antwerp"
+    judicialArea: "antwerpen"
   },
   {
-    id: "Brussels",
+    id: "brussel",
     name: {
       nl: "Brussel",
       fr: "Bruxelles",
       de: "Br\xFCssel"
     },
-    judicialArea: "Brussels"
+    judicialArea: "brussel"
   },
   {
-    id: "Leuven",
+    id: "leuven",
     name: {
       nl: "Leuven",
       fr: "Louvain",
       de: "L\xF6wen"
     },
-    judicialArea: "Brussels"
+    judicialArea: "brussel"
   },
   {
-    id: "WalloonBrabant",
+    id: "brabant-wallon",
     name: {
       nl: "Waals-Brabant",
       fr: "Brabant wallon",
       de: "Wallonisch-Brabant"
     },
-    judicialArea: "Brussels"
+    judicialArea: "brussel"
   },
   {
-    id: "EastFlanders",
+    id: "oost-vlaanderen",
     name: {
       nl: "Oost-Vlaanderen",
       fr: "Flandre orientale",
       de: "Ostflandern"
     },
-    judicialArea: "Ghent"
+    judicialArea: "gent"
   },
   {
-    id: "WestFlanders",
+    id: "west-vlaanderen",
     name: {
       nl: "West-Vlaanderen",
       fr: "Flandre occidentale",
       de: "Westflandern"
     },
-    judicialArea: "Ghent"
+    judicialArea: "gent"
   },
   {
-    id: "Liege",
+    id: "liege",
     name: {
       nl: "Luik",
       fr: "Li\xE8ge",
       de: "L\xFCttich"
     },
-    judicialArea: "Liege"
+    judicialArea: "liege"
   },
   {
-    id: "Eupen",
+    id: "eupen",
     name: {
       nl: "Eupen",
       fr: "Eupen",
       de: "Eupen"
     },
-    judicialArea: "Liege"
+    judicialArea: "liege"
   },
   {
-    id: "Luxembourg",
+    id: "luxembourg",
     name: {
       nl: "Luxemburg",
       fr: "Luxembourg",
       de: "Luxemburg"
     },
-    judicialArea: "Liege"
+    judicialArea: "liege"
   },
   {
-    id: "Namur",
+    id: "namur",
     name: {
       nl: "Namen",
       fr: "Namur",
       de: "Namur"
     },
-    judicialArea: "Liege"
+    judicialArea: "liege"
   },
   {
-    id: "Hainaut",
+    id: "hainaut",
     name: {
       nl: "Henegouwen",
       fr: "Hainaut",
       de: "Hennegau"
     },
-    judicialArea: "Mons"
+    judicialArea: "mons"
   }
 ];
 
 // data/cantons.json
 var cantons_default = [
   {
-    id: "Antwerpen1",
-    arrondissement: "Antwerp",
+    id: "antwerpen-1",
+    arrondissement: "antwerpen",
     name: {
       nl: "Antwerpen",
       fr: "Anvers"
@@ -126,7 +126,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "11002",
+        municipality: "11002",
         partial: true
       }
     ],
@@ -134,11 +134,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de stad Antwerpen begrensd door de middellijnen van de Brouwersvliet (onpare nummers), de Oude-Leeuwenrui (onpare nummers), de Ankerrui (onpare nummers), de Zwedenstraat (pare nummers), de Itali\xEBlei (onpare nummers), de De Keyserlei (onpare nummers), de Pelikaanstraat (pare nummers), de Gemeentestraat (onpare nummers), de Carnotstraat (onpare nummers), de Kerkstraat (onpare nummers), de Pothoekstraat (onpare nummers) en de Schijnpoortweg (onpare nummers) en het gedeelte van het grondgebied van de stad Antwerpen gelegen op de rechteroever van de Schelde ten noorden van een lijn die loopt vanaf de Scheldekaaien en het verlengde vormt van de middellijn van de Brouwersvliet, doch behoudens (1) het gedeelte van het grondgebied van de stad Antwerpen grenzende aan de deelgemeente Merksem van de Stad Antwerpen en omsloten door het Straatsburgdok, Noorderlaan (pare nummers), Ekersesteenweg tot de A12, de A12 tot verkeersknooppunt met de E19, de E19 en behoudens (2) het gedeelte van het grondgebied van de stad Antwerpen tussen de A12 en de deelgemeente Ekeren van de Stad Antwerpen",
       fr: "La partie du territoire de la ville d'Anvers d\xE9limit\xE9e par les lignes m\xE9dianes des Brouwersvliet (num\xE9ros impairs), Oude-Leeuwenrui (num\xE9ros impairs), Ankerrui (num\xE9ros impairs), Zwedenstraat (num\xE9ros pairs), Itali\xEBlei (num\xE9ros impairs), De Keyserlei (num\xE9ros impairs), Pelikanstraat (num\xE9ros pairs), Gemeentestraat (num\xE9ros impairs), Carnotstraat (num\xE9ros impairs), Kerkstraat (num\xE9ros impairs), Pothoekstraat (num\xE9ros impairs) et Schijnpoortweg (num\xE9ros impairs) et la partie du territoire de la ville d'Anvers situ\xE9e sur la rive droite de l'Escaut au nord d'une ligne partant des quais de l'Escaut et prolongeant la ligne m\xE9diane du Brouwersvliet, \xE0 l'exception, cependant, (1) de la partie du territoire de la ville d'Anvers limitrophe \xE0 l'ancienne commune de Merksem de la ville d'Anvers et entour\xE9e par le Straatsburgdok, Noorderlaan (num\xE9ros pairs), Ekersesteenweg jusqu'\xE0 l'A12, l'A12 jusqu'au croisement avec l'E19, l'E19 et \xE0 l'exception (2) de la partie du territoire de la ville d'Anvers situ\xE9e entre l'A12 et l'ancienne commune d'Ekeren de la ville d'Anvers"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.1"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.1"
   },
   {
-    id: "Antwerpen2",
-    arrondissement: "Antwerp",
+    id: "antwerpen-2",
+    arrondissement: "antwerpen",
     name: {
       nl: "Antwerpen",
       fr: "Anvers"
@@ -150,7 +150,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "11002",
+        municipality: "11002",
         partial: true
       }
     ],
@@ -158,11 +158,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de stad Antwerpen begrensd door de middellijn van de Blauwmoezelstraat, de Lijnwaadmarkt, de Korte Nieuwstraat, de Lange Nieuwstraat, de Kipdorpbrug, de Frankrijklei, de Mechelsesteenweg, de Aarschotstraat, de Teichmannstraat, de Isabella Brantstraat, de Ballaertstraat, de Pyckestraat, de Oude-Kerkstraat, de Lange Elzenstraat, de Kielsevest, de Hobokensevest, een lijn die het verlengde vormt van de middellijn van de Hobokensevest tussen nrs. 9 en 10 van de Scheldekaaien, de Scheldekaaien, een lijn die het verlengde vormt van de middellijn van de Van der Sweepstraat tussen nrs. 13a en 13b van de Scheldekaaien, de middellijn van de Van der Sweepstraat, de Vlaamse Kaai, de Kronenburgstraat, de Begijnenstraat, de Bredestraat, de Kleine-Markt, de Kammenstraat, de Oude Koornmarkt, de Quinten Matsijsdoorgang en de lijn die de verbinding vormt van de middellijn van de Quinten Matsijsdoorgang tot de middellijn van de Blauwmoezelstraat",
       fr: "La partie du territoire de la ville d'Anvers d\xE9limit\xE9e par la ligne m\xE9diane des Blauwmoezelstraat, Lijnwaadmarkt, Korte Nieuwstraat, Lange Nieuwstraat, Kipdorpbrug, Frankrijklei, Mechelsesteenweg, Aarschotstraat, Teichmannstraat, Isabella Brantstraat, Ballaertstraat, Pyckestraat, Oude-Kerkstraat, Lange Elzenstraat, Kielsevest, Hobokensevest, une ligne prolongeant la ligne m\xE9diane du Hobokensevest entre les num\xE9ros 9 et 10 des quais de l'Escaut, les quais de l'Escaut, une ligne prolongeant la ligne m\xE9diane de la Van der Sweepstraat entre les num\xE9ros 13a et 13b des quais de l'Escaut, la ligne m\xE9diane des Van der Sweepstraat, Vlaamse Kaai, Kronenburgstraat, Begijnenstraat, Bredestraat, Kleine-Markt, Kammenstraat, Oude Koornmarkt, Quinten Matsijsdoorgang et la ligne reliant la ligne m\xE9diane du Quinten Matsijsdoorgang \xE0 la ligne m\xE9diane de la Blauwmoezelstraat"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.2"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.2"
   },
   {
-    id: "Antwerpen3",
-    arrondissement: "Antwerp",
+    id: "antwerpen-3",
+    arrondissement: "antwerpen",
     name: {
       nl: "Antwerpen",
       fr: "Anvers"
@@ -174,7 +174,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "11002",
+        municipality: "11002",
         partial: true
       }
     ],
@@ -182,11 +182,11 @@ var cantons_default = [
       nl: "De deelgemeente Hoboken van de stad Antwerpen en het gedeelte van het grondgebied van de stad Antwerpen begrensd door een lijn die loopt vanaf de Scheldekaaien tussen nrs. 9 en 10 (deel Herbouvillekaai) en het verlengde vormt van de middellijn van de Hobokensevest, en door de middellijn van de Hobokensevest, de Kielsevest (oneven nummers van 1 tot 53), de Desguinlei (onpare nummers vanaf 39 tot einde), de Jan Van Rijswijcklaan (pare nummers vanaf 162 tot einde), de Boomsesteenweg (pare nummers tot aan de Jules Moretuslei), de Jules Moretuslei (vanaf Boomsesteenweg tot de Krijgsbaan), vervolgens de volledige Krijgsbaan en de Sint Bernardsesteenweg en vanaf de scheidingslijn van de deelgemeenten Wilrijk en Hoboken van de stad Antwerpen, met name vanaf de Van Praetstraat tot de Scheldekaaien",
       fr: "L'ancienne commune de Hoboken de la ville d'Anvers et la partie du territoire de la ville d'Anvers d\xE9limit\xE9e par une ligne partant des quais de l'Escaut entre les num\xE9ros 9 et 10 (partie Herbouvillekaai) et prolongeant la ligne m\xE9diane du Hobokensevest, et via la ligne m\xE9diane des Hobokensevest, Kielsevest (num\xE9ros impairs de 1 \xE0 53), Desguinlei (num\xE9ros impairs de 39 jusqu'\xE0 la fin), Jan Van Rijswijcklaan (num\xE9ros pairs de 162 jusqu'\xE0 la fin), Boomsesteenweg (num\xE9ros pairs jusqu'\xE0 la Jules Moretuslei), Jules Moretuslei (depuis Boomsesteenweg jusqu'au Krijgsbaan), puis l'entier Krijgsbaan et la Sint Bernardsesteenweg et \xE0 partir de la ligne de s\xE9paration des anciennes communes de Wilrijk et de Hoboken de la ville d'Anvers, notamment \xE0 partir de la Van Praetstraat jusqu'aux quais de l'Escaut"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.3"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.3"
   },
   {
-    id: "Antwerpen4",
-    arrondissement: "Antwerp",
+    id: "antwerpen-4",
+    arrondissement: "antwerpen",
     name: {
       nl: "Antwerpen",
       fr: "Anvers"
@@ -198,7 +198,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "11002",
+        municipality: "11002",
         partial: true
       }
     ],
@@ -206,11 +206,11 @@ var cantons_default = [
       nl: "De deelgemeente Borgerhout van de stad Antwerpen en het gedeelte van het grondgebied van de stad Antwerpen begrensd door de middellijn van de Plantijn en Moretuslei (onpare nummers), de Simonsstraat (onpare nummers), de Pelikaanstraat (onpare nummers), het Koningin Astridplein, de Gemeentestraat (pare nummers), de Carnotstraat (pare nummers), de Kerkstraat (pare nummers), de Pothoekstraat (pare nummers) en de Schijnpoortweg (pare nummers)",
       fr: "L'ancienne commune de Borgerhout de la ville d'Anvers et la partie du territoire de la ville d'Anvers d\xE9limit\xE9e par la ligne m\xE9diane des Plantijn et Moretuslei (num\xE9ros impairs), Simonsstraat (num\xE9ros impairs), Pelikaanstraat (num\xE9ros impairs), Koningin Astridplein, Gemeentestraat (num\xE9ros pairs), Carnotstraat (num\xE9ros pairs), Kerkstraat (num\xE9ros pairs), Pothoekstraat (num\xE9ros pairs) et Schijnpoortweg (num\xE9ros pairs)"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.4"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.4"
   },
   {
-    id: "Antwerpen5",
-    arrondissement: "Antwerp",
+    id: "antwerpen-5",
+    arrondissement: "antwerpen",
     name: {
       nl: "Antwerpen",
       fr: "Anvers"
@@ -222,7 +222,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "11002",
+        municipality: "11002",
         partial: true
       }
     ],
@@ -230,11 +230,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de stad Antwerpen gelegen op de linkeroever van de Schelde en het deel van het grondgebied van de stad Antwerpen (rechteroever) begrensd door een lijn die loopt vanaf de Scheldekaaien en die het verlengde vormt van de middellijn van de Brouwersvliet, de middellijn van de Brouwersvliet, de Oude-Leeuwenrui, de Ankerrui, de Zwedenstraat, de Itali\xEBlei, de Kipdorpbrug, de Lange Nieuwstraat, de Korte Nieuwstraat, de Lijnwaadmarkt, de Blauwmoezelstraat, een lijn die de verbinding vormt van de middellijn van de Blauwmoezelstraat tot de middellijn van de Quinten Matsijsdoorgang, de middellijn van de Quinten Matsijsdoorgang, de Oude-Koornmarkt, de Kammenstraat, de Kleine-Markt, de Bredestraat, de Begijnenstraat, de Kronenburgstraat, de Vlaamse kaai, de Van der Sweepstraat, een lijn die het verlengde vormt van de Van der Sweepstraat tussen nrs. 13a en 13b van de Scheldekaaien en de nrs. 13b tot 25 van de Scheldekaaien",
       fr: "La partie du territoire de la ville d'Anvers situ\xE9e sur la rive gauche de l'Escaut et la partie du territoire de la ville d'Anvers (rive droite) d\xE9limit\xE9e par une ligne partant des quais de l'Escaut et prolongeant la ligne m\xE9diane des Brouwersvliet, la ligne m\xE9diane des Brouwersvliet, Oude-Leeuwenrui, Ankerrui, Zwedenstraat, Itali\xEBlei, Kipdorpbrug, Lange Nieuwstraat, Korte Nieuwstraat, Lijnwaadmarkt, Blauwmoezelstraat, une ligne reliant la ligne m\xE9diane de la Blauwmoezelstraat \xE0 la ligne m\xE9diane du Quinten Matsijsdoorgang, la ligne m\xE9diane des Quinten Matsijsdoorgang, Oude-Koornmarkt, Kammenstraat, Kleine-Markt, Bredestraat, Begijnenstraat, Kronenburgstraat, Vlaamse kaai, Van der Sweepstraat, une ligne prolongeant la Van der Sweepstraat entre les num\xE9ros 13a et 13b des quais de l'Escaut et les num\xE9ros 13b \xE0 25 des quais de l'Escaut"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.5"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.5"
   },
   {
-    id: "Antwerpen6",
-    arrondissement: "Antwerp",
+    id: "antwerpen-6",
+    arrondissement: "antwerpen",
     name: {
       nl: "Antwerpen",
       fr: "Anvers"
@@ -246,7 +246,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "11002",
+        municipality: "11002",
         partial: true
       }
     ],
@@ -254,11 +254,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de stad Antwerpen begrensd door de middellijnen van de Generaal Lemanstraat (onpare nummers) tot aan de grens met het district Berchem, de Desguinlei (pare nummers vanaf grens district Berchem tot aan grens met 2de kanton zijnde hoek Desguinlei-Lange Elzenstraat), de Lange Elzenstraat (onpare nummers 103 tot einde), de Oudekerkstraat (onpare nummers), de Pyckestraat (onpare nummers), de Ballaarstraat (onpare nummers), de Isabella Brantstraat (onpare nummers), de Teichmannstraat (onpare nummers), de Aarschotstraat (onpare nummers), de Mechelsesteenweg (onpare nummers 3 tot en met einde - pare nummers 128 tot en met einde), de Frankrijklei (onpare nummers vanaf de hoek met Mechelsesteenweg tot de hoek met De Keyserlei), de De Keyserlei (pare nummers vanaf hoek met Frankrijklei tot de hoek met Pelikaanstraat), de Pelikaanstraat (pare nummers), de Simonsstraat (pare nummers) uitmondend in de Plantin en Moretuslei, de Plantin en Moretuslei (pare nummers) tot de grens met het district Berchem en de grens met district Borgerhout",
       fr: "La partie du territoire de la ville d'Anvers d\xE9limit\xE9e par les lignes m\xE9dianes de la Generaal Lemanstraat (num\xE9ros impairs) jusqu'\xE0 la fronti\xE8re avec le district de Berchem, Desguinlei (num\xE9ros pairs depuis la fronti\xE8re du district de Berchem jusqu'\xE0 la fronti\xE8re avec le 2\xE8me canton \xE9tant le coin du Desguinlei-Lange Elzenstraat), Lange Elzenstraat (num\xE9ros impairs du 103 jusqu'\xE0 la fin), Oudekerkstraat (num\xE9ros impairs), Pyckestraat (num\xE9ros impairs), Ballaarstraat (num\xE9ros impairs), Isabella Brantstraat (num\xE9ros impairs), Teichmannstraat (num\xE9ros impairs), Aarschotstraat (num\xE9ros impairs), Mechelsesteenweg (num\xE9ros impairs, du 3 jusqu'\xE0 la fin - num\xE9ros pairs du 128 jusqu'\xE0 la fin), Frankrijklei (num\xE9ros impairs depuis le coin avec Mechelsesteenweg jusqu'au coin avec De Keyserlei), De Keyserlei (num\xE9ros pairs depuis le coin avec Frankrijklei jusqu'au coin avec Pelikaanstraat), Pelikaanstraat (num\xE9ros pairs), Simonsstraat (num\xE9ros pairs) d\xE9bouchant sur Plantin et Moretuslei, Plantin et Moretuslei (num\xE9ros pairs) jusqu'\xE0 la fronti\xE8re avec le district de Berchem et la fronti\xE8re avec le district de Borgerhout"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.6"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.6"
   },
   {
-    id: "Antwerpen7",
-    arrondissement: "Antwerp",
+    id: "antwerpen-7",
+    arrondissement: "antwerpen",
     name: {
       nl: "Antwerpen",
       fr: "Anvers"
@@ -270,7 +270,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "11002",
+        municipality: "11002",
         partial: true
       }
     ],
@@ -278,11 +278,11 @@ var cantons_default = [
       nl: "De deelgemeente Wilrijk van de stad Antwerpen, uitgezonderd het gedeelte begrensd door de middellijn van de Jules Moretuslei tussen de Boomsesteenweg en de Krijgsbaan en de middellijn van de Jan Van Rijswijcklaan en de Boomsesteenweg, het gedeelte van het grondgebied van de stad Antwerpen begrensd in het noordwesten door de middellijn van de Jan Van Rijswijcklaan en verder door de middellijn van de Desguinlei tussen de Jan Van Rijswijcklaan en de grens van de deelgemeente Berchem van de stad Antwerpen, en het westelijke gedeelte van de deelgemeente Berchem, begrensd door de middellijn van de Singel",
       fr: "L'ancienne commune de Wilrijk de la ville d'Anvers, except\xE9 la partie d\xE9limit\xE9e par la ligne m\xE9diane de la Jules Moretuslei entre la Boomsesteenweg et la Krijgsbaan et la ligne m\xE9diane de la Jan Van Rijswijcklaan et la Boomsesteenweg, la partie du territoire de la ville d'Anvers d\xE9limit\xE9e, dans le nord-ouest, par la ligne m\xE9diane de la Jan Van Rijswijcklaan et plus loin par la ligne m\xE9diane de Desguinlei entre Jan Van Rijswijcklaan et la fronti\xE8re de l'ancienne commune de Berchem de la ville d'Anvers, et la partie ouest de l'ancienne commune de Berchem, d\xE9limit\xE9e par la ligne m\xE9diane de Singel"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.7"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.7"
   },
   {
-    id: "Merksem",
-    arrondissement: "Antwerp",
+    id: "merksem",
+    arrondissement: "antwerpen",
     name: {
       nl: "Merksem",
       fr: "Merksem"
@@ -293,25 +293,25 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "11002",
+        municipality: "11002",
         partial: true
       },
       {
-        refnis: "11040"
+        municipality: "11040"
       },
       {
-        refnis: "11050"
+        municipality: "11050"
       }
     ],
     territory: {
       nl: "De gemeenten Schoten, Wijnegem en de deelgemeente Merksem van de stad Antwerpen en het gebied langs Noorderlaan en omsloten door de haven in het westen, het Albertkanaal in het zuiden, de Ring en de Spoorlijn 12 Antwerpen - Lage Zwaluwe in het oosten (de grens met Merksem) en de A12 in het noorden (de wijk Rozemaai en het natuurgebied Oude Landen)",
       fr: "Les communes de Schoten, de Wijnegem et l'ancienne commune de Merksem de la ville d'Anvers et le territoire longeant Noorderlaan et entour\xE9 par le port \xE0 l'ouest, le canal Albert au sud, le Ring et la ligne de chemin de fer 12 Anvers - Lage Zwaluwe \xE0 l'est (la fronti\xE8re avec Merksem) et l'A12 au nord (le quartier Rozemaai et le domaine naturel Oude Landen)"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.8"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.8"
   },
   {
-    id: "Deurne",
-    arrondissement: "Antwerp",
+    id: "deurne",
+    arrondissement: "antwerpen",
     name: {
       nl: "Deurne",
       fr: "Deurne"
@@ -322,7 +322,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "11002",
+        municipality: "11002",
         partial: true
       }
     ],
@@ -330,11 +330,11 @@ var cantons_default = [
       nl: "De deelgemeenten Borsbeek en Deurne van de stad Antwerpen",
       fr: "Les anciennes communes de Borsbeek et de Deurne de la ville d'Anvers"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.9"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.9"
   },
   {
-    id: "Boom",
-    arrondissement: "Antwerp",
+    id: "boom",
+    arrondissement: "antwerpen",
     name: {
       nl: "Boom",
       fr: "Boom"
@@ -345,33 +345,33 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "11001"
+        municipality: "11001"
       },
       {
-        refnis: "11005"
+        municipality: "11005"
       },
       {
-        refnis: "11018"
+        municipality: "11018"
       },
       {
-        refnis: "11030"
+        municipality: "11030"
       },
       {
-        refnis: "11037"
+        municipality: "11037"
       },
       {
-        refnis: "11038"
+        municipality: "11038"
       }
     ],
     territory: {
       nl: "De gemeenten Aartselaar, Boom, Hemiksem, Niel, Rumst en Schelle",
       fr: "Les communes d'Aartselaar, de Boom, de Hemiksem, de Niel, de Rumst et de Schelle"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.10"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.10"
   },
   {
-    id: "Brasschaat",
-    arrondissement: "Antwerp",
+    id: "brasschaat",
+    arrondissement: "antwerpen",
     name: {
       nl: "Brasschaat",
       fr: "Brasschaat"
@@ -382,24 +382,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "11008"
+        municipality: "11008"
       },
       {
-        refnis: "11009"
+        municipality: "11009"
       },
       {
-        refnis: "11039"
+        municipality: "11039"
       }
     ],
     territory: {
       nl: "De gemeenten Brasschaat, Brecht en Schilde",
       fr: "Les communes de Brasschaat, de Brecht et de Schilde"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.11"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.11"
   },
   {
-    id: "Kapellen",
-    arrondissement: "Antwerp",
+    id: "kapellen",
+    arrondissement: "antwerpen",
     name: {
       nl: "Kapellen",
       fr: "Kapellen"
@@ -410,34 +410,34 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "11002",
+        municipality: "11002",
         partial: true
       },
       {
-        refnis: "11016"
+        municipality: "11016"
       },
       {
-        refnis: "11022"
+        municipality: "11022"
       },
       {
-        refnis: "11023"
+        municipality: "11023"
       },
       {
-        refnis: "11044"
+        municipality: "11044"
       },
       {
-        refnis: "11053"
+        municipality: "11053"
       }
     ],
     territory: {
       nl: "De gemeenten Essen, Kalmthout, Kapellen, Stabroek, Wuustwezel en de deelgemeenten Berendrecht, Lillo, Ekeren en Zandvliet van de stad Antwerpen en het gedeelte ten noorden van de A12 dat grenst aan Ekeren",
       fr: "Les communes d'Essen, de Kalmthout, de Kapellen, de Stabroek, de Wuustwezel et les anciennes communes de Berendrecht, de Lillo, de Ekeren et de Zandvliet de la ville d'Anvers et la partie au nord de l'A12 adjacente \xE0 Ekeren"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.12"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.12"
   },
   {
-    id: "Kontich",
-    arrondissement: "Antwerp",
+    id: "kontich",
+    arrondissement: "antwerpen",
     name: {
       nl: "Kontich",
       fr: "Kontich"
@@ -448,37 +448,37 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "11002",
+        municipality: "11002",
         partial: true
       },
       {
-        refnis: "11004"
+        municipality: "11004"
       },
       {
-        refnis: "11013"
+        municipality: "11013"
       },
       {
-        refnis: "11021"
+        municipality: "11021"
       },
       {
-        refnis: "11024"
+        municipality: "11024"
       },
       {
-        refnis: "11025"
+        municipality: "11025"
       },
       {
-        refnis: "11029"
+        municipality: "11029"
       }
     ],
     territory: {
       nl: "De stad Mortsel, de gemeenten Boechout, Edegem, Hove, Kontich, Lint en het deel buiten de Singel van de deelgemeente Berchem van de stad Antwerpen",
       fr: "La ville de Mortsel, les communes de Boechout, d'Edegem, de Hove, de Kontich, de Lint et la partie hors de Singel de l'ancienne commune de Berchem de la ville d'Anvers"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.13"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.13"
   },
   {
-    id: "Zandhoven",
-    arrondissement: "Antwerp",
+    id: "zandhoven",
+    arrondissement: "antwerpen",
     name: {
       nl: "Zandhoven",
       fr: "Zandhoven"
@@ -489,30 +489,30 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "11035"
+        municipality: "11035"
       },
       {
-        refnis: "11052"
+        municipality: "11052"
       },
       {
-        refnis: "11054"
+        municipality: "11054"
       },
       {
-        refnis: "11055"
+        municipality: "11055"
       },
       {
-        refnis: "11057"
+        municipality: "11057"
       }
     ],
     territory: {
       nl: "De gemeenten Malle, Ranst, Wommelgem, Zandhoven en Zoersel",
       fr: "Les communes de Malle, de Ranst, de Wommelgem, de Zandhoven et de Zoersel"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.14"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.14"
   },
   {
-    id: "HeistOpDenBerg",
-    arrondissement: "Antwerp",
+    id: "heist-op-den-berg",
+    arrondissement: "antwerpen",
     name: {
       nl: "Heist-op-den-Berg",
       fr: "Heist-op-den-Berg"
@@ -523,27 +523,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "12014"
+        municipality: "12014"
       },
       {
-        refnis: "12029"
+        municipality: "12029"
       },
       {
-        refnis: "13012"
+        municipality: "13012"
       },
       {
-        refnis: "13016"
+        municipality: "13016"
       }
     ],
     territory: {
       nl: "De gemeenten Heist-op-den-Berg, Herenthout, Hulshout en Putte",
       fr: "Les communes de Heist-op-den-Berg, de Herenthout, de Hulshout et de Putte"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.15"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.15"
   },
   {
-    id: "Lier",
-    arrondissement: "Antwerp",
+    id: "lier",
+    arrondissement: "antwerpen",
     name: {
       nl: "Lier",
       fr: "Lierre"
@@ -554,27 +554,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "12002"
+        municipality: "12002"
       },
       {
-        refnis: "12009"
+        municipality: "12009"
       },
       {
-        refnis: "12021"
+        municipality: "12021"
       },
       {
-        refnis: "12026"
+        municipality: "12026"
       }
     ],
     territory: {
       nl: "De stad Lier en de gemeenten Berlaar, Duffel en Nijlen",
       fr: "La ville de Lierre et les communes de Berlaar, de Duffel et de Nijlen"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.16"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.16"
   },
   {
-    id: "Mechelen",
-    arrondissement: "Antwerp",
+    id: "mechelen",
+    arrondissement: "antwerpen",
     name: {
       nl: "Mechelen",
       fr: "Malines"
@@ -585,24 +585,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "12005"
+        municipality: "12005"
       },
       {
-        refnis: "12025"
+        municipality: "12025"
       },
       {
-        refnis: "12035"
+        municipality: "12035"
       }
     ],
     territory: {
       nl: "De stad Mechelen en de gemeenten Bonheiden en Sint-Katelijne-Waver",
       fr: "La ville de Malines et les communes de Bonheiden et de Sint-Katelijne-Waver"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.17"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.17"
   },
   {
-    id: "Willebroek",
-    arrondissement: "Antwerp",
+    id: "willebroek",
+    arrondissement: "antwerpen",
     name: {
       nl: "Willebroek",
       fr: "Willebroek"
@@ -613,24 +613,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "12007"
+        municipality: "12007"
       },
       {
-        refnis: "12040"
+        municipality: "12040"
       },
       {
-        refnis: "12041"
+        municipality: "12041"
       }
     ],
     territory: {
       nl: "De gemeenten Bornem, Puurs-Sint-Amands en Willebroek",
       fr: "Les communes de Bornem, de Puurs-Sint-Amands et de Willebroek"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.18"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.18"
   },
   {
-    id: "MolGeel1",
-    arrondissement: "Antwerp",
+    id: "mol-geel-1",
+    arrondissement: "antwerpen",
     name: {
       nl: "Mol-Geel",
       fr: "Mol-Geel"
@@ -642,30 +642,30 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "13003"
+        municipality: "13003"
       },
       {
-        refnis: "13006"
+        municipality: "13006"
       },
       {
-        refnis: "13021"
+        municipality: "13021"
       },
       {
-        refnis: "13025"
+        municipality: "13025"
       },
       {
-        refnis: "13036"
+        municipality: "13036"
       }
     ],
     territory: {
       nl: "De gemeenten Balen, Dessel, Meerhout, Mol en Retie",
       fr: "Les communes de Balen, de Dessel, de Meerhout, de Mol et de Retie"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.19"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.19"
   },
   {
-    id: "MolGeel2",
-    arrondissement: "Antwerp",
+    id: "mol-geel-2",
+    arrondissement: "antwerpen",
     name: {
       nl: "Mol-Geel",
       fr: "Mol-Geel"
@@ -677,21 +677,21 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "13008"
+        municipality: "13008"
       },
       {
-        refnis: "13017"
+        municipality: "13017"
       }
     ],
     territory: {
       nl: "De stad Geel en de gemeente Kasterlee",
       fr: "La ville de Geel et la commune de Kasterlee"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.20"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.20"
   },
   {
-    id: "Turnhout1",
-    arrondissement: "Antwerp",
+    id: "turnhout-1",
+    arrondissement: "antwerpen",
     name: {
       nl: "Turnhout",
       fr: "Turnhout"
@@ -703,24 +703,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "13023"
+        municipality: "13023"
       },
       {
-        refnis: "13040"
+        municipality: "13040"
       },
       {
-        refnis: "13046"
+        municipality: "13046"
       }
     ],
     territory: {
       nl: "De stad Turnhout en de gemeenten Merksplas en Vosselaar",
       fr: "La ville de Turnhout et les communes de Merksplas et de Vosselaar"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.21"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.21"
   },
   {
-    id: "Turnhout2",
-    arrondissement: "Antwerp",
+    id: "turnhout-2",
+    arrondissement: "antwerpen",
     name: {
       nl: "Turnhout",
       fr: "Turnhout"
@@ -732,39 +732,39 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "13001"
+        municipality: "13001"
       },
       {
-        refnis: "13002"
+        municipality: "13002"
       },
       {
-        refnis: "13004"
+        municipality: "13004"
       },
       {
-        refnis: "13014"
+        municipality: "13014"
       },
       {
-        refnis: "13019"
+        municipality: "13019"
       },
       {
-        refnis: "13031"
+        municipality: "13031"
       },
       {
-        refnis: "13035"
+        municipality: "13035"
       },
       {
-        refnis: "13037"
+        municipality: "13037"
       }
     ],
     territory: {
       nl: "De stad Hoogstraten en de gemeenten Arendonk, Baarle-Hertog, Beerse, Lille, Oud-Turnhout, Ravels en Rijkevorsel",
       fr: "La ville de Hoogstraten et les communes d'Arendonk, de Baerle-Duc, de Beerse, de Lille, de Oud-Turnhout, de Ravels et de Rijkevorsel"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.22"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.22"
   },
   {
-    id: "Westerlo",
-    arrondissement: "Antwerp",
+    id: "westerlo",
+    arrondissement: "antwerpen",
     name: {
       nl: "Westerlo",
       fr: "Westerlo"
@@ -775,36 +775,36 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "13010"
+        municipality: "13010"
       },
       {
-        refnis: "13011"
+        municipality: "13011"
       },
       {
-        refnis: "13013"
+        municipality: "13013"
       },
       {
-        refnis: "13029"
+        municipality: "13029"
       },
       {
-        refnis: "13044"
+        municipality: "13044"
       },
       {
-        refnis: "13049"
+        municipality: "13049"
       },
       {
-        refnis: "13053"
+        municipality: "13053"
       }
     ],
     territory: {
       nl: "De stad Herentals en de gemeenten Grobbendonk, Herselt, Laakdal, Olen, Vorselaar en Westerlo",
       fr: "La ville de Herentals et les communes de Grobbendonk, de Herselt, de Laakdal, d'Olen, de Vorselaar et de Westerlo"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 1.23"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 1.23"
   },
   {
-    id: "Beringen",
-    arrondissement: "Limburg",
+    id: "beringen",
+    arrondissement: "limburg",
     name: {
       nl: "Beringen",
       fr: "Beringen"
@@ -815,27 +815,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "71004"
+        municipality: "71004"
       },
       {
-        refnis: "71034"
+        municipality: "71034"
       },
       {
-        refnis: "71070"
+        municipality: "71070"
       },
       {
-        refnis: "71071"
+        municipality: "71071"
       }
     ],
     territory: {
       nl: "De stad Beringen en de gemeenten Tessenderlo-Ham, Heusden-Zolder en Leopoldsburg",
       fr: "La ville de Beringen et les communes de Tessenderlo-Ham, de Heusden-Zolder et de Bourg-Leopold"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 2.1"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 2.1"
   },
   {
-    id: "Hasselt1",
-    arrondissement: "Limburg",
+    id: "hasselt-1",
+    arrondissement: "limburg",
     name: {
       nl: "Hasselt",
       fr: "Hasselt"
@@ -847,10 +847,10 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "71011"
+        municipality: "71011"
       },
       {
-        refnis: "71072",
+        municipality: "71072",
         partial: true
       }
     ],
@@ -858,11 +858,11 @@ var cantons_default = [
       nl: "De gemeente Diepenbeek , de deelgemeente Kortessem van de stad Hasselt en het gedeelte van het grondgebied van de stad Hasselt dat gelegen is ten oosten van de middellijn van de Kempische Steenweg, Herckenrodesingel, Hendrik Van Veldekesingel, Boerenkrijgsingel en de Sint-Truidersteenweg",
       fr: "La commune de Diepenbeek , l'ancienne commune de Kortessem de la ville de Hasselt ainsi que la partie du territoire de la ville de Hasselt situ\xE9e \xE0 l'est de la ligne m\xE9diane des Kempische Steenweg, Herckenrodesingel, Hendrik Van Veldekesingel, Boerenkrijgsingel et Sint-Truidersteenweg"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 2.2"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 2.2"
   },
   {
-    id: "Hasselt2",
-    arrondissement: "Limburg",
+    id: "hasselt-2",
+    arrondissement: "limburg",
     name: {
       nl: "Hasselt",
       fr: "Hasselt"
@@ -874,16 +874,16 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "71020"
+        municipality: "71020"
       },
       {
-        refnis: "71024"
+        municipality: "71024"
       },
       {
-        refnis: "71037"
+        municipality: "71037"
       },
       {
-        refnis: "71072",
+        municipality: "71072",
         partial: true
       }
     ],
@@ -891,11 +891,11 @@ var cantons_default = [
       nl: "De steden Halen, Herk-de-Stad, de gemeente Lummen en het gedeelte van het grondgebied van de stad Hasselt dat ligt ten westen van de middellijn van de Kempische Steenweg, de Herckenrodesingel, de Hendrik Van Veldekesingel, de Boerenkrijgsingel en de Sint-Truidersteenweg",
       fr: "Les villes de Halen, de Herck-la-Ville, la commune de Lummen et la partie du territoire de la ville de Hasselt situ\xE9e \xE0 l'ouest de la ligne m\xE9diane des Kempische Steenweg, Herckenrodesingel, Hendrik Van Veldekesingel, Boerenkrijgsingel et Sint-Truidersteenweg"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 2.3"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 2.3"
   },
   {
-    id: "HouthalenHelchteren",
-    arrondissement: "Limburg",
+    id: "houthalen-helchteren",
+    arrondissement: "limburg",
     name: {
       nl: "Houthalen-Helchteren",
       fr: "Houthalen-Helchteren"
@@ -906,27 +906,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "71066"
+        municipality: "71066"
       },
       {
-        refnis: "72030"
+        municipality: "72030"
       },
       {
-        refnis: "72038"
+        municipality: "72038"
       },
       {
-        refnis: "72039"
+        municipality: "72039"
       }
     ],
     territory: {
       nl: "De stad Peer en de gemeenten Hechtel-Eksel, Houthalen-Helchteren en Zonhoven",
       fr: "La ville de Peer et les communes de Hechtel-Eksel, de Houthalen-Helchteren et de Zonhoven"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 2.4"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 2.4"
   },
   {
-    id: "Pelt",
-    arrondissement: "Limburg",
+    id: "pelt",
+    arrondissement: "limburg",
     name: {
       nl: "Pelt",
       fr: "Pelt"
@@ -937,24 +937,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "72020"
+        municipality: "72020"
       },
       {
-        refnis: "72037"
+        municipality: "72037"
       },
       {
-        refnis: "72043"
+        municipality: "72043"
       }
     ],
     territory: {
       nl: "De steden Hamont-Achel, Lommel en de gemeente Pelt",
       fr: "Les villes de Hamont-Achel, de Lommel et la commune de Pelt"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 2.5"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 2.5"
   },
   {
-    id: "SintTruiden",
-    arrondissement: "Limburg",
+    id: "sint-truiden",
+    arrondissement: "limburg",
     name: {
       nl: "Sint-Truiden",
       fr: "Saint-Trond"
@@ -965,24 +965,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "71017"
+        municipality: "71017"
       },
       {
-        refnis: "71045"
+        municipality: "71045"
       },
       {
-        refnis: "71053"
+        municipality: "71053"
       }
     ],
     territory: {
       nl: "De stad Sint-Truiden en de gemeenten Gingelom en Nieuwerkerken",
       fr: "La ville de Saint-Trond et les communes de Gingelom et de Nieuwerkerken"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 2.6"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 2.6"
   },
   {
-    id: "BilzenHoeselt",
-    arrondissement: "Limburg",
+    id: "bilzen-hoeselt",
+    arrondissement: "limburg",
     name: {
       nl: "Bilzen-Hoeselt",
       fr: "Bilzen-Hoeselt"
@@ -993,21 +993,21 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "73066"
+        municipality: "73066"
       },
       {
-        refnis: "73110"
+        municipality: "73110"
       }
     ],
     territory: {
       nl: "De stad Bilzen-Hoeselt en de gemeente Riemst",
       fr: "La ville de Bilzen-Hoeselt et la commune de Riemst"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 2.7"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 2.7"
   },
   {
-    id: "Bree",
-    arrondissement: "Limburg",
+    id: "bree",
+    arrondissement: "limburg",
     name: {
       nl: "Bree",
       fr: "Bree"
@@ -1018,30 +1018,30 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "72003"
+        municipality: "72003"
       },
       {
-        refnis: "72004"
+        municipality: "72004"
       },
       {
-        refnis: "72018"
+        municipality: "72018"
       },
       {
-        refnis: "72021"
+        municipality: "72021"
       },
       {
-        refnis: "72042"
+        municipality: "72042"
       }
     ],
     territory: {
       nl: "De steden Bree, Maaseik en de gemeenten Bocholt, Kinrooi en Oudsbergen",
       fr: "Les villes de Bree, de Maaseik et les communes de Bocholt, de Kinrooi et d'Oudsbergen"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 2.8"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 2.8"
   },
   {
-    id: "Genk",
-    arrondissement: "Limburg",
+    id: "genk",
+    arrondissement: "limburg",
     name: {
       nl: "Genk",
       fr: "Genk"
@@ -1052,24 +1052,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "71002"
+        municipality: "71002"
       },
       {
-        refnis: "71016"
+        municipality: "71016"
       },
       {
-        refnis: "71067"
+        municipality: "71067"
       }
     ],
     territory: {
       nl: "De stad Genk en de gemeenten As en Zutendaal",
       fr: "La ville de Genk et les communes d'As et de Zutendaal"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 2.9"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 2.9"
   },
   {
-    id: "Maasmechelen",
-    arrondissement: "Limburg",
+    id: "maasmechelen",
+    arrondissement: "limburg",
     name: {
       nl: "Maasmechelen",
       fr: "Maasmechelen"
@@ -1080,24 +1080,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "72041"
+        municipality: "72041"
       },
       {
-        refnis: "73042"
+        municipality: "73042"
       },
       {
-        refnis: "73107"
+        municipality: "73107"
       }
     ],
     territory: {
       nl: "De stad Dilsen-Stokkem en de gemeenten Lanaken en Maasmechelen",
       fr: "La ville de Dilsen-Stokkem et les communes de Lanaken et de Maasmechelen"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 2.10"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 2.10"
   },
   {
-    id: "TongerenBorgloon",
-    arrondissement: "Limburg",
+    id: "tongeren-borgloon",
+    arrondissement: "limburg",
     name: {
       nl: "Tongeren-Borgloon",
       fr: "Tongres-Looz"
@@ -1108,33 +1108,33 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "73001"
+        municipality: "73001"
       },
       {
-        refnis: "73022"
+        municipality: "73022"
       },
       {
-        refnis: "73028"
+        municipality: "73028"
       },
       {
-        refnis: "73098"
+        municipality: "73098"
       },
       {
-        refnis: "73109"
+        municipality: "73109"
       },
       {
-        refnis: "73111"
+        municipality: "73111"
       }
     ],
     territory: {
       nl: "De stad Tongeren-Borgloon en de gemeenten Alken, Heers, Herstappe, Voeren en Wellen",
       fr: "La ville de Tongres-Looz et les communes d'Alken, de Heers, de Herstappe, de Fourons et de Wellen"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 2.11"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 2.11"
   },
   {
-    id: "BraineLAlleud",
-    arrondissement: "WalloonBrabant",
+    id: "braine-l-alleud",
+    arrondissement: "brabant-wallon",
     name: {
       nl: "Eigenbrakel",
       fr: "Braine-l'Alleud"
@@ -1145,24 +1145,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "25014"
+        municipality: "25014"
       },
       {
-        refnis: "25015"
+        municipality: "25015"
       },
       {
-        refnis: "25110"
+        municipality: "25110"
       }
     ],
     territory: {
       nl: "De gemeenten Eigenbrakel, Kasteelbrakel en Waterloo",
       fr: "Les communes de Braine-l'Alleud, de Braine-le-Ch\xE2teau et de Waterloo"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 3.1"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 3.1"
   },
   {
-    id: "Jodoigne",
-    arrondissement: "WalloonBrabant",
+    id: "jodoigne",
+    arrondissement: "brabant-wallon",
     name: {
       nl: "Geldenaken",
       fr: "Jodoigne"
@@ -1173,39 +1173,39 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "25005"
+        municipality: "25005"
       },
       {
-        refnis: "25037"
+        municipality: "25037"
       },
       {
-        refnis: "25043"
+        municipality: "25043"
       },
       {
-        refnis: "25048"
+        municipality: "25048"
       },
       {
-        refnis: "25084"
+        municipality: "25084"
       },
       {
-        refnis: "25118"
+        municipality: "25118"
       },
       {
-        refnis: "25120"
+        municipality: "25120"
       },
       {
-        refnis: "25122"
+        municipality: "25122"
       }
     ],
     territory: {
       nl: "De stad Geldenaken en de gemeenten Bevekom, Graven, H\xE9lecine, Incourt, Orp-Jauche, Perwijs en Ramillies",
       fr: "La ville de Jodoigne et les communes de Beauvechain, de Grez-Doiceau, de H\xE9lecine, de Incourt, d'Orp-Jauche, de Perwez et de Ramillies"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 3.2"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 3.2"
   },
   {
-    id: "Nivelles",
-    arrondissement: "WalloonBrabant",
+    id: "nivelles",
+    arrondissement: "brabant-wallon",
     name: {
       nl: "Nijvel",
       fr: "Nivelles"
@@ -1216,36 +1216,36 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "25031"
+        municipality: "25031"
       },
       {
-        refnis: "25044"
+        municipality: "25044"
       },
       {
-        refnis: "25072"
+        municipality: "25072"
       },
       {
-        refnis: "25105"
+        municipality: "25105"
       },
       {
-        refnis: "25107"
+        municipality: "25107"
       },
       {
-        refnis: "25119"
+        municipality: "25119"
       },
       {
-        refnis: "25123"
+        municipality: "25123"
       }
     ],
     territory: {
       nl: "De steden Genepi\xEBn, Nijvel, Tubeke en de gemeenten Itter, Lasne, Roosbeek en Villers-la-Ville",
       fr: "Les villes de Genappe, de Nivelles, de Tubize et les communes d'Ittre, de Lasne, de Rebecq et de Villers-la-Ville"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 3.3"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 3.3"
   },
   {
-    id: "Wavre1",
-    arrondissement: "WalloonBrabant",
+    id: "wavre-1",
+    arrondissement: "brabant-wallon",
     name: {
       nl: "Waver",
       fr: "Wavre"
@@ -1257,24 +1257,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "25050"
+        municipality: "25050"
       },
       {
-        refnis: "25091"
+        municipality: "25091"
       },
       {
-        refnis: "25112"
+        municipality: "25112"
       }
     ],
     territory: {
       nl: "De stad Waver en de gemeenten Rixensart en Terhulpen",
       fr: "La ville de Wavre et les communes de Rixensart et de La Hulpe"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 3.4"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 3.4"
   },
   {
-    id: "Wavre2",
-    arrondissement: "WalloonBrabant",
+    id: "wavre-2",
+    arrondissement: "brabant-wallon",
     name: {
       nl: "Waver",
       fr: "Wavre"
@@ -1286,33 +1286,33 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "25018"
+        municipality: "25018"
       },
       {
-        refnis: "25023"
+        municipality: "25023"
       },
       {
-        refnis: "25068"
+        municipality: "25068"
       },
       {
-        refnis: "25117"
+        municipality: "25117"
       },
       {
-        refnis: "25121"
+        municipality: "25121"
       },
       {
-        refnis: "25124"
+        municipality: "25124"
       }
     ],
     territory: {
       nl: "De stad Ottignies-Louvain-la-Neuve en de gemeenten Chastre, Chaumont-Gistoux, Court-Saint-Etienne, Mont-Saint-Guibert en Walhain",
       fr: "La ville d'Ottignies-Louvain-la-Neuve et les communes de Chastre, de Chaumont-Gistoux, de Court-Saint-Etienne, de Mont-Saint-Guibert et de Walhain"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 3.5"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 3.5"
   },
   {
-    id: "Anderlecht1",
-    arrondissement: "Brussels",
+    id: "anderlecht-1",
+    arrondissement: "brussel",
     name: {
       nl: "Anderlecht",
       fr: "Anderlecht"
@@ -1324,7 +1324,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21001",
+        municipality: "21001",
         partial: true
       }
     ],
@@ -1332,11 +1332,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de gemeente Anderlecht gelegen ten oosten van de middellijn van de Louis Mettewielaan, de Prins van Luiklaan, de Cyriel Buyssestraat, de Edmond Delcourtstraat, de Jef Dillensquare, de de Formanoirstraat, de Veeweidestraat en de Bergensesteenweg",
       fr: "La partie du territoire de la commune d'Anderlecht situ\xE9e \xE0 l'est de la ligne m\xE9diane des boulevard Louis Mettewie, boulevard Prince de Li\xE8ge, rue Cyriel Buysse, rue Edmond Delcourt, square Jef Dillen, rue de Formanoir, rue de Veeweyde et chauss\xE9e de Mons"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.1"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.1"
   },
   {
-    id: "Anderlecht2",
-    arrondissement: "Brussels",
+    id: "anderlecht-2",
+    arrondissement: "brussel",
     name: {
       nl: "Anderlecht",
       fr: "Anderlecht"
@@ -1348,7 +1348,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21001",
+        municipality: "21001",
         partial: true
       }
     ],
@@ -1356,11 +1356,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de gemeente Anderlecht gelegen ten westen van de middellijn van de Louis Mettewielaan, de Prins van Luiklaan, de Cyriel Buyssestraat, de Edmond Delcourtstraat, de Jef Dillensquare, de de Formanoirstraat, de Veeweidestraat en de Bergensesteenweg",
       fr: "La partie du territoire de la commune d'Anderlecht situ\xE9e \xE0 l'ouest de la ligne m\xE9diane des boulevard Louis Mettewie, boulevard Prince de Li\xE8ge, rue Cyriel Buysse, rue Edmond Delcourt, square Jef Dillen, rue de Formanoir, rue de Veeweyde et chauss\xE9e de Mons,"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.2"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.2"
   },
   {
-    id: "Oudergem",
-    arrondissement: "Brussels",
+    id: "oudergem",
+    arrondissement: "brussel",
     name: {
       nl: "Oudergem",
       fr: "Auderghem"
@@ -1371,21 +1371,21 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21002"
+        municipality: "21002"
       },
       {
-        refnis: "21017"
+        municipality: "21017"
       }
     ],
     territory: {
       nl: "De gemeenten Oudergem en Watermaal-Bosvoorde",
       fr: "Les communes d'Auderghem et de Watermael-Boitsfort"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.3"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.3"
   },
   {
-    id: "Brussel1",
-    arrondissement: "Brussels",
+    id: "brussel-1",
+    arrondissement: "brussel",
     name: {
       nl: "Brussel",
       fr: "Bruxelles"
@@ -1397,7 +1397,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21004",
+        municipality: "21004",
         partial: true
       }
     ],
@@ -1405,11 +1405,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de stad Brussel begrensd door de middellijnen van de Maurice Lemonnierlaan, het Fontainasplein, de Anspachlaan, de Kiekenmarkt, de Grasmarkt, de Bergstraat, de Berlaimontlaan, de Collegialestraat, de Wilde Woudstraat, Treurenberg, de Wetstraat, de Regentlaan en door de scheidingslijn tussen de stad Brussel en de gemeente Elsene vormt, samen met heel het grondgebied van de stad Brussel gelegen tussen het zuidwesten van het Louisaplein en de scheidingslijn tussen de stad Brussel en de gemeente Sint-Gillis",
       fr: "La partie du territoire de la ville de Bruxelles d\xE9limit\xE9e par les lignes m\xE9dianes des boulevard Maurice Lemonnier, place Fontainas, boulevard Anspach, rue March\xE9-aux-Poulets, rue du March\xE9-aux-Herbes, rue Montagne, boulevard Berlaimont, rue Coll\xE9giale, rue du Bois Sauvage, Treurenberg, rue de la Loi, boulevard du R\xE9gent et par la ligne de s\xE9paration entre la ville de Bruxelles et la commune d'Ixelles et l'ensemble du territoire de la ville de Bruxelles situ\xE9 entre le sud-est de la place Louise et la ligne de s\xE9paration entre la ville de Bruxelles et la commune de Saint-Gilles"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.4"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.4"
   },
   {
-    id: "Brussel2",
-    arrondissement: "Brussels",
+    id: "brussel-2",
+    arrondissement: "brussel",
     name: {
       nl: "Brussel",
       fr: "Bruxelles"
@@ -1421,7 +1421,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21004",
+        municipality: "21004",
         partial: true
       }
     ],
@@ -1429,14 +1429,14 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de stad Brussel begrensd door de middellijnen van het Saincteletteplein, de Sainctelettesquare, het IJzerplein en de lijn die de Antwerpselaan van de Boudewijnlaan scheidt tot de middellijn van de Adolphe Maxlaan, de scheidingslijn tussen de stad Brussel en de gemeente Sint-Joost-ten-Node, de scheidingslijn tussen de stad Brussel en de gemeente Schaarbeek, de scheidingslijn tussen de stad Brussel en de gemeente Etterbeek, de scheidingslijn tussen de stad Brussel en de gemeente Elsene en de middellijnen van de Regentlaan, de Wetstraat, het deel van de Koningsstraat tot aan Treurenberg, Treurenberg, de Wilde Woudstraat, de Collegialestraat, de Berlaimontlaan, de Bergstraat, de Grasmarkt, de Kiekenmarkt, de Anspachlaan, het Fontainasplein en de Maurice Lemonnierlaan tot aan de grens van de stad Brussel",
       fr: "La partie du territoire de la ville de Bruxelles d\xE9limit\xE9e par les lignes m\xE9dianes des place Sainctelette, square Sainctelette, place de l'Yser et la ligne qui s\xE9pare le boulevard d'Anvers du boulevard Baudouin jusqu'\xE0 la ligne m\xE9diane du boulevard Adolphe Max, la ligne de s\xE9paration entre la ville de Bruxelles et la commune de Saint-Josse-ten-Noode, la ligne de s\xE9paration entre la ville de Bruxelles et la commune de Schaerbeek, la ligne de s\xE9paration entre la ville de Bruxelles et la commune d'Etterbeek, la ligne de s\xE9paration entre la ville de Bruxelles et la commune d'Ixelles et les lignes m\xE9dianes du boulevard du R\xE9gent, de la rue de la Loi, de la partie de la rue Royale jusqu'au Treurenberg, les Treurenberg, rue du Bois Sauvage, rue Coll\xE9giale, avenue Berlaimont, rue Montagne, rue du March\xE9-aux-Herbes, rue du March\xE9-aux-Poulets, boulevard Anspach, place Fontainas et boulevard Maurice Lemonnier jusqu'aux limites de la ville de Bruxelles"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.5"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.5"
   },
   {
-    id: "Brussel3",
-    arrondissement: "Brussels",
+    id: "brussel-3",
+    arrondissement: "brussel",
     name: {
       nl: "Brussel",
-      fr: "judicaire de Bruxelles"
+      fr: "Bruxelles"
     },
     number: 3,
     seat: {
@@ -1445,7 +1445,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21004",
+        municipality: "21004",
         partial: true
       }
     ],
@@ -1453,11 +1453,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de stad Brussel begrensd ten oosten door de middellijn van het Saincteletteplein, de Willebroekse vaart, de van Praetbrug, de Jules van Praetlaan en de Meiselaan",
       fr: "La partie du territoire de la ville de Bruxelles d\xE9limit\xE9e \xE0 l'est par la ligne m\xE9diane de la place Sainctelette, du canal de Willebroek, du pont van Praet, de l'avenue Jules van Praet et de l'avenue de Meysse"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.6"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.6"
   },
   {
-    id: "Brussel4",
-    arrondissement: "Brussels",
+    id: "brussel-4",
+    arrondissement: "brussel",
     name: {
       nl: "Brussel",
       fr: "Bruxelles"
@@ -1469,7 +1469,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21004",
+        municipality: "21004",
         partial: true
       }
     ],
@@ -1477,11 +1477,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de stad Brussel begrensd ten westen door de middellijn van het Saincteletteplein, de Willebroekse vaart, de van Praetbrug, de Jules van Praetlaan en de Meiselaan, ten zuiden door de middellijn van het Saincteletteplein, de Sainctelettesquare, het IJzerplein en door de lijn die de scheiding vormt tussen de Antwerpselaan en de Boudewijnlaan",
       fr: "La partie du territoire de la ville de Bruxelles d\xE9limit\xE9e \xE0 l'ouest par la ligne m\xE9diane de la place Sainctelette, du canal de Willebroek, du pont van Praet, de l'avenue Jules van Praet et de l'avenue de Meysse, au sud par la ligne m\xE9diane de la place Sainctelette, du square Sainctelette, de la place de l'Yser et par la ligne de s\xE9paration entre le boulevard d'Anvers et le boulevard Baudouin"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.7"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.7"
   },
   {
-    id: "Etterbeek",
-    arrondissement: "Brussels",
+    id: "etterbeek",
+    arrondissement: "brussel",
     name: {
       nl: "Etterbeek",
       fr: "Etterbeek"
@@ -1492,18 +1492,18 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21005"
+        municipality: "21005"
       }
     ],
     territory: {
       nl: "De gemeente Etterbeek",
       fr: "La commune d'Etterbeek"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.8"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.8"
   },
   {
-    id: "Vorst",
-    arrondissement: "Brussels",
+    id: "vorst",
+    arrondissement: "brussel",
     name: {
       nl: "Vorst",
       fr: "Forest"
@@ -1514,18 +1514,18 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21007"
+        municipality: "21007"
       }
     ],
     territory: {
       nl: "De gemeente Vorst",
       fr: "La commune de Forest"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.9"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.9"
   },
   {
-    id: "Elsene",
-    arrondissement: "Brussels",
+    id: "elsene",
+    arrondissement: "brussel",
     name: {
       nl: "Elsene",
       fr: "Ixelles"
@@ -1536,18 +1536,18 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21009"
+        municipality: "21009"
       }
     ],
     territory: {
       nl: "De gemeente Elsene",
       fr: "La commune d'Ixelles"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.10"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.10"
   },
   {
-    id: "Ganshoren",
-    arrondissement: "Brussels",
+    id: "ganshoren",
+    arrondissement: "brussel",
     name: {
       nl: "Ganshoren",
       fr: "Ganshoren"
@@ -1558,24 +1558,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21003"
+        municipality: "21003"
       },
       {
-        refnis: "21008"
+        municipality: "21008"
       },
       {
-        refnis: "21011"
+        municipality: "21011"
       }
     ],
     territory: {
       nl: "De gemeenten Sint-Agatha-Berchem, Ganshoren en Koekelberg",
       fr: "Les communes de Berchem-Sainte-Agathe, de Ganshoren et de Koekelberg"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.11"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.11"
   },
   {
-    id: "Jette",
-    arrondissement: "Brussels",
+    id: "jette",
+    arrondissement: "brussel",
     name: {
       nl: "Jette",
       fr: "Jette"
@@ -1586,18 +1586,18 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21010"
+        municipality: "21010"
       }
     ],
     territory: {
       nl: "De gemeente Jette",
       fr: "La commune de Jette"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.12"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.12"
   },
   {
-    id: "SintJansMolenbeek",
-    arrondissement: "Brussels",
+    id: "sint-jans-molenbeek",
+    arrondissement: "brussel",
     name: {
       nl: "Sint-Jans-Molenbeek",
       fr: "Molenbeek-Saint-Jean"
@@ -1608,18 +1608,18 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21012"
+        municipality: "21012"
       }
     ],
     territory: {
       nl: "De gemeente Sint-Jans-Molenbeek",
       fr: "La commune de Molenbeek-Saint-Jean"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.13"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.13"
   },
   {
-    id: "SintGillis",
-    arrondissement: "Brussels",
+    id: "sint-gillis",
+    arrondissement: "brussel",
     name: {
       nl: "Sint-Gillis",
       fr: "Saint-Gilles"
@@ -1630,18 +1630,18 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21013"
+        municipality: "21013"
       }
     ],
     territory: {
       nl: "De gemeente Sint-Gillis",
       fr: "La commune de Saint-Gilles"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.14"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.14"
   },
   {
-    id: "SintJoostTenNode",
-    arrondissement: "Brussels",
+    id: "sint-joost-ten-node",
+    arrondissement: "brussel",
     name: {
       nl: "Sint-Joost-ten-Node",
       fr: "Saint-Josse-ten-Noode"
@@ -1652,21 +1652,21 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21006"
+        municipality: "21006"
       },
       {
-        refnis: "21014"
+        municipality: "21014"
       }
     ],
     territory: {
       nl: "De gemeenten Evere en Sint-Joost-ten-Node",
       fr: "Les communes d'Evere et de Saint-Josse-ten-Noode"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.15"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.15"
   },
   {
-    id: "Schaarbeek1",
-    arrondissement: "Brussels",
+    id: "schaarbeek-1",
+    arrondissement: "brussel",
     name: {
       nl: "Schaarbeek",
       fr: "Schaerbeek"
@@ -1678,7 +1678,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21015",
+        municipality: "21015",
         partial: true
       }
     ],
@@ -1686,11 +1686,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de gemeente Schaarbeek gelegen links van de middellijn van de Paviljoenstraat, de Vleugelsstraat, de Jeruzalemstraat, de Azalealaan, de Ernest Cambierlaan, de Leuvense Steenweg, van het Generaal Meiserplein tot aan de grens met de gemeente Sint-Joost-ten-Node",
       fr: "La partie du territoire de la commune de Schaerbeek situ\xE9e \xE0 gauche des lignes m\xE9dianes des rue du Pavillon, rue des Ailes, rue de J\xE9rusalem, avenue des Azal\xE9es, avenue Ernest Cambier, chauss\xE9e de Louvain, de la place G\xE9n\xE9ral Meiser jusqu'\xE0 la fronti\xE8re avec la commune de Saint-Josse-ten-Noode"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.16"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.16"
   },
   {
-    id: "Schaarbeek2",
-    arrondissement: "Brussels",
+    id: "schaarbeek-2",
+    arrondissement: "brussel",
     name: {
       nl: "Schaarbeek",
       fr: "Schaerbeek"
@@ -1702,7 +1702,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21015",
+        municipality: "21015",
         partial: true
       }
     ],
@@ -1710,11 +1710,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de gemeente Schaarbeek gelegen rechts van de middellijn van de Paviljoenstraat, de Vleugelsstraat, de Jeruzalemstraat, de Azalealaan, de Ernest Cambierlaan, de Leuvense Steenweg, van het Generaal Meiserplein tot aan de grens met de gemeente Sint-Joost-ten-Node",
       fr: "La partie du territoire de la commune de Schaerbeek situ\xE9e \xE0 droite des lignes m\xE9dianes des rue du Pavillon, rue des Ailes, rue de J\xE9rusalem, avenue des Azal\xE9es, avenue Ernest Cambier, chauss\xE9e de Louvain, de la place G\xE9n\xE9ral Meiser jusqu'\xE0 la fronti\xE8re avec la commune de Saint-Josse-ten-Noode"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.17"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.17"
   },
   {
-    id: "Ukkel",
-    arrondissement: "Brussels",
+    id: "ukkel",
+    arrondissement: "brussel",
     name: {
       nl: "Ukkel",
       fr: "Uccle"
@@ -1725,18 +1725,18 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21016"
+        municipality: "21016"
       }
     ],
     territory: {
       nl: "De gemeente Ukkel",
       fr: "La commune d'Uccle"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.18"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.18"
   },
   {
-    id: "SintPietersWoluwe",
-    arrondissement: "Brussels",
+    id: "sint-pieters-woluwe",
+    arrondissement: "brussel",
     name: {
       nl: "Sint-Pieters-Woluwe",
       fr: "Woluw\xE9-Saint-Pierre"
@@ -1747,21 +1747,21 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "21018"
+        municipality: "21018"
       },
       {
-        refnis: "21019"
+        municipality: "21019"
       }
     ],
     territory: {
       nl: "De gemeenten Sint-Lambrechts-Woluwe en Sint-Pieters-Woluwe",
       fr: "Les communes de Woluw\xE9-Saint-Lambert et de Woluw\xE9-Saint-Pierre"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 4.19"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 4.19"
   },
   {
-    id: "Asse",
-    arrondissement: "Brussels",
+    id: "asse",
+    arrondissement: "brussel",
     name: {
       nl: "Asse",
       fr: "Asse"
@@ -1772,30 +1772,30 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "23002"
+        municipality: "23002"
       },
       {
-        refnis: "23052"
+        municipality: "23052"
       },
       {
-        refnis: "23060"
+        municipality: "23060"
       },
       {
-        refnis: "23086"
+        municipality: "23086"
       },
       {
-        refnis: "23105"
+        municipality: "23105"
       }
     ],
     territory: {
       nl: "De gemeenten Affligem, Asse, Merchtem, Opwijk en Ternat",
       fr: "Les communes d'Affligem, d'Asse, de Merchtem, d'Opwijk et de Ternat"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 5.1"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 5.1"
   },
   {
-    id: "Halle",
-    arrondissement: "Brussels",
+    id: "halle",
+    arrondissement: "brussel",
     name: {
       nl: "Halle",
       fr: "Hal"
@@ -1806,27 +1806,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "23003"
+        municipality: "23003"
       },
       {
-        refnis: "23027"
+        municipality: "23027"
       },
       {
-        refnis: "23064"
+        municipality: "23064"
       },
       {
-        refnis: "23077"
+        municipality: "23077"
       }
     ],
     territory: {
       nl: "De stad Halle en de gemeenten Beersel, Pepingen en Sint-Pieters-Leeuw",
       fr: "La ville de Hal et les communes de Beersel, de Pepingen et de Leeuw-Saint-Pierre"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 5.2"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 5.2"
   },
   {
-    id: "SintGenesiusRode",
-    arrondissement: "Brussels",
+    id: "sint-genesius-rode",
+    arrondissement: "brussel",
     name: {
       nl: "Sint-Genesius-Rode",
       fr: "Rhode-Saint-Gen\xE8se"
@@ -1837,30 +1837,30 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "23098"
+        municipality: "23098"
       },
       {
-        refnis: "23099"
+        municipality: "23099"
       },
       {
-        refnis: "23100"
+        municipality: "23100"
       },
       {
-        refnis: "23101"
+        municipality: "23101"
       },
       {
-        refnis: "23103"
+        municipality: "23103"
       }
     ],
     territory: {
       nl: "De gemeenten Drogenbos, Kraainem, Linkebeek, Sint-Genesius-Rode en Wezembeek-Oppem",
       fr: "Les communes de Drogenbos, de Kraainem, de Linkebeek, de Rhode-Saint-Gen\xE8se et de Wezembeek-Oppem"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 5.3"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 5.3"
   },
   {
-    id: "Lennik",
-    arrondissement: "Brussels",
+    id: "lennik",
+    arrondissement: "brussel",
     name: {
       nl: "Lennik",
       fr: "Lennik"
@@ -1871,33 +1871,33 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "23009"
+        municipality: "23009"
       },
       {
-        refnis: "23016"
+        municipality: "23016"
       },
       {
-        refnis: "23044"
+        municipality: "23044"
       },
       {
-        refnis: "23097"
+        municipality: "23097"
       },
       {
-        refnis: "23104"
+        municipality: "23104"
       },
       {
-        refnis: "23106"
+        municipality: "23106"
       }
     ],
     territory: {
       nl: "De gemeenten Bever, Dilbeek, Pajottegem, Lennik, Liedekerke en Roosdaal",
       fr: "Les communes de Bi\xE9v\xE8ne, de Dilbeek, de Pajottegem, de Lennik, de Liedekerke et de Roosdaal"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 5.4"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 5.4"
   },
   {
-    id: "Meise",
-    arrondissement: "Brussels",
+    id: "meise",
+    arrondissement: "brussel",
     name: {
       nl: "Meise",
       fr: "Meise"
@@ -1908,30 +1908,30 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "23025"
+        municipality: "23025"
       },
       {
-        refnis: "23039"
+        municipality: "23039"
       },
       {
-        refnis: "23045"
+        municipality: "23045"
       },
       {
-        refnis: "23050"
+        municipality: "23050"
       },
       {
-        refnis: "23102"
+        municipality: "23102"
       }
     ],
     territory: {
       nl: "De gemeenten Grimbergen, Kapelle-op-den-Bos, Londerzeel, Meise en Wemmel",
       fr: "Les communes de Grimbergen, de Kapelle-op-den-Bos, de Londerzeel, de Meise et de Wemmel"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 5.5"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 5.5"
   },
   {
-    id: "Zaventem",
-    arrondissement: "Brussels",
+    id: "zaventem",
+    arrondissement: "brussel",
     name: {
       nl: "Zaventem",
       fr: "Zaventem"
@@ -1942,27 +1942,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "23033"
+        municipality: "23033"
       },
       {
-        refnis: "23062"
+        municipality: "23062"
       },
       {
-        refnis: "23081"
+        municipality: "23081"
       },
       {
-        refnis: "23094"
+        municipality: "23094"
       }
     ],
     territory: {
       nl: "De gemeenten Hoeilaart, Overijse, Steenokkerzeel en Zaventem",
       fr: "Les communes de Hoeilaart, de Overijse, de Steenokkerzeel et de Zaventem"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 5.6"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 5.6"
   },
   {
-    id: "Vilvoorde",
-    arrondissement: "Brussels",
+    id: "vilvoorde",
+    arrondissement: "brussel",
     name: {
       nl: "Vilvoorde",
       fr: "Vilvorde"
@@ -1973,27 +1973,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "23038"
+        municipality: "23038"
       },
       {
-        refnis: "23047"
+        municipality: "23047"
       },
       {
-        refnis: "23088"
+        municipality: "23088"
       },
       {
-        refnis: "23096"
+        municipality: "23096"
       }
     ],
     territory: {
       nl: "De stad Vilvoorde en de gemeenten Kampenhout, Machelen en Zemst",
       fr: "La ville de Vilvorde et les communes de Kampenhout, de Machelen et de Zemst"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 5.7"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 5.7"
   },
   {
-    id: "Aarschot",
-    arrondissement: "Leuven",
+    id: "aarschot",
+    arrondissement: "leuven",
     name: {
       nl: "Aarschot",
       fr: "Aarschot"
@@ -2004,36 +2004,36 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "24001"
+        municipality: "24001"
       },
       {
-        refnis: "24007"
+        municipality: "24007"
       },
       {
-        refnis: "24014"
+        municipality: "24014"
       },
       {
-        refnis: "24033"
+        municipality: "24033"
       },
       {
-        refnis: "24048"
+        municipality: "24048"
       },
       {
-        refnis: "24094"
+        municipality: "24094"
       },
       {
-        refnis: "24109"
+        municipality: "24109"
       }
     ],
     territory: {
       nl: "De stad Aarschot en de gemeenten Begijnendijk, Boortmeerbeek, Haacht, Keerbergen, Rotselaar en Tremelo",
       fr: "La ville d'Aarschot et les communes de Begijnendijk, de Boortmeerbeek, de Haacht, de Keerbergen, de Rotselaar et de Tremelo"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 5.9"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 5.9"
   },
   {
-    id: "Diest",
-    arrondissement: "Leuven",
+    id: "diest",
+    arrondissement: "leuven",
     name: {
       nl: "Diest",
       fr: "Diest"
@@ -2044,27 +2044,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "24008"
+        municipality: "24008"
       },
       {
-        refnis: "24020"
+        municipality: "24020"
       },
       {
-        refnis: "24134"
+        municipality: "24134"
       },
       {
-        refnis: "24135"
+        municipality: "24135"
       }
     ],
     territory: {
       nl: "De steden Diest, Scherpenheuvel-Zichem en de gemeenten Bekkevoort en Tielt-Winge",
       fr: "Les villes de Diest, de Montaigu-Zichem et les communes de Bekkevoort et de Tielt-Winge"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 5.10"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 5.10"
   },
   {
-    id: "Zoutleeuw",
-    arrondissement: "Leuven",
+    id: "zoutleeuw",
+    arrondissement: "leuven",
     name: {
       nl: "Zoutleeuw",
       fr: "L\xE9au"
@@ -2075,33 +2075,33 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "24028"
+        municipality: "24028"
       },
       {
-        refnis: "24054"
+        municipality: "24054"
       },
       {
-        refnis: "24059"
+        municipality: "24059"
       },
       {
-        refnis: "24130"
+        municipality: "24130"
       },
       {
-        refnis: "24133"
+        municipality: "24133"
       },
       {
-        refnis: "24137"
+        municipality: "24137"
       }
     ],
     territory: {
       nl: "De steden Landen, Zoutleeuw en de gemeenten Glabbeek, Geetbets, Kortenaken en Linter",
       fr: "Les villes de Landen, de L\xE9au et les communes de Glabbeek, de Geetbets, de Kortenaken et de Linter"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 5.11"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 5.11"
   },
   {
-    id: "Leuven1",
-    arrondissement: "Leuven",
+    id: "leuven-1",
+    arrondissement: "leuven",
     name: {
       nl: "Leuven",
       fr: "Louvain"
@@ -2113,13 +2113,13 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "24038"
+        municipality: "24038"
       },
       {
-        refnis: "24055"
+        municipality: "24055"
       },
       {
-        refnis: "24062",
+        municipality: "24062",
         partial: true
       }
     ],
@@ -2127,11 +2127,11 @@ var cantons_default = [
       nl: "De gemeenten Herent, Kortenberg en het gedeelte van het grondgebied van de stad Leuven gelegen ten noorden van de lijn die het verlengde vormt van de middellijn van de Diestsestraat en de Diestsesteenweg tot de grens van de stad Leuven; van de middellijn van de Diestsestraat en de Diestsesteenweg, een lijn die de verbinding vormt tussen de middellijn van de Diestsestraat en de Diestsesteenweg tot de middellijn van de Grote Markt en de de middellijnen van de Grote markt, Brusselsestraat en de Brusselsesteenweg tot de grens van de stad Leuven",
       fr: "Les communes de Herent, de Kortenberg et la partie du territoire de la ville de Louvain situ\xE9e au nord de la ligne qui constitue le prolongement de la m\xE9diane de la Diestsestraat et de la Diestsesteenweg jusqu'\xE0 la limite de la ville de Louvain; de la m\xE9diane de la Diestsestraat et de la Diestsesteenweg, une ligne qui forme la jonction entre la m\xE9diane de la Diestsestraat et de la Diestsesteenweg jusqu'\xE0 la m\xE9diane du Grote Markt et les m\xE9dianes du Grote Markt, de la Brusselsestraat et de la Brusselsesteenweg jusqu'\xE0 la limite de la ville de Louvain"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 5.12"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 5.12"
   },
   {
-    id: "Leuven2",
-    arrondissement: "Leuven",
+    id: "leuven-2",
+    arrondissement: "leuven",
     name: {
       nl: "Leuven",
       fr: "Louvain"
@@ -2143,28 +2143,28 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "24011"
+        municipality: "24011"
       },
       {
-        refnis: "24043"
+        municipality: "24043"
       },
       {
-        refnis: "24062",
+        municipality: "24062",
         partial: true
       },
       {
-        refnis: "24086"
+        municipality: "24086"
       }
     ],
     territory: {
       nl: "De gemeenten Bierbeek, Holsbeek, Oud-Heverlee en het gedeelte van het grondgebied van de stad Leuven gelegen ten zuiden van de lijn die het verlengde vormt van de middellijnen van de Diestsestraat en de Diestsesteenweg tot de grens van de stad Leuven; van de middellijn van de Diestsestraat en de Diestsesteenweg, een lijn die de verbinding vormt tussen de middellijn van de Diestsestraat en de Diestsesteenweg tot de middellijn van de Grote Markt en de Naamsestraat ten oosten van de Grote Markt en de Naamsesteenweg tot de grens van de stad Leuven",
       fr: "Les communes de Bierbeek, de Holsbeek, de Oud-Heverlee et la partie du territoire de la ville de Louvain situ\xE9e au sud de la ligne qui constitue le prolongement des lignes m\xE9dianes de la Diestsestraat et de la Diestsesteenweg jusqu'\xE0 la limite de la ville de Louvain; de la m\xE9diane de la Diestsestraat et de la Diestsesteenweg, une ligne qui forme la jonction entre la m\xE9diane de la Diestsestraat et de la Diestsesteenweg jusqu'\xE0 la m\xE9diane du Grote Markt et de la Naamsestraat \xE0 l'est du Grote Markt, et de la Naamsesteenweg jusqu'\xE0 la limite de la ville de Louvain"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 5.13"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 5.13"
   },
   {
-    id: "Leuven3",
-    arrondissement: "Leuven",
+    id: "leuven-3",
+    arrondissement: "leuven",
     name: {
       nl: "Leuven",
       fr: "Louvain"
@@ -2176,28 +2176,28 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "24009"
+        municipality: "24009"
       },
       {
-        refnis: "24045"
+        municipality: "24045"
       },
       {
-        refnis: "24062",
+        municipality: "24062",
         partial: true
       },
       {
-        refnis: "24104"
+        municipality: "24104"
       }
     ],
     territory: {
       nl: "De gemeenten Bertem, Huldenberg, Tervuren, en het gedeelte van het grondgebied van de stad Leuven gelegen ten zuiden van de lijn die de verbinding vormt van de lijn die het verlengde vormt van de middellijn van de Brusselsestraat en de Brusselsesteenweg tot de grens van de stad Leuven ten westen van de middellijnen van de Naamsestraat en de Naamsesteenweg en de middellijn van de Grote Markt tot aan de grens van de stad Leuven",
       fr: "Les communes de Bertem, de Huldenberg, de Tervuren et la partie du territoire de la ville de Louvain situ\xE9e au sud de la ligne qui forme la jonction de la ligne qui constitue le prolongement de la m\xE9diane de la Brusselsestraat et de la Brusselsesteenweg jusqu'\xE0 la limite de la ville de Louvain et \xE0 l'ouest des m\xE9dianes de la Naamsestraat et de la Naamsesteenweg et de la m\xE9diane du Grote Markt jusqu'\xE0 la limite de la ville de Louvain,"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 5.14"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 5.14"
   },
   {
-    id: "Tienen",
-    arrondissement: "Leuven",
+    id: "tienen",
+    arrondissement: "leuven",
     name: {
       nl: "Tienen",
       fr: "Tirlemont"
@@ -2208,27 +2208,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "24016"
+        municipality: "24016"
       },
       {
-        refnis: "24041"
+        municipality: "24041"
       },
       {
-        refnis: "24066"
+        municipality: "24066"
       },
       {
-        refnis: "24107"
+        municipality: "24107"
       }
     ],
     territory: {
       nl: "De stad Tienen en de gemeenten Boutersem, Hoegaarden en Lubbeek",
       fr: "La ville de Tirlemont et les communes de Boutersem, de Hoegaarden et de Lubbeek"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 5.15"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 5.15"
   },
   {
-    id: "Aalst1",
-    arrondissement: "EastFlanders",
+    id: "aalst-1",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Aalst",
       fr: "Alost"
@@ -2240,22 +2240,22 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "41002",
+        municipality: "41002",
         partial: true
       },
       {
-        refnis: "41082"
+        municipality: "41082"
       }
     ],
     territory: {
       nl: "De gemeente Erpe-Mere, het gedeelte van het grondgebied van de stad Aalst ten westen van de Dender en de deelgemeente Nieuwerkerken van de stad Aalst",
       fr: "La commune d'Erpe-Mere, la partie du territoire de la ville d'Alost situ\xE9e \xE0 l'ouest de la Dendre et l'ancienne commune de Nieuwerkerken de la ville d'Alost"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.1"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.1"
   },
   {
-    id: "Aalst2",
-    arrondissement: "EastFlanders",
+    id: "aalst-2",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Aalst",
       fr: "Alost"
@@ -2267,22 +2267,22 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "41002",
+        municipality: "41002",
         partial: true
       },
       {
-        refnis: "41034"
+        municipality: "41034"
       }
     ],
     territory: {
       nl: "De gemeente Lede, het gedeelte van het grondgebied van de stad Aalst ten oosten van de Dender en de deelgemeenten Baardegem, Erembodegem, Gijzegem, Herdersem, Hofstade, Meldert en Moorsel van de stad Aalst",
       fr: "La commune de Lede, la partie du territoire de la ville d'Alost situ\xE9e \xE0 l'est de la Dendre et les anciennes communes de Baardegem, de Erembodegem, de Gijzegem, de Herdersem, de Hofstade, de Meldert et de Moorsel de la ville d'Alost"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.2"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.2"
   },
   {
-    id: "BeverenKruibekeZwijndrecht",
-    arrondissement: "EastFlanders",
+    id: "beveren-kruibeke-zwijndrecht",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Beveren-Kruibeke-Zwijndrecht",
       fr: "Beveren-Kruibeke-Zwijndrecht"
@@ -2293,21 +2293,21 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "46020"
+        municipality: "46020"
       },
       {
-        refnis: "46030"
+        municipality: "46030"
       }
     ],
     territory: {
       nl: "De gemeenten Beveren-Kruibeke-Zwijndrecht en Sint-Gillis-Waas",
       fr: "Les communes de Beveren-Kruibeke-Zwijndrecht et de Sint-Gillis-Waas"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.3"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.3"
   },
   {
-    id: "Dendermonde",
-    arrondissement: "EastFlanders",
+    id: "dendermonde",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Dendermonde",
       fr: "Termonde"
@@ -2318,24 +2318,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "42004"
+        municipality: "42004"
       },
       {
-        refnis: "42006"
+        municipality: "42006"
       },
       {
-        refnis: "42011"
+        municipality: "42011"
       }
     ],
     territory: {
       nl: "De stad Dendermonde en de gemeenten Buggenhout en Lebbeke",
       fr: "La ville de Termonde et les communes de Buggenhout et de Lebbeke"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.4"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.4"
   },
   {
-    id: "Hamme",
-    arrondissement: "EastFlanders",
+    id: "hamme",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Hamme",
       fr: "Hamme"
@@ -2346,27 +2346,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "42008"
+        municipality: "42008"
       },
       {
-        refnis: "42023"
+        municipality: "42023"
       },
       {
-        refnis: "42028"
+        municipality: "42028"
       },
       {
-        refnis: "46025"
+        municipality: "46025"
       }
     ],
     territory: {
       nl: "De gemeenten Hamme, Temse, Waasmunster en Zele",
       fr: "Les communes de Hamme, de Tamise, de Waasmunster et de Zele"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.5"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.5"
   },
   {
-    id: "Lokeren",
-    arrondissement: "EastFlanders",
+    id: "lokeren",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Lokeren",
       fr: "Lokeren"
@@ -2377,21 +2377,21 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "46024"
+        municipality: "46024"
       },
       {
-        refnis: "46029"
+        municipality: "46029"
       }
     ],
     territory: {
       nl: "De stad Lokeren , de deelgemeente Moerbeke van de stad Lokeren en de gemeente Stekene",
       fr: "La ville de Lokeren , l'ancienne commune de Moerbeke de la Ville de Lokeren et la commune de Stekene"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.6"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.6"
   },
   {
-    id: "Ninove",
-    arrondissement: "EastFlanders",
+    id: "ninove",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Ninove",
       fr: "Ninove"
@@ -2402,24 +2402,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "41011"
+        municipality: "41011"
       },
       {
-        refnis: "41024"
+        municipality: "41024"
       },
       {
-        refnis: "41048"
+        municipality: "41048"
       }
     ],
     territory: {
       nl: "De stad Ninove en de gemeenten Denderleeuw en Haaltert",
       fr: "La ville de Ninove et les communes de Denderleeuw et de Haaltert"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.7"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.7"
   },
   {
-    id: "SintNiklaas",
-    arrondissement: "EastFlanders",
+    id: "sint-niklaas",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Sint-Niklaas",
       fr: "Saint-Nicolas"
@@ -2430,18 +2430,18 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "46021"
+        municipality: "46021"
       }
     ],
     territory: {
       nl: "De stad Sint-Niklaas",
       fr: "La ville de Saint-Nicolas"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.8"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.8"
   },
   {
-    id: "Wetteren",
-    arrondissement: "EastFlanders",
+    id: "wetteren",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Wetteren",
       fr: "Wetteren"
@@ -2452,27 +2452,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "42003"
+        municipality: "42003"
       },
       {
-        refnis: "42010"
+        municipality: "42010"
       },
       {
-        refnis: "42025"
+        municipality: "42025"
       },
       {
-        refnis: "42026"
+        municipality: "42026"
       }
     ],
     territory: {
       nl: "De gemeenten Berlare, Laarne, Wetteren en Wichelen",
       fr: "Les communes de Berlare, de Laarne, de Wetteren et de Wichelen"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.9"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.9"
   },
   {
-    id: "Deinze",
-    arrondissement: "EastFlanders",
+    id: "deinze",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Deinze",
       fr: "Deinze"
@@ -2483,24 +2483,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "44081"
+        municipality: "44081"
       },
       {
-        refnis: "44083"
+        municipality: "44083"
       },
       {
-        refnis: "44084"
+        municipality: "44084"
       }
     ],
     territory: {
       nl: "De stad Deinze en de gemeenten Aalter en Zulte",
       fr: "La ville de Deinze et les communes de Aalter et de Zulte"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.10"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.10"
   },
   {
-    id: "Eeklo",
-    arrondissement: "EastFlanders",
+    id: "eeklo",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Eeklo",
       fr: "Eeklo"
@@ -2511,30 +2511,30 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "43005"
+        municipality: "43005"
       },
       {
-        refnis: "43007"
+        municipality: "43007"
       },
       {
-        refnis: "43010"
+        municipality: "43010"
       },
       {
-        refnis: "43014"
+        municipality: "43014"
       },
       {
-        refnis: "44085"
+        municipality: "44085"
       }
     ],
     territory: {
       nl: "De stad Eeklo en de gemeenten Kaprijke, Lievegem, Maldegem en Sint-Laureins",
       fr: "La ville d'Eeklo et les communes de Kaprijke, de Lievegem, de Maldegem et de Sint-Laureins"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.11"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.11"
   },
   {
-    id: "Gent1",
-    arrondissement: "EastFlanders",
+    id: "gent-1",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Gent",
       fr: "Gand"
@@ -2546,7 +2546,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "44021",
+        municipality: "44021",
         partial: true
       }
     ],
@@ -2554,11 +2554,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de stad Gent beginnend onder de torens van het Rabot, het kanaal de Lieve tot aan de Lievebrug, de middellijn van de Lievestraat, de middellijn van de Lange Steenstraat, de middellijn van de Grauwpoort tot aan het Sluizeken, de middellijn van het Sluizeken tot tegen de Achterleie, de zuidelijke grens van Achterleie tot aan de Leie, de Leie langs de Achterleie, de Leie tot aan de Slachthuisbrug, de Slachthuisbrug tot het kruispunt met de Koepoortkaai, de Koepoortkaai, de Filips Van Artveldestraat tot aan het Sint-Annaplein, de noordelijke grens van het Sint-Annaplein, de middellijnen van de Brabantdam tot aan de kruising met de Kortedagsteeg, de middellijn van de Kortedagsteeg, de middellijn van de Walpoortstraat, de middellijn van de Sint-Pietersnieuwstraat, het deel van het Sint-Pietersplein dat de verbinding vormt tussen de Sint-Pietersnieuwstraat en de Overpoortstraat, de middellijn van de Overpoortstraat, de middellijn van de Normaalschoolstraat, de middellijn van de Ottergemsesteenweg tot aan de spoorweglijn onmiddellijk ten zuiden van de Burggravenlaan, de spoorweg in oostelijke richting tot aan de Schelde en verder de Schelde in zuidelijke richting tot aan de Ringvaart, dan van de Ringvaart in noordwestelijke richting tot aan de Maaltebrug/kruising met de Kortrijksesteenweg, de zuidelijke grens van de Kortrijksesteenweg tot aan De Sterre - kruising N60/N43 met de Voskenslaan, de oostelijke grens van de Voskenslaan, de noordoostelijke grens van de Sint-Denijslaan volgend tot aan het kruispunt met de Valentin Vaerewyckweg, verder volgend noordelijk naar de parking Gent Sint-Pietersstation tot aan de kruising met de Koningin Fabiolalaan, de noordoostelijke grens van de Koningin Fabiolalaan over de kruising met de Gordunakaai tot aan de Ringvaart in zuidoostelijke richting, de Leie in noordelijke richting langs de Gordunakaai tot aan de splitsing ter hoogte van Aan De Bocht, met verder als grens de Leie in noordelijke richting langs Aan de Bocht, langs de Belv\xE9d\xE8reweg, langs de Constant Dosscheweg, verder noordelijk langs de Leie tot aan de kruising van de Leie met Einde Were, de zuidelijke grens van Einde Were tot aan de kruising met Overzet en Nieuwe Wandeling, de noordelijke grens van de Nieuwe Wandeling, de middellijn van de Contributiestraat en de middellijn van de Begijnhoflaan tot aan de torens aan het Rabot",
       fr: "La partie du territoire de la ville de Gand d\xE9butant sous les tours du Rabot, le canal de Lieve jusqu'au Lievebrug, la ligne m\xE9diane de la Lievestraat, la ligne m\xE9diane de la Lange Steenstraat, la ligne m\xE9diane du Grauwpoort jusqu'au Sluizeken, la ligne m\xE9diane du Sluizeken jusqu'\xE0 l'Achterleie, la fronti\xE8re sud de l'Achterleie jusqu'\xE0 la Lys, la Lys le long de l'Achterleie, la Lys jusqu'au Slachthuisbrug, le Slachthuisbrug jusqu'au croisement avec le Koepoortkaai, le Koepoortkaai, la Filips Van Artveldestraat jusqu'\xE0 Sint-Annaplein, la fronti\xE8re nord de la Sint-Annaplein, la ligne m\xE9diane de Brabantdam jusqu'au croisement avec le Kortedagsteeg, la ligne m\xE9diane du Kortedagsteeg, la ligne m\xE9diane de la Walpoortstraat, la ligne m\xE9diane de la Sint-Pietersnieuwstraat, la partie de la Sint-Pietersplein reliant la Sint-Pietersnieuwstraat \xE0 l'Overpoortstraat, la ligne m\xE9diane de l'Overpoortstraat, la ligne m\xE9diane de la Normaalschoolstraat, la ligne m\xE9diane de l'Ottergemsesteenweg jusqu\xE0 la ligne de chemin de fer imm\xE9diatement au sud de la Burggravenlaan, la ligne de chemin de fer en direction de l'est vers l'Escaut et apr\xE8s l'Escaut en direction du sud vers le Ringvaart, puis du Ringvaart en direction du nord-ouest jusqu'au Maaltebrug/croisement avec la Kortrijksesteenweg, la limite sud de la Kortrijksesteenweg jusqu'\xE0 De Sterre - croisement N60/N43 avec la Voskenslaan, la limite est de la Voskenslaan, la limite nord-est de la Sint-Denijslaan jusqu'au carrefour avec la Valentin Vaerewyckweg, puis en direction du nord vers le parking de la gare de Gand Saint-Pierre jusqu'au croisement avec la Koningin Fabiolalaan, la limite nord-est de la Koningin Fabiolalaan au croisement avec le Gordunakaai jusqu'au Ringvaart en direction du sud-est, la Lys en direction du nord le long du Gordunakaai jusqu'\xE0 la s\xE9paration \xE0 hauteur de Aan De Bocht, avec comme limite ensuite la Lys en direction du nord le long d'Aan De Bocht, le long de la Belv\xE9d\xE8reweg, le long de la Constant Dosscheweg, puis en direction du nord le long de la Lys jusqu'au croisement de la Lys avec l'Einde Were, la limite sud de l'Einde Were jusqu'au croisement avec l'Overzet et la Nieuwe Wandeling, la limite nord de la Nieuwe Wandeling, la ligne m\xE9diane de la Contributiestraat et la ligne m\xE9diane de la Begijnhoflaan jusqu'aux tours du Rabot"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.12"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.12"
   },
   {
-    id: "Gent2",
-    arrondissement: "EastFlanders",
+    id: "gent-2",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Gent",
       fr: "Gand"
@@ -2570,25 +2570,25 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "44021",
+        municipality: "44021",
         partial: true
       },
       {
-        refnis: "44064"
+        municipality: "44064"
       },
       {
-        refnis: "44086"
+        municipality: "44086"
       }
     ],
     territory: {
       nl: "De gemeenten Sint-Martens-Latem en Nazareth-De Pinte, de deelgemeenten Drongen, Zwijnaarde, Sint-Denijs-Westrem en Afsnee en het gedeelte van het grondgebied van de stad Gent beginnend aan de grens met de gemeente Lovendegem aan het kanaal Gent-Oostende, verder zuidelijk tot aan de Contributiebrug, de noordwestelijke grens van de Nieuwe Wandeling tot aan de kruising met Einde Were, de zuidelijke grens van Einde Were tot aan de kruising met de Leie, met verder als grens de Leie in zuidelijke richting, langs de Constant Dosscheweg, langs de Belv\xE9d\xE8reweg, langs Aan de Bocht tot aan het kruispunt van de Gordunakaai met de Koningin Fabiolalaan en vanaf daar, de noordoostelijke grens van de Koningin Fabiolalaan tot aan en zuidelijk over de parking Gent Sint-Pietersstation, de noordoostelijke grens van de Sint-Denijslaan volgend, langs de oostelijke grens van de Voskenslaan tot aan De Sterre (kruising Voskenslaan met N60/N43), de zuidelijke grens van de Kortrijksesteenweg tot aan de Ringvaart in zuidoostelijke richting tot aan de grens met de gemeente Merelbeke-Melle",
       fr: "Les communes de Sint-Martens-Latem et de Nazareth-De Pinte, les anciennes communes de Drongen, de Zwijnaarde, de Sint-Denijs-Westrem et de Afsnee et la partie de la ville de Gand d\xE9butant \xE0 la limite avec la commune de Lovendegem au canal Gand-Ostende, ensuite en direction du sud jusqu'au Contributiebrug, la limite nord-ouest de la Nieuwe Wandeling jusqu'au croisement avec l'Einde Were, la limite sud de l'Einde Were jusqu'au croisement avec la Lys, avec ensuite comme limite la Lys en direction du sud, le long de la Constant Dosscheweg, le long de la Belv\xE9d\xE8reweg, le long de l'Aan de Bocht jusqu'au croisement du Gordunakaai avec la Koningin Fabiolalaan et de l\xE0, la limite nord-est de la Koningin Fabiolalaan jusque et au sud du parking de la gare de Gand Saint-Pierre, la limite nord-est de la Sint-Denijslaan suivant, le long de la limite est de la Voskenslaan jusqu'\xE0 De Sterre (croisement Voskenslaan avec N60/N43), la limite sud de la Kortrijksesteenweg jusqu'au Ringvaart en direction du sud-est jusqu'\xE0 la limite avec la commune de Merelbeke-Melle"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.13"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.13"
   },
   {
-    id: "Gent3",
-    arrondissement: "EastFlanders",
+    id: "gent-3",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Gent",
       fr: "Gand"
@@ -2600,7 +2600,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "44021",
+        municipality: "44021",
         partial: true
       }
     ],
@@ -2608,11 +2608,11 @@ var cantons_default = [
       nl: "De deelgemeente Mariakerke, het gedeelte van het grondgebied van de stad Gent dat begint aan de Ringvaart en de grens tussen de deelgemeente Mariakerke en Wondelgem, de grens tussen de deelgemeente Mariakerke en Wondelgem in zuidelijke richting tot aan het fietspad langs de Zandstraat, het fietspad in westelijke richting tot aan het kanaal Gent-Oostende, het kanaal Gent-Oostende in zuidelijke richting tot aan het Verbindingskanaal, dan het Verbindingskanaal, het Tolhuisdok, de Voorhaven en het kanaal Gent-Terneuzen in noordelijke richting tot aan de grens met de gemeente Zelzate en vervolgens de grens met de gemeente Zelzate in westelijke richting tot aan de grens met de gemeente Evergem",
       fr: "L'ancienne commune de Mariakerke, la partie du territoire de la ville de Gand d\xE9butant au Ringvaart et la limite entre l'ancienne commune de Mariakerke et Wondelgem, la limite entre l'ancienne commune de Mariakerke et Wondelgem en direction du sud jusqu'\xE0 la piste cyclable le long de la Zandstraat, la piste cyclable en direction de l'ouest jusqu'au canal Gand-Ostende, le canal Gand-Ostende en direction du sud jusqu'au Verbindingskanaal, ensuite le Verbindingskanaal, le Tolhuisdok, le Voorhaven et le canal Gand-Terneuzen en direction du nord jusqu'\xE0 la limite avec la commune de Zelzate et ensuite la limite avec la commune de Zelzate en direction de l'ouest jusqu'\xE0 la limite avec la commune d'Evergem"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.14"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.14"
   },
   {
-    id: "Gent4",
-    arrondissement: "EastFlanders",
+    id: "gent-4",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Gent",
       fr: "Gand"
@@ -2624,7 +2624,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "44021",
+        municipality: "44021",
         partial: true
       }
     ],
@@ -2632,11 +2632,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de stad Gent dat begint aan de grens met de gemeente Zelzate, het kanaal Gent-Terneuzen in zuidelijke richting, de Voorhaven, het Tolhuisdok en het Verbindingskanaal tot aan het kanaal Gent-Oostende, het kanaal Gent-Oostende zuidelijk tot aan de Contributiebrug, de middellijn van de Contributiestraat, de middellijn van de Begijnhoflaan tot aan de torens van het Rabot, onder de torens van het Rabot het kanaal de Lieve tot aan de Lievebrug, dan de middellijn van de Lievestraat, de middellijn van de Lange Steenstraat, de middellijn van de Grauwpoort tot aan het Sluizeken, de middellijn van het Sluizeken tot tegen de Achterleie, de Achterleie tot aan de Leie en dan de Leie tot voor Portus Gandae, de waterweg in oostelijke richting naar het Octrooiplein, dwars door het Octrooiplein en het Antwerpenplein, door de middellijn van de Dendermondsesteenweg tot aan de grens met de gemeente Destelbergen en verder de grens met de gemeenten Lochristi en Zelzate",
       fr: "La partie du territoire de la ville de Gand d\xE9butant \xE0 la limite avec la commune de Zelzate, le canal Gand-Terneuzen en direction du sud, le Voorhaven, le Tolhuisdok et le Verbindingskanaal jusqu'au canal Gand-Ostende, le canal Gand-Ostende en direction du sud jusqu'au Contributiebrug, la ligne m\xE9diane de la Contributiestraat, la ligne m\xE9diane de la Begijnhoflaan jusqu'aux tours du Rabot, sous les tours du Rabot le canal de Lieve jusqu'au Lievebrug, ensuite la ligne m\xE9diane de la Lievestraat, la ligne m\xE9diane de la Lange Steenstraat, la ligne m\xE9diane de la Grauwpoort jusqu'au Sluizeken, la ligne m\xE9diane du Sluizeken jusqu'\xE0 l'Achterleie, l'Achterleie jusqu'\xE0 la Lys, ensuite la Lys jusque devant le Portus Gandae, la voie navigable en direction de l'est vers l'Octrooiplein, \xE0 travers l'Octrooiplein et l'Antwerpenplein, par la ligne m\xE9diane de la Dendermondsesteenweg jusqu'\xE0 la limite de la commune de Destelbergen et au-del\xE0 de la limite des communes de Lochristi et de Zelzate"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.15"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.15"
   },
   {
-    id: "Gent5",
-    arrondissement: "EastFlanders",
+    id: "gent-5",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Gent",
       fr: "Gand"
@@ -2648,10 +2648,10 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "44013"
+        municipality: "44013"
       },
       {
-        refnis: "44021",
+        municipality: "44021",
         partial: true
       }
     ],
@@ -2659,11 +2659,11 @@ var cantons_default = [
       nl: "De gemeente Destelbergen en het gedeelte van het grondgebied van de stad Gent beginnend aan de grens met de gemeente Destelbergen, de middellijn van de Dendermondsesteenweg tot aan het Antwerpenplein, de middellijn van het Antwerpenplein dwars door het Octrooiplein, de waterweg tussen het Octrooiplein en de Leie, de Leie tot aan de Slachthuisbrug, de Slachthuisbrug tot het kruispunt met de Koepoortkaai, verder de oostelijke grens van de Koepoortkaai en de Filips Van Artveldestraat tot aan het Sint-Annaplein, de noordelijke grens van het Sint-Annaplein, de middellijnen van de Brabantdam tot aan de kruising met de Kortedagsteeg, de middellijn van de Kortedagsteeg, de middellijn van de Walpoortstraat, de middellijn van de Sint-Pietersnieuwstraat, het deel van het Sint-Pietersplein dat de verbinding vormt tussen de Sint-Pietersnieuwstraat en de Overpoortstraat, de middellijn van de Overpoortstraat, de middellijn van de Normaalschoolstraat, de middellijn van de Ottergemsesteenweg tot aan de spoorweglijn onmiddellijk ten zuiden van de Burggravenlaan, de spoorweg in oostelijke richting tot aan de Schelde en verder de Schelde in zuidelijke richting tot aan tot aan de grens met de gemeente Merelbeke-Melle",
       fr: "La commune de Destelbergen et la partie du territoire de la ville de Gand d\xE9butant \xE0 la limite de la commune de Destelbergen, la ligne m\xE9diane de la Dendermondsesteenweg jusqu'\xE0 l'Antwerpenplein, la ligne m\xE9diane de l'Antwerpenplein \xE0 travers l'Octrooiplein, la voie navigable entre l'Octrooiplein et la Lys, la Lys jusqu'au Slachthuisbrug, le Slachthuisbrug jusqu'au croisement avec le Koepoortkaai, ensuite la limite est du Koepoortkaai et la Filips Van Artveldestraat jusqu'\xE0 la Sint-Annaplein, la limite nord de la Sint-Annaplein, la ligne m\xE9diane du Brabantdam jusqu'au croisement avec le Kortedagsteeg, la ligne m\xE9diane du Kortedagsteeg, la ligne m\xE9diane de la Walpoortstraat, la ligne m\xE9diane de la Sint-Pietersnieuwstraat, la partie de la Sint-Pietersplein reliant la Sint-Pietersnieuwstraat \xE0 l'Overpoortstraat, la ligne m\xE9diane de l'Overpoortstraat, la ligne m\xE9diane de la Normaalschoolstraat, la ligne m\xE9diane de la Ottergemsesteenweg jusqu'\xE0 la ligne de chemin de fer imm\xE9diatement au sud de la Burggravenlaan, la ligne de chemin de fer en direction de l'est jusqu'\xE0 l'Escaut et au-del\xE0 de l'Escaut en direction du sud jusqu'\xE0 la limite de la commune de Merelbeke-Melle"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.16"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.16"
   },
   {
-    id: "MerelbekeMelle",
-    arrondissement: "EastFlanders",
+    id: "merelbeke-melle",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Merelbeke-Melle",
       fr: "Merelbeke-Melle"
@@ -2674,24 +2674,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "44020"
+        municipality: "44020"
       },
       {
-        refnis: "44052"
+        municipality: "44052"
       },
       {
-        refnis: "44088"
+        municipality: "44088"
       }
     ],
     territory: {
       nl: "De gemeenten Gavere, Merelbeke-Melle en Oosterzele",
       fr: "Les communes de Gavere Merelbeke-Melle et d'Oosterzele"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.17"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.17"
   },
   {
-    id: "Zelzate",
-    arrondissement: "EastFlanders",
+    id: "zelzate",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Zelzate",
       fr: "Zelzate"
@@ -2702,27 +2702,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "43002"
+        municipality: "43002"
       },
       {
-        refnis: "43018"
+        municipality: "43018"
       },
       {
-        refnis: "44019"
+        municipality: "44019"
       },
       {
-        refnis: "44087"
+        municipality: "44087"
       }
     ],
     territory: {
       nl: "De gemeenten Assenede, Evergem, Lochristi en Zelzate",
       fr: "Les communes d'Assenede, d'Evergem, de Lochristi et de Zelzate"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.18"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.18"
   },
   {
-    id: "Geraardsbergen",
-    arrondissement: "EastFlanders",
+    id: "geraardsbergen",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Geraardsbergen",
       fr: "Grammont"
@@ -2733,24 +2733,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "41018"
+        municipality: "41018"
       },
       {
-        refnis: "45041"
+        municipality: "45041"
       },
       {
-        refnis: "45059"
+        municipality: "45059"
       }
     ],
     territory: {
       nl: "De steden Geraardsbergen, Ronse en de gemeente Brakel",
       fr: "Les villes de Grammont, de Renaix et la commune de Brakel"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.19"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.19"
   },
   {
-    id: "Oudenaarde",
-    arrondissement: "EastFlanders",
+    id: "oudenaarde",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Oudenaarde",
       fr: "Audenarde"
@@ -2761,36 +2761,36 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "45035"
+        municipality: "45035"
       },
       {
-        refnis: "45060"
+        municipality: "45060"
       },
       {
-        refnis: "45061"
+        municipality: "45061"
       },
       {
-        refnis: "45062"
+        municipality: "45062"
       },
       {
-        refnis: "45064"
+        municipality: "45064"
       },
       {
-        refnis: "45065"
+        municipality: "45065"
       },
       {
-        refnis: "45068"
+        municipality: "45068"
       }
     ],
     territory: {
       nl: "De stad Oudenaarde en de gemeenten Horebeke, Kluisbergen, Kruisem, Maarkedal, Wortegem-Petegem en Zwalm",
       fr: "La ville d'Audenarde et les communes de Horebeke, de Kluisbergen, de Kruisem, de Maarkedal, de Wortegem-Petegem et de Zwalm"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.20"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.20"
   },
   {
-    id: "Herzele",
-    arrondissement: "EastFlanders",
+    id: "herzele",
+    arrondissement: "oost-vlaanderen",
     name: {
       nl: "Herzele",
       fr: "Herzele"
@@ -2801,27 +2801,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "41027"
+        municipality: "41027"
       },
       {
-        refnis: "41063"
+        municipality: "41063"
       },
       {
-        refnis: "41081"
+        municipality: "41081"
       },
       {
-        refnis: "45063"
+        municipality: "45063"
       }
     ],
     territory: {
       nl: "De stad Zottegem en de gemeenten Herzele, Lierde en Sint-Lievens-Houtem",
       fr: "La ville de Zottegem et les communes de Herzele, de Lierde et de Sint-Lievens-Houtem"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 6.21"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 6.21"
   },
   {
-    id: "Brugge1",
-    arrondissement: "WestFlanders",
+    id: "brugge-1",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Brugge",
       fr: "Bruges"
@@ -2833,25 +2833,25 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "31003"
+        municipality: "31003"
       },
       {
-        refnis: "31005",
+        municipality: "31005",
         partial: true
       },
       {
-        refnis: "31022"
+        municipality: "31022"
       }
     ],
     territory: {
       nl: "De gemeenten Beernem, Oostkamp en het gedeelte van het grondgebied van de stad Brugge begrensd door de middellijn van het kanaal Gent-Brugge-Oostende en de middellijn van het kanaal Brugge-Damme",
       fr: "Les communes de Beernem, d'Oostkamp et la partie du territoire de la ville de Bruges d\xE9limit\xE9e par la ligne m\xE9diane du canal Gand-Bruges-Ostende et la ligne m\xE9diane du canal Bruges-Damme"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.1"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.1"
   },
   {
-    id: "Brugge2",
-    arrondissement: "WestFlanders",
+    id: "brugge-2",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Brugge",
       fr: "Bruges"
@@ -2863,31 +2863,31 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "31004"
+        municipality: "31004"
       },
       {
-        refnis: "31005",
+        municipality: "31005",
         partial: true
       },
       {
-        refnis: "31012"
+        municipality: "31012"
       },
       {
-        refnis: "31042"
+        municipality: "31042"
       },
       {
-        refnis: "35029"
+        municipality: "35029"
       }
     ],
     territory: {
       nl: "De stad Blankenberge, de gemeenten De Haan, Jabbeke en Zuienkerke en het gedeelte van het grondgebied van de stad Brugge begrensd door de middellijn van het Boudewijnkanaal en de middellijn van het kanaal Gent-Brugge-Oostende",
       fr: "La ville de Blankenberge, les communes de De Haan, de Jabbeke et de Zuienkerke et la partie du territoire de la ville de Bruges d\xE9limit\xE9e par la ligne m\xE9diane du canal Baudouin et la ligne m\xE9diane du canal Gand-Bruges-Ostende"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.2"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.2"
   },
   {
-    id: "Brugge3",
-    arrondissement: "WestFlanders",
+    id: "brugge-3",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Brugge",
       fr: "Bruges"
@@ -2899,25 +2899,25 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "31005",
+        municipality: "31005",
         partial: true
       },
       {
-        refnis: "31006"
+        municipality: "31006"
       },
       {
-        refnis: "31043"
+        municipality: "31043"
       }
     ],
     territory: {
       nl: "De stad Damme, de gemeente Knokke-Heist en het gedeelte van het grondgebied van de stad Brugge begrensd door de middellijn van het kanaal Brugge-Damme, de middellijn van het kanaal Gent-Brugge-Oostende en de middellijn van het Boudewijnkanaal",
       fr: "La ville de Damme, la commune de Knokke-Heist et la partie du territoire de la ville de Bruges d\xE9limit\xE9e par la ligne m\xE9diane du canal de Bruges-Damme, la ligne m\xE9diane du canal de Gand-Bruges-Ostende et la ligne m\xE9diane du canal Baudouin"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.3"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.3"
   },
   {
-    id: "Brugge4",
-    arrondissement: "WestFlanders",
+    id: "brugge-4",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Brugge",
       fr: "Bruges"
@@ -2929,7 +2929,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "31005",
+        municipality: "31005",
         partial: true
       }
     ],
@@ -2937,11 +2937,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de stad Brugge ten noorden en ten oosten begrensd door de middellijn van het kanaal Gent-Brugge-Oostende",
       fr: "La partie du territoire de la ville de Bruges d\xE9limit\xE9e au nord et \xE0 l'est par la ligne m\xE9diane du canal Gand-Bruges-Ostende"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.4"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.4"
   },
   {
-    id: "Oostende1",
-    arrondissement: "WestFlanders",
+    id: "oostende-1",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Oostende",
       fr: "Ostende"
@@ -2953,10 +2953,10 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "35002"
+        municipality: "35002"
       },
       {
-        refnis: "35013",
+        municipality: "35013",
         partial: true
       }
     ],
@@ -2964,11 +2964,11 @@ var cantons_default = [
       nl: "De gemeente Bredene en het gedeelte van het grondgebied van de stad Oostende gelegen ten oosten van de middellijn van de Koninginnelaan van de dijk tot aan de Torhoutsesteenweg en ten zuiden van de middellijn van de Torhoutsesteenweg vanaf de Koninginnelaan tot aan de grens van de stad",
       fr: "La commune de Bredene et la partie du territoire de la ville d'Ostende situ\xE9e \xE0 l'est de la ligne m\xE9diane de la Koninginnelaan de la digue jusqu'\xE0 la Torhoutsesteenweg et au sud de la ligne m\xE9diane de la Torhoutsesteenweg depuis la Koninginnelaan jusqu'\xE0 la limite de la ville"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.5"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.5"
   },
   {
-    id: "Oostende2",
-    arrondissement: "WestFlanders",
+    id: "oostende-2",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Oostende",
       fr: "Ostende"
@@ -2980,28 +2980,28 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "35005"
+        municipality: "35005"
       },
       {
-        refnis: "35011"
+        municipality: "35011"
       },
       {
-        refnis: "35013",
+        municipality: "35013",
         partial: true
       },
       {
-        refnis: "35014"
+        municipality: "35014"
       }
     ],
     territory: {
       nl: "De steden Oudenburg, Gistel, de gemeente Middelkerke en het gedeelte van het grondgebied van de stad Oostende gelegen ten westen van de middellijn van de Koninginnelaan, van de dijk tot aan de Torhoutsesteenweg, en ten noorden van de middellijn van de Torhoutsesteenweg vanaf de Koninginnelaan tot aan de grens van de stad",
       fr: "Les villes d'Oudenburg, de Gistel, la commune de Middelkerke et la partie du territoire de la ville d'Ostende situ\xE9e \xE0 l'ouest de la ligne m\xE9diane de la Koninginnelaan, de la digue jusqu'\xE0 la Torhoutsesteenweg, et au nord de la ligne m\xE9diane de la Torhoutsesteenweg \xE0 partir de la Koninginnelaan jusqu'\xE0 la limite de la ville"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.6"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.6"
   },
   {
-    id: "Tielt",
-    arrondissement: "WestFlanders",
+    id: "tielt",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Tielt",
       fr: "Tielt"
@@ -3012,30 +3012,30 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "37002"
+        municipality: "37002"
       },
       {
-        refnis: "37011"
+        municipality: "37011"
       },
       {
-        refnis: "37020"
+        municipality: "37020"
       },
       {
-        refnis: "37021"
+        municipality: "37021"
       },
       {
-        refnis: "37022"
+        municipality: "37022"
       }
     ],
     territory: {
       nl: "De stad Tielt en de gemeenten Ardooie, Dentergem, Pittem en Wingene",
       fr: "La ville de Tielt et les communes d'Ardooie, de Dentergem, de Pittem et de Wingene"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.7"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.7"
   },
   {
-    id: "Torhout",
-    arrondissement: "WestFlanders",
+    id: "torhout",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Torhout",
       fr: "Torhout"
@@ -3046,33 +3046,33 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "31033"
+        municipality: "31033"
       },
       {
-        refnis: "31040"
+        municipality: "31040"
       },
       {
-        refnis: "32010"
+        municipality: "32010"
       },
       {
-        refnis: "32011"
+        municipality: "32011"
       },
       {
-        refnis: "35006"
+        municipality: "35006"
       },
       {
-        refnis: "36011"
+        municipality: "36011"
       }
     ],
     territory: {
       nl: "De stad Torhout en de gemeenten Ichtegem, Koekelare, Kortemark, Lichtervelde en Zedelgem",
       fr: "La ville de Torhout et les communes d'Ichtegem, de Koekelare, de Kortemark, de Lichtervelde et de Zedelgem"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.8"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.8"
   },
   {
-    id: "Ieper",
-    arrondissement: "WestFlanders",
+    id: "ieper",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Ieper",
       fr: "Ypres"
@@ -3083,27 +3083,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "33011"
+        municipality: "33011"
       },
       {
-        refnis: "33037"
+        municipality: "33037"
       },
       {
-        refnis: "33040"
+        municipality: "33040"
       },
       {
-        refnis: "36019"
+        municipality: "36019"
       }
     ],
     territory: {
       nl: "De stad Ieper en de gemeenten Langemark-Poelkapelle, Staden en Zonnebeke",
       fr: "La ville d'Ypres et les communes de Langemark-Poelkapelle, de Staden et de Zonnebeke"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.9"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.9"
   },
   {
-    id: "Poperinge",
-    arrondissement: "WestFlanders",
+    id: "poperinge",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Poperinge",
       fr: "Poperinge"
@@ -3114,33 +3114,33 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "32006"
+        municipality: "32006"
       },
       {
-        refnis: "32030"
+        municipality: "32030"
       },
       {
-        refnis: "33016"
+        municipality: "33016"
       },
       {
-        refnis: "33021"
+        municipality: "33021"
       },
       {
-        refnis: "33039"
+        municipality: "33039"
       },
       {
-        refnis: "33041"
+        municipality: "33041"
       }
     ],
     territory: {
       nl: "De steden Lo-Reninge, Poperinge, Mesen en de gemeenten Heuvelland, Houthulst en Vleteren",
       fr: "Les villes de Lo-Reninge, de Poperinge, de Messines et les communes de Heuvelland, de Houthulst et de Vleteren"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.10"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.10"
   },
   {
-    id: "Izegem",
-    arrondissement: "WestFlanders",
+    id: "izegem",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Izegem",
       fr: "Izegem"
@@ -3151,27 +3151,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "34025"
+        municipality: "34025"
       },
       {
-        refnis: "36007"
+        municipality: "36007"
       },
       {
-        refnis: "36008"
+        municipality: "36008"
       },
       {
-        refnis: "36010"
+        municipality: "36010"
       }
     ],
     territory: {
       nl: "De stad Izegem en de gemeenten Ingelmunster, Ledegem en Lendelede",
       fr: "La ville d'Izegem et les communes d'Ingelmunster, de Ledegem et de Lendelede"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.11"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.11"
   },
   {
-    id: "Kortrijk1",
-    arrondissement: "WestFlanders",
+    id: "kortrijk-1",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Kortrijk",
       fr: "Courtrai"
@@ -3183,22 +3183,22 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "34022",
+        municipality: "34022",
         partial: true
       },
       {
-        refnis: "34023"
+        municipality: "34023"
       }
     ],
     territory: {
       nl: "De gemeente Kuurne en het gedeelte van het grondgebied van de stad Kortrijk boven de E17",
       fr: "La commune de Kuurne et la partie du territoire de la ville de Courtrai situ\xE9e au-del\xE0 de la E17"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.12"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.12"
   },
   {
-    id: "Kortrijk2",
-    arrondissement: "WestFlanders",
+    id: "kortrijk-2",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Kortrijk",
       fr: "Courtrai"
@@ -3210,34 +3210,34 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "34002"
+        municipality: "34002"
       },
       {
-        refnis: "34003"
+        municipality: "34003"
       },
       {
-        refnis: "34009"
+        municipality: "34009"
       },
       {
-        refnis: "34022",
+        municipality: "34022",
         partial: true
       },
       {
-        refnis: "34042"
+        municipality: "34042"
       },
       {
-        refnis: "34043"
+        municipality: "34043"
       }
     ],
     territory: {
       nl: "De gemeenten Anzegem, Avelgem, Deerlijk, Spiere-Helkijn, Zwevegem en het gedeelte van het grondgebied van de stad Kortrijk onder de E17",
       fr: "Les communes d'Anzegem, d'Avelgem, de Deerlijk, d'Espierres-Helchin, de Zwevegem et la partie du territoire de la ville de Courtrai en-de\xE7\xE0 de la E17"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.13"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.13"
   },
   {
-    id: "Menen",
-    arrondissement: "WestFlanders",
+    id: "menen",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Menen",
       fr: "Menin"
@@ -3248,27 +3248,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "33029"
+        municipality: "33029"
       },
       {
-        refnis: "34027"
+        municipality: "34027"
       },
       {
-        refnis: "34041"
+        municipality: "34041"
       },
       {
-        refnis: "36012"
+        municipality: "36012"
       }
     ],
     territory: {
       nl: "De steden Menen, Wervik en de gemeenten Moorslede en Wevelgem",
       fr: "Les villes de Menin, de Wervik et les communes de Moorslede et de Wevelgem"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.14"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.14"
   },
   {
-    id: "Roeselare",
-    arrondissement: "WestFlanders",
+    id: "roeselare",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Roeselare",
       fr: "Roulers"
@@ -3279,21 +3279,21 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "36006"
+        municipality: "36006"
       },
       {
-        refnis: "36015"
+        municipality: "36015"
       }
     ],
     territory: {
       nl: "De stad Roeselare en de gemeente Hooglede",
       fr: "La ville de Roulers et la commune de Hooglede"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.15"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.15"
   },
   {
-    id: "Waregem",
-    arrondissement: "WestFlanders",
+    id: "waregem",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Waregem",
       fr: "Waregem"
@@ -3304,27 +3304,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "34013"
+        municipality: "34013"
       },
       {
-        refnis: "34040"
+        municipality: "34040"
       },
       {
-        refnis: "37010"
+        municipality: "37010"
       },
       {
-        refnis: "37017"
+        municipality: "37017"
       }
     ],
     territory: {
       nl: "De steden Harelbeke en Waregem en de gemeenten Oostrozebeke en Wielsbeke",
       fr: "Les villes de Harelbeke et de Waregem et les communes d'Oostrozebeke et de Wielsbeke"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.16"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.16"
   },
   {
-    id: "Veurne",
-    arrondissement: "WestFlanders",
+    id: "veurne",
+    arrondissement: "west-vlaanderen",
     name: {
       nl: "Veurne",
       fr: "Furnes"
@@ -3335,33 +3335,33 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "32003"
+        municipality: "32003"
       },
       {
-        refnis: "38002"
+        municipality: "38002"
       },
       {
-        refnis: "38008"
+        municipality: "38008"
       },
       {
-        refnis: "38014"
+        municipality: "38014"
       },
       {
-        refnis: "38016"
+        municipality: "38016"
       },
       {
-        refnis: "38025"
+        municipality: "38025"
       }
     ],
     territory: {
       nl: "De steden Diksmuide, Nieuwpoort, Veurne en de gemeenten Alveringem, De Panne en Koksijde",
       fr: "Les villes de Dixmude, de Nieuport, de Furnes et les communes d'Alveringem, de La Panne et de Coxyde"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 7.17"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 7.17"
   },
   {
-    id: "EupenSanktVith1",
-    arrondissement: "Eupen",
+    id: "eupen-sankt-vith-1",
+    arrondissement: "eupen",
     name: {
       nl: "Eupen-Sankt-Vith",
       fr: "Eupen-Saint-Vith"
@@ -3373,27 +3373,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "63023"
+        municipality: "63023"
       },
       {
-        refnis: "63040"
+        municipality: "63040"
       },
       {
-        refnis: "63048"
+        municipality: "63048"
       },
       {
-        refnis: "63061"
+        municipality: "63061"
       }
     ],
     territory: {
       nl: "De stad Eupen en de gemeenten Kelmis, Lontzen en Raeren",
       fr: "La ville d'Eupen et les communes de La Calamine, de Lontzen et de Raeren"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.1"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.1"
   },
   {
-    id: "EupenSanktVith2",
-    arrondissement: "Eupen",
+    id: "eupen-sankt-vith-2",
+    arrondissement: "eupen",
     name: {
       nl: "Eupen-Sankt-Vith",
       fr: "Eupen-Saint-Vith"
@@ -3405,30 +3405,30 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "63001"
+        municipality: "63001"
       },
       {
-        refnis: "63012"
+        municipality: "63012"
       },
       {
-        refnis: "63013"
+        municipality: "63013"
       },
       {
-        refnis: "63067"
+        municipality: "63067"
       },
       {
-        refnis: "63087"
+        municipality: "63087"
       }
     ],
     territory: {
       nl: "De stad Sankt-Vith en de gemeenten Amel, B\xFCllingen, Burg-Reuland en Butgenbach",
       fr: "La ville de Saint-Vith et les communes d'Ambl\xE8ve, de Bullange, de Burg-Reuland et de Butgenbach"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.2"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.2"
   },
   {
-    id: "Huy1",
-    arrondissement: "Liege",
+    id: "huy-1",
+    arrondissement: "liege",
     name: {
       nl: "Hoei",
       fr: "Huy"
@@ -3440,42 +3440,42 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "61012"
+        municipality: "61012"
       },
       {
-        refnis: "61031"
+        municipality: "61031"
       },
       {
-        refnis: "61039"
+        municipality: "61039"
       },
       {
-        refnis: "61041"
+        municipality: "61041"
       },
       {
-        refnis: "61043"
+        municipality: "61043"
       },
       {
-        refnis: "61048"
+        municipality: "61048"
       },
       {
-        refnis: "61079"
+        municipality: "61079"
       },
       {
-        refnis: "61081"
+        municipality: "61081"
       },
       {
-        refnis: "62121"
+        municipality: "62121"
       }
     ],
     territory: {
       nl: "De stad Hoei en de gemeenten Anthisnes, Clavier, Marchin, Modave, Nandrin, Neupr\xE9, Ouffet en Tinlot",
       fr: "La ville de Huy et les communes d'Anthisnes, de Clavier, de Marchin, de Modave, de Nandrin, de Neupr\xE9, de Ouffet et de Tinlot"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.3"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.3"
   },
   {
-    id: "Huy2",
-    arrondissement: "Liege",
+    id: "huy-2",
+    arrondissement: "liege",
     name: {
       nl: "Hoei",
       fr: "Huy"
@@ -3487,42 +3487,42 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "61003"
+        municipality: "61003"
       },
       {
-        refnis: "61010"
+        municipality: "61010"
       },
       {
-        refnis: "61028"
+        municipality: "61028"
       },
       {
-        refnis: "61063"
+        municipality: "61063"
       },
       {
-        refnis: "61068"
+        municipality: "61068"
       },
       {
-        refnis: "61072"
+        municipality: "61072"
       },
       {
-        refnis: "64015"
+        municipality: "64015"
       },
       {
-        refnis: "64065"
+        municipality: "64065"
       },
       {
-        refnis: "64075"
+        municipality: "64075"
       }
     ],
     territory: {
       nl: "De gemeenten Amay, Braives, Burdinne, H\xE9ron, Saint-Georges-sur-Meuse, Villers-le-Bouillet, Verlaine, Wanze en Wasseiges",
       fr: "Les communes d'Amay, de Braives, de Burdinne, de H\xE9ron, de Saint-Georges-sur-Meuse, de Villers-le-Bouillet, de Verlaine, de Wanze et de Wasseiges"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.4"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.4"
   },
   {
-    id: "Fleron",
-    arrondissement: "Liege",
+    id: "fleron",
+    arrondissement: "liege",
     name: {
       nl: "Fl\xE9ron",
       fr: "Fl\xE9ron"
@@ -3533,27 +3533,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "62015"
+        municipality: "62015"
       },
       {
-        refnis: "62022"
+        municipality: "62022"
       },
       {
-        refnis: "62038"
+        municipality: "62038"
       },
       {
-        refnis: "62099"
+        municipality: "62099"
       }
     ],
     territory: {
       nl: "De gemeenten Beyne-Heusay, Chaudfontaine, Fl\xE9ron en Soumagne",
       fr: "Les communes de Beyne-Heusay, de Chaudfontaine, de Fl\xE9ron et de Soumagne"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.5"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.5"
   },
   {
-    id: "GraceHollogne",
-    arrondissement: "Liege",
+    id: "grace-hollogne",
+    arrondissement: "liege",
     name: {
       nl: "Gr\xE2ce-Hollogne",
       fr: "Gr\xE2ce-Hollogne"
@@ -3564,27 +3564,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "61080"
+        municipality: "61080"
       },
       {
-        refnis: "62006"
+        municipality: "62006"
       },
       {
-        refnis: "62118"
+        municipality: "62118"
       },
       {
-        refnis: "62120"
+        municipality: "62120"
       }
     ],
     territory: {
       nl: "De gemeenten Awans, Engis, Fl\xE9malle en Gr\xE2ce-Hollogne",
       fr: "Les communes d'Awans, d'Engis, de Fl\xE9malle et de Gr\xE2ce-Hollogne"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.6"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.6"
   },
   {
-    id: "Herstal",
-    arrondissement: "Liege",
+    id: "herstal",
+    arrondissement: "liege",
     name: {
       nl: "Herstal",
       fr: "Herstal"
@@ -3595,21 +3595,21 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "62051"
+        municipality: "62051"
       },
       {
-        refnis: "62079"
+        municipality: "62079"
       }
     ],
     territory: {
       nl: "De gemeenten Herstal en Oupeye",
       fr: "Les communes de Herstal et d'Oupeye"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.7"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.7"
   },
   {
-    id: "Liege1",
-    arrondissement: "Liege",
+    id: "liege-1",
+    arrondissement: "liege",
     name: {
       nl: "Luik",
       fr: "Li\xE8ge"
@@ -3621,7 +3621,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "62063",
+        municipality: "62063",
         partial: true
       }
     ],
@@ -3629,11 +3629,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de stad Luik gelegen ten oosten van de middellijnen van de Vesder (rechteroever), de Ourthe (rechteroever) en de Maas (rechteroever vanaf de pont de F\xE9tinne)",
       fr: "La partie du territoire de la ville de Li\xE8ge situ\xE9e \xE0 l'est des lignes m\xE9dianes de la Vesdre (rive droite), de l'Ourthe (rive droite) et de la Meuse (rive droite \xE0 partir du pont de F\xE9tinne)"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.8"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.8"
   },
   {
-    id: "Liege2",
-    arrondissement: "Liege",
+    id: "liege-2",
+    arrondissement: "liege",
     name: {
       nl: "Luik",
       fr: "Li\xE8ge"
@@ -3645,7 +3645,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "62063",
+        municipality: "62063",
         partial: true
       }
     ],
@@ -3653,11 +3653,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de stad Luik begrensd door de middellijnen van de rue Saint-Gilles, de rue Saint-Laurent, de rue Mont Saint-Martin, de rue Saint-Hubert, de rue Sainte-Croix, een lijn die de verbinding vormt tussen de middellijn van de rue Sainte-Croix en de middellijn van de rue du Palais, de rue des Mineurs, de rue du Pont, een lijn die de verbinding vormt tussen de middellijn van de rue du Pont en de middellijn van de Maas (linkeroever) tot de zuidgrens van de stad Luik, evenals het gedeelte van het grondgebied van de stad Luik begrensd door de middellijnen van de rue de la Tonne, de rue des XIV Verges, de rue de Vis\xE9 Voie tot de noordgrens van de stad Luik",
       fr: "La partie du territoire de la ville de Li\xE8ge d\xE9limit\xE9e par les lignes m\xE9dianes de la rue Saint-Gilles, rue Saint-Laurent, rue Mont Saint-Martin, rue Saint-Hubert, rue Sainte-Croix, une ligne reliant la ligne m\xE9diane de la rue Sainte-Croix \xE0 la ligne m\xE9diane de la rue du Palais, rue des Mineurs, rue du Pont, une ligne reliant la ligne m\xE9diane de la rue du Pont \xE0 la ligne m\xE9diane de la Meuse (rive gauche) jusqu'\xE0 la limite sud de la ville de Li\xE8ge ainsi que la partie du territoire de la ville de Li\xE8ge d\xE9limit\xE9e par les lignes m\xE9dianes de la rue de la Tonne, rue des XIV Verges, rue Vis\xE9 Voie jusqu'\xE0 la limite nord de la ville de Li\xE8ge"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.9"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.9"
   },
   {
-    id: "Liege3",
-    arrondissement: "Liege",
+    id: "liege-3",
+    arrondissement: "liege",
     name: {
       nl: "Luik",
       fr: "Li\xE8ge"
@@ -3669,7 +3669,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "62063",
+        municipality: "62063",
         partial: true
       }
     ],
@@ -3677,11 +3677,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de stad Luik begrensd ten noorden door de middellijnen van de rue de la Tonne, de rue des XIV Verges, de rue Vis\xE9 Voie en de gemeente Herstal, ten oosten door de middellijn van de Maas, ten zuiden door de middellijnen van de rue Saint-Gilles, de rue Saint-Laurent, de rue Mont Saint-Martin, de rue Saint-Hubert, de rue Sainte-Croix, een lijn die de verbinding vormt tussen de middellijn van de rue Sainte-Croix en de middellijn van de rue du Palais, de rue des Mineurs, de rue du Pont, een lijn die de verbinding vormt tussen de middellijn van de rue du Pont en de middellijn van de Maas (linkeroever)",
       fr: "La partie du territoire de la ville de Li\xE8ge d\xE9limit\xE9e au nord par les lignes m\xE9dianes de la rue de la Tonne, rue des XIV Verges, rue Vis\xE9 Voie et la commune de Herstal, \xE0 l'est par la ligne m\xE9diane de la Meuse, au sud par les lignes m\xE9dianes de la rue Saint-Gilles, rue Saint-Laurent, rue Mont Saint-Martin, rue Saint-Hubert, rue Sainte-Croix, une ligne reliant la ligne m\xE9diane de la rue Sainte-Croix \xE0 la ligne m\xE9diane de la rue du Palais, rue des Mineurs, rue du Pont, une ligne reliant la ligne m\xE9diane de la rue du Pont \xE0 la ligne m\xE9diane de la Meuse (rive gauche)"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.10"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.10"
   },
   {
-    id: "Liege4",
-    arrondissement: "Liege",
+    id: "liege-4",
+    arrondissement: "liege",
     name: {
       nl: "Luik",
       fr: "Li\xE8ge"
@@ -3693,25 +3693,25 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "62003"
+        municipality: "62003"
       },
       {
-        refnis: "62063",
+        municipality: "62063",
         partial: true
       },
       {
-        refnis: "62093"
+        municipality: "62093"
       }
     ],
     territory: {
       nl: "De gemeenten Ans, Saint-Nicolas en het gedeelte van het grondgebied van de stad Luik gelegen tussen het westen van de middellijn van de Ourthe (linkeroever) en de Maas (tot de pont de Fragn\xE9e)",
       fr: "Les communes d'Ans, de Saint Nicolas et la partie du territoire de la Ville de Li\xE8ge repris entre l'ouest de la ligne m\xE9diane de l'Ourthe (rive gauche) et de la Meuse (jusqu'au pont de Fragn\xE9e)"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.11"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.11"
   },
   {
-    id: "Seraing",
-    arrondissement: "Liege",
+    id: "seraing",
+    arrondissement: "liege",
     name: {
       nl: "Seraing",
       fr: "Seraing"
@@ -3722,18 +3722,18 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "62096"
+        municipality: "62096"
       }
     ],
     territory: {
       nl: "De stad Seraing",
       fr: "La ville de Seraing"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.12"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.12"
   },
   {
-    id: "Sprimont",
-    arrondissement: "Liege",
+    id: "sprimont",
+    arrondissement: "liege",
     name: {
       nl: "Sprimont",
       fr: "Sprimont"
@@ -3744,36 +3744,36 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "61019"
+        municipality: "61019"
       },
       {
-        refnis: "61024"
+        municipality: "61024"
       },
       {
-        refnis: "62009"
+        municipality: "62009"
       },
       {
-        refnis: "62026"
+        municipality: "62026"
       },
       {
-        refnis: "62032"
+        municipality: "62032"
       },
       {
-        refnis: "62100"
+        municipality: "62100"
       },
       {
-        refnis: "62122"
+        municipality: "62122"
       }
     ],
     territory: {
       nl: "De gemeenten Aywaille, Comblain-au-Pont, Esneux, Ferri\xE8res, Hamoir, Sprimont en Trooz",
       fr: "Les communes d'Aywaille, de Comblain-au-Pont, d'Esneux, de Ferri\xE8res, de Hamoir, de Sprimont et de Trooz"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.13"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.13"
   },
   {
-    id: "Vise",
-    arrondissement: "Liege",
+    id: "vise",
+    arrondissement: "liege",
     name: {
       nl: "Wezet",
       fr: "Vis\xE9"
@@ -3784,30 +3784,30 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "62011"
+        municipality: "62011"
       },
       {
-        refnis: "62027"
+        municipality: "62027"
       },
       {
-        refnis: "62060"
+        municipality: "62060"
       },
       {
-        refnis: "62108"
+        municipality: "62108"
       },
       {
-        refnis: "62119"
+        municipality: "62119"
       }
     ],
     territory: {
       nl: "De stad Wezet en de gemeenten Bitsingen, Bl\xE9gny, Dalhem en Juprelle",
       fr: "La ville de Vis\xE9 et les communes de Bassenge, de Bl\xE9gny, de Dalhem et de Juprelle"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.14"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.14"
   },
   {
-    id: "Waremme",
-    arrondissement: "Liege",
+    id: "waremme",
+    arrondissement: "liege",
     name: {
       nl: "Borgworm",
       fr: "Waremme"
@@ -3818,48 +3818,48 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "64008"
+        municipality: "64008"
       },
       {
-        refnis: "64021"
+        municipality: "64021"
       },
       {
-        refnis: "64023"
+        municipality: "64023"
       },
       {
-        refnis: "64025"
+        municipality: "64025"
       },
       {
-        refnis: "64029"
+        municipality: "64029"
       },
       {
-        refnis: "64034"
+        municipality: "64034"
       },
       {
-        refnis: "64047"
+        municipality: "64047"
       },
       {
-        refnis: "64056"
+        municipality: "64056"
       },
       {
-        refnis: "64063"
+        municipality: "64063"
       },
       {
-        refnis: "64074"
+        municipality: "64074"
       },
       {
-        refnis: "64076"
+        municipality: "64076"
       }
     ],
     territory: {
       nl: "De steden Borgworm, Hannuit en de gemeenten Berloz, Crisn\xE9e, Donceel, Faimes, Fexhe-le-Haut-Clocher, Geer, Lijsem, Oerle en Remicourt",
       fr: "Les villes de Waremme, de Hannut et les communes de Berloz, de Crisn\xE9e, de Donceel, de Faimes, de Fexhe-le-Haut-Clocher, de Geer, de Lincent, d'Oreye et de Remicourt"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.15"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.15"
   },
   {
-    id: "Limbourg",
-    arrondissement: "Liege",
+    id: "limbourg",
+    arrondissement: "liege",
     name: {
       nl: "Limburg",
       fr: "Limbourg"
@@ -3870,36 +3870,36 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "63003"
+        municipality: "63003"
       },
       {
-        refnis: "63004"
+        municipality: "63004"
       },
       {
-        refnis: "63038"
+        municipality: "63038"
       },
       {
-        refnis: "63046"
+        municipality: "63046"
       },
       {
-        refnis: "63084"
+        municipality: "63084"
       },
       {
-        refnis: "63088"
+        municipality: "63088"
       },
       {
-        refnis: "63089"
+        municipality: "63089"
       }
     ],
     territory: {
       nl: "De stad Limburg en de gemeenten Aubel, Baelen, Jalhay, Plombi\xE8res, Thimister-Clermont en Welkenraedt",
       fr: "La ville de Limbourg et les communes d'Aubel, de Baelen, de Jalhay, de Plombi\xE8res, de Thimister-Clermont et de Welkenraedt"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.16"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.16"
   },
   {
-    id: "Spa",
-    arrondissement: "Liege",
+    id: "spa",
+    arrondissement: "liege",
     name: {
       nl: "Spa",
       fr: "Spa"
@@ -3910,36 +3910,36 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "63045"
+        municipality: "63045"
       },
       {
-        refnis: "63049"
+        municipality: "63049"
       },
       {
-        refnis: "63072"
+        municipality: "63072"
       },
       {
-        refnis: "63073"
+        municipality: "63073"
       },
       {
-        refnis: "63075"
+        municipality: "63075"
       },
       {
-        refnis: "63080"
+        municipality: "63080"
       },
       {
-        refnis: "63086"
+        municipality: "63086"
       }
     ],
     territory: {
       nl: "De steden Malmedy, Stavelot en de gemeenten Lierneux, Spa, Stoumont, Trois-Ponts en Weismes",
       fr: "Les villes de Malm\xE9dy, de Stavelot et les communes de Lierneux, de Spa, de Stoumont, de Trois-Ponts et de Waimes"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.17"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.17"
   },
   {
-    id: "Verviers1",
-    arrondissement: "Liege",
+    id: "verviers-1",
+    arrondissement: "liege",
     name: {
       nl: "Verviers",
       fr: "Verviers"
@@ -3951,19 +3951,19 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "63020"
+        municipality: "63020"
       },
       {
-        refnis: "63035"
+        municipality: "63035"
       },
       {
-        refnis: "63057"
+        municipality: "63057"
       },
       {
-        refnis: "63058"
+        municipality: "63058"
       },
       {
-        refnis: "63079",
+        municipality: "63079",
         partial: true
       }
     ],
@@ -3971,11 +3971,11 @@ var cantons_default = [
       nl: "De stad Herve, de gemeenten Dison, Olne, Pepinster en het gedeelte van het grondgebied van de stad Verviers gelegen ten noorden van de Vesder",
       fr: "La ville de Herve, les communes de Dison, d'Olne, de Pepinster et la partie du territoire de la ville de Verviers situ\xE9e au nord de la Vesdre"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.18"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.18"
   },
   {
-    id: "Verviers2",
-    arrondissement: "Liege",
+    id: "verviers-2",
+    arrondissement: "liege",
     name: {
       nl: "Verviers",
       fr: "Verviers"
@@ -3987,10 +3987,10 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "63076"
+        municipality: "63076"
       },
       {
-        refnis: "63079",
+        municipality: "63079",
         partial: true
       }
     ],
@@ -3998,11 +3998,11 @@ var cantons_default = [
       nl: "De gemeente Theux en het gedeelte van het grondgebied van de stad Verviers gelegen ten zuiden van de Vesder",
       fr: "La commune de Theux et la partie du territoire de la ville de Verviers situ\xE9e au sud de la Vesdre"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 8.19"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 8.19"
   },
   {
-    id: "Arlon",
-    arrondissement: "Luxembourg",
+    id: "arlon",
+    arrondissement: "luxembourg",
     name: {
       nl: "Aarlen",
       fr: "Arlon"
@@ -4013,27 +4013,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "81001"
+        municipality: "81001"
       },
       {
-        refnis: "81003"
+        municipality: "81003"
       },
       {
-        refnis: "81004"
+        municipality: "81004"
       },
       {
-        refnis: "81015"
+        municipality: "81015"
       }
     ],
     territory: {
       nl: "De steden Aarlen en Aubange en de gemeenten Attert en Messancy",
       fr: "Les villes d'Arlon et d'Aubange et les communes d'Attert et de Messancy"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 9.1"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 9.1"
   },
   {
-    id: "Virton",
-    arrondissement: "Luxembourg",
+    id: "virton",
+    arrondissement: "luxembourg",
     name: {
       nl: "Virton",
       fr: "Virton"
@@ -4044,45 +4044,45 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "85007"
+        municipality: "85007"
       },
       {
-        refnis: "85009"
+        municipality: "85009"
       },
       {
-        refnis: "85011"
+        municipality: "85011"
       },
       {
-        refnis: "85024"
+        municipality: "85024"
       },
       {
-        refnis: "85026"
+        municipality: "85026"
       },
       {
-        refnis: "85034"
+        municipality: "85034"
       },
       {
-        refnis: "85039"
+        municipality: "85039"
       },
       {
-        refnis: "85045"
+        municipality: "85045"
       },
       {
-        refnis: "85046"
+        municipality: "85046"
       },
       {
-        refnis: "85047"
+        municipality: "85047"
       }
     ],
     territory: {
       nl: "De steden Chiny, Florenville, Virton en de gemeenten Etalle, Habay, Meix-devant-Virton, Musson, Rouvroy, Saint-L\xE9ger en Tintigny",
       fr: "Les villes de Chiny, de Florenville, de Virton et les communes d'Etalle, de Habay, de Meix-devant-Virton, de Musson, de Rouvroy, de Saint-L\xE9ger et de Tintigny"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 9.2"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 9.2"
   },
   {
-    id: "MarcheEnFamenne",
-    arrondissement: "Luxembourg",
+    id: "marche-en-famenne",
+    arrondissement: "luxembourg",
     name: {
       nl: "Marche-en-Famenne",
       fr: "Marche-en-Famenne"
@@ -4093,42 +4093,42 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "83012"
+        municipality: "83012"
       },
       {
-        refnis: "83013"
+        municipality: "83013"
       },
       {
-        refnis: "83028"
+        municipality: "83028"
       },
       {
-        refnis: "83031"
+        municipality: "83031"
       },
       {
-        refnis: "83034"
+        municipality: "83034"
       },
       {
-        refnis: "83040"
+        municipality: "83040"
       },
       {
-        refnis: "83044"
+        municipality: "83044"
       },
       {
-        refnis: "83049"
+        municipality: "83049"
       },
       {
-        refnis: "83055"
+        municipality: "83055"
       }
     ],
     territory: {
       nl: "De steden Durbuy, Marche-en-Famenne, La Roche-en-Ardenne en de gemeenten Erez\xE9e, Hotton, Manhay, Nassogne, Rendeux en Tenneville",
       fr: "Les villes de Durbuy, de Marche-en-Famenne, de La Roche-en-Ardenne et les communes d'Erez\xE9e, de Hotton, de Manhay, de Nassogne, de Rendeux et de Tenneville"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 9.3"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 9.3"
   },
   {
-    id: "Bastogne",
-    arrondissement: "Luxembourg",
+    id: "bastogne",
+    arrondissement: "luxembourg",
     name: {
       nl: "Bastenaken",
       fr: "Bastogne"
@@ -4139,42 +4139,42 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "81013"
+        municipality: "81013"
       },
       {
-        refnis: "82009"
+        municipality: "82009"
       },
       {
-        refnis: "82014"
+        municipality: "82014"
       },
       {
-        refnis: "82032"
+        municipality: "82032"
       },
       {
-        refnis: "82036"
+        municipality: "82036"
       },
       {
-        refnis: "82037"
+        municipality: "82037"
       },
       {
-        refnis: "82038"
+        municipality: "82038"
       },
       {
-        refnis: "82039"
+        municipality: "82039"
       },
       {
-        refnis: "84033"
+        municipality: "84033"
       }
     ],
     territory: {
       nl: "De steden Bastenaken en Houffalize de deelgemeente Bertogne van de stad Bastenaken en de gemeenten Fauvillers, Gouvy, L\xE9glise, Martelange, Sainte-Ode, Vaux-sur-S\xFBre en Vielsalm",
       fr: "Les villes de Bastogne et de Houffalize l'ancienne commune de Bertogne de la ville de Bastogne et les communes de Fauvillers, de Gouvy, de L\xE9glise, de Martelange, de Sainte-Ode, de Vaux-sur-S\xFBre et de Vielsalm"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 9.4"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 9.4"
   },
   {
-    id: "Neufchateau",
-    arrondissement: "Luxembourg",
+    id: "neufchateau",
+    arrondissement: "luxembourg",
     name: {
       nl: "Neufch\xE2teau",
       fr: "Neufch\xE2teau"
@@ -4185,48 +4185,48 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "84009"
+        municipality: "84009"
       },
       {
-        refnis: "84010"
+        municipality: "84010"
       },
       {
-        refnis: "84016"
+        municipality: "84016"
       },
       {
-        refnis: "84029"
+        municipality: "84029"
       },
       {
-        refnis: "84035"
+        municipality: "84035"
       },
       {
-        refnis: "84043"
+        municipality: "84043"
       },
       {
-        refnis: "84050"
+        municipality: "84050"
       },
       {
-        refnis: "84059"
+        municipality: "84059"
       },
       {
-        refnis: "84068"
+        municipality: "84068"
       },
       {
-        refnis: "84075"
+        municipality: "84075"
       },
       {
-        refnis: "84077"
+        municipality: "84077"
       }
     ],
     territory: {
       nl: "De steden Bouillon, Neufch\xE2teau, Saint-Hubert en de gemeenten Bertrix, Daverdisse, Herbeumont, Libin, Libramont-Chevigny, Paliseul, Tellin en Wellin",
       fr: "Les villes de Bouillon, de Neufch\xE2teau, de Saint-Hubert et les communes de Bertrix, de Daverdisse, de Herbeumont, de Libin, de Libramont-Chevigny, de Paliseul, de Tellin et de Wellin"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 9.5"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 9.5"
   },
   {
-    id: "Dinant",
-    arrondissement: "Namur",
+    id: "dinant",
+    arrondissement: "namur",
     name: {
       nl: "Dinant",
       fr: "Dinant"
@@ -4237,39 +4237,39 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "91005"
+        municipality: "91005"
       },
       {
-        refnis: "91013"
+        municipality: "91013"
       },
       {
-        refnis: "91015"
+        municipality: "91015"
       },
       {
-        refnis: "91034"
+        municipality: "91034"
       },
       {
-        refnis: "91054"
+        municipality: "91054"
       },
       {
-        refnis: "91072"
+        municipality: "91072"
       },
       {
-        refnis: "91141"
+        municipality: "91141"
       },
       {
-        refnis: "91143"
+        municipality: "91143"
       }
     ],
     territory: {
       nl: "De steden Beauraing, Dinant en de gemeenten Anh\xE9e, Bi\xE8vre, Gedinne, Houyet, Vresse-sur-Semois en Yvoir",
       fr: "Les villes de Beauraing, de Dinant et les communes d'Anh\xE9e, de Bi\xE8vre, de Gedinne, de Houyet, de Vresse-sur-Semois et d'Yvoir"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 10.1"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 10.1"
   },
   {
-    id: "Ciney",
-    arrondissement: "Namur",
+    id: "ciney",
+    arrondissement: "namur",
     name: {
       nl: "Ciney",
       fr: "Ciney"
@@ -4280,30 +4280,30 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "91030"
+        municipality: "91030"
       },
       {
-        refnis: "91059"
+        municipality: "91059"
       },
       {
-        refnis: "91064"
+        municipality: "91064"
       },
       {
-        refnis: "91114"
+        municipality: "91114"
       },
       {
-        refnis: "91120"
+        municipality: "91120"
       }
     ],
     territory: {
       nl: "De steden Ciney, Rochefort en de gemeenten Hamois, Havelange en Somme-Leuze",
       fr: "Les villes de Ciney, de Rochefort et les communes de Hamois, de Havelange et de Somme-Leuze"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 10.2"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 10.2"
   },
   {
-    id: "Philippeville",
-    arrondissement: "Namur",
+    id: "philippeville",
+    arrondissement: "namur",
     name: {
       nl: "Philippeville",
       fr: "Philippeville"
@@ -4314,42 +4314,42 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "91103"
+        municipality: "91103"
       },
       {
-        refnis: "91142"
+        municipality: "91142"
       },
       {
-        refnis: "93010"
+        municipality: "93010"
       },
       {
-        refnis: "93014"
+        municipality: "93014"
       },
       {
-        refnis: "93018"
+        municipality: "93018"
       },
       {
-        refnis: "93022"
+        municipality: "93022"
       },
       {
-        refnis: "93056"
+        municipality: "93056"
       },
       {
-        refnis: "93088"
+        municipality: "93088"
       },
       {
-        refnis: "93090"
+        municipality: "93090"
       }
     ],
     territory: {
       nl: "De steden Couvin, Philippeville, Walcourt en de gemeenten Cerfontaine, Doische, Florennes, Hasti\xE8re, Onhaye en Viroinval",
       fr: "Les villes de Couvin, de Philippeville, de Walcourt et les communes de Cerfontaine, de Doische, de Florennes, de Hasti\xE8re, d'Onhaye et de Viroinval"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 10.3"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 10.3"
   },
   {
-    id: "Andenne",
-    arrondissement: "Namur",
+    id: "andenne",
+    arrondissement: "namur",
     name: {
       nl: "Andenne",
       fr: "Andenne"
@@ -4360,30 +4360,30 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "92003"
+        municipality: "92003"
       },
       {
-        refnis: "92006"
+        municipality: "92006"
       },
       {
-        refnis: "92054"
+        municipality: "92054"
       },
       {
-        refnis: "92097"
+        municipality: "92097"
       },
       {
-        refnis: "92138"
+        municipality: "92138"
       }
     ],
     territory: {
       nl: "De stad Andenne en de gemeenten Assesse, Fernelmont, Gesves en Ohey",
       fr: "La ville d'Andenne et les communes d'Assesse, de Fernelmont, de Gesves et d'Ohey"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 10.4"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 10.4"
   },
   {
-    id: "FossesLaVille",
-    arrondissement: "Namur",
+    id: "fosses-la-ville",
+    arrondissement: "namur",
     name: {
       nl: "Fosses-la-Ville",
       fr: "Fosses-la-Ville"
@@ -4394,27 +4394,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "92045"
+        municipality: "92045"
       },
       {
-        refnis: "92048"
+        municipality: "92048"
       },
       {
-        refnis: "92087"
+        municipality: "92087"
       },
       {
-        refnis: "92137"
+        municipality: "92137"
       }
     ],
     territory: {
       nl: "De stad Fosses-la-Ville en de gemeenten Floreffe, Mettet en Sambreville",
       fr: "La ville de Fosses-la-Ville et les communes de Floreffe, de Mettet et de Sambreville"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 10.5"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 10.5"
   },
   {
-    id: "Gembloux",
-    arrondissement: "Namur",
+    id: "gembloux",
+    arrondissement: "namur",
     name: {
       nl: "Gembloers",
       fr: "Gembloux"
@@ -4425,30 +4425,30 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "92035"
+        municipality: "92035"
       },
       {
-        refnis: "92114"
+        municipality: "92114"
       },
       {
-        refnis: "92140"
+        municipality: "92140"
       },
       {
-        refnis: "92141"
+        municipality: "92141"
       },
       {
-        refnis: "92142"
+        municipality: "92142"
       }
     ],
     territory: {
       nl: "De stad Gembloers en de gemeenten Eghez\xE9e, Jemeppe-sur-Sambre, La Bruy\xE8re en Sombreffe",
       fr: "La ville de Gembloux et les communes d'Eghez\xE9e, de Jemeppe-sur-Sambre, de La Bruy\xE8re et de Sombreffe"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 10.6"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 10.6"
   },
   {
-    id: "Namur1",
-    arrondissement: "Namur",
+    id: "namur-1",
+    arrondissement: "namur",
     name: {
       nl: "Namen",
       fr: "Namur"
@@ -4460,7 +4460,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "92094",
+        municipality: "92094",
         partial: true
       }
     ],
@@ -4468,11 +4468,11 @@ var cantons_default = [
       nl: "De deelgemeenten Beez, Belgrade, Boninne, Bouge, Champion, Cognel\xE9e, Daussoulx, Flawinne, Gelbress\xE9e, Marche-les-Dames, Saint-Marc, Saint-Servais, Suarl\xE9e, Temploux en Vedrin van de stad Namen en het gedeelte van het grondgebied van de stad Namen gelegen ten noorden van de middellijn van de Samber en de Maas (linkeroevers)",
       fr: "Les anciennes communes de Beez, de Belgrade, de Boninne, de Bouge, de Champion, de Cognel\xE9e, de Daussoulx, de Flawinne, de Gelbress\xE9e, de Marche-les-Dames, de Saint-Marc, de Saint-Servais, de Suarl\xE9e, de Temploux et de Vedrin de la ville de Namur et la partie du territoire de la ville de Namur situ\xE9e au nord de la ligne m\xE9diane de la Sambre et de la Meuse (rives gauches)"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 10.7"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 10.7"
   },
   {
-    id: "Namur2",
-    arrondissement: "Namur",
+    id: "namur-2",
+    arrondissement: "namur",
     name: {
       nl: "Namen",
       fr: "Namur"
@@ -4484,22 +4484,22 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "92094",
+        municipality: "92094",
         partial: true
       },
       {
-        refnis: "92101"
+        municipality: "92101"
       }
     ],
     territory: {
       nl: "De gemeente Profondeville, de deelgemeenten Dave, Erpent, Jambes, Lives-sur-Meuse, Loyers, Malonne, Naninne, W\xE9pion en Wierde van de stad Namen en het gedeelte van het grondgebied van de stad Namen gelegen ten zuiden van de middellijn van de Samber (rechteroever)",
       fr: "La commune de Profondeville, les anciennes communes de Dave, d'Erpent, de Jambes, de Lives-sur-Meuse, de Loyers, de Malonne, de Naninne, de W\xE9pion et de Wierde de la ville de Namur et la partie du territoire de la ville de Namur situ\xE9e au sud de la ligne m\xE9diane de la Sambre (rive droite)"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 10.8"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 10.8"
   },
   {
-    id: "Chimay",
-    arrondissement: "Hainaut",
+    id: "chimay",
+    arrondissement: "hainaut",
     name: {
       nl: "Chimay",
       fr: "Chimay"
@@ -4510,36 +4510,36 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "56005"
+        municipality: "56005"
       },
       {
-        refnis: "56016"
+        municipality: "56016"
       },
       {
-        refnis: "56022"
+        municipality: "56022"
       },
       {
-        refnis: "56029"
+        municipality: "56029"
       },
       {
-        refnis: "56049"
+        municipality: "56049"
       },
       {
-        refnis: "56051"
+        municipality: "56051"
       },
       {
-        refnis: "56088"
+        municipality: "56088"
       }
     ],
     territory: {
       nl: "De steden Beaumont, Chimay en de gemeenten Erquelinnes, Froidchapelle, Merbes-le-Ch\xE2teau, Momignies en Sivry-Rance",
       fr: "Les villes de Beaumont, de Chimay et les communes d'Erquelinnes, de Froidchapelle, de Merbes-le-Ch\xE2teau, de Momignies et de Sivry-Rance"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.1"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.1"
   },
   {
-    id: "Binche",
-    arrondissement: "Hainaut",
+    id: "binche",
+    arrondissement: "hainaut",
     name: {
       nl: "Binche",
       fr: "Binche"
@@ -4550,24 +4550,24 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "58002"
+        municipality: "58002"
       },
       {
-        refnis: "58003"
+        municipality: "58003"
       },
       {
-        refnis: "58004"
+        municipality: "58004"
       }
     ],
     territory: {
       nl: "De stad Binche en de gemeenten Estinnes en Morlanwelz",
       fr: "La ville de Binche et les communes d'Estinnes et de Morlanwelz"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.2"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.2"
   },
   {
-    id: "Charleroi1",
-    arrondissement: "Hainaut",
+    id: "charleroi-1",
+    arrondissement: "hainaut",
     name: {
       nl: "Charleroi",
       fr: "Charleroi"
@@ -4579,7 +4579,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "52011",
+        municipality: "52011",
         partial: true
       }
     ],
@@ -4587,11 +4587,11 @@ var cantons_default = [
       nl: "De deelgemeenten Couillet, Dampremy en Gilly van de stad Charleroi alsook het grondgebied van de vroegere stad Charleroi",
       fr: "Les anciennes communes de Couillet, de Dampremy et de Gilly de la ville de Charleroi et le territoire de l'ancienne ville de Charleroi"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.3"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.3"
   },
   {
-    id: "Charleroi2",
-    arrondissement: "Hainaut",
+    id: "charleroi-2",
+    arrondissement: "hainaut",
     name: {
       nl: "Charleroi",
       fr: "Charleroi"
@@ -4603,25 +4603,25 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "52011",
+        municipality: "52011",
         partial: true
       },
       {
-        refnis: "52021"
+        municipality: "52021"
       },
       {
-        refnis: "52075"
+        municipality: "52075"
       }
     ],
     territory: {
       nl: "De stad Fleurus, de gemeente Les Bons Villers en de deelgemeenten Gosselies, Goutroux, Ransart en Montignies-sur-Sambre van de stad Charleroi",
       fr: "La ville de Fleurus, la commune de Les Bons Villers et les anciennes communes de Gosselies, de Goutroux, de Ransart, et de Montignies-sur-Sambre de la ville de Charleroi"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.4"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.4"
   },
   {
-    id: "Charleroi3",
-    arrondissement: "Hainaut",
+    id: "charleroi-3",
+    arrondissement: "hainaut",
     name: {
       nl: "Charleroi",
       fr: "Charleroi"
@@ -4633,22 +4633,22 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "52011",
+        municipality: "52011",
         partial: true
       },
       {
-        refnis: "52015"
+        municipality: "52015"
       }
     ],
     territory: {
       nl: "De gemeente Courcelles en de deelgemeenten Jumet, Lodelinsart, Monceau-sur-Sambre en Roux van de stad Charleroi",
       fr: "La commune de Courcelles et les anciennes communes de Jumet, de Lodelinsart, de Monceau-sur-Sambre et de Roux de la ville de Charleroi"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.5"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.5"
   },
   {
-    id: "Charleroi4",
-    arrondissement: "Hainaut",
+    id: "charleroi-4",
+    arrondissement: "hainaut",
     name: {
       nl: "Charleroi",
       fr: "Charleroi"
@@ -4660,22 +4660,22 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "52011",
+        municipality: "52011",
         partial: true
       },
       {
-        refnis: "52022"
+        municipality: "52022"
       }
     ],
     territory: {
       nl: "De stad Fontaine-l'Ev\xEAque en de deelgemeenten Marchienne-au-Pont, Marcinelle en Mont-sur-Marchienne van de stad Charleroi",
       fr: "La ville de Fontaine-l'Ev\xEAque et les anciennes communes de Marchienne-au-Pont, de Marcinelle et de Mont-sur-Marchienne de la ville de Charleroi"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.6"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.6"
   },
   {
-    id: "Chatelet",
-    arrondissement: "Hainaut",
+    id: "chatelet",
+    arrondissement: "hainaut",
     name: {
       nl: "Ch\xE2telet",
       fr: "Ch\xE2telet"
@@ -4686,27 +4686,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "52012"
+        municipality: "52012"
       },
       {
-        refnis: "52018"
+        municipality: "52018"
       },
       {
-        refnis: "52025"
+        municipality: "52025"
       },
       {
-        refnis: "52074"
+        municipality: "52074"
       }
     ],
     territory: {
       nl: "De stad Ch\xE2telet en de gemeenten Aiseau-Presles, Farciennes en Gerpinnes",
       fr: "La ville de Ch\xE2telet et les communes d'Aiseau-Presles, de Farciennes et de Gerpinnes"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.7"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.7"
   },
   {
-    id: "Seneffe",
-    arrondissement: "Hainaut",
+    id: "seneffe",
+    arrondissement: "hainaut",
     name: {
       nl: "Seneffe",
       fr: "Seneffe"
@@ -4717,27 +4717,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "52010"
+        municipality: "52010"
       },
       {
-        refnis: "52055"
+        municipality: "52055"
       },
       {
-        refnis: "55085"
+        municipality: "55085"
       },
       {
-        refnis: "55086"
+        municipality: "55086"
       }
     ],
     territory: {
       nl: "De gemeenten Chapelle-lez-Herlaimont, Manage, Pont-\xE0-Celles en Seneffe",
       fr: "Les communes de Chapelle-lez-Herlaimont, de Manage, de Pont-\xE0-Celles et de Seneffe"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.8"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.8"
   },
   {
-    id: "Thuin",
-    arrondissement: "Hainaut",
+    id: "thuin",
+    arrondissement: "hainaut",
     name: {
       nl: "Thuin",
       fr: "Thuin"
@@ -4748,30 +4748,30 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "52048"
+        municipality: "52048"
       },
       {
-        refnis: "56001"
+        municipality: "56001"
       },
       {
-        refnis: "56044"
+        municipality: "56044"
       },
       {
-        refnis: "56078"
+        municipality: "56078"
       },
       {
-        refnis: "56086"
+        municipality: "56086"
       }
     ],
     territory: {
       nl: "De stad Thuin en de gemeenten Anderlues, Ham-sur-Heure-Nalinnes, Lobbes en Montigny-le-Tilleul",
       fr: "La ville de Thuin et les communes d'Anderlues, de Ham-sur-Heure-Nalinnes, de Lobbes et de Montigny-le-Tilleul"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.9"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.9"
   },
   {
-    id: "BoussuColfontaine1",
-    arrondissement: "Hainaut",
+    id: "boussu-colfontaine-1",
+    arrondissement: "hainaut",
     name: {
       nl: "Boussu-Colfontaine",
       fr: "Boussu-Colfontaine"
@@ -4783,33 +4783,33 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "53014"
+        municipality: "53014"
       },
       {
-        refnis: "53039"
+        municipality: "53039"
       },
       {
-        refnis: "53065"
+        municipality: "53065"
       },
       {
-        refnis: "53068"
+        municipality: "53068"
       },
       {
-        refnis: "53070"
+        municipality: "53070"
       },
       {
-        refnis: "53083"
+        municipality: "53083"
       }
     ],
     territory: {
       nl: "De stad Saint-Ghislain en de gemeenten Boussu, Hensies, Honnelles, Quaregnon en Qui\xE9vrain",
       fr: "La ville de Saint-Ghislain et les communes de Boussu, de Hensies, de Honnelles, de Quaregnon et de Qui\xE9vrain"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.10"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.10"
   },
   {
-    id: "BoussuColfontaine2",
-    arrondissement: "Hainaut",
+    id: "boussu-colfontaine-2",
+    arrondissement: "hainaut",
     name: {
       nl: "Boussu-Colfontaine",
       fr: "Boussu-Colfontaine"
@@ -4821,27 +4821,27 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "53020"
+        municipality: "53020"
       },
       {
-        refnis: "53028"
+        municipality: "53028"
       },
       {
-        refnis: "53082"
+        municipality: "53082"
       },
       {
-        refnis: "53084"
+        municipality: "53084"
       }
     ],
     territory: {
       nl: "De gemeenten Colfontaine, Dour, Frameries en Qu\xE9vy",
       fr: "Les communes de Colfontaine, de Dour, de Frameries et de Qu\xE9vy"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.11"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.11"
   },
   {
-    id: "LaLouviere",
-    arrondissement: "Hainaut",
+    id: "la-louviere",
+    arrondissement: "hainaut",
     name: {
       nl: "La Louvi\xE8re",
       fr: "La Louvi\xE8re"
@@ -4852,18 +4852,18 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "58001"
+        municipality: "58001"
       }
     ],
     territory: {
       nl: "De stad La Louvi\xE8re",
       fr: "La ville de La Louvi\xE8re"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.12"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.12"
   },
   {
-    id: "Mons1",
-    arrondissement: "Hainaut",
+    id: "mons-1",
+    arrondissement: "hainaut",
     name: {
       nl: "Bergen",
       fr: "Mons"
@@ -4875,7 +4875,7 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "53053",
+        municipality: "53053",
         partial: true
       }
     ],
@@ -4883,11 +4883,11 @@ var cantons_default = [
       nl: "Het gedeelte van het grondgebied van de stad Bergen ten noorden van de grens van de deelgemeente Havr\xE9 van de stad Bergen tot aan de plaats met de naam &quot;La Cl\xE9 du Bois &quot;, ten noorden van de middellijn van de chauss\xE9e du Roeulx tot aan het kruispunt met de avenue Reine Astrid op de plaats met de naam &quot;Carrefour Saint-Fiacre &quot;, ten noorden van de middellijn van de avenue Reine Astrid, de place des Flandres, de rue Baudouin de Constantinople, de rue d'Havr\xE9, de rue du Hautbois, de rue de Houdain en de rue des Fripiers en ten westen van de middellijn van de Grand'Rue, de rue de Bertaimont en de avenue Jean d'Avesnes, verder ten noorden van de middellijn van de place des Chasseurs, de boulevard Sainctelette, de place des Alli\xE9s en van de N 22 tot aan het kruispunt met de oprit van de autosnelweg E10-E41, ten oosten van de middellijn van die oprit tot aan het kruispunt ervan met de autosnelweg, ten noorden van de vroegere grens van de deelgemeenten Ghlin en Jemappes van de stad Bergen",
       fr: "La partie du territoire de la ville de Mons situ\xE9e au nord de la limite de l'ancienne commune d'Havr\xE9 de la ville de Mons jusqu'au lieu-dit &quot;La Cl\xE9 du Bois &quot;et ensuite au nord de la ligne m\xE9diane de la chauss\xE9e du Roeulx jusqu'\xE0 sa jonction avec l'avenue Reine Astrid au lieu-dit &quot;Carrefour Saint-Fiacre&quot;, puis au nord de la ligne m\xE9diane de l'avenue Reine Astrid, de la place des Flandres, de la rue Baudouin de Constantinople, de la rue d'Havr\xE9, de la rue du Hautbois, de la rue de Houdain et la rue des Fripiers et ensuite \xE0 l'ouest de la ligne m\xE9diane de la Grand'Rue, de la rue de Bertaimont et de l'avenue Jean d'Avesnes puis au nord de la ligne m\xE9diane de la place des Chasseurs, du boulevard Sainctelette, de la place des Alli\xE9s et de la route Nationale 22 jusqu'\xE0 sa jonction avec la bretelle de l'autoroute E10-E41, \xE0 l'est de la ligne m\xE9diane de cette bretelle jusqu'\xE0 sa jonction avec l'autoroute, puis au nord de l'ancienne limite des anciennes communes de Ghlin et de Jemappes de la ville de Mons"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.13"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.13"
   },
   {
-    id: "Mons2",
-    arrondissement: "Hainaut",
+    id: "mons-2",
+    arrondissement: "hainaut",
     name: {
       nl: "Bergen",
       fr: "Mons"
@@ -4899,10 +4899,10 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "53044"
+        municipality: "53044"
       },
       {
-        refnis: "53053",
+        municipality: "53053",
         partial: true
       }
     ],
@@ -4910,11 +4910,11 @@ var cantons_default = [
       nl: "De gemeente Jurbeke en het gedeelte van het grondgebied van de stad Bergen ten zuiden van de middellijn van de grens van de deelgemeente Havr\xE9 van de stad Bergen tot aan de plaats met de naam &quot;La Cl\xE9 du Bois&quot;, ten zuiden van de middellijn van de chauss\xE9e du Roeulx tot aan het kruispunt met de avenue Reine Astrid op de plaats met de naam &quot;Carrefour Saint-Fiacre&quot;, ten zuiden van de middellijn van de avenue Reine Astrid, de place des Flandres, de rue Baudouin de Constantinople, de rue d'Havr\xE9, de rue du Hautbois, de rue de Houdain en de rue des Fripiers en ten oosten van de middellijn van de Grand'Rue, de rue de Bertaimont en de avenue Jean d'Avesnes, verder ten zuiden van de middellijn van de place des Chasseurs, de boulevard Sainctelette, de place des Alli\xE9s en van de N 22 tot aan het kruispunt met de oprit van de autosnelweg E10-E41, ten westen van de middellijn van die oprit tot aan het kruispunt ervan met de autosnelweg, ten zuiden van de vroegere grens van de deelgemeenten Ghlin en Jemappes van de stad Bergen",
       fr: "La commune de Jurbise et la partie du territoire de la ville de Mons situ\xE9e au sud de la ligne m\xE9diane de la limite de l'ancienne commune d'Havr\xE9 de la ville de Mons jusqu'au lieu-dit &quot;La Cl\xE9 du Bois&quot; et ensuite au sud de la ligne m\xE9diane de la chauss\xE9e du Roeulx jusqu'\xE0 sa jonction avec l'avenue Reine Astrid au lieu-dit &quot;Carrefour Saint-Fiacre&quot;, puis au sud de la ligne m\xE9diane de l'avenue Reine Astrid, de la place des Flandres, de la rue Baudouin de Constantinople, de la rue d'Havr\xE9, de la rue du Hautbois, de la rue de Houdain et la rue des Fripiers et ensuite \xE0 l'est de la ligne m\xE9diane de la Grand'Rue, de la rue de Bertaimont et de l'avenue Jean d'Avesnes puis au sud de la ligne m\xE9diane de la place des Chasseurs, du boulevard Sainctelette, de la place des Alli\xE9s et de la route Nationale 22 jusqu'\xE0 sa jonction avec la bretelle de l'autoroute E10-E41, \xE0 l'ouest de la ligne m\xE9diane de cette bretelle jusqu'\xE0 sa jonction avec l'autoroute, puis au sud de l'ancienne limite des anciennes communes de Ghlin et de Jemappes de la ville de Mons"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.14"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.14"
   },
   {
-    id: "Soignies",
-    arrondissement: "Hainaut",
+    id: "soignies",
+    arrondissement: "hainaut",
     name: {
       nl: "Zinnik",
       fr: "Soignies"
@@ -4925,30 +4925,30 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "53046"
+        municipality: "53046"
       },
       {
-        refnis: "55004"
+        municipality: "55004"
       },
       {
-        refnis: "55035"
+        municipality: "55035"
       },
       {
-        refnis: "55040"
+        municipality: "55040"
       },
       {
-        refnis: "55050"
+        municipality: "55050"
       }
     ],
     territory: {
       nl: "De steden Le Roeulx, `s Gravenbrakel, Zinnik en de gemeenten Ecaussinnes en Lens",
       fr: "Les villes de Le Roeulx, de Braine-le-Comte, de Soignies et les communes d'Ecaussinnes et de Lens"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.15"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.15"
   },
   {
-    id: "Ath",
-    arrondissement: "Hainaut",
+    id: "ath",
+    arrondissement: "hainaut",
     name: {
       nl: "Aat",
       fr: "Ath"
@@ -4959,36 +4959,36 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "51004"
+        municipality: "51004"
       },
       {
-        refnis: "51012"
+        municipality: "51012"
       },
       {
-        refnis: "51017"
+        municipality: "51017"
       },
       {
-        refnis: "51019"
+        municipality: "51019"
       },
       {
-        refnis: "51067"
+        municipality: "51067"
       },
       {
-        refnis: "51068"
+        municipality: "51068"
       },
       {
-        refnis: "51069"
+        municipality: "51069"
       }
     ],
     territory: {
       nl: "De steden Aat, Edingen, Lessen en de gemeenten Brugelette, Elzele, Opzullik en Vloesberg",
       fr: "Les villes d'Ath, d'Enghien, de Lessines et les communes de Brugelette, de Ellezelles, de Silly et de Flobecq"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.16"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.16"
   },
   {
-    id: "Mouscron",
-    arrondissement: "Hainaut",
+    id: "mouscron",
+    arrondissement: "hainaut",
     name: {
       nl: "Moeskroen",
       fr: "Mouscron"
@@ -4999,21 +4999,21 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "57096"
+        municipality: "57096"
       },
       {
-        refnis: "57097"
+        municipality: "57097"
       }
     ],
     territory: {
       nl: "De steden Komen-Waasten en Moeskroen",
       fr: "Les villes de Comines-Warneton et de Mouscron"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.17"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.17"
   },
   {
-    id: "LeuzeEnHainaut",
-    arrondissement: "Hainaut",
+    id: "leuze-en-hainaut",
+    arrondissement: "hainaut",
     name: {
       nl: "Leuze-en-Hainaut",
       fr: "Leuze-en-Hainaut"
@@ -5024,30 +5024,30 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "51008"
+        municipality: "51008"
       },
       {
-        refnis: "51009"
+        municipality: "51009"
       },
       {
-        refnis: "51014"
+        municipality: "51014"
       },
       {
-        refnis: "57064"
+        municipality: "57064"
       },
       {
-        refnis: "57094"
+        municipality: "57094"
       }
     ],
     territory: {
       nl: "De steden Chi\xE8vres, Leuze-en-Hainaut, P\xE9ruwelz en de gemeenten Beloeil en Bernissart",
       fr: "Les villes de Chi\xE8vres, de Leuze-en-Hainaut, de P\xE9ruwelz et les communes de Beloeil et de Bernissart"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.18"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.18"
   },
   {
-    id: "Tournai1",
-    arrondissement: "Hainaut",
+    id: "tournai-1",
+    arrondissement: "hainaut",
     name: {
       nl: "Doornik",
       fr: "Tournai"
@@ -5059,31 +5059,31 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "51065"
+        municipality: "51065"
       },
       {
-        refnis: "57003"
+        municipality: "57003"
       },
       {
-        refnis: "57018"
+        municipality: "57018"
       },
       {
-        refnis: "57081",
+        municipality: "57081",
         partial: true
       },
       {
-        refnis: "57095"
+        municipality: "57095"
       }
     ],
     territory: {
       nl: "De stad Antoing en de gemeenten Celles, Frasnes-lez-Anvaing en Mont-de-l'Enclus en het gedeelte van het grondgebied van de stad Doornik gelegen op de rechteroever van de Schelde",
       fr: "La ville d'Antoing et les communes de Celles, de Frasnes-lez-Anvaing et de Mont-de-l'Enclus et la partie du territoire de la ville de Tournai situ\xE9e sur la rive droite de l'Escaut"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.19"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.19"
   },
   {
-    id: "Tournai2",
-    arrondissement: "Hainaut",
+    id: "tournai-2",
+    arrondissement: "hainaut",
     name: {
       nl: "Doornik",
       fr: "Tournai"
@@ -5095,34 +5095,34 @@ var cantons_default = [
     },
     municipalities: [
       {
-        refnis: "57027"
+        municipality: "57027"
       },
       {
-        refnis: "57062"
+        municipality: "57062"
       },
       {
-        refnis: "57072"
+        municipality: "57072"
       },
       {
-        refnis: "57081",
+        municipality: "57081",
         partial: true
       },
       {
-        refnis: "57093"
+        municipality: "57093"
       }
     ],
     territory: {
       nl: "De gemeenten Brunehaut, Estaimpuis, Pecq, Rumes en het gedeelte van het grondgebied van de stad Doornik gelegen op de linkeroever van de Schelde",
       fr: "Les communes de Brunehaut, d'Estaimpuis, de Pecq, de Rumes et la partie du territoire de la ville de Tournai situ\xE9e sur la rive gauche de l'Escaut"
     },
-    source: "Ger.W. bijvoegsel art. 1, afdeling 11.20"
+    legalBasis: "Ger.W. bijvoegsel art. 1, afdeling 11.20"
   }
 ];
 
 // data/judicial-areas.json
 var judicial_areas_default = [
   {
-    id: "Antwerp",
+    id: "antwerpen",
     name: {
       nl: "Antwerpen",
       fr: "Anvers",
@@ -5130,7 +5130,7 @@ var judicial_areas_default = [
     }
   },
   {
-    id: "Brussels",
+    id: "brussel",
     name: {
       nl: "Brussel",
       fr: "Bruxelles",
@@ -5138,7 +5138,7 @@ var judicial_areas_default = [
     }
   },
   {
-    id: "Ghent",
+    id: "gent",
     name: {
       nl: "Gent",
       fr: "Gand",
@@ -5146,7 +5146,7 @@ var judicial_areas_default = [
     }
   },
   {
-    id: "Liege",
+    id: "liege",
     name: {
       nl: "Luik",
       fr: "Li\xE8ge",
@@ -5154,7 +5154,7 @@ var judicial_areas_default = [
     }
   },
   {
-    id: "Mons",
+    id: "mons",
     name: {
       nl: "Bergen",
       fr: "Mons",
@@ -5166,7 +5166,7 @@ var judicial_areas_default = [
 // data/municipalities.json
 var municipalities_default = [
   {
-    refnis: "11001",
+    id: "11001",
     name: {
       nl: "Aartselaar",
       fr: "Aartselaar"
@@ -5174,7 +5174,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11002",
+    id: "11002",
     name: {
       nl: "Antwerpen",
       fr: "Anvers"
@@ -5182,7 +5182,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11004",
+    id: "11004",
     name: {
       nl: "Boechout",
       fr: "Boechout"
@@ -5190,7 +5190,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11005",
+    id: "11005",
     name: {
       nl: "Boom",
       fr: "Boom"
@@ -5198,7 +5198,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11008",
+    id: "11008",
     name: {
       nl: "Brasschaat",
       fr: "Brasschaat"
@@ -5206,7 +5206,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11009",
+    id: "11009",
     name: {
       nl: "Brecht",
       fr: "Brecht"
@@ -5214,7 +5214,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11013",
+    id: "11013",
     name: {
       nl: "Edegem",
       fr: "Edegem"
@@ -5222,7 +5222,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11016",
+    id: "11016",
     name: {
       nl: "Essen",
       fr: "Essen"
@@ -5230,7 +5230,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11018",
+    id: "11018",
     name: {
       nl: "Hemiksem",
       fr: "Hemiksem"
@@ -5238,7 +5238,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11021",
+    id: "11021",
     name: {
       nl: "Hove",
       fr: "Hove"
@@ -5246,7 +5246,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11022",
+    id: "11022",
     name: {
       nl: "Kalmthout",
       fr: "Kalmthout"
@@ -5254,7 +5254,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11023",
+    id: "11023",
     name: {
       nl: "Kapellen",
       fr: "Kapellen"
@@ -5262,7 +5262,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11024",
+    id: "11024",
     name: {
       nl: "Kontich",
       fr: "Kontich"
@@ -5270,7 +5270,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11025",
+    id: "11025",
     name: {
       nl: "Lint",
       fr: "Lint"
@@ -5278,7 +5278,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11029",
+    id: "11029",
     name: {
       nl: "Mortsel",
       fr: "Mortsel"
@@ -5286,7 +5286,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11030",
+    id: "11030",
     name: {
       nl: "Niel",
       fr: "Niel"
@@ -5294,7 +5294,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11035",
+    id: "11035",
     name: {
       nl: "Ranst",
       fr: "Ranst"
@@ -5302,7 +5302,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11037",
+    id: "11037",
     name: {
       nl: "Rumst",
       fr: "Rumst"
@@ -5310,7 +5310,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11038",
+    id: "11038",
     name: {
       nl: "Schelle",
       fr: "Schelle"
@@ -5318,7 +5318,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11039",
+    id: "11039",
     name: {
       nl: "Schilde",
       fr: "Schilde"
@@ -5326,7 +5326,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11040",
+    id: "11040",
     name: {
       nl: "Schoten",
       fr: "Schoten"
@@ -5334,7 +5334,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11044",
+    id: "11044",
     name: {
       nl: "Stabroek",
       fr: "Stabroek"
@@ -5342,7 +5342,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11050",
+    id: "11050",
     name: {
       nl: "Wijnegem",
       fr: "Wijnegem"
@@ -5350,7 +5350,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11052",
+    id: "11052",
     name: {
       nl: "Wommelgem",
       fr: "Wommelgem"
@@ -5358,7 +5358,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11053",
+    id: "11053",
     name: {
       nl: "Wuustwezel",
       fr: "Wuustwezel"
@@ -5366,7 +5366,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11054",
+    id: "11054",
     name: {
       nl: "Zandhoven",
       fr: "Zandhoven"
@@ -5374,7 +5374,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11055",
+    id: "11055",
     name: {
       nl: "Zoersel",
       fr: "Zoersel"
@@ -5382,7 +5382,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "11057",
+    id: "11057",
     name: {
       nl: "Malle",
       fr: "Malle"
@@ -5390,7 +5390,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "12002",
+    id: "12002",
     name: {
       nl: "Berlaar",
       fr: "Berlaar"
@@ -5398,7 +5398,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "12005",
+    id: "12005",
     name: {
       nl: "Bonheiden",
       fr: "Bonheiden"
@@ -5406,7 +5406,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "12007",
+    id: "12007",
     name: {
       nl: "Bornem",
       fr: "Bornem"
@@ -5414,7 +5414,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "12009",
+    id: "12009",
     name: {
       nl: "Duffel",
       fr: "Duffel"
@@ -5422,7 +5422,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "12014",
+    id: "12014",
     name: {
       nl: "Heist-op-den-Berg",
       fr: "Heist-op-den-Berg"
@@ -5430,7 +5430,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "12021",
+    id: "12021",
     name: {
       nl: "Lier",
       fr: "Lierre"
@@ -5438,7 +5438,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "12025",
+    id: "12025",
     name: {
       nl: "Mechelen",
       fr: "Malines"
@@ -5446,7 +5446,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "12026",
+    id: "12026",
     name: {
       nl: "Nijlen",
       fr: "Nijlen"
@@ -5454,7 +5454,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "12029",
+    id: "12029",
     name: {
       nl: "Putte",
       fr: "Putte"
@@ -5462,7 +5462,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "12035",
+    id: "12035",
     name: {
       nl: "Sint-Katelijne-Waver",
       fr: "Sint-Katelijne-Waver"
@@ -5470,7 +5470,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "12040",
+    id: "12040",
     name: {
       nl: "Willebroek",
       fr: "Willebroek"
@@ -5478,7 +5478,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "12041",
+    id: "12041",
     name: {
       nl: "Puurs-Sint-Amands",
       fr: "Puurs-Sint-Amands"
@@ -5486,7 +5486,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13001",
+    id: "13001",
     name: {
       nl: "Arendonk",
       fr: "Arendonk"
@@ -5494,7 +5494,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13002",
+    id: "13002",
     name: {
       nl: "Baarle-Hertog",
       fr: "Baerle-Duc"
@@ -5502,7 +5502,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13003",
+    id: "13003",
     name: {
       nl: "Balen",
       fr: "Balen"
@@ -5510,7 +5510,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13004",
+    id: "13004",
     name: {
       nl: "Beerse",
       fr: "Beerse"
@@ -5518,7 +5518,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13006",
+    id: "13006",
     name: {
       nl: "Dessel",
       fr: "Dessel"
@@ -5526,7 +5526,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13008",
+    id: "13008",
     name: {
       nl: "Geel",
       fr: "Geel"
@@ -5534,7 +5534,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13010",
+    id: "13010",
     name: {
       nl: "Grobbendonk",
       fr: "Grobbendonk"
@@ -5542,7 +5542,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13011",
+    id: "13011",
     name: {
       nl: "Herentals",
       fr: "Herentals"
@@ -5550,7 +5550,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13012",
+    id: "13012",
     name: {
       nl: "Herenthout",
       fr: "Herenthout"
@@ -5558,7 +5558,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13013",
+    id: "13013",
     name: {
       nl: "Herselt",
       fr: "Herselt"
@@ -5566,7 +5566,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13014",
+    id: "13014",
     name: {
       nl: "Hoogstraten",
       fr: "Hoogstraten"
@@ -5574,7 +5574,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13016",
+    id: "13016",
     name: {
       nl: "Hulshout",
       fr: "Hulshout"
@@ -5582,7 +5582,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13017",
+    id: "13017",
     name: {
       nl: "Kasterlee",
       fr: "Kasterlee"
@@ -5590,7 +5590,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13019",
+    id: "13019",
     name: {
       nl: "Lille",
       fr: "Lille"
@@ -5598,7 +5598,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13021",
+    id: "13021",
     name: {
       nl: "Meerhout",
       fr: "Meerhout"
@@ -5606,7 +5606,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13023",
+    id: "13023",
     name: {
       nl: "Merksplas",
       fr: "Merksplas"
@@ -5614,7 +5614,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13025",
+    id: "13025",
     name: {
       nl: "Mol",
       fr: "Mol"
@@ -5622,7 +5622,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13029",
+    id: "13029",
     name: {
       nl: "Olen",
       fr: "Olen"
@@ -5630,7 +5630,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13031",
+    id: "13031",
     name: {
       nl: "Oud-Turnhout",
       fr: "Oud-Turnhout"
@@ -5638,7 +5638,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13035",
+    id: "13035",
     name: {
       nl: "Ravels",
       fr: "Ravels"
@@ -5646,7 +5646,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13036",
+    id: "13036",
     name: {
       nl: "Retie",
       fr: "Retie"
@@ -5654,7 +5654,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13037",
+    id: "13037",
     name: {
       nl: "Rijkevorsel",
       fr: "Rijkevorsel"
@@ -5662,7 +5662,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13040",
+    id: "13040",
     name: {
       nl: "Turnhout",
       fr: "Turnhout"
@@ -5670,7 +5670,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13044",
+    id: "13044",
     name: {
       nl: "Vorselaar",
       fr: "Vorselaar"
@@ -5678,7 +5678,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13046",
+    id: "13046",
     name: {
       nl: "Vosselaar",
       fr: "Vosselaar"
@@ -5686,7 +5686,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13049",
+    id: "13049",
     name: {
       nl: "Westerlo",
       fr: "Westerlo"
@@ -5694,7 +5694,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "13053",
+    id: "13053",
     name: {
       nl: "Laakdal",
       fr: "Laakdal"
@@ -5702,7 +5702,7 @@ var municipalities_default = [
     province: "10000"
   },
   {
-    refnis: "21001",
+    id: "21001",
     name: {
       nl: "Anderlecht",
       fr: "Anderlecht"
@@ -5710,7 +5710,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21002",
+    id: "21002",
     name: {
       nl: "Oudergem",
       fr: "Auderghem"
@@ -5718,7 +5718,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21003",
+    id: "21003",
     name: {
       nl: "Sint-Agatha-Berchem",
       fr: "Berchem-Sainte-Agathe"
@@ -5726,7 +5726,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21004",
+    id: "21004",
     name: {
       nl: "Brussel",
       fr: "Bruxelles"
@@ -5734,7 +5734,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21005",
+    id: "21005",
     name: {
       nl: "Etterbeek",
       fr: "Etterbeek"
@@ -5742,7 +5742,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21006",
+    id: "21006",
     name: {
       nl: "Evere",
       fr: "Evere"
@@ -5750,7 +5750,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21007",
+    id: "21007",
     name: {
       nl: "Vorst",
       fr: "Forest"
@@ -5758,7 +5758,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21008",
+    id: "21008",
     name: {
       nl: "Ganshoren",
       fr: "Ganshoren"
@@ -5766,7 +5766,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21009",
+    id: "21009",
     name: {
       nl: "Elsene",
       fr: "Ixelles"
@@ -5774,7 +5774,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21010",
+    id: "21010",
     name: {
       nl: "Jette",
       fr: "Jette"
@@ -5782,7 +5782,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21011",
+    id: "21011",
     name: {
       nl: "Koekelberg",
       fr: "Koekelberg"
@@ -5790,7 +5790,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21012",
+    id: "21012",
     name: {
       nl: "Sint-Jans-Molenbeek",
       fr: "Molenbeek-Saint-Jean"
@@ -5798,7 +5798,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21013",
+    id: "21013",
     name: {
       nl: "Sint-Gillis",
       fr: "Saint-Gilles"
@@ -5806,7 +5806,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21014",
+    id: "21014",
     name: {
       nl: "Sint-Joost-ten-Node",
       fr: "Saint-Josse-ten-Noode"
@@ -5814,7 +5814,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21015",
+    id: "21015",
     name: {
       nl: "Schaarbeek",
       fr: "Schaerbeek"
@@ -5822,7 +5822,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21016",
+    id: "21016",
     name: {
       nl: "Ukkel",
       fr: "Uccle"
@@ -5830,7 +5830,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21017",
+    id: "21017",
     name: {
       nl: "Watermaal-Bosvoorde",
       fr: "Watermael-Boitsfort"
@@ -5838,7 +5838,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21018",
+    id: "21018",
     name: {
       nl: "Sint-Lambrechts-Woluwe",
       fr: "Woluwe-Saint-Lambert"
@@ -5846,7 +5846,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "21019",
+    id: "21019",
     name: {
       nl: "Sint-Pieters-Woluwe",
       fr: "Woluwe-Saint-Pierre"
@@ -5854,7 +5854,7 @@ var municipalities_default = [
     province: "04000"
   },
   {
-    refnis: "23002",
+    id: "23002",
     name: {
       nl: "Asse",
       fr: "Asse"
@@ -5862,7 +5862,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23003",
+    id: "23003",
     name: {
       nl: "Beersel",
       fr: "Beersel"
@@ -5870,7 +5870,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23009",
+    id: "23009",
     name: {
       nl: "Bever",
       fr: "Bi\xE9v\xE8ne"
@@ -5878,7 +5878,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23016",
+    id: "23016",
     name: {
       nl: "Dilbeek",
       fr: "Dilbeek"
@@ -5886,7 +5886,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23025",
+    id: "23025",
     name: {
       nl: "Grimbergen",
       fr: "Grimbergen"
@@ -5894,7 +5894,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23027",
+    id: "23027",
     name: {
       nl: "Halle",
       fr: "Hal"
@@ -5902,7 +5902,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23033",
+    id: "23033",
     name: {
       nl: "Hoeilaart",
       fr: "Hoeilaart"
@@ -5910,7 +5910,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23038",
+    id: "23038",
     name: {
       nl: "Kampenhout",
       fr: "Kampenhout"
@@ -5918,7 +5918,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23039",
+    id: "23039",
     name: {
       nl: "Kapelle-op-den-Bos",
       fr: "Kapelle-op-den-Bos"
@@ -5926,7 +5926,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23044",
+    id: "23044",
     name: {
       nl: "Liedekerke",
       fr: "Liedekerke"
@@ -5934,7 +5934,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23045",
+    id: "23045",
     name: {
       nl: "Londerzeel",
       fr: "Londerzeel"
@@ -5942,7 +5942,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23047",
+    id: "23047",
     name: {
       nl: "Machelen",
       fr: "Machelen"
@@ -5950,7 +5950,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23050",
+    id: "23050",
     name: {
       nl: "Meise",
       fr: "Meise"
@@ -5958,7 +5958,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23052",
+    id: "23052",
     name: {
       nl: "Merchtem",
       fr: "Merchtem"
@@ -5966,7 +5966,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23060",
+    id: "23060",
     name: {
       nl: "Opwijk",
       fr: "Opwijk"
@@ -5974,7 +5974,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23062",
+    id: "23062",
     name: {
       nl: "Overijse",
       fr: "Overijse"
@@ -5982,7 +5982,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23064",
+    id: "23064",
     name: {
       nl: "Pepingen",
       fr: "Pepingen"
@@ -5990,7 +5990,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23077",
+    id: "23077",
     name: {
       nl: "Sint-Pieters-Leeuw",
       fr: "Sint-Pieters-Leeuw"
@@ -5998,7 +5998,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23081",
+    id: "23081",
     name: {
       nl: "Steenokkerzeel",
       fr: "Steenokkerzeel"
@@ -6006,7 +6006,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23086",
+    id: "23086",
     name: {
       nl: "Ternat",
       fr: "Ternat"
@@ -6014,7 +6014,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23088",
+    id: "23088",
     name: {
       nl: "Vilvoorde",
       fr: "Vilvorde"
@@ -6022,7 +6022,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23094",
+    id: "23094",
     name: {
       nl: "Zaventem",
       fr: "Zaventem"
@@ -6030,7 +6030,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23096",
+    id: "23096",
     name: {
       nl: "Zemst",
       fr: "Zemst"
@@ -6038,7 +6038,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23097",
+    id: "23097",
     name: {
       nl: "Roosdaal",
       fr: "Roosdaal"
@@ -6046,7 +6046,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23098",
+    id: "23098",
     name: {
       nl: "Drogenbos",
       fr: "Drogenbos"
@@ -6054,7 +6054,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23099",
+    id: "23099",
     name: {
       nl: "Kraainem",
       fr: "Kraainem"
@@ -6062,7 +6062,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23100",
+    id: "23100",
     name: {
       nl: "Linkebeek",
       fr: "Linkebeek"
@@ -6070,7 +6070,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23101",
+    id: "23101",
     name: {
       nl: "Sint-Genesius-Rode",
       fr: "Rhode-Saint-Gen\xE8se"
@@ -6078,7 +6078,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23102",
+    id: "23102",
     name: {
       nl: "Wemmel",
       fr: "Wemmel"
@@ -6086,7 +6086,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23103",
+    id: "23103",
     name: {
       nl: "Wezembeek-Oppem",
       fr: "Wezembeek-Oppem"
@@ -6094,7 +6094,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23104",
+    id: "23104",
     name: {
       nl: "Lennik",
       fr: "Lennik"
@@ -6102,7 +6102,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23105",
+    id: "23105",
     name: {
       nl: "Affligem",
       fr: "Affligem"
@@ -6110,7 +6110,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "23106",
+    id: "23106",
     name: {
       nl: "Pajottegem",
       fr: "Pajottegem"
@@ -6118,7 +6118,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24001",
+    id: "24001",
     name: {
       nl: "Aarschot",
       fr: "Aarschot"
@@ -6126,7 +6126,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24007",
+    id: "24007",
     name: {
       nl: "Begijnendijk",
       fr: "Begijnendijk"
@@ -6134,7 +6134,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24008",
+    id: "24008",
     name: {
       nl: "Bekkevoort",
       fr: "Bekkevoort"
@@ -6142,7 +6142,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24009",
+    id: "24009",
     name: {
       nl: "Bertem",
       fr: "Bertem"
@@ -6150,7 +6150,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24011",
+    id: "24011",
     name: {
       nl: "Bierbeek",
       fr: "Bierbeek"
@@ -6158,7 +6158,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24014",
+    id: "24014",
     name: {
       nl: "Boortmeerbeek",
       fr: "Boortmeerbeek"
@@ -6166,7 +6166,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24016",
+    id: "24016",
     name: {
       nl: "Boutersem",
       fr: "Boutersem"
@@ -6174,7 +6174,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24020",
+    id: "24020",
     name: {
       nl: "Diest",
       fr: "Diest"
@@ -6182,7 +6182,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24028",
+    id: "24028",
     name: {
       nl: "Geetbets",
       fr: "Geetbets"
@@ -6190,7 +6190,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24033",
+    id: "24033",
     name: {
       nl: "Haacht",
       fr: "Haacht"
@@ -6198,7 +6198,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24038",
+    id: "24038",
     name: {
       nl: "Herent",
       fr: "Herent"
@@ -6206,7 +6206,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24041",
+    id: "24041",
     name: {
       nl: "Hoegaarden",
       fr: "Hoegaarden"
@@ -6214,7 +6214,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24043",
+    id: "24043",
     name: {
       nl: "Holsbeek",
       fr: "Holsbeek"
@@ -6222,7 +6222,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24045",
+    id: "24045",
     name: {
       nl: "Huldenberg",
       fr: "Huldenberg"
@@ -6230,7 +6230,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24048",
+    id: "24048",
     name: {
       nl: "Keerbergen",
       fr: "Keerbergen"
@@ -6238,7 +6238,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24054",
+    id: "24054",
     name: {
       nl: "Kortenaken",
       fr: "Kortenaken"
@@ -6246,7 +6246,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24055",
+    id: "24055",
     name: {
       nl: "Kortenberg",
       fr: "Kortenberg"
@@ -6254,7 +6254,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24059",
+    id: "24059",
     name: {
       nl: "Landen",
       fr: "Landen"
@@ -6262,7 +6262,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24062",
+    id: "24062",
     name: {
       nl: "Leuven",
       fr: "Louvain"
@@ -6270,7 +6270,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24066",
+    id: "24066",
     name: {
       nl: "Lubbeek",
       fr: "Lubbeek"
@@ -6278,7 +6278,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24086",
+    id: "24086",
     name: {
       nl: "Oud-Heverlee",
       fr: "Oud-Heverlee"
@@ -6286,7 +6286,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24094",
+    id: "24094",
     name: {
       nl: "Rotselaar",
       fr: "Rotselaar"
@@ -6294,7 +6294,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24104",
+    id: "24104",
     name: {
       nl: "Tervuren",
       fr: "Tervuren"
@@ -6302,7 +6302,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24107",
+    id: "24107",
     name: {
       nl: "Tienen",
       fr: "Tirlemont"
@@ -6310,7 +6310,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24109",
+    id: "24109",
     name: {
       nl: "Tremelo",
       fr: "Tremelo"
@@ -6318,7 +6318,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24130",
+    id: "24130",
     name: {
       nl: "Zoutleeuw",
       fr: "L\xE9au"
@@ -6326,7 +6326,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24133",
+    id: "24133",
     name: {
       nl: "Linter",
       fr: "Linter"
@@ -6334,7 +6334,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24134",
+    id: "24134",
     name: {
       nl: "Scherpenheuvel-Zichem",
       fr: "Montaigu-Zichem"
@@ -6342,7 +6342,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24135",
+    id: "24135",
     name: {
       nl: "Tielt-Winge",
       fr: "Tielt-Winge"
@@ -6350,7 +6350,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "24137",
+    id: "24137",
     name: {
       nl: "Glabbeek",
       fr: "Glabbeek"
@@ -6358,7 +6358,7 @@ var municipalities_default = [
     province: "20001"
   },
   {
-    refnis: "25005",
+    id: "25005",
     name: {
       nl: "Bevekom",
       fr: "Beauvechain"
@@ -6366,7 +6366,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25014",
+    id: "25014",
     name: {
       nl: "Eigenbrakel",
       fr: "Braine-l\u2019Alleud"
@@ -6374,7 +6374,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25015",
+    id: "25015",
     name: {
       nl: "Kasteelbrakel",
       fr: "Braine-le-Ch\xE2teau"
@@ -6382,7 +6382,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25018",
+    id: "25018",
     name: {
       nl: "Chaumont-Gistoux",
       fr: "Chaumont-Gistoux"
@@ -6390,7 +6390,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25023",
+    id: "25023",
     name: {
       nl: "Court-Saint-Etienne",
       fr: "Court-Saint-Etienne"
@@ -6398,7 +6398,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25031",
+    id: "25031",
     name: {
       nl: "Genepi\xEBn",
       fr: "Genappe"
@@ -6406,7 +6406,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25037",
+    id: "25037",
     name: {
       nl: "Graven",
       fr: "Grez-Doiceau"
@@ -6414,7 +6414,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25043",
+    id: "25043",
     name: {
       nl: "Incourt",
       fr: "Incourt"
@@ -6422,7 +6422,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25044",
+    id: "25044",
     name: {
       nl: "Itter",
       fr: "Ittre"
@@ -6430,7 +6430,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25048",
+    id: "25048",
     name: {
       nl: "Geldenaken",
       fr: "Jodoigne"
@@ -6438,7 +6438,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25050",
+    id: "25050",
     name: {
       nl: "Terhulpen",
       fr: "La Hulpe"
@@ -6446,7 +6446,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25068",
+    id: "25068",
     name: {
       nl: "Mont-Saint-Guibert",
       fr: "Mont-Saint-Guibert"
@@ -6454,7 +6454,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25072",
+    id: "25072",
     name: {
       nl: "Nijvel",
       fr: "Nivelles"
@@ -6462,7 +6462,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25084",
+    id: "25084",
     name: {
       nl: "Perwijs",
       fr: "Perwez"
@@ -6470,7 +6470,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25091",
+    id: "25091",
     name: {
       nl: "Rixensart",
       fr: "Rixensart"
@@ -6478,7 +6478,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25105",
+    id: "25105",
     name: {
       nl: "Tubeke",
       fr: "Tubize"
@@ -6486,7 +6486,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25107",
+    id: "25107",
     name: {
       nl: "Villers-la-Ville",
       fr: "Villers-la-Ville"
@@ -6494,7 +6494,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25110",
+    id: "25110",
     name: {
       nl: "Waterloo",
       fr: "Waterloo"
@@ -6502,7 +6502,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25112",
+    id: "25112",
     name: {
       nl: "Waver",
       fr: "Wavre"
@@ -6510,7 +6510,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25117",
+    id: "25117",
     name: {
       nl: "Chastre",
       fr: "Chastre"
@@ -6518,7 +6518,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25118",
+    id: "25118",
     name: {
       nl: "H\xE9l\xE9cine",
       fr: "H\xE9l\xE9cine"
@@ -6526,7 +6526,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25119",
+    id: "25119",
     name: {
       nl: "Lasne",
       fr: "Lasne"
@@ -6534,7 +6534,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25120",
+    id: "25120",
     name: {
       nl: "Orp-Jauche",
       fr: "Orp-Jauche"
@@ -6542,7 +6542,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25121",
+    id: "25121",
     name: {
       nl: "Ottignies-Louvain-la-Neuve",
       fr: "Ottignies-Louvain-la-Neuve"
@@ -6550,7 +6550,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25122",
+    id: "25122",
     name: {
       nl: "Ramillies",
       fr: "Ramillies"
@@ -6558,7 +6558,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25123",
+    id: "25123",
     name: {
       nl: "Rebecq",
       fr: "Rebecq"
@@ -6566,7 +6566,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "25124",
+    id: "25124",
     name: {
       nl: "Walhain",
       fr: "Walhain"
@@ -6574,7 +6574,7 @@ var municipalities_default = [
     province: "20002"
   },
   {
-    refnis: "31003",
+    id: "31003",
     name: {
       nl: "Beernem",
       fr: "Beernem"
@@ -6582,7 +6582,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "31004",
+    id: "31004",
     name: {
       nl: "Blankenberge",
       fr: "Blankenberge"
@@ -6590,7 +6590,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "31005",
+    id: "31005",
     name: {
       nl: "Brugge",
       fr: "Bruges"
@@ -6598,7 +6598,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "31006",
+    id: "31006",
     name: {
       nl: "Damme",
       fr: "Damme"
@@ -6606,7 +6606,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "31012",
+    id: "31012",
     name: {
       nl: "Jabbeke",
       fr: "Jabbeke"
@@ -6614,7 +6614,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "31022",
+    id: "31022",
     name: {
       nl: "Oostkamp",
       fr: "Oostkamp"
@@ -6622,7 +6622,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "31033",
+    id: "31033",
     name: {
       nl: "Torhout",
       fr: "Torhout"
@@ -6630,7 +6630,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "31040",
+    id: "31040",
     name: {
       nl: "Zedelgem",
       fr: "Zedelgem"
@@ -6638,7 +6638,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "31042",
+    id: "31042",
     name: {
       nl: "Zuienkerke",
       fr: "Zuienkerke"
@@ -6646,7 +6646,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "31043",
+    id: "31043",
     name: {
       nl: "Knokke-Heist",
       fr: "Knokke-Heist"
@@ -6654,7 +6654,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "32003",
+    id: "32003",
     name: {
       nl: "Diksmuide",
       fr: "Dixmude"
@@ -6662,7 +6662,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "32006",
+    id: "32006",
     name: {
       nl: "Houthulst",
       fr: "Houthulst"
@@ -6670,7 +6670,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "32010",
+    id: "32010",
     name: {
       nl: "Koekelare",
       fr: "Koekelare"
@@ -6678,7 +6678,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "32011",
+    id: "32011",
     name: {
       nl: "Kortemark",
       fr: "Kortemark"
@@ -6686,7 +6686,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "32030",
+    id: "32030",
     name: {
       nl: "Lo-Reninge",
       fr: "Lo-Reninge"
@@ -6694,7 +6694,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "33011",
+    id: "33011",
     name: {
       nl: "Ieper",
       fr: "Ypres"
@@ -6702,7 +6702,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "33016",
+    id: "33016",
     name: {
       nl: "Mesen",
       fr: "Messines"
@@ -6710,7 +6710,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "33021",
+    id: "33021",
     name: {
       nl: "Poperinge",
       fr: "Poperinge"
@@ -6718,7 +6718,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "33029",
+    id: "33029",
     name: {
       nl: "Wervik",
       fr: "Wervik"
@@ -6726,7 +6726,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "33037",
+    id: "33037",
     name: {
       nl: "Zonnebeke",
       fr: "Zonnebeke"
@@ -6734,7 +6734,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "33039",
+    id: "33039",
     name: {
       nl: "Heuvelland",
       fr: "Heuvelland"
@@ -6742,7 +6742,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "33040",
+    id: "33040",
     name: {
       nl: "Langemark-Poelkapelle",
       fr: "Langemark-Poelkapelle"
@@ -6750,7 +6750,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "33041",
+    id: "33041",
     name: {
       nl: "Vleteren",
       fr: "Vleteren"
@@ -6758,7 +6758,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "34002",
+    id: "34002",
     name: {
       nl: "Anzegem",
       fr: "Anzegem"
@@ -6766,7 +6766,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "34003",
+    id: "34003",
     name: {
       nl: "Avelgem",
       fr: "Avelgem"
@@ -6774,7 +6774,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "34009",
+    id: "34009",
     name: {
       nl: "Deerlijk",
       fr: "Deerlijk"
@@ -6782,7 +6782,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "34013",
+    id: "34013",
     name: {
       nl: "Harelbeke",
       fr: "Harelbeke"
@@ -6790,7 +6790,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "34022",
+    id: "34022",
     name: {
       nl: "Kortrijk",
       fr: "Courtrai"
@@ -6798,7 +6798,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "34023",
+    id: "34023",
     name: {
       nl: "Kuurne",
       fr: "Kuurne"
@@ -6806,7 +6806,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "34025",
+    id: "34025",
     name: {
       nl: "Lendelede",
       fr: "Lendelede"
@@ -6814,7 +6814,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "34027",
+    id: "34027",
     name: {
       nl: "Menen",
       fr: "Menin"
@@ -6822,7 +6822,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "34040",
+    id: "34040",
     name: {
       nl: "Waregem",
       fr: "Waregem"
@@ -6830,7 +6830,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "34041",
+    id: "34041",
     name: {
       nl: "Wevelgem",
       fr: "Wevelgem"
@@ -6838,7 +6838,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "34042",
+    id: "34042",
     name: {
       nl: "Zwevegem",
       fr: "Zwevegem"
@@ -6846,7 +6846,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "34043",
+    id: "34043",
     name: {
       nl: "Spiere-Helkijn",
       fr: "Espierres-Helchin"
@@ -6854,7 +6854,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "35002",
+    id: "35002",
     name: {
       nl: "Bredene",
       fr: "Bredene"
@@ -6862,7 +6862,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "35005",
+    id: "35005",
     name: {
       nl: "Gistel",
       fr: "Gistel"
@@ -6870,7 +6870,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "35006",
+    id: "35006",
     name: {
       nl: "Ichtegem",
       fr: "Ichtegem"
@@ -6878,7 +6878,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "35011",
+    id: "35011",
     name: {
       nl: "Middelkerke",
       fr: "Middelkerke"
@@ -6886,7 +6886,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "35013",
+    id: "35013",
     name: {
       nl: "Oostende",
       fr: "Ostende"
@@ -6894,7 +6894,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "35014",
+    id: "35014",
     name: {
       nl: "Oudenburg",
       fr: "Oudenburg"
@@ -6902,7 +6902,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "35029",
+    id: "35029",
     name: {
       nl: "De Haan",
       fr: "De Haan"
@@ -6910,7 +6910,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "36006",
+    id: "36006",
     name: {
       nl: "Hooglede",
       fr: "Hooglede"
@@ -6918,7 +6918,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "36007",
+    id: "36007",
     name: {
       nl: "Ingelmunster",
       fr: "Ingelmunster"
@@ -6926,7 +6926,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "36008",
+    id: "36008",
     name: {
       nl: "Izegem",
       fr: "Izegem"
@@ -6934,7 +6934,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "36010",
+    id: "36010",
     name: {
       nl: "Ledegem",
       fr: "Ledegem"
@@ -6942,7 +6942,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "36011",
+    id: "36011",
     name: {
       nl: "Lichtervelde",
       fr: "Lichtervelde"
@@ -6950,7 +6950,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "36012",
+    id: "36012",
     name: {
       nl: "Moorslede",
       fr: "Moorslede"
@@ -6958,7 +6958,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "36015",
+    id: "36015",
     name: {
       nl: "Roeselare",
       fr: "Roulers"
@@ -6966,7 +6966,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "36019",
+    id: "36019",
     name: {
       nl: "Staden",
       fr: "Staden"
@@ -6974,7 +6974,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "37002",
+    id: "37002",
     name: {
       nl: "Dentergem",
       fr: "Dentergem"
@@ -6982,7 +6982,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "37010",
+    id: "37010",
     name: {
       nl: "Oostrozebeke",
       fr: "Oostrozebeke"
@@ -6990,7 +6990,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "37011",
+    id: "37011",
     name: {
       nl: "Pittem",
       fr: "Pittem"
@@ -6998,7 +6998,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "37017",
+    id: "37017",
     name: {
       nl: "Wielsbeke",
       fr: "Wielsbeke"
@@ -7006,7 +7006,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "37020",
+    id: "37020",
     name: {
       nl: "Ardooie",
       fr: "Ardooie"
@@ -7014,7 +7014,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "37021",
+    id: "37021",
     name: {
       nl: "Wingene",
       fr: "Wingene"
@@ -7022,7 +7022,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "37022",
+    id: "37022",
     name: {
       nl: "Tielt",
       fr: "Tielt"
@@ -7030,7 +7030,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "38002",
+    id: "38002",
     name: {
       nl: "Alveringem",
       fr: "Alveringem"
@@ -7038,7 +7038,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "38008",
+    id: "38008",
     name: {
       nl: "De Panne",
       fr: "La Panne"
@@ -7046,7 +7046,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "38014",
+    id: "38014",
     name: {
       nl: "Koksijde",
       fr: "Koksijde"
@@ -7054,7 +7054,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "38016",
+    id: "38016",
     name: {
       nl: "Nieuwpoort",
       fr: "Nieuport"
@@ -7062,7 +7062,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "38025",
+    id: "38025",
     name: {
       nl: "Veurne",
       fr: "Furnes"
@@ -7070,7 +7070,7 @@ var municipalities_default = [
     province: "30000"
   },
   {
-    refnis: "41002",
+    id: "41002",
     name: {
       nl: "Aalst",
       fr: "Alost"
@@ -7078,7 +7078,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "41011",
+    id: "41011",
     name: {
       nl: "Denderleeuw",
       fr: "Denderleeuw"
@@ -7086,7 +7086,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "41018",
+    id: "41018",
     name: {
       nl: "Geraardsbergen",
       fr: "Grammont"
@@ -7094,7 +7094,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "41024",
+    id: "41024",
     name: {
       nl: "Haaltert",
       fr: "Haaltert"
@@ -7102,7 +7102,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "41027",
+    id: "41027",
     name: {
       nl: "Herzele",
       fr: "Herzele"
@@ -7110,7 +7110,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "41034",
+    id: "41034",
     name: {
       nl: "Lede",
       fr: "Lede"
@@ -7118,7 +7118,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "41048",
+    id: "41048",
     name: {
       nl: "Ninove",
       fr: "Ninove"
@@ -7126,7 +7126,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "41063",
+    id: "41063",
     name: {
       nl: "Sint-Lievens-Houtem",
       fr: "Sint-Lievens-Houtem"
@@ -7134,7 +7134,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "41081",
+    id: "41081",
     name: {
       nl: "Zottegem",
       fr: "Zottegem"
@@ -7142,7 +7142,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "41082",
+    id: "41082",
     name: {
       nl: "Erpe-Mere",
       fr: "Erpe-Mere"
@@ -7150,7 +7150,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "42003",
+    id: "42003",
     name: {
       nl: "Berlare",
       fr: "Berlare"
@@ -7158,7 +7158,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "42004",
+    id: "42004",
     name: {
       nl: "Buggenhout",
       fr: "Buggenhout"
@@ -7166,7 +7166,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "42006",
+    id: "42006",
     name: {
       nl: "Dendermonde",
       fr: "Termonde"
@@ -7174,7 +7174,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "42008",
+    id: "42008",
     name: {
       nl: "Hamme",
       fr: "Hamme"
@@ -7182,7 +7182,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "42010",
+    id: "42010",
     name: {
       nl: "Laarne",
       fr: "Laarne"
@@ -7190,7 +7190,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "42011",
+    id: "42011",
     name: {
       nl: "Lebbeke",
       fr: "Lebbeke"
@@ -7198,7 +7198,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "42023",
+    id: "42023",
     name: {
       nl: "Waasmunster",
       fr: "Waasmunster"
@@ -7206,7 +7206,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "42025",
+    id: "42025",
     name: {
       nl: "Wetteren",
       fr: "Wetteren"
@@ -7214,7 +7214,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "42026",
+    id: "42026",
     name: {
       nl: "Wichelen",
       fr: "Wichelen"
@@ -7222,7 +7222,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "42028",
+    id: "42028",
     name: {
       nl: "Zele",
       fr: "Zele"
@@ -7230,7 +7230,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "43002",
+    id: "43002",
     name: {
       nl: "Assenede",
       fr: "Assenede"
@@ -7238,7 +7238,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "43005",
+    id: "43005",
     name: {
       nl: "Eeklo",
       fr: "Eeklo"
@@ -7246,7 +7246,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "43007",
+    id: "43007",
     name: {
       nl: "Kaprijke",
       fr: "Kaprijke"
@@ -7254,7 +7254,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "43010",
+    id: "43010",
     name: {
       nl: "Maldegem",
       fr: "Maldegem"
@@ -7262,7 +7262,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "43014",
+    id: "43014",
     name: {
       nl: "Sint-Laureins",
       fr: "Sint-Laureins"
@@ -7270,7 +7270,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "43018",
+    id: "43018",
     name: {
       nl: "Zelzate",
       fr: "Zelzate"
@@ -7278,7 +7278,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "44013",
+    id: "44013",
     name: {
       nl: "Destelbergen",
       fr: "Destelbergen"
@@ -7286,7 +7286,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "44019",
+    id: "44019",
     name: {
       nl: "Evergem",
       fr: "Evergem"
@@ -7294,7 +7294,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "44020",
+    id: "44020",
     name: {
       nl: "Gavere",
       fr: "Gavere"
@@ -7302,7 +7302,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "44021",
+    id: "44021",
     name: {
       nl: "Gent",
       fr: "Gand"
@@ -7310,7 +7310,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "44052",
+    id: "44052",
     name: {
       nl: "Oosterzele",
       fr: "Oosterzele"
@@ -7318,7 +7318,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "44064",
+    id: "44064",
     name: {
       nl: "Sint-Martens-Latem",
       fr: "Sint-Martens-Latem"
@@ -7326,7 +7326,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "44081",
+    id: "44081",
     name: {
       nl: "Zulte",
       fr: "Zulte"
@@ -7334,7 +7334,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "44083",
+    id: "44083",
     name: {
       nl: "Deinze",
       fr: "Deinze"
@@ -7342,7 +7342,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "44084",
+    id: "44084",
     name: {
       nl: "Aalter",
       fr: "Aalter"
@@ -7350,7 +7350,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "44085",
+    id: "44085",
     name: {
       nl: "Lievegem",
       fr: "Lievegem"
@@ -7358,7 +7358,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "44086",
+    id: "44086",
     name: {
       nl: "Nazareth-De Pinte",
       fr: "Nazareth-De Pinte"
@@ -7366,7 +7366,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "44087",
+    id: "44087",
     name: {
       nl: "Lochristi",
       fr: "Lochristi"
@@ -7374,7 +7374,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "44088",
+    id: "44088",
     name: {
       nl: "Merelbeke-Melle",
       fr: "Merelbeke-Melle"
@@ -7382,7 +7382,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "45035",
+    id: "45035",
     name: {
       nl: "Oudenaarde",
       fr: "Audenarde"
@@ -7390,7 +7390,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "45041",
+    id: "45041",
     name: {
       nl: "Ronse",
       fr: "Renaix"
@@ -7398,7 +7398,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "45059",
+    id: "45059",
     name: {
       nl: "Brakel",
       fr: "Brakel"
@@ -7406,7 +7406,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "45060",
+    id: "45060",
     name: {
       nl: "Kluisbergen",
       fr: "Kluisbergen"
@@ -7414,7 +7414,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "45061",
+    id: "45061",
     name: {
       nl: "Wortegem-Petegem",
       fr: "Wortegem-Petegem"
@@ -7422,7 +7422,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "45062",
+    id: "45062",
     name: {
       nl: "Horebeke",
       fr: "Horebeke"
@@ -7430,7 +7430,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "45063",
+    id: "45063",
     name: {
       nl: "Lierde",
       fr: "Lierde"
@@ -7438,7 +7438,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "45064",
+    id: "45064",
     name: {
       nl: "Maarkedal",
       fr: "Maarkedal"
@@ -7446,7 +7446,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "45065",
+    id: "45065",
     name: {
       nl: "Zwalm",
       fr: "Zwalin"
@@ -7454,7 +7454,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "45068",
+    id: "45068",
     name: {
       nl: "Kruisem",
       fr: "Kruisem"
@@ -7462,7 +7462,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "46020",
+    id: "46020",
     name: {
       nl: "Sint-Gillis-Waas",
       fr: "Sint-Gillis-Waas"
@@ -7470,7 +7470,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "46021",
+    id: "46021",
     name: {
       nl: "Sint-Niklaas",
       fr: "Sint-Niklaas"
@@ -7478,7 +7478,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "46024",
+    id: "46024",
     name: {
       nl: "Stekene",
       fr: "Stekene"
@@ -7486,7 +7486,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "46025",
+    id: "46025",
     name: {
       nl: "Temse",
       fr: "Tamise"
@@ -7494,7 +7494,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "46029",
+    id: "46029",
     name: {
       nl: "Lokeren",
       fr: "Lokeren"
@@ -7502,7 +7502,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "46030",
+    id: "46030",
     name: {
       nl: "Beveren-Kruibeke-Zwijndrecht",
       fr: "Beveren-Kruibeke-Zwijndrecht"
@@ -7510,7 +7510,7 @@ var municipalities_default = [
     province: "40000"
   },
   {
-    refnis: "51004",
+    id: "51004",
     name: {
       nl: "Aat",
       fr: "Ath"
@@ -7518,7 +7518,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "51008",
+    id: "51008",
     name: {
       nl: "Beloeil",
       fr: "Beloeil"
@@ -7526,7 +7526,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "51009",
+    id: "51009",
     name: {
       nl: "Bernissart",
       fr: "Bernissart"
@@ -7534,7 +7534,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "51012",
+    id: "51012",
     name: {
       nl: "Brugelette",
       fr: "Brugelette"
@@ -7542,7 +7542,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "51014",
+    id: "51014",
     name: {
       nl: "Chi\xE8vres",
       fr: "Chi\xE8vres"
@@ -7550,7 +7550,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "51017",
+    id: "51017",
     name: {
       nl: "Elzele",
       fr: "Ellezelles"
@@ -7558,7 +7558,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "51019",
+    id: "51019",
     name: {
       nl: "Vloesberg",
       fr: "Flobecq"
@@ -7566,7 +7566,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "51065",
+    id: "51065",
     name: {
       nl: "Frasnes-lez-Anvaing",
       fr: "Frasnes-lez-Anvaing"
@@ -7574,7 +7574,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "51067",
+    id: "51067",
     name: {
       nl: "Edingen",
       fr: "Enghien"
@@ -7582,7 +7582,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "51068",
+    id: "51068",
     name: {
       nl: "Opzullik",
       fr: "Silly"
@@ -7590,7 +7590,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "51069",
+    id: "51069",
     name: {
       nl: "Lessen",
       fr: "Lessines"
@@ -7598,7 +7598,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "52010",
+    id: "52010",
     name: {
       nl: "Chapelle-lez-Herlaimont",
       fr: "Chapelle-lez-Herlaimont"
@@ -7606,7 +7606,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "52011",
+    id: "52011",
     name: {
       nl: "Charleroi",
       fr: "Charleroi"
@@ -7614,7 +7614,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "52012",
+    id: "52012",
     name: {
       nl: "Ch\xE2telet",
       fr: "Ch\xE2telet"
@@ -7622,7 +7622,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "52015",
+    id: "52015",
     name: {
       nl: "Courcelles",
       fr: "Courcelles"
@@ -7630,7 +7630,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "52018",
+    id: "52018",
     name: {
       nl: "Farciennes",
       fr: "Farciennes"
@@ -7638,7 +7638,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "52021",
+    id: "52021",
     name: {
       nl: "Fleurus",
       fr: "Fleurus"
@@ -7646,7 +7646,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "52022",
+    id: "52022",
     name: {
       nl: "Fontaine-l\u2019Ev\xEAque",
       fr: "Fontaine-l\u2019Ev\xEAque"
@@ -7654,7 +7654,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "52025",
+    id: "52025",
     name: {
       nl: "Gerpinnes",
       fr: "Gerpinnes"
@@ -7662,7 +7662,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "52048",
+    id: "52048",
     name: {
       nl: "Montigny-le-Tilleul",
       fr: "Montigny-le-Tilleul"
@@ -7670,7 +7670,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "52055",
+    id: "52055",
     name: {
       nl: "Pont-\xE0-Celles",
       fr: "Pont-\xE0-Celles"
@@ -7678,7 +7678,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "52074",
+    id: "52074",
     name: {
       nl: "Aiseau-Presles",
       fr: "Aiseau-Presles"
@@ -7686,7 +7686,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "52075",
+    id: "52075",
     name: {
       nl: "Les Bons Villers",
       fr: "Les Bons Villers"
@@ -7694,7 +7694,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "53014",
+    id: "53014",
     name: {
       nl: "Boussu",
       fr: "Boussu"
@@ -7702,7 +7702,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "53020",
+    id: "53020",
     name: {
       nl: "Dour",
       fr: "Dour"
@@ -7710,7 +7710,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "53028",
+    id: "53028",
     name: {
       nl: "Frameries",
       fr: "Frameries"
@@ -7718,7 +7718,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "53039",
+    id: "53039",
     name: {
       nl: "Hensies",
       fr: "Hensies"
@@ -7726,7 +7726,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "53044",
+    id: "53044",
     name: {
       nl: "Jurbeke",
       fr: "Jurbise"
@@ -7734,7 +7734,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "53046",
+    id: "53046",
     name: {
       nl: "Lens",
       fr: "Lens"
@@ -7742,7 +7742,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "53053",
+    id: "53053",
     name: {
       nl: "Bergen",
       fr: "Mons"
@@ -7750,7 +7750,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "53065",
+    id: "53065",
     name: {
       nl: "Quaregnon",
       fr: "Quaregnon"
@@ -7758,7 +7758,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "53068",
+    id: "53068",
     name: {
       nl: "Qui\xE9vrain",
       fr: "Qui\xE9vrain"
@@ -7766,7 +7766,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "53070",
+    id: "53070",
     name: {
       nl: "Saint-Ghislain",
       fr: "Saint-Ghislain"
@@ -7774,7 +7774,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "53082",
+    id: "53082",
     name: {
       nl: "Colfontaine",
       fr: "Colfontaine"
@@ -7782,7 +7782,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "53083",
+    id: "53083",
     name: {
       nl: "Honnelles",
       fr: "Honnelles"
@@ -7790,7 +7790,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "53084",
+    id: "53084",
     name: {
       nl: "Qu\xE9vy",
       fr: "Qu\xE9vy"
@@ -7798,7 +7798,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "55004",
+    id: "55004",
     name: {
       nl: "\u2019s Gravenbrakel",
       fr: "Braine-le-Comte"
@@ -7806,7 +7806,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "55035",
+    id: "55035",
     name: {
       nl: "Le Roeulx",
       fr: "Le Roeulx"
@@ -7814,7 +7814,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "55040",
+    id: "55040",
     name: {
       nl: "Zinnik",
       fr: "Soignies"
@@ -7822,7 +7822,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "55050",
+    id: "55050",
     name: {
       nl: "Ecaussinnes",
       fr: "Ecaussinnes"
@@ -7830,7 +7830,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "55085",
+    id: "55085",
     name: {
       nl: "Seneffe",
       fr: "Seneffe"
@@ -7838,7 +7838,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "55086",
+    id: "55086",
     name: {
       nl: "Manage",
       fr: "Manage"
@@ -7846,7 +7846,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "56001",
+    id: "56001",
     name: {
       nl: "Anderlues",
       fr: "Anderlues"
@@ -7854,7 +7854,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "56005",
+    id: "56005",
     name: {
       nl: "Beaumont",
       fr: "Beaumont"
@@ -7862,7 +7862,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "56016",
+    id: "56016",
     name: {
       nl: "Chimay",
       fr: "Chimay"
@@ -7870,7 +7870,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "56022",
+    id: "56022",
     name: {
       nl: "Erquelinnes",
       fr: "Erquelinnes"
@@ -7878,7 +7878,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "56029",
+    id: "56029",
     name: {
       nl: "Froidchapelle",
       fr: "Froidchapelle"
@@ -7886,7 +7886,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "56044",
+    id: "56044",
     name: {
       nl: "Lobbes",
       fr: "Lobbes"
@@ -7894,7 +7894,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "56049",
+    id: "56049",
     name: {
       nl: "Merbes-le-Ch\xE2teau",
       fr: "Merbes-le-Ch\xE2teau"
@@ -7902,7 +7902,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "56051",
+    id: "56051",
     name: {
       nl: "Momignies",
       fr: "Momignies"
@@ -7910,7 +7910,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "56078",
+    id: "56078",
     name: {
       nl: "Thuin",
       fr: "Thuin"
@@ -7918,7 +7918,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "56086",
+    id: "56086",
     name: {
       nl: "Ham-sur-Heure-Nalinnes",
       fr: "Ham-sur-Heure-Nalinnes"
@@ -7926,7 +7926,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "56088",
+    id: "56088",
     name: {
       nl: "Sivry-Rance",
       fr: "Sivry-Rance"
@@ -7934,7 +7934,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "57003",
+    id: "57003",
     name: {
       nl: "Antoing",
       fr: "Antoing"
@@ -7942,7 +7942,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "57018",
+    id: "57018",
     name: {
       nl: "Celles",
       fr: "Celles"
@@ -7950,7 +7950,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "57027",
+    id: "57027",
     name: {
       nl: "Estaimpuis",
       fr: "Estaimpuis"
@@ -7958,7 +7958,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "57062",
+    id: "57062",
     name: {
       nl: "Pecq",
       fr: "Pecq"
@@ -7966,7 +7966,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "57064",
+    id: "57064",
     name: {
       nl: "P\xE9ruwelz",
       fr: "P\xE9ruwelz"
@@ -7974,7 +7974,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "57072",
+    id: "57072",
     name: {
       nl: "Rumes",
       fr: "Rumes"
@@ -7982,7 +7982,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "57081",
+    id: "57081",
     name: {
       nl: "Doornik",
       fr: "Tournai"
@@ -7990,7 +7990,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "57093",
+    id: "57093",
     name: {
       nl: "Brunehaut",
       fr: "Brunehaut"
@@ -7998,7 +7998,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "57094",
+    id: "57094",
     name: {
       nl: "Leuze-en-Hainaut",
       fr: "Leuze-en-Hainaut"
@@ -8006,7 +8006,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "57095",
+    id: "57095",
     name: {
       nl: "Mont-de-l\u2019Enclus",
       fr: "Mont-de-l\u2019Enclus"
@@ -8014,7 +8014,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "57096",
+    id: "57096",
     name: {
       nl: "Moeskroen",
       fr: "Mouscron"
@@ -8022,7 +8022,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "57097",
+    id: "57097",
     name: {
       nl: "Komen-Waasten",
       fr: "Comines-Warneton"
@@ -8030,7 +8030,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "58001",
+    id: "58001",
     name: {
       nl: "La Louvi\xE8re",
       fr: "La Louvi\xE8re"
@@ -8038,7 +8038,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "58002",
+    id: "58002",
     name: {
       nl: "Binche",
       fr: "Binche"
@@ -8046,7 +8046,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "58003",
+    id: "58003",
     name: {
       nl: "Estinnes",
       fr: "Estinnes"
@@ -8054,7 +8054,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "58004",
+    id: "58004",
     name: {
       nl: "Morlanwelz",
       fr: "Morlanwelz"
@@ -8062,7 +8062,7 @@ var municipalities_default = [
     province: "50000"
   },
   {
-    refnis: "61003",
+    id: "61003",
     name: {
       nl: "Amay",
       fr: "Amay"
@@ -8070,7 +8070,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "61010",
+    id: "61010",
     name: {
       nl: "Burdinne",
       fr: "Burdinne"
@@ -8078,7 +8078,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "61012",
+    id: "61012",
     name: {
       nl: "Clavier",
       fr: "Clavier"
@@ -8086,7 +8086,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "61019",
+    id: "61019",
     name: {
       nl: "Ferri\xE8res",
       fr: "Ferri\xE8res"
@@ -8094,7 +8094,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "61024",
+    id: "61024",
     name: {
       nl: "Hamoir",
       fr: "Hamoir"
@@ -8102,7 +8102,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "61028",
+    id: "61028",
     name: {
       nl: "H\xE9ron",
       fr: "H\xE9ron"
@@ -8110,7 +8110,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "61031",
+    id: "61031",
     name: {
       nl: "Hoei",
       fr: "Huy"
@@ -8118,7 +8118,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "61039",
+    id: "61039",
     name: {
       nl: "Marchin",
       fr: "Marchin"
@@ -8126,7 +8126,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "61041",
+    id: "61041",
     name: {
       nl: "Modave",
       fr: "Modave"
@@ -8134,7 +8134,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "61043",
+    id: "61043",
     name: {
       nl: "Nandrin",
       fr: "Nandrin"
@@ -8142,7 +8142,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "61048",
+    id: "61048",
     name: {
       nl: "Ouffet",
       fr: "Ouffet"
@@ -8150,7 +8150,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "61063",
+    id: "61063",
     name: {
       nl: "Verlaine",
       fr: "Verlaine"
@@ -8158,7 +8158,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "61068",
+    id: "61068",
     name: {
       nl: "Villers-Le-Bouillet",
       fr: "Villers-Le-Bouillet"
@@ -8166,7 +8166,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "61072",
+    id: "61072",
     name: {
       nl: "Wanze",
       fr: "Wanze"
@@ -8174,7 +8174,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "61079",
+    id: "61079",
     name: {
       nl: "Anthisnes",
       fr: "Anthisnes"
@@ -8182,7 +8182,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "61080",
+    id: "61080",
     name: {
       nl: "Engis",
       fr: "Engis"
@@ -8190,7 +8190,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "61081",
+    id: "61081",
     name: {
       nl: "Tinlot",
       fr: "Tinlot"
@@ -8198,7 +8198,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62003",
+    id: "62003",
     name: {
       nl: "Ans",
       fr: "Ans"
@@ -8206,7 +8206,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62006",
+    id: "62006",
     name: {
       nl: "Awans",
       fr: "Awans"
@@ -8214,7 +8214,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62009",
+    id: "62009",
     name: {
       nl: "Aywaille",
       fr: "Aywaille"
@@ -8222,7 +8222,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62011",
+    id: "62011",
     name: {
       nl: "Bitsingen",
       fr: "Bassenge"
@@ -8230,7 +8230,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62015",
+    id: "62015",
     name: {
       nl: "Beyne-Heusay",
       fr: "Beyne-Heusay"
@@ -8238,7 +8238,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62022",
+    id: "62022",
     name: {
       nl: "Chaudfontaine",
       fr: "Chaudfontaine"
@@ -8246,7 +8246,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62026",
+    id: "62026",
     name: {
       nl: "Comblain-au-Pont",
       fr: "Comblain-au-Pont"
@@ -8254,7 +8254,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62027",
+    id: "62027",
     name: {
       nl: "Dalhem",
       fr: "Dalhem"
@@ -8262,7 +8262,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62032",
+    id: "62032",
     name: {
       nl: "Esneux",
       fr: "Esneux"
@@ -8270,7 +8270,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62038",
+    id: "62038",
     name: {
       nl: "Fl\xE9ron",
       fr: "Fl\xE9ron"
@@ -8278,7 +8278,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62051",
+    id: "62051",
     name: {
       nl: "Herstal",
       fr: "Herstal"
@@ -8286,7 +8286,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62060",
+    id: "62060",
     name: {
       nl: "Juprelle",
       fr: "Juprelle"
@@ -8294,7 +8294,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62063",
+    id: "62063",
     name: {
       nl: "Luik",
       fr: "Li\xE8ge"
@@ -8302,7 +8302,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62079",
+    id: "62079",
     name: {
       nl: "Oupeye",
       fr: "Oupeye"
@@ -8310,7 +8310,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62093",
+    id: "62093",
     name: {
       nl: "Saint-Nicolas",
       fr: "Saint-Nicolas"
@@ -8318,7 +8318,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62096",
+    id: "62096",
     name: {
       nl: "Seraing",
       fr: "Seraing"
@@ -8326,7 +8326,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62099",
+    id: "62099",
     name: {
       nl: "Soumagne",
       fr: "Soumagne"
@@ -8334,7 +8334,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62100",
+    id: "62100",
     name: {
       nl: "Sprimont",
       fr: "Sprimont"
@@ -8342,7 +8342,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62108",
+    id: "62108",
     name: {
       nl: "Wezet",
       fr: "Vis\xE9"
@@ -8350,7 +8350,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62118",
+    id: "62118",
     name: {
       nl: "Gr\xE2ce-Hollogne",
       fr: "Gr\xE2ce-Hollogne"
@@ -8358,7 +8358,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62119",
+    id: "62119",
     name: {
       nl: "Blegny",
       fr: "Blegny"
@@ -8366,7 +8366,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62120",
+    id: "62120",
     name: {
       nl: "Fl\xE9malle",
       fr: "Fl\xE9malle"
@@ -8374,7 +8374,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62121",
+    id: "62121",
     name: {
       nl: "Neupr\xE9",
       fr: "Neupr\xE9"
@@ -8382,7 +8382,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "62122",
+    id: "62122",
     name: {
       nl: "Trooz",
       fr: "Trooz"
@@ -8390,7 +8390,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63001",
+    id: "63001",
     name: {
       nl: "Amel",
       fr: "Ambl\xE8ve"
@@ -8398,7 +8398,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63003",
+    id: "63003",
     name: {
       nl: "Aubel",
       fr: "Aubel"
@@ -8406,7 +8406,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63004",
+    id: "63004",
     name: {
       nl: "Baelen",
       fr: "Baelen"
@@ -8414,7 +8414,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63012",
+    id: "63012",
     name: {
       nl: "B\xFCllingen",
       fr: "Bullange"
@@ -8422,7 +8422,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63013",
+    id: "63013",
     name: {
       nl: "B\xFCtgenbach",
       fr: "Butgenbach"
@@ -8430,7 +8430,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63020",
+    id: "63020",
     name: {
       nl: "Dison",
       fr: "Dison"
@@ -8438,7 +8438,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63023",
+    id: "63023",
     name: {
       nl: "Eupen",
       fr: "Eupen"
@@ -8446,7 +8446,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63035",
+    id: "63035",
     name: {
       nl: "Herve",
       fr: "Herve"
@@ -8454,7 +8454,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63038",
+    id: "63038",
     name: {
       nl: "Jalhay",
       fr: "Jalhay"
@@ -8462,7 +8462,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63040",
+    id: "63040",
     name: {
       nl: "Kelmis",
       fr: "La Calamine"
@@ -8470,7 +8470,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63045",
+    id: "63045",
     name: {
       nl: "Lierneux",
       fr: "Lierneux"
@@ -8478,7 +8478,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63046",
+    id: "63046",
     name: {
       nl: "Limburg",
       fr: "Limbourg"
@@ -8486,7 +8486,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63048",
+    id: "63048",
     name: {
       nl: "Lontzen",
       fr: "Lontzen"
@@ -8494,7 +8494,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63049",
+    id: "63049",
     name: {
       nl: "Malmedy",
       fr: "Malmedy"
@@ -8502,7 +8502,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63057",
+    id: "63057",
     name: {
       nl: "Olne",
       fr: "Olne"
@@ -8510,7 +8510,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63058",
+    id: "63058",
     name: {
       nl: "Pepinster",
       fr: "Pepinster"
@@ -8518,7 +8518,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63061",
+    id: "63061",
     name: {
       nl: "Raeren",
       fr: "Raeren"
@@ -8526,7 +8526,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63067",
+    id: "63067",
     name: {
       nl: "Sankt Vith",
       fr: "Saint-Vith"
@@ -8534,7 +8534,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63072",
+    id: "63072",
     name: {
       nl: "Spa",
       fr: "Spa"
@@ -8542,7 +8542,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63073",
+    id: "63073",
     name: {
       nl: "Stavelot",
       fr: "Stavelot"
@@ -8550,7 +8550,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63075",
+    id: "63075",
     name: {
       nl: "Stoumont",
       fr: "Stoumont"
@@ -8558,7 +8558,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63076",
+    id: "63076",
     name: {
       nl: "Theux",
       fr: "Theux"
@@ -8566,7 +8566,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63079",
+    id: "63079",
     name: {
       nl: "Verviers",
       fr: "Verviers"
@@ -8574,7 +8574,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63080",
+    id: "63080",
     name: {
       nl: "Weismes",
       fr: "Waimes"
@@ -8582,7 +8582,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63084",
+    id: "63084",
     name: {
       nl: "Welkenraedt",
       fr: "Welkenraedt"
@@ -8590,7 +8590,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63086",
+    id: "63086",
     name: {
       nl: "Trois-Ponts",
       fr: "Trois-Ponts"
@@ -8598,7 +8598,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63087",
+    id: "63087",
     name: {
       nl: "Burg-Reuland",
       fr: "Burg-Reuland"
@@ -8606,7 +8606,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63088",
+    id: "63088",
     name: {
       nl: "Plombi\xE8res",
       fr: "Plombi\xE8res"
@@ -8614,7 +8614,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "63089",
+    id: "63089",
     name: {
       nl: "Thimister-Clermont",
       fr: "Thimister-Clermont"
@@ -8622,7 +8622,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "64008",
+    id: "64008",
     name: {
       nl: "Berloz",
       fr: "Berloz"
@@ -8630,7 +8630,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "64015",
+    id: "64015",
     name: {
       nl: "Braives",
       fr: "Braives"
@@ -8638,7 +8638,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "64021",
+    id: "64021",
     name: {
       nl: "Crisn\xE9e",
       fr: "Crisn\xE9e"
@@ -8646,7 +8646,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "64023",
+    id: "64023",
     name: {
       nl: "Donceel",
       fr: "Donceel"
@@ -8654,7 +8654,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "64025",
+    id: "64025",
     name: {
       nl: "Fexhe-le-Haut-Clocher",
       fr: "Fexhe-le-Haut-Clocher"
@@ -8662,7 +8662,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "64029",
+    id: "64029",
     name: {
       nl: "Geer",
       fr: "Geer"
@@ -8670,7 +8670,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "64034",
+    id: "64034",
     name: {
       nl: "Hannuit",
       fr: "Hannut"
@@ -8678,7 +8678,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "64047",
+    id: "64047",
     name: {
       nl: "Lijsem",
       fr: "Lincent"
@@ -8686,7 +8686,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "64056",
+    id: "64056",
     name: {
       nl: "Oerle",
       fr: "Oreye"
@@ -8694,7 +8694,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "64063",
+    id: "64063",
     name: {
       nl: "Remicourt",
       fr: "Remicourt"
@@ -8702,7 +8702,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "64065",
+    id: "64065",
     name: {
       nl: "Saint-Georges-sur-Meuse",
       fr: "Saint-Georges-sur-Meuse"
@@ -8710,7 +8710,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "64074",
+    id: "64074",
     name: {
       nl: "Borgworm",
       fr: "Waremme"
@@ -8718,7 +8718,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "64075",
+    id: "64075",
     name: {
       nl: "Wasseiges",
       fr: "Wasseiges"
@@ -8726,7 +8726,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "64076",
+    id: "64076",
     name: {
       nl: "Faimes",
       fr: "Faimes"
@@ -8734,7 +8734,7 @@ var municipalities_default = [
     province: "60000"
   },
   {
-    refnis: "71002",
+    id: "71002",
     name: {
       nl: "As",
       fr: "As"
@@ -8742,7 +8742,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "71004",
+    id: "71004",
     name: {
       nl: "Beringen",
       fr: "Beringen"
@@ -8750,7 +8750,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "71011",
+    id: "71011",
     name: {
       nl: "Diepenbeek",
       fr: "Diepenbeek"
@@ -8758,7 +8758,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "71016",
+    id: "71016",
     name: {
       nl: "Genk",
       fr: "Genk"
@@ -8766,7 +8766,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "71017",
+    id: "71017",
     name: {
       nl: "Gingelom",
       fr: "Gingelom"
@@ -8774,7 +8774,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "71020",
+    id: "71020",
     name: {
       nl: "Halen",
       fr: "Halen"
@@ -8782,7 +8782,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "71024",
+    id: "71024",
     name: {
       nl: "Herk-de-Stad",
       fr: "Herck-la-Ville"
@@ -8790,7 +8790,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "71034",
+    id: "71034",
     name: {
       nl: "Leopoldsburg",
       fr: "Bourg-L\xE9opold"
@@ -8798,7 +8798,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "71037",
+    id: "71037",
     name: {
       nl: "Lummen",
       fr: "Lummen"
@@ -8806,7 +8806,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "71045",
+    id: "71045",
     name: {
       nl: "Nieuwerkerken",
       fr: "Nieuwerkerken"
@@ -8814,7 +8814,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "71053",
+    id: "71053",
     name: {
       nl: "Sint-Truiden",
       fr: "Saint-Trond"
@@ -8822,7 +8822,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "71066",
+    id: "71066",
     name: {
       nl: "Zonhoven",
       fr: "Zonhoven"
@@ -8830,7 +8830,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "71067",
+    id: "71067",
     name: {
       nl: "Zutendaal",
       fr: "Zutendaal"
@@ -8838,7 +8838,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "71070",
+    id: "71070",
     name: {
       nl: "Heusden-Zolder",
       fr: "Heusden-Zolder"
@@ -8846,7 +8846,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "71071",
+    id: "71071",
     name: {
       nl: "Tessenderlo-Ham",
       fr: "Tessenderlo-Ham"
@@ -8854,7 +8854,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "71072",
+    id: "71072",
     name: {
       nl: "Hasselt",
       fr: "Hasselt"
@@ -8862,7 +8862,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "72003",
+    id: "72003",
     name: {
       nl: "Bocholt",
       fr: "Bocholt"
@@ -8870,7 +8870,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "72004",
+    id: "72004",
     name: {
       nl: "Bree",
       fr: "Bree"
@@ -8878,7 +8878,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "72018",
+    id: "72018",
     name: {
       nl: "Kinrooi",
       fr: "Kinrooi"
@@ -8886,7 +8886,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "72020",
+    id: "72020",
     name: {
       nl: "Lommel",
       fr: "Lommel"
@@ -8894,7 +8894,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "72021",
+    id: "72021",
     name: {
       nl: "Maaseik",
       fr: "Maaseik"
@@ -8902,7 +8902,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "72030",
+    id: "72030",
     name: {
       nl: "Peer",
       fr: "Peer"
@@ -8910,7 +8910,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "72037",
+    id: "72037",
     name: {
       nl: "Hamont-Achel",
       fr: "Hamont-Achel"
@@ -8918,7 +8918,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "72038",
+    id: "72038",
     name: {
       nl: "Hechtel-Eksel",
       fr: "Hechtel-Eksel"
@@ -8926,7 +8926,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "72039",
+    id: "72039",
     name: {
       nl: "Houthalen-Helchteren",
       fr: "Houthalen-Helchteren"
@@ -8934,7 +8934,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "72041",
+    id: "72041",
     name: {
       nl: "Dilsen-Stokkem",
       fr: "Dilsen-Stokkem"
@@ -8942,7 +8942,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "72042",
+    id: "72042",
     name: {
       nl: "Oudsbergen",
       fr: "Oudsbergen"
@@ -8950,7 +8950,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "72043",
+    id: "72043",
     name: {
       nl: "Pelt",
       fr: "Pelt"
@@ -8958,7 +8958,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "73001",
+    id: "73001",
     name: {
       nl: "Alken",
       fr: "Alken"
@@ -8966,7 +8966,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "73022",
+    id: "73022",
     name: {
       nl: "Heers",
       fr: "Heers"
@@ -8974,7 +8974,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "73028",
+    id: "73028",
     name: {
       nl: "Herstappe",
       fr: "Herstappe"
@@ -8982,7 +8982,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "73042",
+    id: "73042",
     name: {
       nl: "Lanaken",
       fr: "Lanaken"
@@ -8990,7 +8990,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "73066",
+    id: "73066",
     name: {
       nl: "Riemst",
       fr: "Riemst"
@@ -8998,7 +8998,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "73098",
+    id: "73098",
     name: {
       nl: "Wellen",
       fr: "Wellen"
@@ -9006,7 +9006,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "73107",
+    id: "73107",
     name: {
       nl: "Maasmechelen",
       fr: "Maasmechelen"
@@ -9014,7 +9014,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "73109",
+    id: "73109",
     name: {
       nl: "Voeren",
       fr: "Fourons"
@@ -9022,7 +9022,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "73110",
+    id: "73110",
     name: {
       nl: "Bilzen-Hoeselt",
       fr: "Bilzen-Hoeselt"
@@ -9030,7 +9030,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "73111",
+    id: "73111",
     name: {
       nl: "Tongeren-Borgloon",
       fr: "Tongres-Looz"
@@ -9038,7 +9038,7 @@ var municipalities_default = [
     province: "70000"
   },
   {
-    refnis: "81001",
+    id: "81001",
     name: {
       nl: "Aarlen",
       fr: "Arlon"
@@ -9046,7 +9046,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "81003",
+    id: "81003",
     name: {
       nl: "Attert",
       fr: "Attert"
@@ -9054,7 +9054,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "81004",
+    id: "81004",
     name: {
       nl: "Aubange",
       fr: "Aubange"
@@ -9062,7 +9062,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "81013",
+    id: "81013",
     name: {
       nl: "Martelange",
       fr: "Martelange"
@@ -9070,7 +9070,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "81015",
+    id: "81015",
     name: {
       nl: "Messancy",
       fr: "Messancy"
@@ -9078,7 +9078,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "82009",
+    id: "82009",
     name: {
       nl: "Fauvillers",
       fr: "Fauvillers"
@@ -9086,7 +9086,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "82014",
+    id: "82014",
     name: {
       nl: "Houffalize",
       fr: "Houffalize"
@@ -9094,7 +9094,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "82032",
+    id: "82032",
     name: {
       nl: "Vielsalm",
       fr: "Vielsalm"
@@ -9102,7 +9102,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "82036",
+    id: "82036",
     name: {
       nl: "Vaux-sur-S\xFBre",
       fr: "Vaux-sur-S\xFBre"
@@ -9110,7 +9110,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "82037",
+    id: "82037",
     name: {
       nl: "Gouvy",
       fr: "Gouvy"
@@ -9118,7 +9118,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "82038",
+    id: "82038",
     name: {
       nl: "Sainte-Ode",
       fr: "Sainte-Ode"
@@ -9126,7 +9126,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "82039",
+    id: "82039",
     name: {
       nl: "Bastenaken",
       fr: "Bastogne"
@@ -9134,7 +9134,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "83012",
+    id: "83012",
     name: {
       nl: "Durbuy",
       fr: "Durbuy"
@@ -9142,7 +9142,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "83013",
+    id: "83013",
     name: {
       nl: "Erez\xE9e",
       fr: "Erez\xE9e"
@@ -9150,7 +9150,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "83028",
+    id: "83028",
     name: {
       nl: "Hotton",
       fr: "Hotton"
@@ -9158,7 +9158,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "83031",
+    id: "83031",
     name: {
       nl: "La Roche-en-Ardenne",
       fr: "La Roche-en-Ardenne"
@@ -9166,7 +9166,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "83034",
+    id: "83034",
     name: {
       nl: "Marche-en-Famenne",
       fr: "Marche-en-Famenne"
@@ -9174,7 +9174,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "83040",
+    id: "83040",
     name: {
       nl: "Nassogne",
       fr: "Nassogne"
@@ -9182,7 +9182,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "83044",
+    id: "83044",
     name: {
       nl: "Rendeux",
       fr: "Rendeux"
@@ -9190,7 +9190,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "83049",
+    id: "83049",
     name: {
       nl: "Tenneville",
       fr: "Tenneville"
@@ -9198,7 +9198,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "83055",
+    id: "83055",
     name: {
       nl: "Manhay",
       fr: "Manhay"
@@ -9206,7 +9206,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "84009",
+    id: "84009",
     name: {
       nl: "Bertrix",
       fr: "Bertrix"
@@ -9214,7 +9214,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "84010",
+    id: "84010",
     name: {
       nl: "Bouillon",
       fr: "Bouillon"
@@ -9222,7 +9222,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "84016",
+    id: "84016",
     name: {
       nl: "Daverdisse",
       fr: "Daverdisse"
@@ -9230,7 +9230,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "84029",
+    id: "84029",
     name: {
       nl: "Herbeumont",
       fr: "Herbeumont"
@@ -9238,7 +9238,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "84033",
+    id: "84033",
     name: {
       nl: "L\xE9glise",
       fr: "L\xE9glise"
@@ -9246,7 +9246,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "84035",
+    id: "84035",
     name: {
       nl: "Libin",
       fr: "Libin"
@@ -9254,7 +9254,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "84043",
+    id: "84043",
     name: {
       nl: "Neufch\xE2teau",
       fr: "Neufch\xE2teau"
@@ -9262,7 +9262,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "84050",
+    id: "84050",
     name: {
       nl: "Paliseul",
       fr: "Paliseul"
@@ -9270,7 +9270,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "84059",
+    id: "84059",
     name: {
       nl: "Saint-Hubert",
       fr: "Saint-Hubert"
@@ -9278,7 +9278,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "84068",
+    id: "84068",
     name: {
       nl: "Tellin",
       fr: "Tellin"
@@ -9286,7 +9286,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "84075",
+    id: "84075",
     name: {
       nl: "Wellin",
       fr: "Wellin"
@@ -9294,7 +9294,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "84077",
+    id: "84077",
     name: {
       nl: "Libramont-Chevigny",
       fr: "Libramont-Chevigny"
@@ -9302,7 +9302,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "85007",
+    id: "85007",
     name: {
       nl: "Chiny",
       fr: "Chiny"
@@ -9310,7 +9310,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "85009",
+    id: "85009",
     name: {
       nl: "Etalle",
       fr: "Etalle"
@@ -9318,7 +9318,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "85011",
+    id: "85011",
     name: {
       nl: "Florenville",
       fr: "Florenville"
@@ -9326,7 +9326,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "85024",
+    id: "85024",
     name: {
       nl: "Meix-devant-Virton",
       fr: "Meix-devant-Virton"
@@ -9334,7 +9334,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "85026",
+    id: "85026",
     name: {
       nl: "Musson",
       fr: "Musson"
@@ -9342,7 +9342,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "85034",
+    id: "85034",
     name: {
       nl: "Saint-L\xE9ger",
       fr: "Saint-L\xE9ger"
@@ -9350,7 +9350,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "85039",
+    id: "85039",
     name: {
       nl: "Tintigny",
       fr: "Tintigny"
@@ -9358,7 +9358,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "85045",
+    id: "85045",
     name: {
       nl: "Virton",
       fr: "Virton"
@@ -9366,7 +9366,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "85046",
+    id: "85046",
     name: {
       nl: "Habay",
       fr: "Habay"
@@ -9374,7 +9374,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "85047",
+    id: "85047",
     name: {
       nl: "Rouvroy",
       fr: "Rouvroy"
@@ -9382,7 +9382,7 @@ var municipalities_default = [
     province: "80000"
   },
   {
-    refnis: "91005",
+    id: "91005",
     name: {
       nl: "Anh\xE9e",
       fr: "Anh\xE9e"
@@ -9390,7 +9390,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "91013",
+    id: "91013",
     name: {
       nl: "Beauraing",
       fr: "Beauraing"
@@ -9398,7 +9398,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "91015",
+    id: "91015",
     name: {
       nl: "Bi\xE8vre",
       fr: "Bi\xE8vre"
@@ -9406,7 +9406,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "91030",
+    id: "91030",
     name: {
       nl: "Ciney",
       fr: "Ciney"
@@ -9414,7 +9414,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "91034",
+    id: "91034",
     name: {
       nl: "Dinant",
       fr: "Dinant"
@@ -9422,7 +9422,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "91054",
+    id: "91054",
     name: {
       nl: "Gedinne",
       fr: "Gedinne"
@@ -9430,7 +9430,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "91059",
+    id: "91059",
     name: {
       nl: "Hamois",
       fr: "Hamois"
@@ -9438,7 +9438,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "91064",
+    id: "91064",
     name: {
       nl: "Havelange",
       fr: "Havelange"
@@ -9446,7 +9446,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "91072",
+    id: "91072",
     name: {
       nl: "Houyet",
       fr: "Houyet"
@@ -9454,7 +9454,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "91103",
+    id: "91103",
     name: {
       nl: "Onhaye",
       fr: "Onhaye"
@@ -9462,7 +9462,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "91114",
+    id: "91114",
     name: {
       nl: "Rochefort",
       fr: "Rochefort"
@@ -9470,7 +9470,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "91120",
+    id: "91120",
     name: {
       nl: "Somme-Leuze",
       fr: "Somme-Leuze"
@@ -9478,7 +9478,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "91141",
+    id: "91141",
     name: {
       nl: "Yvoir",
       fr: "Yvoir"
@@ -9486,7 +9486,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "91142",
+    id: "91142",
     name: {
       nl: "Hasti\xE8re",
       fr: "Hasti\xE8re"
@@ -9494,7 +9494,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "91143",
+    id: "91143",
     name: {
       nl: "Vresse-sur-Semois",
       fr: "Vresse-sur-Semois"
@@ -9502,7 +9502,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "92003",
+    id: "92003",
     name: {
       nl: "Andenne",
       fr: "Andenne"
@@ -9510,7 +9510,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "92006",
+    id: "92006",
     name: {
       nl: "Assesse",
       fr: "Assesse"
@@ -9518,7 +9518,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "92035",
+    id: "92035",
     name: {
       nl: "Eghez\xE9e",
       fr: "Eghez\xE9e"
@@ -9526,7 +9526,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "92045",
+    id: "92045",
     name: {
       nl: "Floreffe",
       fr: "Floreffe"
@@ -9534,7 +9534,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "92048",
+    id: "92048",
     name: {
       nl: "Fosses-la-Ville",
       fr: "Fosses-la-Ville"
@@ -9542,7 +9542,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "92054",
+    id: "92054",
     name: {
       nl: "Gesves",
       fr: "Gesves"
@@ -9550,7 +9550,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "92087",
+    id: "92087",
     name: {
       nl: "Mettet",
       fr: "Mettet"
@@ -9558,7 +9558,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "92094",
+    id: "92094",
     name: {
       nl: "Namen",
       fr: "Namur"
@@ -9566,7 +9566,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "92097",
+    id: "92097",
     name: {
       nl: "Ohey",
       fr: "Ohey"
@@ -9574,7 +9574,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "92101",
+    id: "92101",
     name: {
       nl: "Profondeville",
       fr: "Profondeville"
@@ -9582,7 +9582,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "92114",
+    id: "92114",
     name: {
       nl: "Sombreffe",
       fr: "Sombreffe"
@@ -9590,7 +9590,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "92137",
+    id: "92137",
     name: {
       nl: "Sambreville",
       fr: "Sambreville"
@@ -9598,7 +9598,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "92138",
+    id: "92138",
     name: {
       nl: "Fernelmont",
       fr: "Fernelmont"
@@ -9606,7 +9606,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "92140",
+    id: "92140",
     name: {
       nl: "Jemeppe-sur-Sambre",
       fr: "Jemeppe-sur-Sambre"
@@ -9614,7 +9614,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "92141",
+    id: "92141",
     name: {
       nl: "La Bruy\xE8re",
       fr: "La Bruy\xE8re"
@@ -9622,7 +9622,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "92142",
+    id: "92142",
     name: {
       nl: "Gembloux",
       fr: "Gembloux"
@@ -9630,7 +9630,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "93010",
+    id: "93010",
     name: {
       nl: "Cerfontaine",
       fr: "Cerfontaine"
@@ -9638,7 +9638,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "93014",
+    id: "93014",
     name: {
       nl: "Couvin",
       fr: "Couvin"
@@ -9646,7 +9646,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "93018",
+    id: "93018",
     name: {
       nl: "Doische",
       fr: "Doische"
@@ -9654,7 +9654,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "93022",
+    id: "93022",
     name: {
       nl: "Florennes",
       fr: "Florennes"
@@ -9662,7 +9662,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "93056",
+    id: "93056",
     name: {
       nl: "Philippeville",
       fr: "Philippeville"
@@ -9670,7 +9670,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "93088",
+    id: "93088",
     name: {
       nl: "Walcourt",
       fr: "Walcourt"
@@ -9678,7 +9678,7 @@ var municipalities_default = [
     province: "90000"
   },
   {
-    refnis: "93090",
+    id: "93090",
     name: {
       nl: "Viroinval",
       fr: "Viroinval"
@@ -9695,12 +9695,15 @@ var cantons = cantons_default;
 var byId = (items) => new Map(items.map((item) => [item.id, item]));
 var judicialAreasById = byId(judicialAreas);
 var arrondissementsById = byId(arrondissements);
+var municipalitiesById = byId(municipalities);
 var cantonsById = byId(cantons);
-var municipalitiesByRefnis = new Map(municipalities.map((m) => [m.refnis, m]));
-var cantonsByRefnis = /* @__PURE__ */ new Map();
+var cantonsByMunicipality = /* @__PURE__ */ new Map();
 for (const canton of cantons) {
-  for (const { refnis } of canton.municipalities) {
-    cantonsByRefnis.set(refnis, [..._nullishCoalesce(cantonsByRefnis.get(refnis), () => ( [])), canton]);
+  for (const { municipality } of canton.municipalities) {
+    cantonsByMunicipality.set(municipality, [
+      ...cantonsByMunicipality.get(municipality) ?? [],
+      canton
+    ]);
   }
 }
 function getJudicialArea(id) {
@@ -9709,24 +9712,24 @@ function getJudicialArea(id) {
 function getArrondissement(id) {
   return arrondissementsById.get(id);
 }
-function getMunicipality(refnis) {
-  return municipalitiesByRefnis.get(refnis);
+function getMunicipality(id) {
+  return municipalitiesById.get(id);
 }
 function getCanton(id) {
   return cantonsById.get(id);
 }
-function getCantonsForMunicipality(refnis) {
-  return [..._nullishCoalesce(cantonsByRefnis.get(refnis), () => ( []))];
+function getCantonsForMunicipality(id) {
+  return [...cantonsByMunicipality.get(id) ?? []];
 }
 
-
-
-
-
-
-
-
-
-
-
-exports.judicialAreas = judicialAreas; exports.arrondissements = arrondissements; exports.municipalities = municipalities; exports.cantons = cantons; exports.getJudicialArea = getJudicialArea; exports.getArrondissement = getArrondissement; exports.getMunicipality = getMunicipality; exports.getCanton = getCanton; exports.getCantonsForMunicipality = getCantonsForMunicipality;
+export {
+  judicialAreas,
+  arrondissements,
+  municipalities,
+  cantons,
+  getJudicialArea,
+  getArrondissement,
+  getMunicipality,
+  getCanton,
+  getCantonsForMunicipality
+};

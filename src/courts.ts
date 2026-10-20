@@ -1,5 +1,8 @@
 import courtsData from '../data/courts.json'
 import type { Locale, SourceRef, Translated } from './common'
+import type { ArrondissementId, CantonId, CourtId } from './ids.generated'
+
+export type { CourtId } from './ids.generated'
 
 export interface Address {
     building?: string
@@ -19,12 +22,12 @@ export interface Contact {
 
 interface CourtBase {
     /**
-     * Stable key, e.g. 'VredegerechtGent1' or 'OndernemingsrechtbankGentBrugge'
-     * @pattern ^[A-Z][A-Za-z0-9]*$
+     * Stable id: the court `type` followed by its place, e.g. 'justice-of-the-peace-gent-1' or
+     * 'enterprise-court-gent-brugge'
      */
-    id: string
-    /** Id of the judicial arrondissement the court lies in */
-    arrondissement: string
+    id: CourtId
+    /** The judicial arrondissement the court lies in */
+    arrondissement: ArrondissementId
     /** Place name of the court (or division) */
     name: Translated
     address: Address
@@ -42,8 +45,13 @@ interface CourtBase {
 
 export interface JusticeOfThePeace extends CourtBase {
     type: 'justice-of-the-peace'
-    /** Canton number for places with several cantons (Gent 1–5, …) */
-    canton?: number
+    /** The canton the justice of the peace serves */
+    canton: CantonId
+    /**
+     * The canton's number in places with several cantons (Gent 1–5, …). Part of the court's
+     * official name, so kept here; always equal to the canton's `number`.
+     */
+    number?: number
 }
 
 export interface EnterpriseCourtDivision extends CourtBase {
@@ -55,23 +63,31 @@ export interface EnterpriseCourtDivision extends CourtBase {
 export type Court = JusticeOfThePeace | EnterpriseCourtDivision
 export type CourtType = Court['type']
 
+// The data is validated against the JSON Schema generated from these types (test/schema.test.ts)
 export const courts = courtsData as readonly Court[]
 
-const courtsById = new Map(courts.map((c) => [c.id, c]))
+const courtsById = new Map<string, Court>(courts.map((c) => [c.id, c]))
+const justicesOfThePeaceByCanton = new Map<string, JusticeOfThePeace>()
+for (const court of courts) {
+    if (court.type === 'justice-of-the-peace') justicesOfThePeaceByCanton.set(court.canton, court)
+}
 
+/** A court by id, e.g. 'justice-of-the-peace-gent-1' */
+export function getCourt(id: CourtId): Court
+export function getCourt(id: string): Court | undefined
 export function getCourt(id: string): Court | undefined {
     return courtsById.get(id)
 }
 
 /**
- * The justice of the peace of a canton, by canton id ('Gent1', 'MerelbekeMelle'). `undefined`
+ * The justice of the peace of a canton, by canton id ('gent-1', 'merelbeke-melle'). `undefined`
  * when the canton's court isn't in the data yet; see the known gaps.
  */
 export function getJusticeOfThePeace(cantonId: string): JusticeOfThePeace | undefined {
-    const court = courtsById.get(`Vredegerecht${cantonId}`)
-    return court?.type === 'justice-of-the-peace' ? court : undefined
+    return justicesOfThePeaceByCanton.get(cantonId)
 }
 
+/** The courts of a type and/or in an arrondissement; an empty filter gives every court */
 export function findCourts(filter: {
     type?: CourtType
     arrondissement?: string
@@ -83,6 +99,7 @@ export function findCourts(filter: {
     )
 }
 
+/** The value of a court's first contact of a type, optionally with a label ('griffie', …) */
 export function getContact(
     court: Court,
     type: Contact['type'],
@@ -126,7 +143,7 @@ export function formatCourtName(court: Court, locale: Locale = 'nl'): string {
     if (court.type === 'enterprise-court') {
         return `${t.enterprise} ${t.of}${court.seat[locale]} - ${t.division} ${court.name[locale]}`
     }
-    return court.canton ?
-            `${t.peace} ${court.canton}e ${t.canton} ${court.name[locale]}`
+    return court.number ?
+            `${t.peace} ${court.number}e ${t.canton} ${court.name[locale]}`
         :   `${t.peace} ${t.canton} ${court.name[locale]}`
 }

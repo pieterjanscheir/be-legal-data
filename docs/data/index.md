@@ -18,7 +18,7 @@ the date it was last checked against them.
 ```
 Judicial area ──< Arrondissement ──< Canton >──< Municipality (REFNIS)
                         │              │
-                        └──< Court ────┘  justice of the peace: 'Vredegerecht' + canton id
+                        └──< Court ────┘  a justice of the peace links to its canton
 ```
 
 `──<` reads "has many". A municipality is usually in one canton; split cities (Antwerpen, Gent,

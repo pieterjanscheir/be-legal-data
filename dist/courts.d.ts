@@ -1,4 +1,4 @@
-import { T as Translated, S as SourceRef, L as Locale } from './common-C23px35C.js';
+import { a as CourtId, A as ArrondissementId, T as Translated, S as SourceRef, C as CantonId, L as Locale } from './ids.generated-Bb9CqYLw.js';
 
 interface Address {
     building?: string;
@@ -16,12 +16,12 @@ interface Contact {
 }
 interface CourtBase {
     /**
-     * Stable key, e.g. 'VredegerechtGent1' or 'OndernemingsrechtbankGentBrugge'
-     * @pattern ^[A-Z][A-Za-z0-9]*$
+     * Stable id: the court `type` followed by its place, e.g. 'justice-of-the-peace-gent-1' or
+     * 'enterprise-court-gent-brugge'
      */
-    id: string;
-    /** Id of the judicial arrondissement the court lies in */
-    arrondissement: string;
+    id: CourtId;
+    /** The judicial arrondissement the court lies in */
+    arrondissement: ArrondissementId;
     /** Place name of the court (or division) */
     name: Translated;
     address: Address;
@@ -38,8 +38,13 @@ interface CourtBase {
 }
 interface JusticeOfThePeace extends CourtBase {
     type: 'justice-of-the-peace';
-    /** Canton number for places with several cantons (Gent 1–5, …) */
-    canton?: number;
+    /** The canton the justice of the peace serves */
+    canton: CantonId;
+    /**
+     * The canton's number in places with several cantons (Gent 1–5, …). Part of the court's
+     * official name, so kept here; always equal to the canton's `number`.
+     */
+    number?: number;
 }
 interface EnterpriseCourtDivision extends CourtBase {
     type: 'enterprise-court';
@@ -49,16 +54,20 @@ interface EnterpriseCourtDivision extends CourtBase {
 type Court = JusticeOfThePeace | EnterpriseCourtDivision;
 type CourtType = Court['type'];
 declare const courts: readonly Court[];
+/** A court by id, e.g. 'justice-of-the-peace-gent-1' */
+declare function getCourt(id: CourtId): Court;
 declare function getCourt(id: string): Court | undefined;
 /**
- * The justice of the peace of a canton, by canton id ('Gent1', 'MerelbekeMelle'). `undefined`
+ * The justice of the peace of a canton, by canton id ('gent-1', 'merelbeke-melle'). `undefined`
  * when the canton's court isn't in the data yet; see the known gaps.
  */
 declare function getJusticeOfThePeace(cantonId: string): JusticeOfThePeace | undefined;
+/** The courts of a type and/or in an arrondissement; an empty filter gives every court */
 declare function findCourts(filter: {
     type?: CourtType;
     arrondissement?: string;
 }): Court[];
+/** The value of a court's first contact of a type, optionally with a label ('griffie', …) */
 declare function getContact(court: Court, type: Contact['type'], label?: string): string | undefined;
 /**
  * Full official-style name, e.g. 'Vredegerecht 1e kanton Gent' or
@@ -66,4 +75,4 @@ declare function getContact(court: Court, type: Contact['type'], label?: string)
  */
 declare function formatCourtName(court: Court, locale?: Locale): string;
 
-export { type Address, type Contact, type Court, type CourtType, type EnterpriseCourtDivision, type JusticeOfThePeace, courts, findCourts, formatCourtName, getContact, getCourt, getJusticeOfThePeace };
+export { type Address, type Contact, type Court, CourtId, type CourtType, type EnterpriseCourtDivision, type JusticeOfThePeace, courts, findCourts, formatCourtName, getContact, getCourt, getJusticeOfThePeace };

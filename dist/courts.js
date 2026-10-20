@@ -5,7 +5,7 @@ import {
   getContact,
   getCourt,
   getJusticeOfThePeace
-} from "./chunk-FJIUK6WK.js";
+} from "./chunk-I3TCXKOF.js";
 export {
   courts,
   findCourts,

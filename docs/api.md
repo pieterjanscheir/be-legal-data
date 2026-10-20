@@ -26,50 +26,56 @@ Conventions:
 - Lookups by id return `undefined` when nothing matches; list functions return an empty array.
 - Functions only throw for invalid input (a malformed date), never for missing data.
 - Exported datasets are `readonly`: copy before sorting or changing (`[...courts].sort()`).
-- Ids are case-sensitive. See [identifiers](/guide/identifiers).
+- A lookup with a known id (a literal like `'gent-1'`, or a value typed `CantonId`) returns the
+  record itself, never `undefined`. Any other string returns `Record | undefined`.
+  See [identifiers](/guide/identifiers).
 
 ## Territory
 
 ### `getJudicialArea(id)`
 
 ```ts
+function getJudicialArea(id: JudicialAreaId): JudicialArea
 function getJudicialArea(id: string): JudicialArea | undefined
 ```
 
 ### `getArrondissement(id)`
 
 ```ts
+function getArrondissement(id: ArrondissementId): Arrondissement
 function getArrondissement(id: string): Arrondissement | undefined
 ```
 
 ```ts
-getArrondissement('EastFlanders')!.name.fr // 'Flandre orientale'
+getArrondissement('oost-vlaanderen').name.fr // 'Flandre orientale'
 ```
 
-### `getMunicipality(refnis)`
+### `getMunicipality(id)`
 
 ```ts
-function getMunicipality(refnis: string): Municipality | undefined
+function getMunicipality(id: MunicipalityId): Municipality
+function getMunicipality(id: string): Municipality | undefined
 ```
 
 ```ts
-getMunicipality('44021')!.name // { nl: 'Gent', fr: 'Gand' }
+getMunicipality('44021').name // { nl: 'Gent', fr: 'Gand' }
 ```
 
 ### `getCanton(id)`
 
 ```ts
+function getCanton(id: CantonId): Canton
 function getCanton(id: string): Canton | undefined
 ```
 
 ```ts
-getCanton('Oudergem')!.seat.nl // 'Etterbeek'
+getCanton('oudergem').seat.nl // 'Etterbeek'
 ```
 
-### `getCantonsForMunicipality(refnis)`
+### `getCantonsForMunicipality(id)`
 
 ```ts
-function getCantonsForMunicipality(refnis: string): Canton[]
+function getCantonsForMunicipality(id: string): Canton[]
 ```
 
 The cantons that cover a municipality. One canton for most municipalities; several for cities
@@ -77,8 +83,8 @@ that are split (Antwerpen, Gent, Brussel, …). Then the street address decides,
 `territory` describes its part.
 
 ```ts
-getCantonsForMunicipality('44088').map((c) => c.id) // ['MerelbekeMelle']
-getCantonsForMunicipality('44021').map((c) => c.id) // ['Gent1', 'Gent2', 'Gent3', 'Gent4', 'Gent5']
+getCantonsForMunicipality('44088').map((c) => c.id) // ['merelbeke-melle']
+getCantonsForMunicipality('44021').map((c) => c.id) // ['gent-1', 'gent-2', 'gent-3', 'gent-4', 'gent-5']
 ```
 
 ## Courts
@@ -86,10 +92,12 @@ getCantonsForMunicipality('44021').map((c) => c.id) // ['Gent1', 'Gent2', 'Gent3
 ### `getCourt(id)`
 
 ```ts
+function getCourt(id: CourtId): Court
 function getCourt(id: string): Court | undefined
 ```
 
-The justice of the peace of canton `X` has the id `VredegerechtX`.
+Court ids are the court `type` followed by the place: `justice-of-the-peace-gent-1`,
+`enterprise-court-gent-brugge`.
 
 ### `getJusticeOfThePeace(cantonId)`
 
@@ -114,7 +122,7 @@ function findCourts(filter: { type?: CourtType; arrondissement?: string }): Cour
 Both filters are optional; an empty filter returns every court.
 
 ```ts
-findCourts({ type: 'enterprise-court', arrondissement: 'WestFlanders' })
+findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' })
 ```
 
 ### `getContact(court, type, label?)`
@@ -126,7 +134,7 @@ function getContact(court: Court, type: 'phone' | 'email', label?: string): stri
 The value of the first contact of that type, optionally with that label (`'griffie'`, `'B-rol'`, …).
 
 ```ts
-getContact(getCourt('OndernemingsrechtbankGentBrugge')!, 'email', 'griffie')
+getContact(getCourt('enterprise-court-gent-brugge'), 'email', 'griffie')
 // 'orb.brugge.griffie@just.fgov.be'
 ```
 
@@ -139,9 +147,9 @@ function formatCourtName(court: Court, locale?: Locale): string // locale defaul
 The full official-style name.
 
 ```ts
-formatCourtName(getCourt('VredegerechtGent1')!) // 'Vredegerecht 1e kanton Gent'
-formatCourtName(getCourt('OndernemingsrechtbankGentBrugge')!) // 'Ondernemingsrechtbank Gent - afdeling Brugge'
-formatCourtName(getCourt('OndernemingsrechtbankGentBrugge')!, 'fr') // "Tribunal de l'entreprise de Gand - division Bruges"
+formatCourtName(getCourt('justice-of-the-peace-gent-1')) // 'Vredegerecht 1e kanton Gent'
+formatCourtName(getCourt('enterprise-court-gent-brugge')) // 'Ondernemingsrechtbank Gent - afdeling Brugge'
+formatCourtName(getCourt('enterprise-court-gent-brugge'), 'fr') // "Tribunal de l'entreprise de Gand - division Bruges"
 ```
 
 ## Interest rates
@@ -197,6 +205,7 @@ The full datasets, typed:
 
 | Type | Described on |
 | --- | --- |
+| `JudicialAreaId`, `ArrondissementId`, `CantonId`, `MunicipalityId`, `CourtId`: unions of the ids in the data, regenerated with it | [Identifiers](/guide/identifiers#in-typescript) |
 | `Locale` = `'nl' \| 'fr' \| 'de'` | |
 | `SourceRef` = `{ url: string; retrieved: string }`: where a record's data comes from | [Data quality](/guide/data-quality) |
 | `Translated` = `Record<Locale, string>` | |

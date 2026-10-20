@@ -24,9 +24,9 @@ BASE = "https://raw.githubusercontent.com/pieterjanscheir/be-legal-data/v0.2.0/d
 cantons = json.load(urlopen(f"{BASE}/cantons.json"))
 
 def cantons_for_municipality(refnis: str) -> list[dict]:
-    return [c for c in cantons if any(m["refnis"] == refnis for m in c["municipalities"])]
+    return [c for c in cantons if any(m["municipality"] == refnis for m in c["municipalities"])]
 
-print([c["id"] for c in cantons_for_municipality("44021")])  # Gent1 … Gent5
+print([c["id"] for c in cantons_for_municipality("44021")])  # gent-1 … gent-5
 ```
 
 ### Interest rates

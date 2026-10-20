@@ -46,12 +46,12 @@ import {
     getInterestRate,
 } from 'be-legal-data'
 
-formatCourtName(getCourt('VredegerechtGent1')!) // 'Vredegerecht 1e kanton Gent'
-findCourts({ type: 'enterprise-court', arrondissement: 'WestFlanders' })
+formatCourtName(getCourt('justice-of-the-peace-gent-1')) // 'Vredegerecht 1e kanton Gent'
+findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' })
 
-getCantonsForMunicipality('44088') // [Canton MerelbekeMelle]
+getCantonsForMunicipality('44088') // [Canton merelbeke-melle]
 getCantonsForMunicipality('44021') // Gent 1–5: split city, see each canton's `territory`
-getCanton('Oudergem')!.seat.nl // 'Etterbeek'
+getCanton('oudergem').seat.nl // 'Etterbeek'
 
 getInterestRate('2024-06-15', 'legal') // { rate: 5.75, period: { from: '2024-01-01', to: '2024-12-31' } }
 getInterestRate(new Date(2014, 5, 15), 'commercial', { contractAfter20130316: true }) // { rate: 8.5, … }
@@ -114,7 +114,7 @@ boundary mentions it can't tell apart are listed at the top of the script.
 
 Rerun it after a law changes the annex or municipalities merge. Canton ids follow the local
 language (Dutch in Flanders and Brussels, French in Wallonia, German around Eupen); the justice
-of the peace of canton `X` has id `VredegerechtX`.
+of the peace of canton `x` has id `justice-of-the-peace-x` and links to it through its `canton` field.
 
 ### New interest rates
 

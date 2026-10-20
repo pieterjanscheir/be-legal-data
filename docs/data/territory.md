@@ -54,7 +54,7 @@ Source: annex to the Judicial Code (Ger.W. bijvoegsel), art. 5.
 
 ```ts
 interface JudicialArea {
-    id: string // 'Ghent'
+    id: JudicialAreaId // 'gent'
     name: Translated // { nl, fr, de }
 }
 ```
@@ -76,9 +76,9 @@ art. 4.
 
 ```ts
 interface Arrondissement {
-    id: string // 'EastFlanders'
+    id: ArrondissementId // 'oost-vlaanderen'
     name: Translated
-    judicialArea: string // id of the JudicialArea
+    judicialArea: JudicialAreaId
 }
 ```
 
@@ -91,31 +91,32 @@ All 162 judicial cantons: the area of one justice of the peace each. File: `data
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `id` | string | Stable id in the local language, with a number for multi-canton places: `Gent1`, `MerelbekeMelle`, `Wavre1` |
+| `id` | `CantonId` | Stable id in the local language, with a number for multi-canton places: `gent-1`, `merelbeke-melle`, `wavre-1` |
 | `arrondissement` | string | Arrondissement id |
 | `name` | `{ nl, fr }` | Name of the canton as the annex gives it |
 | `number` | number? | Canton number in places with several (Gent 1–5) |
 | `seat` | `{ nl, fr }` | Where the justice of the peace sits; can differ from the name |
-| `municipalities` | `{ refnis, partial? }[]` | Municipalities covered; `partial: true` when only part is |
+| `municipalities` | `{ municipality, partial? }[]` | Municipalities covered, by REFNIS code; `partial: true` when only part is |
 | `territory` | `{ nl, fr }` | The canton's area, verbatim from the annex |
-| `source` | string | Section of the annex, e.g. `Ger.W. bijvoegsel art. 1, afdeling 6.15` (Gent 4) |
+| `legalBasis` | string | Section of the annex, e.g. `Ger.W. bijvoegsel art. 1, afdeling 6.15` (Gent 4) |
 
 ```ts
 interface Canton {
-    id: string // 'Gent1', 'MerelbekeMelle'
-    arrondissement: string
+    id: CantonId // 'gent-1', 'merelbeke-melle'
+    arrondissement: ArrondissementId
     name: Bilingual // { nl, fr }; usually the seat, but not always
     number?: number // for places with several cantons (Gent 1–5, …)
     seat: Bilingual // where the justice of the peace sits
-    municipalities: { refnis: string; partial?: boolean }[]
+    municipalities: { municipality: MunicipalityId; partial?: boolean }[]
     territory: Bilingual // the canton's area, verbatim from the annex
-    source: string // where in the annex the canton is defined
+    legalBasis: string // where in the annex the canton is defined
 }
 ```
 
 - **Ids** follow the local language: Dutch in Flanders and Brussels, French in Wallonia, German
-  around Eupen. The justice of the peace of canton `X` has the court id `VredegerechtX`.
-- **Name and seat can differ**: canton `Oudergem` sits in Etterbeek.
+  around Eupen; Brussels, which is bilingual, takes the Dutch name. See [identifiers](/guide/identifiers).
+  The justice of the peace links to its canton through its `canton` field.
+- **Name and seat can differ**: canton `oudergem` sits in Etterbeek.
 - **`partial: true`** marks a municipality that is split over several cantons. The `territory`
   text then says which part (streets, numbers, waterways) belongs to this canton.
 - Names are in Dutch and French only: the annex has no consolidated German text.
@@ -134,7 +135,7 @@ The 565 municipalities with their Statbel REFNIS (NIS) code. File: `data/municip
 
 ```ts
 interface Municipality {
-    refnis: string // '44021' for Gent
+    id: MunicipalityId // the REFNIS code: '44021' for Gent
     name: Bilingual
     province: string // REFNIS code of the province, or '04000' for Brussels-Capital
 }

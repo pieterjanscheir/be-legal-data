@@ -17,6 +17,7 @@ import { execFileSync } from 'node:child_process'
 import { mkdtempSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
+import { toId } from './id.ts'
 
 const JUSTEL_ID = '1967101007'
 const STATBEL_YEAR = 2026
@@ -34,23 +35,23 @@ interface Municipality {
 // Statbel puts the Brussels-Capital Region where other municipalities have their province
 const BRUSSELS = '04000'
 
-// Annex section ("afdeling") → arrondissement, whether the area is French-speaking (ids then
-// use the French name), and the province (REFNIS) whose municipalities it lists. Matching
+// Annex section ("afdeling") → arrondissement id, whether the area is French-speaking (canton
+// ids then use the French name), and the province (REFNIS) whose municipalities it lists. Matching
 // names only within the province keeps "Saint-Nicolas" (Sint-Niklaas) apart from
 // Saint-Nicolas near Liège. Sections 4, 5 and 8 hold more than one arrondissement; see
 // `arrondissementOf`.
 const sections: Record<number, { arrondissement: string; french: boolean; province: string }> = {
-    1: { arrondissement: 'Antwerp', french: false, province: '10000' },
-    2: { arrondissement: 'Limburg', french: false, province: '70000' },
-    3: { arrondissement: 'WalloonBrabant', french: true, province: '20002' },
-    4: { arrondissement: 'Brussels', french: false, province: BRUSSELS },
-    5: { arrondissement: 'Leuven', french: false, province: '20001' },
-    6: { arrondissement: 'EastFlanders', french: false, province: '40000' },
-    7: { arrondissement: 'WestFlanders', french: false, province: '30000' },
-    8: { arrondissement: 'Liege', french: true, province: '60000' },
-    9: { arrondissement: 'Luxembourg', french: true, province: '80000' },
-    10: { arrondissement: 'Namur', french: true, province: '90000' },
-    11: { arrondissement: 'Hainaut', french: true, province: '50000' },
+    1: { arrondissement: 'antwerpen', french: false, province: '10000' },
+    2: { arrondissement: 'limburg', french: false, province: '70000' },
+    3: { arrondissement: 'brabant-wallon', french: true, province: '20002' },
+    4: { arrondissement: 'brussel', french: false, province: BRUSSELS },
+    5: { arrondissement: 'leuven', french: false, province: '20001' },
+    6: { arrondissement: 'oost-vlaanderen', french: false, province: '40000' },
+    7: { arrondissement: 'west-vlaanderen', french: false, province: '30000' },
+    8: { arrondissement: 'liege', french: true, province: '60000' },
+    9: { arrondissement: 'luxembourg', french: true, province: '80000' },
+    10: { arrondissement: 'namur', french: true, province: '90000' },
+    11: { arrondissement: 'hainaut', french: true, province: '50000' },
 }
 
 // Art. 4 of the annex: the Flemish-Brabant cantons that belong to Brussels, and the two
@@ -58,8 +59,8 @@ const sections: Record<number, { arrondissement: string; french: boolean; provin
 const brusselsCantonsInFlemishBrabant = ['Asse', 'Halle', 'Lennik', 'Meise', 'Sint-Genesius-Rode', 'Vilvoorde', 'Zaventem']
 
 function arrondissementOf(section: number, nameNl: string): string {
-    if (section === 5 && brusselsCantonsInFlemishBrabant.includes(nameNl)) return 'Brussels'
-    if (section === 8 && nameNl === 'Eupen-Sankt-Vith') return 'Eupen'
+    if (section === 5 && brusselsCantonsInFlemishBrabant.includes(nameNl)) return 'brussel'
+    if (section === 8 && nameNl === 'Eupen-Sankt-Vith') return 'eupen'
     return sections[section].arrondissement
 }
 
@@ -80,7 +81,8 @@ const boundaryOnly: Record<string, string[]> = {
 // Typos in the annex itself.
 const typos: Record<Lang, Record<string, string>> = {
     nl: { 'stad Aast': 'stad Aalst', Herenhout: 'Herenthout' },
-    fr: {},
+    // "canton judicaire de Bruxelles" (third canton of Brussels)
+    fr: { 'canton judicaire': 'canton judiciaire' },
 }
 
 const ordinals: Record<Lang, Record<string, number>> = {
@@ -278,17 +280,6 @@ function parseItem(item: Item, lang: Lang, municipalities: Municipality[]): Pars
     return { name: (name ?? seat).trim(), number, seat: seat.trim(), territory, whole, partial }
 }
 
-function idFrom(name: string, number?: number): string {
-    const base = name
-        .normalize('NFD')
-        .replace(/[̀-ͯ]/g, '')
-        .split(/[^A-Za-z0-9]+/)
-        .filter(Boolean)
-        .map((w) => w[0].toUpperCase() + w.slice(1))
-        .join('')
-    return number ? `${base}${number}` : base
-}
-
 // ---------------------------------------------------------------------------------------------
 
 const municipalities = await fetchMunicipalities()
@@ -321,19 +312,19 @@ const cantons = nlItems.map((nlItem, i) => {
     if (nl.whole.size + nl.partial.size === 0) errors.push(`${ref}: no municipalities found`)
     const arrondissement = arrondissementOf(nlItem.section, nl.name)
     // Ids follow the local language; the Dutch text uses the German names around Eupen
-    const french = sections[nlItem.section].french && arrondissement !== 'Eupen'
+    const french = sections[nlItem.section].french && arrondissement !== 'eupen'
     return {
-        id: idFrom(french ? fr.name : nl.name, nl.number),
+        id: toId(french ? fr.name : nl.name, nl.number),
         arrondissement,
         name: { nl: nl.name, fr: fr.name },
         ...(nl.number ? { number: nl.number } : {}),
         seat: { nl: nl.seat, fr: fr.seat },
         municipalities: [
-            ...[...nl.whole].map((refnis): { refnis: string; partial?: boolean } => ({ refnis })),
-            ...[...nl.partial].map((refnis) => ({ refnis, partial: true })),
-        ].sort((a, b) => a.refnis.localeCompare(b.refnis)),
+            ...[...nl.whole].map((municipality): { municipality: string; partial?: boolean } => ({ municipality })),
+            ...[...nl.partial].map((municipality) => ({ municipality, partial: true })),
+        ].sort((a, b) => a.municipality.localeCompare(b.municipality)),
         territory: { nl: nl.territory, fr: fr.territory },
-        source: `Ger.W. bijvoegsel art. 1, afdeling ${ref}`,
+        legalBasis: `Ger.W. bijvoegsel art. 1, afdeling ${ref}`,
     }
 })
 
@@ -342,9 +333,9 @@ const parsed = cantons.filter((c) => c !== null)
 const coverage = new Map<string, { whole: string[]; partial: string[] }>()
 for (const c of parsed) {
     for (const m of c.municipalities) {
-        const e = coverage.get(m.refnis) ?? { whole: [], partial: [] }
+        const e = coverage.get(m.municipality) ?? { whole: [], partial: [] }
         ;(m.partial ? e.partial : e.whole).push(c.id)
-        coverage.set(m.refnis, e)
+        coverage.set(m.municipality, e)
     }
 }
 for (const mu of municipalities) {
@@ -367,7 +358,7 @@ const write = (file: string, data: unknown) =>
     writeFileSync(new URL(`../data/${file}`, import.meta.url), JSON.stringify(data, null, 2) + '\n')
 write(
     'municipalities.json',
-    municipalities.map(({ refnis, name, province }) => ({ refnis, name, province })),
+    municipalities.map(({ refnis, name, province }) => ({ id: refnis, name, province })),
 )
 write('cantons.json', parsed)
 console.log(`${parsed.length} cantons, ${municipalities.length} municipalities`)

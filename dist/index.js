@@ -8,7 +8,7 @@ import {
   getMunicipality,
   judicialAreas,
   municipalities
-} from "./chunk-7STRKSSU.js";
+} from "./chunk-KT6OHUHG.js";
 import {
   courts,
   findCourts,
@@ -16,7 +16,7 @@ import {
   getContact,
   getCourt,
   getJusticeOfThePeace
-} from "./chunk-FJIUK6WK.js";
+} from "./chunk-I3TCXKOF.js";
 import {
   getInterestRate,
   getLatestKnownRateDate,

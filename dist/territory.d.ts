@@ -1,31 +1,22 @@
-import { T as Translated, B as Bilingual } from './common-C23px35C.js';
-export { L as Locale, S as SourceRef } from './common-C23px35C.js';
+import { A as ArrondissementId, T as Translated, J as JudicialAreaId, C as CantonId, B as Bilingual, M as MunicipalityId } from './ids.generated-Bb9CqYLw.js';
+export { L as Locale, S as SourceRef } from './ids.generated-Bb9CqYLw.js';
 
 /** Area of a court of appeal (rechtsgebied): Antwerpen, Brussel, Gent, Luik or Bergen */
 interface JudicialArea {
-    /**
-     * Stable key, e.g. 'Ghent'
-     * @pattern ^[A-Z][A-Za-z0-9]*$
-     */
-    id: string;
+    /** Stable id from the local-language name, e.g. 'gent' */
+    id: JudicialAreaId;
     name: Translated;
 }
 interface Arrondissement {
-    /**
-     * Stable key, e.g. 'EastFlanders'
-     * @pattern ^[A-Z][A-Za-z0-9]*$
-     */
-    id: string;
+    /** Stable id from the local-language name, e.g. 'oost-vlaanderen' */
+    id: ArrondissementId;
     name: Translated;
-    /** Id of the judicial area the arrondissement belongs to */
-    judicialArea: string;
+    /** The judicial area the arrondissement belongs to */
+    judicialArea: JudicialAreaId;
 }
 interface Municipality {
-    /**
-     * Statbel REFNIS (NIS) code, e.g. '44021' for Gent
-     * @pattern ^\d{5}$
-     */
-    refnis: string;
+    /** The municipality's Statbel REFNIS (NIS) code, e.g. '44021' for Gent */
+    id: MunicipalityId;
     name: Bilingual;
     /**
      * REFNIS code of the province, or '04000' for the Brussels-Capital Region
@@ -35,14 +26,10 @@ interface Municipality {
 }
 /** A judicial canton: the area of one justice of the peace */
 interface Canton {
-    /**
-     * Stable key, e.g. 'Gent1' or 'MerelbekeMelle'. The justice of the peace of a canton has
-     * the id 'Vredegerecht' + canton id.
-     * @pattern ^[A-Z][A-Za-z0-9]*$
-     */
-    id: string;
-    /** Id of the judicial arrondissement */
-    arrondissement: string;
+    /** Stable id from the local-language name, plus the number if any: 'gent-1', 'merelbeke-melle' */
+    id: CantonId;
+    /** The judicial arrondissement */
+    arrondissement: ArrondissementId;
     /** Name of the canton; usually the seat, but not always ('Oudergem' sits in Etterbeek) */
     name: Bilingual;
     /** Canton number for places with several cantons (Gent 1–5, …) */
@@ -54,27 +41,35 @@ interface Canton {
      * several cantons; `territory` then says which part belongs to this one.
      */
     municipalities: {
-        refnis: string;
+        municipality: MunicipalityId;
         partial?: boolean;
     }[];
     /** The canton's area, verbatim from the annex to the Judicial Code */
     territory: Bilingual;
     /** Where in the annex to the Judicial Code the canton is defined */
-    source: string;
+    legalBasis: string;
 }
 declare const judicialAreas: readonly JudicialArea[];
 declare const arrondissements: readonly Arrondissement[];
 declare const municipalities: readonly Municipality[];
 declare const cantons: readonly Canton[];
+/** A judicial area by id, e.g. 'gent' */
+declare function getJudicialArea(id: JudicialAreaId): JudicialArea;
 declare function getJudicialArea(id: string): JudicialArea | undefined;
+/** A judicial arrondissement by id, e.g. 'oost-vlaanderen' */
+declare function getArrondissement(id: ArrondissementId): Arrondissement;
 declare function getArrondissement(id: string): Arrondissement | undefined;
-declare function getMunicipality(refnis: string): Municipality | undefined;
+/** A municipality by its REFNIS code, e.g. '44021' for Gent */
+declare function getMunicipality(id: MunicipalityId): Municipality;
+declare function getMunicipality(id: string): Municipality | undefined;
+/** A judicial canton by id, e.g. 'gent-1' */
+declare function getCanton(id: CantonId): Canton;
 declare function getCanton(id: string): Canton | undefined;
 /**
- * The cantons that cover a municipality. One canton for most municipalities; several for
- * cities that are split (Antwerpen, Gent, Brussel, …), in which case the street address decides
- * and each canton's `territory` describes its part.
+ * The cantons that cover a municipality, by its REFNIS code. One canton for most
+ * municipalities; several for cities that are split (Antwerpen, Gent, Brussel, …), in which case
+ * the street address decides and each canton's `territory` describes its part.
  */
-declare function getCantonsForMunicipality(refnis: string): Canton[];
+declare function getCantonsForMunicipality(id: string): Canton[];
 
-export { type Arrondissement, Bilingual, type Canton, type JudicialArea, type Municipality, Translated, arrondissements, cantons, getArrondissement, getCanton, getCantonsForMunicipality, getJudicialArea, getMunicipality, judicialAreas, municipalities };
+export { type Arrondissement, ArrondissementId, Bilingual, type Canton, CantonId, type JudicialArea, JudicialAreaId, type Municipality, MunicipalityId, Translated, arrondissements, cantons, getArrondissement, getCanton, getCantonsForMunicipality, getJudicialArea, getMunicipality, judicialAreas, municipalities };
