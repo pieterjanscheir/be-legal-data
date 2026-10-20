@@ -1,8 +1,8 @@
 name: Sources
 
 # Weekly: fetch the official sources, keep the snapshots on the `sources` branch, rebuild the
-# data from them, and open a pull request when the data changed. The data is never changed
-# without a reviewed pull request.
+# data from them, and open a pull request when the data changed. The data in main only changes
+# through a reviewed pull request.
 on:
     schedule:
         - cron: '41 4 * * 1'
@@ -18,16 +18,21 @@ concurrency:
 
 permissions:
     contents: write
+    pull-requests: write
+    issues: write
 
 jobs:
-    fetch:
+    sources:
         runs-on: ubuntu-latest
         timeout-minutes: 60
         steps:
             - uses: actions/checkout@v7
+            - uses: pnpm/action-setup@v6
             - uses: actions/setup-node@v7
               with:
                   node-version: 24
+                  cache: pnpm
+            - run: pnpm install --frozen-lockfile
 
             - name: Check out the snapshots
               run: |
@@ -40,7 +45,7 @@ jobs:
                   fi
 
             - name: Fetch
-              run: node scripts/sources/fetch.ts
+              run: pnpm fetch:sources
 
             - name: Commit the snapshots
               run: |
@@ -53,4 +58,57 @@ jobs:
                   else
                     git commit -q -m "Snapshots of $(date -u +%F)"
                     git push origin sources
+                  fi
+
+            # Fails, and changes nothing, when a page can't be placed: that needs a person
+            - name: Rebuild the data
+              id: build
+              run: |
+                  set -o pipefail
+                  pnpm build:data 2>&1 | tee build.log
+                  pnpm generate
+                  git diff --quiet -- data src/ids.generated.ts schema || echo "changed=true" >> "$GITHUB_OUTPUT"
+
+            - name: Test the new data
+              if: steps.build.outputs.changed == 'true'
+              run: |
+                  set -o pipefail
+                  pnpm typecheck 2>&1 | tee test.log
+                  pnpm test 2>&1 | tee -a test.log
+
+            - name: Open or update the data pull request
+              if: steps.build.outputs.changed == 'true' && github.ref == 'refs/heads/main'
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+              run: |
+                  git config user.name github-actions[bot]
+                  git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+                  git switch -c data/sources
+                  git add data src/ids.generated.ts schema
+                  git commit -q -m "Update the data from the official sources ($(date -u +%F))"
+                  git push -f origin data/sources
+                  {
+                    echo "The weekly fetch of the official sources changed the data: $RUN_URL"
+                    echo
+                    echo '```'
+                    git diff --stat HEAD~1 -- data
+                    echo '```'
+                    echo
+                    echo "What the parsers couldn't read:"
+                    echo
+                    echo '```'
+                    grep '^unreadable' build.log | head -40 || true
+                    echo '```'
+                    echo
+                    echo "Review the diff against the sources before merging. Pull requests opened"
+                    echo "by this workflow don't start CI themselves: the workflow ran the typecheck"
+                    echo "and tests above; close and reopen the pull request to run the full CI."
+                  } > body.md
+                  number=$(gh pr list --head data/sources --state open --json number --jq '.[0].number')
+                  if [ -n "$number" ]; then
+                    gh pr edit "$number" --body-file body.md
+                  else
+                    gh pr create --base main --head data/sources --title "Data update from the official sources" --body-file body.md --label data-update \
+                      || gh issue create --title "Data update from the official sources is ready on branch data/sources" --body-file body.md
                   fi

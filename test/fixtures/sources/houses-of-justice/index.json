@@ -1,0 +1,32 @@
+{
+    "source": "houses-of-justice",
+    "entries": [
+        {
+            "url": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen",
+            "status": 200,
+            "contentType": "text/html;charset=UTF-8",
+            "file": "www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen.html",
+            "sha256": "39bfc53fe79f337eb8e8611e76507c84cb5d36edd87efe336731859bbb6c5891",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-arlon/",
+            "status": 200,
+            "contentType": "text/html;charset=utf-8",
+            "file": "www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-arlon/index.html",
+            "sha256": "c25baac9e8f271e3f7dd7558888ad84bec01afd95264f712dea5e558a85a0d41",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-namur/",
+            "status": 200,
+            "contentType": "text/html;charset=utf-8",
+            "file": "www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-namur/index.html",
+            "sha256": "6e582a3fa9aa071ec8e9a479c6e782cd1bdb33659db38d86e33448cff1d9f2a3",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        }
+    ]
+}

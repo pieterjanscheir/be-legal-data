@@ -1,0 +1,1016 @@
+[
+  {
+    "id": "justitiehuis-antwerpen",
+    "community": "flemish",
+    "name": {
+      "nl": "Justitiehuis Antwerpen"
+    },
+    "ovo": "OVO001865",
+    "address": {
+      "street": "Quinten Matsijslei 55",
+      "postalCode": "2018",
+      "city": "Antwerpen"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3236145200"
+      },
+      {
+        "type": "email",
+        "value": "justitiehuis.antwerpen@vlaanderen.be"
+      }
+    ],
+    "website": {
+      "nl": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen"
+    },
+    "sources": [
+      {
+        "url": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "justitiehuis-brugge",
+    "community": "flemish",
+    "name": {
+      "nl": "Justitiehuis Brugge"
+    },
+    "ovo": "OVO001914",
+    "address": {
+      "street": "Predikherenrei 3",
+      "postalCode": "8000",
+      "city": "Brugge"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3250442410"
+      },
+      {
+        "type": "email",
+        "value": "justitiehuis.brugge@vlaanderen.be"
+      }
+    ],
+    "website": {
+      "nl": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen"
+    },
+    "sources": [
+      {
+        "url": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "justitiehuis-brussel",
+    "community": "flemish",
+    "name": {
+      "nl": "Justitiehuis Brussel"
+    },
+    "ovo": "OVO001915",
+    "address": {
+      "street": "Hertogstraat 63",
+      "postalCode": "1000",
+      "city": "Brussel"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3225531740"
+      },
+      {
+        "type": "email",
+        "value": "justitiehuis.brussel@vlaanderen.be"
+      }
+    ],
+    "website": {
+      "nl": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen"
+    },
+    "sources": [
+      {
+        "url": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "justitiehuis-dendermonde",
+    "community": "flemish",
+    "name": {
+      "nl": "Justitiehuis Dendermonde"
+    },
+    "ovo": "OVO001916",
+    "address": {
+      "street": "Leopold II-laan 55",
+      "postalCode": "9200",
+      "city": "Dendermonde"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3252253325"
+      },
+      {
+        "type": "email",
+        "value": "justitiehuis.dendermonde@vlaanderen.be"
+      }
+    ],
+    "website": {
+      "nl": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen"
+    },
+    "sources": [
+      {
+        "url": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "justitiehuis-gent",
+    "community": "flemish",
+    "name": {
+      "nl": "Justitiehuis Gent"
+    },
+    "ovo": "OVO001917",
+    "address": {
+      "street": "Cataloniëstraat 6",
+      "postalCode": "9000",
+      "city": "Gent"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3292696220"
+      },
+      {
+        "type": "email",
+        "value": "justitiehuis.gent@vlaanderen.be"
+      }
+    ],
+    "website": {
+      "nl": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen"
+    },
+    "sources": [
+      {
+        "url": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "justitiehuis-hasselt",
+    "community": "flemish",
+    "name": {
+      "nl": "Justitiehuis Hasselt"
+    },
+    "ovo": "OVO001918",
+    "address": {
+      "street": "Bampslaan 40",
+      "postalCode": "3500",
+      "city": "Hasselt"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3211742274"
+      },
+      {
+        "type": "email",
+        "value": "justitiehuis.hasselt@vlaanderen.be"
+      }
+    ],
+    "website": {
+      "nl": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen"
+    },
+    "sources": [
+      {
+        "url": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "justitiehuis-ieper",
+    "community": "flemish",
+    "name": {
+      "nl": "Justitiehuis Ieper"
+    },
+    "ovo": "OVO001919",
+    "address": {
+      "street": "Vooruitgangstraat 40",
+      "postalCode": "8900",
+      "city": "Ieper"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3257227170"
+      },
+      {
+        "type": "email",
+        "value": "justitiehuis.ieper@vlaanderen.be"
+      }
+    ],
+    "website": {
+      "nl": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen"
+    },
+    "sources": [
+      {
+        "url": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "justitiehuis-kortrijk",
+    "community": "flemish",
+    "name": {
+      "nl": "Justitiehuis Kortrijk"
+    },
+    "ovo": "OVO001920",
+    "address": {
+      "street": "Burgemeester Nolfstraat 51",
+      "postalCode": "8500",
+      "city": "Kortrijk"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3256260631"
+      },
+      {
+        "type": "email",
+        "value": "justitiehuis.kortrijk@vlaanderen.be"
+      }
+    ],
+    "website": {
+      "nl": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen"
+    },
+    "sources": [
+      {
+        "url": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "justitiehuis-leuven",
+    "community": "flemish",
+    "name": {
+      "nl": "Justitiehuis Leuven"
+    },
+    "ovo": "OVO001921",
+    "address": {
+      "street": "Arnould Nobelstraat 44",
+      "postalCode": "3000",
+      "city": "Leuven"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3216666400"
+      },
+      {
+        "type": "email",
+        "value": "justitiehuis.leuven@vlaanderen.be"
+      }
+    ],
+    "website": {
+      "nl": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen"
+    },
+    "sources": [
+      {
+        "url": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "justitiehuis-mechelen",
+    "community": "flemish",
+    "name": {
+      "nl": "Justitiehuis Mechelen"
+    },
+    "ovo": "OVO001922",
+    "address": {
+      "street": "Stationsstraat 110",
+      "postalCode": "2800",
+      "city": "Mechelen"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3215284000"
+      },
+      {
+        "type": "email",
+        "value": "justitiehuis.mechelen@vlaanderen.be"
+      }
+    ],
+    "website": {
+      "nl": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen"
+    },
+    "sources": [
+      {
+        "url": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "justitiehuis-oudenaarde",
+    "community": "flemish",
+    "name": {
+      "nl": "Justitiehuis Oudenaarde"
+    },
+    "ovo": "OVO001923",
+    "address": {
+      "street": "Lappersfort 1",
+      "postalCode": "9700",
+      "city": "Oudenaarde"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3255312144"
+      },
+      {
+        "type": "email",
+        "value": "justitiehuis.oudenaarde@vlaanderen.be"
+      }
+    ],
+    "website": {
+      "nl": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen"
+    },
+    "sources": [
+      {
+        "url": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "justitiehuis-tongeren",
+    "community": "flemish",
+    "name": {
+      "nl": "Justitiehuis Tongeren"
+    },
+    "ovo": "OVO001924",
+    "address": {
+      "street": "Kielenstraat 24",
+      "postalCode": "3700",
+      "city": "Tongeren-Borgloon"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3212250930"
+      },
+      {
+        "type": "email",
+        "value": "justitiehuis.tongeren@vlaanderen.be"
+      }
+    ],
+    "website": {
+      "nl": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen"
+    },
+    "sources": [
+      {
+        "url": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "justitiehuis-turnhout",
+    "community": "flemish",
+    "name": {
+      "nl": "Justitiehuis Turnhout"
+    },
+    "ovo": "OVO001925",
+    "address": {
+      "street": "Merode-Center 1",
+      "postalCode": "2300",
+      "city": "Turnhout"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3214471340"
+      },
+      {
+        "type": "email",
+        "value": "justitiehuis.turnhout@vlaanderen.be"
+      }
+    ],
+    "website": {
+      "nl": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen"
+    },
+    "sources": [
+      {
+        "url": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "justitiehuis-veurne",
+    "community": "flemish",
+    "name": {
+      "nl": "Justitiehuis Veurne"
+    },
+    "ovo": "OVO001926",
+    "address": {
+      "street": "Ieperse Steenweg 87",
+      "postalCode": "8630",
+      "city": "Veurne"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3258332350"
+      },
+      {
+        "type": "email",
+        "value": "justitiehuis.veurne@vlaanderen.be"
+      }
+    ],
+    "website": {
+      "nl": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen"
+    },
+    "sources": [
+      {
+        "url": "https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "maison-justice-arlon",
+    "community": "french",
+    "name": {
+      "fr": "Maison de justice d'Arlon"
+    },
+    "address": {
+      "street": "59 B rue Sesselich",
+      "postalCode": "6700",
+      "city": "Arlon"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3263420280"
+      },
+      {
+        "type": "fax",
+        "value": "+3263420287"
+      },
+      {
+        "type": "email",
+        "value": "maisondejustice.arlon@cfwb.be"
+      },
+      {
+        "type": "phone",
+        "value": "+3263214455",
+        "label": "service d'accueil des victimes"
+      },
+      {
+        "type": "fax",
+        "value": "+3263215213",
+        "label": "service d'accueil des victimes"
+      },
+      {
+        "type": "email",
+        "value": "accueildesvictimes.arlon@cfwb.be",
+        "label": "service d'accueil des victimes"
+      }
+    ],
+    "website": {
+      "fr": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-arlon/"
+    },
+    "sources": [
+      {
+        "url": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-arlon/",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "maison-justice-bruxelles",
+    "community": "french",
+    "name": {
+      "fr": "Maison de justice de Bruxelles"
+    },
+    "address": {
+      "street": "66B rue de Birmingham",
+      "postalCode": "1080",
+      "city": "Bruxelles"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3223498311"
+      },
+      {
+        "type": "email",
+        "value": "maisondejustice.bruxelles@cfwb.be"
+      },
+      {
+        "type": "phone",
+        "value": "+3225087448",
+        "label": "service d'accueil des victimes"
+      }
+    ],
+    "website": {
+      "fr": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-bruxelles/"
+    },
+    "sources": [
+      {
+        "url": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-bruxelles/",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "maison-justice-charleroi",
+    "community": "french",
+    "name": {
+      "fr": "Maison de justice de Charleroi"
+    },
+    "address": {
+      "street": "11 rue Arthur Pater",
+      "postalCode": "6000",
+      "city": "Charleroi"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3271232811"
+      },
+      {
+        "type": "fax",
+        "value": "+3271232899"
+      },
+      {
+        "type": "email",
+        "value": "maisondejustice.charleroi@cfwb.be"
+      },
+      {
+        "type": "phone",
+        "value": "+3271232885",
+        "label": "service d'accueil des victimes"
+      },
+      {
+        "type": "fax",
+        "value": "+3271236782",
+        "label": "service d'accueil des victimes"
+      },
+      {
+        "type": "email",
+        "value": "accueildesvictimes.charleroi@cfwb.be",
+        "label": "service d'accueil des victimes"
+      }
+    ],
+    "website": {
+      "fr": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-charleroi/"
+    },
+    "sources": [
+      {
+        "url": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-charleroi/",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "maison-justice-dinant",
+    "community": "french",
+    "name": {
+      "fr": "Maison de justice de Dinant"
+    },
+    "address": {
+      "street": "39 rue de la station",
+      "postalCode": "5500",
+      "city": "Dinant"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3282213800"
+      },
+      {
+        "type": "email",
+        "value": "maisondejustice.dinant@cfwb.be"
+      },
+      {
+        "type": "phone",
+        "value": "+3282213800",
+        "label": "service d'accueil des victimes"
+      },
+      {
+        "type": "email",
+        "value": "accueildesvictimes.namur@cfwb.be",
+        "label": "service d'accueil des victimes"
+      }
+    ],
+    "website": {
+      "fr": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-dinant/"
+    },
+    "sources": [
+      {
+        "url": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-dinant/",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "maison-justice-huy",
+    "community": "french",
+    "name": {
+      "fr": "Maison de justice de Huy"
+    },
+    "address": {
+      "street": "76 chaussée de Liège",
+      "postalCode": "4500",
+      "city": "Huy"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3285278220"
+      },
+      {
+        "type": "email",
+        "value": "maisondejustice.huy@cfwb.be"
+      },
+      {
+        "type": "phone",
+        "value": "+3285278220",
+        "label": "service d'accueil des victimes"
+      },
+      {
+        "type": "email",
+        "value": "accueildesvictimes.huy@cfwb.be",
+        "label": "service d'accueil des victimes"
+      }
+    ],
+    "website": {
+      "fr": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-huy/"
+    },
+    "sources": [
+      {
+        "url": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-huy/",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "maison-justice-liege",
+    "community": "french",
+    "name": {
+      "fr": "Maison de justice de Liège"
+    },
+    "address": {
+      "street": "32 boulevard de la Sauvenière",
+      "postalCode": "4000",
+      "city": "Liège"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3242381411"
+      },
+      {
+        "type": "fax",
+        "value": "+3242381529"
+      },
+      {
+        "type": "email",
+        "value": "maisondejustice.liege@cfwb.be"
+      },
+      {
+        "type": "phone",
+        "value": "+3242381411",
+        "label": "service d'accueil des victimes"
+      },
+      {
+        "type": "email",
+        "value": "accueildesvictimes.liege@cfwb.be",
+        "label": "service d'accueil des victimes"
+      }
+    ],
+    "website": {
+      "fr": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-liege/"
+    },
+    "sources": [
+      {
+        "url": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-liege/",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "maison-justice-marche-en-famenne",
+    "community": "french",
+    "name": {
+      "fr": "Maison de justice de Marche-en-Famenne"
+    },
+    "address": {
+      "street": "2 allée du Monument",
+      "postalCode": "6900",
+      "city": "Marche-en-Famenne"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3284310041"
+      },
+      {
+        "type": "email",
+        "value": "maisondejustice.marche@cfwb.be"
+      },
+      {
+        "type": "email",
+        "value": "accueildesvictimes.marche-en-famenne@cfwb.be",
+        "label": "service d'accueil des victimes"
+      }
+    ],
+    "website": {
+      "fr": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-marche-en-famenne/"
+    },
+    "sources": [
+      {
+        "url": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-marche-en-famenne/",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "maison-justice-mons",
+    "community": "french",
+    "name": {
+      "fr": "Maison de justice de Mons"
+    },
+    "address": {
+      "street": "16 avenue Abel Dubois (L'accueil se trouve à l'arrière du bâtiment)",
+      "postalCode": "7000",
+      "city": "Mons"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3265325411"
+      },
+      {
+        "type": "fax",
+        "value": "+3265325498"
+      },
+      {
+        "type": "email",
+        "value": "maisondejustice.mons@cfwb.be"
+      }
+    ],
+    "website": {
+      "fr": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-mons/"
+    },
+    "sources": [
+      {
+        "url": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-mons/",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "maison-justice-namur",
+    "community": "french",
+    "name": {
+      "fr": "Maison de justice de Namur"
+    },
+    "address": {
+      "street": "6 boulevard Ernest Mélot",
+      "postalCode": "5000",
+      "city": "Namur"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3281240910"
+      },
+      {
+        "type": "email",
+        "value": "maisondejustice.namur@cfwb.be"
+      },
+      {
+        "type": "phone",
+        "value": "+3281240910",
+        "label": "service d'accueil des victimes"
+      },
+      {
+        "type": "email",
+        "value": "accueildesvictimes.namur@cfwb.be",
+        "label": "service d'accueil des victimes"
+      }
+    ],
+    "website": {
+      "fr": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-namur/"
+    },
+    "sources": [
+      {
+        "url": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-namur/",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "maison-justice-neufchateau",
+    "community": "french",
+    "name": {
+      "fr": "Maison de justice de Neufchâteau"
+    },
+    "address": {
+      "street": "33 rue Franklin Roosevelt",
+      "postalCode": "6840",
+      "city": "Neufchâteau"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3261275170"
+      },
+      {
+        "type": "fax",
+        "value": "+3261275179"
+      },
+      {
+        "type": "email",
+        "value": "maisondejustice.neufchateau@cfwb.be"
+      },
+      {
+        "type": "phone",
+        "value": "+3261275170",
+        "label": "service d'accueil des victimes"
+      },
+      {
+        "type": "fax",
+        "value": "+3261275179",
+        "label": "service d'accueil des victimes"
+      },
+      {
+        "type": "email",
+        "value": "accueildesvictimes.neufchateau@cfwb.be",
+        "label": "service d'accueil des victimes"
+      }
+    ],
+    "website": {
+      "fr": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-neufchateau/"
+    },
+    "sources": [
+      {
+        "url": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-neufchateau/",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "maison-justice-nivelles",
+    "community": "french",
+    "name": {
+      "fr": "Maison de justice de Nivelles"
+    },
+    "address": {
+      "street": "2 rue Altiero Spinelli",
+      "postalCode": "1401",
+      "city": "Baulers (Nivelles)"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3267882760"
+      },
+      {
+        "type": "fax",
+        "value": "+3267882799"
+      },
+      {
+        "type": "email",
+        "value": "maisondejustice.nivelles@cfwb.be"
+      },
+      {
+        "type": "phone",
+        "value": "+3267882760",
+        "label": "service d'accueil des victimes"
+      },
+      {
+        "type": "fax",
+        "value": "+3267882799",
+        "label": "service d'accueil des victimes"
+      },
+      {
+        "type": "email",
+        "value": "accueildesvictimes.nivelles@cfwb.be",
+        "label": "service d'accueil des victimes"
+      }
+    ],
+    "website": {
+      "fr": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-nivelles/"
+    },
+    "sources": [
+      {
+        "url": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-nivelles/",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "maison-justice-tournai",
+    "community": "french",
+    "name": {
+      "fr": "Maison de justice de Tournai"
+    },
+    "address": {
+      "street": "33B rue Frinoise",
+      "postalCode": "7500",
+      "city": "Tournai"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3269252000"
+      },
+      {
+        "type": "fax",
+        "value": "+3269670927"
+      },
+      {
+        "type": "email",
+        "value": "maisondejustice.tournai@cfwb.be"
+      },
+      {
+        "type": "phone",
+        "value": "+3269252000",
+        "label": "service d'accueil des victimes"
+      },
+      {
+        "type": "fax",
+        "value": "+3269670927",
+        "label": "service d'accueil des victimes"
+      },
+      {
+        "type": "email",
+        "value": "accueildesvictimes.tournai@cfwb.be",
+        "label": "service d'accueil des victimes"
+      }
+    ],
+    "website": {
+      "fr": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-tournai/"
+    },
+    "sources": [
+      {
+        "url": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-tournai/",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "maison-justice-verviers",
+    "community": "french",
+    "name": {
+      "fr": "Maison de justice de Verviers"
+    },
+    "address": {
+      "street": "28 rue Saint-Remacle",
+      "postalCode": "4800",
+      "city": "Verviers"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3287324450"
+      },
+      {
+        "type": "email",
+        "value": "maisondejustice.verviers@cfwb.be"
+      },
+      {
+        "type": "phone",
+        "value": "+3287323783",
+        "label": "service d'accueil des victimes"
+      },
+      {
+        "type": "email",
+        "value": "accueildesvictimes.verviers@cfwb.be",
+        "label": "service d'accueil des victimes"
+      }
+    ],
+    "website": {
+      "fr": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-verviers/"
+    },
+    "sources": [
+      {
+        "url": "https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/maison-justice-verviers/",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  }
+]

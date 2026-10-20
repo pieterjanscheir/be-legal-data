@@ -76,7 +76,7 @@ export function toAddress(lines: string[]): Address | undefined {
     // The postal code and city repeated at the end of the street line
     const street = parts.pop()?.replace(new RegExp(`,?\\s*${postalCode}\\s+\\S.*$`), '')
     // A sentence where the street should be: "Our addresses are listed under …"
-    if (!street || street.length > 60 || /["“”]/.test(street)) return undefined
+    if (!street || street.length > 100 || /["“”]/.test(street)) return undefined
     const building = parts.join(', ')
     return { ...(building ? { building } : {}), street, postalCode, city }
 }

@@ -13,8 +13,12 @@ const urls = new Set<string>(
     resources.flatMap((r) => r.sources.map((s) => s.path).filter((p) => p !== undefined)),
 )
 
+// ejustice resets connections from GitHub's runners; check it from elsewhere (pnpm build:cantons)
+const blocked = (url: string) => new URL(url).host === 'www.ejustice.just.fgov.be'
+const runner = process.env['GITHUB_ACTIONS'] === 'true'
+
 describe.runIf(process.env['FRESHNESS_ONLINE'] === '1')('source URLs', () => {
-    it.each([...urls])('%s responds', async (url) => {
+    it.each([...urls].filter((url) => !(runner && blocked(url))))('%s responds', async (url) => {
         const res = await fetch(url, {
             redirect: 'follow',
             headers: {

@@ -1,0 +1,215 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://pieterjanscheir.github.io/be-legal-data/schema/houses-of-justice.schema.json",
+  "title": "be-legal-data: data/houses-of-justice.json",
+  "$ref": "#/definitions/HousesOfJusticeFile",
+  "definitions": {
+    "HousesOfJusticeFile": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/HouseOfJustice"
+      }
+    },
+    "HouseOfJustice": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/HouseOfJusticeId",
+          "description": "Stable id from the name, without articles: 'justitiehuis-gent', 'maison-justice-arlon'"
+        },
+        "community": {
+          "type": "string",
+          "enum": [
+            "flemish",
+            "french",
+            "german"
+          ],
+          "description": "The Community that runs it"
+        },
+        "name": {
+          "type": "object",
+          "properties": {
+            "nl": {
+              "type": "string"
+            },
+            "fr": {
+              "type": "string"
+            },
+            "de": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "description": "The name, in the language of its Community"
+        },
+        "ovo": {
+          "type": "string",
+          "description": "The house's id in the Flemish organisation register (Wegwijs, OVO number), for the Flemish houses",
+          "pattern": "^OVO\\d{6}$"
+        },
+        "address": {
+          "$ref": "#/definitions/Address"
+        },
+        "contacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Contact"
+          }
+        },
+        "website": {
+          "type": "object",
+          "properties": {
+            "nl": {
+              "$ref": "#/definitions/Url"
+            },
+            "fr": {
+              "$ref": "#/definitions/Url"
+            },
+            "de": {
+              "$ref": "#/definitions/Url"
+            }
+          },
+          "additionalProperties": false,
+          "description": "The page it's listed on"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SourceRef"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "community",
+        "name",
+        "address",
+        "contacts",
+        "website",
+        "sources"
+      ],
+      "additionalProperties": false,
+      "description": "A house of justice (justitiehuis, maison de justice): guidance and supervision of offenders, victim support, social studies for the courts. Run by the Communities since 2015."
+    },
+    "HouseOfJusticeId": {
+      "type": "string",
+      "enum": [
+        "justitiehuis-antwerpen",
+        "justitiehuis-brugge",
+        "justitiehuis-brussel",
+        "justitiehuis-dendermonde",
+        "justitiehuis-gent",
+        "justitiehuis-hasselt",
+        "justitiehuis-ieper",
+        "justitiehuis-kortrijk",
+        "justitiehuis-leuven",
+        "justitiehuis-mechelen",
+        "justitiehuis-oudenaarde",
+        "justitiehuis-tongeren",
+        "justitiehuis-turnhout",
+        "justitiehuis-veurne",
+        "maison-justice-arlon",
+        "maison-justice-bruxelles",
+        "maison-justice-charleroi",
+        "maison-justice-dinant",
+        "maison-justice-huy",
+        "maison-justice-liege",
+        "maison-justice-marche-en-famenne",
+        "maison-justice-mons",
+        "maison-justice-namur",
+        "maison-justice-neufchateau",
+        "maison-justice-nivelles",
+        "maison-justice-tournai",
+        "maison-justice-verviers"
+      ],
+      "description": "Id of a record in data/houses-of-justice.json"
+    },
+    "Address": {
+      "type": "object",
+      "properties": {
+        "building": {
+          "type": "string",
+          "description": "A building's name, when one is published: 'Gerechtsgebouw'"
+        },
+        "street": {
+          "type": "string",
+          "description": "The street line as published, with its number, box or floor: 'Kazernevest 3', 'Beverstraat 7B (eerste verdieping)'"
+        },
+        "postalCode": {
+          "type": "string",
+          "pattern": "^\\d{4}$"
+        },
+        "city": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "street",
+        "postalCode",
+        "city"
+      ],
+      "additionalProperties": false,
+      "description": "A postal address, as published"
+    },
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/ContactType"
+        },
+        "value": {
+          "type": "string",
+          "description": "Phone and fax: E.164 ('+3292343210'; `formatPhoneNumber` gives the national form). Email: lowercase. Bank account: IBAN in electronic form, checksum verified (`formatIban` groups it by four).",
+          "pattern": "^(\\+32\\d{8,9}|[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}|BE\\d{14})$"
+        },
+        "label": {
+          "type": "string",
+          "description": "The registry or service the contact belongs to, as the source titles it, in that page's language: 'Burgerlijke griffie', 'Greffe pénal'. No label: the general contact."
+        },
+        "note": {
+          "type": "string",
+          "description": "Text published with the value: 'griffie', 'druk 1', 'tapez 2'"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "ContactType": {
+      "type": "string",
+      "enum": [
+        "phone",
+        "fax",
+        "email",
+        "bank-account"
+      ]
+    },
+    "Url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "SourceRef": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The exact official page or file the data comes from",
+          "format": "uri"
+        },
+        "retrieved": {
+          "type": "string",
+          "description": "Day the source was last checked, YYYY-MM-DD",
+          "format": "date"
+        }
+      },
+      "required": [
+        "url",
+        "retrieved"
+      ],
+      "additionalProperties": false,
+      "description": "Where a record's data was taken from"
+    }
+  }
+}

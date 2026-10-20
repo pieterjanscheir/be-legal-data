@@ -701,11 +701,11 @@
       "properties": {
         "building": {
           "type": "string",
-          "description": "A building's name, when the court publishes one: 'Gerechtsgebouw'"
+          "description": "A building's name, when one is published: 'Gerechtsgebouw'"
         },
         "street": {
           "type": "string",
-          "description": "The street line as the court publishes it, with its number, box or floor: 'Kazernevest 3', 'Beverstraat 7B (eerste verdieping)'"
+          "description": "The street line as published, with its number, box or floor: 'Kazernevest 3', 'Beverstraat 7B (eerste verdieping)'"
         },
         "postalCode": {
           "type": "string",
@@ -720,7 +720,8 @@
         "postalCode",
         "city"
       ],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "description": "A postal address, as published"
     },
     "Contact": {
       "type": "object",
@@ -735,11 +736,11 @@
         },
         "label": {
           "type": "string",
-          "description": "The registry or service the contact belongs to, as the court titles it on its page and in that page's language: 'Burgerlijke griffie', 'Greffe pénal'. No label: the court's general contact."
+          "description": "The registry or service the contact belongs to, as the source titles it, in that page's language: 'Burgerlijke griffie', 'Greffe pénal'. No label: the general contact."
         },
         "note": {
           "type": "string",
-          "description": "Text the court publishes with the value: 'griffie', 'druk 1', 'tapez 2'"
+          "description": "Text published with the value: 'griffie', 'druk 1', 'tapez 2'"
         }
       },
       "required": [

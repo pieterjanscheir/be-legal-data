@@ -36,4 +36,12 @@ jobs:
             - name: Create the GitHub release
               env:
                   GH_TOKEN: ${{ github.token }}
-              run: gh release create "$GITHUB_REF_NAME" --verify-tag --generate-notes
+              # The data as JSON and CSV, with the schemas and the data package descriptor, for
+              # people who don't use npm
+              run: |
+                  pnpm build:csv
+                  name="be-legal-data-data-$GITHUB_REF_NAME"
+                  mkdir "$name"
+                  cp -r data schema datapackage.json LICENSE-DATA csv "$name"/
+                  zip -qr "$name.zip" "$name"
+                  gh release create "$GITHUB_REF_NAME" --verify-tag --generate-notes "$name.zip"

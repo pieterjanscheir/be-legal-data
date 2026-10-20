@@ -45,6 +45,14 @@
             "types": "./dist/courts.d.ts",
             "default": "./dist/courts.js"
         },
+        "./prisons": {
+            "types": "./dist/prisons.d.ts",
+            "default": "./dist/prisons.js"
+        },
+        "./houses-of-justice": {
+            "types": "./dist/houses-of-justice.d.ts",
+            "default": "./dist/houses-of-justice.js"
+        },
         "./interest-rates": {
             "types": "./dist/interest-rates.d.ts",
             "default": "./dist/interest-rates.js"
@@ -65,6 +73,7 @@
         "build": "tsup",
         "build:cantons": "node scripts/build-cantons.ts",
         "build:data": "node scripts/parse/build.ts",
+        "build:csv": "node scripts/build-csv.ts",
         "fetch:sources": "node scripts/sources/fetch.ts",
         "test": "vitest run",
         "typecheck": "tsc --noEmit",

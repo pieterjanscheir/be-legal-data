@@ -9,14 +9,20 @@
 import { writeFileSync } from 'node:fs'
 
 import { buildCourts } from './courts.ts'
+import { buildHousesOfJustice, buildPrisons } from './places.ts'
 
 const root = process.env['SOURCES_DIR'] ?? '.sources'
 const { courts, report } = buildCourts(root)
+
+const { prisons, problems: prisonProblems } = buildPrisons(root)
+const { houses, problems: houseProblems } = buildHousesOfJustice(root)
+for (const line of [...prisonProblems, ...houseProblems]) console.warn(`unreadable: ${line}`)
 
 const problems = [
     ...report.unmatched,
     ...report.conflicts,
     ...report.cantonsWithoutCourt.map((id) => `canton ${id} has no court`),
+    ...report.eclisWithoutCourt.map((id) => `the ECLI table has ${id}, the sources don't`),
 ]
 for (const line of report.unreadable) console.warn(`unreadable: ${line}`)
 const withoutAddress = courts.filter((c) => !c.address).map((c) => c.id)
@@ -26,4 +32,9 @@ if (problems.length > 0) {
     for (const line of problems) console.error(line)
     process.exit(1)
 }
-writeFileSync('data/courts.json', JSON.stringify(courts, null, 2) + '\n')
+const write = (file: string, data: unknown) => {
+    writeFileSync(`data/${file}.json`, JSON.stringify(data, null, 2) + '\n')
+}
+write('courts', courts)
+write('prisons', prisons)
+write('houses-of-justice', houses)

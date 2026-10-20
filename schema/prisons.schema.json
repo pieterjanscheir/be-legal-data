@@ -1,0 +1,222 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://pieterjanscheir.github.io/be-legal-data/schema/prisons.schema.json",
+  "title": "be-legal-data: data/prisons.json",
+  "$ref": "#/definitions/PrisonsFile",
+  "definitions": {
+    "PrisonsFile": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Prison"
+      }
+    },
+    "Prison": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/PrisonId",
+          "description": "Stable id from the name in the local language (Dutch in Brussels), without articles: 'gevangenis-gent', 'prison-lantin', 'detentiehuis-kortrijk'"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "prison",
+            "detention-house"
+          ],
+          "description": "A detention house (detentiehuis) holds people for short sentences, close to home"
+        },
+        "name": {
+          "type": "object",
+          "properties": {
+            "nl": {
+              "type": "string"
+            },
+            "fr": {
+              "type": "string"
+            },
+            "de": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "description": "The name in each national language, as FPS Justice publishes it"
+        },
+        "address": {
+          "$ref": "#/definitions/Address",
+          "description": "In the local language"
+        },
+        "contacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Contact"
+          }
+        },
+        "website": {
+          "type": "object",
+          "properties": {
+            "nl": {
+              "$ref": "#/definitions/Url"
+            },
+            "fr": {
+              "$ref": "#/definitions/Url"
+            },
+            "de": {
+              "$ref": "#/definitions/Url"
+            }
+          },
+          "additionalProperties": false,
+          "description": "The prison's page on justitie.belgium.be, per language"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SourceRef"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "name",
+        "address",
+        "contacts",
+        "website",
+        "sources"
+      ],
+      "additionalProperties": false,
+      "description": "A prison or detention house of the FPS Justice (DG EPI)"
+    },
+    "PrisonId": {
+      "type": "string",
+      "enum": [
+        "centrale-gevangenis-leuven",
+        "centre-detention-saint-hubert",
+        "centre-penitentiaire-ecole-marneffe",
+        "detentiehuis-kortrijk",
+        "detentiehuis-olen",
+        "detentiehuis-vorst",
+        "etablissement-defense-sociale-paifve",
+        "gevangenis-antwerpen",
+        "gevangenis-beveren",
+        "gevangenis-dendermonde",
+        "gevangenis-gent",
+        "gevangenis-haren",
+        "gevangenis-hasselt",
+        "gevangenis-ieper",
+        "gevangenis-mechelen",
+        "gevangenis-merksplas",
+        "gevangenis-oudenaarde",
+        "gevangenis-sint-gillis",
+        "gevangenis-tongeren",
+        "gevangenis-turnhout",
+        "gevangenis-wortel",
+        "hulpgevangenis-dendermonde",
+        "hulpgevangenis-leuven",
+        "penitentiair-complex-brugge",
+        "penitentiair-landbouwcentrum-ruiselede",
+        "penitentiair-schoolcentrum-hoogstraten",
+        "prison-andenne",
+        "prison-arlon",
+        "prison-dinant",
+        "prison-huy",
+        "prison-ittre",
+        "prison-jamioulx",
+        "prison-lantin",
+        "prison-leuze-en-hainaut",
+        "prison-marche-en-famenne",
+        "prison-mons",
+        "prison-namur",
+        "prison-nivelles",
+        "prison-tournai"
+      ],
+      "description": "Id of a record in data/prisons.json"
+    },
+    "Address": {
+      "type": "object",
+      "properties": {
+        "building": {
+          "type": "string",
+          "description": "A building's name, when one is published: 'Gerechtsgebouw'"
+        },
+        "street": {
+          "type": "string",
+          "description": "The street line as published, with its number, box or floor: 'Kazernevest 3', 'Beverstraat 7B (eerste verdieping)'"
+        },
+        "postalCode": {
+          "type": "string",
+          "pattern": "^\\d{4}$"
+        },
+        "city": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "street",
+        "postalCode",
+        "city"
+      ],
+      "additionalProperties": false,
+      "description": "A postal address, as published"
+    },
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/ContactType"
+        },
+        "value": {
+          "type": "string",
+          "description": "Phone and fax: E.164 ('+3292343210'; `formatPhoneNumber` gives the national form). Email: lowercase. Bank account: IBAN in electronic form, checksum verified (`formatIban` groups it by four).",
+          "pattern": "^(\\+32\\d{8,9}|[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}|BE\\d{14})$"
+        },
+        "label": {
+          "type": "string",
+          "description": "The registry or service the contact belongs to, as the source titles it, in that page's language: 'Burgerlijke griffie', 'Greffe pénal'. No label: the general contact."
+        },
+        "note": {
+          "type": "string",
+          "description": "Text published with the value: 'griffie', 'druk 1', 'tapez 2'"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "ContactType": {
+      "type": "string",
+      "enum": [
+        "phone",
+        "fax",
+        "email",
+        "bank-account"
+      ]
+    },
+    "Url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "SourceRef": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The exact official page or file the data comes from",
+          "format": "uri"
+        },
+        "retrieved": {
+          "type": "string",
+          "description": "Day the source was last checked, YYYY-MM-DD",
+          "format": "date"
+        }
+      },
+      "required": [
+        "url",
+        "retrieved"
+      ],
+      "additionalProperties": false,
+      "description": "Where a record's data was taken from"
+    }
+  }
+}

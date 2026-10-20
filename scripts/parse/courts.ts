@@ -238,13 +238,21 @@ export interface Report {
     unmatched: string[]
     conflicts: string[]
     cantonsWithoutCourt: string[]
+    /** Courts in the ECLI table that the sources don't have */
+    eclisWithoutCourt: string[]
 }
 
 export function buildCourts(root: string, dataDir = 'data'): { courts: Court[]; report: Report } {
     const snapshots = new Snapshots(root, 'courts')
     const cantons = read(`${dataDir}/cantons.json`) as Canton[]
     const arrondissements = read(`${dataDir}/arrondissements.json`) as Arrondissement[]
-    const report: Report = { unreadable: [], unmatched: [], conflicts: [], cantonsWithoutCourt: [] }
+    const report: Report = {
+        unreadable: [],
+        unmatched: [],
+        conflicts: [],
+        cantonsWithoutCourt: [],
+        eclisWithoutCourt: [],
+    }
 
     const cantonByName = new Map<string, Canton>()
     for (const c of cantons) {
@@ -410,8 +418,7 @@ export function buildCourts(root: string, dataDir = 'data'): { courts: Court[]; 
 
     const served = new Set(courts.map((c) => c.canton))
     report.cantonsWithoutCourt = cantons.filter((c) => !served.has(c.id)).map((c) => c.id)
-    for (const id of Object.keys(ECLI))
-        if (!drafts.has(id)) report.unmatched.push(`ECLI table: no court ${id}`)
+    report.eclisWithoutCourt = Object.keys(ECLI).filter((id) => !drafts.has(id))
 
     courts.sort((a, b) => a.id.localeCompare(b.id))
     return { courts: courts.map(ordered), report }

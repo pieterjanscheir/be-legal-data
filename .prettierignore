@@ -8,4 +8,7 @@ src/ids.generated.ts
 data/cantons.json
 data/municipalities.json
 data/courts.json
+data/prisons.json
+data/houses-of-justice.json
 schema/
+test/fixtures/

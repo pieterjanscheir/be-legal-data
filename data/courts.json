@@ -10711,6 +10711,11 @@
     "judicialArea": "liege",
     "arrondissement": "liege",
     "canton": "limbourg",
+    "address": {
+      "street": "Modification TEMPORAIRE du siège au Palais de Justice d'Eupen (4700), Rathausplatz 4",
+      "postalCode": "4700",
+      "city": "EUPEN"
+    },
     "contacts": [
       {
         "type": "phone",
