@@ -88,7 +88,8 @@ const PRISONS =
 
 const prisons: Source = {
     name: 'prisons',
-    description: 'justitie.belgium.be: every prison and detention house, in Dutch, French and German',
+    description:
+        'justitie.belgium.be: every prison and detention house, in Dutch, French and German',
     async fetch(get) {
         const res = await get(PRISONS)
         const pages = links(html(res), res.url).filter((url) =>
@@ -107,7 +108,9 @@ const housesOfJustice: Source = {
     description:
         'vlaanderen.be (Flemish Community) and maisonsdejustice.be (French Community): every house of justice',
     async fetch(get) {
-        await get('https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen')
+        await get(
+            'https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen',
+        )
         const list = 'https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/'
         const res = await get(list)
         for (const url of links(html(res), res.url).sort())

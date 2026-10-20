@@ -66,9 +66,10 @@ export class Store {
     constructor(root: string, source: string) {
         this.#dir = join(root, source)
         const path = join(this.#dir, 'index.json')
-        this.#index = existsSync(path)
-            ? (JSON.parse(readFileSync(path, 'utf8')) as Index)
-            : { source, entries: [] }
+        this.#index =
+            existsSync(path) ?
+                (JSON.parse(readFileSync(path, 'utf8')) as Index)
+            :   { source, entries: [] }
         for (const entry of this.#index.entries) this.#byUrl.set(entry.url, entry)
     }
 
@@ -94,7 +95,7 @@ export class Store {
             contentType: res.contentType,
             file,
             sha256,
-            retrieved: changed ? this.#today : (previous?.retrieved ?? this.#today),
+            retrieved: changed ? this.#today : previous.retrieved,
             checked: this.#today,
         }
         this.#byUrl.set(url, entry)

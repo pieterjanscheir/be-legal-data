@@ -22,13 +22,41 @@ for (const [i, names] of [
     for (const name of names) DAY_NAMES[name] = i
 }
 
-const WORKDAYS = /\b(?:elke werkdag|alle werkdagen|op werkdagen|werkdagen|tous les jours ouvrables|chaque jour ouvrable|les jours ouvrables|jours ouvrables|an werktagen|werktags)\b/g
+const WORKDAYS =
+    /\b(?:elke werkdag|alle werkdagen|op werkdagen|werkdagen|tous les jours ouvrables|chaque jour ouvrable|les jours ouvrables|jours ouvrables|an werktagen|werktags)\b/g
 
 // Words that carry no meaning for the schedule
 const FILLER = new Set([
-    'de', 'griffie', 'is', 'zijn', 'open', 'geopend', 'openingsuren', 'openingstijden', 'van',
-    'telkens', 'uur', 'u', 'le', 'greffe', 'est', 'ouvert', 'heures', 'horaires', 'du', 'die',
-    'kanzlei', 'ist', 'geöffnet', 'öffnungszeiten', 'von', 'uhr', 'h', 'et', 'en', 'und',
+    'de',
+    'griffie',
+    'is',
+    'zijn',
+    'open',
+    'geopend',
+    'openingsuren',
+    'openingstijden',
+    'van',
+    'telkens',
+    'uur',
+    'u',
+    'le',
+    'greffe',
+    'est',
+    'ouvert',
+    'heures',
+    'horaires',
+    'du',
+    'die',
+    'kanzlei',
+    'ist',
+    'geöffnet',
+    'öffnungszeiten',
+    'von',
+    'uhr',
+    'h',
+    'et',
+    'en',
+    'und',
 ])
 
 type Token =
@@ -43,9 +71,15 @@ function tokenize(text: string): Token[] | undefined {
         .toLowerCase()
         .replace(/[–—-]/g, ' - ')
         .replace(WORKDAYS, ' @workdays ')
-        .replace(/\b(?:namiddag|middag|'s middags|après-midi|nachmittags?)\s+(?:gesloten|fermé|geschlossen)\b/g, ' @closed ')
+        .replace(
+            /\b(?:namiddag|middag|'s middags|après-midi|nachmittags?)\s+(?:gesloten|fermé|geschlossen)\b/g,
+            ' @closed ',
+        )
         .replace(/\b(?:gesloten|fermé|geschlossen)\b/g, ' @closed ')
-        .replace(/(\d{1,2})\s*(?:[u:h.]\s*(\d{2}))?(?:\s*(?:heures|uhr|uur|u|h)\b)?(?!\d)/g, (_, h: string, m?: string) => ` @t${h}_${m ?? '00'} `)
+        .replace(
+            /(\d{1,2})\s*(?:[u:h.]\s*(\d{2}))?(?:\s*(?:heures|uhr|uur|u|h)\b)?(?!\d)/g,
+            (_, h: string, m?: string) => ` @t${h}_${m ?? '00'} `,
+        )
     const tokens: Token[] = []
     for (const word of s.split(/[\s,;:|/]+|(?<=\S)(?=\.)|\.(?=\s|$)/).filter(Boolean)) {
         if (word === '@workdays') {
@@ -99,19 +133,23 @@ export function toOpeningHours(text: string): string | undefined {
         } else if (t.kind === 'time') {
             const to = tokens[i + 1]
             const end = tokens[i + 2]
-            if (to?.kind !== 'to' || end?.kind !== 'time' || end.minutes <= t.minutes) return undefined
+            if (to?.kind !== 'to' || end?.kind !== 'time' || end.minutes <= t.minutes)
+                return undefined
             if (days.length === 0 || t.minutes < 6 * 60 || end.minutes > 20 * 60) return undefined
-            for (const d of days) schedule.set(d, [...(schedule.get(d) ?? []), `${hhmm(t.minutes)}-${hhmm(end.minutes)}`])
+            for (const d of days)
+                schedule.set(d, [
+                    ...(schedule.get(d) ?? []),
+                    `${hhmm(t.minutes)}-${hhmm(end.minutes)}`,
+                ])
             daysClosed = true
             i += 2
         } else if (t.kind === 'to') {
             // A dash between parts ("van 9 tot 12.30 – namiddag gesloten") only separates them
             continue
-        } else if (t.kind === 'closed') {
+        } else {
+            // Closed: ends the day list without adding hours
             if (days.length === 0) return undefined
             daysClosed = true
-        } else {
-            return undefined
         }
     }
     if (schedule.size === 0) return undefined
@@ -125,12 +163,19 @@ export function toOpeningHours(text: string): string | undefined {
     const rules: string[] = []
     for (const [ranges, days] of groups) {
         const parts: string[] = []
-        for (let i = 0; i < days.length; ) {
+        for (let i = 0; i < days.length;) {
             let j = i
             while (days[j + 1] === (days[j] ?? 0) + 1) j++
             const from = DAYS[days[i] ?? 0]
             const to = DAYS[days[j] ?? 0]
-            parts.push(j - i >= 2 ? `${from}-${to}` : days.slice(i, j + 1).map((d) => DAYS[d]).join(','))
+            parts.push(
+                j - i >= 2 ?
+                    `${from}-${to}`
+                :   days
+                        .slice(i, j + 1)
+                        .map((d) => DAYS[d])
+                        .join(','),
+            )
             i = j + 1
         }
         rules.push(`${parts.join(',')} ${ranges}`)

@@ -20,6 +20,8 @@ import { join } from 'node:path'
 import { toId } from './id.ts'
 
 const JUSTEL_ID = '1967101007'
+/** The annex's ELI: its own Belgian Official Journal number (numac), not the Justel file number */
+const ANNEX_ELI = 'https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel'
 const STATBEL_YEAR = 2026
 const STATBEL_URL = `https://statbel.fgov.be/sites/default/files/files/opendata/bevolking%20naar%20woonplaats%2C%20nationaliteit%20burgelijke%20staat%20%2C%20leeftijd%20en%20geslacht/TF_SOC_POP_STRUCT_${STATBEL_YEAR}.zip`
 
@@ -415,7 +417,7 @@ const cantons = nlItems.map((nlItem, i) => {
             ...[...nl.partial].map((municipality) => ({ municipality, partial: true })),
         ].sort((a, b) => a.municipality.localeCompare(b.municipality)),
         territory: { nl: nl.territory, fr: fr.territory },
-        legalBasis: `Ger.W. bijvoegsel art. 1, afdeling ${ref}`,
+        legalBasis: { url: ANNEX_ELI, provision: `Bijvoegsel art. 1, afdeling ${ref}` },
     }
 })
 

@@ -13,6 +13,16 @@
     "Municipality": {
       "type": "object",
       "properties": {
+        "validFrom": {
+          "type": "string",
+          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts.",
+          "format": "date"
+        },
+        "validTo": {
+          "type": "string",
+          "description": "Last day the record applies, YYYY-MM-DD",
+          "format": "date"
+        },
         "id": {
           "$ref": "#/definitions/MunicipalityId",
           "description": "The municipality's Statbel REFNIS (NIS) code, e.g. '44021' for Gent"

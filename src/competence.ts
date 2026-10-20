@@ -1,10 +1,11 @@
-import { getJusticeOfThePeace, type JusticeOfThePeace } from './courts'
+import { getJusticeOfThePeace, type Court } from './courts'
 import { getCantonsForMunicipality, type Canton } from './territory'
+import type { OnDay } from './time'
 
 export interface CantonCourt {
     canton: Canton
-    /** `undefined` when the canton's court isn't in the data yet; see the known gaps */
-    court: JusticeOfThePeace | undefined
+    /** The canton's justice of the peace */
+    court: Court
     /**
      * The canton covers only part of the municipality: the street address decides, and the
      * canton's `territory` says which part
@@ -13,11 +14,12 @@ export interface CantonCourt {
 }
 
 /**
- * The justices of the peace for a municipality, by REFNIS code: one for most municipalities,
- * several for a city split over cantons.
+ * The justices of the peace for a municipality on a day (today by default), by REFNIS code:
+ * one for most municipalities, several for a city split over cantons.
  */
-export function findJusticesOfThePeace(municipalityId: string): CantonCourt[] {
-    return getCantonsForMunicipality(municipalityId).map((canton) => ({
+export function findJusticesOfThePeace(municipalityId: string, options: OnDay = {}): CantonCourt[] {
+    // Every canton has its court: test/data.test.ts checks it
+    return getCantonsForMunicipality(municipalityId, options).map((canton) => ({
         canton,
         court: getJusticeOfThePeace(canton.id),
         partial: canton.municipalities.some(

@@ -37,7 +37,7 @@ describe('findJusticesOfThePeace', () => {
         const [only, ...rest] = findJusticesOfThePeace('44088')
         expect(rest).toEqual([])
         expect(only?.canton.id).toBe('merelbeke-melle')
-        expect(only?.court?.id).toBe('justice-of-the-peace-merelbeke-melle')
+        expect(only?.court.id).toBe('justice-of-the-peace-merelbeke-melle')
         expect(only?.partial).toBe(false)
     })
 
@@ -50,12 +50,13 @@ describe('findJusticesOfThePeace', () => {
             'gent-4',
             'gent-5',
         ])
-        expect(gent.every((c) => c.partial && c.court !== undefined)).toBe(true)
+        expect(gent.every((c) => c.partial && c.court.canton === c.canton.id)).toBe(true)
     })
 
-    it('says when the court is not in the data yet', () => {
-        const [antwerpen] = findJusticesOfThePeace('11001')
-        expect(antwerpen?.court).toBeUndefined()
+    it('finds the court of the canton, and nothing for an unknown municipality', () => {
+        expect(findJusticesOfThePeace('11001').map((c) => c.court.id)).toEqual([
+            'justice-of-the-peace-boom',
+        ])
         expect(findJusticesOfThePeace('00000')).toEqual([])
     })
 })

@@ -13,6 +13,16 @@
     "Canton": {
       "type": "object",
       "properties": {
+        "validFrom": {
+          "type": "string",
+          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts.",
+          "format": "date"
+        },
+        "validTo": {
+          "type": "string",
+          "description": "Last day the record applies, YYYY-MM-DD",
+          "format": "date"
+        },
         "id": {
           "$ref": "#/definitions/CantonId",
           "description": "Stable id from the local-language name, plus the number if any: 'gent-1', 'merelbeke-melle'"
@@ -57,8 +67,8 @@
           "description": "The canton's area, verbatim from the annex to the Judicial Code"
         },
         "legalBasis": {
-          "type": "string",
-          "description": "Where in the annex to the Judicial Code the canton is defined"
+          "$ref": "#/definitions/LegalBasis",
+          "description": "Where the law defines the canton"
         }
       },
       "required": [
@@ -846,6 +856,26 @@
         "93090"
       ],
       "description": "Id of a record in data/municipalities.json"
+    },
+    "LegalBasis": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The law's ELI on the Belgian Official Journal's site (ejustice)",
+          "format": "uri"
+        },
+        "provision": {
+          "type": "string",
+          "description": "The provision within it, as the law numbers it: 'Bijvoegsel art. 1, afdeling 1.1'"
+        }
+      },
+      "required": [
+        "url",
+        "provision"
+      ],
+      "additionalProperties": false,
+      "description": "A provision of Belgian law"
     }
   }
 }

@@ -8,15 +8,12 @@ import {
     type Municipality,
     type MunicipalityId,
     cantons,
-    courts,
     getCanton,
     getCourt,
     getMunicipality,
-    formatCourtName,
     getCantonsForMunicipality,
     getInterestRate,
     getJusticeOfThePeace,
-    type Locale,
 } from '../src'
 
 describe('getInterestRate input validation', () => {
@@ -49,11 +46,10 @@ describe('getInterestRate input validation', () => {
 
 describe('getJusticeOfThePeace', () => {
     it('finds the court of a canton', () => {
-        expect(getJusticeOfThePeace('gent-1')?.id).toBe('justice-of-the-peace-gent-1')
+        expect(getJusticeOfThePeace('gent-1').id).toBe('justice-of-the-peace-gent-1')
     })
 
-    it('returns undefined for a canton whose court is not on file', () => {
-        expect(getJusticeOfThePeace('antwerpen-1')).toBeUndefined()
+    it('returns undefined for an unknown canton', () => {
         expect(getJusticeOfThePeace('NoSuchCanton')).toBeUndefined()
     })
 })
@@ -73,20 +69,16 @@ describe('lookups', () => {
     })
 })
 
-describe('formatCourtName', () => {
-    it.each(['nl', 'fr', 'de'] as Locale[])('gives every court a complete name in %s', (locale) => {
-        for (const court of courts) {
-            const name = formatCourtName(court, locale)
-            expect(name, court.id).not.toMatch(/undefined|\s{2}|^\s|\s$/)
-        }
-    })
-})
-
 describe('id types', () => {
     it('return a record, not undefined, for a known id', () => {
         expectTypeOf(getCanton('gent-1')).toEqualTypeOf<Canton>()
         expectTypeOf(getCourt('justice-of-the-peace-gent-1')).toEqualTypeOf<Court>()
         expectTypeOf(getMunicipality('44021')).toEqualTypeOf<Municipality>()
+        expectTypeOf(getJusticeOfThePeace('gent-1')).toEqualTypeOf<Court>()
+    })
+
+    it('may return undefined on a given day, even for a known id', () => {
+        expectTypeOf(getCanton('gent-1', { on: '2025-06-01' })).toEqualTypeOf<Canton | undefined>()
     })
 
     it('may return undefined for any other string', () => {
