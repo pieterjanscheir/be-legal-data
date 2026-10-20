@@ -2,24 +2,25 @@ import arrondissementsData from '../data/arrondissements.json'
 import cantonsData from '../data/cantons.json'
 import judicialAreasData from '../data/judicial-areas.json'
 import municipalitiesData from '../data/municipalities.json'
+import type { Bilingual, Translated } from './common'
 
-export type Locale = 'nl' | 'fr' | 'de'
-
-/** A name in the three national languages */
-export type Translated = Record<Locale, string>
-
-/** A name as the Judicial Code gives it, in Dutch and French */
-export type Bilingual = Record<'nl' | 'fr', string>
+export type { Bilingual, Locale, SourceRef, Translated } from './common'
 
 /** Area of a court of appeal (rechtsgebied): Antwerpen, Brussel, Gent, Luik or Bergen */
 export interface JudicialArea {
-    /** Stable key, e.g. 'Ghent' */
+    /**
+     * Stable key, e.g. 'Ghent'
+     * @pattern ^[A-Z][A-Za-z0-9]*$
+     */
     id: string
     name: Translated
 }
 
 export interface Arrondissement {
-    /** Stable key, e.g. 'EastFlanders' */
+    /**
+     * Stable key, e.g. 'EastFlanders'
+     * @pattern ^[A-Z][A-Za-z0-9]*$
+     */
     id: string
     name: Translated
     /** Id of the judicial area the arrondissement belongs to */
@@ -27,10 +28,16 @@ export interface Arrondissement {
 }
 
 export interface Municipality {
-    /** Statbel REFNIS (NIS) code, e.g. '44021' for Gent */
+    /**
+     * Statbel REFNIS (NIS) code, e.g. '44021' for Gent
+     * @pattern ^\d{5}$
+     */
     refnis: string
     name: Bilingual
-    /** REFNIS code of the province, or '04000' for the Brussels-Capital Region */
+    /**
+     * REFNIS code of the province, or '04000' for the Brussels-Capital Region
+     * @pattern ^\d{5}$
+     */
     province: string
 }
 
@@ -39,6 +46,7 @@ export interface Canton {
     /**
      * Stable key, e.g. 'Gent1' or 'MerelbekeMelle'. The justice of the peace of a canton has
      * the id 'Vredegerecht' + canton id.
+     * @pattern ^[A-Z][A-Za-z0-9]*$
      */
     id: string
     /** Id of the judicial arrondissement */
@@ -60,25 +68,39 @@ export interface Canton {
     source: string
 }
 
-export const judicialAreas = judicialAreasData as JudicialArea[]
-export const arrondissements = arrondissementsData as Arrondissement[]
-export const municipalities = municipalitiesData as Municipality[]
-export const cantons = cantonsData as Canton[]
+export const judicialAreas: readonly JudicialArea[] = judicialAreasData
+export const arrondissements: readonly Arrondissement[] = arrondissementsData
+export const municipalities: readonly Municipality[] = municipalitiesData
+export const cantons: readonly Canton[] = cantonsData
+
+const byId = <T extends { id: string }>(items: readonly T[]) =>
+    new Map(items.map((item) => [item.id, item]))
+
+const judicialAreasById = byId(judicialAreas)
+const arrondissementsById = byId(arrondissements)
+const cantonsById = byId(cantons)
+const municipalitiesByRefnis = new Map(municipalities.map((m) => [m.refnis, m]))
+const cantonsByRefnis = new Map<string, Canton[]>()
+for (const canton of cantons) {
+    for (const { refnis } of canton.municipalities) {
+        cantonsByRefnis.set(refnis, [...(cantonsByRefnis.get(refnis) ?? []), canton])
+    }
+}
 
 export function getJudicialArea(id: string): JudicialArea | undefined {
-    return judicialAreas.find((a) => a.id === id)
+    return judicialAreasById.get(id)
 }
 
 export function getArrondissement(id: string): Arrondissement | undefined {
-    return arrondissements.find((a) => a.id === id)
+    return arrondissementsById.get(id)
 }
 
 export function getMunicipality(refnis: string): Municipality | undefined {
-    return municipalities.find((m) => m.refnis === refnis)
+    return municipalitiesByRefnis.get(refnis)
 }
 
 export function getCanton(id: string): Canton | undefined {
-    return cantons.find((c) => c.id === id)
+    return cantonsById.get(id)
 }
 
 /**
@@ -87,5 +109,5 @@ export function getCanton(id: string): Canton | undefined {
  * and each canton's `territory` describes its part.
  */
 export function getCantonsForMunicipality(refnis: string): Canton[] {
-    return cantons.filter((c) => c.municipalities.some((m) => m.refnis === refnis))
+    return [...(cantonsByRefnis.get(refnis) ?? [])]
 }

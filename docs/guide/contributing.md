@@ -3,8 +3,11 @@
 ## Updating data
 
 1. Edit the JSON in `data/`. Keep the existing ids: projects store them.
-2. `pnpm check`: typecheck, tests, build, and a check that `dist/` is committed and up to date.
-3. Commit (including `dist/`).
+2. Update `lastReviewed` for the dataset in `datapackage.json` if you checked it against its
+   sources.
+3. `pnpm check`: typecheck, regenerate the schemas, build, tests, package lint, and a check
+   that `dist/` and `schema/` are committed and up to date.
+4. Add a line to `CHANGELOG.md` under Unreleased, and commit (including `dist/` and `schema/`).
 
 `dist/` is committed so projects can still install straight from GitHub: pnpm doesn't run build
 scripts of git dependencies.
@@ -34,13 +37,44 @@ the peace of canton `X` has id `VredegerechtX`.
   `rate`, and the Staatsblad date in `note`.
 - **Legal**: published per calendar year. Add a period for the year.
 
+## Adding a dataset
+
+Every dataset gets the same treatment, so users can rely on it:
+
+1. **Data**: `data/<name>.json`, an array of records. Every value from an official source.
+2. **Ids**: follow the [identifier rules](./identifiers): an official code when one exists,
+   otherwise PascalCase ASCII from the local-language name.
+3. **Links, not copies**: refer to arrondissements, cantons and municipalities by id, and reuse
+   the shared types (`Translated`, `Address`, `Contact`, `SourceRef`).
+4. **Sources**: a `sources: [{ url, retrieved }]` on each record, and an entry in
+   `datapackage.json` with the dataset's sources, licence, `lastReviewed` and
+   `reviewEveryMonths`.
+5. **Types and helpers**: `src/<name>.ts`, exported from `src/index.ts`, plus an entry point in
+   `tsup.config.ts` and `package.json` `exports`/`typesVersions`.
+6. **Schema**: add the file type to `scripts/schema-types.ts` and `scripts/build-schemas.ts`.
+7. **Script**: if the source can be fetched, a `scripts/build-<name>.ts` that rebuilds the file,
+   so the freshness check can detect changes.
+8. **Tests**: unique ids, references that resolve, and the count the official source gives.
+9. **Docs**: a page under `docs/data/` with why it's useful, source and updates, and a field table.
+
+## Checks
+
+| Command | What it does |
+| --- | --- |
+| `pnpm test` | Unit, integrity, schema and package tests |
+| `pnpm test:freshness` | Date-based checks: missing rates, overdue reviews; `FRESHNESS_ONLINE=1` also checks source URLs |
+| `pnpm build:schemas` | Regenerate `schema/` from the types |
+| `pnpm lint:package` | `publint` and `arethetypeswrong` on the packed package |
+| `pnpm check` | All of the above that run offline, as CI does |
+
 ## Releasing
 
-1. Bump `version` in `package.json` and commit.
-2. Tag it and push: `git tag v0.2.1 && git push && git push --tags`.
+1. Move the Unreleased entries in `CHANGELOG.md` under the new version.
+2. Bump `version` in `package.json` and commit.
+3. Tag it and push: `git tag v0.3.0 && git push && git push --tags`.
 
-The release workflow runs `pnpm check` and publishes the tag to npm with provenance. The tag has
-to match `version`.
+The release workflow runs `pnpm check`, publishes the tag to npm with provenance, and creates
+a GitHub release. The tag has to match `version`.
 
 ## This website
 
@@ -53,4 +87,5 @@ pnpm docs:build    # static site in docs/.vitepress/dist
 pnpm docs:preview  # serve the built site
 ```
 
-Every push to `main` deploys it to GitHub Pages.
+Every push to `main` deploys it to GitHub Pages. CI builds it on every pull request, so a broken
+page is caught before merging.

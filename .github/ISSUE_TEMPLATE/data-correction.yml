@@ -1,0 +1,38 @@
+name: Data correction
+description: A value in the data is wrong or out of date
+labels: [data]
+body:
+    - type: dropdown
+      id: dataset
+      attributes:
+          label: Dataset
+          options:
+              - courts
+              - cantons
+              - municipalities
+              - arrondissements
+              - judicial-areas
+              - interest-rates
+      validations:
+          required: true
+    - type: input
+      id: record
+      attributes:
+          label: Record id
+          description: The `id` (or REFNIS code, or the period for interest rates)
+          placeholder: VredegerechtGent1
+      validations:
+          required: true
+    - type: textarea
+      id: change
+      attributes:
+          label: What is wrong, and what should it be?
+      validations:
+          required: true
+    - type: input
+      id: source
+      attributes:
+          label: Official source
+          description: A link to the official page, law or Staatsblad publication that shows the correct value
+      validations:
+          required: true

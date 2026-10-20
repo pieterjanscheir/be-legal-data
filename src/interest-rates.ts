@@ -4,11 +4,21 @@ import interestRatesData from '../data/interest-rates.json'
 export type InterestType = 'legal' | 'commercial'
 
 export interface InterestRatePeriod {
-    /** First day of the period (inclusive), YYYY-MM-DD */
+    /**
+     * First day of the period (inclusive), YYYY-MM-DD
+     * @format date
+     */
     from: string
-    /** Last day of the period (inclusive), YYYY-MM-DD */
+    /**
+     * Last day of the period (inclusive), YYYY-MM-DD
+     * @format date
+     */
     to: string
-    /** Rate in percent */
+    /**
+     * Rate in percent
+     * @minimum 0
+     * @maximum 100
+     */
     rate: number
     /**
      * Commercial rates 2013 – 15 March 2015 only: the rate for contracts
@@ -24,19 +34,30 @@ export interface InterestRateSeries {
     periods: InterestRatePeriod[]
 }
 
-export const interestRates = interestRatesData as Record<
-    InterestType,
-    InterestRateSeries
->
+export const interestRates: Readonly<Record<InterestType, InterestRateSeries>> =
+    interestRatesData
 
 export interface InterestRateResult {
     rate: number
     period: { from: string; to: string }
 }
 
-/** Local calendar day as YYYY-MM-DD; strings are taken as already being one. */
+/**
+ * Local calendar day as YYYY-MM-DD. Strings must start with a valid YYYY-MM-DD day (a time
+ * after it is ignored): periods are compared as strings, so '2013-1-15' would otherwise
+ * silently fall in the wrong period.
+ */
 function toDay(date: Date | string): string {
-    if (typeof date === 'string') return date.slice(0, 10)
+    if (typeof date === 'string') {
+        const match = /^(\d{4})-(\d{2})-(\d{2})(?:$|T)/.exec(date)
+        const [y, m, d] = (match ?? []).slice(1).map(Number)
+        const check = new Date(Date.UTC(y, m - 1, d))
+        if (!match || check.getUTCMonth() !== m - 1 || check.getUTCDate() !== d) {
+            throw new RangeError(`Expected a day as YYYY-MM-DD, got '${date}'`)
+        }
+        return date.slice(0, 10)
+    }
+    if (Number.isNaN(date.getTime())) throw new RangeError('Invalid Date')
     const m = String(date.getMonth() + 1).padStart(2, '0')
     const d = String(date.getDate()).padStart(2, '0')
     return `${date.getFullYear()}-${m}-${d}`
@@ -45,6 +66,8 @@ function toDay(date: Date | string): string {
 /**
  * The rate that applies on a day, or `null` when no rate is on file for it
  * (before the earliest period, or a period not yet published).
+ *
+ * Throws a `RangeError` for a string that isn't a valid YYYY-MM-DD day, or an invalid `Date`.
  *
  * `contractAfter20130316` only matters for commercial interest between 2013
  * and 15 March 2015; by default the rate for older contracts is used.

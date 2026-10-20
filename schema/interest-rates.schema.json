@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://pieterjanscheir.github.io/be-legal-data/schema/interest-rates.schema.json",
+  "title": "be-legal-data: data/interest-rates.json",
+  "$ref": "#/definitions/InterestRatesFile",
+  "definitions": {
+    "InterestRatesFile": {
+      "type": "object",
+      "properties": {
+        "legal": {
+          "$ref": "#/definitions/InterestRateSeries"
+        },
+        "commercial": {
+          "$ref": "#/definitions/InterestRateSeries"
+        }
+      },
+      "required": [
+        "legal",
+        "commercial"
+      ],
+      "additionalProperties": false
+    },
+    "InterestRateSeries": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "periods": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InterestRatePeriod"
+          }
+        }
+      },
+      "required": [
+        "description",
+        "source",
+        "periods"
+      ],
+      "additionalProperties": false
+    },
+    "InterestRatePeriod": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "string",
+          "description": "First day of the period (inclusive), YYYY-MM-DD",
+          "format": "date"
+        },
+        "to": {
+          "type": "string",
+          "description": "Last day of the period (inclusive), YYYY-MM-DD",
+          "format": "date"
+        },
+        "rate": {
+          "type": "number",
+          "description": "Rate in percent",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "rateForContractsBefore20130316": {
+          "type": "number",
+          "description": "Commercial rates 2013 – 15 March 2015 only: the rate for contracts concluded before 16 March 2013, when it differs from `rate`."
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "from",
+        "to",
+        "rate"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

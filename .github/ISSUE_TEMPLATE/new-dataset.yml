@@ -1,0 +1,23 @@
+name: New dataset
+description: Propose data that belongs in this package
+labels: [enhancement]
+body:
+    - type: textarea
+      id: what
+      attributes:
+          label: What data, and why is it useful?
+          description: Who would use it, for what
+      validations:
+          required: true
+    - type: textarea
+      id: sources
+      attributes:
+          label: Official sources
+          description: Where the authoritative version lives, and its reuse licence if known
+      validations:
+          required: true
+    - type: textarea
+      id: fields
+      attributes:
+          label: Proposed fields
+          description: See https://pieterjanscheir.github.io/be-legal-data/guide/identifiers for the id rules

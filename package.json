@@ -33,18 +33,70 @@
     "main": "./dist/index.cjs",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
+    "typesVersions": {
+        "*": {
+            "territory": [
+                "./dist/territory.d.ts"
+            ],
+            "courts": [
+                "./dist/courts.d.ts"
+            ],
+            "interest-rates": [
+                "./dist/interest-rates.d.ts"
+            ]
+        }
+    },
     "exports": {
         ".": {
-            "types": "./dist/index.d.ts",
-            "import": "./dist/index.js",
-            "require": "./dist/index.cjs"
+            "import": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.js"
+            },
+            "require": {
+                "types": "./dist/index.d.cts",
+                "default": "./dist/index.cjs"
+            }
+        },
+        "./territory": {
+            "import": {
+                "types": "./dist/territory.d.ts",
+                "default": "./dist/territory.js"
+            },
+            "require": {
+                "types": "./dist/territory.d.cts",
+                "default": "./dist/territory.cjs"
+            }
+        },
+        "./courts": {
+            "import": {
+                "types": "./dist/courts.d.ts",
+                "default": "./dist/courts.js"
+            },
+            "require": {
+                "types": "./dist/courts.d.cts",
+                "default": "./dist/courts.cjs"
+            }
+        },
+        "./interest-rates": {
+            "import": {
+                "types": "./dist/interest-rates.d.ts",
+                "default": "./dist/interest-rates.js"
+            },
+            "require": {
+                "types": "./dist/interest-rates.d.cts",
+                "default": "./dist/interest-rates.cjs"
+            }
         },
         "./data/*": "./data/*",
+        "./schema/*": "./schema/*",
+        "./datapackage.json": "./datapackage.json",
         "./package.json": "./package.json"
     },
     "files": [
         "dist",
         "data",
+        "schema",
+        "datapackage.json",
         "LICENSE-DATA"
     ],
     "scripts": {
@@ -52,16 +104,26 @@
         "build:cantons": "node scripts/build-cantons.ts",
         "test": "vitest run",
         "typecheck": "tsc --noEmit",
-        "check": "pnpm typecheck && pnpm test && pnpm build && git diff --exit-code -- dist",
+        "check": "pnpm typecheck && pnpm build:schemas && pnpm build && pnpm test && pnpm lint:package && git diff --exit-code -- dist schema",
         "prepublishOnly": "pnpm check",
         "docs:dev": "vitepress dev docs",
         "docs:build": "vitepress build docs",
-        "docs:preview": "vitepress preview docs"
+        "docs:preview": "vitepress preview docs",
+        "build:schemas": "node scripts/build-schemas.ts",
+        "test:freshness": "vitest run --config vitest.freshness.config.ts",
+        "lint:package": "publint --strict && attw --pack ."
     },
     "devDependencies": {
+        "@arethetypeswrong/cli": "^0.18.5",
+        "@types/node": "^22.20.5",
+        "ajv": "^8.20.0",
+        "ajv-formats": "^3.0.1",
+        "publint": "^0.3.25",
+        "ts-json-schema-generator": "^2.9.0",
         "tsup": "^8.5.0",
         "typescript": "^5.9.0",
         "vitepress": "^1.6.4",
         "vitest": "^3.2.0"
-    }
+    },
+    "sideEffects": false
 }

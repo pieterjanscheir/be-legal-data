@@ -5,6 +5,13 @@ on:
         branches: [main]
     pull_request:
 
+permissions:
+    contents: read
+
+concurrency:
+    group: ci-${{ github.ref }}
+    cancel-in-progress: true
+
 jobs:
     check:
         runs-on: ubuntu-latest
@@ -16,4 +23,35 @@ jobs:
                   node-version: 24
                   cache: pnpm
             - run: pnpm install --frozen-lockfile
+            # Typecheck, schemas, build, tests, publint + attw, and dist/ and schema/ committed
             - run: pnpm check
+            - run: pnpm docs:build
+            - uses: actions/upload-artifact@v4
+              with:
+                  name: package
+                  path: |
+                      dist
+                      data
+                      schema
+                      datapackage.json
+                      package.json
+                      test/smoke
+                  retention-days: 3
+
+    # The package claims Node >=18: import the built files on every version consumers may use
+    node-compat:
+        needs: check
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                node: [18, 20, 22, 24]
+        steps:
+            - uses: actions/download-artifact@v4
+              with:
+                  name: package
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node }}
+            - run: node test/smoke/esm.mjs
+            - run: node test/smoke/cjs.cjs

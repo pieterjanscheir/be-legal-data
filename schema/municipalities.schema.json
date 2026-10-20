@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://pieterjanscheir.github.io/be-legal-data/schema/municipalities.schema.json",
+  "title": "be-legal-data: data/municipalities.json",
+  "$ref": "#/definitions/MunicipalitiesFile",
+  "definitions": {
+    "MunicipalitiesFile": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Municipality"
+      }
+    },
+    "Municipality": {
+      "type": "object",
+      "properties": {
+        "refnis": {
+          "type": "string",
+          "description": "Statbel REFNIS (NIS) code, e.g. '44021' for Gent",
+          "pattern": "^\\d{5}$"
+        },
+        "name": {
+          "$ref": "#/definitions/Bilingual"
+        },
+        "province": {
+          "type": "string",
+          "description": "REFNIS code of the province, or '04000' for the Brussels-Capital Region",
+          "pattern": "^\\d{5}$"
+        }
+      },
+      "required": [
+        "refnis",
+        "name",
+        "province"
+      ],
+      "additionalProperties": false
+    },
+    "Bilingual": {
+      "type": "object",
+      "properties": {
+        "nl": {
+          "type": "string"
+        },
+        "fr": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nl",
+        "fr"
+      ],
+      "additionalProperties": false,
+      "description": "A name as the Judicial Code gives it, in Dutch and French"
+    }
+  }
+}

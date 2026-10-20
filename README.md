@@ -20,6 +20,11 @@ It's reference data, not legal advice: check the official sources before relying
 | [`data/interest-rates.json`](data/interest-rates.json) | Legal interest rate (per year, since 1970) and commercial-transaction rate (per semester, since 2002) | FOD Financiën / Belgisch Staatsblad |
 
 The JSON files are the source of truth. The TypeScript in `src/` only adds types and helpers.
+Every file has a [JSON Schema](schema/), and [`datapackage.json`](datapackage.json) lists each
+dataset's sources, licence and when it was last checked.
+
+Coming next: the remaining courts, prisons, houses of justice, bailiffs, police zones and the
+cadastre offices. See the [roadmap](https://pieterjanscheir.github.io/be-legal-data/data/roadmap).
 
 Municipality data © Statbel, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
@@ -53,7 +58,11 @@ getInterestRate(new Date(2014, 5, 15), 'commercial', { contractAfter20130316: tr
 ```
 
 `getInterestRate` returns `null` for a day with no rate on file, so callers can warn instead of
-silently using 0 %. `getLatestKnownRateDate(type)` gives the last day that is covered.
+silently using 0 %, and throws a `RangeError` for a malformed day. `getLatestKnownRateDate(type)`
+gives the last day that is covered.
+
+Import a single dataset to keep bundles small: `be-legal-data/interest-rates`,
+`be-legal-data/courts`, `be-legal-data/territory`.
 
 The raw files are also exported: `import courts from 'be-legal-data/data/courts.json'`.
 
@@ -65,8 +74,13 @@ pinned to a tag (`https://raw.githubusercontent.com/pieterjanscheir/be-legal-dat
 ## Updating data
 
 1. Edit the JSON in `data/`. Keep the existing ids: projects store them.
-2. `pnpm check`: typecheck, tests, build, and a check that `dist/` is committed and up to date.
-3. Commit (including `dist/`).
+2. `pnpm check`: typecheck, schemas, build, tests, package lint, and a check that `dist/` and
+   `schema/` are committed and up to date.
+3. Add a line to [`CHANGELOG.md`](CHANGELOG.md) and commit (including `dist/` and `schema/`).
+
+A [weekly freshness check](.github/workflows/freshness.yml) opens an issue when a new interest
+rate is missing, a dataset is overdue for review, a source URL is dead, or the Judicial Code or
+Statbel data changed. See [CONTRIBUTING.md](CONTRIBUTING.md) for adding a dataset.
 
 `dist/` is committed so projects can still install straight from GitHub: pnpm doesn't run
 build scripts of git dependencies.
@@ -76,11 +90,12 @@ build scripts of git dependencies.
 Ids are public API, so versions follow these rules: adding data is a minor version, fixing a
 value is a patch, and removing or renaming an id is a major version.
 
-1. Bump `version` in `package.json` and commit.
-2. Tag it and push: `git tag v0.2.1 && git push && git push --tags`.
+1. Move the Unreleased entries in `CHANGELOG.md` under the new version.
+2. Bump `version` in `package.json` and commit.
+3. Tag it and push: `git tag v0.3.0 && git push && git push --tags`.
 
-The [release workflow](.github/workflows/release.yml) runs `pnpm check` and publishes the tag
-to npm with provenance. The tag has to match `version`.
+The [release workflow](.github/workflows/release.yml) runs `pnpm check`, publishes the tag to
+npm with provenance and creates a GitHub release. The tag has to match `version`.
 
 ### Cantons and municipalities
 
@@ -123,6 +138,8 @@ Run it locally with `pnpm docs:dev`.
 - The French name of canton Beveren-Kruibeke-Zwijndrecht in `courts.json`
   (`Beveren-Cruybeke-Zwijndrecht`) differs from the annex (`Beveren-Kruibeke-Zwijndrecht`).
 - Phone numbers are stored as found, in mixed formats.
+- French and German court names from `formatCourtName` need checking against official usage
+  ([#10](https://github.com/pieterjanscheir/be-legal-data/issues/10)).
 - The Ondernemingsrechtbank Gent, division Oostende, has no house number (Canadaplein).
 
 ## Licence

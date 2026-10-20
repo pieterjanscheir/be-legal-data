@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://pieterjanscheir.github.io/be-legal-data/schema/cantons.schema.json",
+  "title": "be-legal-data: data/cantons.json",
+  "$ref": "#/definitions/CantonsFile",
+  "definitions": {
+    "CantonsFile": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Canton"
+      }
+    },
+    "Canton": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable key, e.g. 'Gent1' or 'MerelbekeMelle'. The justice of the peace of a canton has the id 'Vredegerecht' + canton id.",
+          "pattern": "^[A-Z][A-Za-z0-9]*$"
+        },
+        "arrondissement": {
+          "type": "string",
+          "description": "Id of the judicial arrondissement"
+        },
+        "name": {
+          "$ref": "#/definitions/Bilingual",
+          "description": "Name of the canton; usually the seat, but not always ('Oudergem' sits in Etterbeek)"
+        },
+        "number": {
+          "type": "number",
+          "description": "Canton number for places with several cantons (Gent 1–5, …)"
+        },
+        "seat": {
+          "$ref": "#/definitions/Bilingual",
+          "description": "Where the justice of the peace sits"
+        },
+        "municipalities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "refnis": {
+                "type": "string"
+              },
+              "partial": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "refnis"
+            ],
+            "additionalProperties": false
+          },
+          "description": "The municipalities the canton covers. `partial` marks a municipality that is split over several cantons; `territory` then says which part belongs to this one."
+        },
+        "territory": {
+          "$ref": "#/definitions/Bilingual",
+          "description": "The canton's area, verbatim from the annex to the Judicial Code"
+        },
+        "source": {
+          "type": "string",
+          "description": "Where in the annex to the Judicial Code the canton is defined"
+        }
+      },
+      "required": [
+        "id",
+        "arrondissement",
+        "name",
+        "seat",
+        "municipalities",
+        "territory",
+        "source"
+      ],
+      "additionalProperties": false,
+      "description": "A judicial canton: the area of one justice of the peace"
+    },
+    "Bilingual": {
+      "type": "object",
+      "properties": {
+        "nl": {
+          "type": "string"
+        },
+        "fr": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nl",
+        "fr"
+      ],
+      "additionalProperties": false,
+      "description": "A name as the Judicial Code gives it, in Dutch and French"
+    }
+  }
+}

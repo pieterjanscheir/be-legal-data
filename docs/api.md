@@ -1,12 +1,32 @@
 # API reference
 
-Everything is exported from the package root:
+Everything is exported from the package root, and each dataset also has its own entry point:
 
 ```ts
 import { getCanton, getInterestRate /* … */ } from 'be-legal-data'
+
+// Only what you use: 12 KB for the interest rates instead of 250 KB for everything
+import { getInterestRate } from 'be-legal-data/interest-rates'
+import { getCourt, getJusticeOfThePeace } from 'be-legal-data/courts'
+import { getCanton, getCantonsForMunicipality } from 'be-legal-data/territory'
 ```
 
-Lookups by id return `undefined` when nothing matches; list functions return an empty array.
+| Entry point | Contents |
+| --- | --- |
+| `be-legal-data` | Everything below |
+| `be-legal-data/territory` | Judicial areas, arrondissements, cantons, municipalities |
+| `be-legal-data/courts` | Courts |
+| `be-legal-data/interest-rates` | Interest rates |
+| `be-legal-data/data/*.json` | The raw data files |
+| `be-legal-data/schema/*.schema.json` | [JSON Schemas](/guide/schema) |
+| `be-legal-data/datapackage.json` | [Data package descriptor](/guide/schema#datapackage-json) |
+
+Conventions:
+
+- Lookups by id return `undefined` when nothing matches; list functions return an empty array.
+- Functions only throw for invalid input (a malformed date), never for missing data.
+- Exported datasets are `readonly`: copy before sorting or changing (`[...courts].sort()`).
+- Ids are case-sensitive. See [identifiers](/guide/identifiers).
 
 ## Territory
 
@@ -71,6 +91,20 @@ function getCourt(id: string): Court | undefined
 
 The justice of the peace of canton `X` has the id `VredegerechtX`.
 
+### `getJusticeOfThePeace(cantonId)`
+
+```ts
+function getJusticeOfThePeace(cantonId: string): JusticeOfThePeace | undefined
+```
+
+The justice of the peace of a canton. `undefined` when that court isn't in the data yet
+(only East and West Flanders so far), so pair it with `getCantonsForMunicipality`:
+
+```ts
+const [canton] = getCantonsForMunicipality('44088')
+getJusticeOfThePeace(canton.id)?.address // Merelbeke-Melle's court
+```
+
 ### `findCourts(filter)`
 
 ```ts
@@ -128,7 +162,12 @@ interface InterestRateResult {
 ```
 
 The rate that applies on a day, or `null` when no rate is on file for it. A `Date` is read as a
-local calendar day; a string is taken as `YYYY-MM-DD`.
+local calendar day; a string must start with a valid `YYYY-MM-DD` day (an ISO timestamp is
+fine, its time is ignored).
+
+Throws a `RangeError` for anything else: `'2013-1-15'`, `'15/01/2013'`, `'2013-02-30'` or an
+invalid `Date`. A missing rate is `null`; a malformed day is an error, so the two can't be
+confused.
 
 `contractAfter20130316` only matters for commercial interest between 2013 and 15 March 2015; by
 default the rate for older contracts is used. See [interest rates](/data/interest-rates#the-2013-2015-contract-rule).
@@ -147,18 +186,19 @@ The full datasets, typed:
 
 | Export | Type |
 | --- | --- |
-| `judicialAreas` | `JudicialArea[]` |
-| `arrondissements` | `Arrondissement[]` |
-| `cantons` | `Canton[]` |
-| `municipalities` | `Municipality[]` |
-| `courts` | `Court[]` |
-| `interestRates` | `Record<InterestType, InterestRateSeries>` |
+| `judicialAreas` | `readonly JudicialArea[]` |
+| `arrondissements` | `readonly Arrondissement[]` |
+| `cantons` | `readonly Canton[]` |
+| `municipalities` | `readonly Municipality[]` |
+| `courts` | `readonly Court[]` |
+| `interestRates` | `Readonly<Record<InterestType, InterestRateSeries>>` |
 
 ## Types
 
 | Type | Described on |
 | --- | --- |
 | `Locale` = `'nl' \| 'fr' \| 'de'` | |
+| `SourceRef` = `{ url: string; retrieved: string }`: where a record's data comes from | [Data quality](/guide/data-quality) |
 | `Translated` = `Record<Locale, string>` | |
 | `Bilingual` = `Record<'nl' \| 'fr', string>`: names as the Judicial Code gives them | |
 | `JudicialArea`, `Arrondissement`, `Canton`, `Municipality` | [Territory](/data/territory) |
