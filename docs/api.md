@@ -35,12 +35,14 @@ Conventions:
 ### `getJudicialArea(id)`
 
 ```ts
+function getJudicialArea(id: JudicialAreaId): JudicialArea
 function getJudicialArea(id: string): JudicialArea | undefined
 ```
 
 ### `getArrondissement(id)`
 
 ```ts
+function getArrondissement(id: ArrondissementId): Arrondissement
 function getArrondissement(id: string): Arrondissement | undefined
 ```
 
@@ -62,6 +64,7 @@ getMunicipality('44021').name // { nl: 'Gent', fr: 'Gand' }
 ### `getCanton(id)`
 
 ```ts
+function getCanton(id: CantonId): Canton
 function getCanton(id: string): Canton | undefined
 ```
 
@@ -102,6 +105,7 @@ getArrondissementForMunicipality('44021')?.id // 'oost-vlaanderen'
 ### `getCourt(id)`
 
 ```ts
+function getCourt(id: CourtId): Court
 function getCourt(id: string): Court | undefined
 ```
 

@@ -100,6 +100,7 @@ for (const court of courts) {
     if (court.type === 'justice-of-the-peace') justicesOfThePeaceByCanton.set(court.canton, court)
 }
 
+/** A court by id, e.g. 'justice-of-the-peace-gent-1' */
 export function getCourt(id: CourtId): Court
 export function getCourt(id: string): Court | undefined
 export function getCourt(id: string): Court | undefined {
@@ -114,6 +115,7 @@ export function getJusticeOfThePeace(cantonId: string): JusticeOfThePeace | unde
     return justicesOfThePeaceByCanton.get(cantonId)
 }
 
+/** The courts of a type and/or in an arrondissement; an empty filter gives every court */
 export function findCourts(filter: { type?: CourtType; arrondissement?: string }): Court[] {
     return courts.filter(
         (c) =>
@@ -122,6 +124,7 @@ export function findCourts(filter: { type?: CourtType; arrondissement?: string }
     )
 }
 
+/** The value of a court's first contact of a type, optionally with a label ('griffie', …) */
 export function getContact(
     court: Court,
     type: Contact['type'],
