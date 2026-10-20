@@ -1,0 +1,31 @@
+# Temporary: checks whether GitHub-hosted runners can reach the official sources.
+# Fetched pages are committed back to this branch so they can be inspected.
+name: Spike - source reachability
+on:
+    push:
+        branches: [spike/source-reachability]
+        paths: [spike/urls.txt, .github/workflows/spike-sources.yml]
+permissions:
+    contents: write
+jobs:
+    probe:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Fetch every source
+              run: |
+                  mkdir -p spike/pages
+                  : > spike/results.tsv
+                  while read -r name url; do
+                      [ -z "$name" ] && continue
+                      out=$(curl -sS -L --max-time 30 -A 'Mozilla/5.0 (be-legal-data source check; +https://github.com/pieterjanscheir/be-legal-data)' \
+                          -o "spike/pages/$name.html" -w '%{http_code}\t%{size_download}\t%{url_effective}' "$url" 2>&1) || out="ERR\t0\t$out"
+                      printf '%s\t%s\n' "$name" "$out" | tee -a spike/results.tsv
+                  done < spike/urls.txt
+            - name: Commit results
+              run: |
+                  git config user.name github-actions
+                  git config user.email github-actions@users.noreply.github.com
+                  git add spike/results.tsv spike/pages
+                  git commit -m "Spike results [skip ci]"
+                  git push
