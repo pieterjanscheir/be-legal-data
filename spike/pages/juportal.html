@@ -1,0 +1,230 @@
+<html lang="nl">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <title>JUPORTAL-zoekmachine</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, proxy-revalidate, no-transform" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="shortcut icon" href="/JUPORTAinclude/icones/belgium_stub.svg" type="image/ico"/>
+  <!-- ==============================================================================
+        JUPORTA project: - Openbare databank voor Belgische rechtspraak
+                         - JUPORTA zoekmachine
+                         - Web indexing voor de ECLI zoekmachine
+        
+        Database - Web - CSS ontwerp en ontwikkeling: mny - ICT dienst - FOD Justitie
+        
+        Copyright (c) 2017-2026 FOD Justitie - alle rechten voorbehouden.        
+        Elke reproductie, zelfs gedeeltelijk, is verboden.
+       ==============================================================================
+         § Labor omnia vincit improbus §
+  -->       
+  <link rel="stylesheet" media="screen"  type="text/css" href="/JUPORTAinclude/fonts/selawik/font-face.css" />
+  <link rel="stylesheet" media="screen"  type="text/css" href="/JUPORTAinclude/css/JUPORTAminimal_css.php"      />
+  <link rel="stylesheet" media="print"   type="text/css" href="/JUPORTAinclude/css/JUPORTAminimal_print_M_css.php"      />
+  <script type="text/javascript" src="/JUPORTAinclude/script/balloontip.js"></script>  
+  <script type="text/javascript" src="/JUPORTAinclude/script/hocuspocus.js"></script>
+  <script type="text/javascript" src="/JUPORTAinclude/script/noenterkey.js"></script>
+
+</head>
+
+<!-- Special body Geolocation -->
+<body onLoad="geolocationhtml5()">
+
+  <div id="page_left">
+  </div>
+  <div id="page_right">
+  </div>
+  <div id="conteneur" onscroll="Javascript: ScrollWindow(this.scrollTop);">
+    <div id="page_top">
+
+      <div id="page_top_staatszegel"
+            title="JUPORTAL-Ontvangst" >
+            <a href="https://juportal.be/home/welkom">
+                <img src="/JUPORTAinclude/icones/Staatszegel_hof_invers.png" width="44" height="44"
+                     alt="JUPORTAL-Ontvangst" />
+            </a>
+      </div>
+      <div id="page_top_titre">
+            JUPORTAL Openbare databank voor Belgische rechtspraak
+      </div>
+    </div>
+    <div id="page_main" x-ms-format-detection="none">
+    <!-- continue here with main block (division "content") -->
+    <div id="content1">
+
+        <form id="form_update" name="options" action="/home/welkom" method="post">
+
+            <input type="hidden" name="latitude"          id="latitude"         />
+            <input type="hidden" name="longitude"         id="longitude"        />
+            <input type="hidden" name="accuracy"          id="accuracy"         />
+            <input type="hidden" name="altitude"          id="altitude"         />
+            <input type="hidden" name="altitudeAccuracy"  id="altitudeAccuracy" />
+
+            <div id="location" style="display: none;"></div>  
+            
+            <script type="text/javascript">  
+                var x= document.getElementById("location");  
+                function geolocationhtml5() {  
+                    if(navigator.geolocation){  
+                        navigator.geolocation.getCurrentPosition(showPosition)
+                      }  
+                    else {  
+                        alert("Sorry! your browser is not supporting location")
+                    } 
+                }  
+                function showError(error) {  
+                        switch(error.code){  
+                            case error.PERMISSION_DENIED:  
+                            alert("User denied the request for Geolocation API.");  
+                            break;  
+                        case error.POSITION_UNAVAILABLE:  
+                            alert("USer location information is unavailable.");  
+                            break;  
+                        case error.TIMEOUT:  
+                            alert("The request to get user location timed out.");  
+                            break;  
+                        case error.UNKNOWN_ERROR:  
+                            alert("An unknown error occurred.");  
+                            break;  
+                        }  
+                }  
+                function showPosition(position) {  
+                   var latitude = position.coords.latitude;
+                   var longitude = position.coords.longitude;
+                   var accuracy = position.coords.accuracy;
+                   var altitude = position.coords.altitude;
+                   var altitudeAccuracy = position.coords.altitudeAccuracy;
+                   var x = "Your current location is (" + "Latitude: " + latitude + ", " + "Longitude: " + longitude + ", " + "Accuracy: " + accuracy + ")" + ", " + "(" + "Altitude: " + altitude + ", " + "altitudeAccuracy: " + altitudeAccuracy + ")";  
+                   document.getElementById("location").innerHTML = x;  
+                   document.getElementById("latitude").value  = latitude;
+                   document.getElementById("longitude").value = longitude;
+                   document.getElementById("accuracy").value  = accuracy;
+                   document.getElementById("altitude").vallue = altitude;
+                   document.getElementById("altitudeAccuracy").value = altitudeAccuracy;
+                 }  
+            </script>  
+            
+            <input type="hidden" name="TOKEN" id="TOKEN" value="902ae557b597317a4638a4d6eb71837a4cef2bb177d8312d" />
+            <button type="submit" name="nouvelle_recherche" class="ZZDZDZUZ8NhS0sxRPlmN7WIoSOnh1w"
+                    value="902ae557b597317a4638a4d6eb71837a4cef2bb177d8312d"
+                    title="Voer een nieuwe zoekopdracht uit" >
+                    Nieuwe zoekopdracht            </button>
+          
+            <div class="buttonright">
+              <ul class="buttonright">Taal                <li class="buttonright">
+                    <a href="https://juportal.be/home/willkommen" 
+                       ><img src="/JUPORTAinclude/images/language_de.png" 
+                             alt="Duits"
+                             title="Duits"/></a>
+                </li>
+                <li class="buttonright">
+                    <a href="https://juportal.be/home/accueil" 
+                       ><img src="/JUPORTAinclude/images/language_fr.png" 
+                             alt="Frans"
+                             title="Frans"/></a>
+                </li>
+                <li class="buttonright">
+                    <a href="https://juportal.be/home/welkom" 
+                       ><img src="/JUPORTAinclude/images/language_nl.png" 
+                             alt="Nederlands"
+                             title="Nederlands"/></a>
+                </li>
+            </ul>  
+            &nbsp;&nbsp;                     
+            </div> 
+          <br/>
+          <br/>
+
+    <fieldset aria-label="JUPORTAL-zoekmachine">
+      <legend>&nbsp;&nbsp;JUPORTAL-zoekmachine&nbsp;&nbsp;</legend> 
+
+      <div id="accueil_titre">
+          <h1><img src="/JUPORTAinclude/icones/logo_rvsce.gif" width="50" height="60" alt="logo_rvsce.gif" />
+               &nbsp;&nbsp;JUPORTAL Openbare databank voor Belgische rechtspraak          </h1>
+      </div>
+      <br>
+      <div id="accueil_texte">
+
+          <p><span lang="NL-BE">De <span class="accueil_juporta">JUPORTAL</span> Openbare databank voor Belgische rechtspraak bestaat sinds eind 2017.</span></p>
+          <br />
+
+          <p><span lang="NL-BE">De databank is consulteerbaar via de nieuwe <a href="https://juportal.be/zoekmachine/zoekformulier" target="_self">JUPORTAL-zoekmachine</a>
+                                die sinds november 2020 de Jure-Juridat zoekmachine vervangt.</span></p>
+          <br />
+
+          <p><span lang="NL-BE">Een deel van de in de <span class="accueil_juporta">JUPORTAL</span> databank opgenomen rechtspraak is ook consulteerbaar via de <a href="https://e-justice.europa.eu/topics/legislation-and-case-law/european-case-law-identifier-ecli-search-engine_nl" target="_blank">Europese ECLI-zoekmotor</a>, 
+               met name de rechtspraak van de volgende hoven en rechtbanken:<br />
+               - het Grondwettelijk Hof,<br />
+               - het Hof van Cassatie,<br />
+               - de Raad van State,<br />
+               - de Hoven van beroep,<br />
+               - de arbeidshoven,<br />
+               - de rechtbanken van eerste aanleg,<br />
+               - de ondernemingsrechtbanken,<br />
+               - de arbeidsrechtbanken.</span></p>
+          <br />
+
+          <p><span lang="NL-BE">Voor informatie of suggesties voor het ontwikkelingsteam kunt u contact met ons opnemen via de onderstaande e-mail.</span></p>
+
+        <br>
+        <br>
+      </div>
+    </fieldset>
+          <br/>
+          <br/>
+        </form>
+
+      </div>
+      <!-- end of main block (division "content") -->
+
+    </div>
+    <!-- end of division "page_main" -->
+    <div id="page_accueilextra">
+           <p class="accueilextra">
+              <a href="https://juportal.be/home/toegankelijkheid">
+                 Toegankelijkheidsverklaring
+              </a> &nbsp;&nbsp; - &nbsp;&nbsp;
+
+              <a href="https://juportal.be/home/disclaimer">
+                 Disclaimer
+              </a> &nbsp;&nbsp; - &nbsp;&nbsp;
+
+              <a href="https://juportal.be/home/cookiebeleid">
+                 Cookiebeleid
+              </a>
+           </p>
+    </div>
+    <div id="page_footer">
+        <div id="page_footer_contact"
+              title="Voor informatie of suggesties voor het ontwikkelingsteam kunt u contact met ons opnemen"
+              rel="balloon_contact">
+              &#9993; <a href="mailto:info-JUPORTAL@just.fgov.be">info-JUPORTAL@just.fgov.be</a>
+        </div>
+        <div id="page_footer_copyright"
+              title="Copyright &copy;&nbsp; 2017-2026&nbsp;ICT Dienst - FOD Justitie - Alle rechten voorbehouden"
+              rel="balloon_copyright">
+              &copy;&nbsp; 2017-2026&nbsp;ICT Dienst - FOD Justitie
+        </div>
+
+    </div>
+
+  </div>
+  <!-- end of division "conteneur" -->
+
+  <!-- Balloon system info -->
+  <div id="balloon_system_info"
+        class="balloonstyle"
+        style="height: 128px; width: 400px" >
+      <p>
+          Powered by PHP 8.5.0
+      </p>
+      <p>
+          Server Software Apache/2.4.66
+      </p>
+      <p>
+          == Fluctuat nec mergitur ==
+      </p>
+  </div>
+  <!-- Balloon system info -->
+</body>
+</html>

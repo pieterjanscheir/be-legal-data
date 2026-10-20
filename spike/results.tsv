@@ -1,0 +1,30 @@
+ejustice-annex-058	ERR\t0\tcurl: (56) Recv failure: Connection reset by peer
+000	0	https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel
+ejustice-annex-007	ERR\t0\tcurl: (56) Recv failure: Connection reset by peer
+000	0	https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101007/justel
+ejustice-cgi	ERR\t0\tcurl: (56) Recv failure: Connection reset by peer
+000	0	https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=nl&la=N&table_name=wet&cn=1967101007
+courts-portal	200	54135	https://www.tribunaux-rechtbanken.be/nl
+courts-portal-nl	200	54135	https://www.tribunaux-rechtbanken.be/nl
+justice-fps	200	64645	https://justitie.belgium.be/nl
+prisons-fps	ERR\t0\tcurl: (6) Could not resolve host: www.prisons.belgium.be
+000	0	https://www.prisons.belgium.be/nl
+prisons-flanders	200	148843	https://www.vlaanderen.be/gezondheid-en-welzijn/conflicten-en-misdrijven/hulp-en-melding/hulp-en-dienstverlening-aan-gedetineerden/gegevens-gevangenissen
+justitiehuizen-vl	200	180216	https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen
+maisons-justice	200	40122	https://www.maisonsdejustice.be/
+bailiffs-nl	200	149554	https://www.gerechtsdeurwaarders.be/
+bailiffs-fr	200	258	https://www.huissiers.be/
+police	403	8089	https://www.police.be/
+police-nl	403	8089	https://www.politie.be/
+statbel	200	155863	https://statbel.fgov.be/nl/open-data
+statbel-refnis	404	117902	https://statbel.fgov.be/nl/open-data/refnis-codes
+interest-commercial	200	53534	https://financien.belgium.be/nl/over_de_fod/structuur_en_diensten/algemene_administraties/thesaurie/rentevoet_betalingsachterstand_handelstransacties
+financien	200	23311	https://financien.belgium.be/nl
+juportal	200	10650	https://juportal.be/home/welkom
+juridat	200	7432	https://juridat.be/
+kbo	200	8970	https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html
+kbo-open-data	200	6110	https://kbopub.economie.fgov.be/kbo-open-data/login
+data-gov	200	51196	https://data.gov.be/nl
+geo-be	200	73290	https://www.geo.be/
+om-mp	200	7321	https://www.om-mp.be/language_selection_page?destination=/node/10
+e-justice-eu	403	986	https://e-justice.europa.eu/
