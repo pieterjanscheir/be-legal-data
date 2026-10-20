@@ -7,6 +7,10 @@ updates:
       groups:
           dev-dependencies:
               dependency-type: development
+      ignore:
+          # tsup can't build the type declarations with TypeScript 7 yet: see issue #19
+          - dependency-name: typescript
+            versions: ['>=7']
     - package-ecosystem: github-actions
       directory: /
       schedule:
