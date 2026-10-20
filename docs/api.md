@@ -11,15 +11,15 @@ import { getCourt, getJusticeOfThePeace } from 'be-legal-data/courts'
 import { getCanton, getCantonsForMunicipality } from 'be-legal-data/territory'
 ```
 
-| Entry point | Contents |
-| --- | --- |
-| `be-legal-data` | Everything below |
-| `be-legal-data/territory` | Judicial areas, arrondissements, cantons, municipalities |
-| `be-legal-data/courts` | Courts |
-| `be-legal-data/interest-rates` | Interest rates |
-| `be-legal-data/data/*.json` | The raw data files |
-| `be-legal-data/schema/*.schema.json` | [JSON Schemas](/guide/schema) |
-| `be-legal-data/datapackage.json` | [Data package descriptor](/guide/schema#datapackage-json) |
+| Entry point                          | Contents                                                  |
+| ------------------------------------ | --------------------------------------------------------- |
+| `be-legal-data`                      | Everything below                                          |
+| `be-legal-data/territory`            | Judicial areas, arrondissements, cantons, municipalities  |
+| `be-legal-data/courts`               | Courts                                                    |
+| `be-legal-data/interest-rates`       | Interest rates                                            |
+| `be-legal-data/data/*.json`          | The raw data files                                        |
+| `be-legal-data/schema/*.schema.json` | [JSON Schemas](/guide/schema)                             |
+| `be-legal-data/datapackage.json`     | [Data package descriptor](/guide/schema#datapackage-json) |
 
 Conventions:
 
@@ -87,6 +87,19 @@ getCantonsForMunicipality('44088').map((c) => c.id) // ['merelbeke-melle']
 getCantonsForMunicipality('44021').map((c) => c.id) // ['gent-1', 'gent-2', 'gent-3', 'gent-4', 'gent-5']
 ```
 
+### `getArrondissementForMunicipality(id)`
+
+```ts
+function getArrondissementForMunicipality(id: string): Arrondissement | undefined
+```
+
+The judicial arrondissement a municipality lies in, by REFNIS code. Every municipality lies in
+exactly one, even a city split over several cantons.
+
+```ts
+getArrondissementForMunicipality('44021')?.id // 'oost-vlaanderen'
+```
+
 ## Courts
 
 ### `getCourt(id)`
@@ -128,7 +141,7 @@ findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' })
 ### `getContact(court, type, label?)`
 
 ```ts
-function getContact(court: Court, type: 'phone' | 'email', label?: string): string | undefined
+function getContact(court: Court, type: 'phone' | 'email', label?: ContactLabel): string | undefined
 ```
 
 The value of the first contact of that type, optionally with that label (`'griffie'`, `'B-rol'`, …).
@@ -150,6 +163,59 @@ The full official-style name.
 formatCourtName(getCourt('justice-of-the-peace-gent-1')) // 'Vredegerecht 1e kanton Gent'
 formatCourtName(getCourt('enterprise-court-gent-brugge')) // 'Ondernemingsrechtbank Gent - afdeling Brugge'
 formatCourtName(getCourt('enterprise-court-gent-brugge'), 'fr') // "Tribunal de l'entreprise de Gand - division Bruges"
+```
+
+### `formatPhoneNumber(e164)`
+
+```ts
+function formatPhoneNumber(e164: string): string
+```
+
+A Belgian number in its national written form. Throws a `RangeError` for anything that isn't a
+Belgian number in E.164 form.
+
+```ts
+formatPhoneNumber('+3292343210') // '09 234 32 10'
+formatPhoneNumber('+3253820701') // '053 82 07 01'
+formatPhoneNumber('+32470123456') // '0470 12 34 56'
+```
+
+### `formatIban(iban)`
+
+```ts
+function formatIban(iban: string): string
+```
+
+```ts
+formatIban('BE73679200844560') // 'BE73 6792 0084 4560'
+```
+
+## Competence
+
+Questions that combine datasets. They're in the package root only, since they need both the
+territory and the courts.
+
+### `findJusticesOfThePeace(municipalityId)`
+
+```ts
+function findJusticesOfThePeace(municipalityId: string): CantonCourt[]
+
+interface CantonCourt {
+    canton: Canton
+    court: JusticeOfThePeace | undefined // not in the data yet: see the known gaps
+    partial: boolean // the canton covers only part of the municipality
+}
+```
+
+The justices of the peace for a municipality: one for most municipalities, several for a city
+split over cantons, where the street address decides and each canton's `territory` says which
+part it covers.
+
+```ts
+findJusticesOfThePeace('44088')
+// [{ canton: { id: 'merelbeke-melle', … }, court: { id: 'justice-of-the-peace-merelbeke-melle', … }, partial: false }]
+
+findJusticesOfThePeace('44021').map((c) => c.canton.id) // ['gent-1', 'gent-2', 'gent-3', 'gent-4', 'gent-5']
 ```
 
 ## Interest rates
@@ -192,24 +258,24 @@ The last day for which a rate is on file, `YYYY-MM-DD`.
 
 The full datasets, typed:
 
-| Export | Type |
-| --- | --- |
-| `judicialAreas` | `readonly JudicialArea[]` |
-| `arrondissements` | `readonly Arrondissement[]` |
-| `cantons` | `readonly Canton[]` |
-| `municipalities` | `readonly Municipality[]` |
-| `courts` | `readonly Court[]` |
-| `interestRates` | `Readonly<Record<InterestType, InterestRateSeries>>` |
+| Export            | Type                                                 |
+| ----------------- | ---------------------------------------------------- |
+| `judicialAreas`   | `readonly JudicialArea[]`                            |
+| `arrondissements` | `readonly Arrondissement[]`                          |
+| `cantons`         | `readonly Canton[]`                                  |
+| `municipalities`  | `readonly Municipality[]`                            |
+| `courts`          | `readonly Court[]`                                   |
+| `interestRates`   | `Readonly<Record<InterestType, InterestRateSeries>>` |
 
 ## Types
 
-| Type | Described on |
-| --- | --- |
+| Type                                                                                                                              | Described on                                    |
+| --------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
 | `JudicialAreaId`, `ArrondissementId`, `CantonId`, `MunicipalityId`, `CourtId`: unions of the ids in the data, regenerated with it | [Identifiers](/guide/identifiers#in-typescript) |
-| `Locale` = `'nl' \| 'fr' \| 'de'` | |
-| `SourceRef` = `{ url: string; retrieved: string }`: where a record's data comes from | [Data quality](/guide/data-quality) |
-| `Translated` = `Record<Locale, string>` | |
-| `Bilingual` = `Record<'nl' \| 'fr', string>`: names as the Judicial Code gives them | |
-| `JudicialArea`, `Arrondissement`, `Canton`, `Municipality` | [Territory](/data/territory) |
-| `Court`, `CourtType`, `JusticeOfThePeace`, `EnterpriseCourtDivision`, `Address`, `Contact` | [Courts](/data/courts#shape) |
-| `InterestType`, `InterestRatePeriod`, `InterestRateSeries`, `InterestRateResult` | [Interest rates](/data/interest-rates#shape) |
+| `Locale` = `'nl' \| 'fr' \| 'de'`                                                                                                 |                                                 |
+| `SourceRef` = `{ url: string; retrieved: string }`: where a record's data comes from                                              | [Data quality](/guide/data-quality)             |
+| `Translated` = `Record<Locale, string>`                                                                                           |                                                 |
+| `Bilingual` = `Record<'nl' \| 'fr', string>`: names as the Judicial Code gives them                                               |                                                 |
+| `JudicialArea`, `Arrondissement`, `Canton`, `Municipality`                                                                        | [Territory](/data/territory)                    |
+| `Court`, `CourtType`, `JusticeOfThePeace`, `EnterpriseCourtDivision`, `Address`, `Contact`, `ContactLabel`, `CantonCourt`         | [Courts](/data/courts#shape)                    |
+| `InterestType`, `InterestRatePeriod`, `InterestRateSeries`, `InterestRateResult`                                                  | [Interest rates](/data/interest-rates#shape)    |

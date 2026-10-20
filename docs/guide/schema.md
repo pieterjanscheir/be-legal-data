@@ -4,14 +4,14 @@ Every file in `data/` has a [JSON Schema](https://json-schema.org) (draft-07) in
 The schemas are generated from the TypeScript types, so the types, the schemas and the data
 can't drift apart: CI fails when any of the three disagree.
 
-| Data file | Schema |
-| --- | --- |
-| `data/judicial-areas.json` | [`judicial-areas.schema.json`](/schema/judicial-areas.schema.json){target="_self"} |
+| Data file                   | Schema                                                                               |
+| --------------------------- | ------------------------------------------------------------------------------------ |
+| `data/judicial-areas.json`  | [`judicial-areas.schema.json`](/schema/judicial-areas.schema.json){target="_self"}   |
 | `data/arrondissements.json` | [`arrondissements.schema.json`](/schema/arrondissements.schema.json){target="_self"} |
-| `data/cantons.json` | [`cantons.schema.json`](/schema/cantons.schema.json){target="_self"} |
-| `data/municipalities.json` | [`municipalities.schema.json`](/schema/municipalities.schema.json){target="_self"} |
-| `data/courts.json` | [`courts.schema.json`](/schema/courts.schema.json){target="_self"} |
-| `data/interest-rates.json` | [`interest-rates.schema.json`](/schema/interest-rates.schema.json){target="_self"} |
+| `data/cantons.json`         | [`cantons.schema.json`](/schema/cantons.schema.json){target="_self"}                 |
+| `data/municipalities.json`  | [`municipalities.schema.json`](/schema/municipalities.schema.json){target="_self"}   |
+| `data/courts.json`          | [`courts.schema.json`](/schema/courts.schema.json){target="_self"}                   |
+| `data/interest-rates.json`  | [`interest-rates.schema.json`](/schema/interest-rates.schema.json){target="_self"}   |
 
 Each schema's `$id` is its URL on this site, e.g.
 `https://pieterjanscheir.github.io/be-legal-data/schema/courts.schema.json`. From the next
@@ -38,8 +38,8 @@ validate(courts, schema)
 ```ts [TypeScript]
 import { Ajv } from 'ajv'
 import addFormats from 'ajv-formats'
-import courts from 'be-legal-data/data/courts.json'
-import schema from 'be-legal-data/schema/courts.schema.json'
+import courts from 'be-legal-data/data/courts.json' with { type: 'json' }
+import schema from 'be-legal-data/schema/courts.schema.json' with { type: 'json' }
 
 const ajv = new Ajv()
 addFormats(ajv)

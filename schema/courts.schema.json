@@ -45,10 +45,13 @@
           }
         },
         "bankAccount": {
-          "type": "string"
+          "type": "string",
+          "description": "IBAN in electronic format (no spaces), checksum verified; `formatIban` groups it by four",
+          "pattern": "^BE\\d{14}$"
         },
         "openingHours": {
-          "type": "string"
+          "type": "string",
+          "description": "When the registry is open, in OpenStreetMap `opening_hours` syntax, e.g. 'Mo-Fr 08:30-12:30,13:30-16:00'"
         },
         "website": {
           "type": "string",
@@ -205,28 +208,62 @@
       "additionalProperties": false
     },
     "Contact": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "phone",
-            "email"
-          ]
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "phone"
+            },
+            "value": {
+              "type": "string",
+              "description": "E.164, e.g. '+3292343210'; `formatPhoneNumber` gives the Belgian national form",
+              "pattern": "^\\+32\\d{8,9}$"
+            },
+            "label": {
+              "$ref": "#/definitions/ContactLabel"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
         },
-        "value": {
-          "type": "string"
-        },
-        "label": {
-          "type": "string",
-          "description": "What the contact is for, e.g. 'griffie' or 'B-rol'"
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "email"
+            },
+            "value": {
+              "type": "string",
+              "description": "Lowercase",
+              "format": "email"
+            },
+            "label": {
+              "$ref": "#/definitions/ContactLabel"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
         }
-      },
-      "required": [
-        "type",
-        "value"
+      ]
+    },
+    "ContactLabel": {
+      "type": "string",
+      "enum": [
+        "griffie",
+        "A-rol",
+        "B-rol",
+        "rechtspersonenregister"
       ],
-      "additionalProperties": false
+      "description": "What a contact is for, in the courts' own (Dutch) terms: the registry ('griffie'), a specific roll of the enterprise court ('A-rol', 'B-rol') or its register of legal entities ('rechtspersonenregister'). No label: the court's general contact."
     },
     "SourceRef": {
       "type": "object",
@@ -442,10 +479,13 @@
           }
         },
         "bankAccount": {
-          "type": "string"
+          "type": "string",
+          "description": "IBAN in electronic format (no spaces), checksum verified; `formatIban` groups it by four",
+          "pattern": "^BE\\d{14}$"
         },
         "openingHours": {
-          "type": "string"
+          "type": "string",
+          "description": "When the registry is open, in OpenStreetMap `opening_hours` syntax, e.g. 'Mo-Fr 08:30-12:30,13:30-16:00'"
         },
         "website": {
           "type": "string",

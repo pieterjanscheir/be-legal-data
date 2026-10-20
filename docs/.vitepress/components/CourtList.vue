@@ -4,6 +4,7 @@ import {
     courts,
     arrondissements,
     formatCourtName,
+    formatPhoneNumber,
     getArrondissement,
     type CourtType,
     type Locale,
@@ -22,7 +23,9 @@ const rows = computed(() => {
         (c) =>
             (!type.value || c.type === type.value) &&
             (!arrondissement.value || c.arrondissement === arrondissement.value) &&
-            (!q || c.id.toLowerCase().includes(q) || formatCourtName(c, locale.value).toLowerCase().includes(q)),
+            (!q ||
+                c.id.toLowerCase().includes(q) ||
+                formatCourtName(c, locale.value).toLowerCase().includes(q)),
     )
 })
 </script>
@@ -72,9 +75,13 @@ const rows = computed(() => {
                 <tr v-for="c in rows" :key="c.id">
                     <td>
                         {{ formatCourtName(c, locale) }}<br />
-                        <span class="bld-muted">{{ getArrondissement(c.arrondissement)?.name[locale] }}</span>
+                        <span class="bld-muted">{{
+                            getArrondissement(c.arrondissement)?.name[locale]
+                        }}</span>
                     </td>
-                    <td><code>{{ c.id }}</code></td>
+                    <td>
+                        <code>{{ c.id }}</code>
+                    </td>
                     <td>
                         <span v-if="c.address.building">{{ c.address.building }}<br /></span>
                         {{ c.address.street }} {{ c.address.houseNumber }}<br />
@@ -82,8 +89,10 @@ const rows = computed(() => {
                     </td>
                     <td>
                         <div v-for="k in c.contacts" :key="k.type + k.value + k.label">
-                            <a v-if="k.type === 'email'" :href="'mailto:' + k.value">{{ k.value }}</a>
-                            <span v-else>{{ k.value }}</span>
+                            <a v-if="k.type === 'email'" :href="'mailto:' + k.value">{{
+                                k.value
+                            }}</a>
+                            <a v-else :href="'tel:' + k.value">{{ formatPhoneNumber(k.value) }}</a>
                             <span v-if="k.label" class="bld-muted"> ({{ k.label }})</span>
                         </div>
                     </td>

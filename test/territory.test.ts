@@ -67,7 +67,7 @@ describe('territory', () => {
             for (const { municipality } of c.municipalities) {
                 expect(byId.has(municipality), `${c.id}: ${municipality}`).toBe(true)
                 expect(provincesOf[c.arrondissement], `${c.id}: ${municipality}`).toContain(
-                    byId.get(municipality)!.province,
+                    byId.get(municipality)?.province,
                 )
             }
         }
@@ -101,18 +101,21 @@ describe('justices of the peace', () => {
         for (const court of peace) {
             const canton = getCanton(court.canton)
             expect(canton, court.id).toBeDefined()
-            expect(canton!.arrondissement, court.id).toBe(court.arrondissement)
-            expect(court.number, court.id).toBe(canton!.number)
+            expect(canton.arrondissement, court.id).toBe(court.arrondissement)
+            expect(court.number, court.id).toBe(canton.number)
         }
     })
 
     // Arrondissements whose justices of the peace are all in data/courts.json
-    it.each(['oost-vlaanderen', 'west-vlaanderen'])('cover every canton in %s', (arrondissement) => {
-        const served = new Set(peace.map((c) => c.canton))
-        const missing = cantons
-            .filter((c) => c.arrondissement === arrondissement)
-            .map((c) => c.id)
-            .filter((id) => !served.has(id))
-        expect(missing).toEqual([])
-    })
+    it.each(['oost-vlaanderen', 'west-vlaanderen'])(
+        'cover every canton in %s',
+        (arrondissement) => {
+            const served = new Set(peace.map((c) => c.canton))
+            const missing = cantons
+                .filter((c) => c.arrondissement === arrondissement)
+                .map((c) => c.id)
+                .filter((id) => !served.has(id))
+            expect(missing).toEqual([])
+        },
+    )
 })

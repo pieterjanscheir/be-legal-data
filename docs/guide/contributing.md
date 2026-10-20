@@ -5,12 +5,11 @@
 1. Edit the JSON in `data/`. Keep the existing ids: projects store them.
 2. Update `lastReviewed` for the dataset in `datapackage.json` if you checked it against its
    sources.
-3. `pnpm check`: typecheck, regenerate the schemas, build, tests, package lint, and a check
-   that `dist/` and `schema/` are committed and up to date.
-4. Add a line to `CHANGELOG.md` under Unreleased, and commit (including `dist/` and `schema/`).
-
-`dist/` is committed so projects can still install straight from GitHub: pnpm doesn't run build
-scripts of git dependencies.
+3. `pnpm check`: regenerate the id types and schemas, typecheck, lint and format check, build,
+   tests with coverage, and package lint. It fails when the generated files aren't committed.
+4. Add a line to `CHANGELOG.md` under Unreleased, and commit (including `schema/` and
+   `src/ids.generated.ts`). The build output (`dist/`) isn't committed: it's built for every
+   release and published to npm.
 
 ### Cantons and municipalities
 
@@ -50,7 +49,7 @@ Every dataset gets the same treatment, so users can rely on it:
    `datapackage.json` with the dataset's sources, licence, `lastReviewed` and
    `reviewEveryMonths`.
 5. **Types and helpers**: `src/<name>.ts`, exported from `src/index.ts`, plus an entry point in
-   `tsup.config.ts` and `package.json` `exports`/`typesVersions`.
+   `tsup.config.ts` and `package.json` `exports`.
 6. **Schema**: add the file type to `scripts/schema-types.ts` and `scripts/build-schemas.ts`.
 7. **Script**: if the source can be fetched, a `scripts/build-<name>.ts` that rebuilds the file,
    so the freshness check can detect changes.
@@ -59,13 +58,16 @@ Every dataset gets the same treatment, so users can rely on it:
 
 ## Checks
 
-| Command | What it does |
-| --- | --- |
-| `pnpm test` | Unit, integrity, schema and package tests |
-| `pnpm test:freshness` | Date-based checks: missing rates, overdue reviews; `FRESHNESS_ONLINE=1` also checks source URLs |
-| `pnpm build:schemas` | Regenerate `schema/` from the types |
-| `pnpm lint:package` | `publint` and `arethetypeswrong` on the packed package |
-| `pnpm check` | Typecheck, schemas, build, `pnpm test` and `pnpm lint:package`, as CI does. Not the freshness checks: run `pnpm test:freshness` separately |
+| Command                     | What it does                                                                                                                                                  |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `pnpm check`                | Everything CI runs: `generate`, `typecheck`, `lint`, `build`, `test:coverage`, `test:package`, `lint:package`, and a check that generated files are committed |
+| `pnpm test`                 | Unit, integrity, schema and type tests on the source (no build needed)                                                                                        |
+| `pnpm test:package`         | Smoke tests of the built package with `import` and `require()`: run `pnpm build` first                                                                        |
+| `pnpm test:coverage`        | The same, failing below 100 % coverage of `src/`                                                                                                              |
+| `pnpm lint` / `pnpm format` | ESLint and Prettier: check / fix                                                                                                                              |
+| `pnpm generate`             | Regenerate `src/ids.generated.ts` (id types) and `schema/` from the data and types                                                                            |
+| `pnpm lint:package`         | `publint` and `arethetypeswrong` on the packed package                                                                                                        |
+| `pnpm test:freshness`       | Date-based checks: missing rates, overdue reviews. Not part of `check`; `FRESHNESS_ONLINE=1` also checks the source URLs                                      |
 
 ## Releasing
 

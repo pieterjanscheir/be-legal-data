@@ -34,8 +34,7 @@ export interface InterestRateSeries {
     periods: InterestRatePeriod[]
 }
 
-export const interestRates: Readonly<Record<InterestType, InterestRateSeries>> =
-    interestRatesData
+export const interestRates: Readonly<Record<InterestType, InterestRateSeries>> = interestRatesData
 
 export interface InterestRateResult {
     rate: number
@@ -50,9 +49,10 @@ export interface InterestRateResult {
 function toDay(date: Date | string): string {
     if (typeof date === 'string') {
         const match = /^(\d{4})-(\d{2})-(\d{2})(?:$|T)/.exec(date)
-        const [y, m, d] = (match ?? []).slice(1).map(Number)
+        const [y = NaN, m = NaN, d = NaN] = (match ?? []).slice(1).map(Number)
+        // Date.UTC rolls an impossible day over ('2013-02-30' → 2 March), which this catches
         const check = new Date(Date.UTC(y, m - 1, d))
-        if (!match || check.getUTCMonth() !== m - 1 || check.getUTCDate() !== d) {
+        if (check.getUTCMonth() !== m - 1 || check.getUTCDate() !== d) {
             throw new RangeError(`Expected a day as YYYY-MM-DD, got '${date}'`)
         }
         return date.slice(0, 10)
@@ -78,13 +78,10 @@ export function getInterestRate(
     options: { contractAfter20130316?: boolean } = {},
 ): InterestRateResult | null {
     const day = toDay(date)
-    const period = interestRates[type].periods.find(
-        (p) => p.from <= day && day <= p.to,
-    )
+    const period = interestRates[type].periods.find((p) => p.from <= day && day <= p.to)
     if (!period) return null
     const rate =
-        !options.contractAfter20130316 &&
-        period.rateForContractsBefore20130316 !== undefined ?
+        !options.contractAfter20130316 && period.rateForContractsBefore20130316 !== undefined ?
             period.rateForContractsBefore20130316
         :   period.rate
     return { rate, period: { from: period.from, to: period.to } }
@@ -92,8 +89,9 @@ export function getInterestRate(
 
 /** Last day for which a rate is on file, YYYY-MM-DD */
 export function getLatestKnownRateDate(type: InterestType): string {
-    return interestRates[type].periods.reduce(
-        (latest, p) => (p.to > latest ? p.to : latest),
-        '',
-    )
+    // Periods are sorted and never empty (test/data.test.ts), so the last one ends latest
+    const last = interestRates[type].periods.at(-1)
+    /* v8 ignore next */
+    if (!last) throw new Error(`No ${type} interest rates on file`)
+    return last.to
 }

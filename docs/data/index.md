@@ -4,14 +4,14 @@ Every dataset is a JSON file in `data/`, described by a [JSON Schema](/guide/sch
 in [`datapackage.json`](/guide/schema#datapackage-json) with its official sources, licence and
 the date it was last checked against them.
 
-| Dataset | Records | What you'd use it for |
-| --- | --- | --- |
-| [Judicial areas](./territory#judicial-areas) | 5 | Which court of appeal (and labour court of appeal) hears an appeal |
-| [Arrondissements](./territory#arrondissements) | 12 | Grouping courts, prosecutors and bailiffs; the unit most competence rules use |
-| [Cantons](./territory#cantons) | 162 | Which justice of the peace is competent for an address |
-| [Municipalities](./territory#municipalities) | 565 | Joining any Belgian address or statistic to the judicial map by REFNIS code |
-| [Courts](./courts) | 46 | Names, addresses and contact details to write to, file with or pay a court |
-| [Interest rates](./interest-rates) | 2 series | Calculating late-payment interest on a claim |
+| Dataset                                        | Records  | What you'd use it for                                                         |
+| ---------------------------------------------- | -------- | ----------------------------------------------------------------------------- |
+| [Judicial areas](./territory#judicial-areas)   | 5        | Which court of appeal (and labour court of appeal) hears an appeal            |
+| [Arrondissements](./territory#arrondissements) | 12       | Grouping courts, prosecutors and bailiffs; the unit most competence rules use |
+| [Cantons](./territory#cantons)                 | 162      | Which justice of the peace is competent for an address                        |
+| [Municipalities](./territory#municipalities)   | 565      | Joining any Belgian address or statistic to the judicial map by REFNIS code   |
+| [Courts](./courts)                             | 46       | Names, addresses and contact details to write to, file with or pay a court    |
+| [Interest rates](./interest-rates)             | 2 series | Calculating late-payment interest on a claim                                  |
 
 ## How the datasets fit together
 

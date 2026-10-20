@@ -10,14 +10,14 @@ It's reference data, not legal advice: check the official sources before relying
 
 ## What's in it
 
-| File | Contents | Source |
-| --- | --- | --- |
-| [`data/judicial-areas.json`](data/judicial-areas.json) | The 5 judicial areas (courts of appeal) | Ger.W. bijvoegsel art. 5 |
-| [`data/arrondissements.json`](data/arrondissements.json) | The 12 judicial arrondissements and their judicial area | Ger.W. bijvoegsel art. 4 |
-| [`data/cantons.json`](data/cantons.json) | All 162 judicial cantons: name, seat, municipalities, and the legal description of their area | Ger.W. bijvoegsel art. 1 (generated) |
-| [`data/municipalities.json`](data/municipalities.json) | The 565 municipalities with REFNIS code and province | Statbel (generated) |
-| [`data/courts.json`](data/courts.json) | Justices of the peace in East and West Flanders, and the divisions of the Ondernemingsrechtbank Gent | Court websites, just.fgov.be |
-| [`data/interest-rates.json`](data/interest-rates.json) | Legal interest rate (per year, since 1970) and commercial-transaction rate (per semester, since 2002) | FOD Financiën / Belgisch Staatsblad |
+| File                                                     | Contents                                                                                              | Source                               |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| [`data/judicial-areas.json`](data/judicial-areas.json)   | The 5 judicial areas (courts of appeal)                                                               | Ger.W. bijvoegsel art. 5             |
+| [`data/arrondissements.json`](data/arrondissements.json) | The 12 judicial arrondissements and their judicial area                                               | Ger.W. bijvoegsel art. 4             |
+| [`data/cantons.json`](data/cantons.json)                 | All 162 judicial cantons: name, seat, municipalities, and the legal description of their area         | Ger.W. bijvoegsel art. 1 (generated) |
+| [`data/municipalities.json`](data/municipalities.json)   | The 565 municipalities with REFNIS code and province                                                  | Statbel (generated)                  |
+| [`data/courts.json`](data/courts.json)                   | Justices of the peace in East and West Flanders, and the divisions of the Ondernemingsrechtbank Gent  | Court websites, just.fgov.be         |
+| [`data/interest-rates.json`](data/interest-rates.json)   | Legal interest rate (per year, since 1970) and commercial-transaction rate (per semester, since 2002) | FOD Financiën / Belgisch Staatsblad  |
 
 The JSON files are the source of truth. The TypeScript in `src/` only adds types and helpers.
 Every file has a [JSON Schema](schema/), and [`datapackage.json`](datapackage.json) lists each
@@ -35,6 +35,10 @@ Municipality data © Statbel, [CC BY 4.0](https://creativecommons.org/licenses/b
 ```bash
 pnpm add be-legal-data
 ```
+
+ESM with TypeScript types and no runtime dependencies. Node 22.12 or later (where `require()`
+loads it too), Deno, Bun and browsers. Design choices are explained in
+[design decisions](https://pieterjanscheir.github.io/be-legal-data/guide/design).
 
 ```ts
 import {
@@ -64,7 +68,7 @@ gives the last day that is covered.
 Import a single dataset to keep bundles small: `be-legal-data/interest-rates`,
 `be-legal-data/courts`, `be-legal-data/territory`.
 
-The raw files are also exported: `import courts from 'be-legal-data/data/courts.json'`.
+The raw files are also exported: `import courts from 'be-legal-data/data/courts.json' with { type: 'json' }`.
 
 ### Python and anything else
 
@@ -74,16 +78,15 @@ pinned to a tag (`https://raw.githubusercontent.com/pieterjanscheir/be-legal-dat
 ## Updating data
 
 1. Edit the JSON in `data/`. Keep the existing ids: projects store them.
-2. `pnpm check`: typecheck, schemas, build, tests, package lint, and a check that `dist/` and
-   `schema/` are committed and up to date.
-3. Add a line to [`CHANGELOG.md`](CHANGELOG.md) and commit (including `dist/` and `schema/`).
+2. `pnpm check`: regenerate the id types and schemas, typecheck, lint, build, tests with
+   coverage, the built-package smoke tests and package lint. It fails when the generated files
+   (`schema/`, `src/ids.generated.ts`) aren't committed.
+3. Add a line to [`CHANGELOG.md`](CHANGELOG.md) and commit, including the generated files. The
+   build output isn't committed: releases build it.
 
 A [weekly freshness check](.github/workflows/freshness.yml) opens an issue when a new interest
 rate is missing, a dataset is overdue for review, a source URL is dead, or the Judicial Code or
 Statbel data changed. See [CONTRIBUTING.md](CONTRIBUTING.md) for adding a dataset.
-
-`dist/` is committed so projects can still install straight from GitHub: pnpm doesn't run
-build scripts of git dependencies.
 
 ### Releasing
 
@@ -137,7 +140,6 @@ Run it locally with `pnpm docs:dev`.
   right one needs the street address, and the boundaries exist only as legal prose in `territory`.
 - The French name of canton Beveren-Kruibeke-Zwijndrecht in `courts.json`
   (`Beveren-Cruybeke-Zwijndrecht`) differs from the annex (`Beveren-Kruibeke-Zwijndrecht`).
-- Phone numbers are stored as found, in mixed formats.
 - French and German court names from `formatCourtName` need checking against official usage
   ([#10](https://github.com/pieterjanscheir/be-legal-data/issues/10)).
 - The Ondernemingsrechtbank Gent, division Oostende, has no house number (Canadaplein).

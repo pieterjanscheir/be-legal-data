@@ -8,10 +8,9 @@
   right one needs the street address, and the boundaries exist only as legal prose in `territory`.
 - The French name of canton Beveren-Kruibeke-Zwijndrecht in `courts.json`
   (`Beveren-Cruybeke-Zwijndrecht`) differs from the annex (`Beveren-Kruibeke-Zwijndrecht`).
-- Phone numbers are stored as found, in mixed formats.
 - `formatCourtName` builds French and German names that may not match official usage
-  (`Tribunal de paix 1e canton Gand`, where Belgian usage is likely *justice de paix* and
-  *1er canton*): [#10](https://github.com/pieterjanscheir/be-legal-data/issues/10).
+  (`Tribunal de paix 1e canton Gand`, where Belgian usage is likely _justice de paix_ and
+  _1er canton_): [#10](https://github.com/pieterjanscheir/be-legal-data/issues/10).
 - Courts don't yet record a source URL per record:
   [#5](https://github.com/pieterjanscheir/be-legal-data/issues/5).
 - The Ondernemingsrechtbank Gent, division Oostende, has no house number (Canadaplein).

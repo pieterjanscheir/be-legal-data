@@ -47,10 +47,14 @@ const fmt = (rate: number) => `${rate.toLocaleString('nl-BE')} %`
         <p v-if="result" class="bld-result">{{ fmt(result.rate) }}</p>
         <p v-else class="bld-result">No rate on file</p>
         <p class="bld-muted">
-            <template v-if="result">Period {{ result.period.from }} to {{ result.period.to }}. </template>
+            <template v-if="result"
+                >Period {{ result.period.from }} to {{ result.period.to }}.
+            </template>
             Latest day covered: {{ latest }}.
         </p>
-        <pre class="bld-muted"><code>getInterestRate('{{ date }}', '{{ type }}'{{ type === 'commercial' && after2013 ? ', { contractAfter20130316: true }' : '' }})</code></pre>
+        <pre
+            class="bld-muted"
+        ><code>getInterestRate('{{ date }}', '{{ type }}'{{ type === 'commercial' && after2013 ? ', { contractAfter20130316: true }' : '' }})</code></pre>
     </div>
 
     <p class="bld-muted">{{ series.description }} Source: {{ series.source }}</p>
@@ -71,7 +75,11 @@ const fmt = (rate: number) => `${rate.toLocaleString('nl-BE')} %`
                 <td>{{ p.to }}</td>
                 <td>{{ fmt(p.rate) }}</td>
                 <td v-if="type === 'commercial'">
-                    {{ p.rateForContractsBefore20130316 !== undefined ? fmt(p.rateForContractsBefore20130316) : '' }}
+                    {{
+                        p.rateForContractsBefore20130316 !== undefined ?
+                            fmt(p.rateForContractsBefore20130316)
+                        :   ''
+                    }}
                 </td>
                 <td class="bld-muted">{{ p.note }}</td>
             </tr>

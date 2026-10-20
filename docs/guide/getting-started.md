@@ -18,9 +18,9 @@ yarn add be-legal-data
 
 :::
 
-The package works with ESM and CommonJS, ships its own type definitions, has no runtime
-dependencies, and runs on Node 18 or later and in browsers. It's tested on Node 18, 20, 22
-and 24.
+The package is ESM, ships its own type definitions, has no runtime dependencies, and runs in
+browsers and on Node 22.12 or later, where `require()` loads it too. It's tested on Node 22.12,
+22, 24 and 26.
 
 ### Import only what you need
 
@@ -103,7 +103,7 @@ formatCourtName(getCourt('enterprise-court-gent-brugge')) // 'Ondernemingsrechtb
 The data files are exported too:
 
 ```ts
-import courts from 'be-legal-data/data/courts.json'
+import courts from 'be-legal-data/data/courts.json' with { type: 'json' }
 ```
 
 ## Ids are public API
@@ -111,8 +111,8 @@ import courts from 'be-legal-data/data/courts.json'
 Projects store ids such as `justice-of-the-peace-gent-1` or `oost-vlaanderen`, so they never change within a
 major version (see [identifiers](./identifiers)), and versions follow these rules:
 
-| Change | Version |
-| --- | --- |
-| Adding data | minor |
-| Fixing a value | patch |
-| Removing or renaming an id | major |
+| Change                     | Version |
+| -------------------------- | ------- |
+| Adding data                | minor   |
+| Fixing a value             | patch   |
+| Removing or renaming an id | major   |

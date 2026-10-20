@@ -8,8 +8,7 @@ import { describe, expect, it } from 'vitest'
 import { getInterestRate, getLatestKnownRateDate, type InterestType } from '../../src'
 
 const today = new Date().toISOString().slice(0, 10)
-const inDays = (days: number) =>
-    new Date(Date.now() + days * 86_400_000).toISOString().slice(0, 10)
+const inDays = (days: number) => new Date(Date.now() + days * 86_400_000).toISOString().slice(0, 10)
 
 describe('interest rates', () => {
     it.each(['legal', 'commercial'] as InterestType[])('has the %s rate for today', (type) => {
@@ -36,14 +35,14 @@ describe('review dates', () => {
         lastReviewed: string
         reviewEveryMonths: number
     }
-    const { resources }: { resources: Resource[] } = JSON.parse(
-        readFileSync('datapackage.json', 'utf8'),
-    )
+    const { resources } = JSON.parse(readFileSync('datapackage.json', 'utf8')) as {
+        resources: Resource[]
+    }
 
     it.each(resources.map((r: Resource) => [r.name, r] as [string, Resource]))(
         '%s was reviewed recently enough',
         (_name: string, r: Resource) => {
-            const [y, m, d] = r.lastReviewed.split('-').map(Number)
+            const [y = NaN, m = NaN, d = NaN] = r.lastReviewed.split('-').map(Number)
             // Day 0 of the month after is the last day of the target month: 31 August plus
             // 6 months is due on 28 (or 29) February, not rolled over into March
             const lastDay = new Date(Date.UTC(y, m - 1 + r.reviewEveryMonths + 1, 0)).getUTCDate()

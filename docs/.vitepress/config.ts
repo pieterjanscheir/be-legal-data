@@ -35,6 +35,7 @@ export default defineConfig({
                 items: [
                     { text: 'Getting started', link: '/guide/getting-started' },
                     { text: 'Without JavaScript', link: '/guide/raw-json' },
+                    { text: 'Design decisions', link: '/guide/design' },
                     { text: 'Identifiers', link: '/guide/identifiers' },
                     { text: 'JSON Schema', link: '/guide/schema' },
                     { text: 'Data quality & freshness', link: '/guide/data-quality' },

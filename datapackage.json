@@ -98,7 +98,11 @@
       "format": "json",
       "mediatype": "application/json",
       "jsonSchema": "schema/courts.schema.json",
-      "sources": [{ "title": "The courts' websites and just.fgov.be (per-record source URLs still to be added)" }],
+      "sources": [
+        {
+          "title": "The courts' websites and just.fgov.be (per-record source URLs still to be added)"
+        }
+      ],
       "lastReviewed": "2026-10-05",
       "reviewEveryMonths": 12
     },

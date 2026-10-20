@@ -23,7 +23,8 @@ jobs:
                   node-version: 24
                   cache: pnpm
             - run: pnpm install --frozen-lockfile
-            # Typecheck, schemas, build, tests, publint + attw, and dist/ and schema/ committed
+            # Generate, typecheck, lint + format, build, tests with coverage, publint + attw, and
+            # the generated files committed
             - run: pnpm check
             - run: pnpm docs:build
             - uses: actions/upload-artifact@v7
@@ -38,14 +39,15 @@ jobs:
                       test/smoke
                   retention-days: 3
 
-    # The package claims Node >=18: import the built files on every version consumers may use
+    # The package claims Node >=22.12: load the built files with import and require() on every
+    # supported version
     node-compat:
         needs: check
         runs-on: ubuntu-latest
         strategy:
             fail-fast: false
             matrix:
-                node: [18, 20, 22, 24]
+                node: ['22.12', 22, 24, 26]
         steps:
             - uses: actions/download-artifact@v8
               with:

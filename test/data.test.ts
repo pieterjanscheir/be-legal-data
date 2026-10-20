@@ -13,6 +13,13 @@ import {
     type InterestType,
 } from '../src'
 
+/** Each item paired with the one after it */
+const consecutive = <T>(items: readonly T[]): [T, T][] =>
+    items.flatMap((item, i) => {
+        const next = items[i + 1]
+        return next === undefined ? [] : [[item, next] as [T, T]]
+    })
+
 describe('data integrity', () => {
     it('has unique court ids', () => {
         const ids = courts.map((c) => c.id)
@@ -39,19 +46,18 @@ describe('data integrity', () => {
                 expect(p.from, JSON.stringify(p)).toMatch(/^\d{4}-\d{2}-\d{2}$/)
                 expect(p.from <= p.to, JSON.stringify(p)).toBe(true)
             }
-            for (let i = 1; i < periods.length; i++) {
-                expect(periods[i - 1].to < periods[i].from, periods[i].from).toBe(true)
+            for (const [prev, next] of consecutive(periods)) {
+                expect(prev.to < next.from, next.from).toBe(true)
             }
         },
     )
 
     // A gap would make getInterestRate return null for days inside the series
     it.each(['legal', 'commercial'] as InterestType[])('has no gaps in the %s series', (type) => {
-        const periods = interestRates[type].periods
-        for (let i = 1; i < periods.length; i++) {
-            const next = new Date(`${periods[i - 1].to}T00:00:00Z`)
-            next.setUTCDate(next.getUTCDate() + 1)
-            expect(periods[i].from, periods[i - 1].to).toBe(next.toISOString().slice(0, 10))
+        for (const [prev, next] of consecutive(interestRates[type].periods)) {
+            const dayAfter = new Date(`${prev.to}T00:00:00Z`)
+            dayAfter.setUTCDate(dayAfter.getUTCDate() + 1)
+            expect(next.from, prev.to).toBe(dayAfter.toISOString().slice(0, 10))
         }
     })
 
@@ -91,9 +97,7 @@ describe('courts', () => {
 
     it('formats enterprise court division names', () => {
         const brugge = getCourt('enterprise-court-gent-brugge')
-        expect(formatCourtName(brugge)).toBe(
-            'Ondernemingsrechtbank Gent - afdeling Brugge',
-        )
+        expect(formatCourtName(brugge)).toBe('Ondernemingsrechtbank Gent - afdeling Brugge')
         expect(formatCourtName(brugge, 'fr')).toBe(
             "Tribunal de l'entreprise de Gand - division Bruges",
         )
@@ -101,11 +105,7 @@ describe('courts', () => {
 
     it('filters by type and arrondissement', () => {
         const result = findCourts({ type: 'enterprise-court', arrondissement: 'oost-vlaanderen' })
-        expect(result.map((c) => c.name.nl).sort()).toEqual([
-            'Dendermonde',
-            'Gent',
-            'Oudenaarde',
-        ])
+        expect(result.map((c) => c.name.nl).sort()).toEqual(['Dendermonde', 'Gent', 'Oudenaarde'])
     })
 
     it('finds a contact by label', () => {
@@ -138,5 +138,39 @@ describe('getInterestRate', () => {
         expect(getInterestRate('1960-01-01', 'legal')).toBeNull()
         const after = getLatestKnownRateDate('commercial')
         expect(getInterestRate(`${Number(after.slice(0, 4)) + 1}-06-01`, 'commercial')).toBeNull()
+    })
+})
+
+describe('court contact data', () => {
+    // ISO 13616: move the first four characters to the end, letters to numbers, mod 97 is 1
+    const ibanIsValid = (iban: string) =>
+        BigInt(
+            (iban.slice(4) + iban.slice(0, 4)).replace(/[A-Z]/g, (c) =>
+                String(c.charCodeAt(0) - 55),
+            ),
+        ) %
+            97n ===
+        1n
+
+    it('has valid IBANs', () => {
+        for (const c of courts)
+            if (c.bankAccount) expect(ibanIsValid(c.bankAccount), c.id).toBe(true)
+    })
+
+    it('has lowercase e-mail addresses', () => {
+        for (const c of courts) {
+            for (const k of c.contacts)
+                if (k.type === 'email') expect(k.value).toBe(k.value.toLowerCase())
+        }
+    })
+
+    it('has opening hours in opening_hours syntax', () => {
+        for (const c of courts) {
+            if (c.openingHours) {
+                expect(c.openingHours, c.id).toMatch(
+                    /^(Mo|Tu|We|Th|Fr|Sa|Su)(-(Mo|Tu|We|Th|Fr|Sa|Su))? \d\d:\d\d-\d\d:\d\d(,\d\d:\d\d-\d\d:\d\d)*$/,
+                )
+            }
+        }
     })
 })

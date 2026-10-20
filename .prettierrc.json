@@ -1,0 +1,13 @@
+{
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "printWidth": 100,
+    "experimentalTernaries": true,
+    "overrides": [
+        {
+            "files": ["data/*.json", "schema/*.json", "datapackage.json"],
+            "options": { "tabWidth": 2 }
+        }
+    ]
+}

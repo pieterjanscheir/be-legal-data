@@ -1,9 +1,14 @@
 import { readdirSync, readFileSync } from 'node:fs'
-import { Ajv } from 'ajv'
-import addFormats from 'ajv-formats'
+import { createRequire } from 'node:module'
+import { Ajv, type AnySchema } from 'ajv'
 import { describe, expect, it } from 'vitest'
 
-const read = (path: string) => JSON.parse(readFileSync(path, 'utf8'))
+// ajv-formats is CommonJS: require() gives the plugin itself
+const addFormats = createRequire(import.meta.url)(
+    'ajv-formats',
+) as typeof import('ajv-formats').default
+
+const read = (path: string): unknown => JSON.parse(readFileSync(path, 'utf8'))
 interface Resource {
     name: string
     path: string
@@ -13,15 +18,17 @@ interface Resource {
     reviewEveryMonths: number
 }
 
-const pkg: { resources: Resource[] } = read('datapackage.json')
+const pkg = read('datapackage.json') as { resources: Resource[] }
 const dataFiles = readdirSync('data').filter((f) => f.endsWith('.json'))
 
 describe('JSON Schemas', () => {
     const ajv = new Ajv({ allErrors: true, strict: true })
-    addFormats.default(ajv)
+    addFormats(ajv)
 
     it.each(dataFiles)('data/%s matches its schema', (file) => {
-        const validate = ajv.compile(read(`schema/${file.replace('.json', '.schema.json')}`))
+        const validate = ajv.compile(
+            read(`schema/${file.replace('.json', '.schema.json')}`) as AnySchema,
+        )
         const valid = validate(read(`data/${file}`))
         expect(validate.errors?.slice(0, 5) ?? [], file).toEqual([])
         expect(valid).toBe(true)

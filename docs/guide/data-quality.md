@@ -6,13 +6,13 @@ each dataset.
 
 ## Where each dataset comes from
 
-| Dataset | Source | How it's built | Changes when | Review every |
-| --- | --- | --- | --- | --- |
-| Judicial areas, arrondissements | Judicial Code, annex art. 4–5 | By hand | A law redraws the judicial map (rare; last in 2014) | 24 months |
-| Cantons | Judicial Code, annex art. 1 (nl + fr) | Generated: `pnpm build:cantons` | A law changes the annex; municipalities merge | 12 months |
-| Municipalities | Statbel open data | Generated: `pnpm build:cantons` | Municipalities merge (2019, 2025) | 12 months |
-| Courts | Court websites, just.fgov.be | By hand | A court moves or changes phone, e-mail, bank account | 12 months |
-| Interest rates | FOD Financiën, Belgisch Staatsblad | By hand | Every year (legal) and every semester (commercial) | 6 months |
+| Dataset                         | Source                                | How it's built                  | Changes when                                         | Review every |
+| ------------------------------- | ------------------------------------- | ------------------------------- | ---------------------------------------------------- | ------------ |
+| Judicial areas, arrondissements | Judicial Code, annex art. 4–5         | By hand                         | A law redraws the judicial map (rare; last in 2014)  | 24 months    |
+| Cantons                         | Judicial Code, annex art. 1 (nl + fr) | Generated: `pnpm build:cantons` | A law changes the annex; municipalities merge        | 12 months    |
+| Municipalities                  | Statbel open data                     | Generated: `pnpm build:cantons` | Municipalities merge (2019, 2025)                    | 12 months    |
+| Courts                          | Court websites, just.fgov.be          | By hand                         | A court moves or changes phone, e-mail, bank account | 12 months    |
+| Interest rates                  | FOD Financiën, Belgisch Staatsblad    | By hand                         | Every year (legal) and every semester (commercial)   | 6 months     |
 
 Generated datasets are never edited by hand: the script parses the official text and refuses
 to write anything unless the Dutch and French versions agree and every municipality is covered.
@@ -29,8 +29,12 @@ to write anything unless the Dutch and French versions agree and every municipal
 - **Interest rates**: periods are sorted, never overlap and leave no gaps; the legal rate runs
   per calendar year and the commercial rate per semester; the 2013–2015 contract-date rate only
   appears in that window.
-- **Packaging**: the built package imports correctly as ESM and CommonJS, from every entry
-  point, on Node 18, 20, 22 and 24; `publint` and `arethetypeswrong` check the `exports` and
+- **Contact data**: every IBAN passes its ISO 13616 checksum, phone numbers are E.164 Belgian
+  numbers, e-mail addresses are lowercase, and opening hours parse as `opening_hours`.
+- **Code**: strict TypeScript (including unchecked index access and exact optional
+  properties), ESLint with type-aware rules, Prettier, and 100 % test coverage of `src/`.
+- **Packaging**: the built package loads with `import` and with `require()`, from every entry
+  point, on Node 22.12, 22, 24 and 26; `publint` and `arethetypeswrong` check the `exports` and
   type declarations.
 
 ### Every week (scheduled)

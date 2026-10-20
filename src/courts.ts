@@ -13,12 +13,32 @@ export interface Address {
     city: string
 }
 
-export interface Contact {
-    type: 'phone' | 'email'
-    value: string
-    /** What the contact is for, e.g. 'griffie' or 'B-rol' */
-    label?: string
-}
+/**
+ * What a contact is for, in the courts' own (Dutch) terms: the registry ('griffie'), a specific
+ * roll of the enterprise court ('A-rol', 'B-rol') or its register of legal entities
+ * ('rechtspersonenregister'). No label: the court's general contact.
+ */
+export type ContactLabel = 'griffie' | 'A-rol' | 'B-rol' | 'rechtspersonenregister'
+
+export type Contact =
+    | {
+          type: 'phone'
+          /**
+           * E.164, e.g. '+3292343210'; `formatPhoneNumber` gives the Belgian national form
+           * @pattern ^\+32\d{8,9}$
+           */
+          value: string
+          label?: ContactLabel
+      }
+    | {
+          type: 'email'
+          /**
+           * Lowercase
+           * @format email
+           */
+          value: string
+          label?: ContactLabel
+      }
 
 interface CourtBase {
     /**
@@ -32,7 +52,15 @@ interface CourtBase {
     name: Translated
     address: Address
     contacts: Contact[]
+    /**
+     * IBAN in electronic format (no spaces), checksum verified; `formatIban` groups it by four
+     * @pattern ^BE\d{14}$
+     */
     bankAccount?: string
+    /**
+     * When the registry is open, in OpenStreetMap `opening_hours` syntax, e.g.
+     * 'Mo-Fr 08:30-12:30,13:30-16:00'
+     */
     openingHours?: string
     /**
      * The court's own web page
@@ -88,10 +116,7 @@ export function getJusticeOfThePeace(cantonId: string): JusticeOfThePeace | unde
 }
 
 /** The courts of a type and/or in an arrondissement; an empty filter gives every court */
-export function findCourts(filter: {
-    type?: CourtType
-    arrondissement?: string
-}): Court[] {
+export function findCourts(filter: { type?: CourtType; arrondissement?: string }): Court[] {
     return courts.filter(
         (c) =>
             (!filter.type || c.type === filter.type) &&
@@ -103,11 +128,10 @@ export function findCourts(filter: {
 export function getContact(
     court: Court,
     type: Contact['type'],
-    label?: string,
+    label?: ContactLabel,
 ): string | undefined {
-    return court.contacts.find(
-        (c) => c.type === type && (label === undefined || c.label === label),
-    )?.value
+    return court.contacts.find((c) => c.type === type && (label === undefined || c.label === label))
+        ?.value
 }
 
 const courtNameParts = {
@@ -146,4 +170,25 @@ export function formatCourtName(court: Court, locale: Locale = 'nl'): string {
     return court.number ?
             `${t.peace} ${court.number}e ${t.canton} ${court.name[locale]}`
         :   `${t.peace} ${t.canton} ${court.name[locale]}`
+}
+
+/**
+ * A Belgian phone number in its national written form: '+3292343210' → '09 234 32 10',
+ * '+3253820701' → '053 82 07 01', '+32470123456' → '0470 12 34 56'. Zones 2, 3, 4 and 9 have a
+ * one-digit area code; other landlines two digits; mobile numbers start with 4 and are one
+ * digit longer.
+ */
+export function formatPhoneNumber(e164: string): string {
+    const m = /^\+32(\d{8,9})$/.exec(e164)
+    if (!m) throw new RangeError(`Expected a Belgian number in E.164 form, got '${e164}'`)
+    const n = `0${m[1]}`
+    if (n.length === 10) return `${n.slice(0, 4)} ${n.slice(4, 6)} ${n.slice(6, 8)} ${n.slice(8)}`
+    if ('2349'.includes(n.charAt(1)))
+        return `${n.slice(0, 2)} ${n.slice(2, 5)} ${n.slice(5, 7)} ${n.slice(7)}`
+    return `${n.slice(0, 3)} ${n.slice(3, 5)} ${n.slice(5, 7)} ${n.slice(7)}`
+}
+
+/** An IBAN in groups of four, as printed: 'BE73679200844560' → 'BE73 6792 0084 4560' */
+export function formatIban(iban: string): string {
+    return iban.replace(/(.{4})(?=.)/g, '$1 ')
 }

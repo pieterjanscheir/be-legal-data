@@ -30,6 +30,15 @@ had no users yet, so this was done before 1.0 rather than carried forever.
 - A canton's `source` (the article of the annex) is now `legalBasis`, so it isn't confused with
   the `sources` (URLs) on other records.
 
+**Distribution (breaking).** ESM only, Node 22.12 or later (`require()` still loads it there).
+The CommonJS build and `typesVersions` are gone, and `dist/` is no longer in git: install from
+npm.
+
+**Canonical data (breaking).** Court phone numbers are E.164 (`+3253820701`), IBANs are in
+electronic format (`BE73679200844560`), e-mail addresses lowercase, and opening hours in
+OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`). Contact labels are a
+closed `ContactLabel` type.
+
 **Other changes.**
 
 - `getInterestRate` throws a `RangeError` for a string that isn't a valid `YYYY-MM-DD` day and
@@ -42,6 +51,12 @@ had no users yet, so this was done before 1.0 rather than carried forever.
 
 ### Added
 
+- `formatPhoneNumber` and `formatIban` for display, `getArrondissementForMunicipality`, and
+  `findJusticesOfThePeace(municipalityId)`, which answers "which justice of the peace?" for a
+  municipality, including split cities.
+- Quality gates: strict TypeScript, ESLint (type-aware), Prettier, 100 % coverage, IBAN checksum
+  and contact-format tests, type tests.
+- A [design decisions](https://pieterjanscheir.github.io/be-legal-data/guide/design) page.
 - Generated id types (`CantonId`, `CourtId`, `MunicipalityId`, `ArrondissementId`,
   `JudicialAreaId`). Lookups with a known id return the record without `undefined`; the JSON
   Schemas list the valid ids, so a dangling link fails validation.
