@@ -8,7 +8,7 @@ You can read them from any language:
 - from a raw URL pinned to a release tag.
 
 ```
-https://raw.githubusercontent.com/pieterjanscheir/be-legal-data/v0.2.0/data/cantons.json
+https://raw.githubusercontent.com/pieterjanscheir/be-legal-data/v0.3.0/data/cantons.json
 ```
 
 Pin a tag rather than `main`, so the data only changes when you choose to upgrade.
@@ -19,7 +19,7 @@ Pin a tag rather than `main`, so the data only changes when you choose to upgrad
 import json
 from urllib.request import urlopen
 
-BASE = "https://raw.githubusercontent.com/pieterjanscheir/be-legal-data/v0.2.0/data"
+BASE = "https://raw.githubusercontent.com/pieterjanscheir/be-legal-data/v0.3.0/data"
 
 cantons = json.load(urlopen(f"{BASE}/cantons.json"))
 
@@ -44,16 +44,26 @@ def interest_rate(day: str, kind: str, contract_after_20130316: bool = False) ->
     return None
 ```
 
+## CSV
+
+Every [release](https://github.com/pieterjanscheir/be-legal-data/releases) has a zip with the
+data as JSON and as CSV tables (UTF-8, comma-separated), with the schemas and
+`datapackage.json`. Nested values are tables of their own: a court's contacts are in
+`court-contacts.csv`, keyed by court id; a canton's municipalities in
+`canton-municipalities.csv`. In Excel, open them with Data > From Text/CSV.
+
 ## Files
 
-| File                        | Contents                                                                                             |
-| --------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `data/judicial-areas.json`  | The 5 judicial areas (courts of appeal)                                                              |
-| `data/arrondissements.json` | The 12 judicial arrondissements and their judicial area                                              |
-| `data/cantons.json`         | All 162 judicial cantons                                                                             |
-| `data/municipalities.json`  | The 565 municipalities with REFNIS code and province                                                 |
-| `data/courts.json`          | Justices of the peace in East and West Flanders, and the divisions of the Ondernemingsrechtbank Gent |
-| `data/interest-rates.json`  | Legal and commercial-transaction interest rates                                                      |
+| File                          | Contents                                                    |
+| ----------------------------- | ----------------------------------------------------------- |
+| `data/judicial-areas.json`    | The 5 judicial areas (courts of appeal)                     |
+| `data/arrondissements.json`   | The 12 judicial arrondissements and their judicial area     |
+| `data/cantons.json`           | All 162 judicial cantons                                    |
+| `data/municipalities.json`    | The 565 municipalities with REFNIS code and province        |
+| `data/courts.json`            | Every court, division and seat on the courts' portal        |
+| `data/prisons.json`           | The 39 prisons and detention houses                         |
+| `data/houses-of-justice.json` | The houses of justice of the Flemish and French Communities |
+| `data/interest-rates.json`    | Legal and commercial-transaction interest rates             |
 
 The shapes are described on the [data pages](/data/territory) and in the [API reference](/api#types).
 

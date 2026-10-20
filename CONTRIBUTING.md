@@ -9,6 +9,9 @@ The short version:
 2. Keep existing ids: projects store them. See the
    [id rules](https://pieterjanscheir.github.io/be-legal-data/guide/identifiers).
 3. Don't edit generated files by hand (`data/cantons.json`, `data/municipalities.json`,
-   `schema/`, `dist/`): change the script or the types and regenerate.
-4. Run `pnpm check` before pushing, and commit `dist/` and `schema/` with your change.
+   `data/courts.json`, `data/prisons.json`, `data/houses-of-justice.json`, `schema/`,
+   `src/ids.generated.ts`): change the parser, script or types and regenerate. The scraped
+   datasets are rebuilt from the official sources every week.
+4. Run `pnpm check` before pushing, and commit `schema/` and `src/ids.generated.ts` with your
+   change. The build output (`dist/`) isn't committed.
 5. Add a line to `CHANGELOG.md` under Unreleased.

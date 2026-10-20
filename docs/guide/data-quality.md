@@ -6,16 +6,43 @@ each dataset.
 
 ## Where each dataset comes from
 
-| Dataset                         | Source                                | How it's built                  | Changes when                                         | Review every |
-| ------------------------------- | ------------------------------------- | ------------------------------- | ---------------------------------------------------- | ------------ |
-| Judicial areas, arrondissements | Judicial Code, annex art. 4–5         | By hand                         | A law redraws the judicial map (rare; last in 2014)  | 24 months    |
-| Cantons                         | Judicial Code, annex art. 1 (nl + fr) | Generated: `pnpm build:cantons` | A law changes the annex; municipalities merge        | 12 months    |
-| Municipalities                  | Statbel open data                     | Generated: `pnpm build:cantons` | Municipalities merge (2019, 2025)                    | 12 months    |
-| Courts                          | Court websites, just.fgov.be          | By hand                         | A court moves or changes phone, e-mail, bank account | 12 months    |
-| Interest rates                  | FOD Financiën, Belgisch Staatsblad    | By hand                         | Every year (legal) and every semester (commercial)   | 6 months     |
+| Dataset                         | Source                                | How it's built                        | Changes when                                        | Review every |
+| ------------------------------- | ------------------------------------- | ------------------------------------- | --------------------------------------------------- | ------------ |
+| Judicial areas, arrondissements | Judicial Code, annex art. 4–5         | By hand                               | A law redraws the judicial map (rare; last in 2014) | 24 months    |
+| Cantons                         | Judicial Code, annex art. 1 (nl + fr) | Generated: `pnpm build:cantons`       | A law changes the annex; municipalities merge       | 12 months    |
+| Municipalities                  | Statbel open data                     | Generated: `pnpm build:cantons`       | Municipalities merge (2019, 2025)                   | 12 months    |
+| Courts                          | tribunaux-rechtbanken.be              | Weekly: snapshots + `pnpm build:data` | A court moves or changes its contacts or hours      | Weekly       |
+| Prisons                         | justitie.belgium.be                   | Weekly: snapshots + `pnpm build:data` | A prison opens, closes or changes its contacts      | Weekly       |
+| Houses of justice               | vlaanderen.be, maisonsdejustice.be    | Weekly: snapshots + `pnpm build:data` | A house moves or changes its contacts               | Weekly       |
+| Interest rates                  | FOD Financiën, Belgisch Staatsblad    | By hand                               | Every year (legal) and every semester (commercial)  | 6 months     |
 
-Generated datasets are never edited by hand: the script parses the official text and refuses
-to write anything unless the Dutch and French versions agree and every municipality is covered.
+Generated datasets are never edited by hand. `pnpm build:cantons` parses the official text and
+refuses to write anything unless the Dutch and French versions agree and every municipality is
+covered; `pnpm build:data` refuses when a page can't be placed or a canton has no court.
+
+## How the data is built
+
+```
+official site ──fetch──> snapshots (sources branch) ──parse──> data/*.json ──> pull request
+```
+
+1. **Fetch.** Every Monday the [sources workflow](https://github.com/pieterjanscheir/be-legal-data/actions/workflows/sources.yml)
+   fetches every page of the sources (`scripts/sources`), politely: one request per second per
+   site, with a user agent that names the project. It keeps each page on the `sources` branch,
+   with an index of what was fetched, when, and a hash of its content. A page is only stored
+   again when its content changes, so the branch's history shows what changed on which day.
+2. **Parse.** `pnpm build:data` reads the snapshots (`scripts/parse`) and writes the courts,
+   prisons and houses of justice. It reports what it can't read, and fails when a page can't be
+   placed.
+3. **Test.** The workflow typechecks and runs the tests on the new data.
+4. **Review.** When the data changed, it opens or updates one pull request with the diff and the
+   list of unreadable values. A person checks it against the sources and merges it.
+
+To run it yourself: `pnpm fetch:sources` (writes `.sources/`), then `pnpm build:data`.
+
+The cantons and municipalities are rebuilt by hand with `pnpm build:cantons`: the Belgian
+Official Journal's site refuses GitHub's servers
+([#24](https://github.com/pieterjanscheir/be-legal-data/issues/24)).
 
 ## Automatic checks
 
@@ -23,14 +50,18 @@ to write anything unless the Dutch and French versions agree and every municipal
 
 - **Schema validation**: every data file matches its [JSON Schema](./schema).
 - **Integrity**: ids are unique and well-formed; every reference (arrondissement, canton,
-  municipality) points at a record that exists; every municipality is in exactly one canton or
-  split over several; every canton stays within its arrondissement's provinces; the justices of
-  the peace of East and West Flanders cover every canton there.
+  municipality, court) points at a record that exists; every municipality is in exactly one
+  canton or split over several; every canton stays within its arrondissement's provinces; every
+  canton has exactly one justice of the peace; every division has its court's type and area;
+  every kind of court has the number of courts the law sets.
+- **Parsers**: tested end to end on trimmed copies of real pages (`test/fixtures/sources`), and
+  each reader (phone numbers, IBANs, addresses, opening hours) on the forms seen in the sources
+  and on what it must refuse.
 - **Interest rates**: periods are sorted, never overlap and leave no gaps; the legal rate runs
   per calendar year and the commercial rate per semester; the 2013–2015 contract-date rate only
   appears in that window.
 - **Contact data**: every IBAN passes its ISO 13616 checksum, phone numbers are E.164 Belgian
-  numbers, e-mail addresses are lowercase, and opening hours parse as `opening_hours`.
+  numbers, e-mail addresses are lowercase, and opening hours match the `opening_hours` syntax.
 - **Code**: strict TypeScript (including unchecked index access and exact optional
   properties), ESLint with type-aware rules, Prettier, and 100 % test coverage of `src/`.
 - **Packaging**: the built package loads with `import` and with `require()`, from every entry
@@ -48,20 +79,20 @@ when it finds something:
   next two weeks (FOD Financiën publishes it before the semester starts).
 - **Overdue reviews**: a dataset's `lastReviewed` date in `datapackage.json` is older than its
   `reviewEveryMonths`.
-- **Dead sources**: an official source URL no longer responds.
-- **Changed law or municipalities**: it re-runs `pnpm build:cantons` against the live
-  Judicial Code and Statbel, and reports any difference with the committed data.
+- **Dead sources**: an official source URL in `datapackage.json` no longer responds.
 
 Run them yourself with `pnpm test:freshness` (add `FRESHNESS_ONLINE=1` to check the URLs).
 
 ## How to read a value
 
 - **Absent is not zero.** `getInterestRate` returns `null` for a day without a rate on file,
-  rather than guessing; `getJusticeOfThePeace` returns `undefined` for a court not yet in the
-  data. Handle both.
+  rather than guessing; a field the source doesn't give (a court's address, machine-readable
+  opening hours) is missing rather than filled in. Handle both.
+- **Too early is an error.** A lookup for a day before a dataset's coverage throws a
+  `RangeError`: the data can't say, and today's answer would look like the right one.
 - **Contact data is the least stable.** Phone numbers, e-mail addresses and opening hours
-  change without notice. Courts will get a per-record source URL and check date
-  ([#5](https://github.com/pieterjanscheir/be-legal-data/issues/5)).
+  change without notice. Every record says which pages it was read from and when (`sources`);
+  check the court's page (`website`) when it matters.
 - **Legal text wins.** For split municipalities, the canton's `territory` is the law's own
   text, verbatim. When a summary and the text disagree, the text is right.
 

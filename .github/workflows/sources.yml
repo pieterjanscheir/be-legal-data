@@ -7,10 +7,6 @@ on:
     schedule:
         - cron: '41 4 * * 1'
     workflow_dispatch:
-    # TEMPORARY while the fetchers are developed on this branch; removed before merging
-    push:
-        branches: [data-model-v2]
-        paths: [scripts/sources/**, .github/workflows/sources.yml]
 
 concurrency:
     group: sources

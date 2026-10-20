@@ -26,13 +26,14 @@ legal text for the cases where only the text can decide.
 
 ## Source and updates
 
-|              |                                                                                                                                                                                                                                           |
-| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Source       | Annex to the Judicial Code, "Gebiedsomschrijving en zetel van hoven en rechtbanken" ([Justel 1967101007](https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel)), Dutch and French; Statbel open data for municipalities |
-| Built by     | `pnpm build:cantons` (cantons, municipalities); by hand (areas, arrondissements)                                                                                                                                                          |
-| Changes when | A law amends the annex; municipalities merge (2019, 2025)                                                                                                                                                                                 |
-| Checked      | Weekly, by regenerating from the live sources ([data quality](/guide/data-quality))                                                                                                                                                       |
-| Licence      | CC BY 4.0; municipality data © Statbel, CC BY 4.0                                                                                                                                                                                         |
+|              |                                                                                                                                                                                                                                               |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Source       | Annex to the Judicial Code, "Gebiedsomschrijving en zetel van hoven en rechtbanken" ([ELI, numac 1967101058](https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel)), Dutch and French; Statbel open data for municipalities |
+| Built by     | `pnpm build:cantons` (cantons, municipalities); by hand (areas, arrondissements)                                                                                                                                                              |
+| Changes when | A law amends the annex; municipalities merge (2019, 2025)                                                                                                                                                                                     |
+| Covers       | 1 January 2025 onwards: lookups for an earlier day throw a `RangeError` ([time](/api#time))                                                                                                                                                   |
+| Checked      | Rebuilt by hand with `pnpm build:cantons`: ejustice refuses GitHub's servers ([data quality](/guide/data-quality))                                                                                                                            |
+| Licence      | CC BY 4.0; municipality data © Statbel, CC BY 4.0                                                                                                                                                                                             |
 
 ## Find the canton for a municipality
 
@@ -98,7 +99,7 @@ All 162 judicial cantons: the area of one justice of the peace each. File: `data
 | `seat`           | `{ nl, fr }`                   | Where the justice of the peace sits; can differ from the name                                                  |
 | `municipalities` | `{ municipality, partial? }[]` | Municipalities covered, by REFNIS code; `partial: true` when only part is                                      |
 | `territory`      | `{ nl, fr }`                   | The canton's area, verbatim from the annex                                                                     |
-| `legalBasis`     | string                         | Section of the annex, e.g. `Ger.W. bijvoegsel art. 1, afdeling 6.15` (Gent 4)                                  |
+| `legalBasis`     | `{ url, provision }`           | Where the law defines it: the annex's ELI and the section, e.g. `Bijvoegsel art. 1, afdeling 6.15` (Gent 4)    |
 
 ```ts
 interface Canton {
@@ -109,7 +110,7 @@ interface Canton {
     seat: Bilingual // where the justice of the peace sits
     municipalities: { municipality: MunicipalityId; partial?: boolean }[]
     territory: Bilingual // the canton's area, verbatim from the annex
-    legalBasis: string // where in the annex the canton is defined
+    legalBasis: { url: string; provision: string } // the annex's ELI, and the section
 }
 ```
 

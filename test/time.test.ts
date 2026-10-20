@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { appliesOn, lookupDay, toDay } from '../src'
+import { appliesOn, lookupDay, toDay } from '../src/time'
 
 describe('appliesOn', () => {
     const record = { validFrom: '2018-09-01', validTo: '2024-12-31' }

@@ -8,9 +8,11 @@ what happens when the law changes the thing an id names.
 
 1. **Every record has an `id` field**, and it is unique within its dataset. Generic code (an
    index, a cache, a form) treats every dataset the same way.
-2. **An official code wins.** Where the authorities assign a code, the id _is_ that code:
-   municipalities use their Statbel REFNIS code (`44021` for Gent). Future datasets follow
-   suit: police zones by zone number, organisations by enterprise (KBO) number.
+2. **An official code wins, if it covers every record.** Where the authorities assign a code
+   to every record of a dataset, the id _is_ that code: municipalities use their Statbel REFNIS
+   code (`44021` for Gent). A code that covers only some records is kept as a field instead:
+   courts have their ECLI codes in `ecli`, Flemish houses of justice their OVO number in `ovo`
+   (see [why](#why-not-the-official-court-codes)).
 3. **Otherwise, lowercase kebab-case ASCII**: `^[a-z0-9]+(-[a-z0-9]+)*$`, built by
    [`scripts/id.ts`](https://github.com/pieterjanscheir/be-legal-data/blob/main/scripts/id.ts):
    accents dropped, everything else that isn't a letter or digit becomes one hyphen.
@@ -19,11 +21,17 @@ what happens when the law changes the thing an id names.
 4. **From the official name in the local language**: Dutch in Flanders, French in Wallonia,
    German around Eupen. Brussels is officially bilingual and needs one fixed choice: Dutch.
 5. **A number is a suffix**: places with several cantons get `gent-1` … `gent-5`.
-6. **Courts are `type` + place**: `justice-of-the-peace-gent-1`,
-   `enterprise-court-gent-brugge` (seat, then division). The prefix keeps ids unique when Gent
-   has a justice of the peace, an enterprise court and a labour court, and it is exactly the
-   record's `type`, so it never needs a second vocabulary.
-7. **Links are fields, never derived strings.** A justice of the peace has a `canton` field; a
+6. **Courts are `type` + place**: `justice-of-the-peace-gent-1`, `court-of-appeal-liege`. A
+   justice of the peace takes its canton's id. The two courts of one type in Brussels, one per
+   language, add `-nl` or `-fr` (`police-court-brussel-fr`). A division or seat adds its own
+   place to its court's id (`enterprise-court-gent-brugge`). The prefix keeps ids unique when
+   Gent has a justice of the peace, an enterprise court and a labour court, and it is exactly
+   the record's `type`, so it never needs a second vocabulary.
+7. **Prisons and houses of justice are their name** in the local language, without articles:
+   `gevangenis-gent`, `prison-lantin`, `justitiehuis-gent`, `maison-justice-arlon`. Their names
+   already say what they are, and two institutions in one city (the central and the auxiliary
+   prison of Leuven) differ by name.
+8. **Links are fields, never derived strings.** A justice of the peace has a `canton` field; a
    canton lists `{ municipality }`; an arrondissement has a `judicialArea`. Each holds the id of
    the record it points to, and the field is named after the dataset it points into.
 
@@ -32,14 +40,16 @@ All of these are enforced by tests (`test/ids.test.ts`) and by the
 
 ## The ids
 
-| Dataset         | Examples                                                                 | Rule                |
-| --------------- | ------------------------------------------------------------------------ | ------------------- |
-| Judicial areas  | `antwerpen`, `brussel`, `gent`, `liege`, `mons`                          | Local name          |
-| Arrondissements | `oost-vlaanderen`, `brabant-wallon`, `eupen`                             | Local name          |
-| Cantons         | `gent-1`, `merelbeke-melle`, `wavre-1`, `oudergem`, `eupen-sankt-vith-1` | Local name + number |
-| Municipalities  | `44021`, `21004`                                                         | REFNIS code         |
-| Courts          | `justice-of-the-peace-gent-1`, `enterprise-court-gent-brugge`            | Type + place        |
-| Interest rates  | `legal`, `commercial`                                                    | Fixed keys          |
+| Dataset           | Examples                                                                                                                  | Rule                |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| Judicial areas    | `antwerpen`, `brussel`, `gent`, `liege`, `mons`                                                                           | Local name          |
+| Arrondissements   | `oost-vlaanderen`, `brabant-wallon`, `eupen`                                                                              | Local name          |
+| Cantons           | `gent-1`, `merelbeke-melle`, `wavre-1`, `oudergem`, `eupen-sankt-vith-1`                                                  | Local name + number |
+| Municipalities    | `44021`, `21004`                                                                                                          | REFNIS code         |
+| Courts            | `justice-of-the-peace-gent-1`, `enterprise-court-gent-brugge`, `police-court-brussel-fr`, `police-court-eupen-sankt-vith` | Type + place        |
+| Prisons           | `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk`                                                               | Local name          |
+| Houses of justice | `justitiehuis-gent`, `maison-justice-arlon`                                                                               | Local name          |
+| Interest rates    | `legal`, `commercial`                                                                                                     | Fixed keys          |
 
 ## Why these choices
 
@@ -65,6 +75,13 @@ With the code as the id, joining any of them to cantons and courts needs no mapp
 grow (police courts, labour courts, courts of first instance…). A court's own fields say what
 it is; the id only needs to be unique and recognisable, and the type does both.
 
+**Why not the official court codes?** Courts have two official codes, and neither covers
+every court. ECLI codes (`HBGNT` for the Ghent court of appeal) exist per court and per
+language, not per division, and none appear in published decisions of the justices of the
+peace. Enterprise numbers (KBO) belong to the FPS Justice; its establishment units follow
+buildings, not courts, and change when a court moves. A rule that holds for every record beats
+two rules, so the ECLI codes are a field (`ecli`), and the id follows rule 6.
+
 **Why explicit links?** The old scheme built a court id by concatenating `Vredegerecht` and the
 canton id. That hides a relation in a string format, which breaks the moment one court serves
 two cantons or a name changes. A `canton` field is checked by the schema and the tests, and can
@@ -73,7 +90,8 @@ be followed in both directions.
 ## In TypeScript
 
 Every dataset has a generated id type (`CantonId`, `CourtId`, `MunicipalityId`,
-`ArrondissementId`, `JudicialAreaId`), regenerated from the data by `pnpm build:ids`:
+`ArrondissementId`, `JudicialAreaId`, `PrisonId`, `HouseOfJusticeId`), regenerated from the
+data by `pnpm build:ids`:
 
 ```ts
 import { getCanton, type CantonId } from 'be-legal-data'
@@ -89,14 +107,19 @@ Use the id types for values you store, so a typo or a removed id is caught when 
 ## When the law changes an id
 
 Cantons and municipalities do change: municipalities merged in 2019 and 2025, and laws redraw
-cantons. Then:
+cantons. Records carry a validity period (`validFrom`, `validTo`), so a change adds history
+rather than erasing it:
 
-1. The old record is removed and a new one added. An id is never reused for a different thing.
-2. The release is a major version, and the changelog lists every old → new id.
-3. Merged municipalities will record what they replace (planned with the municipality-merger
-   dataset on the [roadmap](/data/roadmap)).
+1. The old record stays, with a `validTo`; the new one gets a new id and a `validFrom`. An id
+   is never reused for a different thing, so an id stored years ago still finds what it meant.
+2. A lookup by id without a day gives the latest version; with `{ on }` it gives the version
+   of that day. Lists such as `getCantonsForMunicipality` answer for today unless given a day.
+3. The changelog lists every new id and the ids it replaces.
 
-A change of name alone, such as a spelling correction, doesn't change the id.
+A change of name alone, such as a spelling correction, doesn't change the id. The history
+before 1 January 2025 isn't in the data yet
+([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)): a lookup for an earlier
+day throws a `RangeError` rather than answer with today's map.
 
 ## Stability
 
