@@ -1,19 +1,45 @@
+<script setup>
+import { data as stats } from '../../.vitepress/stats.data'
+
+const labels = {
+    'justice-of-the-peace': 'Vredegerecht',
+    'police-court': 'Politierechtbank',
+    'court-of-first-instance': 'Rechtbank van eerste aanleg',
+    'enterprise-court': 'Ondernemingsrechtbank',
+    'labour-court': 'Arbeidsrechtbank',
+    'court-of-appeal': 'Hof van beroep',
+    'labour-court-of-appeal': 'Arbeidshof',
+    'court-of-assize': 'Hof van assisen',
+}
+
+const areas = {
+    'justice-of-the-peace': 'Een kanton; Philippeville zetelt op twee plaatsen',
+    'police-court': 'Een arrondissement (Brussel gesplitst per taal, Halle, Vilvoorde)',
+    'court-of-first-instance': 'Een arrondissement (Brussel gesplitst per taal)',
+    'enterprise-court': 'Een arrondissement, of het rechtsgebied van een hof van beroep',
+    'labour-court': 'Een arrondissement, of het rechtsgebied van een hof van beroep',
+    'court-of-appeal': 'Een rechtsgebied',
+    'labour-court-of-appeal': 'Een rechtsgebied',
+    'court-of-assize': 'Een provincie, of Brussel-Hoofdstad',
+}
+</script>
+
 # Hoven en rechtbanken {#courts}
 
 Bestand: `data/courts.json`. Elk gerecht van de rechterlijke orde dat het eigen portaal van de
 hoven en rechtbanken, [tribunaux-rechtbanken.be](https://www.tribunaux-rechtbanken.be),
-vermeldt: 347 records.
+vermeldt: {{ stats.courts.total }} records die vandaag gelden<span v-if="stats.courts.retired">, en
+{{ stats.courts.retired }} beëindigde versies die het portaal niet meer vermeldt</span>. De cijfers op
+deze pagina worden uit de data berekend wanneer de site gebouwd wordt.
 
-| Soort                       | Gerechten | Afdelingen of zetels | Gebied                                                            |
-| --------------------------- | --------: | -------------------: | ----------------------------------------------------------------- |
-| Vredegerecht                |       162 |                    2 | Een kanton; Philippeville zetelt op twee plaatsen                 |
-| Politierechtbank            |        15 |                   34 | Een arrondissement (Brussel gesplitst per taal, Halle, Vilvoorde) |
-| Rechtbank van eerste aanleg |        13 |                   23 | Een arrondissement (Brussel gesplitst per taal)                   |
-| Ondernemingsrechtbank       |         9 |                   24 | Een arrondissement, of het rechtsgebied van een hof van beroep    |
-| Arbeidsrechtbank            |         9 |                   29 | Een arrondissement, of het rechtsgebied van een hof van beroep    |
-| Hof van beroep              |         5 |                    0 | Een rechtsgebied                                                  |
-| Arbeidshof                  |         5 |                    7 | Een rechtsgebied                                                  |
-| Hof van assisen             |        11 |                    0 | Een provincie, of Brussel-Hoofdstad                               |
+<table>
+<thead><tr><th>Soort</th><th style="text-align:right">Gerechten</th><th style="text-align:right">Afdelingen of zetels</th><th>Gebied</th></tr></thead>
+<tbody>
+<tr v-for="t in stats.courts.byType" :key="t.type">
+<td>{{ labels[t.type] }}</td><td style="text-align:right">{{ t.courts }}</td><td style="text-align:right">{{ t.divisions }}</td><td>{{ areas[t.type] }}</td>
+</tr>
+</tbody>
+</table>
 
 Niet op het portaal, dus nog niet hier: het Hof van Cassatie, het Grondwettelijk Hof en de Raad
 van State, en de tuchtrechtbanken.
@@ -55,6 +81,8 @@ package: als het ertoe doet, controleer dan de pagina van het gerecht (`website`
 | Veld               | Type                                  | Beschrijving                                                                                                                                                                                                           |
 | ------------------ | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `id`               | `CourtId`                             | Stabiele id: het `type`, dan de plaats in de taal van het gerecht: `justice-of-the-peace-gent-1`, `police-court-brussel-fr`, `enterprise-court-gent-brugge`. Zie [identifiers](/nl/guide/identifiers)                  |
+| `validFrom`        | string?                               | Eerste dag waarop het record geldt, `YYYY-MM-DD`: de dag waarop het portaal het voor het eerst vermeldde. Geen: sinds het begin van de dekking                                                                         |
+| `validTo`          | string?                               | Laatste dag waarop het record geldt: de dag vóór de wekelijkse controle die het niet meer op het portaal vond. Geen: geldt nog steeds                                                                                  |
 | `type`             | `CourtType`                           | `justice-of-the-peace`, `police-court`, `court-of-first-instance`, `enterprise-court`, `labour-court`, `court-of-appeal`, `labour-court-of-appeal`, `court-of-assize`                                                  |
 | `kind`             | `'court'` \| `'division'` \| `'seat'` | Het gerecht zelf, een van zijn afdelingen (afdeling, division, Abteilung), of een van de plaatsen waar een vredegerecht zetelt                                                                                         |
 | `court`            | `CourtId`?                            | Voor een afdeling of zetel: het gerecht waar ze toe behoort                                                                                                                                                            |
@@ -62,6 +90,7 @@ package: als het ertoe doet, controleer dan de pagina van het gerecht (`website`
 | `judicialArea`     | `JudicialAreaId`                      | Het rechtsgebied                                                                                                                                                                                                       |
 | `arrondissement`   | `ArrondissementId`?                   | Het arrondissement, voor een gerecht of afdeling waarvan het gebied één arrondissement is of erbinnen ligt                                                                                                             |
 | `canton`           | `CantonId`?                           | Voor een vredegerecht: het kanton dat het bedient                                                                                                                                                                      |
+| `cantons`          | `CantonId[]`?                         | Voor elk ander gerecht (niet zijn afdelingen): de kantons die het bestrijkt, zoals de bijlage bij het Gerechtelijk Wetboek (art. 3–5) en art. 114 van het Wetboek ze vastleggen                                        |
 | `ecli`             | `string[]`?                           | De ECLI-codes van het gerecht, één per taal waarin het rechtspreekt; alleen codes die in gepubliceerde beslissingen voorkomen                                                                                          |
 | `address`          | `Address`?                            | Waar de griffie is, met de gemeente waartoe de postcode behoort (`municipality`, op REFNIS-code). Ontbreekt als het gerecht geen enkel adres publiceert (een gerecht waarvan elke afdeling haar eigen adres heeft)     |
 | `contacts`         | `Contact[]`                           | Telefoon, fax, e-mail en bankrekening, elk met de griffie waar het bij hoort (`label`) en de tekst die erbij gepubliceerd is (`note`)                                                                                  |
@@ -80,6 +109,8 @@ op doet, hou dan een `default`-tak zodat een nieuw type je code niet breekt.
 ```ts
 interface Court {
     id: CourtId
+    validFrom?: string
+    validTo?: string
     type: CourtType
     kind: 'court' | 'division' | 'seat'
     court?: CourtId
@@ -87,6 +118,7 @@ interface Court {
     judicialArea: JudicialAreaId
     arrondissement?: ArrondissementId
     canton?: CantonId
+    cantons?: CantonId[]
     ecli?: string[]
     address?: Address
     contacts: Contact[]
@@ -118,6 +150,8 @@ interface Contact {
 getCourt('justice-of-the-peace-gent-1')
 getJusticeOfThePeace('gent-1') // hetzelfde gerecht, via de kanton-id
 getDivisions('enterprise-court-gent') // zijn acht afdelingen
+getCourtsForCanton('gent-1') // zijn vredegerecht, en één gerecht van elk ander type
+findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde], op REFNIS-code
 findCourts({ type: 'police-court', kind: 'court', judicialArea: 'gent' })
 getContact(court, 'email', 'Greffe pénal') // de waarde van het eerste passende contact
 formatPhoneNumber('+3253820701') // '053 82 07 01'
@@ -139,12 +173,17 @@ in Eupen een in het Frans en een in het Duits. De parser:
 3. leest de contactblokken van de griffies, en bewaart elke waarde bij haar griffie;
 4. zet de gepubliceerde openingsuren alleen om naar de `opening_hours`-syntaxis als elk woord
    begrepen is en elke taal hetzelfde zegt. Tekst met een opmerking of een tijdelijke regeling
-   ("OPGELET: tot 31 december…") behoudt alleen de gepubliceerde tekst.
+   ("OPGELET: tot 31 december…") behoudt alleen de gepubliceerde tekst;
+5. geeft elk gerecht de kantons die de wet het toewijst (`cantons`), uit een tabel van de
+   bijlage bij het Gerechtelijk Wetboek in `scripts/parse/jurisdictions.ts`, en leidt daaruit
+   zijn `arrondissement` af. De tabel en het portaal controleren elkaar: een gerecht op het
+   portaal dat in de wettabel ontbreekt, of omgekeerd, stopt de build.
 
 Hij weigert iets te schrijven als een pagina niet te plaatsen is (een onbekende soort gerecht,
-een vredegerecht zonder kanton) of een kanton geen gerecht heeft. Wat hij niet kan lezen (een
-telefoonnummer zonder zonenummer, een adres geschreven als een zin) wordt gerapporteerd bij de
-wekelijkse pull request, en uit de data weggelaten in plaats van geraden.
+een vredegerecht zonder kanton), een kanton geen gerecht heeft, of de wettabel en het portaal het
+oneens zijn over welke gerechten bestaan. Wat hij niet kan lezen (een telefoonnummer zonder
+zonenummer, een adres geschreven als een zin) wordt gerapporteerd bij de wekelijkse pull request,
+en uit de data weggelaten in plaats van geraden.
 
 ## Canonieke waarden {#canonical-values}
 

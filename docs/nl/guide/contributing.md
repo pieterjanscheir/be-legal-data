@@ -17,9 +17,14 @@ rentevoeten):
 3. `pnpm check`: genereert de id-types en schema's opnieuw, typecheckt, lint en controleert de
    opmaak, bouwt, draait de tests met coverage en lint het package. Het faalt als de
    gegenereerde bestanden niet gecommit zijn.
-4. Voeg een regel toe aan `CHANGELOG.md` onder Unreleased, en commit (inclusief `schema/` en
-   `src/ids.generated.ts`). De build-output (`dist/`) wordt niet gecommit: die wordt voor elke
-   release gebouwd en naar npm gepubliceerd.
+4. Voeg een regel toe aan `CHANGELOG.md` onder Unreleased, en commit (inclusief `schema/`,
+   `src/ids.generated.ts` en `ids.lock.json`). De build-output (`dist/`) wordt niet gecommit: die
+   wordt voor elke release gebouwd en naar npm gepubliceerd.
+
+Een id dat gepubliceerd is, blijft: `ids.lock.json` somt ze allemaal op en de tests falen wanneer
+er een in de data ontbreekt. Heeft een bron een record hernoemd, map dan de nieuwe naam in de parser
+op het bestaande id; is het record beëindigd, behoud het dan met een `validTo`. Zie
+[identifiers](./identifiers#stability).
 
 ### Kantons en gemeenten {#cantons-and-municipalities}
 
@@ -96,7 +101,7 @@ Elke dataset krijgt dezelfde behandeling, zodat gebruikers erop kunnen rekenen:
 | `pnpm test:package`         | Smoketests van het gebouwde package met `import` en `require()`: draai eerst `pnpm build`                                                                                   |
 | `pnpm test:coverage`        | Hetzelfde, maar faalt onder 100 % dekking van `src/`                                                                                                                        |
 | `pnpm lint` / `pnpm format` | ESLint en Prettier: controleren / herstellen                                                                                                                                |
-| `pnpm generate`             | Genereert `src/ids.generated.ts` (id-types) en `schema/` opnieuw uit de data en de types                                                                                    |
+| `pnpm generate`             | Genereert `src/ids.generated.ts` (id-types) en `schema/` opnieuw uit de data en de types, en voegt nieuwe ids toe aan `ids.lock.json`                                       |
 | `pnpm lint:package`         | `publint` en `arethetypeswrong` op het gepackte package                                                                                                                     |
 | `pnpm test:freshness`       | Datumgebonden controles: ontbrekende rentevoeten, achterstallig nazicht. Geen deel van `check`; `FRESHNESS_ONLINE=1` controleert ook de bron-URL's                          |
 | `pnpm fetch:sources`        | Haalt de officiële bronnen op naar `.sources/`                                                                                                                              |

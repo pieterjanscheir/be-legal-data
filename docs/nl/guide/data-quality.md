@@ -35,8 +35,10 @@ official site ──fetch──> snapshots (sources branch) ──parse──> d
    wordt pas opnieuw opgeslagen als haar inhoud verandert, zodat de geschiedenis van de branch
    toont wat op welke dag veranderde. Een pagina die mislukt (een serverfout, een 404) behoudt
    haar laatste goede snapshot en stopt de run, wat een issue opent: de data wordt nooit
-   herbouwd uit een onvolledig beeld. Een pagina waar de bron niet langer naar linkt, valt weg,
-   zodat een gerecht dat sluit uit de data verdwijnt.
+   herbouwd uit een onvolledig beeld. Een pagina waar de bron niet langer naar linkt, valt weg uit
+   de snapshots; haar record blijft in de data, beëindigd met een `validTo` (de dag vóór de
+   controle die ze miste), zodat haar id blijft werken en een opzoeking voor een vroegere dag ze
+   nog vindt. Een pagina die verschijnt, krijgt een record met een `validFrom`.
 2. **Parsen.** `pnpm build:data` leest de snapshots (`scripts/parse`) en schrijft de hoven en
    rechtbanken, gevangenissen en justitiehuizen. Het rapporteert wat het niet kan lezen, en
    faalt wanneer een pagina niet te plaatsen is.
@@ -59,7 +61,9 @@ Belgisch Staatsblad weigert de servers van GitHub
   gemeente, gerecht) wijst naar een record dat bestaat; elke gemeente ligt in precies één
   kanton of is over meerdere gesplitst; elk kanton blijft binnen de provincies van zijn
   arrondissement; elk kanton heeft precies één vredegerecht; elke afdeling heeft het type en
-  het gebied van haar gerecht; elke soort gerecht telt het aantal gerechten dat de wet bepaalt.
+  het gebied van haar gerecht; elke soort gerecht telt het aantal gerechten dat de wet bepaalt;
+  elk kanton valt onder één gerecht van elk type (één per taal in Brussel), en de kantons van een
+  gerecht liggen in zijn arrondissement en rechtsgebied.
 - **Parsers**: end-to-end getest op ingekorte kopieën van echte pagina's
   (`test/fixtures/sources`), en elke lezer (telefoonnummers, IBAN's, adressen, openingsuren) op
   de vormen die in de bronnen voorkomen en op wat hij moet weigeren.

@@ -1,14 +1,22 @@
+<script setup>
+import { data as stats } from '../../.vitepress/stats.data'
+</script>
+
 # Lacunes connues {#known-gaps}
 
 - **Les juridictions absentes du portail** ne sont pas dans les données : la Cour de cassation,
   la Cour constitutionnelle, le Conseil d'État et les juridictions disciplinaires
   ([#4](https://github.com/pieterjanscheir/be-legal-data/issues/4)).
-- **26 juridictions n'ont pas d'adresse unique** : une juridiction dont chaque division a la
-  sienne (l'adresse est sur la division), ou qui publie ses adresses sous forme de phrase. Leur
-  `address` est absente plutôt que devinée ; les divisions ont la leur.
-- **Heures d'ouverture** : 227 des 344 juridictions qui publient des heures les ont en syntaxe
-  `opening_hours`. Les autres publient un texte avec des remarques ou des arrangements
-  temporaires, conservé uniquement dans `openingHoursText`.
+- **La compétence s'arrête à la juridiction.** `cantons` et `findCompetentCourts` disent quelle
+  juridiction couvre une commune, pas laquelle de ses divisions : le territoire d'une division est
+  fixé par arrêté royal et n'est pas encore dans les données.
+- **{{ stats.courts.withoutAddress }} juridictions n'ont pas d'adresse unique** : une juridiction
+  dont chaque division a la sienne (l'adresse est sur la division), ou qui publie ses adresses
+  sous forme de phrase. Leur `address` est absente plutôt que devinée ; les divisions ont la leur.
+- **Heures d'ouverture** : {{ stats.courts.hoursParsed }} des
+  {{ stats.courts.hoursParsed + stats.courts.hoursTextOnly }} juridictions qui publient des heures
+  les ont en syntaxe `opening_hours`. Les autres publient un texte avec des remarques ou des
+  arrangements temporaires, conservé uniquement dans `openingHoursText`.
 - **Les libellés des contacts sont dans la langue de la page** : pour une juridiction bilingue,
   ceux de la page néerlandaise (de la page allemande à Eupen). Les noms et les heures de la page
   française y sont aussi.

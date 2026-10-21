@@ -1,7 +1,11 @@
+<script setup>
+import { data as stats } from '../../.vitepress/stats.data'
+</script>
+
 # Justitiehuizen {#houses-of-justice}
 
 Bestand: `data/houses-of-justice.json`. De justitiehuizen (maisons de justice) van de Vlaamse
-en de Franse Gemeenschap: 27 records.
+en de Franse Gemeenschap: {{ stats.housesOfJustice }} records.
 
 Justitiehuizen begeleiden en volgen daders op in opdracht van de rechtbanken en parketten
 (probatie, elektronisch toezicht, werkstraf), onthalen slachtoffers en schrijven
@@ -33,16 +37,17 @@ Vlaams (`justitiehuis-brussel`) als een Franstalig justitiehuis (`maison-justice
 
 ## Velden {#fields}
 
-| Veld        | Type                                    | Beschrijving                                                                                                                 |
-| ----------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `id`        | `HouseOfJusticeId`                      | Uit de naam, zonder lidwoorden: `justitiehuis-gent`, `maison-justice-arlon`                                                  |
-| `community` | `'flemish'` \| `'french'` \| `'german'` | De Gemeenschap die het beheert                                                                                               |
-| `name`      | `{ nl }` of `{ fr }`                    | In de taal van de Gemeenschap                                                                                                |
-| `ovo`       | string?                                 | OVO-nummer in het Vlaamse organisatieregister, voor de Vlaamse justitiehuizen: `OVO001917`                                   |
-| `address`   | `Address`                               | Met de gemeente waartoe de postcode behoort (`municipality`, op REFNIS-code)                                                 |
-| `contacts`  | `Contact[]`                             | Telefoon, fax en e-mail; de dienst slachtofferonthaal van een Franstalig justitiehuis heeft eigen, gelabelde contactgegevens |
-| `website`   | `{ nl }` of `{ fr }`                    | De pagina waarop het vermeld staat                                                                                           |
-| `sources`   | `{ url, retrieved }[]`                  | De pagina's waaruit het record is gelezen                                                                                    |
+| Veld                   | Type                                    | Beschrijving                                                                                                                                       |
+| ---------------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                   | `HouseOfJusticeId`                      | Uit de naam, zonder lidwoorden: `justitiehuis-gent`, `maison-justice-arlon`                                                                        |
+| `validFrom`, `validTo` | string?                                 | De dagen waarop het record geldt, zoals de site het vermeldde; geen: sinds het begin van de dekking, of geldt nog steeds. Zie [tijd](/nl/api#time) |
+| `community`            | `'flemish'` \| `'french'` \| `'german'` | De Gemeenschap die het beheert                                                                                                                     |
+| `name`                 | `{ nl }` of `{ fr }`                    | In de taal van de Gemeenschap                                                                                                                      |
+| `ovo`                  | string?                                 | OVO-nummer in het Vlaamse organisatieregister, voor de Vlaamse justitiehuizen: `OVO001917`                                                         |
+| `address`              | `Address`                               | Met de gemeente waartoe de postcode behoort (`municipality`, op REFNIS-code)                                                                       |
+| `contacts`             | `Contact[]`                             | Telefoon, fax en e-mail; de dienst slachtofferonthaal van een Franstalig justitiehuis heeft eigen, gelabelde contactgegevens                       |
+| `website`              | `{ nl }` of `{ fr }`                    | De pagina waarop het vermeld staat                                                                                                                 |
+| `sources`              | `{ url, retrieved }[]`                  | De pagina's waaruit het record is gelezen                                                                                                          |
 
 ```ts
 import { getHouseOfJustice, getContact } from 'be-legal-data/houses-of-justice'

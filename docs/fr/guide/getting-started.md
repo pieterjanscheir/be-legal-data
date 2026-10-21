@@ -1,3 +1,9 @@
+<script setup>
+import { data as stats } from '../../.vitepress/stats.data'
+
+const kb = (bytes) => `${Math.round(bytes / 1024)} Ko`
+</script>
+
 # Premiers pas {#getting-started}
 
 ## Installation {#install}
@@ -25,15 +31,25 @@ le charge aussi. Il est testé sous Node 22.12, 22, 24 et 26.
 ### N'importez que ce dont vous avez besoin {#import-only-what-you-need}
 
 Les données sont intégrées au JavaScript : importer depuis la racine du package charge donc tous
-les jeux de données (environ 250 Ko, surtout le texte légal des cantons). Chaque jeu de données a
-son propre point d'entrée :
+les jeux de données. Chaque jeu de données a son propre point d'entrée, et les juridictions et les
+cantons (avec le texte légal de leurs territoires) sont de loin les plus volumineux :
 
 ```ts
-import { getInterestRate } from 'be-legal-data/interest-rates' // 12 Ko
-import { getCourt } from 'be-legal-data/courts' // 32 Ko
+import { getInterestRate } from 'be-legal-data/interest-rates'
+import { getCourt } from 'be-legal-data/courts'
 import { getCanton } from 'be-legal-data/territory'
 import { getMunicipalitiesForPostalCode } from 'be-legal-data/postal-codes'
 ```
+
+<table v-if="stats.sizes">
+<thead><tr><th>Point d'entrée</th><th style="text-align:right">JavaScript chargé</th><th style="text-align:right">gzip</th></tr></thead>
+<tbody>
+<tr v-for="s in stats.sizes" :key="s.entry">
+<td><code>{{ s.entry }}</code></td><td style="text-align:right">{{ kb(s.raw) }}</td><td style="text-align:right">{{ kb(s.gzip) }}</td>
+</tr>
+</tbody>
+</table>
+<p v-else class="bld-muted">Les tailles sont mesurées à partir du build lors de la construction du site (<code>pnpm build</code> d'abord).</p>
 
 ## Un premier aperçu {#a-first-look}
 

@@ -1,14 +1,23 @@
+<script setup>
+import { data as stats } from '../../.vitepress/stats.data'
+</script>
+
 # Bekende hiaten {#known-gaps}
 
 - **Gerechten die niet op het portaal staan** zitten niet in de data: het Hof van Cassatie, het
   Grondwettelijk Hof, de Raad van State en de tuchtrechtbanken
   ([#4](https://github.com/pieterjanscheir/be-legal-data/issues/4)).
-- **26 gerechten hebben geen enkel adres**: een gerecht waarvan elke afdeling haar eigen adres
-  heeft (het adres staat op de afdeling), of een dat zijn adressen als een zin publiceert. Hun
-  `address` ontbreekt in plaats van geraden te zijn; de afdelingen hebben het hunne.
-- **Openingsuren**: 227 van de 344 gerechten die uren publiceren, hebben ze in de
-  `opening_hours`-syntaxis. De rest publiceert tekst met opmerkingen of tijdelijke regelingen,
-  alleen bewaard als `openingHoursText`.
+- **De bevoegdheid stopt bij het gerecht.** `cantons` en `findCompetentCourts` zeggen welk gerecht
+  een gemeente bestrijkt, niet welke van zijn afdelingen: het gebied van een afdeling wordt bij
+  koninklijk besluit bepaald en zit nog niet in de data.
+- **{{ stats.courts.withoutAddress }} gerechten hebben geen enkel adres**: een gerecht waarvan elke
+  afdeling haar eigen adres heeft (het adres staat op de afdeling), of een dat zijn adressen als
+  een zin publiceert. Hun `address` ontbreekt in plaats van geraden te zijn; de afdelingen hebben
+  het hunne.
+- **Openingsuren**: {{ stats.courts.hoursParsed }} van de
+  {{ stats.courts.hoursParsed + stats.courts.hoursTextOnly }} gerechten die uren publiceren, hebben
+  ze in de `opening_hours`-syntaxis. De rest publiceert tekst met opmerkingen of tijdelijke
+  regelingen, alleen bewaard als `openingHoursText`.
 - **Contactlabels staan in de taal van de pagina**: voor een tweetalig gerecht die van de
   Nederlandse pagina (de Duitse in Eupen). De namen en uren van de Franse pagina zijn er ook.
 - **Sommige waarden op de bronpagina's zijn niet leesbaar**, en worden weggelaten: een
