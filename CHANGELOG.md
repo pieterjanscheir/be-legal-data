@@ -7,6 +7,8 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-10-21
+
 ### Added
 
 **Postal codes.** `data/postal-codes.json`: every Belgian postal code with the municipality it
@@ -204,6 +206,7 @@ OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
 - Courts (justices of the peace in East and West Flanders, Ondernemingsrechtbank Gent) and the
   legal and commercial interest rates.
 
-[Unreleased]: https://github.com/pieterjanscheir/belgica/compare/72889e0...HEAD
+[Unreleased]: https://github.com/pieterjanscheir/belgica/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/pieterjanscheir/belgica/compare/72889e0...v0.3.0
 [0.2.0]: https://github.com/pieterjanscheir/belgica/commit/72889e0
 [0.1.0]: https://github.com/pieterjanscheir/belgica/commit/c113197

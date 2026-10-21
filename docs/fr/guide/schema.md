@@ -21,9 +21,8 @@ autres.
 | `data/interest-rates.json`    | [`interest-rates.schema.json`](/schema/interest-rates.schema.json){target="_self"}       |
 
 Le `$id` de chaque schéma est son URL sur ce site, par exemple
-`https://pieterjanscheir.github.io/belgica/schema/courts.schema.json`. À partir de la
-prochaine version, ils sont aussi dans le package npm sous `belgica/schema/courts.schema.json`
-(la 0.2.0 ne les contient pas).
+`https://pieterjanscheir.github.io/belgica/schema/courts.schema.json`. Ils sont aussi dans le
+package npm sous `belgica/schema/courts.schema.json`.
 
 ## Valider les données {#validating-the-data}
 
