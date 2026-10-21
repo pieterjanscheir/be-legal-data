@@ -153,6 +153,21 @@ juridiction qui n'en a pas.
 getDivisions('labour-court-gent').map((c) => c.id) // ['labour-court-gent-aalst', …]
 ```
 
+### `getCourtsForCanton(cantonId)` {#getcourtsforcanton-cantonid}
+
+```ts
+function getCourtsForCanton(cantonId: string, options?: OnDay): Court[]
+```
+
+Les juridictions dont le ressort comprend un canton un jour donné (aujourd’hui par défaut) : sa justice de paix et, pour chaque autre type, la juridiction
+qui le couvre (la juridiction dans son ensemble, pas ses divisions) ; à Bruxelles, les deux juridictions linguistiques
+d'un même type. Vide pour un canton inconnu.
+
+```ts
+getCourtsForCanton('gent-1').map((c) => c.id)
+// ['court-of-appeal-gent', 'court-of-assize-oost-vlaanderen', 'court-of-first-instance-oost-vlaanderen', …]
+```
+
 ### `findCourts(filter)` {#findcourts-filter}
 
 ```ts
@@ -249,6 +264,26 @@ getHouseOfJustice('justitiehuis-gent').ovo // 'OVO001917'
 
 Des questions qui combinent plusieurs jeux de données. Elles ne sont disponibles qu'à la racine du package, puisqu'elles
 ont besoin à la fois du territoire et des juridictions.
+
+### `findCompetentCourts(municipalityId, type)` {#findcompetentcourts-municipalityid-type}
+
+```ts
+function findCompetentCourts(municipalityId: string, type: CourtType, options?: OnDay): Court[]
+```
+
+Les juridictions d'un type compétentes pour une commune un jour donné (aujourd'hui par défaut), par code REFNIS : les
+juridictions dont le ressort, tel que la loi le fixe (`cantons`), comprend l'un des cantons de la commune. Une seule
+juridiction pour la plupart des communes ; à Bruxelles, la juridiction néerlandophone et la francophone ; pour une
+ville scindée en cantons, chaque justice de paix qui dessert l'un d'eux. La fonction renvoie la juridiction dans son
+ensemble : la division qui connaît d'une affaire est fixée par arrêté royal et ne figure pas encore dans les données ;
+choisissez donc parmi `getDivisions(court.id)`. Vide pour un code inconnu.
+
+```ts
+findCompetentCourts('23088', 'police-court').map((c) => c.id) // ['police-court-vilvoorde']
+findCompetentCourts('21004', 'court-of-first-instance').map((c) => c.id)
+// ['court-of-first-instance-brussel-fr', 'court-of-first-instance-brussel-nl']
+findCompetentCourts('44021', 'labour-court').map((c) => c.id) // ['labour-court-gent']
+```
 
 ### `findJusticesOfThePeace(municipalityId)` {#findjusticesofthepeace-municipalityid}
 

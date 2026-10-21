@@ -61,7 +61,7 @@ data as JSON and as CSV tables (UTF-8, comma-separated), with the schemas and
 | `data/cantons.json`           | All 162 judicial cantons                                    |
 | `data/municipalities.json`    | The 565 municipalities with REFNIS code and province        |
 | `data/courts.json`            | Every court, division and seat on the courts' portal        |
-| `data/prisons.json`           | The 39 prisons and detention houses                         |
+| `data/prisons.json`           | The prisons and detention houses                            |
 | `data/houses-of-justice.json` | The houses of justice of the Flemish and French Communities |
 | `data/interest-rates.json`    | Legal and commercial-transaction interest rates             |
 

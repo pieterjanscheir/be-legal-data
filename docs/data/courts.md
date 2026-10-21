@@ -1,18 +1,34 @@
+<script setup>
+import { data as stats } from '../.vitepress/stats.data'
+
+const areas = {
+    'justice-of-the-peace': 'A canton; Philippeville sits in two places',
+    'police-court': 'An arrondissement (Brussels split by language, Halle, Vilvoorde)',
+    'court-of-first-instance': 'An arrondissement (Brussels split by language)',
+    'enterprise-court': 'An arrondissement, or the area of a court of appeal',
+    'labour-court': 'An arrondissement, or the area of a court of appeal',
+    'court-of-appeal': 'A judicial area',
+    'labour-court-of-appeal': 'A judicial area',
+    'court-of-assize': 'A province, or Brussels-Capital',
+}
+</script>
+
 # Courts
 
 File: `data/courts.json`. Every court of the judiciary that the courts' own portal,
-[tribunaux-rechtbanken.be](https://www.tribunaux-rechtbanken.be), lists: 347 records.
+[tribunaux-rechtbanken.be](https://www.tribunaux-rechtbanken.be), lists: {{ stats.courts.total }}
+records that apply today<span v-if="stats.courts.retired">, and {{ stats.courts.retired }} retired
+versions the portal no longer lists</span>. The numbers on this page are computed from the data when
+the site is built.
 
-| Kind                    | Courts | Divisions or seats | Area                                                             |
-| ----------------------- | -----: | -----------------: | ---------------------------------------------------------------- |
-| Justice of the peace    |    162 |                  2 | A canton; Philippeville sits in two places                       |
-| Police court            |     15 |                 34 | An arrondissement (Brussels split by language, Halle, Vilvoorde) |
-| Court of first instance |     13 |                 23 | An arrondissement (Brussels split by language)                   |
-| Enterprise court        |      9 |                 24 | An arrondissement, or the area of a court of appeal              |
-| Labour court            |      9 |                 29 | An arrondissement, or the area of a court of appeal              |
-| Court of appeal         |      5 |                  0 | A judicial area                                                  |
-| Labour court of appeal  |      5 |                  7 | A judicial area                                                  |
-| Court of assize         |     11 |                  0 | A province, or Brussels-Capital                                  |
+<table>
+<thead><tr><th>Kind</th><th style="text-align:right">Courts</th><th style="text-align:right">Divisions or seats</th><th>Area</th></tr></thead>
+<tbody>
+<tr v-for="t in stats.courts.byType" :key="t.type">
+<td>{{ t.label }}</td><td style="text-align:right">{{ t.courts }}</td><td style="text-align:right">{{ t.divisions }}</td><td>{{ areas[t.type] }}</td>
+</tr>
+</tbody>
+</table>
 
 Not on the portal, so not here yet: the Court of Cassation, the Constitutional Court and the
 Council of State, and the disciplinary courts.
@@ -51,6 +67,8 @@ matters, check the court's page (`website`).
 | Field              | Type                                  | Description                                                                                                                                                                                        |
 | ------------------ | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `id`               | `CourtId`                             | Stable id: the `type`, then the place in the court's own language: `justice-of-the-peace-gent-1`, `police-court-brussel-fr`, `enterprise-court-gent-brugge`. See [identifiers](/guide/identifiers) |
+| `validFrom`        | string?                               | First day the record applies, `YYYY-MM-DD`: the day the portal first listed it. None: since the coverage starts                                                                                    |
+| `validTo`          | string?                               | Last day the record applies: the day before the weekly check found it gone from the portal. None: still applies                                                                                    |
 | `type`             | `CourtType`                           | `justice-of-the-peace`, `police-court`, `court-of-first-instance`, `enterprise-court`, `labour-court`, `court-of-appeal`, `labour-court-of-appeal`, `court-of-assize`                              |
 | `kind`             | `'court'` \| `'division'` \| `'seat'` | The court itself, one of its divisions (afdeling, division, Abteilung), or one of the places a justice of the peace sits                                                                           |
 | `court`            | `CourtId`?                            | For a division or seat: the court it belongs to                                                                                                                                                    |
@@ -58,6 +76,7 @@ matters, check the court's page (`website`).
 | `judicialArea`     | `JudicialAreaId`                      | The judicial area                                                                                                                                                                                  |
 | `arrondissement`   | `ArrondissementId`?                   | The arrondissement, for a court or division whose area is one arrondissement or lies within one                                                                                                    |
 | `canton`           | `CantonId`?                           | For a justice of the peace: the canton it serves                                                                                                                                                   |
+| `cantons`          | `CantonId[]`?                         | For every other court (not its divisions): the cantons it covers, as the annex to the Judicial Code (art. 3–5) and art. 114 of the Code set them                                                   |
 | `ecli`             | `string[]`?                           | The court's ECLI codes, one per language it judges in; only codes seen in published decisions                                                                                                      |
 | `address`          | `Address`?                            | Where the registry is. Missing when the court publishes no single address (a court whose divisions each have their own)                                                                            |
 | `contacts`         | `Contact[]`                           | Phone, fax, e-mail and bank account, each with the registry it belongs to (`label`) and the text published with it (`note`)                                                                        |
@@ -76,6 +95,8 @@ matters, check the court's page (`website`).
 ```ts
 interface Court {
     id: CourtId
+    validFrom?: string
+    validTo?: string
     type: CourtType
     kind: 'court' | 'division' | 'seat'
     court?: CourtId
@@ -83,6 +104,7 @@ interface Court {
     judicialArea: JudicialAreaId
     arrondissement?: ArrondissementId
     canton?: CantonId
+    cantons?: CantonId[]
     ecli?: string[]
     address?: Address
     contacts: Contact[]
@@ -113,6 +135,8 @@ interface Contact {
 getCourt('justice-of-the-peace-gent-1')
 getJusticeOfThePeace('gent-1') // the same court, by canton id
 getDivisions('enterprise-court-gent') // its eight divisions
+getCourtsForCanton('gent-1') // its justice of the peace, and one court of each other type
+findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde], by REFNIS code
 findCourts({ type: 'police-court', kind: 'court', judicialArea: 'gent' })
 getContact(court, 'email', 'Greffe pénal') // the first matching contact's value
 formatPhoneNumber('+3253820701') // '053 82 07 01'
@@ -133,10 +157,15 @@ one in German. The parser:
 3. reads the registries' contact blocks, keeping each value with its registry;
 4. turns the published opening hours into `opening_hours` syntax only when every word is
    understood and every language says the same. Text with a note or a temporary arrangement
-   ("OPGELET: tot 31 december…") keeps only the published text.
+   ("OPGELET: tot 31 december…") keeps only the published text;
+5. gives each court the cantons the law assigns it (`cantons`), from a table of the annex to
+   the Judicial Code in `scripts/parse/jurisdictions.ts`, and derives its `arrondissement` from
+   them. The table and the portal check each other: a court on the portal that the law table
+   lacks, or the reverse, stops the build.
 
 It refuses to write anything when a page can't be placed (an unknown kind of court, a justice
-of the peace without a canton) or a canton has no court. What it can't read (a phone number
+of the peace without a canton), a canton has no court, or the law table and the portal
+disagree on which courts exist. What it can't read (a phone number
 without an area code, an address written as a sentence) is reported with the weekly pull
 request, and left out of the data rather than guessed.
 

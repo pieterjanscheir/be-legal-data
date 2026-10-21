@@ -106,7 +106,10 @@ CommonJS build would only add a second copy of the data (the dual-package hazard
 test. Committed build output goes stale and broke automated dependency updates.
 
 **So.** `import` and `require()` both work, tested on Node 22.12, 22, 24 and 26. Each dataset
-has its own entry point, so an app that needs only the interest rates loads 12 KB, not 250 KB.
+has its own entry point, so an app that needs only the interest rates loads a few kilobytes,
+not the courts and the legal text of every canton (the
+[getting-started page](./getting-started#import-only-what-you-need) measures each one from the
+build).
 
 ## 9. Types that carry the data's guarantees
 
@@ -144,7 +147,10 @@ model before the history is in the data
 ([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
 
 **So.** Interest rates already have periods. A lookup by id without a day gives today's
-version, so known ids keep their non-`undefined` type; with a day it may find nothing.
+version, so known ids keep their non-`undefined` type; with a day it may find nothing. Every
+dataset carries the period, not only the territory: a scraped record the source stops listing
+is retired with a `validTo` rather than deleted (`scripts/parse/retire.ts`), so an id, once
+published, stays, and a court that closes is still the court last year's summons named.
 
 ## 12. Releases carry the data, not only the package
 

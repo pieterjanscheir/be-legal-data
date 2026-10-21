@@ -80,6 +80,22 @@ meer dan één resultaat. Het straatadres beslist, en de `territory` van elk kan
 wettelijke omschrijving van zijn deel. Probeer het uit op de
 [pagina Territorium en kantons](/nl/data/territory#find-the-canton-for-a-municipality).
 
+### Welke rechtbank voor een gemeente? {#which-court-for-a-municipality}
+
+Elke rechtbank behalve een vredegerecht vermeldt de kantons die ze bestrijkt (`cantons`), zoals
+de wet ze vastlegt. `findCompetentCourts` zoekt de kantons van een gemeente daarin op.
+
+```ts
+import { findCompetentCourts, getDivisions } from 'be-legal-data'
+
+findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde], niet Brussel
+findCompetentCourts('21004', 'labour-court') // de Nederlandstalige en de Franstalige rechtbank van Brussel
+
+// De rechtbank als geheel; welke afdeling de zaak behandelt zit nog niet in de data
+const [court] = findCompetentCourts('44021', 'enterprise-court')
+getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brugge, …
+```
+
 ### Verschuldigde interest op een dag {#interest-due-on-a-day}
 
 ```ts

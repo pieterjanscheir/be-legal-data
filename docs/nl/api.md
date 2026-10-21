@@ -153,6 +153,21 @@ voor een rechtbank zonder.
 getDivisions('labour-court-gent').map((c) => c.id) // ['labour-court-gent-aalst', …]
 ```
 
+### `getCourtsForCanton(cantonId)` {#getcourtsforcanton-cantonid}
+
+```ts
+function getCourtsForCanton(cantonId: string, options?: OnDay): Court[]
+```
+
+De hoven en rechtbanken in wier gebied een kanton ligt op een dag (standaard vandaag): zijn vredegerecht en, van elk ander type, de
+rechtbank die het bestrijkt (de rechtbank als geheel, niet haar afdelingen); in Brussel beide taalrollen
+van een type. Leeg voor een onbekend kanton.
+
+```ts
+getCourtsForCanton('gent-1').map((c) => c.id)
+// ['court-of-appeal-gent', 'court-of-assize-oost-vlaanderen', 'court-of-first-instance-oost-vlaanderen', …]
+```
+
 ### `findCourts(filter)` {#findcourts-filter}
 
 ```ts
@@ -249,6 +264,26 @@ getHouseOfJustice('justitiehuis-gent').ovo // 'OVO001917'
 
 Vragen die datasets combineren. Ze zitten alleen in de root van het package, omdat ze zowel het
 territorium als de hoven en rechtbanken nodig hebben.
+
+### `findCompetentCourts(municipalityId, type)` {#findcompetentcourts-municipalityid-type}
+
+```ts
+function findCompetentCourts(municipalityId: string, type: CourtType, options?: OnDay): Court[]
+```
+
+De hoven of rechtbanken van een type die bevoegd zijn voor een gemeente op een dag (standaard vandaag), op REFNIS-code:
+de rechtbanken in wier gebied, zoals de wet het vastlegt (`cantons`), een van de kantons van de gemeente ligt.
+Eén rechtbank voor de meeste gemeenten; in Brussel de Nederlandstalige en de Franstalige rechtbank; voor een
+stad die over kantons gesplitst is, elk vredegerecht dat een van die kantons bedient. Je krijgt de rechtbank
+als geheel: welke van haar afdelingen een zaak behandelt, wordt bij koninklijk besluit bepaald en zit nog niet in de
+data, dus kies zelf uit `getDivisions(court.id)`. Leeg voor een onbekende code.
+
+```ts
+findCompetentCourts('23088', 'police-court').map((c) => c.id) // ['police-court-vilvoorde']
+findCompetentCourts('21004', 'court-of-first-instance').map((c) => c.id)
+// ['court-of-first-instance-brussel-fr', 'court-of-first-instance-brussel-nl']
+findCompetentCourts('44021', 'labour-court').map((c) => c.id) // ['labour-court-gent']
+```
 
 ### `findJusticesOfThePeace(municipalityId)` {#findjusticesofthepeace-municipalityid}
 

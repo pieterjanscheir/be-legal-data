@@ -1,7 +1,11 @@
+<script setup>
+import { data as stats } from '../.vitepress/stats.data'
+</script>
+
 # Houses of justice
 
 File: `data/houses-of-justice.json`. The houses of justice (justitiehuizen, maisons de
-justice) of the Flemish and French Communities: 27 records.
+justice) of the Flemish and French Communities: {{ stats.housesOfJustice }} records.
 
 Houses of justice guide and supervise offenders on the courts' and prosecutors' behalf
 (probation, electronic monitoring, community service), welcome victims, and write social
@@ -31,16 +35,17 @@ Not in the data yet: the German-speaking Community's house of justice in Eupen
 
 ## Fields
 
-| Field       | Type                                    | Description                                                                                           |
-| ----------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `id`        | `HouseOfJusticeId`                      | From the name, without articles: `justitiehuis-gent`, `maison-justice-arlon`                          |
-| `community` | `'flemish'` \| `'french'` \| `'german'` | The Community that runs it                                                                            |
-| `name`      | `{ nl }` or `{ fr }`                    | In the Community's language                                                                           |
-| `ovo`       | string?                                 | OVO number in the Flemish organisation register, for the Flemish houses: `OVO001917`                  |
-| `address`   | `Address`                               |                                                                                                       |
-| `contacts`  | `Contact[]`                             | Phone, fax and e-mail; the victims' service of a French-speaking house has its own, labelled contacts |
-| `website`   | `{ nl }` or `{ fr }`                    | The page it's listed on                                                                               |
-| `sources`   | `{ url, retrieved }[]`                  | The pages the record was read from                                                                    |
+| Field                  | Type                                    | Description                                                                                                                  |
+| ---------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `id`                   | `HouseOfJusticeId`                      | From the name, without articles: `justitiehuis-gent`, `maison-justice-arlon`                                                 |
+| `validFrom`, `validTo` | string?                                 | The days the record applies, as the site listed it; none: since the coverage starts, or still applies. See [time](/api#time) |
+| `community`            | `'flemish'` \| `'french'` \| `'german'` | The Community that runs it                                                                                                   |
+| `name`                 | `{ nl }` or `{ fr }`                    | In the Community's language                                                                                                  |
+| `ovo`                  | string?                                 | OVO number in the Flemish organisation register, for the Flemish houses: `OVO001917`                                         |
+| `address`              | `Address`                               |                                                                                                                              |
+| `contacts`             | `Contact[]`                             | Phone, fax and e-mail; the victims' service of a French-speaking house has its own, labelled contacts                        |
+| `website`              | `{ nl }` or `{ fr }`                    | The page it's listed on                                                                                                      |
+| `sources`              | `{ url, retrieved }[]`                  | The pages the record was read from                                                                                           |
 
 ```ts
 import { getHouseOfJustice, getContact } from 'be-legal-data/houses-of-justice'

@@ -79,6 +79,22 @@ plus d'un résultat. C'est l'adresse (la rue) qui tranche, et le `territory` de 
 contient la description légale de sa partie. Essayez-le sur la
 [page Territoire et cantons](/fr/data/territory#find-the-canton-for-a-municipality).
 
+### Quel tribunal pour une commune ? {#which-court-for-a-municipality}
+
+Tout tribunal autre qu'une justice de paix liste les cantons qu'il couvre (`cantons`), tels que la
+loi les fixe. `findCompetentCourts` y recherche les cantons d'une commune.
+
+```ts
+import { findCompetentCourts, getDivisions } from 'be-legal-data'
+
+findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde], pas Bruxelles
+findCompetentCourts('21004', 'labour-court') // le tribunal néerlandophone et le tribunal francophone de Bruxelles
+
+// Le tribunal dans son ensemble ; la division qui connaît de l'affaire n'est pas encore dans les données
+const [court] = findCompetentCourts('44021', 'enterprise-court')
+getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brugge, …
+```
+
 ### Intérêts dus à une date donnée {#interest-due-on-a-day}
 
 ```ts

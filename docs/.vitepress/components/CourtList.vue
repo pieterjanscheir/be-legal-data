@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import {
-    courts,
+    findCourts,
     arrondissements,
     formatPhoneNumber,
     formatIban,
@@ -11,6 +11,9 @@ import {
     type CourtType,
 } from '../../../src'
 import { fmt, inLang, useLocale, useStrings } from '../i18n'
+
+// Today's records: the files also hold retired versions
+const courts = findCourts({})
 
 const { dataLang } = useLocale()
 const t = useStrings({
