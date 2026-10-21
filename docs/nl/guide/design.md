@@ -34,7 +34,9 @@ Franse namen van rechtbanken die een vroegere `formatCourtName` bouwde, waren fo
 tegen haar bron worden gecontroleerd.
 
 **Dus.** Namen van rechtbanken worden opgeslagen zoals elke rechtbank ze publiceert, in elke
-taal waarin ze publiceert, en `formatCourtName` is weg. Het grondgebied van een kanton blijft
+taal waarin ze publiceert. `formatCourtName` zoekt een naam op (`style: 'official'`); de stijl
+`'canton'` bouwt een label voor weergave uit het nummer en de naam van het kanton ('Vredegerecht
+1e kanton Gent'), gedocumenteerd als label en nooit als de officiële naam. Het grondgebied van een kanton blijft
 letterlijke wettekst, met zijn rechtsgrond als ELI-link. Waar een bron ontbreekt, ontbreekt het
 veld: niets wordt op basis van giswerk ingevuld. Hetzelfde geldt voor het parsen: een tekst met
 openingsuren waar een opmerking in staat, een telefoonnummer zonder zonenummer of een adres dat

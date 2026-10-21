@@ -4,6 +4,7 @@ docs/.vitepress/dist/
 docs/.vitepress/cache/
 pnpm-lock.yaml
 src/ids.generated.ts
+src/canton-names.generated.ts
 # Generated and committed as written by their scripts
 data/cantons.json
 data/canton-boundaries.json

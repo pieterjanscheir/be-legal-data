@@ -1,9 +1,12 @@
 import courtsData from '../data/courts.json'
+import { cantonNames } from './canton-names.generated'
 import type { Address, Contact, Locale, SourceRef, Translated, Url } from './common'
 import type { ArrondissementId, CantonId, CourtId, JudicialAreaId } from './ids.generated'
 import {
     applyingOn,
+    currentVersion,
     pickVersion,
+    toDay,
     versionsBy,
     versionsById,
     type Coverage,
@@ -170,4 +173,81 @@ export function findCourts(filter: CourtFilter, options: OnDay = {}): Court[] {
             (!filter.arrondissement || c.arrondissement === filter.arrondissement) &&
             (!filter.judicialArea || c.judicialArea === filter.judicialArea),
     )
+}
+
+export interface FormatCourtNameOptions {
+    /**
+     * 'official' (default): the court's name as it publishes it, from `name`. 'canton': for a
+     * justice of the peace, a label built from its canton, 'Vredegerecht 1e kanton Gent'. That
+     * label is not the court's official name.
+     */
+    style?: 'official' | 'canton'
+}
+
+// The language to fall back to when a court doesn't publish in the one asked for. A court
+// publishes in one language, except in Brussels (Dutch and French) and the German-speaking
+// area (German and French), so this is the court's own language in all but those.
+const fallbackOrder: Record<Locale, readonly Locale[]> = {
+    nl: ['nl', 'fr', 'de'],
+    fr: ['fr', 'nl', 'de'],
+    de: ['de', 'fr', 'nl'],
+}
+
+const ordinal: Record<Locale, (n: number) => string> = {
+    nl: (n) => `${n}e`,
+    fr: (n) => (n === 1 ? '1er' : `${n}e`),
+    de: (n) => `${n}.`,
+}
+
+const cantonLabel: Record<Locale, { court: string; canton: string }> = {
+    nl: { court: 'Vredegerecht', canton: 'kanton' },
+    fr: { court: 'Justice de paix', canton: 'canton' },
+    de: { court: 'Friedensgericht', canton: 'Kanton' },
+}
+
+const cantonNamesById = versionsById(cantonNames)
+
+/**
+ * A court's name in a language.
+ *
+ * With `style: 'official'` (the default), the name as the court publishes it. A court that
+ * doesn't publish in `locale` gives its name in another language: for Dutch, French then
+ * German; for French, Dutch then German; for German, French then Dutch.
+ *
+ * With `style: 'canton'`, a justice of the peace gets a label built from its canton's number and
+ * name: 'Vredegerecht 1e kanton Gent', 'Justice de paix 1er canton Gand', 'Friedensgericht 1.
+ * Kanton Gent', and without a number 'Vredegerecht kanton Deinze'. It is a label for display,
+ * not the court's official name. The canton name is in `locale`. Only the cantons of
+ * Eupen-Sankt Vith have a German name; for the others, German uses the canton's name in the
+ * court's own language (French in Brussels). Any other court, and a seat of a justice of the
+ * peace, gets its official name.
+ */
+export function formatCourtName(
+    court: Court,
+    locale: Locale,
+    options: FormatCourtNameOptions = {},
+): string {
+    if (
+        options.style === 'canton' &&
+        court.type === 'justice-of-the-peace' &&
+        court.kind === 'court'
+    ) {
+        const versions = cantonNamesById.get(court.canton ?? '')
+        // The canton as it was on the court's last day, or today for a court that still applies
+        const canton = versions && currentVersion(versions, court.validTo ?? toDay(new Date()))
+        if (canton) {
+            // Most cantons have no German name: then the one in the court's own language
+            const ownLanguage =
+                court.name.nl !== undefined && court.name.fr === undefined ? 'nl' : 'fr'
+            const name = canton.name[locale] ?? canton.name[ownLanguage]
+            const { court: type, canton: word } = cantonLabel[locale]
+            const number = canton.number === undefined ? '' : `${ordinal[locale](canton.number)} `
+            return `${type} ${number}${word} ${name}`
+        }
+    }
+    for (const language of fallbackOrder[locale]) {
+        const name = court.name[language]
+        if (name !== undefined) return name
+    }
+    throw new Error(`Court '${court.id}' has no name`)
 }

@@ -279,6 +279,39 @@ findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' }) // s
 findCourts({ type: 'court-of-appeal' }) // les cinq cours d'appel
 ```
 
+### `formatCourtName(court, locale, options?)` {#formatcourtname-court-locale-options}
+
+```ts
+function formatCourtName(
+    court: Court,
+    locale: Locale,
+    options?: { style?: 'official' | 'canton' },
+): string
+```
+
+Le nom d'un tribunal dans une langue. `style: 'official'` (par défaut) donne le nom tel que le
+tribunal le publie, tiré de `name`. Un tribunal qui ne publie pas dans `locale` donne son nom
+dans une autre langue : pour le néerlandais, le français puis l'allemand ; pour le français, le
+néerlandais puis l'allemand ; pour l'allemand, le français puis le néerlandais. Chaque tribunal
+publie dans sa propre langue : c'est celle-là que vous obtenez.
+
+`style: 'canton'` donne à une justice de paix un libellé construit à partir du numéro et du nom
+de son canton, de la même façon dans chaque langue. **C'est un libellé d'affichage, pas le nom
+officiel du tribunal** : utilisez `'official'` là où le nom a une portée juridique. Tout autre
+tribunal, et un siège d'une justice de paix, reçoit son nom officiel, de sorte qu'une liste de
+tribunaux de types différents peut utiliser un seul style. Seuls les cantons d'Eupen-Saint-Vith
+ont un nom allemand (tiré d'un texte officiel allemand) ; pour les autres, en allemand, le nom du
+canton est dans la langue du tribunal (le français à Bruxelles).
+
+```ts
+const court = getCourt('justice-of-the-peace-gent-1')
+formatCourtName(court, 'fr') // 'Vredegerecht Gent 1' : le tribunal ne publie qu'en néerlandais
+formatCourtName(court, 'nl', { style: 'canton' }) // 'Vredegerecht 1e kanton Gent'
+formatCourtName(court, 'fr', { style: 'canton' }) // 'Justice de paix 1er canton Gand'
+formatCourtName(court, 'de', { style: 'canton' }) // 'Friedensgericht 1. Kanton Gent'
+formatCourtName(getCourt('justice-of-the-peace-deinze'), 'fr', { style: 'canton' }) // 'Justice de paix canton Deinze'
+```
+
 ## Coordonnées {#contacts}
 
 Dans chaque point d'entrée dont les enregistrements ont des coordonnées : la racine, `courts`, `prisons` et

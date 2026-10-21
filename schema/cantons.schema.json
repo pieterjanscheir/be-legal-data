@@ -32,8 +32,24 @@
           "description": "The judicial arrondissement"
         },
         "name": {
-          "$ref": "#/definitions/Bilingual",
-          "description": "Name of the canton; usually the seat, but not always ('Oudergem' sits in Etterbeek)"
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "de": {
+              "type": "string"
+            },
+            "nl": {
+              "type": "string"
+            },
+            "fr": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "fr",
+            "nl"
+          ],
+          "description": "Name of the canton; usually the seat, but not always ('Oudergem' sits in Etterbeek). In Dutch and French from the annex to the Judicial Code; in German only where an official German text names the canton (see `sources`), since the annex has no German translation."
         },
         "number": {
           "type": "number",
@@ -69,6 +85,13 @@
         "legalBasis": {
           "$ref": "#/definitions/LegalBasis",
           "description": "Where the law defines the canton"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SourceRef"
+          },
+          "description": "The official texts the German name is taken from, for a canton that has one"
         }
       },
       "required": [
@@ -876,6 +899,27 @@
       ],
       "additionalProperties": false,
       "description": "A provision of Belgian law"
+    },
+    "SourceRef": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The exact official page or file the data comes from",
+          "format": "uri"
+        },
+        "retrieved": {
+          "type": "string",
+          "description": "Day the source was last checked, YYYY-MM-DD",
+          "format": "date"
+        }
+      },
+      "required": [
+        "url",
+        "retrieved"
+      ],
+      "additionalProperties": false,
+      "description": "Where a record's data was taken from"
     }
   }
 }

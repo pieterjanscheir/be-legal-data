@@ -279,6 +279,39 @@ findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' }) // d
 findCourts({ type: 'court-of-appeal' }) // de vijf hoven van beroep
 ```
 
+### `formatCourtName(court, locale, options?)` {#formatcourtname-court-locale-options}
+
+```ts
+function formatCourtName(
+    court: Court,
+    locale: Locale,
+    options?: { style?: 'official' | 'canton' },
+): string
+```
+
+De naam van een rechtbank in één taal. `style: 'official'` (de standaard) geeft de naam zoals de
+rechtbank ze publiceert, uit `name`. Een rechtbank die niet in `locale` publiceert, geeft haar
+naam in een andere taal: voor Nederlands eerst Frans, dan Duits; voor Frans eerst Nederlands,
+dan Duits; voor Duits eerst Frans, dan Nederlands. Elke rechtbank publiceert in haar eigen taal,
+dus die krijg je.
+
+`style: 'canton'` geeft een vredegerecht een label dat uit het nummer en de naam van zijn kanton
+wordt opgebouwd, in elke taal op dezelfde manier. **Het is een label voor weergave, niet de
+officiële naam van de rechtbank**: gebruik `'official'` waar de naam juridisch gewicht heeft.
+Elke andere rechtbank, en een zetel van een vredegerecht, krijgt haar officiële naam, zodat een
+lijst met verschillende rechtbanken één stijl kan gebruiken. Alleen de kantons Eupen-Sankt Vith
+hebben een Duitse naam (uit een officiële Duitse tekst); voor de andere staat in het Duits de
+naam van het kanton in de eigen taal van de rechtbank (Frans in Brussel).
+
+```ts
+const court = getCourt('justice-of-the-peace-gent-1')
+formatCourtName(court, 'fr') // 'Vredegerecht Gent 1': de rechtbank publiceert alleen in het Nederlands
+formatCourtName(court, 'nl', { style: 'canton' }) // 'Vredegerecht 1e kanton Gent'
+formatCourtName(court, 'fr', { style: 'canton' }) // 'Justice de paix 1er canton Gand'
+formatCourtName(court, 'de', { style: 'canton' }) // 'Friedensgericht 1. Kanton Gent'
+formatCourtName(getCourt('justice-of-the-peace-deinze'), 'fr', { style: 'canton' }) // 'Justice de paix canton Deinze'
+```
+
 ## Contactgegevens {#contacts}
 
 In elk entry point met records die contactgegevens hebben: de root, `courts`, `prisons` en

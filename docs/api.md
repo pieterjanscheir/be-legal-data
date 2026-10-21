@@ -279,6 +279,37 @@ findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' }) // i
 findCourts({ type: 'court-of-appeal' }) // the five courts of appeal
 ```
 
+### `formatCourtName(court, locale, options?)`
+
+```ts
+function formatCourtName(
+    court: Court,
+    locale: Locale,
+    options?: { style?: 'official' | 'canton' },
+): string
+```
+
+A court's name in one language. `style: 'official'` (the default) gives the name as the court
+publishes it, from `name`. A court that doesn't publish in `locale` gives its name in another
+language: for Dutch, French then German; for French, Dutch then German; for German, French then
+Dutch. Each court publishes in its own language, so that is what you get.
+
+`style: 'canton'` gives a justice of the peace a label built from its canton's number and name,
+the same in every language. **It is a display label, not the court's official name**: use
+`'official'` where the name has legal weight. Any other court, and a seat of a justice of the
+peace, gets its official name, so a list of mixed courts can use one style. Only the cantons of Eupen-Sankt
+Vith have a German name (from an official German text); for the others, German uses the canton's
+name in the court's own language (French in Brussels).
+
+```ts
+const court = getCourt('justice-of-the-peace-gent-1')
+formatCourtName(court, 'fr') // 'Vredegerecht Gent 1': the court publishes in Dutch only
+formatCourtName(court, 'nl', { style: 'canton' }) // 'Vredegerecht 1e kanton Gent'
+formatCourtName(court, 'fr', { style: 'canton' }) // 'Justice de paix 1er canton Gand'
+formatCourtName(court, 'de', { style: 'canton' }) // 'Friedensgericht 1. Kanton Gent'
+formatCourtName(getCourt('justice-of-the-peace-deinze'), 'fr', { style: 'canton' }) // 'Justice de paix canton Deinze'
+```
+
 ## Contacts
 
 In every entry point that has records with contacts: the root, `courts`, `prisons` and
