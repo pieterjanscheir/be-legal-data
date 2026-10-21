@@ -12,7 +12,7 @@ import {
 } from './time'
 
 export type { CourtId } from './ids.generated'
-export type { OnDay, Validity } from './time'
+export type { Coverage, OnDay, Validity } from './time'
 export * from './contacts'
 
 export type CourtType =

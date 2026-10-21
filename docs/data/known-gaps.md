@@ -1,3 +1,7 @@
+<script setup>
+import { data as stats } from '../.vitepress/stats.data'
+</script>
+
 # Known gaps
 
 - **Courts not on the portal** aren't in the data: the Court of Cassation, the Constitutional
@@ -6,12 +10,13 @@
 - **Competence stops at the court.** `cantons` and `findCompetentCourts` say which court
   covers a municipality, not which of its divisions: a division's area is set by royal decree
   and isn't in the data yet.
-- **26 courts have no single address**: a court whose divisions each have their own (the
-  address is on the division), or one that publishes its addresses as a sentence. Their
-  `address` is missing rather than guessed; the divisions have theirs.
-- **Opening hours**: 227 of the 344 courts that publish hours have them in `opening_hours`
-  syntax. The rest publish text with notes or temporary arrangements, kept as
-  `openingHoursText` only.
+- **{{ stats.courts.withoutAddress }} courts have no single address**: a court whose divisions
+  each have their own (the address is on the division), or one that publishes its addresses as
+  a sentence. Their `address` is missing rather than guessed; the divisions have theirs.
+- **Opening hours**: {{ stats.courts.hoursParsed }} of the
+  {{ stats.courts.hoursParsed + stats.courts.hoursTextOnly }} courts that publish hours have
+  them in `opening_hours` syntax. The rest publish text with notes or temporary arrangements,
+  kept as `openingHoursText` only.
 - **Contact labels are in the page's language**: for a bilingual court, the Dutch page's (the
   German page's in Eupen). The French page's names and hours are there too.
 - **Some values on the source pages can't be read**, and are left out: a phone number without

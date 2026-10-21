@@ -5,7 +5,7 @@ Everything is exported from the package root, and each dataset also has its own 
 ```ts
 import { getCanton, getInterestRate /* … */ } from 'be-legal-data'
 
-// Only what you use: 12 KB for the interest rates instead of everything
+// Only what you use: the interest rates alone are a few kilobytes
 import { getInterestRate } from 'be-legal-data/interest-rates'
 import { getCourt, getJusticeOfThePeace } from 'be-legal-data/courts'
 import { getCanton, getCantonsForMunicipality } from 'be-legal-data/territory'

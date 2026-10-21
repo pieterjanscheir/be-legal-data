@@ -4,7 +4,7 @@ import type { HouseOfJusticeId } from './ids.generated'
 import { pickVersion, versionsById, type Coverage, type OnDay, type Validity } from './time'
 
 export type { HouseOfJusticeId } from './ids.generated'
-export type { OnDay, Validity } from './time'
+export type { Coverage, OnDay, Validity } from './time'
 export * from './contacts'
 
 /**

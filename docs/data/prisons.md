@@ -1,6 +1,10 @@
 # Prisons
 
-File: `data/prisons.json`. The 39 prisons and detention houses of the FPS Justice
+<script setup>
+import { data as stats } from '../.vitepress/stats.data'
+</script>
+
+File: `data/prisons.json`. The {{ stats.prisons }} prisons and detention houses of the FPS Justice
 (Directorate-General of Penitentiary Institutions).
 
 ## Why it's useful

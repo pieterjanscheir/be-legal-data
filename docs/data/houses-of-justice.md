@@ -1,7 +1,11 @@
+<script setup>
+import { data as stats } from '../.vitepress/stats.data'
+</script>
+
 # Houses of justice
 
 File: `data/houses-of-justice.json`. The houses of justice (justitiehuizen, maisons de
-justice) of the Flemish and French Communities: 27 records.
+justice) of the Flemish and French Communities: {{ stats.housesOfJustice }} records.
 
 Houses of justice guide and supervise offenders on the courts' and prosecutors' behalf
 (probation, electronic monitoring, community service), welcome victims, and write social

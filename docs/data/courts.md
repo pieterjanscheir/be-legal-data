@@ -1,18 +1,34 @@
+<script setup>
+import { data as stats } from '../.vitepress/stats.data'
+
+const areas = {
+    'justice-of-the-peace': 'A canton; Philippeville sits in two places',
+    'police-court': 'An arrondissement (Brussels split by language, Halle, Vilvoorde)',
+    'court-of-first-instance': 'An arrondissement (Brussels split by language)',
+    'enterprise-court': 'An arrondissement, or the area of a court of appeal',
+    'labour-court': 'An arrondissement, or the area of a court of appeal',
+    'court-of-appeal': 'A judicial area',
+    'labour-court-of-appeal': 'A judicial area',
+    'court-of-assize': 'A province, or Brussels-Capital',
+}
+</script>
+
 # Courts
 
 File: `data/courts.json`. Every court of the judiciary that the courts' own portal,
-[tribunaux-rechtbanken.be](https://www.tribunaux-rechtbanken.be), lists: 347 records.
+[tribunaux-rechtbanken.be](https://www.tribunaux-rechtbanken.be), lists: {{ stats.courts.total }}
+records that apply today<span v-if="stats.courts.retired">, and {{ stats.courts.retired }} retired
+versions the portal no longer lists</span>. The numbers on this page are computed from the data when
+the site is built.
 
-| Kind                    | Courts | Divisions or seats | Area                                                             |
-| ----------------------- | -----: | -----------------: | ---------------------------------------------------------------- |
-| Justice of the peace    |    162 |                  2 | A canton; Philippeville sits in two places                       |
-| Police court            |     15 |                 34 | An arrondissement (Brussels split by language, Halle, Vilvoorde) |
-| Court of first instance |     13 |                 23 | An arrondissement (Brussels split by language)                   |
-| Enterprise court        |      9 |                 24 | An arrondissement, or the area of a court of appeal              |
-| Labour court            |      9 |                 29 | An arrondissement, or the area of a court of appeal              |
-| Court of appeal         |      5 |                  0 | A judicial area                                                  |
-| Labour court of appeal  |      5 |                  7 | A judicial area                                                  |
-| Court of assize         |     11 |                  0 | A province, or Brussels-Capital                                  |
+<table>
+<thead><tr><th>Kind</th><th style="text-align:right">Courts</th><th style="text-align:right">Divisions or seats</th><th>Area</th></tr></thead>
+<tbody>
+<tr v-for="t in stats.courts.byType" :key="t.type">
+<td>{{ t.label }}</td><td style="text-align:right">{{ t.courts }}</td><td style="text-align:right">{{ t.divisions }}</td><td>{{ areas[t.type] }}</td>
+</tr>
+</tbody>
+</table>
 
 Not on the portal, so not here yet: the Court of Cassation, the Constitutional Court and the
 Council of State, and the disciplinary courts.

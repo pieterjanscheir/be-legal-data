@@ -106,7 +106,10 @@ CommonJS build would only add a second copy of the data (the dual-package hazard
 test. Committed build output goes stale and broke automated dependency updates.
 
 **So.** `import` and `require()` both work, tested on Node 22.12, 22, 24 and 26. Each dataset
-has its own entry point, so an app that needs only the interest rates loads 12 KB, not 250 KB.
+has its own entry point, so an app that needs only the interest rates loads a few kilobytes,
+not the courts and the legal text of every canton (the
+[getting-started page](./getting-started#import-only-what-you-need) measures each one from the
+build).
 
 ## 9. Types that carry the data's guarantees
 

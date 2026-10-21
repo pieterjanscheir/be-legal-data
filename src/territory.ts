@@ -15,7 +15,7 @@ import {
 
 export type { Bilingual, Locale, SourceRef, Translated } from './common'
 export type { ArrondissementId, CantonId, JudicialAreaId, MunicipalityId } from './ids.generated'
-export type { OnDay, Validity } from './time'
+export type { Coverage, OnDay, Validity } from './time'
 
 /**
  * The territory data describes the situation from this day on: the annex to the Judicial Code

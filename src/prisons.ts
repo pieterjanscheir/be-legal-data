@@ -4,7 +4,7 @@ import type { PrisonId } from './ids.generated'
 import { pickVersion, versionsById, type Coverage, type OnDay, type Validity } from './time'
 
 export type { PrisonId } from './ids.generated'
-export type { OnDay, Validity } from './time'
+export type { Coverage, OnDay, Validity } from './time'
 export * from './contacts'
 
 /** A prison or detention house of the FPS Justice (DG EPI) */

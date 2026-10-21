@@ -1,3 +1,9 @@
+<script setup>
+import { data as stats } from '../.vitepress/stats.data'
+
+const kb = (bytes) => `${Math.round(bytes / 1024)} KB`
+</script>
+
 # Getting started
 
 ## Install
@@ -25,14 +31,24 @@ browsers and on Node 22.12 or later, where `require()` loads it too. It's tested
 ### Import only what you need
 
 The data is bundled into the JavaScript, so importing from the package root loads every
-dataset (about 250 KB, mostly the legal text of the cantons). Each dataset has its own entry
-point:
+dataset. Each dataset has its own entry point, and the courts and the cantons (with the legal
+text of their territories) are by far the largest:
 
 ```ts
-import { getInterestRate } from 'be-legal-data/interest-rates' // 12 KB
-import { getCourt } from 'be-legal-data/courts' // 32 KB
+import { getInterestRate } from 'be-legal-data/interest-rates'
+import { getCourt } from 'be-legal-data/courts'
 import { getCanton } from 'be-legal-data/territory'
 ```
+
+<table v-if="stats.sizes">
+<thead><tr><th>Entry point</th><th style="text-align:right">JavaScript loaded</th><th style="text-align:right">gzip</th></tr></thead>
+<tbody>
+<tr v-for="s in stats.sizes" :key="s.entry">
+<td><code>{{ s.entry }}</code></td><td style="text-align:right">{{ kb(s.raw) }}</td><td style="text-align:right">{{ kb(s.gzip) }}</td>
+</tr>
+</tbody>
+</table>
+<p v-else class="bld-muted">Sizes are measured from the build when the site is built (<code>pnpm build</code> first).</p>
 
 ## A first look
 
