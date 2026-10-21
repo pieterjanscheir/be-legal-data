@@ -24,7 +24,8 @@ export const DATASETS = [
 export type Lock = Record<(typeof DATASETS)[number], string[]>
 
 export function readLock(path = LOCK_FILE): Lock {
-    if (!existsSync(path)) return Object.fromEntries(DATASETS.map((d) => [d, []])) as Lock
+    if (!existsSync(path))
+        return Object.fromEntries(DATASETS.map((d) => [d, []])) as unknown as Lock
     return JSON.parse(readFileSync(path, 'utf8')) as Lock
 }
 

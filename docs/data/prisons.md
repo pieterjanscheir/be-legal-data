@@ -24,15 +24,16 @@ File: `data/prisons.json`. The 39 prisons and detention houses of the FPS Justic
 
 ## Fields
 
-| Field      | Type                              | Description                                                                                                        |
-| ---------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `id`       | `PrisonId`                        | From the name in the local language, without articles: `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk` |
-| `kind`     | `'prison'` \| `'detention-house'` | A detention house holds people with short sentences, close to home                                                 |
-| `name`     | `{ nl, fr, de }`                  | As FPS Justice publishes it                                                                                        |
-| `address`  | `Address`                         | In the local language                                                                                              |
-| `contacts` | `Contact[]`                       | Phone, fax, e-mail and the account for money for detainees, where published                                        |
-| `website`  | `{ nl, fr, de }`                  | The prison's page per language                                                                                     |
-| `sources`  | `{ url, retrieved }[]`            | The pages the record was read from                                                                                 |
+| Field                  | Type                              | Description                                                                                                                  |
+| ---------------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `id`                   | `PrisonId`                        | From the name in the local language, without articles: `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk`           |
+| `validFrom`, `validTo` | string?                           | The days the record applies, as the site listed it; none: since the coverage starts, or still applies. See [time](/api#time) |
+| `kind`                 | `'prison'` \| `'detention-house'` | A detention house holds people with short sentences, close to home                                                           |
+| `name`                 | `{ nl, fr, de }`                  | As FPS Justice publishes it                                                                                                  |
+| `address`              | `Address`                         | In the local language                                                                                                        |
+| `contacts`             | `Contact[]`                       | Phone, fax, e-mail and the account for money for detainees, where published                                                  |
+| `website`              | `{ nl, fr, de }`                  | The prison's page per language                                                                                               |
+| `sources`              | `{ url, retrieved }[]`            | The pages the record was read from                                                                                           |
 
 The name of the director, which the pages also give, is left out: it changes, and it's
 personal data the package doesn't need.

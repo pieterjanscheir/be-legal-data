@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import {
-    courts,
+    findCourts,
     arrondissements,
     formatPhoneNumber,
     formatIban,
@@ -10,6 +10,9 @@ import {
     type Court,
     type CourtType,
 } from '../../../src'
+
+// Today's records: the files also hold retired versions
+const courts = findCourts({})
 
 const types: [CourtType, string][] = [
     ['justice-of-the-peace', 'Justice of the peace'],

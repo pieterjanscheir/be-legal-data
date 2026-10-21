@@ -33,7 +33,9 @@ official site ──fetch──> snapshots (sources branch) ──parse──> d
    again when its content changes, so the branch's history shows what changed on which day.
    A page that fails (a server error, a 404) keeps its last good snapshot and stops the run,
    which opens an issue: the data is never rebuilt from an incomplete picture. A page the
-   source no longer links to is dropped, so a court that closes leaves the data.
+   source no longer links to is dropped from the snapshots; its record stays in the data, retired
+   with a `validTo` (the day before the check that missed it), so its id keeps working and a
+   lookup for an earlier day still finds it. A page that appears gets a record with a `validFrom`.
 2. **Parse.** `pnpm build:data` reads the snapshots (`scripts/parse`) and writes the courts,
    prisons and houses of justice. It reports what it can't read, and fails when a page can't be
    placed.

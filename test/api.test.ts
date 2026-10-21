@@ -7,15 +7,21 @@ import {
     type Court,
     type Municipality,
     type MunicipalityId,
+    type Prison,
     cantons,
     findCompetentCourts,
+    findCourts,
     findJusticesOfThePeace,
     getCanton,
     getCourt,
+    getCourtsForCanton,
+    getDivisions,
+    getHouseOfJustice,
     getMunicipality,
     getCantonsForMunicipality,
     getInterestRate,
     getJusticeOfThePeace,
+    getPrison,
 } from '../src'
 
 describe('getInterestRate input validation', () => {
@@ -105,6 +111,40 @@ describe('findCompetentCourts', () => {
     })
 })
 
+describe('lookups on a day', () => {
+    it('find the version of a court, prison or house that applies on that day', () => {
+        expect(getCourt('justice-of-the-peace-gent-1', { on: '2025-06-01' })?.id).toBe(
+            'justice-of-the-peace-gent-1',
+        )
+        expect(getPrison('gevangenis-gent', { on: '2026-10-20' })?.id).toBe('gevangenis-gent')
+        expect(getHouseOfJustice('justitiehuis-gent', { on: new Date() })?.id).toBe(
+            'justitiehuis-gent',
+        )
+        expect(getJusticeOfThePeace('gent-1', { on: '2025-06-01' })?.id).toBe(
+            'justice-of-the-peace-gent-1',
+        )
+    })
+
+    it('filter lists to that day', () => {
+        expect(getDivisions('enterprise-court-gent', { on: '2025-06-01' })).toHaveLength(8)
+        expect(getCourtsForCanton('gent-1', { on: '2025-06-01' })).toHaveLength(8)
+        expect(findCourts({ type: 'court-of-appeal' }, { on: '2025-06-01' })).toHaveLength(5)
+    })
+
+    it("throw for a day before the dataset's coverage", () => {
+        expect(() => getCourt('justice-of-the-peace-gent-1', { on: '2024-12-31' })).toThrow(
+            RangeError,
+        )
+        expect(() => getPrison('gevangenis-gent', { on: '2026-10-19' })).toThrow(
+            'The prisons data describes 2026-10-20 onwards',
+        )
+        expect(() => getHouseOfJustice('justitiehuis-gent', { on: '2026-10-19' })).toThrow(
+            RangeError,
+        )
+        expect(() => findCourts({}, { on: '2024-12-31' })).toThrow(RangeError)
+    })
+})
+
 describe('lookups', () => {
     it('return copies, so callers cannot change the shared data', () => {
         getCantonsForMunicipality('44021').pop()
@@ -130,6 +170,12 @@ describe('id types', () => {
 
     it('may return undefined on a given day, even for a known id', () => {
         expectTypeOf(getCanton('gent-1', { on: '2025-06-01' })).toEqualTypeOf<Canton | undefined>()
+        expectTypeOf(getCourt('court-of-appeal-gent', { on: '2025-06-01' })).toEqualTypeOf<
+            Court | undefined
+        >()
+        expectTypeOf(getPrison('gevangenis-gent', { on: '2026-10-20' })).toEqualTypeOf<
+            Prison | undefined
+        >()
     })
 
     it('may return undefined for any other string', () => {

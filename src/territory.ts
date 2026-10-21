@@ -5,11 +5,10 @@ import municipalitiesData from '../data/municipalities.json'
 import type { Bilingual, Translated } from './common'
 import type { ArrondissementId, CantonId, JudicialAreaId, MunicipalityId } from './ids.generated'
 import {
-    appliesOn,
-    currentVersion,
-    lookupDay,
-    toDay,
+    applyingOn,
+    pickVersion,
     versionsById,
+    type Coverage,
     type OnDay,
     type Validity,
 } from './time'
@@ -23,7 +22,7 @@ export type { OnDay, Validity } from './time'
  * as amended for the municipal mergers of 1 January 2025, and Statbel's municipalities of that
  * day. Lookups for an earlier day throw a `RangeError` rather than answer with today's map.
  */
-export const territoryCoverage = { from: '2025-01-01' } as const
+export const territoryCoverage: Coverage = { from: '2025-01-01' }
 
 /** Area of a court of appeal (rechtsgebied): Antwerpen, Brussel, Gent, Luik or Bergen */
 export interface JudicialArea extends Validity {
@@ -91,20 +90,8 @@ export const arrondissements = arrondissementsData as readonly Arrondissement[]
 export const municipalities = municipalitiesData as readonly Municipality[]
 export const cantons = cantonsData as readonly Canton[]
 
-/**
- * With `on`, the version that applies on that day, if any. Without, today's version (see
- * `currentVersion`): a known id always finds a record, and the same one the lists give today.
- */
-function pick<T extends Validity>(
-    list: T[] | undefined,
-    options: OnDay | undefined,
-): T | undefined {
-    if (options?.on !== undefined) {
-        const day = lookupDay(options, territoryCoverage.from, 'territory')
-        return list?.find((record) => appliesOn(record, day))
-    }
-    return list && currentVersion(list, toDay(new Date()))
-}
+const pick = <T extends Validity>(list: T[] | undefined, options: OnDay | undefined) =>
+    pickVersion(list, options, territoryCoverage, 'territory')
 
 const judicialAreasById = versionsById(judicialAreas)
 const arrondissementsById = versionsById(arrondissements)
@@ -158,8 +145,7 @@ export function getCanton(id: string, options?: OnDay): Canton | undefined {
  * which case the street address decides and each canton's `territory` describes its part.
  */
 export function getCantonsForMunicipality(id: string, options: OnDay = {}): Canton[] {
-    const day = lookupDay(options, territoryCoverage.from, 'territory')
-    return (cantonsByMunicipality.get(id) ?? []).filter((canton) => appliesOn(canton, day))
+    return applyingOn(cantonsByMunicipality.get(id) ?? [], options, territoryCoverage, 'territory')
 }
 
 /**

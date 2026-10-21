@@ -18,14 +18,22 @@ export interface CantonCourt {
  * one for most municipalities, several for a city split over cantons.
  */
 export function findJusticesOfThePeace(municipalityId: string, options: OnDay = {}): CantonCourt[] {
-    // Every canton has its court: test/data.test.ts checks it
-    return getCantonsForMunicipality(municipalityId, options).map((canton) => ({
-        canton,
-        court: getJusticeOfThePeace(canton.id),
-        partial: canton.municipalities.some(
-            (m) => m.municipality === municipalityId && m.partial === true,
-        ),
-    }))
+    return getCantonsForMunicipality(municipalityId, options).flatMap((canton) => {
+        const court = getJusticeOfThePeace(canton.id, options)
+        // Every canton has its court on every day of the coverage (test/data.test.ts); the
+        // branch is there for the type
+        /* v8 ignore next */
+        if (!court) return []
+        return [
+            {
+                canton,
+                court,
+                partial: canton.municipalities.some(
+                    (m) => m.municipality === municipalityId && m.partial === true,
+                ),
+            },
+        ]
+    })
 }
 
 /**
@@ -43,7 +51,8 @@ export function findCompetentCourts(
 ): Court[] {
     const found = new Set<Court>()
     for (const canton of getCantonsForMunicipality(municipalityId, options)) {
-        for (const court of getCourtsForCanton(canton.id)) if (court.type === type) found.add(court)
+        for (const court of getCourtsForCanton(canton.id, options))
+            if (court.type === type) found.add(court)
     }
     return [...found]
 }

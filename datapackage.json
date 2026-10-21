@@ -130,7 +130,10 @@
         }
       ],
       "lastReviewed": "2026-10-20",
-      "reviewEveryMonths": 12
+      "reviewEveryMonths": 12,
+      "temporalCoverage": {
+        "start": "2025-01-01"
+      }
     },
     {
       "name": "prisons",
@@ -147,7 +150,10 @@
       "format": "json",
       "mediatype": "application/json",
       "lastReviewed": "2026-10-20",
-      "reviewEveryMonths": 12
+      "reviewEveryMonths": 12,
+      "temporalCoverage": {
+        "start": "2026-10-20"
+      }
     },
     {
       "name": "houses-of-justice",
@@ -168,7 +174,10 @@
       "format": "json",
       "mediatype": "application/json",
       "lastReviewed": "2026-10-20",
-      "reviewEveryMonths": 12
+      "reviewEveryMonths": 12,
+      "temporalCoverage": {
+        "start": "2026-10-20"
+      }
     },
     {
       "name": "interest-rates",

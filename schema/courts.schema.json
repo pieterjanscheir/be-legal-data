@@ -13,6 +13,16 @@
     "Court": {
       "type": "object",
       "properties": {
+        "validFrom": {
+          "type": "string",
+          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts.",
+          "format": "date"
+        },
+        "validTo": {
+          "type": "string",
+          "description": "Last day the record applies, YYYY-MM-DD",
+          "format": "date"
+        },
         "id": {
           "$ref": "#/definitions/CourtId",
           "description": "Stable id: the type, then the place in the court's own language (Dutch for Brussels, with `-nl` or `-fr` for the courts split by language); a division or seat adds its place. 'justice-of-the-peace-gent-1', 'enterprise-court-gent-brugge', 'police-court-brussel-fr'"

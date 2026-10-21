@@ -27,9 +27,10 @@ const local = (arrondissement: string) =>
 describe('identifiers', () => {
     const datasets = { judicialAreas, arrondissements, cantons, municipalities, courts }
 
-    it.each(Object.entries(datasets))('are unique in %s', (_name, records) => {
-        const ids = records.map((r) => r.id)
-        expect(new Set(ids).size).toBe(ids.length)
+    // A record may have several versions (validFrom), never two with the same start
+    it.each(Object.entries(datasets))('are unique in %s, per version', (_name, records) => {
+        const keys = records.map((r) => `${r.id}|${(r as { validFrom?: string }).validFrom ?? ''}`)
+        expect(new Set(keys).size).toBe(keys.length)
     })
 
     it('are lowercase kebab-case, or a REFNIS code for municipalities', () => {

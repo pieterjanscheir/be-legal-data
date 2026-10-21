@@ -1,15 +1,17 @@
 import housesData from '../data/houses-of-justice.json'
 import type { Address, Contact, Locale, SourceRef, Translated, Url } from './common'
 import type { HouseOfJusticeId } from './ids.generated'
+import { pickVersion, versionsById, type Coverage, type OnDay, type Validity } from './time'
 
 export type { HouseOfJusticeId } from './ids.generated'
+export type { OnDay, Validity } from './time'
 export * from './contacts'
 
 /**
  * A house of justice (justitiehuis, maison de justice): guidance and supervision of offenders,
  * victim support, social studies for the courts. Run by the Communities since 2015.
  */
-export interface HouseOfJustice {
+export interface HouseOfJustice extends Validity {
     /** Stable id from the name, without articles: 'justitiehuis-gent', 'maison-justice-arlon' */
     id: HouseOfJusticeId
     /** The Community that runs it */
@@ -29,14 +31,22 @@ export interface HouseOfJustice {
     sources: SourceRef[]
 }
 
+/**
+ * The houses-of-justice data describes the situation from the day the Communities' sites were
+ * first read. A house a site stops listing keeps its id and gets a `validTo`; one it starts
+ * listing gets a `validFrom`. Lookups for an earlier day throw a `RangeError`.
+ */
+export const housesOfJusticeCoverage: Coverage = { from: '2026-10-20' }
+
 // The data is validated against the JSON Schema generated from these types (test/schema.test.ts)
+/** Every record, every version */
 export const housesOfJustice = housesData as readonly HouseOfJustice[]
 
-const byId = new Map<string, HouseOfJustice>(housesOfJustice.map((h) => [h.id, h]))
+const byId = versionsById(housesOfJustice)
 
-/** A house of justice by id, e.g. 'justitiehuis-gent' */
+/** A house of justice by id, e.g. 'justitiehuis-gent': today's version, or the one of a given day */
 export function getHouseOfJustice(id: HouseOfJusticeId): HouseOfJustice
-export function getHouseOfJustice(id: string): HouseOfJustice | undefined
-export function getHouseOfJustice(id: string): HouseOfJustice | undefined {
-    return byId.get(id)
+export function getHouseOfJustice(id: string, options?: OnDay): HouseOfJustice | undefined
+export function getHouseOfJustice(id: string, options?: OnDay): HouseOfJustice | undefined {
+    return pickVersion(byId.get(id), options, housesOfJusticeCoverage, 'houses of justice')
 }

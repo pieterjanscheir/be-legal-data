@@ -51,6 +51,8 @@ matters, check the court's page (`website`).
 | Field              | Type                                  | Description                                                                                                                                                                                        |
 | ------------------ | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `id`               | `CourtId`                             | Stable id: the `type`, then the place in the court's own language: `justice-of-the-peace-gent-1`, `police-court-brussel-fr`, `enterprise-court-gent-brugge`. See [identifiers](/guide/identifiers) |
+| `validFrom`        | string?                               | First day the record applies, `YYYY-MM-DD`: the day the portal first listed it. None: since the coverage starts                                                                                    |
+| `validTo`          | string?                               | Last day the record applies: the day before the weekly check found it gone from the portal. None: still applies                                                                                    |
 | `type`             | `CourtType`                           | `justice-of-the-peace`, `police-court`, `court-of-first-instance`, `enterprise-court`, `labour-court`, `court-of-appeal`, `labour-court-of-appeal`, `court-of-assize`                              |
 | `kind`             | `'court'` \| `'division'` \| `'seat'` | The court itself, one of its divisions (afdeling, division, Abteilung), or one of the places a justice of the peace sits                                                                           |
 | `court`            | `CourtId`?                            | For a division or seat: the court it belongs to                                                                                                                                                    |
@@ -77,6 +79,8 @@ matters, check the court's page (`website`).
 ```ts
 interface Court {
     id: CourtId
+    validFrom?: string
+    validTo?: string
     type: CourtType
     kind: 'court' | 'division' | 'seat'
     court?: CourtId

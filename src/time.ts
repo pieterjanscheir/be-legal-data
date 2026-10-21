@@ -50,15 +50,59 @@ export function appliesOn(record: Validity, day: string): boolean {
     )
 }
 
+/** The first day a dataset describes */
+export interface Coverage {
+    readonly from: string
+}
+
+/** Every version of the records that share a key, oldest first */
+export function versionsBy<T extends Validity>(
+    items: readonly T[],
+    keyOf: (item: T) => string | undefined,
+): Map<string, T[]> {
+    const map = new Map<string, T[]>()
+    for (const item of items) {
+        const key = keyOf(item)
+        if (key !== undefined) map.set(key, [...(map.get(key) ?? []), item])
+    }
+    for (const list of map.values())
+        list.sort((a, b) => (a.validFrom ?? '').localeCompare(b.validFrom ?? ''))
+    return map
+}
+
 /** Every version of each record by id, oldest first */
 export function versionsById<T extends { id: string } & Validity>(
     items: readonly T[],
 ): Map<string, T[]> {
-    const map = new Map<string, T[]>()
-    for (const item of items) map.set(item.id, [...(map.get(item.id) ?? []), item])
-    for (const list of map.values())
-        list.sort((a, b) => (a.validFrom ?? '').localeCompare(b.validFrom ?? ''))
-    return map
+    return versionsBy(items, (item) => item.id)
+}
+
+/**
+ * With `on`, the version that applies on that day, if any. Without, today's version (see
+ * `currentVersion`): a known id always finds a record, and the same one the lists give today.
+ */
+export function pickVersion<T extends Validity>(
+    versions: readonly T[] | undefined,
+    options: OnDay | undefined,
+    coverage: Coverage,
+    dataset: string,
+): T | undefined {
+    if (options?.on !== undefined) {
+        const day = lookupDay(options, coverage.from, dataset)
+        return versions?.find((record) => appliesOn(record, day))
+    }
+    return versions && currentVersion(versions, toDay(new Date()))
+}
+
+/** The records that apply on the day asked for, today by default */
+export function applyingOn<T extends Validity>(
+    records: readonly T[],
+    options: OnDay,
+    coverage: Coverage,
+    dataset: string,
+): T[] {
+    const day = lookupDay(options, coverage.from, dataset)
+    return records.filter((record) => appliesOn(record, day))
 }
 
 /**

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import {
+    appliesOn,
     arrondissements,
     cantons,
     courts,
@@ -13,6 +14,7 @@ import {
     getInterestRate,
     getLatestKnownRateDate,
     interestRates,
+    toDay,
     type InterestType,
 } from '../src'
 
@@ -23,9 +25,15 @@ const consecutive = <T>(items: readonly T[]): [T, T][] =>
         return next === undefined ? [] : [[item, next] as [T, T]]
     })
 
+// The records that apply today; the files hold every version (validFrom, validTo)
+const today = toDay(new Date())
+const current = courts.filter((c) => appliesOn(c, today))
+
 describe('data integrity', () => {
-    it('has unique court ids', () => {
-        const ids = courts.map((c) => c.id)
+    it('has one version of each court per day: unique (id, validFrom), and no overlaps', () => {
+        const keys = courts.map((c) => `${c.id}|${c.validFrom ?? ''}`)
+        expect(new Set(keys).size).toBe(keys.length)
+        const ids = current.map((c) => c.id)
         expect(new Set(ids).size).toBe(ids.length)
     })
 
@@ -69,7 +77,7 @@ describe('data integrity', () => {
     })
 
     it('has a justice of the peace for every canton, serving only that canton', () => {
-        const served = courts
+        const served = current
             .filter((c) => c.type === 'justice-of-the-peace' && c.kind === 'court')
             .map((c) => c.canton)
         expect([...served].sort()).toEqual(cantons.map((c) => c.id).sort())
@@ -117,7 +125,7 @@ describe('data integrity', () => {
         'court-of-assize',
     ])('puts every canton under one %s, or one per language in Brussels', (type) => {
         for (const canton of cantons) {
-            const covering = courts.filter(
+            const covering = current.filter(
                 (c) => c.kind === 'court' && c.type === type && c.cantons?.includes(canton.id),
             )
             const languages = covering.map((c) => /-(nl|fr)$/.exec(c.id)?.[1] ?? '-').sort()
@@ -130,7 +138,7 @@ describe('data integrity', () => {
 
     it('has every kind of court', () => {
         const count = (type: string) =>
-            courts.filter((c) => c.type === type && c.kind === 'court').length
+            current.filter((c) => c.type === type && c.kind === 'court').length
         expect(count('court-of-appeal')).toBe(5)
         expect(count('labour-court-of-appeal')).toBe(5)
         // 12 arrondissements, with Brussels split by language

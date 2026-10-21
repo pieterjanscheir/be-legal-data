@@ -1,15 +1,22 @@
 <script setup lang="ts">
 import { withBase } from 'vitepress'
 import {
+    appliesOn,
     judicialAreas,
     arrondissements,
     cantons,
     municipalities,
-    courts,
-    prisons,
-    housesOfJustice,
+    findCourts,
+    prisons as allPrisons,
+    housesOfJustice as allHouses,
+    toDay,
 } from '../../../src'
 
+// Today's records: the files also hold retired versions
+const today = toDay(new Date())
+const courts = findCourts({})
+const prisons = allPrisons.filter((p) => appliesOn(p, today))
+const housesOfJustice = allHouses.filter((h) => appliesOn(h, today))
 const splitCantons = cantons.filter((c) => c.municipalities.some((m) => m.partial)).length
 </script>
 
