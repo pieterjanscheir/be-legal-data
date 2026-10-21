@@ -1,0 +1,139 @@
+# Bijdragen {#contributing}
+
+## Data bijwerken {#updating-data}
+
+De hoven en rechtbanken, gevangenissen en justitiehuizen worden elke week uit de officiële
+bronnen gebouwd ([hoe](./data-quality#how-the-data-is-built)): bewerk ze niet met de hand.
+Verbeter de parser in `scripts/parse`, of, als de bron zelf fout is, meld het aan het gerecht.
+De wekelijkse pull request wordt nagekeken als elke andere: vergelijk de diff met de bronnen
+voor je merget.
+
+Voor de datasets die met de hand worden bijgehouden (rechtsgebieden, arrondissementen,
+rentevoeten):
+
+1. Bewerk de JSON in `data/`. Behoud de bestaande ids: projecten slaan ze op.
+2. Werk `lastReviewed` van de dataset in `datapackage.json` bij als je ze tegen haar bronnen
+   hebt gecontroleerd.
+3. `pnpm check`: genereert de id-types en schema's opnieuw, typecheckt, lint en controleert de
+   opmaak, bouwt, draait de tests met coverage en lint het package. Het faalt als de
+   gegenereerde bestanden niet gecommit zijn.
+4. Voeg een regel toe aan `CHANGELOG.md` onder Unreleased, en commit (inclusief `schema/` en
+   `src/ids.generated.ts`). De build-output (`dist/`) wordt niet gecommit: die wordt voor elke
+   release gebouwd en naar npm gepubliceerd.
+
+### Kantons en gemeenten {#cantons-and-municipalities}
+
+`data/cantons.json` en `data/municipalities.json` zijn gegenereerd; bewerk ze niet met de hand.
+Draai `pnpm build:cantons` (heeft netwerktoegang en `unzip` nodig). Het leest:
+
+- de bijlage bij het Gerechtelijk Wetboek, "Gebiedsomschrijving en zetel van hoven en rechtbanken"
+  ([ELI, numac 1967101058](https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel)),
+  in het Nederlands en het Frans;
+- het bestand met de bevolking per gemeente van Statbel voor de huidige gemeenten en
+  REFNIS-codes.
+
+Het parst de Nederlandse en de Franse tekst afzonderlijk en weigert iets te schrijven tenzij ze
+overeenstemmen en elke gemeente precies één keer gedekt is (of over meerdere kantons gesplitst).
+Exoniemen die de bijlage gebruikt maar Statbel niet (`Gembloers`, `Saint-Nicolas`, …), tikfouten
+in de bijlage en grensvermeldingen die het niet uit elkaar kan houden, staan bovenaan het script
+opgesomd.
+
+Draai het opnieuw nadat een wet de bijlage wijzigt of gemeenten fuseren. Kanton-ids volgen de
+plaatselijke taal (Nederlands in Vlaanderen en Brussel, Frans in Wallonië, Duits rond Eupen); het
+vredegerecht van kanton `x` heeft id `justice-of-the-peace-x` en verwijst ernaar via zijn veld
+`canton`.
+
+### Gescrapete datasets {#scraped-datasets}
+
+```bash
+pnpm fetch:sources            # elke bron naar .sources/ (ongeveer 20 minuten, beleefd)
+pnpm fetch:sources courts     # of één bron
+pnpm build:data               # herbouw de gescrapete datasets uit .sources/
+```
+
+Of check de laatste snapshots uit in plaats van ze op te halen:
+`git worktree add .sources origin/sources`.
+
+Een bron is een walk in `scripts/sources/catalog.ts`; een parser leest haar snapshots in
+`scripts/parse`. Als een site haar opmaak wijzigt, tonen de parsertests in `test/parse` (op
+ingekorte kopieën van echte pagina's in `test/fixtures/sources`) wat er brak.
+
+### Nieuwe rentevoeten {#new-interest-rates}
+
+- **Handelstransacties**: FOD Financiën publiceert de rentevoet per semester. Voeg een periode
+  toe met `from`, `to`, `rate`, en de datum van het Staatsblad in `note`.
+- **Wettelijke interest**: gepubliceerd per kalenderjaar. Voeg een periode toe voor het jaar.
+
+## Een dataset toevoegen {#adding-a-dataset}
+
+Elke dataset krijgt dezelfde behandeling, zodat gebruikers erop kunnen rekenen:
+
+1. **Data**: `data/<name>.json`, een array van records. Elke waarde uit een officiële bron.
+2. **Ids**: volg de [identifier-regels](./identifiers): een officiële code als die bestaat,
+   anders kebab-case in kleine letters uit de naam in de plaatselijke taal (`scripts/id.ts`).
+3. **Links, geen kopieën**: verwijs naar arrondissementen, kantons en gemeenten via hun id, en
+   hergebruik de gedeelde types (`Translated`, `Address`, `Contact`, `SourceRef`).
+4. **Bronnen**: een `sources: [{ url, retrieved }]` op elk record, en een entry in
+   `datapackage.json` met de bronnen van de dataset, de licentie, `lastReviewed` en
+   `reviewEveryMonths`.
+5. **Types en helpers**: `src/<name>.ts`, geëxporteerd uit `src/index.ts`, plus een entry point
+   in `tsup.config.ts` en in de `exports` van `package.json`.
+6. **Schema**: voeg het bestandstype toe aan `scripts/schema-types.ts` en
+   `scripts/build-schemas.ts`.
+7. **Bron en parser**: een walk in `scripts/sources/catalog.ts` die de officiële pagina's
+   ophaalt, en een parser in `scripts/parse` die het bestand uit de snapshots bouwt, met
+   fixtures en tests. Hij leest alleen wat hij met zekerheid kan lezen en rapporteert de rest.
+8. **Tests**: unieke ids, verwijzingen die oplossen, en het aantal dat de officiële bron geeft.
+9. **Docs**: een pagina onder `docs/data/` met waarvoor het dient, bron en updates, en een
+   veldentabel.
+
+## Controles {#checks}
+
+| Commando                    | Wat het doet                                                                                                                                                                |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `pnpm check`                | Alles wat CI draait: `generate`, `typecheck`, `lint`, `build`, `test:coverage`, `test:package`, `lint:package`, en een controle dat de gegenereerde bestanden gecommit zijn |
+| `pnpm test`                 | Unit-, integriteits-, schema- en typetests op de broncode (geen build nodig)                                                                                                |
+| `pnpm test:package`         | Smoketests van het gebouwde package met `import` en `require()`: draai eerst `pnpm build`                                                                                   |
+| `pnpm test:coverage`        | Hetzelfde, maar faalt onder 100 % dekking van `src/`                                                                                                                        |
+| `pnpm lint` / `pnpm format` | ESLint en Prettier: controleren / herstellen                                                                                                                                |
+| `pnpm generate`             | Genereert `src/ids.generated.ts` (id-types) en `schema/` opnieuw uit de data en de types                                                                                    |
+| `pnpm lint:package`         | `publint` en `arethetypeswrong` op het gepackte package                                                                                                                     |
+| `pnpm test:freshness`       | Datumgebonden controles: ontbrekende rentevoeten, achterstallig nazicht. Geen deel van `check`; `FRESHNESS_ONLINE=1` controleert ook de bron-URL's                          |
+| `pnpm fetch:sources`        | Haalt de officiële bronnen op naar `.sources/`                                                                                                                              |
+| `pnpm build:data`           | Herbouwt de hoven en rechtbanken, gevangenissen en justitiehuizen uit `.sources/`                                                                                           |
+| `pnpm build:csv`            | Schrijft de data als CSV-tabellen naar `csv/`                                                                                                                               |
+
+## Een release maken {#releasing}
+
+1. Verplaats de entries onder Unreleased in `CHANGELOG.md` naar de nieuwe versie.
+2. Verhoog `version` in `package.json` en commit.
+3. Tag en push: `git tag v0.3.0 && git push && git push --tags`.
+
+De release-workflow draait `pnpm check`, publiceert de tag naar npm met provenance, en maakt een
+GitHub-release met de data, de schema's en de CSV-tabellen als bijlage. De tag moet overeenkomen
+met `version`.
+
+## Deze website {#this-website}
+
+De site staat in `docs/` en wordt gebouwd met [VitePress](https://vitepress.dev). De
+interactieve tabellen importeren de eigen `src/` en `data/` van het package, zodat ze altijd de
+data in de repository tonen.
+
+```bash
+pnpm docs:dev      # lokale server met hot reload
+pnpm docs:build    # statische site in docs/.vitepress/dist
+pnpm docs:preview  # serveer de gebouwde site
+```
+
+Elke push naar `main` deployt hem naar GitHub Pages. CI bouwt hem bij elke pull request, zodat
+een kapotte pagina vóór het mergen opvalt.
+
+### Vertalingen {#translations}
+
+De Engelse pagina's in `docs/` zijn de bron. De Nederlandse (`docs/nl/`) en Franse
+(`docs/fr/`) pagina's zijn vertalingen ervan en worden bijgewerkt nadat de Engelse pagina
+verandert. Wijzig je een Engelse pagina, wijzig dan ook dezelfde pagina in `docs/nl/` en
+`docs/fr/`, of zeg in de pull request dat de vertalingen achterlopen. Code, ids, veldnamen en
+officiële namen blijven in elke taal zoals ze zijn, en elke kop behoudt het Engelse anker
+(`## Kop {#english-anchor}`), zodat links tussen pagina's en de taalkeuze blijven werken. Het
+changelog wordt alleen in het Engels bijgehouden.

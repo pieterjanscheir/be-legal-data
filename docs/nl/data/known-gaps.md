@@ -1,0 +1,36 @@
+# Bekende hiaten {#known-gaps}
+
+- **Gerechten die niet op het portaal staan** zitten niet in de data: het Hof van Cassatie, het
+  Grondwettelijk Hof, de Raad van State en de tuchtrechtbanken
+  ([#4](https://github.com/pieterjanscheir/be-legal-data/issues/4)).
+- **26 gerechten hebben geen enkel adres**: een gerecht waarvan elke afdeling haar eigen adres
+  heeft (het adres staat op de afdeling), of een dat zijn adressen als een zin publiceert. Hun
+  `address` ontbreekt in plaats van geraden te zijn; de afdelingen hebben het hunne.
+- **Openingsuren**: 227 van de 344 gerechten die uren publiceren, hebben ze in de
+  `opening_hours`-syntaxis. De rest publiceert tekst met opmerkingen of tijdelijke regelingen,
+  alleen bewaard als `openingHoursText`.
+- **Contactlabels staan in de taal van de pagina**: voor een tweetalig gerecht die van de
+  Nederlandse pagina (de Duitse in Eupen). De namen en uren van de Franse pagina zijn er ook.
+- **Sommige waarden op de bronpagina's zijn niet leesbaar**, en worden weggelaten: een
+  telefoonnummer zonder zonenummer (`+32 682 05 28`), een fax die "désactivé" is. De
+  wekelijkse data-pull-request somt ze op, zodat ze aan het gerecht gemeld kunnen worden.
+- **De Franse pagina van het vredegerecht van Tongeren-Borgloon** noemt het nog altijd
+  `Justice de paix de Tongres-Fourons`, zijn naam van vóór de gemeentefusies van 2025. De data
+  bewaart de naam zoals gepubliceerd en koppelt hem aan het juiste kanton.
+- **Nog geen historiek**: de territoriumdata beschrijft 1 januari 2025 en later, en de
+  gerechtendata de dag waarop ze gelezen is. Opzoekingen voor een vroegere dag gooien een fout
+  in plaats van te antwoorden met de kaart van vandaag
+  ([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
+- **Kantonnamen en zetels** zijn er alleen in het Nederlands en het Frans: het bijvoegsel bij
+  het Gerechtelijk Wetboek heeft geen geconsolideerde Duitse tekst.
+- **Gesplitste gemeenten** (Antwerpen, Gent, Brussel, Luik, …) horen bij meerdere kantons. Het
+  juiste kiezen vereist het straatadres, en de grenzen bestaan alleen als juridisch proza in
+  `territory` ([#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)).
+- **ECLI-codes** worden alleen gegeven waar ze in gepubliceerde beslissingen voorkomen; de
+  vredegerechten en de meeste politierechtbanken hebben er daar geen.
+- **Het justitiehuis in Eupen** ontbreekt
+  ([#3](https://github.com/pieterjanscheir/be-legal-data/issues/3)).
+
+Iets fout of ontbrekend gevonden?
+[Meld een datacorrectie](https://github.com/pieterjanscheir/be-legal-data/issues/new?template=data-correction.yml)
+of zie [bijdragen](/nl/guide/contributing). Geplande datasets staan op de [roadmap](./roadmap).

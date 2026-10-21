@@ -33,7 +33,7 @@ when the rate isn't published yet.
 
 <InterestRates />
 
-## The 2013–2015 contract rule
+## The 2013–2015 contract rule {#the-2013-2015-contract-rule}
 
 From 2013 to 15 March 2015 the commercial rate depends on when the contract was concluded. Those
 periods carry an extra `rateForContractsBefore20130316`. By default `getInterestRate` returns the

@@ -7,9 +7,54 @@ import {
     getJusticeOfThePeace,
     getContact,
 } from '../../../src'
+import { fmt, inLang, useLocale, useStrings } from '../i18n'
 
-const provinces: Record<string, string> = {
-    '04000': 'Brussels-Capital Region',
+const { dataLang } = useLocale()
+const t = useStrings({
+    root: {
+        municipality: 'Municipality or REFNIS code',
+        placeholder: 'e.g. Gent, Liège, 44021',
+        match: 'Match',
+        none: 'No municipality found.',
+        split: 'split over {n} cantons',
+        cantonId: 'Canton id',
+        seat: 'Seat',
+        arrondissement: 'Arrondissement',
+        justiceOfThePeace: 'Justice of the peace',
+        whichPart: 'Which part of {name} belongs to which canton?',
+        brussels: 'Brussels-Capital Region',
+    },
+    nl: {
+        municipality: 'Gemeente of REFNIS-code',
+        placeholder: 'bv. Gent, Liège, 44021',
+        match: 'Resultaat',
+        none: 'Geen gemeente gevonden.',
+        split: 'verdeeld over {n} kantons',
+        cantonId: 'Kanton-id',
+        seat: 'Zetel',
+        arrondissement: 'Arrondissement',
+        justiceOfThePeace: 'Vredegerecht',
+        whichPart: 'Welk deel van {name} hoort bij welk kanton?',
+        brussels: 'Brussels Hoofdstedelijk Gewest',
+    },
+    fr: {
+        municipality: 'Commune ou code REFNIS',
+        placeholder: 'p. ex. Gand, Liège, 44021',
+        match: 'Résultat',
+        none: 'Aucune commune trouvée.',
+        split: 'répartie sur {n} cantons',
+        cantonId: 'Id du canton',
+        seat: 'Siège',
+        arrondissement: 'Arrondissement',
+        justiceOfThePeace: 'Justice de paix',
+        whichPart: 'Quelle partie de {name} relève de quel canton ?',
+        brussels: 'Région de Bruxelles-Capitale',
+    },
+})
+
+// The provinces carry their own name; only the Brussels-Capital Region is translated
+const provinces = computed<Record<string, string>>(() => ({
+    '04000': t.value.brussels,
     '10000': 'Antwerpen',
     '20001': 'Vlaams-Brabant',
     '20002': 'Brabant wallon',
@@ -20,7 +65,7 @@ const provinces: Record<string, string> = {
     '70000': 'Limburg',
     '80000': 'Luxembourg',
     '90000': 'Namur',
-}
+}))
 
 const query = ref('Gent')
 const selected = ref<string | null>(null)
@@ -58,15 +103,11 @@ function label(m: { name: { nl: string; fr: string } }) {
     <div class="bld-panel">
         <div class="bld-controls">
             <label>
-                Municipality or REFNIS code
-                <input
-                    v-model="query"
-                    placeholder="e.g. Gent, Liège, 44021"
-                    @input="selected = null"
-                />
+                {{ t.municipality }}
+                <input v-model="query" :placeholder="t.placeholder" @input="selected = null" />
             </label>
             <label v-if="matches.length > 1">
-                Match
+                {{ t.match }}
                 <select v-model="selected">
                     <option v-for="m in matches" :key="m.id" :value="m.id">
                         {{ label(m) }} ({{ m.id }})
@@ -75,24 +116,24 @@ function label(m: { name: { nl: string; fr: string } }) {
             </label>
         </div>
 
-        <p v-if="!municipality" class="bld-muted">No municipality found.</p>
+        <p v-if="!municipality" class="bld-muted">{{ t.none }}</p>
         <template v-else>
             <p>
                 <strong>{{ label(municipality) }}</strong>
                 <span class="bld-muted">
                     · REFNIS {{ municipality.id }} · {{ provinces[municipality.province] }}
                 </span>
-                <span v-if="cantons.length > 1" class="bld-badge"
-                    >split over {{ cantons.length }} cantons</span
-                >
+                <span v-if="cantons.length > 1" class="bld-badge">{{
+                    fmt(t.split, { n: cantons.length })
+                }}</span>
             </p>
             <table>
                 <thead>
                     <tr>
-                        <th>Canton id</th>
-                        <th>Seat</th>
-                        <th>Arrondissement</th>
-                        <th>Justice of the peace</th>
+                        <th>{{ t.cantonId }}</th>
+                        <th>{{ t.seat }}</th>
+                        <th>{{ t.arrondissement }}</th>
+                        <th>{{ t.justiceOfThePeace }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -104,11 +145,11 @@ function label(m: { name: { nl: string; fr: string } }) {
                             {{ c.seat.nl
                             }}<span v-if="c.seat.fr !== c.seat.nl"> / {{ c.seat.fr }}</span>
                         </td>
-                        <td>{{ getArrondissement(c.arrondissement)?.name.nl }}</td>
+                        <td>{{ inLang(getArrondissement(c.arrondissement)?.name, dataLang) }}</td>
                         <td>
                             <template v-for="court in [getJusticeOfThePeace(c.id)]" :key="c.id">
                                 <template v-if="court">
-                                    {{ court.name.nl ?? court.name.fr ?? court.name.de }}<br />
+                                    {{ inLang(court.name, dataLang) }}<br />
                                     <span class="bld-muted">{{ getContact(court, 'email') }}</span>
                                 </template>
                             </template>
@@ -117,12 +158,12 @@ function label(m: { name: { nl: string; fr: string } }) {
                 </tbody>
             </table>
             <details v-if="cantons.length > 1">
-                <summary>Which part of {{ municipality.name.nl }} belongs to which canton?</summary>
+                <summary>{{ fmt(t.whichPart, { name: municipality.name[dataLang] }) }}</summary>
                 <div v-for="c in cantons" :key="c.id">
                     <h4>
                         <code>{{ c.id }}</code>
                     </h4>
-                    <p class="bld-muted">{{ c.territory.nl }}</p>
+                    <p class="bld-muted">{{ c.territory[dataLang] }}</p>
                 </div>
             </details>
         </template>

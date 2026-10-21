@@ -82,6 +82,8 @@ OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
 
 ### Added
 
+- The documentation site is available in Dutch (/nl/) and French (/fr/) next to English, with a
+  language switcher. English is the source; the translations follow it.
 - Prisons: the 39 prisons and detention houses, in `data/prisons.json` and
   `be-legal-data/prisons`.
 - Houses of justice: the 14 Flemish (with OVO number) and 13 French-speaking houses, in

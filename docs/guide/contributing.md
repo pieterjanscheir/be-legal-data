@@ -116,3 +116,13 @@ pnpm docs:preview  # serve the built site
 
 Every push to `main` deploys it to GitHub Pages. CI builds it on every pull request, so a broken
 page is caught before merging.
+
+### Translations
+
+The English pages in `docs/` are the source of truth. The Dutch (`docs/nl/`) and French
+(`docs/fr/`) pages are translations of them and are updated after the English page changes.
+When you change an English page, change the same page in `docs/nl/` and `docs/fr/` too, or say
+in the pull request that the translations lag behind. Code, ids, field names and official names
+stay as they are in every language, and every heading keeps the English anchor
+(`## Kop {#english-anchor}`) so cross-links and the language switcher keep working. The
+changelog is kept in English only.
