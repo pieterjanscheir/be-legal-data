@@ -3,27 +3,27 @@
 Tout est exporté depuis la racine du package, et chaque jeu de données a aussi son propre point d'entrée :
 
 ```ts
-import { getCanton, getInterestRate /* … */ } from 'be-legal-data'
+import { getCanton, getInterestRate /* … */ } from 'belgica'
 
 // Seulement ce que vous utilisez : les taux d'intérêt seuls ne pèsent que quelques kilooctets
-import { getInterestRate } from 'be-legal-data/interest-rates'
-import { getCourt, getJusticeOfThePeace } from 'be-legal-data/courts'
-import { getCanton, getCantonsForMunicipality } from 'be-legal-data/territory'
-import { getPrison } from 'be-legal-data/prisons'
-import { getHouseOfJustice } from 'be-legal-data/houses-of-justice'
+import { getInterestRate } from 'belgica/interest-rates'
+import { getCourt, getJusticeOfThePeace } from 'belgica/courts'
+import { getCanton, getCantonsForMunicipality } from 'belgica/territory'
+import { getPrison } from 'belgica/prisons'
+import { getHouseOfJustice } from 'belgica/houses-of-justice'
 ```
 
-| Point d'entrée                       | Contenu                                                          |
-| ------------------------------------ | ---------------------------------------------------------------- |
-| `be-legal-data`                      | Tout ce qui suit                                                 |
-| `be-legal-data/territory`            | Ressorts, arrondissements, cantons, communes                     |
-| `be-legal-data/courts`               | Cours et tribunaux, et les helpers de coordonnées                |
-| `be-legal-data/prisons`              | Prisons, et les helpers de coordonnées                           |
-| `be-legal-data/houses-of-justice`    | Maisons de justice, et les helpers de coordonnées                |
-| `be-legal-data/interest-rates`       | Taux d'intérêt                                                   |
-| `be-legal-data/data/*.json`          | Les fichiers de données bruts                                    |
-| `be-legal-data/schema/*.schema.json` | [JSON Schemas](/fr/guide/schema)                                 |
-| `be-legal-data/datapackage.json`     | [Descripteur de data package](/fr/guide/schema#datapackage-json) |
+| Point d'entrée                 | Contenu                                                          |
+| ------------------------------ | ---------------------------------------------------------------- |
+| `belgica`                      | Tout ce qui suit                                                 |
+| `belgica/territory`            | Ressorts, arrondissements, cantons, communes                     |
+| `belgica/courts`               | Cours et tribunaux, et les helpers de coordonnées                |
+| `belgica/prisons`              | Prisons, et les helpers de coordonnées                           |
+| `belgica/houses-of-justice`    | Maisons de justice, et les helpers de coordonnées                |
+| `belgica/interest-rates`       | Taux d'intérêt                                                   |
+| `belgica/data/*.json`          | Les fichiers de données bruts                                    |
+| `belgica/schema/*.schema.json` | [JSON Schemas](/fr/guide/schema)                                 |
+| `belgica/datapackage.json`     | [Descripteur de data package](/fr/guide/schema#datapackage-json) |
 
 Conventions :
 
@@ -377,7 +377,7 @@ Chaque jeu de données indique à partir de quel jour il décrit la situation ; 
 lève une `RangeError` plutôt que de répondre avec la carte d'aujourd'hui. Le territoire et la liste des juridictions
 découlent de la loi telle que modifiée au 1er janvier 2025 ; les prisons et les maisons de justice sont connues
 depuis le jour où leurs sites ont été lus pour la première fois. Des versions antérieures sont prévues
-([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
+([#27](https://github.com/pieterjanscheir/belgica/issues/27)).
 
 Les tableaux exportés (`courts`, `prisons`, …) contiennent chaque version de chaque enregistrement. Un enregistrement
 que la source cesse de recenser n'est pas supprimé : il garde son id et reçoit un `validTo`, la veille de la

@@ -30,7 +30,7 @@ opmaken of opzoeken; ze mag geen juridisch feit construeren.
 **Waarom.** Code die een feit in elkaar zet, kan fout zijn op manieren die tests niet vangen: de
 Franse namen van rechtbanken die een vroegere `formatCourtName` bouwde, waren fout
 (`Tribunal de paix …`, terwijl de rechtbanken zichzelf `Justice de paix …` noemen;
-[#10](https://github.com/pieterjanscheir/be-legal-data/issues/10)). Een opgeslagen waarde kan
+[#10](https://github.com/pieterjanscheir/belgica/issues/10)). Een opgeslagen waarde kan
 tegen haar bron worden gecontroleerd.
 
 **Dus.** Namen van rechtbanken worden opgeslagen zoals elke rechtbank ze publiceert, in elke
@@ -57,7 +57,7 @@ beide kanten verandert. Een veld wordt gevalideerd door het schema (dat de geldi
 door de tests.
 
 **Dus.** Adressen van rechtbanken zullen op dezelfde manier naar hun gemeente verwijzen
-([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28)).
+([#28](https://github.com/pieterjanscheir/belgica/issues/28)).
 
 ## 5. Canonieke waarden, presentatie in code {#_5-canonical-values-presentation-in-code}
 
@@ -102,7 +102,7 @@ verzwaard wordt met megabytes HTML. De parsers worden getest op ingekorte kopie�
 pagina's. Een pagina die de parser niet kan plaatsen, stopt de build in plaats van een half juist
 record op te leveren. Twee bronnen weigeren de servers van GitHub (ejustice, police.be); die
 worden vanaf een gewone machine opgehaald
-([#24](https://github.com/pieterjanscheir/be-legal-data/issues/24)).
+([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
 
 ## 8. Distributie: alleen ESM, Node 22.12+, gebouwd bij release {#_8-distribution-esm-only-node-22-12-built-on-release}
 
@@ -156,7 +156,7 @@ werd betekend, welke rentevoet gold toen de factuur vervallen was. Kantons, geme
 rechtbanken veranderen; een model dat alleen "nu" kent, beantwoordt vragen over het verleden met
 de kaart van vandaag, en ziet er daarbij juist uit. Tijd later toevoegen zou elk id en elke
 opzoeking veranderen, dus zit ze in het model vóór de geschiedenis in de data zit
-([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
+([#27](https://github.com/pieterjanscheir/belgica/issues/27)).
 
 **Dus.** Rentevoeten hebben al periodes. Een opzoeking op id zonder dag geeft de versie van
 vandaag, zodat bekende ids hun niet-`undefined` type behouden; met een dag kan ze niets vinden.
@@ -177,6 +177,6 @@ rekenbladen en andere talen, niet in JavaScript.
 
 | Vraag                                                           | Issue                                                                                   |
 | --------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| Kantongrenzen als geometrie voor gesplitste steden              | [#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)                       |
-| Geschiedenis van vóór 1 januari 2025                            | [#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)                       |
+| Kantongrenzen als geometrie voor gesplitste steden              | [#29](https://github.com/pieterjanscheir/belgica/issues/29)                             |
+| Geschiedenis van vóór 1 januari 2025                            | [#27](https://github.com/pieterjanscheir/belgica/issues/27)                             |
 | Interestberekening over een periode (dagtelling, kapitalisatie) | Niet gepland tot de methode uit rechtspraak of officiële richtlijnen kan worden gehaald |

@@ -1,5 +1,5 @@
 {
-    "name": "be-legal-data",
+    "name": "belgica",
     "version": "0.2.0",
     "description": "Belgian legal reference data: courts, judicial cantons and arrondissements, municipalities, and legal and commercial interest rates.",
     "keywords": [
@@ -17,13 +17,13 @@
     ],
     "license": "MIT AND CC-BY-4.0",
     "author": "Pieter-Jan Scheir",
-    "homepage": "https://pieterjanscheir.github.io/be-legal-data/",
+    "homepage": "https://pieterjanscheir.github.io/belgica/",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/pieterjanscheir/be-legal-data.git"
+        "url": "git+https://github.com/pieterjanscheir/belgica.git"
     },
     "bugs": {
-        "url": "https://github.com/pieterjanscheir/be-legal-data/issues"
+        "url": "https://github.com/pieterjanscheir/belgica/issues"
     },
     "type": "module",
     "packageManager": "pnpm@11.7.0",

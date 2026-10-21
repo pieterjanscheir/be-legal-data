@@ -40,7 +40,7 @@ jobs:
               # people who don't use npm
               run: |
                   pnpm build:csv
-                  name="be-legal-data-data-$GITHUB_REF_NAME"
+                  name="belgica-data-$GITHUB_REF_NAME"
                   mkdir "$name"
                   cp -r data schema datapackage.json LICENSE-DATA csv "$name"/
                   zip -qr "$name.zip" "$name"

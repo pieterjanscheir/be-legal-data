@@ -3,27 +3,27 @@
 Everything is exported from the package root, and each dataset also has its own entry point:
 
 ```ts
-import { getCanton, getInterestRate /* … */ } from 'be-legal-data'
+import { getCanton, getInterestRate /* … */ } from 'belgica'
 
 // Only what you use: the interest rates alone are a few kilobytes
-import { getInterestRate } from 'be-legal-data/interest-rates'
-import { getCourt, getJusticeOfThePeace } from 'be-legal-data/courts'
-import { getCanton, getCantonsForMunicipality } from 'be-legal-data/territory'
-import { getPrison } from 'be-legal-data/prisons'
-import { getHouseOfJustice } from 'be-legal-data/houses-of-justice'
+import { getInterestRate } from 'belgica/interest-rates'
+import { getCourt, getJusticeOfThePeace } from 'belgica/courts'
+import { getCanton, getCantonsForMunicipality } from 'belgica/territory'
+import { getPrison } from 'belgica/prisons'
+import { getHouseOfJustice } from 'belgica/houses-of-justice'
 ```
 
-| Entry point                          | Contents                                                  |
-| ------------------------------------ | --------------------------------------------------------- |
-| `be-legal-data`                      | Everything below                                          |
-| `be-legal-data/territory`            | Judicial areas, arrondissements, cantons, municipalities  |
-| `be-legal-data/courts`               | Courts, and the contact helpers                           |
-| `be-legal-data/prisons`              | Prisons, and the contact helpers                          |
-| `be-legal-data/houses-of-justice`    | Houses of justice, and the contact helpers                |
-| `be-legal-data/interest-rates`       | Interest rates                                            |
-| `be-legal-data/data/*.json`          | The raw data files                                        |
-| `be-legal-data/schema/*.schema.json` | [JSON Schemas](/guide/schema)                             |
-| `be-legal-data/datapackage.json`     | [Data package descriptor](/guide/schema#datapackage-json) |
+| Entry point                    | Contents                                                  |
+| ------------------------------ | --------------------------------------------------------- |
+| `belgica`                      | Everything below                                          |
+| `belgica/territory`            | Judicial areas, arrondissements, cantons, municipalities  |
+| `belgica/courts`               | Courts, and the contact helpers                           |
+| `belgica/prisons`              | Prisons, and the contact helpers                          |
+| `belgica/houses-of-justice`    | Houses of justice, and the contact helpers                |
+| `belgica/interest-rates`       | Interest rates                                            |
+| `belgica/data/*.json`          | The raw data files                                        |
+| `belgica/schema/*.schema.json` | [JSON Schemas](/guide/schema)                             |
+| `belgica/datapackage.json`     | [Data package descriptor](/guide/schema#datapackage-json) |
 
 Conventions:
 
@@ -378,7 +378,7 @@ Each dataset says from which day it describes the situation; a lookup for an ear
 throws a `RangeError` rather than answer with today's map. The territory and the list of courts
 follow from the law as amended for 1 January 2025; prisons and houses of justice are known from
 the day their sites were first read. Earlier versions are planned
-([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
+([#27](https://github.com/pieterjanscheir/belgica/issues/27)).
 
 The exported arrays (`courts`, `prisons`, …) hold every version of every record. A record the
 source stops listing isn't deleted: it keeps its id and gets a `validTo`, the day before the

@@ -6,7 +6,7 @@ import { data as stats } from '../../.vitepress/stats.data'
 
 - **Gerechten die niet op het portaal staan** zitten niet in de data: het Hof van Cassatie, het
   Grondwettelijk Hof, de Raad van State en de tuchtrechtbanken
-  ([#4](https://github.com/pieterjanscheir/be-legal-data/issues/4)).
+  ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
 - **De bevoegdheid stopt bij het gerecht.** `cantons` en `findCompetentCourts` zeggen welk gerecht
   een gemeente bestrijkt, niet welke van zijn afdelingen: het gebied van een afdeling wordt bij
   koninklijk besluit bepaald en zit nog niet in de data.
@@ -29,17 +29,17 @@ import { data as stats } from '../../.vitepress/stats.data'
 - **Nog geen historiek**: de territoriumdata beschrijft 1 januari 2025 en later, en de
   gerechtendata de dag waarop ze gelezen is. Opzoekingen voor een vroegere dag gooien een fout
   in plaats van te antwoorden met de kaart van vandaag
-  ([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
+  ([#27](https://github.com/pieterjanscheir/belgica/issues/27)).
 - **Kantonnamen en zetels** zijn er alleen in het Nederlands en het Frans: het bijvoegsel bij
   het Gerechtelijk Wetboek heeft geen geconsolideerde Duitse tekst.
 - **Gesplitste gemeenten** (Antwerpen, Gent, Brussel, Luik, …) horen bij meerdere kantons. Het
   juiste kiezen vereist het straatadres, en de grenzen bestaan alleen als juridisch proza in
-  `territory` ([#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)).
+  `territory` ([#29](https://github.com/pieterjanscheir/belgica/issues/29)).
 - **ECLI-codes** worden alleen gegeven waar ze in gepubliceerde beslissingen voorkomen; de
   vredegerechten en de meeste politierechtbanken hebben er daar geen.
 - **Het justitiehuis in Eupen** ontbreekt
-  ([#3](https://github.com/pieterjanscheir/be-legal-data/issues/3)).
+  ([#3](https://github.com/pieterjanscheir/belgica/issues/3)).
 
 Iets fout of ontbrekend gevonden?
-[Meld een datacorrectie](https://github.com/pieterjanscheir/be-legal-data/issues/new?template=data-correction.yml)
+[Meld een datacorrectie](https://github.com/pieterjanscheir/belgica/issues/new?template=data-correction.yml)
 of zie [bijdragen](/nl/guide/contributing). Geplande datasets staan op de [roadmap](./roadmap).

@@ -63,5 +63,5 @@ boundaries, bailiffs, police zones and the cadastre and mortgage offices.
 ::: warning Reference data, not legal advice
 The data is checked against official sources, but sources change and mistakes happen. Check
 the official source before relying on a value, and
-[report anything wrong](https://github.com/pieterjanscheir/be-legal-data/issues/new?template=data-correction.yml).
+[report anything wrong](https://github.com/pieterjanscheir/belgica/issues/new?template=data-correction.yml).
 :::

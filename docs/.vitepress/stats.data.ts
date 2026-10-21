@@ -79,7 +79,7 @@ function sizes(): EntrySize[] | null {
         const sources = [...filesOf(entry)].map((f) => readFileSync(join(DIST, f)))
         const raw = sources.reduce((n, buffer) => n + buffer.length, 0)
         const gzip = sources.reduce((n, buffer) => n + gzipSync(buffer).length, 0)
-        return { entry: entry === 'index' ? 'be-legal-data' : `be-legal-data/${entry}`, raw, gzip }
+        return { entry: entry === 'index' ? 'belgica' : `belgica/${entry}`, raw, gzip }
     })
 }
 

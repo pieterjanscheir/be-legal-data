@@ -16,8 +16,8 @@ niet uit elkaar kunnen groeien: CI faalt wanneer een van de drie het oneens is.
 | `data/interest-rates.json`    | [`interest-rates.schema.json`](/schema/interest-rates.schema.json){target="_self"}       |
 
 De `$id` van elk schema is zijn URL op deze site, bv.
-`https://pieterjanscheir.github.io/be-legal-data/schema/courts.schema.json`. Vanaf de volgende
-release zitten ze ook in het npm-package als `be-legal-data/schema/courts.schema.json` (0.2.0
+`https://pieterjanscheir.github.io/belgica/schema/courts.schema.json`. Vanaf de volgende
+release zitten ze ook in het npm-package als `belgica/schema/courts.schema.json` (0.2.0
 bevat ze niet).
 
 ## De data valideren {#validating-the-data}
@@ -31,7 +31,7 @@ from jsonschema import validate  # pip install jsonschema
 
 # Pin een releasetag die schema/ bevat; tot de eerste uit is, gebruik main
 TAG = "main"
-BASE = f"https://raw.githubusercontent.com/pieterjanscheir/be-legal-data/{TAG}"
+BASE = f"https://raw.githubusercontent.com/pieterjanscheir/belgica/{TAG}"
 courts = json.load(urlopen(f"{BASE}/data/courts.json"))
 schema = json.load(urlopen(f"{BASE}/schema/courts.schema.json"))
 validate(courts, schema)
@@ -40,8 +40,8 @@ validate(courts, schema)
 ```ts [TypeScript]
 import { Ajv } from 'ajv'
 import addFormats from 'ajv-formats'
-import courts from 'be-legal-data/data/courts.json' with { type: 'json' }
-import schema from 'be-legal-data/schema/courts.schema.json' with { type: 'json' }
+import courts from 'belgica/data/courts.json' with { type: 'json' }
+import schema from 'belgica/schema/courts.schema.json' with { type: 'json' }
 
 const ajv = new Ajv()
 addFormats(ajv)

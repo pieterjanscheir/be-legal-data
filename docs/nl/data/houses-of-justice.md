@@ -32,7 +32,7 @@ Gemeenschappen beheerd.
 | Gecontroleerd | Elke week, door de [sources-workflow](/nl/guide/data-quality#how-the-data-is-built)                                                                                                                                                                    |
 
 Nog niet in de data: het justitiehuis van de Duitstalige Gemeenschap in Eupen
-([#3](https://github.com/pieterjanscheir/be-legal-data/issues/3)). Brussel heeft zowel een
+([#3](https://github.com/pieterjanscheir/belgica/issues/3)). Brussel heeft zowel een
 Vlaams (`justitiehuis-brussel`) als een Franstalig justitiehuis (`maison-justice-bruxelles`).
 
 ## Velden {#fields}
@@ -50,7 +50,7 @@ Vlaams (`justitiehuis-brussel`) als een Franstalig justitiehuis (`maison-justice
 | `sources`              | `{ url, retrieved }[]`                  | De pagina's waaruit het record is gelezen                                                                                                          |
 
 ```ts
-import { getHouseOfJustice, getContact } from 'be-legal-data/houses-of-justice'
+import { getHouseOfJustice, getContact } from 'belgica/houses-of-justice'
 
 getHouseOfJustice('justitiehuis-gent').ovo // 'OVO001917'
 getContact(getHouseOfJustice('maison-justice-arlon'), 'email', "service d'accueil des victimes")

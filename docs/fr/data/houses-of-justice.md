@@ -31,7 +31,7 @@ Communautés les gèrent depuis 2015.
 | Vérifié       | Chaque semaine, par le [workflow des sources](/fr/guide/data-quality#how-the-data-is-built)                                                                                                                                                               |
 
 Pas encore dans les données : la maison de justice de la Communauté germanophone à Eupen
-([#3](https://github.com/pieterjanscheir/be-legal-data/issues/3)). Bruxelles a à la fois une
+([#3](https://github.com/pieterjanscheir/belgica/issues/3)). Bruxelles a à la fois une
 maison flamande (`justitiehuis-brussel`) et une maison francophone (`maison-justice-bruxelles`).
 
 ## Champs {#fields}
@@ -49,7 +49,7 @@ maison flamande (`justitiehuis-brussel`) et une maison francophone (`maison-just
 | `sources`              | `{ url, retrieved }[]`                  | Les pages d'où l'enregistrement a été lu                                                                                                                                |
 
 ```ts
-import { getHouseOfJustice, getContact } from 'be-legal-data/houses-of-justice'
+import { getHouseOfJustice, getContact } from 'belgica/houses-of-justice'
 
 getHouseOfJustice('justitiehuis-gent').ovo // 'OVO001917'
 getContact(getHouseOfJustice('maison-justice-arlon'), 'email', "service d'accueil des victimes")

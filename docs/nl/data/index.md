@@ -64,5 +64,5 @@ hypotheken.
 ::: warning Referentiedata, geen juridisch advies
 De data wordt tegen officiële bronnen gecontroleerd, maar bronnen veranderen en fouten gebeuren.
 Controleer de officiële bron voor je op een waarde vertrouwt, en
-[meld wat fout is](https://github.com/pieterjanscheir/be-legal-data/issues/new?template=data-correction.yml).
+[meld wat fout is](https://github.com/pieterjanscheir/belgica/issues/new?template=data-correction.yml).
 :::

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://pieterjanscheir.github.io/be-legal-data/schema/municipalities.schema.json",
-  "title": "be-legal-data: data/municipalities.json",
+  "$id": "https://pieterjanscheir.github.io/belgica/schema/municipalities.schema.json",
+  "title": "belgica: data/municipalities.json",
   "$ref": "#/definitions/MunicipalitiesFile",
   "definitions": {
     "MunicipalitiesFile": {

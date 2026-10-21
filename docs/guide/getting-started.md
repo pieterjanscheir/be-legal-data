@@ -11,15 +11,15 @@ const kb = (bytes) => `${Math.round(bytes / 1024)} KB`
 ::: code-group
 
 ```bash [pnpm]
-pnpm add be-legal-data
+pnpm add belgica
 ```
 
 ```bash [npm]
-npm install be-legal-data
+npm install belgica
 ```
 
 ```bash [yarn]
-yarn add be-legal-data
+yarn add belgica
 ```
 
 :::
@@ -35,9 +35,9 @@ dataset. Each dataset has its own entry point, and the courts and the cantons (w
 text of their territories) are by far the largest:
 
 ```ts
-import { getInterestRate } from 'be-legal-data/interest-rates'
-import { getCourt } from 'be-legal-data/courts'
-import { getCanton } from 'be-legal-data/territory'
+import { getInterestRate } from 'belgica/interest-rates'
+import { getCourt } from 'belgica/courts'
+import { getCanton } from 'belgica/territory'
 ```
 
 <table v-if="stats.sizes">
@@ -59,7 +59,7 @@ import {
     getCanton,
     getCantonsForMunicipality,
     getInterestRate,
-} from 'be-legal-data'
+} from 'belgica'
 
 getCourt('justice-of-the-peace-gent-1').name.nl // 'Vredegerecht Gent 1'
 findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' })
@@ -79,7 +79,7 @@ getInterestRate(new Date(2014, 5, 15), 'commercial', { contractAfter20130316: tr
 Look up the municipality's REFNIS code and get its cantons, then the canton's court.
 
 ```ts
-import { getCantonsForMunicipality, getJusticeOfThePeace } from 'be-legal-data'
+import { getCantonsForMunicipality, getJusticeOfThePeace } from 'belgica'
 
 const cantons = getCantonsForMunicipality('44088')
 if (cantons.length === 1) {
@@ -100,7 +100,7 @@ Every court other than a justice of the peace lists the cantons it covers (`cant
 law sets them. `findCompetentCourts` looks a municipality's cantons up in them.
 
 ```ts
-import { findCompetentCourts, getDivisions } from 'be-legal-data'
+import { findCompetentCourts, getDivisions } from 'belgica'
 
 findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde], not Brussels
 findCompetentCourts('21004', 'labour-court') // the Dutch- and the French-speaking court of Brussels
@@ -113,7 +113,7 @@ getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brug
 ### Interest due on a day
 
 ```ts
-import { getInterestRate, getLatestKnownRateDate } from 'be-legal-data'
+import { getInterestRate, getLatestKnownRateDate } from 'belgica'
 
 const result = getInterestRate(new Date(), 'commercial')
 if (!result) {
@@ -141,7 +141,7 @@ getCourt('police-court-eupen-sankt-vith').name.de // 'Polizeigericht Eupen, Abte
 The data files are exported too:
 
 ```ts
-import courts from 'be-legal-data/data/courts.json' with { type: 'json' }
+import courts from 'belgica/data/courts.json' with { type: 'json' }
 ```
 
 ## Ids are public API

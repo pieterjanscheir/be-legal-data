@@ -23,7 +23,7 @@ describe.runIf(process.env['FRESHNESS_ONLINE'] === '1')('source URLs', () => {
             redirect: 'follow',
             headers: {
                 'user-agent':
-                    'be-legal-data freshness check (+https://github.com/pieterjanscheir/be-legal-data)',
+                    'belgica freshness check (+https://github.com/pieterjanscheir/belgica)',
             },
             signal: AbortSignal.timeout(25_000),
         })

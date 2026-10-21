@@ -3,12 +3,12 @@
 De JSON-bestanden in `data/` zijn de bron van de waarheid; de TypeScript voegt alleen types en
 helpers toe. Je kunt ze vanuit elke taal lezen:
 
-- uit het npm-package (`node_modules/be-legal-data/data/`);
+- uit het npm-package (`node_modules/belgica/data/`);
 - als git-submodule;
 - via een raw-URL die aan een releasetag vastgepind is.
 
 ```
-https://raw.githubusercontent.com/pieterjanscheir/be-legal-data/v0.3.0/data/cantons.json
+https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.3.0/data/cantons.json
 ```
 
 Pin een tag in plaats van `main`, zodat de data alleen verandert wanneer jij beslist te upgraden.
@@ -19,7 +19,7 @@ Pin een tag in plaats van `main`, zodat de data alleen verandert wanneer jij bes
 import json
 from urllib.request import urlopen
 
-BASE = "https://raw.githubusercontent.com/pieterjanscheir/be-legal-data/v0.3.0/data"
+BASE = "https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.3.0/data"
 
 cantons = json.load(urlopen(f"{BASE}/cantons.json"))
 
@@ -47,7 +47,7 @@ def interest_rate(day: str, kind: str, contract_after_20130316: bool = False) ->
 
 ## CSV {#csv}
 
-Elke [release](https://github.com/pieterjanscheir/be-legal-data/releases) heeft een zip met de
+Elke [release](https://github.com/pieterjanscheir/belgica/releases) heeft een zip met de
 data als JSON en als CSV-tabellen (UTF-8, kommagescheiden), samen met de schema's en
 `datapackage.json`. Geneste waarden zijn tabellen op zich: de contacten van een rechtbank staan in
 `court-contacts.csv`, gekoppeld via het id van de rechtbank; de gemeenten van een kanton in

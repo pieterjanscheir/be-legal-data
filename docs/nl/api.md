@@ -3,27 +3,27 @@
 Alles wordt geëxporteerd vanuit de root van het package, en elke dataset heeft ook een eigen entry point:
 
 ```ts
-import { getCanton, getInterestRate /* … */ } from 'be-legal-data'
+import { getCanton, getInterestRate /* … */ } from 'belgica'
 
 // Alleen wat je gebruikt: de rentevoeten alleen zijn maar enkele kilobytes
-import { getInterestRate } from 'be-legal-data/interest-rates'
-import { getCourt, getJusticeOfThePeace } from 'be-legal-data/courts'
-import { getCanton, getCantonsForMunicipality } from 'be-legal-data/territory'
-import { getPrison } from 'be-legal-data/prisons'
-import { getHouseOfJustice } from 'be-legal-data/houses-of-justice'
+import { getInterestRate } from 'belgica/interest-rates'
+import { getCourt, getJusticeOfThePeace } from 'belgica/courts'
+import { getCanton, getCantonsForMunicipality } from 'belgica/territory'
+import { getPrison } from 'belgica/prisons'
+import { getHouseOfJustice } from 'belgica/houses-of-justice'
 ```
 
-| Entry point                          | Inhoud                                                       |
-| ------------------------------------ | ------------------------------------------------------------ |
-| `be-legal-data`                      | Alles hieronder                                              |
-| `be-legal-data/territory`            | Rechtsgebieden, arrondissementen, kantons, gemeenten         |
-| `be-legal-data/courts`               | Hoven en rechtbanken, en de helpers voor contactgegevens     |
-| `be-legal-data/prisons`              | Gevangenissen, en de helpers voor contactgegevens            |
-| `be-legal-data/houses-of-justice`    | Justitiehuizen, en de helpers voor contactgegevens           |
-| `be-legal-data/interest-rates`       | Rentevoeten                                                  |
-| `be-legal-data/data/*.json`          | De ruwe databestanden                                        |
-| `be-legal-data/schema/*.schema.json` | [JSON Schemas](/nl/guide/schema)                             |
-| `be-legal-data/datapackage.json`     | [Data package descriptor](/nl/guide/schema#datapackage-json) |
+| Entry point                    | Inhoud                                                       |
+| ------------------------------ | ------------------------------------------------------------ |
+| `belgica`                      | Alles hieronder                                              |
+| `belgica/territory`            | Rechtsgebieden, arrondissementen, kantons, gemeenten         |
+| `belgica/courts`               | Hoven en rechtbanken, en de helpers voor contactgegevens     |
+| `belgica/prisons`              | Gevangenissen, en de helpers voor contactgegevens            |
+| `belgica/houses-of-justice`    | Justitiehuizen, en de helpers voor contactgegevens           |
+| `belgica/interest-rates`       | Rentevoeten                                                  |
+| `belgica/data/*.json`          | De ruwe databestanden                                        |
+| `belgica/schema/*.schema.json` | [JSON Schemas](/nl/guide/schema)                             |
+| `belgica/datapackage.json`     | [Data package descriptor](/nl/guide/schema#datapackage-json) |
 
 Conventies:
 
@@ -378,7 +378,7 @@ Elke dataset zegt vanaf welke dag ze de situatie beschrijft; een opzoeking voor 
 gooit een `RangeError` in plaats van te antwoorden met de kaart van vandaag. Het territorium en de lijst
 van hoven en rechtbanken volgen uit de wet zoals gewijzigd voor 1 januari 2025; gevangenissen en
 justitiehuizen zijn bekend vanaf de dag waarop hun sites voor het eerst gelezen zijn. Vroegere versies
-zijn gepland ([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
+zijn gepland ([#27](https://github.com/pieterjanscheir/belgica/issues/27)).
 
 De geëxporteerde arrays (`courts`, `prisons`, …) bevatten elke versie van elk record. Een record dat de
 bron niet langer vermeldt, wordt niet gewist: het behoudt zijn id en krijgt een `validTo`, de dag vóór de

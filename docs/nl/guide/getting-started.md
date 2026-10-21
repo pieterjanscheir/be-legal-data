@@ -11,15 +11,15 @@ const kb = (bytes) => `${Math.round(bytes / 1024)} KB`
 ::: code-group
 
 ```bash [pnpm]
-pnpm add be-legal-data
+pnpm add belgica
 ```
 
 ```bash [npm]
-npm install be-legal-data
+npm install belgica
 ```
 
 ```bash [yarn]
-yarn add be-legal-data
+yarn add belgica
 ```
 
 :::
@@ -35,9 +35,9 @@ elke dataset. Elke dataset heeft een eigen entry point, en de hoven en rechtbank
 de wettekst van hun grondgebied) zijn veruit de grootste:
 
 ```ts
-import { getInterestRate } from 'be-legal-data/interest-rates'
-import { getCourt } from 'be-legal-data/courts'
-import { getCanton } from 'be-legal-data/territory'
+import { getInterestRate } from 'belgica/interest-rates'
+import { getCourt } from 'belgica/courts'
+import { getCanton } from 'belgica/territory'
 ```
 
 <table v-if="stats.sizes">
@@ -59,7 +59,7 @@ import {
     getCanton,
     getCantonsForMunicipality,
     getInterestRate,
-} from 'be-legal-data'
+} from 'belgica'
 
 getCourt('justice-of-the-peace-gent-1').name.nl // 'Vredegerecht Gent 1'
 findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' })
@@ -80,7 +80,7 @@ Zoek de REFNIS-code van de gemeente op en haal haar kantons op, en daarna het vr
 het kanton.
 
 ```ts
-import { getCantonsForMunicipality, getJusticeOfThePeace } from 'be-legal-data'
+import { getCantonsForMunicipality, getJusticeOfThePeace } from 'belgica'
 
 const cantons = getCantonsForMunicipality('44088')
 if (cantons.length === 1) {
@@ -102,7 +102,7 @@ Elke rechtbank behalve een vredegerecht vermeldt de kantons die ze bestrijkt (`c
 de wet ze vastlegt. `findCompetentCourts` zoekt de kantons van een gemeente daarin op.
 
 ```ts
-import { findCompetentCourts, getDivisions } from 'be-legal-data'
+import { findCompetentCourts, getDivisions } from 'belgica'
 
 findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde], niet Brussel
 findCompetentCourts('21004', 'labour-court') // de Nederlandstalige en de Franstalige rechtbank van Brussel
@@ -115,7 +115,7 @@ getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brug
 ### Verschuldigde interest op een dag {#interest-due-on-a-day}
 
 ```ts
-import { getInterestRate, getLatestKnownRateDate } from 'be-legal-data'
+import { getInterestRate, getLatestKnownRateDate } from 'belgica'
 
 const result = getInterestRate(new Date(), 'commercial')
 if (!result) {
@@ -143,7 +143,7 @@ getCourt('police-court-eupen-sankt-vith').name.de // 'Polizeigericht Eupen, Abte
 De databestanden worden ook geëxporteerd:
 
 ```ts
-import courts from 'be-legal-data/data/courts.json' with { type: 'json' }
+import courts from 'belgica/data/courts.json' with { type: 'json' }
 ```
 
 ## Ids zijn publieke API {#ids-are-public-api}

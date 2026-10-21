@@ -11,15 +11,15 @@ const kb = (bytes) => `${Math.round(bytes / 1024)} Ko`
 ::: code-group
 
 ```bash [pnpm]
-pnpm add be-legal-data
+pnpm add belgica
 ```
 
 ```bash [npm]
-npm install be-legal-data
+npm install belgica
 ```
 
 ```bash [yarn]
-yarn add be-legal-data
+yarn add belgica
 ```
 
 :::
@@ -35,9 +35,9 @@ les jeux de données. Chaque jeu de données a son propre point d'entrée, et le
 cantons (avec le texte légal de leurs territoires) sont de loin les plus volumineux :
 
 ```ts
-import { getInterestRate } from 'be-legal-data/interest-rates'
-import { getCourt } from 'be-legal-data/courts'
-import { getCanton } from 'be-legal-data/territory'
+import { getInterestRate } from 'belgica/interest-rates'
+import { getCourt } from 'belgica/courts'
+import { getCanton } from 'belgica/territory'
 ```
 
 <table v-if="stats.sizes">
@@ -59,7 +59,7 @@ import {
     getCanton,
     getCantonsForMunicipality,
     getInterestRate,
-} from 'be-legal-data'
+} from 'belgica'
 
 getCourt('justice-of-the-peace-gent-1').name.nl // 'Vredegerecht Gent 1'
 findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' })
@@ -79,7 +79,7 @@ getInterestRate(new Date(2014, 5, 15), 'commercial', { contractAfter20130316: tr
 Cherchez le code REFNIS de la commune et obtenez ses cantons, puis la justice de paix du canton.
 
 ```ts
-import { getCantonsForMunicipality, getJusticeOfThePeace } from 'be-legal-data'
+import { getCantonsForMunicipality, getJusticeOfThePeace } from 'belgica'
 
 const cantons = getCantonsForMunicipality('44088')
 if (cantons.length === 1) {
@@ -101,7 +101,7 @@ Tout tribunal autre qu'une justice de paix liste les cantons qu'il couvre (`cant
 loi les fixe. `findCompetentCourts` y recherche les cantons d'une commune.
 
 ```ts
-import { findCompetentCourts, getDivisions } from 'be-legal-data'
+import { findCompetentCourts, getDivisions } from 'belgica'
 
 findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde], pas Bruxelles
 findCompetentCourts('21004', 'labour-court') // le tribunal néerlandophone et le tribunal francophone de Bruxelles
@@ -114,7 +114,7 @@ getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brug
 ### Intérêts dus à une date donnée {#interest-due-on-a-day}
 
 ```ts
-import { getInterestRate, getLatestKnownRateDate } from 'be-legal-data'
+import { getInterestRate, getLatestKnownRateDate } from 'belgica'
 
 const result = getInterestRate(new Date(), 'commercial')
 if (!result) {
@@ -142,7 +142,7 @@ getCourt('police-court-eupen-sankt-vith').name.de // 'Polizeigericht Eupen, Abte
 Les fichiers de données sont exportés eux aussi :
 
 ```ts
-import courts from 'be-legal-data/data/courts.json' with { type: 'json' }
+import courts from 'belgica/data/courts.json' with { type: 'json' }
 ```
 
 ## Les identifiants font partie de l'API publique {#ids-are-public-api}

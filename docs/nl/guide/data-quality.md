@@ -27,7 +27,7 @@ kanton geen gerecht heeft.
 official site ──fetch──> snapshots (sources branch) ──parse──> data/*.json ──> pull request
 ```
 
-1. **Ophalen.** Elke maandag haalt de [sources-workflow](https://github.com/pieterjanscheir/be-legal-data/actions/workflows/sources.yml)
+1. **Ophalen.** Elke maandag haalt de [sources-workflow](https://github.com/pieterjanscheir/belgica/actions/workflows/sources.yml)
    elke pagina van de bronnen op (`scripts/sources`), beleefd: één verzoek per seconde per
    site, met een user agent die het project noemt. Elke pagina wordt bewaard op de branch
    `sources`, met een index van wat is opgehaald, wanneer, en een hash van de inhoud. Een pagina
@@ -49,7 +49,7 @@ Om het zelf te draaien: `pnpm fetch:sources` (schrijft `.sources/`), daarna `pnp
 
 De kantons en gemeenten worden met de hand herbouwd met `pnpm build:cantons`: de site van het
 Belgisch Staatsblad weigert de servers van GitHub
-([#24](https://github.com/pieterjanscheir/be-legal-data/issues/24)).
+([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
 
 ## Automatische controles {#automatic-checks}
 
@@ -80,9 +80,9 @@ Belgisch Staatsblad weigert de servers van GitHub
 
 ### Elke week (gepland) {#every-week-scheduled}
 
-De [freshness-workflow](https://github.com/pieterjanscheir/be-legal-data/actions/workflows/freshness.yml)
+De [freshness-workflow](https://github.com/pieterjanscheir/belgica/actions/workflows/freshness.yml)
 draait elke maandag en opent een issue met het label
-[`data-freshness`](https://github.com/pieterjanscheir/be-legal-data/issues?q=label%3Adata-freshness)
+[`data-freshness`](https://github.com/pieterjanscheir/belgica/issues?q=label%3Adata-freshness)
 wanneer hij iets vindt:
 
 - **Ontbrekende rentevoeten**: geen wettelijke rentevoet of rentevoet voor handelstransacties
@@ -113,6 +113,6 @@ controleren).
 
 ## Een fout melden {#reporting-a-mistake}
 
-[Open een datacorrectie](https://github.com/pieterjanscheir/be-legal-data/issues/new?template=data-correction.yml)
+[Open een datacorrectie](https://github.com/pieterjanscheir/belgica/issues/new?template=data-correction.yml)
 met de id van het record en een link naar de officiële bron. Correcties verschijnen als
 patch-versies.

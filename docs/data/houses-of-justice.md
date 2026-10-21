@@ -30,7 +30,7 @@ studies for the family courts. The Communities run them since 2015.
 | Checked  | Every week, by the [sources workflow](/guide/data-quality#how-the-data-is-built)                                                                                                                                                                    |
 
 Not in the data yet: the German-speaking Community's house of justice in Eupen
-([#3](https://github.com/pieterjanscheir/be-legal-data/issues/3)). Brussels has both a Flemish
+([#3](https://github.com/pieterjanscheir/belgica/issues/3)). Brussels has both a Flemish
 (`justitiehuis-brussel`) and a French-speaking house (`maison-justice-bruxelles`).
 
 ## Fields
@@ -48,7 +48,7 @@ Not in the data yet: the German-speaking Community's house of justice in Eupen
 | `sources`              | `{ url, retrieved }[]`                  | The pages the record was read from                                                                                           |
 
 ```ts
-import { getHouseOfJustice, getContact } from 'be-legal-data/houses-of-justice'
+import { getHouseOfJustice, getContact } from 'belgica/houses-of-justice'
 
 getHouseOfJustice('justitiehuis-gent').ovo // 'OVO001917'
 getContact(getHouseOfJustice('maison-justice-arlon'), 'email', "service d'accueil des victimes")

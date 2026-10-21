@@ -64,5 +64,5 @@ hypothèques.
 ::: warning Données de référence, pas un avis juridique
 Les données sont vérifiées par rapport aux sources officielles, mais les sources changent et les erreurs
 arrivent. Vérifiez la source officielle avant de vous fier à une valeur, et
-[signalez toute erreur](https://github.com/pieterjanscheir/be-legal-data/issues/new?template=data-correction.yml).
+[signalez toute erreur](https://github.com/pieterjanscheir/belgica/issues/new?template=data-correction.yml).
 :::

@@ -43,7 +43,7 @@ Le nom du directeur, que les pages donnent aussi, est laissé de côté : il cha
 caractère personnel dont le package n'a pas besoin.
 
 ```ts
-import { getPrison, prisons } from 'be-legal-data/prisons'
+import { getPrison, prisons } from 'belgica/prisons'
 
 getPrison('gevangenis-gent').name.fr // 'Prison de Gand'
 prisons.filter((p) => p.kind === 'detention-house') // Kortrijk, Olen, Vorst

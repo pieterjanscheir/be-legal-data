@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://pieterjanscheir.github.io/be-legal-data/schema/houses-of-justice.schema.json",
-  "title": "be-legal-data: data/houses-of-justice.json",
+  "$id": "https://pieterjanscheir.github.io/belgica/schema/houses-of-justice.schema.json",
+  "title": "belgica: data/houses-of-justice.json",
   "$ref": "#/definitions/HousesOfJusticeFile",
   "definitions": {
     "HousesOfJusticeFile": {

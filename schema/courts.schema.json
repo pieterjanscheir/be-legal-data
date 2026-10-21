@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://pieterjanscheir.github.io/be-legal-data/schema/courts.schema.json",
-  "title": "be-legal-data: data/courts.json",
+  "$id": "https://pieterjanscheir.github.io/belgica/schema/courts.schema.json",
+  "title": "belgica: data/courts.json",
   "$ref": "#/definitions/CourtsFile",
   "definitions": {
     "CourtsFile": {

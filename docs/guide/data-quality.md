@@ -26,7 +26,7 @@ covered; `pnpm build:data` refuses when a page can't be placed or a canton has n
 official site ──fetch──> snapshots (sources branch) ──parse──> data/*.json ──> pull request
 ```
 
-1. **Fetch.** Every Monday the [sources workflow](https://github.com/pieterjanscheir/be-legal-data/actions/workflows/sources.yml)
+1. **Fetch.** Every Monday the [sources workflow](https://github.com/pieterjanscheir/belgica/actions/workflows/sources.yml)
    fetches every page of the sources (`scripts/sources`), politely: one request per second per
    site, with a user agent that names the project. It keeps each page on the `sources` branch,
    with an index of what was fetched, when, and a hash of its content. A page is only stored
@@ -47,7 +47,7 @@ To run it yourself: `pnpm fetch:sources` (writes `.sources/`), then `pnpm build:
 
 The cantons and municipalities are rebuilt by hand with `pnpm build:cantons`: the Belgian
 Official Journal's site refuses GitHub's servers
-([#24](https://github.com/pieterjanscheir/be-legal-data/issues/24)).
+([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
 
 ## Automatic checks
 
@@ -77,9 +77,9 @@ Official Journal's site refuses GitHub's servers
 
 ### Every week (scheduled)
 
-The [freshness workflow](https://github.com/pieterjanscheir/be-legal-data/actions/workflows/freshness.yml)
+The [freshness workflow](https://github.com/pieterjanscheir/belgica/actions/workflows/freshness.yml)
 runs every Monday and opens an issue labelled
-[`data-freshness`](https://github.com/pieterjanscheir/be-legal-data/issues?q=label%3Adata-freshness)
+[`data-freshness`](https://github.com/pieterjanscheir/belgica/issues?q=label%3Adata-freshness)
 when it finds something:
 
 - **Missing rates**: no legal or commercial rate for today, or no commercial rate for the
@@ -105,6 +105,6 @@ Run them yourself with `pnpm test:freshness` (add `FRESHNESS_ONLINE=1` to check 
 
 ## Reporting a mistake
 
-[Open a data correction](https://github.com/pieterjanscheir/be-legal-data/issues/new?template=data-correction.yml)
+[Open a data correction](https://github.com/pieterjanscheir/belgica/issues/new?template=data-correction.yml)
 with the record id and a link to the official source. Corrections are released as patch
 versions.

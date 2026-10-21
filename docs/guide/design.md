@@ -26,7 +26,7 @@ verbatim from an official source and is stored. Code may format or look up; it m
 construct a legal fact.
 
 **Why.** Code that assembles a fact can be wrong in ways tests can't catch: the French court
-names an earlier `formatCourtName` built were wrong (`Tribunal de paix …`, where the courts call themselves `Justice de paix …`; [#10](https://github.com/pieterjanscheir/be-legal-data/issues/10)).
+names an earlier `formatCourtName` built were wrong (`Tribunal de paix …`, where the courts call themselves `Justice de paix …`; [#10](https://github.com/pieterjanscheir/belgica/issues/10)).
 A stored value can be checked against its source.
 
 **So.** Court names are stored as each court publishes them, in every language it publishes
@@ -51,7 +51,7 @@ built from another.
 is validated by the schema (which lists the valid ids) and by the tests.
 
 **So.** Court addresses will link to their municipality the same way
-([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28)).
+([#28](https://github.com/pieterjanscheir/belgica/issues/28)).
 
 ## 5. Canonical values, presentation in code
 
@@ -94,7 +94,7 @@ changes unreviewed.
 megabytes of HTML. The parsers are tested on trimmed copies of real pages. A page the parser
 can't place stops the build instead of producing a half-right record. Two sources refuse
 GitHub's servers (ejustice, police.be); they're fetched from a regular machine
-([#24](https://github.com/pieterjanscheir/be-legal-data/issues/24)).
+([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
 
 ## 8. Distribution: ESM only, Node 22.12+, built on release
 
@@ -144,7 +144,7 @@ served, which rate applied when the invoice fell due. Cantons, municipalities an
 change; a model that only knows "now" answers questions about the past with today's map, and
 looks right while doing it. Adding time later would change every id and lookup, so it's in the
 model before the history is in the data
-([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
+([#27](https://github.com/pieterjanscheir/belgica/issues/27)).
 
 **So.** Interest rates already have periods. A lookup by id without a day gives today's
 version, so known ids keep their non-`undefined` type; with a day it may find nothing. Every
@@ -164,6 +164,6 @@ languages, not in JavaScript.
 
 | Question                                                    | Issue                                                                          |
 | ----------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| Canton boundaries as geometry for split cities              | [#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)              |
-| History before 1 January 2025                               | [#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)              |
+| Canton boundaries as geometry for split cities              | [#29](https://github.com/pieterjanscheir/belgica/issues/29)                    |
+| History before 1 January 2025                               | [#27](https://github.com/pieterjanscheir/belgica/issues/27)                    |
 | Interest calculation over a period (day count, compounding) | Not planned until the method can be sourced from case law or official guidance |

@@ -3,12 +3,12 @@
 Les fichiers JSON de `data/` sont la source de vérité ; le TypeScript n'ajoute que des types et
 des fonctions utilitaires. Vous pouvez les lire depuis n'importe quel langage :
 
-- depuis le package npm (`node_modules/be-legal-data/data/`) ;
+- depuis le package npm (`node_modules/belgica/data/`) ;
 - comme sous-module git ;
 - depuis une URL brute épinglée sur un tag de version.
 
 ```
-https://raw.githubusercontent.com/pieterjanscheir/be-legal-data/v0.3.0/data/cantons.json
+https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.3.0/data/cantons.json
 ```
 
 Épinglez un tag plutôt que `main`, pour que les données ne changent que lorsque vous choisissez
@@ -20,7 +20,7 @@ de mettre à jour.
 import json
 from urllib.request import urlopen
 
-BASE = "https://raw.githubusercontent.com/pieterjanscheir/be-legal-data/v0.3.0/data"
+BASE = "https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.3.0/data"
 
 cantons = json.load(urlopen(f"{BASE}/cantons.json"))
 
@@ -48,7 +48,7 @@ def interest_rate(day: str, kind: str, contract_after_20130316: bool = False) ->
 
 ## CSV {#csv}
 
-Chaque [release](https://github.com/pieterjanscheir/be-legal-data/releases) contient un zip avec
+Chaque [release](https://github.com/pieterjanscheir/belgica/releases) contient un zip avec
 les données en JSON et sous forme de tables CSV (UTF-8, séparées par des virgules), accompagnées
 des schémas et de `datapackage.json`. Les valeurs imbriquées sont des tables à part : les contacts
 d'un tribunal sont dans `court-contacts.csv`, avec l'identifiant du tribunal comme clé ; les

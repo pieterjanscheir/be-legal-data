@@ -3,9 +3,9 @@ import { join } from 'node:path'
 import { defineConfig, type DefaultTheme, type LocaleConfig } from 'vitepress'
 import pkg from '../../package.json'
 
-const repo = 'https://github.com/pieterjanscheir/be-legal-data'
-// GitHub Pages serves the site from /be-legal-data/; DOCS_BASE overrides it for a custom domain
-const base = process.env.DOCS_BASE ?? '/be-legal-data/'
+const repo = 'https://github.com/pieterjanscheir/belgica'
+// GitHub Pages serves the site from /belgica/; DOCS_BASE overrides it for a custom domain
+const base = process.env.DOCS_BASE ?? '/belgica/'
 
 /**
  * Everything the theme shows in words, per language. English (`root`) is the source: the
@@ -238,7 +238,7 @@ function themeConfig(prefix: string, t: Strings): DefaultTheme.Config {
             {
                 text: `v${pkg.version}`,
                 items: [
-                    { text: 'npm', link: 'https://www.npmjs.com/package/be-legal-data' },
+                    { text: 'npm', link: 'https://www.npmjs.com/package/belgica' },
                     { text: t.nav.releases, link: `${repo}/tags` },
                 ],
             },
@@ -333,7 +333,7 @@ const locales: LocaleConfig<DefaultTheme.Config> = {
 }
 
 export default defineConfig({
-    title: 'be-legal-data',
+    title: 'belgica',
     description: en.description,
     lang: 'en',
     base,
@@ -346,7 +346,7 @@ export default defineConfig({
         logo: '/favicon.svg',
         socialLinks: [
             { icon: 'github', link: repo },
-            { icon: 'npm', link: 'https://www.npmjs.com/package/be-legal-data' },
+            { icon: 'npm', link: 'https://www.npmjs.com/package/belgica' },
         ],
         search: {
             provider: 'local',

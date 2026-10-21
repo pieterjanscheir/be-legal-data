@@ -17,8 +17,8 @@ autres.
 | `data/interest-rates.json`    | [`interest-rates.schema.json`](/schema/interest-rates.schema.json){target="_self"}       |
 
 Le `$id` de chaque schéma est son URL sur ce site, par exemple
-`https://pieterjanscheir.github.io/be-legal-data/schema/courts.schema.json`. À partir de la
-prochaine version, ils sont aussi dans le package npm sous `be-legal-data/schema/courts.schema.json`
+`https://pieterjanscheir.github.io/belgica/schema/courts.schema.json`. À partir de la
+prochaine version, ils sont aussi dans le package npm sous `belgica/schema/courts.schema.json`
 (la 0.2.0 ne les contient pas).
 
 ## Valider les données {#validating-the-data}
@@ -32,7 +32,7 @@ from jsonschema import validate  # pip install jsonschema
 
 # Épinglez un tag de version qui contient schema/ ; tant que le premier n'est pas publié, utilisez main
 TAG = "main"
-BASE = f"https://raw.githubusercontent.com/pieterjanscheir/be-legal-data/{TAG}"
+BASE = f"https://raw.githubusercontent.com/pieterjanscheir/belgica/{TAG}"
 courts = json.load(urlopen(f"{BASE}/data/courts.json"))
 schema = json.load(urlopen(f"{BASE}/schema/courts.schema.json"))
 validate(courts, schema)
@@ -41,8 +41,8 @@ validate(courts, schema)
 ```ts [TypeScript]
 import { Ajv } from 'ajv'
 import addFormats from 'ajv-formats'
-import courts from 'be-legal-data/data/courts.json' with { type: 'json' }
-import schema from 'be-legal-data/schema/courts.schema.json' with { type: 'json' }
+import courts from 'belgica/data/courts.json' with { type: 'json' }
+import schema from 'belgica/schema/courts.schema.json' with { type: 'json' }
 
 const ajv = new Ajv()
 addFormats(ajv)

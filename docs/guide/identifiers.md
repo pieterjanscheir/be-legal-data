@@ -14,7 +14,7 @@ what happens when the law changes the thing an id names.
    courts have their ECLI codes in `ecli`, Flemish houses of justice their OVO number in `ovo`
    (see [why](#why-not-the-official-court-codes)).
 3. **Otherwise, lowercase kebab-case ASCII**: `^[a-z0-9]+(-[a-z0-9]+)*$`, built by
-   [`scripts/id.ts`](https://github.com/pieterjanscheir/be-legal-data/blob/main/scripts/id.ts):
+   [`scripts/id.ts`](https://github.com/pieterjanscheir/belgica/blob/main/scripts/id.ts):
    accents dropped, everything else that isn't a letter or digit becomes one hyphen.
    `Merelbeke-Melle` → `merelbeke-melle`, `Braine-l'Alleud` → `braine-l-alleud`,
    `Liège` → `liege`.
@@ -94,7 +94,7 @@ Every dataset has a generated id type (`CantonId`, `CourtId`, `MunicipalityId`,
 data by `pnpm build:ids`:
 
 ```ts
-import { getCanton, type CantonId } from 'be-legal-data'
+import { getCanton, type CantonId } from 'belgica'
 
 getCanton('gent-1') // Canton: a known id always finds its record
 getCanton(userInput) // Canton | undefined: any other string may not
@@ -119,7 +119,7 @@ rather than erasing it:
 
 A change of name alone, such as a spelling correction, doesn't change the id. The history
 before 1 January 2025 isn't in the data yet
-([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)): a lookup for an earlier
+([#27](https://github.com/pieterjanscheir/belgica/issues/27)): a lookup for an earlier
 day throws a `RangeError` rather than answer with today's map.
 
 ## Ids are opaque
