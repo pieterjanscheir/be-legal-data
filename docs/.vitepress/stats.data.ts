@@ -60,7 +60,15 @@ const TYPES: [CourtType, string][] = [
 ]
 
 const DIST = join(import.meta.dirname, '../../dist')
-const ENTRIES = ['index', 'territory', 'courts', 'prisons', 'houses-of-justice', 'interest-rates']
+const ENTRIES = [
+    'index',
+    'territory',
+    'canton-boundaries',
+    'courts',
+    'prisons',
+    'houses-of-justice',
+    'interest-rates',
+]
 
 /** The files an entry point loads: itself and, transitively, the chunks it imports */
 function filesOf(entry: string, seen = new Set<string>()): Set<string> {

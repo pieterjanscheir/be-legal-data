@@ -160,10 +160,27 @@ and `datapackage.json`, as one zip. npm is one way to get the data, not the only
 **Why.** The people who need Belgian legal reference data most work in spreadsheets and other
 languages, not in JavaScript.
 
+## 13. Geometry is a second source, and the text wins
+
+**Decision.** The canton boundaries are the National Geographic Institute's digitisation of
+the annex to the Judicial Code, taken as published (vertex for vertex, no simplification,
+coordinates to a centimetre) and matched to the cantons by name in both languages, with an
+explicit alias table for the rest. The canton's `territory` text stays the law: where the
+geometry and the text disagree, the text wins. The geometry has its own entry point and the
+package root doesn't re-export it.
+
+**Why.** The NGI's polygons are an official reading of the same text, so they can be cited and
+rebuilt; a boundary derived here from street data would be a third reading nobody can check.
+Simplification would move the line, and the lines matter most where cantons meet. A million
+positions would dwarf every other dataset, so nobody should load them by accident.
+
+**So.** `findCantonsAt(lon, lat)` answers from the geometry and the documentation says so;
+a point near a line is a case for the text. The weekly build fails when a canton has no
+boundary or a feature matches no canton ([#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)).
+
 ## Not decided yet
 
 | Question                                                    | Issue                                                                          |
 | ----------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| Canton boundaries as geometry for split cities              | [#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)              |
 | History before 1 January 2025                               | [#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)              |
 | Interest calculation over a period (day count, compounding) | Not planned until the method can be sourced from case law or official guidance |

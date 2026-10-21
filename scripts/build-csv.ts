@@ -11,6 +11,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 
+import type { CantonBoundary } from '../src/canton-boundaries.ts'
 import type {
     Arrondissement,
     Canton,
@@ -30,6 +31,7 @@ const judicialAreas = read('judicial-areas') as JudicialArea[]
 const arrondissements = read('arrondissements') as Arrondissement[]
 const municipalities = read('municipalities') as Municipality[]
 const cantons = read('cantons') as Canton[]
+const cantonBoundaries = read('canton-boundaries') as CantonBoundary[]
 const courts = read('courts') as Court[]
 const prisons = read('prisons') as Prison[]
 const housesOfJustice = read('houses-of-justice') as HouseOfJustice[]
@@ -100,6 +102,14 @@ export const tables: Record<string, Row[]> = {
         legal_basis: c.legalBasis.provision,
         legal_basis_url: c.legalBasis.url,
         ...validity(c),
+    })),
+    // The geometry isn't tabular: it stays in data/canton-boundaries.json
+    'canton-boundaries': cantonBoundaries.map((b) => ({
+        canton: b.canton,
+        ngi_id: b.ngiId,
+        canton_code_nl: b.cantonCode.nl,
+        canton_code_fr: b.cantonCode.fr,
+        ...validity(b),
     })),
     'canton-municipalities': cantons.flatMap((c) =>
         c.municipalities.map((m) => ({

@@ -2,11 +2,13 @@ import { defineConfig } from 'tsup'
 
 // ESM only: Node ≥ 22.12 loads ESM from require() as well, so a CommonJS build would only add a
 // second copy of the data. The JSON is inlined, so consumers need no JSON loader. Each dataset
-// has its own entry point, so importing only the interest rates doesn't pull in the cantons.
+// has its own entry point, so importing only the interest rates doesn't pull in the cantons, and
+// the canton boundaries (the largest by far) are only in theirs: the root doesn't re-export them.
 export default defineConfig({
     entry: {
         index: 'src/index.ts',
         territory: 'src/territory.ts',
+        'canton-boundaries': 'src/canton-boundaries.ts',
         courts: 'src/courts.ts',
         prisons: 'src/prisons.ts',
         'houses-of-justice': 'src/houses-of-justice.ts',

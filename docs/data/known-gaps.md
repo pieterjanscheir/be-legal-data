@@ -31,8 +31,10 @@ import { data as stats } from '../.vitepress/stats.data'
 - **Canton names and seats** are in Dutch and French only: the annex to the Judicial Code has
   no consolidated German text.
 - **Split municipalities** (Antwerpen, Gent, Brussel, Luik, …) map to several cantons. Picking
-  the right one needs the street address, and the boundaries exist only as legal prose in
-  `territory` ([#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)).
+  the right one needs the street address: `findCantonsAt(lon, lat)` finds it from coordinates
+  with the [canton boundaries](./canton-boundaries), but geocoding the address is up to you,
+  and the boundaries are the NGI's reading of the legal text in `territory`, which wins where
+  they disagree.
 - **ECLI codes** are only given where they appear in published decisions; the justices of the
   peace and most police courts have none there.
 - **The house of justice in Eupen** is missing

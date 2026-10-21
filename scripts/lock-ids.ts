@@ -15,6 +15,7 @@ export const DATASETS = [
     'judicial-areas',
     'arrondissements',
     'cantons',
+    'canton-boundaries',
     'municipalities',
     'courts',
     'prisons',
@@ -23,10 +24,10 @@ export const DATASETS = [
 
 export type Lock = Record<(typeof DATASETS)[number], string[]>
 
+/** The lock as committed; a dataset it doesn't know yet (a new one) starts empty */
 export function readLock(path = LOCK_FILE): Lock {
-    if (!existsSync(path))
-        return Object.fromEntries(DATASETS.map((d) => [d, []])) as unknown as Lock
-    return JSON.parse(readFileSync(path, 'utf8')) as Lock
+    const saved = existsSync(path) ? (JSON.parse(readFileSync(path, 'utf8')) as Partial<Lock>) : {}
+    return Object.fromEntries(DATASETS.map((d) => [d, saved[d] ?? []])) as unknown as Lock
 }
 
 /** The lock with every current id added; nothing is ever taken out here */

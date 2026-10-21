@@ -6,6 +6,7 @@ pnpm-lock.yaml
 src/ids.generated.ts
 # Generated and committed as written by their scripts
 data/cantons.json
+data/canton-boundaries.json
 data/municipalities.json
 data/courts.json
 data/prisons.json
