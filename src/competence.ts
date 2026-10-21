@@ -1,5 +1,6 @@
 import { getCourtsForCanton, getJusticeOfThePeace, type Court, type CourtType } from './courts'
-import { getCantonsForMunicipality, type Canton } from './territory'
+import { getMunicipalitiesForPostalCode } from './postal-codes'
+import { getCantonsForMunicipality, type Canton, type Municipality } from './territory'
 import type { OnDay } from './time'
 
 export interface CantonCourt {
@@ -56,4 +57,33 @@ export function findCompetentCourts(
             if (court.type === type) found.add(court)
     }
     return [...found]
+}
+
+export interface PostalCodeCourts {
+    /** One of the municipalities the postal code belongs to */
+    municipality: Municipality
+    /** Its justices of the peace: one, or several for a city split over cantons */
+    justicesOfThePeace: CantonCourt[]
+    /** Its courts of the type asked for, as `findCompetentCourts` gives them */
+    courts: Court[]
+}
+
+/**
+ * The courts for a postal code on a day (today by default), per municipality. A postal code
+ * belongs to one municipality for almost every code; 1040, 1050 and 1804 belong to two, and
+ * the street then decides which, so the answer is one entry per municipality and is never
+ * collapsed to one. For each: its justices of the peace (`findJusticesOfThePeace`) and its
+ * courts of the type asked for (`findCompetentCourts`). Empty for an unknown postal code. A
+ * street address in a city split over cantons still needs the cantons' `territory` to pick one.
+ */
+export function findCourtsForPostalCode(
+    postalCode: string,
+    type: CourtType,
+    options: OnDay = {},
+): PostalCodeCourts[] {
+    return getMunicipalitiesForPostalCode(postalCode, options).map((municipality) => ({
+        municipality,
+        justicesOfThePeace: findJusticesOfThePeace(municipality.id, options),
+        courts: findCompetentCourts(municipality.id, type, options),
+    }))
 }

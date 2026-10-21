@@ -10,7 +10,8 @@
     "address": {
       "street": "Geldenaaksevest 64",
       "postalCode": "3000",
-      "city": "Leuven"
+      "city": "Leuven",
+      "municipality": "24062"
     },
     "contacts": [
       {
@@ -57,7 +58,8 @@
     "address": {
       "street": "Thier del Borne",
       "postalCode": "6870",
-      "city": "Saint-Hubert"
+      "city": "Saint-Hubert",
+      "municipality": "84059"
     },
     "contacts": [
       {
@@ -104,7 +106,8 @@
     "address": {
       "street": "Rue du Sart 11",
       "postalCode": "4210",
-      "city": "Marneffe"
+      "city": "Marneffe",
+      "municipality": "61010"
     },
     "contacts": [
       {
@@ -151,7 +154,8 @@
     "address": {
       "street": "Sint-Denijseweg 1",
       "postalCode": "8500",
-      "city": "Kortrijk"
+      "city": "Kortrijk",
+      "municipality": "34022"
     },
     "contacts": [
       {
@@ -194,7 +198,8 @@
     "address": {
       "street": "Sterrenwijzer 7/11 Olen",
       "postalCode": "2250",
-      "city": "Olen"
+      "city": "Olen",
+      "municipality": "13029"
     },
     "contacts": [
       {
@@ -237,7 +242,8 @@
     "address": {
       "street": "Berkendaelstraat 42",
       "postalCode": "1190",
-      "city": "Vorst"
+      "city": "Vorst",
+      "municipality": "21007"
     },
     "contacts": [
       {
@@ -284,7 +290,8 @@
     "address": {
       "street": "Route de Glons",
       "postalCode": "4452",
-      "city": "Paifve"
+      "city": "Paifve",
+      "municipality": "62060"
     },
     "contacts": [
       {
@@ -335,7 +342,8 @@
     "address": {
       "street": "Begijnenstraat 42",
       "postalCode": "2000",
-      "city": "Antwerpen"
+      "city": "Antwerpen",
+      "municipality": "11002"
     },
     "contacts": [
       {
@@ -374,7 +382,8 @@
     "address": {
       "street": "Schaarbeekstraat 2",
       "postalCode": "9120",
-      "city": "Beveren"
+      "city": "Beveren",
+      "municipality": "46030"
     },
     "contacts": [
       {
@@ -417,7 +426,8 @@
     "address": {
       "street": "Tanneweg 1",
       "postalCode": "9200",
-      "city": "Dendermonde"
+      "city": "Dendermonde",
+      "municipality": "42006"
     },
     "contacts": [
       {
@@ -464,7 +474,8 @@
     "address": {
       "street": "Nieuwe Wandeling 89",
       "postalCode": "9000",
-      "city": "Gent"
+      "city": "Gent",
+      "municipality": "44021"
     },
     "contacts": [
       {
@@ -511,7 +522,8 @@
     "address": {
       "street": "Witloofstraat 135",
       "postalCode": "1130",
-      "city": "Haren"
+      "city": "Haren",
+      "municipality": "21004"
     },
     "contacts": [
       {
@@ -554,7 +566,8 @@
     "address": {
       "street": "Zwarte-Brugstraat 4",
       "postalCode": "3500",
-      "city": "Hasselt"
+      "city": "Hasselt",
+      "municipality": "71072"
     },
     "contacts": [
       {
@@ -593,7 +606,8 @@
     "address": {
       "street": "Elverdingestraat 72",
       "postalCode": "8900",
-      "city": "Ieper"
+      "city": "Ieper",
+      "municipality": "33011"
     },
     "contacts": [
       {
@@ -640,7 +654,8 @@
     "address": {
       "street": "Liersesteenweg 2",
       "postalCode": "2800",
-      "city": "Mechelen"
+      "city": "Mechelen",
+      "municipality": "12025"
     },
     "contacts": [
       {
@@ -687,7 +702,8 @@
     "address": {
       "street": "Steenweg op Wortel 1",
       "postalCode": "2330",
-      "city": "Merksplas"
+      "city": "Merksplas",
+      "municipality": "13023"
     },
     "contacts": [
       {
@@ -734,7 +750,8 @@
     "address": {
       "street": "Bourgondiëstraat 6",
       "postalCode": "9700",
-      "city": "Oudenaarde"
+      "city": "Oudenaarde",
+      "municipality": "45035"
     },
     "contacts": [
       {
@@ -785,7 +802,8 @@
     "address": {
       "street": "Ducpétiauxlaan 106",
       "postalCode": "1060",
-      "city": "Sint-Gillis"
+      "city": "Sint-Gillis",
+      "municipality": "21013"
     },
     "contacts": [
       {
@@ -836,7 +854,8 @@
     "address": {
       "street": "Wijngaardstraat 65",
       "postalCode": "3700",
-      "city": "Tongeren"
+      "city": "Tongeren",
+      "municipality": "73111"
     },
     "contacts": [
       {
@@ -879,7 +898,8 @@
     "address": {
       "street": "Wezenstraat 1",
       "postalCode": "2300",
-      "city": "Turnhout"
+      "city": "Turnhout",
+      "municipality": "13040"
     },
     "contacts": [
       {
@@ -926,7 +946,8 @@
     "address": {
       "street": "Kolonie 17",
       "postalCode": "2323",
-      "city": "Wortel"
+      "city": "Wortel",
+      "municipality": "13014"
     },
     "contacts": [
       {
@@ -969,7 +990,8 @@
     "address": {
       "street": "St.-Jacobstraat 26",
       "postalCode": "9200",
-      "city": "Dendermonde"
+      "city": "Dendermonde",
+      "municipality": "42006"
     },
     "contacts": [
       {
@@ -1008,7 +1030,8 @@
     "address": {
       "street": "Maria Theresiastraat 74",
       "postalCode": "3000",
-      "city": "Leuven"
+      "city": "Leuven",
+      "municipality": "24062"
     },
     "contacts": [
       {
@@ -1051,7 +1074,8 @@
     "address": {
       "street": "Legeweg 200",
       "postalCode": "8200",
-      "city": "St.-Andries-Brugge"
+      "city": "St.-Andries-Brugge",
+      "municipality": "31005"
     },
     "contacts": [
       {
@@ -1098,7 +1122,8 @@
     "address": {
       "street": "Vagevuurstraat 8",
       "postalCode": "8755",
-      "city": "Wingene"
+      "city": "Wingene",
+      "municipality": "37021"
     },
     "contacts": [
       {
@@ -1141,7 +1166,8 @@
     "address": {
       "street": "Gelmelstraat 131",
       "postalCode": "2320",
-      "city": "Hoogstraten"
+      "city": "Hoogstraten",
+      "municipality": "13014"
     },
     "contacts": [
       {
@@ -1188,7 +1214,8 @@
     "address": {
       "street": "Rue du Géron 2",
       "postalCode": "5300",
-      "city": "Andenne"
+      "city": "Andenne",
+      "municipality": "92003"
     },
     "contacts": [
       {
@@ -1235,7 +1262,8 @@
     "address": {
       "street": "Rue Léon Castilhon 29",
       "postalCode": "6700",
-      "city": "Arlon"
+      "city": "Arlon",
+      "municipality": "81001"
     },
     "contacts": [
       {
@@ -1282,7 +1310,8 @@
     "address": {
       "street": "Place d'Armes 1",
       "postalCode": "5500",
-      "city": "Dinant"
+      "city": "Dinant",
+      "municipality": "91034"
     },
     "contacts": [
       {
@@ -1325,7 +1354,8 @@
     "address": {
       "street": "Rue de la Résistance 4",
       "postalCode": "4500",
-      "city": "Huy"
+      "city": "Huy",
+      "municipality": "61031"
     },
     "contacts": [
       {
@@ -1372,7 +1402,8 @@
     "address": {
       "street": "Rue de Clabecq 100",
       "postalCode": "1460",
-      "city": "Ittre"
+      "city": "Ittre",
+      "municipality": "25044"
     },
     "contacts": [
       {
@@ -1419,7 +1450,8 @@
     "address": {
       "street": "Rue Fr. Vandamme 172",
       "postalCode": "6120",
-      "city": "Jamioulx"
+      "city": "Jamioulx",
+      "municipality": "56086"
     },
     "contacts": [
       {
@@ -1466,7 +1498,8 @@
     "address": {
       "street": "Rue des Aubépines 2",
       "postalCode": "4450",
-      "city": "Lantin"
+      "city": "Lantin",
+      "municipality": "62060"
     },
     "contacts": [
       {
@@ -1513,7 +1546,8 @@
     "address": {
       "street": "Avenue de l'Europe 1A",
       "postalCode": "7900",
-      "city": "Leuze-en-Hainaut"
+      "city": "Leuze-en-Hainaut",
+      "municipality": "57094"
     },
     "contacts": [
       {
@@ -1560,7 +1594,8 @@
     "address": {
       "street": "Chaussée de Liège 178",
       "postalCode": "6900",
-      "city": "Marche-en-Famenne"
+      "city": "Marche-en-Famenne",
+      "municipality": "83034"
     },
     "contacts": [
       {
@@ -1607,7 +1642,8 @@
     "address": {
       "street": "Boulevard W. Churchill 24",
       "postalCode": "7000",
-      "city": "Mons"
+      "city": "Mons",
+      "municipality": "53053"
     },
     "contacts": [
       {
@@ -1654,7 +1690,8 @@
     "address": {
       "street": "Place Abbé Joseph André 7",
       "postalCode": "5000",
-      "city": "Namur"
+      "city": "Namur",
+      "municipality": "92094"
     },
     "contacts": [
       {
@@ -1701,7 +1738,8 @@
     "address": {
       "street": "Avenue de Burlet 4",
       "postalCode": "1400",
-      "city": "Nivelles"
+      "city": "Nivelles",
+      "municipality": "25072"
     },
     "contacts": [
       {
@@ -1748,7 +1786,8 @@
     "address": {
       "street": "Rue de Chantier 1",
       "postalCode": "7500",
-      "city": "Tournai"
+      "city": "Tournai",
+      "municipality": "57081"
     },
     "contacts": [
       {

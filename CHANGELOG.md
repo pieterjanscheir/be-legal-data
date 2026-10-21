@@ -7,6 +7,40 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ## [Unreleased]
 
+### Added
+
+**Postal codes.** `data/postal-codes.json`: every Belgian postal code with the municipality it
+belongs to, by REFNIS code, from Statbel's conversion table (CC BY 4.0): 1 152 records for 1 149
+codes, since `1040`, `1050` and `1804` each belong to two municipalities. Ids are the two
+official codes joined (`9000-44021`); every record carries a validity period read from the
+table's own date, and the build fails when a code points at an unknown municipality or a
+municipality has no code. Its own entry point, `belgica/postal-codes`, with
+`getPostalCode`, `getMunicipalitiesForPostalCode`, `getPostalCodes` and `postalCodesCoverage`;
+in the root, `findCourtsForPostalCode(postalCode, type)` chains a postal code to the justices
+of the peace and the competent courts, per municipality, so a shared code is never resolved to
+one of them. Sub-municipalities aren't in the data: bpost's list has them, but no REFNIS code
+and no open licence
+([#28](https://github.com/pieterjanscheir/belgica/issues/28)).
+
+**Addresses link to their municipality.** `address.municipality` on courts, prisons and houses
+of justice holds the REFNIS code the postal code belongs to; for a shared code the published
+city line decides between the two, and the field is left out when it names both (the justice
+of the peace of Etterbeek, `1040 Brussel (Etterbeek)`). A test checks that every court sits in
+its arrondissement, or its judicial area's; the one exception, the justice of the peace of
+Limbourg with a temporary seat in Eupen, is named in the test
+([#28](https://github.com/pieterjanscheir/belgica/issues/28)).
+
+**Canton boundaries** ([#29](https://github.com/pieterjanscheir/belgica/issues/29)).
+`data/canton-boundaries.json` has the boundary of every canton as GeoJSON `MultiPolygon`
+geometry in WGS 84, as the National Geographic Institute digitised it from the annex to the
+Judicial Code (geo.be, CC BY 4.0), with the NGI's object id and canton code, fetched every week
+with the other sources. One record per canton, keyed by the canton's id. The geometry is the
+NGI's, unsimplified, to 7 decimals. A new entry point, `belgica/canton-boundaries`,
+exports `cantonBoundaries`, `getCantonBoundary(cantonId)` and `findCantonsAt(lon, lat)`, the
+cantons whose boundary holds a point: one for a point in Belgium, none outside it. The package
+root doesn't re-export them: the file is 23 MB. The legal text in a canton's `territory` wins
+where the geometry disagrees.
+
 ### Changed
 
 **Renamed to `belgica` (breaking).** The package was `be-legal-data` up to 0.2.0; install
@@ -94,6 +128,16 @@ OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
 
 ### Added
 
+- Regions and provinces as datasets: `data/regions.json` (the 3 regions) and
+  `data/provinces.json` (the 10 provinces, each with its `region`), keyed by their Statbel
+  REFNIS code, with the names in Dutch, French and German as Statbel's REFNIS code list gives
+  them, built weekly from the snapshots of that list. Every municipality gains a `region`;
+  `Municipality.province` is typed `ProvinceId | '04000'` instead of `string` (a narrowing: the
+  values are unchanged, and the 19 municipalities of the Brussels-Capital Region, which has no
+  province, keep `'04000'`, the region's code, as Statbel's files have it). New lookups
+  `getRegion`, `getProvince`, `getProvinceForMunicipality` (`undefined` in Brussels) and
+  `getRegionForMunicipality`, types `Region`, `Province`, `RegionId` and `ProvinceId`, and
+  `regions.csv` and `provinces.csv` in the releases.
 - The documentation site is available in Dutch (/nl/) and French (/fr/) next to English, with a
   language switcher. English is the source; the translations follow it.
 - `ids.lock.json`: every id the package has published, per dataset. `pnpm generate` adds new

@@ -31,15 +31,27 @@
           "$ref": "#/definitions/Bilingual"
         },
         "province": {
-          "type": "string",
-          "description": "REFNIS code of the province, or '04000' for the Brussels-Capital Region",
-          "pattern": "^\\d{5}$"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ProvinceId"
+            },
+            {
+              "type": "string",
+              "const": "04000"
+            }
+          ],
+          "description": "REFNIS code of the province. The 19 municipalities of the Brussels-Capital Region have no province and carry the region's code, '04000', as Statbel's files do."
+        },
+        "region": {
+          "$ref": "#/definitions/RegionId",
+          "description": "REFNIS code of the region"
         }
       },
       "required": [
         "id",
         "name",
-        "province"
+        "province",
+        "region"
       ],
       "additionalProperties": false
     },
@@ -630,6 +642,31 @@
       ],
       "additionalProperties": false,
       "description": "A name as the Judicial Code gives it, in Dutch and French"
+    },
+    "ProvinceId": {
+      "type": "string",
+      "enum": [
+        "10000",
+        "20001",
+        "20002",
+        "30000",
+        "40000",
+        "50000",
+        "60000",
+        "70000",
+        "80000",
+        "90000"
+      ],
+      "description": "Id of a record in data/provinces.json"
+    },
+    "RegionId": {
+      "type": "string",
+      "enum": [
+        "02000",
+        "03000",
+        "04000"
+      ],
+      "description": "Id of a record in data/regions.json"
     }
   }
 }

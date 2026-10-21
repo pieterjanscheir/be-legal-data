@@ -9,7 +9,8 @@
     "address": {
       "street": "Quinten Matsijslei 55",
       "postalCode": "2018",
-      "city": "Antwerpen"
+      "city": "Antwerpen",
+      "municipality": "11002"
     },
     "contacts": [
       {
@@ -41,7 +42,8 @@
     "address": {
       "street": "Predikherenrei 3",
       "postalCode": "8000",
-      "city": "Brugge"
+      "city": "Brugge",
+      "municipality": "31005"
     },
     "contacts": [
       {
@@ -73,7 +75,8 @@
     "address": {
       "street": "Hertogstraat 63",
       "postalCode": "1000",
-      "city": "Brussel"
+      "city": "Brussel",
+      "municipality": "21004"
     },
     "contacts": [
       {
@@ -105,7 +108,8 @@
     "address": {
       "street": "Leopold II-laan 55",
       "postalCode": "9200",
-      "city": "Dendermonde"
+      "city": "Dendermonde",
+      "municipality": "42006"
     },
     "contacts": [
       {
@@ -137,7 +141,8 @@
     "address": {
       "street": "Cataloniëstraat 6",
       "postalCode": "9000",
-      "city": "Gent"
+      "city": "Gent",
+      "municipality": "44021"
     },
     "contacts": [
       {
@@ -169,7 +174,8 @@
     "address": {
       "street": "Bampslaan 40",
       "postalCode": "3500",
-      "city": "Hasselt"
+      "city": "Hasselt",
+      "municipality": "71072"
     },
     "contacts": [
       {
@@ -201,7 +207,8 @@
     "address": {
       "street": "Vooruitgangstraat 40",
       "postalCode": "8900",
-      "city": "Ieper"
+      "city": "Ieper",
+      "municipality": "33011"
     },
     "contacts": [
       {
@@ -233,7 +240,8 @@
     "address": {
       "street": "Burgemeester Nolfstraat 51",
       "postalCode": "8500",
-      "city": "Kortrijk"
+      "city": "Kortrijk",
+      "municipality": "34022"
     },
     "contacts": [
       {
@@ -265,7 +273,8 @@
     "address": {
       "street": "Arnould Nobelstraat 44",
       "postalCode": "3000",
-      "city": "Leuven"
+      "city": "Leuven",
+      "municipality": "24062"
     },
     "contacts": [
       {
@@ -297,7 +306,8 @@
     "address": {
       "street": "Stationsstraat 110",
       "postalCode": "2800",
-      "city": "Mechelen"
+      "city": "Mechelen",
+      "municipality": "12025"
     },
     "contacts": [
       {
@@ -329,7 +339,8 @@
     "address": {
       "street": "Lappersfort 1",
       "postalCode": "9700",
-      "city": "Oudenaarde"
+      "city": "Oudenaarde",
+      "municipality": "45035"
     },
     "contacts": [
       {
@@ -361,7 +372,8 @@
     "address": {
       "street": "Kielenstraat 24",
       "postalCode": "3700",
-      "city": "Tongeren-Borgloon"
+      "city": "Tongeren-Borgloon",
+      "municipality": "73111"
     },
     "contacts": [
       {
@@ -393,7 +405,8 @@
     "address": {
       "street": "Merode-Center 1",
       "postalCode": "2300",
-      "city": "Turnhout"
+      "city": "Turnhout",
+      "municipality": "13040"
     },
     "contacts": [
       {
@@ -425,7 +438,8 @@
     "address": {
       "street": "Ieperse Steenweg 87",
       "postalCode": "8630",
-      "city": "Veurne"
+      "city": "Veurne",
+      "municipality": "38025"
     },
     "contacts": [
       {
@@ -456,7 +470,8 @@
     "address": {
       "street": "59 B rue Sesselich",
       "postalCode": "6700",
-      "city": "Arlon"
+      "city": "Arlon",
+      "municipality": "81001"
     },
     "contacts": [
       {
@@ -506,7 +521,8 @@
     "address": {
       "street": "66B rue de Birmingham",
       "postalCode": "1080",
-      "city": "Bruxelles"
+      "city": "Bruxelles",
+      "municipality": "21012"
     },
     "contacts": [
       {
@@ -542,7 +558,8 @@
     "address": {
       "street": "11 rue Arthur Pater",
       "postalCode": "6000",
-      "city": "Charleroi"
+      "city": "Charleroi",
+      "municipality": "52011"
     },
     "contacts": [
       {
@@ -592,7 +609,8 @@
     "address": {
       "street": "39 rue de la station",
       "postalCode": "5500",
-      "city": "Dinant"
+      "city": "Dinant",
+      "municipality": "91034"
     },
     "contacts": [
       {
@@ -633,7 +651,8 @@
     "address": {
       "street": "76 chaussée de Liège",
       "postalCode": "4500",
-      "city": "Huy"
+      "city": "Huy",
+      "municipality": "61031"
     },
     "contacts": [
       {
@@ -674,7 +693,8 @@
     "address": {
       "street": "32 boulevard de la Sauvenière",
       "postalCode": "4000",
-      "city": "Liège"
+      "city": "Liège",
+      "municipality": "62063"
     },
     "contacts": [
       {
@@ -719,7 +739,8 @@
     "address": {
       "street": "2 allée du Monument",
       "postalCode": "6900",
-      "city": "Marche-en-Famenne"
+      "city": "Marche-en-Famenne",
+      "municipality": "83034"
     },
     "contacts": [
       {
@@ -755,7 +776,8 @@
     "address": {
       "street": "16 avenue Abel Dubois (L'accueil se trouve à l'arrière du bâtiment)",
       "postalCode": "7000",
-      "city": "Mons"
+      "city": "Mons",
+      "municipality": "53053"
     },
     "contacts": [
       {
@@ -790,7 +812,8 @@
     "address": {
       "street": "6 boulevard Ernest Mélot",
       "postalCode": "5000",
-      "city": "Namur"
+      "city": "Namur",
+      "municipality": "92094"
     },
     "contacts": [
       {
@@ -831,7 +854,8 @@
     "address": {
       "street": "33 rue Franklin Roosevelt",
       "postalCode": "6840",
-      "city": "Neufchâteau"
+      "city": "Neufchâteau",
+      "municipality": "84043"
     },
     "contacts": [
       {
@@ -881,7 +905,8 @@
     "address": {
       "street": "2 rue Altiero Spinelli",
       "postalCode": "1401",
-      "city": "Baulers (Nivelles)"
+      "city": "Baulers (Nivelles)",
+      "municipality": "25072"
     },
     "contacts": [
       {
@@ -931,7 +956,8 @@
     "address": {
       "street": "33B rue Frinoise",
       "postalCode": "7500",
-      "city": "Tournai"
+      "city": "Tournai",
+      "municipality": "57081"
     },
     "contacts": [
       {
@@ -981,7 +1007,8 @@
     "address": {
       "street": "28 rue Saint-Remacle",
       "postalCode": "4800",
-      "city": "Verviers"
+      "city": "Verviers",
+      "municipality": "63079"
     },
     "contacts": [
       {

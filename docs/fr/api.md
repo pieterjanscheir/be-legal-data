@@ -9,18 +9,22 @@ import { getCanton, getInterestRate /* … */ } from 'belgica'
 import { getInterestRate } from 'belgica/interest-rates'
 import { getCourt, getJusticeOfThePeace } from 'belgica/courts'
 import { getCanton, getCantonsForMunicipality } from 'belgica/territory'
+import { findCantonsAt } from 'belgica/canton-boundaries'
 import { getPrison } from 'belgica/prisons'
 import { getHouseOfJustice } from 'belgica/houses-of-justice'
+import { getMunicipalitiesForPostalCode } from 'belgica/postal-codes'
 ```
 
 | Point d'entrée                 | Contenu                                                          |
 | ------------------------------ | ---------------------------------------------------------------- |
-| `belgica`                      | Tout ce qui suit                                                 |
-| `belgica/territory`            | Ressorts, arrondissements, cantons, communes                     |
+| `belgica`                      | Tout ce qui suit, sauf les limites des cantons                   |
+| `belgica/territory`            | Ressorts, arrondissements, cantons, communes, provinces, régions |
+| `belgica/canton-boundaries`    | La géométrie des cantons, et `findCantonsAt`                     |
 | `belgica/courts`               | Cours et tribunaux, et les helpers de coordonnées                |
 | `belgica/prisons`              | Prisons, et les helpers de coordonnées                           |
 | `belgica/houses-of-justice`    | Maisons de justice, et les helpers de coordonnées                |
 | `belgica/interest-rates`       | Taux d'intérêt                                                   |
+| `belgica/postal-codes`         | Codes postaux, avec les communes auxquelles ils appartiennent    |
 | `belgica/data/*.json`          | Les fichiers de données bruts                                    |
 | `belgica/schema/*.schema.json` | [JSON Schemas](/fr/guide/schema)                                 |
 | `belgica/datapackage.json`     | [Descripteur de data package](/fr/guide/schema#datapackage-json) |
@@ -67,6 +71,32 @@ function getMunicipality(id: string, options?: OnDay): Municipality | undefined
 
 ```ts
 getMunicipality('44021').name // { nl: 'Gent', fr: 'Gand' }
+getMunicipality('44021').province // '40000'
+getMunicipality('21004').province // '04000' : Bruxelles n'a pas de province, c'est le code de la région
+```
+
+### `getRegion(id)` {#getregion-id}
+
+```ts
+function getRegion(id: RegionId): Region
+function getRegion(id: string, options?: OnDay): Region | undefined
+```
+
+```ts
+getRegion('02000').name.fr // 'Région flamande'
+```
+
+### `getProvince(id)` {#getprovince-id}
+
+```ts
+function getProvince(id: ProvinceId): Province
+function getProvince(id: string, options?: OnDay): Province | undefined
+```
+
+```ts
+getProvince('40000').name.nl // 'Provincie Oost-Vlaanderen'
+getProvince('40000').region // '02000'
+getProvince('04000') // undefined : la Région de Bruxelles-Capitale n'est pas une province
 ```
 
 ### `getCanton(id)` {#getcanton-id}
@@ -108,6 +138,63 @@ arrondissement, même une ville scindée en plusieurs cantons.
 
 ```ts
 getArrondissementForMunicipality('44021')?.id // 'oost-vlaanderen'
+```
+
+### `getProvinceForMunicipality(id)` {#getprovinceformunicipality-id}
+
+```ts
+function getProvinceForMunicipality(id: string, options?: OnDay): Province | undefined
+```
+
+La province dans laquelle se situe une commune, par code REFNIS. `undefined` pour les 19 communes
+de la Région de Bruxelles-Capitale, qui n'a pas de province, et pour un code inconnu.
+
+```ts
+getProvinceForMunicipality('44021')?.id // '40000'
+getProvinceForMunicipality('21004') // undefined : Bruxelles
+```
+
+### `getRegionForMunicipality(id)` {#getregionformunicipality-id}
+
+```ts
+function getRegionForMunicipality(id: string, options?: OnDay): Region | undefined
+```
+
+```ts
+getRegionForMunicipality('21004')?.name.fr // 'Région de Bruxelles-Capitale'
+```
+
+## Limites des cantons {#canton-boundaries}
+
+Seulement dans `belgica/canton-boundaries` : la géométrie représente environ un million de
+positions, si bien que la racine du package ne la réexporte pas (les types, si). Voyez la
+[page du jeu de données](/fr/data/canton-boundaries).
+
+### `findCantonsAt(longitude, latitude)` {#findcantonsat-longitude-latitude}
+
+```ts
+function findCantonsAt(longitude: number, latitude: number, options?: OnDay): Canton[]
+```
+
+Les cantons dont la limite contient un point, à un jour donné (aujourd'hui par défaut). La
+longitude d'abord, puis la latitude, en degrés décimaux (WGS 84), comme les ordonne GeoJSON. Un
+seul canton pour un point en Belgique ; aucun hors de celle-ci ; deux pour un point sur la ligne
+entre deux cantons. Lève une `RangeError` pour des coordonnées qui ne sont pas des nombres finis.
+
+```ts
+findCantonsAt(3.7268, 51.053).map((c) => c.id) // ['gent-1'] : Sint-Baafskathedraal
+findCantonsAt(2.3522, 48.8566) // [] : Paris
+```
+
+### `getCantonBoundary(cantonId)` {#getcantonboundary-cantonid}
+
+```ts
+function getCantonBoundary(id: CantonId): CantonBoundary
+function getCantonBoundary(id: string, options?: OnDay): CantonBoundary | undefined
+```
+
+```ts
+getCantonBoundary('gent-1').geometry.type // 'MultiPolygon'
 ```
 
 ## Cours et tribunaux {#courts}
@@ -266,6 +353,46 @@ function getHouseOfJustice(id: string, options?: OnDay): HouseOfJustice | undefi
 getHouseOfJustice('justitiehuis-gent').ovo // 'OVO001917'
 ```
 
+## Codes postaux {#postal-codes}
+
+### `getPostalCode(id)` {#getpostalcode-id}
+
+```ts
+function getPostalCode(id: PostalCodeId): PostalCode
+function getPostalCode(id: string, options?: OnDay): PostalCode | undefined
+```
+
+Un enregistrement par id : le code postal et le code REFNIS joints, `'9000-44021'`.
+
+### `getMunicipalitiesForPostalCode(postalCode)` {#getmunicipalitiesforpostalcode-postalcode}
+
+```ts
+function getMunicipalitiesForPostalCode(postalCode: string, options?: OnDay): Municipality[]
+```
+
+Les communes auxquelles un code postal appartient un jour donné (aujourd'hui par défaut) : une
+seule pour presque tous les codes ; deux pour `1040`, `1050` et `1804`, où la rue tranche. Les
+mêmes enregistrements `Municipality` que ceux de `getMunicipality`. Vide pour un code inconnu.
+
+```ts
+getMunicipalitiesForPostalCode('9050').map((m) => m.name.fr) // ['Gand']
+getMunicipalitiesForPostalCode('1040').map((m) => m.name.fr) // ['Bruxelles', 'Etterbeek']
+getMunicipalitiesForPostalCode('0000') // []
+```
+
+### `getPostalCodes(municipalityId)` {#getpostalcodes-municipalityid}
+
+```ts
+function getPostalCodes(municipalityId: string, options?: OnDay): PostalCode[]
+```
+
+Les codes postaux d'une commune un jour donné (aujourd'hui par défaut), par code REFNIS, dans
+l'ordre. Vide pour un code inconnu.
+
+```ts
+getPostalCodes('44021').map((p) => p.postalCode) // ['9000', '9030', '9031', …]
+```
+
 ## Compétence {#competence}
 
 Des questions qui combinent plusieurs jeux de données. Elles ne sont disponibles qu'à la racine du package, puisqu'elles
@@ -312,6 +439,36 @@ findJusticesOfThePeace('44088')
 // [{ canton: { id: 'merelbeke-melle', … }, court: { id: 'justice-of-the-peace-merelbeke-melle', … }, partial: false }]
 
 findJusticesOfThePeace('44021').map((c) => c.canton.id) // ['gent-1', 'gent-2', 'gent-3', 'gent-4', 'gent-5']
+```
+
+### `findCourtsForPostalCode(postalCode, type)` {#findcourtsforpostalcode-postalcode-type}
+
+```ts
+function findCourtsForPostalCode(
+    postalCode: string,
+    type: CourtType,
+    options?: OnDay,
+): PostalCodeCourts[]
+
+interface PostalCodeCourts {
+    municipality: Municipality
+    justicesOfThePeace: CantonCourt[] // findJusticesOfThePeace(municipality.id)
+    courts: Court[] // findCompetentCourts(municipality.id, type)
+}
+```
+
+Les juridictions pour un code postal un jour donné (aujourd'hui par défaut), par commune : le code
+postal donne la commune ([codes postaux](/fr/data/postal-codes)), la commune ses justices de paix
+et ses juridictions du type demandé. Une entrée pour presque tous les codes ; deux pour `1040`,
+`1050` et `1804`, qui appartiennent à deux communes, de sorte que la réponse n'est jamais ramenée
+à l'une d'elles. Vide pour un code inconnu. Dans une ville scindée en cantons, la rue tranche
+toujours entre les justices de paix, comme avec `findJusticesOfThePeace`.
+
+```ts
+findCourtsForPostalCode('9050', 'labour-court')
+// [{ municipality: { id: '44021', … }, justicesOfThePeace: [gent-1 … gent-5], courts: [labour-court-gent] }]
+
+findCourtsForPostalCode('1040', 'police-court').map((r) => r.municipality.name.fr) // ['Bruxelles', 'Etterbeek']
 ```
 
 ## Taux d'intérêt {#interest-rates}
@@ -368,6 +525,7 @@ const territoryCoverage: { from: '2025-01-01' }
 const courtsCoverage: { from: '2025-01-01' }
 const prisonsCoverage: { from: '2026-10-20' }
 const housesOfJusticeCoverage: { from: '2026-10-20' }
+const postalCodesCoverage: { from: '2025-01-01' }
 
 function appliesOn(record: Validity, day: string): boolean
 function toDay(date: Date | string): string // 'YYYY-MM-DD', ou une RangeError
@@ -394,22 +552,26 @@ Les jeux de données complets, typés :
 | `judicialAreas`   | `readonly JudicialArea[]`                            |
 | `arrondissements` | `readonly Arrondissement[]`                          |
 | `cantons`         | `readonly Canton[]`                                  |
+| `regions`         | `readonly Region[]`                                  |
+| `provinces`       | `readonly Province[]`                                |
 | `municipalities`  | `readonly Municipality[]`                            |
 | `courts`          | `readonly Court[]`                                   |
 | `prisons`         | `readonly Prison[]`                                  |
 | `housesOfJustice` | `readonly HouseOfJustice[]`                          |
+| `postalCodes`     | `readonly PostalCode[]`                              |
 | `interestRates`   | `Readonly<Record<InterestType, InterestRateSeries>>` |
 
 ## Types {#types}
 
-| Type                                                                                                                                                                            | Décrit sur                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `JudicialAreaId`, `ArrondissementId`, `CantonId`, `MunicipalityId`, `CourtId`, `PrisonId`, `HouseOfJusticeId` : unions des ids présents dans les données, régénérées avec elles | [Identifiants](/fr/guide/identifiers#in-typescript)                           |
-| `Locale` = `'nl' \| 'fr' \| 'de'`                                                                                                                                               |                                                                               |
-| `SourceRef` = `{ url: string; retrieved: string }` : d'où proviennent les données d'un enregistrement                                                                           | [Qualité et fraîcheur des données](/fr/guide/data-quality)                    |
-| `Translated` = `Record<Locale, string>`                                                                                                                                         |                                                                               |
-| `Bilingual` = `Record<'nl' \| 'fr', string>` : les noms tels que le Code judiciaire les donne                                                                                   |                                                                               |
-| `JudicialArea`, `Arrondissement`, `Canton`, `Municipality`, `LegalBasis`, `Validity`, `OnDay`                                                                                   | [Territoire et cantons](/fr/data/territory)                                   |
-| `Court`, `CourtType`, `CourtFilter`, `Address`, `Contact`, `ContactType`, `CantonCourt`                                                                                         | [Cours et tribunaux](/fr/data/courts#shape)                                   |
-| `Prison`, `HouseOfJustice`                                                                                                                                                      | [Prisons](/fr/data/prisons), [Maisons de justice](/fr/data/houses-of-justice) |
-| `InterestType`, `InterestRatePeriod`, `InterestRateSeries`, `InterestRateResult`                                                                                                | [Taux d'intérêt](/fr/data/interest-rates#shape)                               |
+| Type                                                                                                                                                                                                                      | Décrit sur                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `JudicialAreaId`, `ArrondissementId`, `CantonId`, `RegionId`, `ProvinceId`, `MunicipalityId`, `CourtId`, `PrisonId`, `HouseOfJusticeId`, `PostalCodeId` : unions des ids présents dans les données, régénérées avec elles | [Identifiants](/fr/guide/identifiers#in-typescript)                           |
+| `Locale` = `'nl' \| 'fr' \| 'de'`                                                                                                                                                                                         |                                                                               |
+| `SourceRef` = `{ url: string; retrieved: string }` : d'où proviennent les données d'un enregistrement                                                                                                                     | [Qualité et fraîcheur des données](/fr/guide/data-quality)                    |
+| `Translated` = `Record<Locale, string>`                                                                                                                                                                                   |                                                                               |
+| `Bilingual` = `Record<'nl' \| 'fr', string>` : les noms tels que le Code judiciaire les donne                                                                                                                             |                                                                               |
+| `JudicialArea`, `Arrondissement`, `Canton`, `Region`, `Province`, `Municipality`, `LegalBasis`, `Validity`, `OnDay`                                                                                                       | [Territoire et cantons](/fr/data/territory)                                   |
+| `Court`, `CourtType`, `CourtFilter`, `Address`, `Contact`, `ContactType`, `CantonCourt`                                                                                                                                   | [Cours et tribunaux](/fr/data/courts#shape)                                   |
+| `PostalCode`, `PostalCodeCourts`                                                                                                                                                                                          | [Codes postaux](/fr/data/postal-codes)                                        |
+| `Prison`, `HouseOfJustice`                                                                                                                                                                                                | [Prisons](/fr/data/prisons), [Maisons de justice](/fr/data/houses-of-justice) |
+| `InterestType`, `InterestRatePeriod`, `InterestRateSeries`, `InterestRateResult`                                                                                                                                          | [Taux d'intérêt](/fr/data/interest-rates#shape)                               |

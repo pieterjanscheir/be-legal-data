@@ -1,12 +1,13 @@
 <script setup>
-import { judicialAreas, arrondissements, getJudicialArea } from '../../../src'
+import { judicialAreas, arrondissements, getJudicialArea, regions, provinces, getRegion } from '../../../src'
 </script>
 
 # Territoire et cantons {#territory-and-cantons}
 
 La carte judiciaire belge compte trois niveaux : les **ressorts** (un par cour d'appel) contiennent des
 **arrondissements**, qui contiennent des **cantons** (une justice de paix chacun). Les cantons sont
-définis en termes de **communes**.
+définis en termes de **communes**. À côté de la carte judiciaire, la carte administrative : chaque
+commune se situe dans une **région** et, hors Bruxelles, dans une **province**.
 
 ## À quoi ça sert {#why-it-s-useful}
 
@@ -27,14 +28,14 @@ le texte peut trancher.
 
 ## Source et mises à jour {#source-and-updates}
 
-|               |                                                                                                                                                                                                                                                                                                                                        |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Source        | Annexe au Code judiciaire, « Gebiedsomschrijving en zetel van hoven en rechtbanken » / « Délimitation du territoire et siège des cours et tribunaux » ([ELI, numac 1967101058](https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel)), en néerlandais et en français ; données ouvertes de Statbel pour les communes |
-| Construit par | `pnpm build:cantons` (cantons, communes) ; à la main (ressorts, arrondissements)                                                                                                                                                                                                                                                       |
-| Change quand  | Une loi modifie l'annexe ; des communes fusionnent (2019, 2025)                                                                                                                                                                                                                                                                        |
-| Couvre        | À partir du 1er janvier 2025 : une recherche pour une date antérieure lève une `RangeError` ([temps](/fr/api#time))                                                                                                                                                                                                                    |
-| Vérifié       | Reconstruit à la main avec `pnpm build:cantons` : ejustice refuse les serveurs de GitHub ([qualité des données](/fr/guide/data-quality))                                                                                                                                                                                               |
-| Licence       | CC BY 4.0 ; données communales © Statbel, CC BY 4.0                                                                                                                                                                                                                                                                                    |
+|               |                                                                                                                                                                                                                                                                                                                                                                      |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Source        | Annexe au Code judiciaire, « Gebiedsomschrijving en zetel van hoven en rechtbanken » / « Délimitation du territoire et siège des cours et tribunaux » ([ELI, numac 1967101058](https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel)), en néerlandais et en français ; données ouvertes de Statbel pour les communes, les provinces et les régions |
+| Construit par | `pnpm build:cantons` (cantons, communes) ; instantanés hebdomadaires + `pnpm build:data` (régions, provinces) ; à la main (ressorts, arrondissements)                                                                                                                                                                                                                |
+| Change quand  | Une loi modifie l'annexe ; des communes fusionnent (2019, 2025)                                                                                                                                                                                                                                                                                                      |
+| Couvre        | À partir du 1er janvier 2025 : une recherche pour une date antérieure lève une `RangeError` ([temps](/fr/api#time))                                                                                                                                                                                                                                                  |
+| Vérifié       | Reconstruit à la main avec `pnpm build:cantons` : ejustice refuse les serveurs de GitHub ([qualité des données](/fr/guide/data-quality))                                                                                                                                                                                                                             |
+| Licence       | CC BY 4.0 ; données communales © Statbel, CC BY 4.0                                                                                                                                                                                                                                                                                                                  |
 
 ## Trouver le canton d'une commune {#find-the-canton-for-a-municipality}
 
@@ -127,8 +128,10 @@ interface Canton {
 
 55 cantons ne couvrent qu'une partie d'une commune. Pour ceux-ci, le canton ne peut se déduire de la seule
 commune : il dépend de la rue (et parfois du numéro de maison). Le texte `territory` en nomme les
-limites. Le géocodage de ces limites est un ajout possible à l'avenir ; d'ici là, affichez les cantons
-candidats et leur texte, et laissez une personne trancher.
+limites. Avec les coordonnées de l'adresse, `findCantonsAt(lon, lat)`, de
+`belgica/canton-boundaries`, trouve le canton dans les
+[limites des cantons](./canton-boundaries) de l'IGN ; sans elles, affichez les cantons candidats et leur
+texte, et laissez une personne trancher. Là où la géométrie et le texte divergent, le texte fait loi.
 
 ## Communes {#municipalities}
 
@@ -139,20 +142,64 @@ Les 565 communes avec leur code REFNIS (NIS) de Statbel. Fichier : `data/municip
 interface Municipality {
     id: MunicipalityId // le code REFNIS : '44021' pour Gent
     name: Bilingual
-    province: string // code REFNIS de la province, ou '04000' pour Bruxelles-Capitale
+    province: ProvinceId | '04000' // code REFNIS de la province ; '04000' à Bruxelles
+    region: RegionId // code REFNIS de la région
 }
 ```
 
-| Code de province | Province                     |
-| ---------------- | ---------------------------- |
-| `04000`          | Région de Bruxelles-Capitale |
-| `10000`          | Antwerpen                    |
-| `20001`          | Vlaams-Brabant               |
-| `20002`          | Brabant wallon               |
-| `30000`          | West-Vlaanderen              |
-| `40000`          | Oost-Vlaanderen              |
-| `50000`          | Hainaut                      |
-| `60000`          | Liège                        |
-| `70000`          | Limburg                      |
-| `80000`          | Luxembourg                   |
-| `90000`          | Namur                        |
+Les 19 communes de la Région de Bruxelles-Capitale n'ont pas de province. Leur `province` vaut
+`04000`, le code de la région : c'est ce que Statbel met lui-même dans la colonne province de ses
+fichiers. `getProvinceForMunicipality` renvoie `undefined` pour elles ; `getRegionForMunicipality`
+donne la région. Les codes sont listés ci-dessous, à partir des données.
+
+## Régions {#regions}
+
+Les 3 régions. Fichier : `data/regions.json` (généré à partir de la liste des codes REFNIS de
+Statbel ; noms tels que Statbel les publie). © Statbel, CC BY 4.0.
+
+<table>
+<thead><tr><th>Id (REFNIS)</th><th>nl</th><th>fr</th><th>de</th></tr></thead>
+<tbody>
+<tr v-for="r in regions" :key="r.id">
+<td><code>{{ r.id }}</code></td><td>{{ r.name.nl }}</td><td>{{ r.name.fr }}</td><td>{{ r.name.de }}</td>
+</tr>
+</tbody>
+</table>
+
+```ts
+interface Region {
+    id: RegionId // le code REFNIS : '02000', '03000', '04000'
+    name: Translated // { nl, fr, de }, tels que Statbel les publie
+    sources: SourceRef[] // la liste des codes REFNIS de Statbel
+}
+```
+
+## Provinces {#provinces}
+
+Les 10 provinces, avec leur région. Fichier : `data/provinces.json` (généré à partir de la liste
+des codes REFNIS de Statbel). © Statbel, CC BY 4.0. La Région de Bruxelles-Capitale n'a pas de
+province ; la province de Brabant, qui a cessé d'exister le 31 décembre 1994, est antérieure à la
+couverture des données.
+
+<table>
+<thead><tr><th>Id (REFNIS)</th><th>nl</th><th>fr</th><th>de</th><th>Région</th></tr></thead>
+<tbody>
+<tr v-for="p in provinces" :key="p.id">
+<td><code>{{ p.id }}</code></td><td>{{ p.name.nl }}</td><td>{{ p.name.fr }}</td><td>{{ p.name.de }}</td>
+<td>{{ getRegion(p.region).name.fr }}</td>
+</tr>
+</tbody>
+</table>
+
+```ts
+interface Province {
+    id: ProvinceId // le code REFNIS : '40000' pour la Flandre orientale
+    name: Translated // { nl, fr, de }, tels que Statbel les publie
+    region: RegionId
+    sources: SourceRef[] // la liste des codes REFNIS de Statbel
+}
+```
+
+Les noms sont ceux de Statbel, avec le mot désignant le type d'entité (`Provincie
+Oost-Vlaanderen`, `Province de Flandre orientale`, `Provinz Ostflandern`) : le paquet conserve les
+valeurs telles que la source les publie et ne les abrège pas.

@@ -38,7 +38,11 @@ text of their territories) are by far the largest:
 import { getInterestRate } from 'belgica/interest-rates'
 import { getCourt } from 'belgica/courts'
 import { getCanton } from 'belgica/territory'
+import { getMunicipalitiesForPostalCode } from 'belgica/postal-codes'
 ```
+
+The [canton boundaries](/data/canton-boundaries) are the exception: a million positions of
+geometry, only in `belgica/canton-boundaries`, never loaded by the package root.
 
 <table v-if="stats.sizes">
 <thead><tr><th>Entry point</th><th style="text-align:right">JavaScript loaded</th><th style="text-align:right">gzip</th></tr></thead>
@@ -94,6 +98,15 @@ When a city is split over several cantons (Antwerpen, Gent, Brussel, Luik, …),
 one result. The street address decides, and each canton's `territory` holds the legal
 description of its part. Try it on the [territory page](/data/territory#find-the-canton-for-a-municipality).
 
+With the address's coordinates, the [canton boundaries](/data/canton-boundaries) settle it:
+
+```ts
+import { findCantonsAt } from 'belgica/canton-boundaries'
+
+const [canton] = findCantonsAt(3.7268, 51.053) // longitude, latitude: gent-1
+const court = getJusticeOfThePeace(canton.id)
+```
+
 ### Which court for a municipality?
 
 Every court other than a justice of the peace lists the cantons it covers (`cantons`), as the
@@ -109,6 +122,29 @@ findCompetentCourts('21004', 'labour-court') // the Dutch- and the French-speaki
 const [court] = findCompetentCourts('44021', 'enterprise-court')
 getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brugge, …
 ```
+
+#### From a postal code
+
+An address comes with a postal code, not a REFNIS code. `findCourtsForPostalCode` goes from the
+postal code to the municipality ([postal codes](/data/postal-codes)) and from there to the
+justices of the peace and the courts of a type. It answers per municipality: three postal codes
+(`1040`, `1050`, `1804`) belong to two municipalities, and the street then decides.
+
+```ts
+import { findCourtsForPostalCode, getMunicipalitiesForPostalCode } from 'belgica'
+
+const [gent] = findCourtsForPostalCode('9050', 'labour-court')
+gent.municipality.name.nl // 'Gent'
+gent.courts.map((c) => c.id) // ['labour-court-gent']
+gent.justicesOfThePeace.map((c) => c.canton.id) // ['gent-1', …, 'gent-5']: the street decides
+
+findCourtsForPostalCode('1040', 'police-court').map((r) => r.municipality.name.nl) // ['Brussel', 'Etterbeek']
+getMunicipalitiesForPostalCode('9050').map((m) => m.id) // ['44021']
+```
+
+In a city split over cantons, the postal code narrows the question to the municipality; the
+canton still needs the street, and its boundaries are legal prose until
+[#29](https://github.com/pieterjanscheir/belgica/issues/29) adds them as geometry.
 
 ### Interest due on a day
 

@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://pieterjanscheir.github.io/belgica/schema/regions.schema.json",
+  "title": "belgica: data/regions.json",
+  "$ref": "#/definitions/RegionsFile",
+  "definitions": {
+    "RegionsFile": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Region"
+      }
+    },
+    "Region": {
+      "type": "object",
+      "properties": {
+        "validFrom": {
+          "type": "string",
+          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts.",
+          "format": "date"
+        },
+        "validTo": {
+          "type": "string",
+          "description": "Last day the record applies, YYYY-MM-DD",
+          "format": "date"
+        },
+        "id": {
+          "$ref": "#/definitions/RegionId",
+          "description": "The region's Statbel REFNIS code: '02000' Flemish, '03000' Walloon, '04000' Brussels-Capital"
+        },
+        "name": {
+          "$ref": "#/definitions/Translated",
+          "description": "The name as Statbel publishes it: 'Vlaams Gewest', 'Région flamande', 'Flämische Region'"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SourceRef"
+          },
+          "description": "Statbel's REFNIS code list, and the day its content was first seen"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "sources"
+      ],
+      "additionalProperties": false,
+      "description": "One of the three regions (gewesten, régions): Flemish, Walloon and Brussels-Capital"
+    },
+    "RegionId": {
+      "type": "string",
+      "enum": [
+        "02000",
+        "03000",
+        "04000"
+      ],
+      "description": "Id of a record in data/regions.json"
+    },
+    "Translated": {
+      "type": "object",
+      "properties": {
+        "nl": {
+          "type": "string"
+        },
+        "fr": {
+          "type": "string"
+        },
+        "de": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nl",
+        "fr",
+        "de"
+      ],
+      "additionalProperties": false,
+      "description": "A name in the three national languages"
+    },
+    "SourceRef": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The exact official page or file the data comes from",
+          "format": "uri"
+        },
+        "retrieved": {
+          "type": "string",
+          "description": "Day the source was last checked, YYYY-MM-DD",
+          "format": "date"
+        }
+      },
+      "required": [
+        "url",
+        "retrieved"
+      ],
+      "additionalProperties": false,
+      "description": "Where a record's data was taken from"
+    }
+  }
+}

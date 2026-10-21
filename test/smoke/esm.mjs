@@ -7,6 +7,9 @@ import { getJusticeOfThePeace } from 'belgica/courts'
 import { getInterestRate } from 'belgica/interest-rates'
 import { getPrison } from 'belgica/prisons'
 import { getHouseOfJustice } from 'belgica/houses-of-justice'
+import { getMunicipalitiesForPostalCode } from 'belgica/postal-codes'
+import { findCourtsForPostalCode, getMunicipality } from 'belgica'
+import { findCantonsAt, getCantonBoundary } from 'belgica/canton-boundaries'
 import { createRequire } from 'node:module'
 
 assert.equal(getCourt('justice-of-the-peace-gent-1').name.nl, 'Vredegerecht Gent 1')
@@ -18,6 +21,13 @@ assert.deepEqual(
 assert.equal(getInterestRate('2024-06-15', 'legal').rate, 5.75)
 assert.equal(getPrison('gevangenis-gent').address.postalCode, '9000')
 assert.equal(getHouseOfJustice('justitiehuis-gent').ovo, 'OVO001917')
+assert.equal(getMunicipalitiesForPostalCode('9000')[0], getMunicipality('44021'))
+assert.equal(findCourtsForPostalCode('1040', 'police-court').length, 2)
+assert.equal(getCantonBoundary('gent-1').geometry.type, 'MultiPolygon')
+assert.deepEqual(
+    findCantonsAt(3.745, 50.995).map((c) => c.id),
+    ['merelbeke-melle'],
+)
 // The entry points share one copy of the data
 assert.equal(cantons, allCantons)
 

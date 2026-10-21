@@ -9,6 +9,7 @@ import {
     findCourts,
     prisons as allPrisons,
     housesOfJustice as allHouses,
+    postalCodes as allPostalCodes,
     toDay,
 } from '../../../src'
 import { fmt, useLocale, useStrings } from '../i18n'
@@ -28,6 +29,8 @@ const t = useStrings({
         courtsNote: '{n} ({courts} courts, the rest divisions and seats)',
         prisons: 'Prisons',
         housesOfJustice: 'Houses of justice',
+        postalCodes: 'Postal codes',
+        postalCodesNote: '{n} ({codes} postal codes, {shared} shared by two municipalities)',
         territory: 'Territory',
     },
     nl: {
@@ -43,6 +46,8 @@ const t = useStrings({
         courtsNote: '{n} ({courts} hoven en rechtbanken, de rest afdelingen en zetels)',
         prisons: 'Gevangenissen',
         housesOfJustice: 'Justitiehuizen',
+        postalCodes: 'Postcodes',
+        postalCodesNote: '{n} ({codes} postcodes, {shared} gedeeld door twee gemeenten)',
         territory: 'Territorium',
     },
     fr: {
@@ -58,6 +63,8 @@ const t = useStrings({
         courtsNote: '{n} ({courts} cours et tribunaux, le reste divisions et sièges)',
         prisons: 'Prisons',
         housesOfJustice: 'Maisons de justice',
+        postalCodes: 'Codes postaux',
+        postalCodesNote: '{n} ({codes} codes postaux, {shared} partagés par deux communes)',
         territory: 'Territoire',
     },
 })
@@ -70,6 +77,11 @@ const today = toDay(new Date())
 const courts = findCourts({})
 const prisons = allPrisons.filter((p) => appliesOn(p, today))
 const housesOfJustice = allHouses.filter((h) => appliesOn(h, today))
+const postalCodes = allPostalCodes.filter((p) => appliesOn(p, today))
+const postalCodeCounts = new Map<string, number>()
+for (const p of postalCodes)
+    postalCodeCounts.set(p.postalCode, (postalCodeCounts.get(p.postalCode) ?? 0) + 1)
+const sharedPostalCodes = [...postalCodeCounts.values()].filter((n) => n > 1).length
 const splitCantons = cantons.filter((c) => c.municipalities.some((m) => m.partial)).length
 const wholeCourts = courts.filter((c) => c.kind === 'court').length
 </script>
@@ -110,6 +122,21 @@ const wholeCourts = courts.filter((c) => c.kind === 'court').length
                 <td>{{ municipalities.length }}</td>
                 <td>
                     <a :href="link('/data/territory#municipalities')">{{ t.territory }}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>{{ t.postalCodes }}</td>
+                <td>
+                    {{
+                        fmt(t.postalCodesNote, {
+                            n: postalCodes.length,
+                            codes: postalCodeCounts.size,
+                            shared: sharedPostalCodes,
+                        })
+                    }}
+                </td>
+                <td>
+                    <a :href="link('/data/postal-codes')">{{ t.postalCodes }}</a>
                 </td>
             </tr>
             <tr>

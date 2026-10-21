@@ -4,34 +4,41 @@ Every dataset is a JSON file in `data/`, described by a [JSON Schema](/guide/sch
 in [`datapackage.json`](/guide/schema#datapackage-json) with its official sources, licence and
 the date it was last checked against them.
 
-| Dataset                                        | Records  | What you'd use it for                                                             |
-| ---------------------------------------------- | -------- | --------------------------------------------------------------------------------- |
-| [Judicial areas](./territory#judicial-areas)   | 5        | Which court of appeal (and labour court of appeal) hears an appeal                |
-| [Arrondissements](./territory#arrondissements) | 12       | Grouping courts, prosecutors and bailiffs; the unit most competence rules use     |
-| [Cantons](./territory#cantons)                 | 162      | Which justice of the peace is competent for an address                            |
-| [Municipalities](./territory#municipalities)   | 565      | Joining any Belgian address or statistic to the judicial map by REFNIS code       |
-| [Courts](./courts)                             | 347      | Names, addresses and registries' contacts to write to, file with or pay any court |
-| [Prisons](./prisons)                           | 39       | Addresses and contacts of every prison and detention house                        |
-| [Houses of justice](./houses-of-justice)       | 27       | Probation, victim support and social studies for the family courts                |
-| [Interest rates](./interest-rates)             | 2 series | Calculating late-payment interest on a claim                                      |
+| Dataset                                        | Records  | What you'd use it for                                                               |
+| ---------------------------------------------- | -------- | ----------------------------------------------------------------------------------- |
+| [Judicial areas](./territory#judicial-areas)   | 5        | Which court of appeal (and labour court of appeal) hears an appeal                  |
+| [Arrondissements](./territory#arrondissements) | 12       | Grouping courts, prosecutors and bailiffs; the unit most competence rules use       |
+| [Cantons](./territory#cantons)                 | 162      | Which justice of the peace is competent for an address                              |
+| [Canton boundaries](./canton-boundaries)       | 162      | The canton of a point in a split city; the cantons on a map (GeoJSON)               |
+| [Municipalities](./territory#municipalities)   | 565      | Joining any Belgian address or statistic to the judicial map by REFNIS code         |
+| [Regions](./territory#regions)                 | 3        | The region of a municipality, by REFNIS code, named in three languages              |
+| [Provinces](./territory#provinces)             | 10       | The province of a municipality (none in Brussels), with its region                  |
+| [Postal codes](./postal-codes)                 | 1 152    | From an address's postal code to its municipality, and on to its cantons and courts |
+| [Courts](./courts)                             | 347      | Names, addresses and registries' contacts to write to, file with or pay any court   |
+| [Prisons](./prisons)                           | 39       | Addresses and contacts of every prison and detention house                          |
+| [Houses of justice](./houses-of-justice)       | 27       | Probation, victim support and social studies for the family courts                  |
+| [Interest rates](./interest-rates)             | 2 series | Calculating late-payment interest on a claim                                        |
 
 ## How the datasets fit together
 
 ```
-Judicial area ──< Arrondissement ──< Canton >──< Municipality (REFNIS)
-      │                 │              │
-      └───────────── Court ────────────┘  a justice of the peace links to its canton
-                        │
+Judicial area ──< Arrondissement ──< Canton >──< Municipality (REFNIS) ──< Postal code
+      │                 │              │  │
+      │                 │              │  └── Canton boundary   the canton's geometry (NGI)
+      └───────────── Court ────────────┘  a justice of the peace links to its canton,
+                        │                 and every court's address to its municipality
                         └──< Division      a division links to its court
 ```
 
 `──<` reads "has many". A municipality is usually in one canton; split cities (Antwerpen, Gent,
-Brussel, Luik, …) are in several.
+Brussel, Luik, …) are in several. On the administrative side, `Region ──< Province ──<
+Municipality`, except that the Brussels-Capital Region has no province and holds its 19
+municipalities directly.
 
 Records link to each other by id, never by name: a court has a `judicialArea` id and, when its
 area is one arrondissement, an `arrondissement` id; a canton lists the REFNIS codes of its
-municipalities. Names change spelling between sources and
-languages; ids don't.
+municipalities; a postal code and a court's address carry the REFNIS code of their
+municipality. Names change spelling between sources and languages; ids don't.
 
 ## Why this data is useful
 
@@ -41,7 +48,8 @@ to use from code:
 - **Competence.** The justice of the peace, police court and many other courts are competent
   by place. The law (the annex to the Judicial Code) describes those areas in prose, partly
   street by street. `cantons.json` turns that into a lookup from municipality to canton, and
-  keeps the legal text for the split cities.
+  keeps the legal text for the split cities; `canton-boundaries.json` adds the NGI's geometry,
+  so a point in a split city finds its canton.
 - **Correct names and addresses.** Writs, conclusions and letters must address the right court
   as it names itself, such as `Vredegerecht Gent 1` or
   `Ondernemingsrechtbank Gent - afdeling Brugge`, and reach the right registry. The names are
@@ -57,8 +65,8 @@ to use from code:
 ## What isn't in it (yet)
 
 See [known gaps](./known-gaps) for limitations of the current data and the
-[roadmap](./roadmap) for datasets that are planned: the highest courts, history, canton
-boundaries, bailiffs, police zones and the cadastre and mortgage offices.
+[roadmap](./roadmap) for datasets that are planned: the highest courts, history, bailiffs,
+police zones and the cadastre and mortgage offices.
 
 ::: warning Reference data, not legal advice
 The data is checked against official sources, but sources change and mistakes happen. Check

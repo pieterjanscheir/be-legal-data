@@ -28,10 +28,12 @@ interface Strings {
         data: string
         overview: string
         territory: string
+        cantonBoundaries: string
         courts: string
         prisons: string
         housesOfJustice: string
         interestRates: string
+        postalCodes: string
         knownGaps: string
         roadmap: string
         api: string
@@ -78,10 +80,12 @@ const en: Strings = {
         data: 'Data',
         overview: 'Overview',
         territory: 'Territory & cantons',
+        cantonBoundaries: 'Canton boundaries',
         courts: 'Courts',
         prisons: 'Prisons',
         housesOfJustice: 'Houses of justice',
         interestRates: 'Interest rates',
+        postalCodes: 'Postal codes',
         knownGaps: 'Known gaps',
         roadmap: 'Roadmap',
         api: 'API reference',
@@ -134,10 +138,12 @@ const nl: Strings = {
         data: 'Data',
         overview: 'Overzicht',
         territory: 'Territorium en kantons',
+        cantonBoundaries: 'Kantongrenzen',
         courts: 'Hoven en rechtbanken',
         prisons: 'Gevangenissen',
         housesOfJustice: 'Justitiehuizen',
         interestRates: 'Rentevoeten',
+        postalCodes: 'Postcodes',
         knownGaps: 'Bekende hiaten',
         roadmap: 'Roadmap',
         api: 'API-referentie',
@@ -190,10 +196,12 @@ const fr: Strings = {
         data: 'Données',
         overview: 'Aperçu',
         territory: 'Territoire et cantons',
+        cantonBoundaries: 'Limites des cantons',
         courts: 'Cours et tribunaux',
         prisons: 'Prisons',
         housesOfJustice: 'Maisons de justice',
         interestRates: "Taux d'intérêt",
+        postalCodes: 'Codes postaux',
         knownGaps: 'Lacunes connues',
         roadmap: 'Feuille de route',
         api: "Référence de l'API",
@@ -262,9 +270,14 @@ function themeConfig(prefix: string, t: Strings): DefaultTheme.Config {
                 items: [
                     { text: t.sidebar.overview, link: `${prefix}/data/` },
                     { text: t.sidebar.territory, link: `${prefix}/data/territory` },
+                    {
+                        text: t.sidebar.cantonBoundaries,
+                        link: `${prefix}/data/canton-boundaries`,
+                    },
                     { text: t.sidebar.courts, link: `${prefix}/data/courts` },
                     { text: t.sidebar.prisons, link: `${prefix}/data/prisons` },
                     { text: t.sidebar.housesOfJustice, link: `${prefix}/data/houses-of-justice` },
+                    { text: t.sidebar.postalCodes, link: `${prefix}/data/postal-codes` },
                     { text: t.sidebar.interestRates, link: `${prefix}/data/interest-rates` },
                     { text: t.sidebar.knownGaps, link: `${prefix}/data/known-gaps` },
                     { text: t.sidebar.roadmap, link: `${prefix}/data/roadmap` },

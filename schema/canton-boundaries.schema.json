@@ -1,0 +1,319 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://pieterjanscheir.github.io/belgica/schema/canton-boundaries.schema.json",
+  "title": "belgica: data/canton-boundaries.json",
+  "$ref": "#/definitions/CantonBoundariesFile",
+  "definitions": {
+    "CantonBoundariesFile": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/CantonBoundary"
+      }
+    },
+    "CantonBoundary": {
+      "type": "object",
+      "properties": {
+        "validFrom": {
+          "type": "string",
+          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts.",
+          "format": "date"
+        },
+        "validTo": {
+          "type": "string",
+          "description": "Last day the record applies, YYYY-MM-DD",
+          "format": "date"
+        },
+        "id": {
+          "$ref": "#/definitions/CantonId",
+          "description": "The canton's id: a canton has one boundary, which takes its key"
+        },
+        "canton": {
+          "$ref": "#/definitions/CantonId",
+          "description": "The canton the boundary belongs to"
+        },
+        "ngiId": {
+          "type": "string",
+          "description": "The NGI's identifier of the object (its `tgid`), e.g. '{50412818-C0B7-4FEE-9E9B-DFFF0A768922}'",
+          "pattern": "^\\{[0-9A-F]{8}(-[0-9A-F]{4}){3}-[0-9A-F]{12}\\}$"
+        },
+        "cantonCode": {
+          "$ref": "#/definitions/Bilingual",
+          "description": "The canton code in the NGI's data, in Dutch and French: six digits, the same in both ('248112' for Gent 1), with an 'N' or 'F' prefix per language in Brussels-Capital and in Sint-Genesius-Rode ('N238104', 'F238104' for Brussel 1)"
+        },
+        "geometry": {
+          "$ref": "#/definitions/MultiPolygon",
+          "description": "The boundary as the NGI publishes it, without simplification: WGS 84, longitude first, coordinates rounded to 7 decimals (about a centimetre)"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SourceRef"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "canton",
+        "ngiId",
+        "cantonCode",
+        "geometry",
+        "sources"
+      ],
+      "additionalProperties": false,
+      "description": "The boundary of a judicial canton, as the National Geographic Institute (NGI) digitised it from the annex to the Judicial Code. The legal text in the canton's `territory` is the law; where the two disagree, the text wins."
+    },
+    "CantonId": {
+      "type": "string",
+      "enum": [
+        "aalst-1",
+        "aalst-2",
+        "aarschot",
+        "andenne",
+        "anderlecht-1",
+        "anderlecht-2",
+        "antwerpen-1",
+        "antwerpen-2",
+        "antwerpen-3",
+        "antwerpen-4",
+        "antwerpen-5",
+        "antwerpen-6",
+        "antwerpen-7",
+        "arlon",
+        "asse",
+        "ath",
+        "bastogne",
+        "beringen",
+        "beveren-kruibeke-zwijndrecht",
+        "bilzen-hoeselt",
+        "binche",
+        "boom",
+        "boussu-colfontaine-1",
+        "boussu-colfontaine-2",
+        "braine-l-alleud",
+        "brasschaat",
+        "bree",
+        "brugge-1",
+        "brugge-2",
+        "brugge-3",
+        "brugge-4",
+        "brussel-1",
+        "brussel-2",
+        "brussel-3",
+        "brussel-4",
+        "charleroi-1",
+        "charleroi-2",
+        "charleroi-3",
+        "charleroi-4",
+        "chatelet",
+        "chimay",
+        "ciney",
+        "deinze",
+        "dendermonde",
+        "deurne",
+        "diest",
+        "dinant",
+        "eeklo",
+        "elsene",
+        "etterbeek",
+        "eupen-sankt-vith-1",
+        "eupen-sankt-vith-2",
+        "fleron",
+        "fosses-la-ville",
+        "ganshoren",
+        "gembloux",
+        "genk",
+        "gent-1",
+        "gent-2",
+        "gent-3",
+        "gent-4",
+        "gent-5",
+        "geraardsbergen",
+        "grace-hollogne",
+        "halle",
+        "hamme",
+        "hasselt-1",
+        "hasselt-2",
+        "heist-op-den-berg",
+        "herstal",
+        "herzele",
+        "houthalen-helchteren",
+        "huy-1",
+        "huy-2",
+        "ieper",
+        "izegem",
+        "jette",
+        "jodoigne",
+        "kapellen",
+        "kontich",
+        "kortrijk-1",
+        "kortrijk-2",
+        "la-louviere",
+        "lennik",
+        "leuven-1",
+        "leuven-2",
+        "leuven-3",
+        "leuze-en-hainaut",
+        "liege-1",
+        "liege-2",
+        "liege-3",
+        "liege-4",
+        "lier",
+        "limbourg",
+        "lokeren",
+        "maasmechelen",
+        "marche-en-famenne",
+        "mechelen",
+        "meise",
+        "menen",
+        "merelbeke-melle",
+        "merksem",
+        "mol-geel-1",
+        "mol-geel-2",
+        "mons-1",
+        "mons-2",
+        "mouscron",
+        "namur-1",
+        "namur-2",
+        "neufchateau",
+        "ninove",
+        "nivelles",
+        "oostende-1",
+        "oostende-2",
+        "oudenaarde",
+        "oudergem",
+        "pelt",
+        "philippeville",
+        "poperinge",
+        "roeselare",
+        "schaarbeek-1",
+        "schaarbeek-2",
+        "seneffe",
+        "seraing",
+        "sint-genesius-rode",
+        "sint-gillis",
+        "sint-jans-molenbeek",
+        "sint-joost-ten-node",
+        "sint-niklaas",
+        "sint-pieters-woluwe",
+        "sint-truiden",
+        "soignies",
+        "spa",
+        "sprimont",
+        "thuin",
+        "tielt",
+        "tienen",
+        "tongeren-borgloon",
+        "torhout",
+        "tournai-1",
+        "tournai-2",
+        "turnhout-1",
+        "turnhout-2",
+        "ukkel",
+        "verviers-1",
+        "verviers-2",
+        "veurne",
+        "vilvoorde",
+        "virton",
+        "vise",
+        "vorst",
+        "waregem",
+        "waremme",
+        "wavre-1",
+        "wavre-2",
+        "westerlo",
+        "wetteren",
+        "willebroek",
+        "zandhoven",
+        "zaventem",
+        "zelzate",
+        "zoutleeuw"
+      ],
+      "description": "Id of a record in data/cantons.json"
+    },
+    "Bilingual": {
+      "type": "object",
+      "properties": {
+        "nl": {
+          "type": "string"
+        },
+        "fr": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nl",
+        "fr"
+      ],
+      "additionalProperties": false,
+      "description": "A name as the Judicial Code gives it, in Dutch and French"
+    },
+    "MultiPolygon": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "MultiPolygon"
+        },
+        "coordinates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PolygonCoordinates"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "additionalProperties": false,
+      "description": "A GeoJSON MultiPolygon geometry (RFC 7946), in WGS 84"
+    },
+    "PolygonCoordinates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Ring"
+      },
+      "description": "The rings of a GeoJSON polygon: the exterior ring first, counter-clockwise, then its holes, clockwise (RFC 7946)",
+      "minItems": 1
+    },
+    "Ring": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Position"
+      },
+      "description": "A GeoJSON linear ring: closed (the first position repeated last), so at least four positions",
+      "minItems": 4
+    },
+    "Position": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "A GeoJSON position: longitude, then latitude, in decimal degrees (WGS 84)"
+    },
+    "SourceRef": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The exact official page or file the data comes from",
+          "format": "uri"
+        },
+        "retrieved": {
+          "type": "string",
+          "description": "Day the source was last checked, YYYY-MM-DD",
+          "format": "date"
+        }
+      },
+      "required": [
+        "url",
+        "retrieved"
+      ],
+      "additionalProperties": false,
+      "description": "Where a record's data was taken from"
+    }
+  }
+}

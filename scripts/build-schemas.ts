@@ -12,10 +12,14 @@ export const files = {
     'judicial-areas': 'JudicialAreasFile',
     arrondissements: 'ArrondissementsFile',
     cantons: 'CantonsFile',
+    'canton-boundaries': 'CantonBoundariesFile',
+    regions: 'RegionsFile',
+    provinces: 'ProvincesFile',
     municipalities: 'MunicipalitiesFile',
     courts: 'CourtsFile',
     prisons: 'PrisonsFile',
     'houses-of-justice': 'HousesOfJusticeFile',
+    'postal-codes': 'PostalCodesFile',
     'interest-rates': 'InterestRatesFile',
 } as const
 

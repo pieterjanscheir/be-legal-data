@@ -13,6 +13,7 @@ import {
     courts,
     housesOfJustice,
     municipalities,
+    postalCodes,
     prisons,
     toDay,
     type CourtType,
@@ -44,6 +45,14 @@ export interface Stats {
     }
     prisons: number
     housesOfJustice: number
+    postalCodes: {
+        /** Records that apply today: one per postal code and municipality */
+        records: number
+        /** Distinct postal codes */
+        codes: number
+        /** Postal codes that belong to two municipalities */
+        shared: number
+    }
     /** Per entry point, when `pnpm build` has run; otherwise null */
     sizes: EntrySize[] | null
 }
@@ -60,7 +69,16 @@ const TYPES: [CourtType, string][] = [
 ]
 
 const DIST = join(import.meta.dirname, '../../dist')
-const ENTRIES = ['index', 'territory', 'courts', 'prisons', 'houses-of-justice', 'interest-rates']
+const ENTRIES = [
+    'index',
+    'territory',
+    'canton-boundaries',
+    'courts',
+    'prisons',
+    'houses-of-justice',
+    'interest-rates',
+    'postal-codes',
+]
 
 /** The files an entry point loads: itself and, transitively, the chunks it imports */
 function filesOf(entry: string, seen = new Set<string>()): Set<string> {
@@ -87,6 +105,10 @@ export default {
     load(): Stats {
         const today = toDay(new Date())
         const current = courts.filter((c) => appliesOn(c, today))
+        const currentPostalCodes = postalCodes.filter((p) => appliesOn(p, today))
+        const codes = new Map<string, number>()
+        for (const p of currentPostalCodes)
+            codes.set(p.postalCode, (codes.get(p.postalCode) ?? 0) + 1)
         const byType = TYPES.map(([type, label]) => ({
             type,
             label,
@@ -112,6 +134,11 @@ export default {
             },
             prisons: prisons.filter((p) => appliesOn(p, today)).length,
             housesOfJustice: housesOfJustice.filter((h) => appliesOn(h, today)).length,
+            postalCodes: {
+                records: currentPostalCodes.length,
+                codes: codes.size,
+                shared: [...codes.values()].filter((n) => n > 1).length,
+            },
             sizes: sizes(),
         }
     },

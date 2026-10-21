@@ -4,14 +4,17 @@
  * - The annex to the Judicial Code ("Bijvoegsel: Gebiedsomschrijving en zetel van hoven en
  *   rechtbanken", Justel 1967101007), in Dutch and French. It lists every judicial canton,
  *   its seat, and the municipalities (or parts of them) it covers.
- * - Statbel's population-by-municipality file, for the current municipalities and their
- *   REFNIS codes (CC BY 4.0).
+ * - Statbel's population-by-municipality file, for the current municipalities with their
+ *   REFNIS codes and the codes of their province and region (CC BY 4.0).
  *
  * The Dutch and French texts are parsed independently and must agree, and every municipality
  * must be covered exactly once (or split over several cantons). The script refuses to write
  * anything otherwise.
  *
- * Run with `pnpm build:cantons`. Needs network access and the `unzip` command.
+ * Run with `pnpm build:cantons`, by hand on a regular machine: it needs network access and the
+ * `unzip` command, and ejustice refuses connections from GitHub's runners
+ * (https://github.com/pieterjanscheir/belgica/issues/24), so the weekly workflow can't
+ * run it. Rerun it after a law changes the annex or municipalities merge.
  */
 import { execFileSync } from 'node:child_process'
 import { mkdtempSync, writeFileSync } from 'node:fs'
@@ -32,6 +35,8 @@ interface Municipality {
     name: Record<Lang, string>
     /** REFNIS code of the province, or the Brussels-Capital Region */
     province: string
+    /** REFNIS code of the region */
+    region: string
 }
 
 // Statbel puts the Brussels-Capital Region where other municipalities have their province
@@ -183,6 +188,7 @@ async function fetchMunicipalities(): Promise<Municipality[]> {
             refnis,
             name: { nl: field('TX_DESCR_NL'), fr: field('TX_DESCR_FR') },
             province: field('CD_PROV_REFNIS'),
+            region: field('CD_RGN_REFNIS'),
         })
     }
     return [...byCode.values()].sort((a, b) => a.refnis.localeCompare(b.refnis))
@@ -454,7 +460,12 @@ const write = (file: string, data: unknown) => {
 }
 write(
     'municipalities.json',
-    municipalities.map(({ refnis, name, province }) => ({ id: refnis, name, province })),
+    municipalities.map(({ refnis, name, province, region }) => ({
+        id: refnis,
+        name,
+        province,
+        region,
+    })),
 )
 write('cantons.json', parsed)
 console.log(`${parsed.length} cantons, ${municipalities.length} municipalities`)

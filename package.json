@@ -1,7 +1,7 @@
 {
     "name": "belgica",
     "version": "0.2.0",
-    "description": "Belgian legal reference data: courts, judicial cantons and arrondissements, municipalities, and legal and commercial interest rates.",
+    "description": "Belgian legal reference data: courts, judicial cantons and arrondissements, municipalities and postal codes, and legal and commercial interest rates.",
     "keywords": [
         "belgium",
         "belgian",
@@ -11,6 +11,8 @@
         "arrondissements",
         "municipalities",
         "refnis",
+        "postal-codes",
+        "geojson",
         "interest-rates",
         "vredegerecht",
         "justice-of-the-peace"
@@ -41,6 +43,10 @@
             "types": "./dist/territory.d.ts",
             "default": "./dist/territory.js"
         },
+        "./canton-boundaries": {
+            "types": "./dist/canton-boundaries.d.ts",
+            "default": "./dist/canton-boundaries.js"
+        },
         "./courts": {
             "types": "./dist/courts.d.ts",
             "default": "./dist/courts.js"
@@ -56,6 +62,10 @@
         "./interest-rates": {
             "types": "./dist/interest-rates.d.ts",
             "default": "./dist/interest-rates.js"
+        },
+        "./postal-codes": {
+            "types": "./dist/postal-codes.d.ts",
+            "default": "./dist/postal-codes.js"
         },
         "./data/*": "./data/*",
         "./schema/*": "./schema/*",

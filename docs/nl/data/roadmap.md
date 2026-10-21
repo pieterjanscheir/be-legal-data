@@ -6,24 +6,23 @@ volg de [conventies](/nl/guide/contributing#adding-a-dataset).
 
 ## Gepland {#planned}
 
-| Dataset                                                                                              | Waarvoor het dient                                                                                                 | Issue                                                       |
-| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
-| **De andere rechtscolleges**: Hof van Cassatie, Grondwettelijk Hof, Raad van State, tuchtrechtbanken | De hoogste rechtscolleges staan niet op het portaal van de hoven en rechtbanken, dus ze hebben eigen bronnen nodig | [#4](https://github.com/pieterjanscheir/belgica/issues/4)   |
-| **Het justitiehuis in Eupen** (Duitstalige Gemeenschap)                                              | Het ene justitiehuis dat de data nog niet heeft                                                                    | [#3](https://github.com/pieterjanscheir/belgica/issues/3)   |
-| **Historiek**: wanneer kantons, gemeenten en gerechten veranderden                                   | Het model heeft geldigheidsperiodes en opzoekingen per dag; de vroegere versies hebben nog de data nodig           | [#27](https://github.com/pieterjanscheir/belgica/issues/27) |
-| **Kantongrenzen** als geometrie                                                                      | Het kanton van een adres in een gesplitste stad vinden; het NGI publiceert de grenzen op geo.be                    | [#29](https://github.com/pieterjanscheir/belgica/issues/29) |
-| **Adres → gemeente**                                                                                 | Adressen komen met een postcode, niet met een REFNIS-code                                                          | [#28](https://github.com/pieterjanscheir/belgica/issues/28) |
-| **Gerechtsdeurwaarderskantoren** (gerechtsdeurwaarders / huissiers de justice)                       | Een gerechtsdeurwaarder in een arrondissement vinden voor betekening of tenuitvoerlegging                          | [#6](https://github.com/pieterjanscheir/belgica/issues/6)   |
-| **Politiezones** (politiezones / zones de police)                                                    | Welke zone een gemeente behandelt: klachten, afschriften van processen-verbaal                                     | [#7](https://github.com/pieterjanscheir/belgica/issues/7)   |
-| **Kantoren van het kadaster en van de rechtszekerheid** (kadaster, vroegere hypotheekkantoren)       | Hypothecaire getuigschriften en kadastrale uittreksels aanvragen bij het bevoegde kantoor                          | [#8](https://github.com/pieterjanscheir/belgica/issues/8)   |
+| Dataset                                                                                              | Waarvoor het dient                                                                                                  | Issue                                                       |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **De andere rechtscolleges**: Hof van Cassatie, Grondwettelijk Hof, Raad van State, tuchtrechtbanken | De hoogste rechtscolleges staan niet op het portaal van de hoven en rechtbanken, dus ze hebben eigen bronnen nodig  | [#4](https://github.com/pieterjanscheir/belgica/issues/4)   |
+| **Het justitiehuis in Eupen** (Duitstalige Gemeenschap)                                              | Het ene justitiehuis dat de data nog niet heeft                                                                     | [#3](https://github.com/pieterjanscheir/belgica/issues/3)   |
+| **Historiek**: wanneer kantons, gemeenten en gerechten veranderden                                   | Het model heeft geldigheidsperiodes en opzoekingen per dag; de vroegere versies hebben nog de data nodig            | [#27](https://github.com/pieterjanscheir/belgica/issues/27) |
+| **Adres → coördinaten**                                                                              | De [kantongrenzen](./canton-boundaries) vinden het kanton van een punt; het adres geocoderen is de ontbrekende stap | [#28](https://github.com/pieterjanscheir/belgica/issues/28) |
+| **Gerechtsdeurwaarderskantoren** (gerechtsdeurwaarders / huissiers de justice)                       | Een gerechtsdeurwaarder in een arrondissement vinden voor betekening of tenuitvoerlegging                           | [#6](https://github.com/pieterjanscheir/belgica/issues/6)   |
+| **Politiezones** (politiezones / zones de police)                                                    | Welke zone een gemeente behandelt: klachten, afschriften van processen-verbaal                                      | [#7](https://github.com/pieterjanscheir/belgica/issues/7)   |
+| **Kantoren van het kadaster en van de rechtszekerheid** (kadaster, vroegere hypotheekkantoren)       | Hypothecaire getuigschriften en kadastrale uittreksels aanvragen bij het bevoegde kantoor                           | [#8](https://github.com/pieterjanscheir/belgica/issues/8)   |
 
 ## Het overwegen waard {#worth-considering}
 
 Verzameld in [#9](https://github.com/pieterjanscheir/belgica/issues/9), ruwweg in volgorde
 van hoe vaak ze gebruikt zouden worden:
 
-- **Postcodes → gemeente (REFNIS)**, met deelgemeenten. Adressen komen met een postcode, niet
-  met een REFNIS-code; dit is de ontbrekende schakel voor "welk gerecht voor dit adres?".
+- **Deelgemeenten** per postcode. De [postcodes](./postal-codes) stoppen bij de gemeente; de
+  lijst van bpost noemt de deelgemeenten, maar heeft geen REFNIS-code en geen open licentie.
 - **Rolrechten** (griffierechten) en de schijven van de **rechtsplegingsvergoeding**, met hun
   geldigheidsperiodes en indexering, zoals de rentevoeten.
 - **Gerechtelijk verlof en feestdagen** per jaar, om proceduretermijnen te berekenen.
@@ -31,7 +30,6 @@ van hoe vaak ze gebruikt zouden worden:
 - **Notarissen en notariële kamers**, **balies** (balies / barreaux).
 - **Gemeentefusies**: oude → nieuwe REFNIS-codes voor 2019 en 2025, zodat oudere data te mappen
   is.
-- **Provincies en gewesten** als eigen dataset (vandaag alleen codes).
 - **De gezondheidsindex** voor de indexering van huurprijzen.
 
 ## Waarom sommige datasets er nog niet zijn {#why-some-datasets-aren-t-here-yet}

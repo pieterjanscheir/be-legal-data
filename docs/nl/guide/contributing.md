@@ -2,8 +2,8 @@
 
 ## Data bijwerken {#updating-data}
 
-De hoven en rechtbanken, gevangenissen en justitiehuizen worden elke week uit de officiële
-bronnen gebouwd ([hoe](./data-quality#how-the-data-is-built)): bewerk ze niet met de hand.
+De hoven en rechtbanken, gevangenissen, justitiehuizen en kantongrenzen worden elke week uit de
+officiële bronnen gebouwd ([hoe](./data-quality#how-the-data-is-built)): bewerk ze niet met de hand.
 Verbeter de parser in `scripts/parse`, of, als de bron zelf fout is, meld het aan het gerecht.
 De wekelijkse pull request wordt nagekeken als elke andere: vergelijk de diff met de bronnen
 voor je merget.
@@ -53,8 +53,12 @@ vredegerecht van kanton `x` heeft id `justice-of-the-peace-x` en verwijst ernaar
 ```bash
 pnpm fetch:sources            # elke bron naar .sources/ (ongeveer 20 minuten, beleefd)
 pnpm fetch:sources courts     # of één bron
-pnpm build:data               # herbouw de gescrapete datasets uit .sources/
+pnpm build:data               # herbouw de hoven en rechtbanken, gevangenissen, justitiehuizen, postcodes, gewesten en provincies uit .sources/
 ```
+
+De kantongrenzen komen uit de GeoPackage van het NGI (bron `ngi`), gelezen met de eigen SQLite
+van Node; als het NGI een kanton hernoemt, koppel je zijn code aan het id in `CANTON_ALIASES` in
+`scripts/parse/boundaries.ts`.
 
 Of check de laatste snapshots uit in plaats van ze op te halen:
 `git worktree add .sources origin/sources`.
@@ -105,7 +109,7 @@ Elke dataset krijgt dezelfde behandeling, zodat gebruikers erop kunnen rekenen:
 | `pnpm lint:package`         | `publint` en `arethetypeswrong` op het gepackte package                                                                                                                     |
 | `pnpm test:freshness`       | Datumgebonden controles: ontbrekende rentevoeten, achterstallig nazicht. Geen deel van `check`; `FRESHNESS_ONLINE=1` controleert ook de bron-URL's                          |
 | `pnpm fetch:sources`        | Haalt de officiële bronnen op naar `.sources/`                                                                                                                              |
-| `pnpm build:data`           | Herbouwt de hoven en rechtbanken, gevangenissen en justitiehuizen uit `.sources/`                                                                                           |
+| `pnpm build:data`           | Herbouwt de hoven en rechtbanken, gevangenissen, justitiehuizen, postcodes, gewesten, provincies en kantongrenzen uit `.sources/`                                           |
 | `pnpm build:csv`            | Schrijft de data als CSV-tabellen naar `csv/`                                                                                                                               |
 
 ## Een release maken {#releasing}

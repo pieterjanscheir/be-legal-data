@@ -40,16 +40,20 @@ All of these are enforced by tests (`test/ids.test.ts`) and by the
 
 ## The ids
 
-| Dataset           | Examples                                                                                                                  | Rule                |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------- |
-| Judicial areas    | `antwerpen`, `brussel`, `gent`, `liege`, `mons`                                                                           | Local name          |
-| Arrondissements   | `oost-vlaanderen`, `brabant-wallon`, `eupen`                                                                              | Local name          |
-| Cantons           | `gent-1`, `merelbeke-melle`, `wavre-1`, `oudergem`, `eupen-sankt-vith-1`                                                  | Local name + number |
-| Municipalities    | `44021`, `21004`                                                                                                          | REFNIS code         |
-| Courts            | `justice-of-the-peace-gent-1`, `enterprise-court-gent-brugge`, `police-court-brussel-fr`, `police-court-eupen-sankt-vith` | Type + place        |
-| Prisons           | `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk`                                                               | Local name          |
-| Houses of justice | `justitiehuis-gent`, `maison-justice-arlon`                                                                               | Local name          |
-| Interest rates    | `legal`, `commercial`                                                                                                     | Fixed keys          |
+| Dataset           | Examples                                                                                                                  | Rule                      |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| Judicial areas    | `antwerpen`, `brussel`, `gent`, `liege`, `mons`                                                                           | Local name                |
+| Arrondissements   | `oost-vlaanderen`, `brabant-wallon`, `eupen`                                                                              | Local name                |
+| Cantons           | `gent-1`, `merelbeke-melle`, `wavre-1`, `oudergem`, `eupen-sankt-vith-1`                                                  | Local name + number       |
+| Canton boundaries | `gent-1`: one boundary per canton, with the canton's id, and `canton` as the link                                         | The canton's id           |
+| Municipalities    | `44021`, `21004`                                                                                                          | REFNIS code               |
+| Provinces         | `10000`, `40000`                                                                                                          | REFNIS code               |
+| Regions           | `02000`, `03000`, `04000`                                                                                                 | REFNIS code               |
+| Postal codes      | `9000-44021`, `1040-21005`                                                                                                | Postal code + REFNIS code |
+| Courts            | `justice-of-the-peace-gent-1`, `enterprise-court-gent-brugge`, `police-court-brussel-fr`, `police-court-eupen-sankt-vith` | Type + place              |
+| Prisons           | `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk`                                                               | Local name                |
+| Houses of justice | `justitiehuis-gent`, `maison-justice-arlon`                                                                               | Local name                |
+| Interest rates    | `legal`, `commercial`                                                                                                     | Fixed keys                |
 
 ## Why these choices
 
@@ -71,6 +75,12 @@ is also the one the institution uses itself, and it's in the official texts.
 **Why official codes?** REFNIS is what Statbel, the regions and almost every Belgian dataset use.
 With the code as the id, joining any of them to cantons and courts needs no mapping table.
 
+**Why two codes for a postal code?** A postal code alone doesn't name a record: `1040` belongs
+to Brussel and to Etterbeek, and each pair is its own record with its own validity. The pair of
+official codes, `1040-21005`, is unique and stays what it is until Statbel's table changes the
+pair, which is exactly when a new record is right. The municipality is also a field
+(`municipality`), as rule 8 asks: the id is a key, not something to split.
+
 **Why `type` in court ids?** Within one place there are several courts, and court types will
 grow (police courts, labour courts, courts of first instance…). A court's own fields say what
 it is; the id only needs to be unique and recognisable, and the type does both.
@@ -89,9 +99,9 @@ be followed in both directions.
 
 ## In TypeScript
 
-Every dataset has a generated id type (`CantonId`, `CourtId`, `MunicipalityId`,
-`ArrondissementId`, `JudicialAreaId`, `PrisonId`, `HouseOfJusticeId`), regenerated from the
-data by `pnpm build:ids`:
+Every dataset has a generated id type (`CantonId`, `CourtId`, `MunicipalityId`, `ProvinceId`,
+`RegionId`, `ArrondissementId`, `JudicialAreaId`, `PrisonId`, `HouseOfJusticeId`, `PostalCodeId`), regenerated
+from the data by `pnpm build:ids`:
 
 ```ts
 import { getCanton, type CantonId } from 'belgica'

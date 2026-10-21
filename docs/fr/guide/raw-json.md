@@ -52,7 +52,8 @@ Chaque [release](https://github.com/pieterjanscheir/belgica/releases) contient u
 les données en JSON et sous forme de tables CSV (UTF-8, séparées par des virgules), accompagnées
 des schémas et de `datapackage.json`. Les valeurs imbriquées sont des tables à part : les contacts
 d'un tribunal sont dans `court-contacts.csv`, avec l'identifiant du tribunal comme clé ; les
-communes d'un canton dans `canton-municipalities.csv`. Dans Excel, ouvrez-les via Données >
+communes d'un canton dans `canton-municipalities.csv`. La géométrie des limites des cantons n'est pas
+tabulaire et reste dans le JSON ; `canton-boundaries.csv` contient les identifiants de l'IGN par canton. Dans Excel, ouvrez-les via Données >
 À partir d'un fichier texte/CSV.
 
 ## Fichiers {#files}
@@ -62,10 +63,14 @@ communes d'un canton dans `canton-municipalities.csv`. Dans Excel, ouvrez-les vi
 | `data/judicial-areas.json`    | Les 5 ressorts (cours d'appel)                                                 |
 | `data/arrondissements.json`   | Les 12 arrondissements judiciaires et leur ressort                             |
 | `data/cantons.json`           | Les 162 cantons judiciaires                                                    |
-| `data/municipalities.json`    | Les 565 communes avec leur code REFNIS et leur province                        |
+| `data/canton-boundaries.json` | La limite de chaque canton en géométrie GeoJSON (23 Mo)                        |
+| `data/municipalities.json`    | Les 565 communes avec leur code REFNIS, leur province et leur région           |
+| `data/regions.json`           | Les 3 régions, nommées en trois langues                                        |
+| `data/provinces.json`         | Les 10 provinces, avec leur région                                             |
 | `data/courts.json`            | Chaque cour, tribunal, division et siège du portail des cours et tribunaux     |
 | `data/prisons.json`           | Les prisons et maisons de détention                                            |
 | `data/houses-of-justice.json` | Les maisons de justice de la Communauté flamande et de la Communauté française |
+| `data/postal-codes.json`      | Chaque code postal avec la commune à laquelle il appartient                    |
 | `data/interest-rates.json`    | Taux d'intérêt légal et taux pour les transactions commerciales                |
 
 Les structures sont décrites sur les [pages des jeux de données](/fr/data/territory) et dans la
@@ -75,4 +80,4 @@ Les structures sont décrites sur les [pages des jeux de données](/fr/data/terr
 
 Les données sont sous licence [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) :
 réutilisez-les librement, y compris à des fins commerciales, en créditant ce projet et les
-sources mentionnées pour chaque jeu de données. Données des communes © Statbel.
+sources mentionnées pour chaque jeu de données. Données des communes © Statbel ; limites des cantons © Institut géographique national (IGN).

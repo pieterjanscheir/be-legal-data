@@ -1,0 +1,5762 @@
+[
+  {
+    "id": "1000-21004",
+    "postalCode": "1000",
+    "municipality": "21004"
+  },
+  {
+    "id": "1020-21004",
+    "postalCode": "1020",
+    "municipality": "21004"
+  },
+  {
+    "id": "1030-21015",
+    "postalCode": "1030",
+    "municipality": "21015"
+  },
+  {
+    "id": "1040-21004",
+    "postalCode": "1040",
+    "municipality": "21004"
+  },
+  {
+    "id": "1040-21005",
+    "postalCode": "1040",
+    "municipality": "21005"
+  },
+  {
+    "id": "1050-21004",
+    "postalCode": "1050",
+    "municipality": "21004"
+  },
+  {
+    "id": "1050-21009",
+    "postalCode": "1050",
+    "municipality": "21009"
+  },
+  {
+    "id": "1060-21013",
+    "postalCode": "1060",
+    "municipality": "21013"
+  },
+  {
+    "id": "1070-21001",
+    "postalCode": "1070",
+    "municipality": "21001"
+  },
+  {
+    "id": "1080-21012",
+    "postalCode": "1080",
+    "municipality": "21012"
+  },
+  {
+    "id": "1081-21011",
+    "postalCode": "1081",
+    "municipality": "21011"
+  },
+  {
+    "id": "1082-21003",
+    "postalCode": "1082",
+    "municipality": "21003"
+  },
+  {
+    "id": "1083-21008",
+    "postalCode": "1083",
+    "municipality": "21008"
+  },
+  {
+    "id": "1090-21010",
+    "postalCode": "1090",
+    "municipality": "21010"
+  },
+  {
+    "id": "1120-21004",
+    "postalCode": "1120",
+    "municipality": "21004"
+  },
+  {
+    "id": "1130-21004",
+    "postalCode": "1130",
+    "municipality": "21004"
+  },
+  {
+    "id": "1140-21006",
+    "postalCode": "1140",
+    "municipality": "21006"
+  },
+  {
+    "id": "1150-21019",
+    "postalCode": "1150",
+    "municipality": "21019"
+  },
+  {
+    "id": "1160-21002",
+    "postalCode": "1160",
+    "municipality": "21002"
+  },
+  {
+    "id": "1170-21017",
+    "postalCode": "1170",
+    "municipality": "21017"
+  },
+  {
+    "id": "1180-21016",
+    "postalCode": "1180",
+    "municipality": "21016"
+  },
+  {
+    "id": "1190-21007",
+    "postalCode": "1190",
+    "municipality": "21007"
+  },
+  {
+    "id": "1200-21018",
+    "postalCode": "1200",
+    "municipality": "21018"
+  },
+  {
+    "id": "1210-21014",
+    "postalCode": "1210",
+    "municipality": "21014"
+  },
+  {
+    "id": "1300-25112",
+    "postalCode": "1300",
+    "municipality": "25112"
+  },
+  {
+    "id": "1301-25112",
+    "postalCode": "1301",
+    "municipality": "25112"
+  },
+  {
+    "id": "1310-25050",
+    "postalCode": "1310",
+    "municipality": "25050"
+  },
+  {
+    "id": "1315-25043",
+    "postalCode": "1315",
+    "municipality": "25043"
+  },
+  {
+    "id": "1320-25005",
+    "postalCode": "1320",
+    "municipality": "25005"
+  },
+  {
+    "id": "1325-25018",
+    "postalCode": "1325",
+    "municipality": "25018"
+  },
+  {
+    "id": "1330-25091",
+    "postalCode": "1330",
+    "municipality": "25091"
+  },
+  {
+    "id": "1331-25091",
+    "postalCode": "1331",
+    "municipality": "25091"
+  },
+  {
+    "id": "1332-25091",
+    "postalCode": "1332",
+    "municipality": "25091"
+  },
+  {
+    "id": "1340-25121",
+    "postalCode": "1340",
+    "municipality": "25121"
+  },
+  {
+    "id": "1341-25121",
+    "postalCode": "1341",
+    "municipality": "25121"
+  },
+  {
+    "id": "1342-25121",
+    "postalCode": "1342",
+    "municipality": "25121"
+  },
+  {
+    "id": "1348-25121",
+    "postalCode": "1348",
+    "municipality": "25121"
+  },
+  {
+    "id": "1350-25120",
+    "postalCode": "1350",
+    "municipality": "25120"
+  },
+  {
+    "id": "1357-25118",
+    "postalCode": "1357",
+    "municipality": "25118"
+  },
+  {
+    "id": "1360-25084",
+    "postalCode": "1360",
+    "municipality": "25084"
+  },
+  {
+    "id": "1367-25122",
+    "postalCode": "1367",
+    "municipality": "25122"
+  },
+  {
+    "id": "1370-25048",
+    "postalCode": "1370",
+    "municipality": "25048"
+  },
+  {
+    "id": "1380-25119",
+    "postalCode": "1380",
+    "municipality": "25119"
+  },
+  {
+    "id": "1390-25037",
+    "postalCode": "1390",
+    "municipality": "25037"
+  },
+  {
+    "id": "1400-25072",
+    "postalCode": "1400",
+    "municipality": "25072"
+  },
+  {
+    "id": "1401-25072",
+    "postalCode": "1401",
+    "municipality": "25072"
+  },
+  {
+    "id": "1402-25072",
+    "postalCode": "1402",
+    "municipality": "25072"
+  },
+  {
+    "id": "1404-25072",
+    "postalCode": "1404",
+    "municipality": "25072"
+  },
+  {
+    "id": "1410-25110",
+    "postalCode": "1410",
+    "municipality": "25110"
+  },
+  {
+    "id": "1420-25014",
+    "postalCode": "1420",
+    "municipality": "25014"
+  },
+  {
+    "id": "1421-25014",
+    "postalCode": "1421",
+    "municipality": "25014"
+  },
+  {
+    "id": "1428-25014",
+    "postalCode": "1428",
+    "municipality": "25014"
+  },
+  {
+    "id": "1430-25123",
+    "postalCode": "1430",
+    "municipality": "25123"
+  },
+  {
+    "id": "1435-25068",
+    "postalCode": "1435",
+    "municipality": "25068"
+  },
+  {
+    "id": "1440-25015",
+    "postalCode": "1440",
+    "municipality": "25015"
+  },
+  {
+    "id": "1450-25117",
+    "postalCode": "1450",
+    "municipality": "25117"
+  },
+  {
+    "id": "1457-25124",
+    "postalCode": "1457",
+    "municipality": "25124"
+  },
+  {
+    "id": "1460-25044",
+    "postalCode": "1460",
+    "municipality": "25044"
+  },
+  {
+    "id": "1461-25044",
+    "postalCode": "1461",
+    "municipality": "25044"
+  },
+  {
+    "id": "1470-25031",
+    "postalCode": "1470",
+    "municipality": "25031"
+  },
+  {
+    "id": "1471-25031",
+    "postalCode": "1471",
+    "municipality": "25031"
+  },
+  {
+    "id": "1472-25031",
+    "postalCode": "1472",
+    "municipality": "25031"
+  },
+  {
+    "id": "1473-25031",
+    "postalCode": "1473",
+    "municipality": "25031"
+  },
+  {
+    "id": "1474-25031",
+    "postalCode": "1474",
+    "municipality": "25031"
+  },
+  {
+    "id": "1476-25031",
+    "postalCode": "1476",
+    "municipality": "25031"
+  },
+  {
+    "id": "1480-25105",
+    "postalCode": "1480",
+    "municipality": "25105"
+  },
+  {
+    "id": "1490-25023",
+    "postalCode": "1490",
+    "municipality": "25023"
+  },
+  {
+    "id": "1495-25107",
+    "postalCode": "1495",
+    "municipality": "25107"
+  },
+  {
+    "id": "1500-23027",
+    "postalCode": "1500",
+    "municipality": "23027"
+  },
+  {
+    "id": "1501-23027",
+    "postalCode": "1501",
+    "municipality": "23027"
+  },
+  {
+    "id": "1502-23027",
+    "postalCode": "1502",
+    "municipality": "23027"
+  },
+  {
+    "id": "1540-23106",
+    "postalCode": "1540",
+    "municipality": "23106"
+  },
+  {
+    "id": "1541-23106",
+    "postalCode": "1541",
+    "municipality": "23106"
+  },
+  {
+    "id": "1547-23009",
+    "postalCode": "1547",
+    "municipality": "23009"
+  },
+  {
+    "id": "1560-23033",
+    "postalCode": "1560",
+    "municipality": "23033"
+  },
+  {
+    "id": "1570-23106",
+    "postalCode": "1570",
+    "municipality": "23106"
+  },
+  {
+    "id": "1600-23077",
+    "postalCode": "1600",
+    "municipality": "23077"
+  },
+  {
+    "id": "1601-23077",
+    "postalCode": "1601",
+    "municipality": "23077"
+  },
+  {
+    "id": "1602-23077",
+    "postalCode": "1602",
+    "municipality": "23077"
+  },
+  {
+    "id": "1620-23098",
+    "postalCode": "1620",
+    "municipality": "23098"
+  },
+  {
+    "id": "1630-23100",
+    "postalCode": "1630",
+    "municipality": "23100"
+  },
+  {
+    "id": "1640-23101",
+    "postalCode": "1640",
+    "municipality": "23101"
+  },
+  {
+    "id": "1650-23003",
+    "postalCode": "1650",
+    "municipality": "23003"
+  },
+  {
+    "id": "1651-23003",
+    "postalCode": "1651",
+    "municipality": "23003"
+  },
+  {
+    "id": "1652-23003",
+    "postalCode": "1652",
+    "municipality": "23003"
+  },
+  {
+    "id": "1653-23003",
+    "postalCode": "1653",
+    "municipality": "23003"
+  },
+  {
+    "id": "1654-23003",
+    "postalCode": "1654",
+    "municipality": "23003"
+  },
+  {
+    "id": "1670-23064",
+    "postalCode": "1670",
+    "municipality": "23064"
+  },
+  {
+    "id": "1671-23064",
+    "postalCode": "1671",
+    "municipality": "23064"
+  },
+  {
+    "id": "1673-23064",
+    "postalCode": "1673",
+    "municipality": "23064"
+  },
+  {
+    "id": "1674-23064",
+    "postalCode": "1674",
+    "municipality": "23064"
+  },
+  {
+    "id": "1700-23016",
+    "postalCode": "1700",
+    "municipality": "23016"
+  },
+  {
+    "id": "1701-23016",
+    "postalCode": "1701",
+    "municipality": "23016"
+  },
+  {
+    "id": "1702-23016",
+    "postalCode": "1702",
+    "municipality": "23016"
+  },
+  {
+    "id": "1703-23016",
+    "postalCode": "1703",
+    "municipality": "23016"
+  },
+  {
+    "id": "1730-23002",
+    "postalCode": "1730",
+    "municipality": "23002"
+  },
+  {
+    "id": "1731-23002",
+    "postalCode": "1731",
+    "municipality": "23002"
+  },
+  {
+    "id": "1740-23086",
+    "postalCode": "1740",
+    "municipality": "23086"
+  },
+  {
+    "id": "1741-23086",
+    "postalCode": "1741",
+    "municipality": "23086"
+  },
+  {
+    "id": "1742-23086",
+    "postalCode": "1742",
+    "municipality": "23086"
+  },
+  {
+    "id": "1745-23060",
+    "postalCode": "1745",
+    "municipality": "23060"
+  },
+  {
+    "id": "1750-23104",
+    "postalCode": "1750",
+    "municipality": "23104"
+  },
+  {
+    "id": "1755-23106",
+    "postalCode": "1755",
+    "municipality": "23106"
+  },
+  {
+    "id": "1760-23097",
+    "postalCode": "1760",
+    "municipality": "23097"
+  },
+  {
+    "id": "1761-23097",
+    "postalCode": "1761",
+    "municipality": "23097"
+  },
+  {
+    "id": "1770-23044",
+    "postalCode": "1770",
+    "municipality": "23044"
+  },
+  {
+    "id": "1780-23102",
+    "postalCode": "1780",
+    "municipality": "23102"
+  },
+  {
+    "id": "1785-23052",
+    "postalCode": "1785",
+    "municipality": "23052"
+  },
+  {
+    "id": "1790-23105",
+    "postalCode": "1790",
+    "municipality": "23105"
+  },
+  {
+    "id": "1800-23088",
+    "postalCode": "1800",
+    "municipality": "23088"
+  },
+  {
+    "id": "1804-23088",
+    "postalCode": "1804",
+    "municipality": "23088"
+  },
+  {
+    "id": "1804-23096",
+    "postalCode": "1804",
+    "municipality": "23096"
+  },
+  {
+    "id": "1820-23081",
+    "postalCode": "1820",
+    "municipality": "23081"
+  },
+  {
+    "id": "1830-23047",
+    "postalCode": "1830",
+    "municipality": "23047"
+  },
+  {
+    "id": "1831-23047",
+    "postalCode": "1831",
+    "municipality": "23047"
+  },
+  {
+    "id": "1840-23045",
+    "postalCode": "1840",
+    "municipality": "23045"
+  },
+  {
+    "id": "1850-23025",
+    "postalCode": "1850",
+    "municipality": "23025"
+  },
+  {
+    "id": "1851-23025",
+    "postalCode": "1851",
+    "municipality": "23025"
+  },
+  {
+    "id": "1852-23025",
+    "postalCode": "1852",
+    "municipality": "23025"
+  },
+  {
+    "id": "1853-23025",
+    "postalCode": "1853",
+    "municipality": "23025"
+  },
+  {
+    "id": "1860-23050",
+    "postalCode": "1860",
+    "municipality": "23050"
+  },
+  {
+    "id": "1861-23050",
+    "postalCode": "1861",
+    "municipality": "23050"
+  },
+  {
+    "id": "1880-23039",
+    "postalCode": "1880",
+    "municipality": "23039"
+  },
+  {
+    "id": "1910-23038",
+    "postalCode": "1910",
+    "municipality": "23038"
+  },
+  {
+    "id": "1930-23094",
+    "postalCode": "1930",
+    "municipality": "23094"
+  },
+  {
+    "id": "1931-23047",
+    "postalCode": "1931",
+    "municipality": "23047"
+  },
+  {
+    "id": "1932-23094",
+    "postalCode": "1932",
+    "municipality": "23094"
+  },
+  {
+    "id": "1933-23094",
+    "postalCode": "1933",
+    "municipality": "23094"
+  },
+  {
+    "id": "1950-23099",
+    "postalCode": "1950",
+    "municipality": "23099"
+  },
+  {
+    "id": "1970-23103",
+    "postalCode": "1970",
+    "municipality": "23103"
+  },
+  {
+    "id": "1980-23096",
+    "postalCode": "1980",
+    "municipality": "23096"
+  },
+  {
+    "id": "1981-23096",
+    "postalCode": "1981",
+    "municipality": "23096"
+  },
+  {
+    "id": "1982-23096",
+    "postalCode": "1982",
+    "municipality": "23096"
+  },
+  {
+    "id": "2000-11002",
+    "postalCode": "2000",
+    "municipality": "11002"
+  },
+  {
+    "id": "2018-11002",
+    "postalCode": "2018",
+    "municipality": "11002"
+  },
+  {
+    "id": "2020-11002",
+    "postalCode": "2020",
+    "municipality": "11002"
+  },
+  {
+    "id": "2030-11002",
+    "postalCode": "2030",
+    "municipality": "11002"
+  },
+  {
+    "id": "2040-11002",
+    "postalCode": "2040",
+    "municipality": "11002"
+  },
+  {
+    "id": "2050-11002",
+    "postalCode": "2050",
+    "municipality": "11002"
+  },
+  {
+    "id": "2060-11002",
+    "postalCode": "2060",
+    "municipality": "11002"
+  },
+  {
+    "id": "2070-46030",
+    "postalCode": "2070",
+    "municipality": "46030"
+  },
+  {
+    "id": "2100-11002",
+    "postalCode": "2100",
+    "municipality": "11002"
+  },
+  {
+    "id": "2110-11050",
+    "postalCode": "2110",
+    "municipality": "11050"
+  },
+  {
+    "id": "2140-11002",
+    "postalCode": "2140",
+    "municipality": "11002"
+  },
+  {
+    "id": "2150-11002",
+    "postalCode": "2150",
+    "municipality": "11002"
+  },
+  {
+    "id": "2160-11052",
+    "postalCode": "2160",
+    "municipality": "11052"
+  },
+  {
+    "id": "2170-11002",
+    "postalCode": "2170",
+    "municipality": "11002"
+  },
+  {
+    "id": "2180-11002",
+    "postalCode": "2180",
+    "municipality": "11002"
+  },
+  {
+    "id": "2200-13011",
+    "postalCode": "2200",
+    "municipality": "13011"
+  },
+  {
+    "id": "2220-12014",
+    "postalCode": "2220",
+    "municipality": "12014"
+  },
+  {
+    "id": "2221-12014",
+    "postalCode": "2221",
+    "municipality": "12014"
+  },
+  {
+    "id": "2222-12014",
+    "postalCode": "2222",
+    "municipality": "12014"
+  },
+  {
+    "id": "2223-12014",
+    "postalCode": "2223",
+    "municipality": "12014"
+  },
+  {
+    "id": "2230-13013",
+    "postalCode": "2230",
+    "municipality": "13013"
+  },
+  {
+    "id": "2235-13016",
+    "postalCode": "2235",
+    "municipality": "13016"
+  },
+  {
+    "id": "2240-11054",
+    "postalCode": "2240",
+    "municipality": "11054"
+  },
+  {
+    "id": "2242-11054",
+    "postalCode": "2242",
+    "municipality": "11054"
+  },
+  {
+    "id": "2243-11054",
+    "postalCode": "2243",
+    "municipality": "11054"
+  },
+  {
+    "id": "2250-13029",
+    "postalCode": "2250",
+    "municipality": "13029"
+  },
+  {
+    "id": "2260-13049",
+    "postalCode": "2260",
+    "municipality": "13049"
+  },
+  {
+    "id": "2270-13012",
+    "postalCode": "2270",
+    "municipality": "13012"
+  },
+  {
+    "id": "2275-13019",
+    "postalCode": "2275",
+    "municipality": "13019"
+  },
+  {
+    "id": "2280-13010",
+    "postalCode": "2280",
+    "municipality": "13010"
+  },
+  {
+    "id": "2288-13010",
+    "postalCode": "2288",
+    "municipality": "13010"
+  },
+  {
+    "id": "2290-13044",
+    "postalCode": "2290",
+    "municipality": "13044"
+  },
+  {
+    "id": "2300-13040",
+    "postalCode": "2300",
+    "municipality": "13040"
+  },
+  {
+    "id": "2310-13037",
+    "postalCode": "2310",
+    "municipality": "13037"
+  },
+  {
+    "id": "2320-13014",
+    "postalCode": "2320",
+    "municipality": "13014"
+  },
+  {
+    "id": "2321-13014",
+    "postalCode": "2321",
+    "municipality": "13014"
+  },
+  {
+    "id": "2322-13014",
+    "postalCode": "2322",
+    "municipality": "13014"
+  },
+  {
+    "id": "2323-13014",
+    "postalCode": "2323",
+    "municipality": "13014"
+  },
+  {
+    "id": "2328-13014",
+    "postalCode": "2328",
+    "municipality": "13014"
+  },
+  {
+    "id": "2330-13023",
+    "postalCode": "2330",
+    "municipality": "13023"
+  },
+  {
+    "id": "2340-13004",
+    "postalCode": "2340",
+    "municipality": "13004"
+  },
+  {
+    "id": "2350-13046",
+    "postalCode": "2350",
+    "municipality": "13046"
+  },
+  {
+    "id": "2360-13031",
+    "postalCode": "2360",
+    "municipality": "13031"
+  },
+  {
+    "id": "2370-13001",
+    "postalCode": "2370",
+    "municipality": "13001"
+  },
+  {
+    "id": "2380-13035",
+    "postalCode": "2380",
+    "municipality": "13035"
+  },
+  {
+    "id": "2381-13035",
+    "postalCode": "2381",
+    "municipality": "13035"
+  },
+  {
+    "id": "2382-13035",
+    "postalCode": "2382",
+    "municipality": "13035"
+  },
+  {
+    "id": "2387-13002",
+    "postalCode": "2387",
+    "municipality": "13002"
+  },
+  {
+    "id": "2390-11057",
+    "postalCode": "2390",
+    "municipality": "11057"
+  },
+  {
+    "id": "2400-13025",
+    "postalCode": "2400",
+    "municipality": "13025"
+  },
+  {
+    "id": "2430-13053",
+    "postalCode": "2430",
+    "municipality": "13053"
+  },
+  {
+    "id": "2431-13053",
+    "postalCode": "2431",
+    "municipality": "13053"
+  },
+  {
+    "id": "2440-13008",
+    "postalCode": "2440",
+    "municipality": "13008"
+  },
+  {
+    "id": "2450-13021",
+    "postalCode": "2450",
+    "municipality": "13021"
+  },
+  {
+    "id": "2460-13017",
+    "postalCode": "2460",
+    "municipality": "13017"
+  },
+  {
+    "id": "2470-13036",
+    "postalCode": "2470",
+    "municipality": "13036"
+  },
+  {
+    "id": "2480-13006",
+    "postalCode": "2480",
+    "municipality": "13006"
+  },
+  {
+    "id": "2490-13003",
+    "postalCode": "2490",
+    "municipality": "13003"
+  },
+  {
+    "id": "2491-13003",
+    "postalCode": "2491",
+    "municipality": "13003"
+  },
+  {
+    "id": "2500-12021",
+    "postalCode": "2500",
+    "municipality": "12021"
+  },
+  {
+    "id": "2520-11035",
+    "postalCode": "2520",
+    "municipality": "11035"
+  },
+  {
+    "id": "2530-11004",
+    "postalCode": "2530",
+    "municipality": "11004"
+  },
+  {
+    "id": "2531-11004",
+    "postalCode": "2531",
+    "municipality": "11004"
+  },
+  {
+    "id": "2540-11021",
+    "postalCode": "2540",
+    "municipality": "11021"
+  },
+  {
+    "id": "2547-11025",
+    "postalCode": "2547",
+    "municipality": "11025"
+  },
+  {
+    "id": "2550-11024",
+    "postalCode": "2550",
+    "municipality": "11024"
+  },
+  {
+    "id": "2560-12026",
+    "postalCode": "2560",
+    "municipality": "12026"
+  },
+  {
+    "id": "2570-12009",
+    "postalCode": "2570",
+    "municipality": "12009"
+  },
+  {
+    "id": "2580-12029",
+    "postalCode": "2580",
+    "municipality": "12029"
+  },
+  {
+    "id": "2590-12002",
+    "postalCode": "2590",
+    "municipality": "12002"
+  },
+  {
+    "id": "2600-11002",
+    "postalCode": "2600",
+    "municipality": "11002"
+  },
+  {
+    "id": "2610-11002",
+    "postalCode": "2610",
+    "municipality": "11002"
+  },
+  {
+    "id": "2620-11018",
+    "postalCode": "2620",
+    "municipality": "11018"
+  },
+  {
+    "id": "2627-11038",
+    "postalCode": "2627",
+    "municipality": "11038"
+  },
+  {
+    "id": "2630-11001",
+    "postalCode": "2630",
+    "municipality": "11001"
+  },
+  {
+    "id": "2640-11029",
+    "postalCode": "2640",
+    "municipality": "11029"
+  },
+  {
+    "id": "2650-11013",
+    "postalCode": "2650",
+    "municipality": "11013"
+  },
+  {
+    "id": "2660-11002",
+    "postalCode": "2660",
+    "municipality": "11002"
+  },
+  {
+    "id": "2800-12025",
+    "postalCode": "2800",
+    "municipality": "12025"
+  },
+  {
+    "id": "2801-12025",
+    "postalCode": "2801",
+    "municipality": "12025"
+  },
+  {
+    "id": "2811-12025",
+    "postalCode": "2811",
+    "municipality": "12025"
+  },
+  {
+    "id": "2812-12025",
+    "postalCode": "2812",
+    "municipality": "12025"
+  },
+  {
+    "id": "2820-12005",
+    "postalCode": "2820",
+    "municipality": "12005"
+  },
+  {
+    "id": "2830-12040",
+    "postalCode": "2830",
+    "municipality": "12040"
+  },
+  {
+    "id": "2840-11037",
+    "postalCode": "2840",
+    "municipality": "11037"
+  },
+  {
+    "id": "2845-11030",
+    "postalCode": "2845",
+    "municipality": "11030"
+  },
+  {
+    "id": "2850-11005",
+    "postalCode": "2850",
+    "municipality": "11005"
+  },
+  {
+    "id": "2860-12035",
+    "postalCode": "2860",
+    "municipality": "12035"
+  },
+  {
+    "id": "2861-12035",
+    "postalCode": "2861",
+    "municipality": "12035"
+  },
+  {
+    "id": "2870-12041",
+    "postalCode": "2870",
+    "municipality": "12041"
+  },
+  {
+    "id": "2880-12007",
+    "postalCode": "2880",
+    "municipality": "12007"
+  },
+  {
+    "id": "2890-12041",
+    "postalCode": "2890",
+    "municipality": "12041"
+  },
+  {
+    "id": "2900-11040",
+    "postalCode": "2900",
+    "municipality": "11040"
+  },
+  {
+    "id": "2910-11016",
+    "postalCode": "2910",
+    "municipality": "11016"
+  },
+  {
+    "id": "2920-11022",
+    "postalCode": "2920",
+    "municipality": "11022"
+  },
+  {
+    "id": "2930-11008",
+    "postalCode": "2930",
+    "municipality": "11008"
+  },
+  {
+    "id": "2940-11044",
+    "postalCode": "2940",
+    "municipality": "11044"
+  },
+  {
+    "id": "2950-11023",
+    "postalCode": "2950",
+    "municipality": "11023"
+  },
+  {
+    "id": "2960-11009",
+    "postalCode": "2960",
+    "municipality": "11009"
+  },
+  {
+    "id": "2970-11039",
+    "postalCode": "2970",
+    "municipality": "11039"
+  },
+  {
+    "id": "2980-11055",
+    "postalCode": "2980",
+    "municipality": "11055"
+  },
+  {
+    "id": "2990-11053",
+    "postalCode": "2990",
+    "municipality": "11053"
+  },
+  {
+    "id": "3000-24062",
+    "postalCode": "3000",
+    "municipality": "24062"
+  },
+  {
+    "id": "3001-24062",
+    "postalCode": "3001",
+    "municipality": "24062"
+  },
+  {
+    "id": "3010-24062",
+    "postalCode": "3010",
+    "municipality": "24062"
+  },
+  {
+    "id": "3012-24062",
+    "postalCode": "3012",
+    "municipality": "24062"
+  },
+  {
+    "id": "3018-24062",
+    "postalCode": "3018",
+    "municipality": "24062"
+  },
+  {
+    "id": "3020-24038",
+    "postalCode": "3020",
+    "municipality": "24038"
+  },
+  {
+    "id": "3040-24045",
+    "postalCode": "3040",
+    "municipality": "24045"
+  },
+  {
+    "id": "3050-24086",
+    "postalCode": "3050",
+    "municipality": "24086"
+  },
+  {
+    "id": "3051-24086",
+    "postalCode": "3051",
+    "municipality": "24086"
+  },
+  {
+    "id": "3052-24086",
+    "postalCode": "3052",
+    "municipality": "24086"
+  },
+  {
+    "id": "3053-24086",
+    "postalCode": "3053",
+    "municipality": "24086"
+  },
+  {
+    "id": "3054-24086",
+    "postalCode": "3054",
+    "municipality": "24086"
+  },
+  {
+    "id": "3060-24009",
+    "postalCode": "3060",
+    "municipality": "24009"
+  },
+  {
+    "id": "3061-24009",
+    "postalCode": "3061",
+    "municipality": "24009"
+  },
+  {
+    "id": "3070-24055",
+    "postalCode": "3070",
+    "municipality": "24055"
+  },
+  {
+    "id": "3071-24055",
+    "postalCode": "3071",
+    "municipality": "24055"
+  },
+  {
+    "id": "3078-24055",
+    "postalCode": "3078",
+    "municipality": "24055"
+  },
+  {
+    "id": "3080-24104",
+    "postalCode": "3080",
+    "municipality": "24104"
+  },
+  {
+    "id": "3090-23062",
+    "postalCode": "3090",
+    "municipality": "23062"
+  },
+  {
+    "id": "3110-24094",
+    "postalCode": "3110",
+    "municipality": "24094"
+  },
+  {
+    "id": "3111-24094",
+    "postalCode": "3111",
+    "municipality": "24094"
+  },
+  {
+    "id": "3118-24094",
+    "postalCode": "3118",
+    "municipality": "24094"
+  },
+  {
+    "id": "3120-24109",
+    "postalCode": "3120",
+    "municipality": "24109"
+  },
+  {
+    "id": "3128-24109",
+    "postalCode": "3128",
+    "municipality": "24109"
+  },
+  {
+    "id": "3130-24007",
+    "postalCode": "3130",
+    "municipality": "24007"
+  },
+  {
+    "id": "3140-24048",
+    "postalCode": "3140",
+    "municipality": "24048"
+  },
+  {
+    "id": "3150-24033",
+    "postalCode": "3150",
+    "municipality": "24033"
+  },
+  {
+    "id": "3190-24014",
+    "postalCode": "3190",
+    "municipality": "24014"
+  },
+  {
+    "id": "3191-24014",
+    "postalCode": "3191",
+    "municipality": "24014"
+  },
+  {
+    "id": "3200-24001",
+    "postalCode": "3200",
+    "municipality": "24001"
+  },
+  {
+    "id": "3201-24001",
+    "postalCode": "3201",
+    "municipality": "24001"
+  },
+  {
+    "id": "3202-24001",
+    "postalCode": "3202",
+    "municipality": "24001"
+  },
+  {
+    "id": "3210-24066",
+    "postalCode": "3210",
+    "municipality": "24066"
+  },
+  {
+    "id": "3211-24066",
+    "postalCode": "3211",
+    "municipality": "24066"
+  },
+  {
+    "id": "3212-24066",
+    "postalCode": "3212",
+    "municipality": "24066"
+  },
+  {
+    "id": "3220-24043",
+    "postalCode": "3220",
+    "municipality": "24043"
+  },
+  {
+    "id": "3221-24043",
+    "postalCode": "3221",
+    "municipality": "24043"
+  },
+  {
+    "id": "3270-24134",
+    "postalCode": "3270",
+    "municipality": "24134"
+  },
+  {
+    "id": "3271-24134",
+    "postalCode": "3271",
+    "municipality": "24134"
+  },
+  {
+    "id": "3272-24134",
+    "postalCode": "3272",
+    "municipality": "24134"
+  },
+  {
+    "id": "3290-24020",
+    "postalCode": "3290",
+    "municipality": "24020"
+  },
+  {
+    "id": "3293-24020",
+    "postalCode": "3293",
+    "municipality": "24020"
+  },
+  {
+    "id": "3294-24020",
+    "postalCode": "3294",
+    "municipality": "24020"
+  },
+  {
+    "id": "3300-24107",
+    "postalCode": "3300",
+    "municipality": "24107"
+  },
+  {
+    "id": "3320-24041",
+    "postalCode": "3320",
+    "municipality": "24041"
+  },
+  {
+    "id": "3321-24041",
+    "postalCode": "3321",
+    "municipality": "24041"
+  },
+  {
+    "id": "3350-24133",
+    "postalCode": "3350",
+    "municipality": "24133"
+  },
+  {
+    "id": "3360-24011",
+    "postalCode": "3360",
+    "municipality": "24011"
+  },
+  {
+    "id": "3370-24016",
+    "postalCode": "3370",
+    "municipality": "24016"
+  },
+  {
+    "id": "3380-24137",
+    "postalCode": "3380",
+    "municipality": "24137"
+  },
+  {
+    "id": "3381-24137",
+    "postalCode": "3381",
+    "municipality": "24137"
+  },
+  {
+    "id": "3384-24137",
+    "postalCode": "3384",
+    "municipality": "24137"
+  },
+  {
+    "id": "3390-24135",
+    "postalCode": "3390",
+    "municipality": "24135"
+  },
+  {
+    "id": "3391-24135",
+    "postalCode": "3391",
+    "municipality": "24135"
+  },
+  {
+    "id": "3400-24059",
+    "postalCode": "3400",
+    "municipality": "24059"
+  },
+  {
+    "id": "3401-24059",
+    "postalCode": "3401",
+    "municipality": "24059"
+  },
+  {
+    "id": "3404-24059",
+    "postalCode": "3404",
+    "municipality": "24059"
+  },
+  {
+    "id": "3440-24130",
+    "postalCode": "3440",
+    "municipality": "24130"
+  },
+  {
+    "id": "3450-24028",
+    "postalCode": "3450",
+    "municipality": "24028"
+  },
+  {
+    "id": "3454-24028",
+    "postalCode": "3454",
+    "municipality": "24028"
+  },
+  {
+    "id": "3460-24008",
+    "postalCode": "3460",
+    "municipality": "24008"
+  },
+  {
+    "id": "3461-24008",
+    "postalCode": "3461",
+    "municipality": "24008"
+  },
+  {
+    "id": "3470-24054",
+    "postalCode": "3470",
+    "municipality": "24054"
+  },
+  {
+    "id": "3471-24054",
+    "postalCode": "3471",
+    "municipality": "24054"
+  },
+  {
+    "id": "3472-24054",
+    "postalCode": "3472",
+    "municipality": "24054"
+  },
+  {
+    "id": "3473-24054",
+    "postalCode": "3473",
+    "municipality": "24054"
+  },
+  {
+    "id": "3500-71072",
+    "postalCode": "3500",
+    "municipality": "71072"
+  },
+  {
+    "id": "3501-71072",
+    "postalCode": "3501",
+    "municipality": "71072"
+  },
+  {
+    "id": "3510-71072",
+    "postalCode": "3510",
+    "municipality": "71072"
+  },
+  {
+    "id": "3511-71072",
+    "postalCode": "3511",
+    "municipality": "71072"
+  },
+  {
+    "id": "3512-71072",
+    "postalCode": "3512",
+    "municipality": "71072"
+  },
+  {
+    "id": "3520-71066",
+    "postalCode": "3520",
+    "municipality": "71066"
+  },
+  {
+    "id": "3530-72039",
+    "postalCode": "3530",
+    "municipality": "72039"
+  },
+  {
+    "id": "3540-71024",
+    "postalCode": "3540",
+    "municipality": "71024"
+  },
+  {
+    "id": "3545-71020",
+    "postalCode": "3545",
+    "municipality": "71020"
+  },
+  {
+    "id": "3550-71070",
+    "postalCode": "3550",
+    "municipality": "71070"
+  },
+  {
+    "id": "3560-71037",
+    "postalCode": "3560",
+    "municipality": "71037"
+  },
+  {
+    "id": "3570-73001",
+    "postalCode": "3570",
+    "municipality": "73001"
+  },
+  {
+    "id": "3580-71004",
+    "postalCode": "3580",
+    "municipality": "71004"
+  },
+  {
+    "id": "3581-71004",
+    "postalCode": "3581",
+    "municipality": "71004"
+  },
+  {
+    "id": "3582-71004",
+    "postalCode": "3582",
+    "municipality": "71004"
+  },
+  {
+    "id": "3583-71004",
+    "postalCode": "3583",
+    "municipality": "71004"
+  },
+  {
+    "id": "3590-71011",
+    "postalCode": "3590",
+    "municipality": "71011"
+  },
+  {
+    "id": "3600-71016",
+    "postalCode": "3600",
+    "municipality": "71016"
+  },
+  {
+    "id": "3620-73042",
+    "postalCode": "3620",
+    "municipality": "73042"
+  },
+  {
+    "id": "3621-73042",
+    "postalCode": "3621",
+    "municipality": "73042"
+  },
+  {
+    "id": "3630-73107",
+    "postalCode": "3630",
+    "municipality": "73107"
+  },
+  {
+    "id": "3631-73107",
+    "postalCode": "3631",
+    "municipality": "73107"
+  },
+  {
+    "id": "3640-72018",
+    "postalCode": "3640",
+    "municipality": "72018"
+  },
+  {
+    "id": "3650-72041",
+    "postalCode": "3650",
+    "municipality": "72041"
+  },
+  {
+    "id": "3660-72042",
+    "postalCode": "3660",
+    "municipality": "72042"
+  },
+  {
+    "id": "3665-71002",
+    "postalCode": "3665",
+    "municipality": "71002"
+  },
+  {
+    "id": "3668-71002",
+    "postalCode": "3668",
+    "municipality": "71002"
+  },
+  {
+    "id": "3670-72042",
+    "postalCode": "3670",
+    "municipality": "72042"
+  },
+  {
+    "id": "3680-72021",
+    "postalCode": "3680",
+    "municipality": "72021"
+  },
+  {
+    "id": "3690-71067",
+    "postalCode": "3690",
+    "municipality": "71067"
+  },
+  {
+    "id": "3700-73111",
+    "postalCode": "3700",
+    "municipality": "73111"
+  },
+  {
+    "id": "3717-73028",
+    "postalCode": "3717",
+    "municipality": "73028"
+  },
+  {
+    "id": "3720-71072",
+    "postalCode": "3720",
+    "municipality": "71072"
+  },
+  {
+    "id": "3721-71072",
+    "postalCode": "3721",
+    "municipality": "71072"
+  },
+  {
+    "id": "3722-71072",
+    "postalCode": "3722",
+    "municipality": "71072"
+  },
+  {
+    "id": "3723-71072",
+    "postalCode": "3723",
+    "municipality": "71072"
+  },
+  {
+    "id": "3724-71072",
+    "postalCode": "3724",
+    "municipality": "71072"
+  },
+  {
+    "id": "3730-73110",
+    "postalCode": "3730",
+    "municipality": "73110"
+  },
+  {
+    "id": "3732-73110",
+    "postalCode": "3732",
+    "municipality": "73110"
+  },
+  {
+    "id": "3740-73110",
+    "postalCode": "3740",
+    "municipality": "73110"
+  },
+  {
+    "id": "3742-73110",
+    "postalCode": "3742",
+    "municipality": "73110"
+  },
+  {
+    "id": "3746-73110",
+    "postalCode": "3746",
+    "municipality": "73110"
+  },
+  {
+    "id": "3770-73066",
+    "postalCode": "3770",
+    "municipality": "73066"
+  },
+  {
+    "id": "3790-73109",
+    "postalCode": "3790",
+    "municipality": "73109"
+  },
+  {
+    "id": "3791-73109",
+    "postalCode": "3791",
+    "municipality": "73109"
+  },
+  {
+    "id": "3792-73109",
+    "postalCode": "3792",
+    "municipality": "73109"
+  },
+  {
+    "id": "3793-73109",
+    "postalCode": "3793",
+    "municipality": "73109"
+  },
+  {
+    "id": "3798-73109",
+    "postalCode": "3798",
+    "municipality": "73109"
+  },
+  {
+    "id": "3800-71053",
+    "postalCode": "3800",
+    "municipality": "71053"
+  },
+  {
+    "id": "3803-71053",
+    "postalCode": "3803",
+    "municipality": "71053"
+  },
+  {
+    "id": "3806-71053",
+    "postalCode": "3806",
+    "municipality": "71053"
+  },
+  {
+    "id": "3830-73098",
+    "postalCode": "3830",
+    "municipality": "73098"
+  },
+  {
+    "id": "3831-73098",
+    "postalCode": "3831",
+    "municipality": "73098"
+  },
+  {
+    "id": "3832-73098",
+    "postalCode": "3832",
+    "municipality": "73098"
+  },
+  {
+    "id": "3840-73111",
+    "postalCode": "3840",
+    "municipality": "73111"
+  },
+  {
+    "id": "3850-71045",
+    "postalCode": "3850",
+    "municipality": "71045"
+  },
+  {
+    "id": "3870-73022",
+    "postalCode": "3870",
+    "municipality": "73022"
+  },
+  {
+    "id": "3890-71017",
+    "postalCode": "3890",
+    "municipality": "71017"
+  },
+  {
+    "id": "3891-71017",
+    "postalCode": "3891",
+    "municipality": "71017"
+  },
+  {
+    "id": "3900-72043",
+    "postalCode": "3900",
+    "municipality": "72043"
+  },
+  {
+    "id": "3910-72043",
+    "postalCode": "3910",
+    "municipality": "72043"
+  },
+  {
+    "id": "3920-72020",
+    "postalCode": "3920",
+    "municipality": "72020"
+  },
+  {
+    "id": "3930-72037",
+    "postalCode": "3930",
+    "municipality": "72037"
+  },
+  {
+    "id": "3940-72038",
+    "postalCode": "3940",
+    "municipality": "72038"
+  },
+  {
+    "id": "3941-72038",
+    "postalCode": "3941",
+    "municipality": "72038"
+  },
+  {
+    "id": "3945-71071",
+    "postalCode": "3945",
+    "municipality": "71071"
+  },
+  {
+    "id": "3950-72003",
+    "postalCode": "3950",
+    "municipality": "72003"
+  },
+  {
+    "id": "3960-72004",
+    "postalCode": "3960",
+    "municipality": "72004"
+  },
+  {
+    "id": "3970-71034",
+    "postalCode": "3970",
+    "municipality": "71034"
+  },
+  {
+    "id": "3971-71034",
+    "postalCode": "3971",
+    "municipality": "71034"
+  },
+  {
+    "id": "3980-71071",
+    "postalCode": "3980",
+    "municipality": "71071"
+  },
+  {
+    "id": "3990-72030",
+    "postalCode": "3990",
+    "municipality": "72030"
+  },
+  {
+    "id": "4000-62063",
+    "postalCode": "4000",
+    "municipality": "62063"
+  },
+  {
+    "id": "4020-62063",
+    "postalCode": "4020",
+    "municipality": "62063"
+  },
+  {
+    "id": "4030-62063",
+    "postalCode": "4030",
+    "municipality": "62063"
+  },
+  {
+    "id": "4031-62063",
+    "postalCode": "4031",
+    "municipality": "62063"
+  },
+  {
+    "id": "4032-62063",
+    "postalCode": "4032",
+    "municipality": "62063"
+  },
+  {
+    "id": "4040-62051",
+    "postalCode": "4040",
+    "municipality": "62051"
+  },
+  {
+    "id": "4041-62051",
+    "postalCode": "4041",
+    "municipality": "62051"
+  },
+  {
+    "id": "4042-62051",
+    "postalCode": "4042",
+    "municipality": "62051"
+  },
+  {
+    "id": "4050-62022",
+    "postalCode": "4050",
+    "municipality": "62022"
+  },
+  {
+    "id": "4051-62022",
+    "postalCode": "4051",
+    "municipality": "62022"
+  },
+  {
+    "id": "4052-62022",
+    "postalCode": "4052",
+    "municipality": "62022"
+  },
+  {
+    "id": "4053-62022",
+    "postalCode": "4053",
+    "municipality": "62022"
+  },
+  {
+    "id": "4100-62096",
+    "postalCode": "4100",
+    "municipality": "62096"
+  },
+  {
+    "id": "4101-62096",
+    "postalCode": "4101",
+    "municipality": "62096"
+  },
+  {
+    "id": "4102-62096",
+    "postalCode": "4102",
+    "municipality": "62096"
+  },
+  {
+    "id": "4120-62121",
+    "postalCode": "4120",
+    "municipality": "62121"
+  },
+  {
+    "id": "4121-62121",
+    "postalCode": "4121",
+    "municipality": "62121"
+  },
+  {
+    "id": "4122-62121",
+    "postalCode": "4122",
+    "municipality": "62121"
+  },
+  {
+    "id": "4130-62032",
+    "postalCode": "4130",
+    "municipality": "62032"
+  },
+  {
+    "id": "4140-62100",
+    "postalCode": "4140",
+    "municipality": "62100"
+  },
+  {
+    "id": "4141-62100",
+    "postalCode": "4141",
+    "municipality": "62100"
+  },
+  {
+    "id": "4160-61079",
+    "postalCode": "4160",
+    "municipality": "61079"
+  },
+  {
+    "id": "4161-61079",
+    "postalCode": "4161",
+    "municipality": "61079"
+  },
+  {
+    "id": "4162-61079",
+    "postalCode": "4162",
+    "municipality": "61079"
+  },
+  {
+    "id": "4163-61079",
+    "postalCode": "4163",
+    "municipality": "61079"
+  },
+  {
+    "id": "4170-62026",
+    "postalCode": "4170",
+    "municipality": "62026"
+  },
+  {
+    "id": "4171-62026",
+    "postalCode": "4171",
+    "municipality": "62026"
+  },
+  {
+    "id": "4180-61024",
+    "postalCode": "4180",
+    "municipality": "61024"
+  },
+  {
+    "id": "4181-61024",
+    "postalCode": "4181",
+    "municipality": "61024"
+  },
+  {
+    "id": "4190-61019",
+    "postalCode": "4190",
+    "municipality": "61019"
+  },
+  {
+    "id": "4210-61010",
+    "postalCode": "4210",
+    "municipality": "61010"
+  },
+  {
+    "id": "4217-61028",
+    "postalCode": "4217",
+    "municipality": "61028"
+  },
+  {
+    "id": "4218-61028",
+    "postalCode": "4218",
+    "municipality": "61028"
+  },
+  {
+    "id": "4219-64075",
+    "postalCode": "4219",
+    "municipality": "64075"
+  },
+  {
+    "id": "4250-64029",
+    "postalCode": "4250",
+    "municipality": "64029"
+  },
+  {
+    "id": "4252-64029",
+    "postalCode": "4252",
+    "municipality": "64029"
+  },
+  {
+    "id": "4253-64029",
+    "postalCode": "4253",
+    "municipality": "64029"
+  },
+  {
+    "id": "4254-64029",
+    "postalCode": "4254",
+    "municipality": "64029"
+  },
+  {
+    "id": "4257-64008",
+    "postalCode": "4257",
+    "municipality": "64008"
+  },
+  {
+    "id": "4260-64015",
+    "postalCode": "4260",
+    "municipality": "64015"
+  },
+  {
+    "id": "4261-64015",
+    "postalCode": "4261",
+    "municipality": "64015"
+  },
+  {
+    "id": "4263-64015",
+    "postalCode": "4263",
+    "municipality": "64015"
+  },
+  {
+    "id": "4280-64034",
+    "postalCode": "4280",
+    "municipality": "64034"
+  },
+  {
+    "id": "4287-64047",
+    "postalCode": "4287",
+    "municipality": "64047"
+  },
+  {
+    "id": "4300-64074",
+    "postalCode": "4300",
+    "municipality": "64074"
+  },
+  {
+    "id": "4317-64076",
+    "postalCode": "4317",
+    "municipality": "64076"
+  },
+  {
+    "id": "4340-62006",
+    "postalCode": "4340",
+    "municipality": "62006"
+  },
+  {
+    "id": "4342-62006",
+    "postalCode": "4342",
+    "municipality": "62006"
+  },
+  {
+    "id": "4347-64025",
+    "postalCode": "4347",
+    "municipality": "64025"
+  },
+  {
+    "id": "4350-64063",
+    "postalCode": "4350",
+    "municipality": "64063"
+  },
+  {
+    "id": "4351-64063",
+    "postalCode": "4351",
+    "municipality": "64063"
+  },
+  {
+    "id": "4357-64023",
+    "postalCode": "4357",
+    "municipality": "64023"
+  },
+  {
+    "id": "4360-64056",
+    "postalCode": "4360",
+    "municipality": "64056"
+  },
+  {
+    "id": "4367-64021",
+    "postalCode": "4367",
+    "municipality": "64021"
+  },
+  {
+    "id": "4400-62120",
+    "postalCode": "4400",
+    "municipality": "62120"
+  },
+  {
+    "id": "4420-62093",
+    "postalCode": "4420",
+    "municipality": "62093"
+  },
+  {
+    "id": "4430-62003",
+    "postalCode": "4430",
+    "municipality": "62003"
+  },
+  {
+    "id": "4431-62003",
+    "postalCode": "4431",
+    "municipality": "62003"
+  },
+  {
+    "id": "4432-62003",
+    "postalCode": "4432",
+    "municipality": "62003"
+  },
+  {
+    "id": "4450-62060",
+    "postalCode": "4450",
+    "municipality": "62060"
+  },
+  {
+    "id": "4451-62060",
+    "postalCode": "4451",
+    "municipality": "62060"
+  },
+  {
+    "id": "4452-62060",
+    "postalCode": "4452",
+    "municipality": "62060"
+  },
+  {
+    "id": "4453-62060",
+    "postalCode": "4453",
+    "municipality": "62060"
+  },
+  {
+    "id": "4458-62060",
+    "postalCode": "4458",
+    "municipality": "62060"
+  },
+  {
+    "id": "4460-62118",
+    "postalCode": "4460",
+    "municipality": "62118"
+  },
+  {
+    "id": "4470-64065",
+    "postalCode": "4470",
+    "municipality": "64065"
+  },
+  {
+    "id": "4480-61080",
+    "postalCode": "4480",
+    "municipality": "61080"
+  },
+  {
+    "id": "4500-61031",
+    "postalCode": "4500",
+    "municipality": "61031"
+  },
+  {
+    "id": "4520-61072",
+    "postalCode": "4520",
+    "municipality": "61072"
+  },
+  {
+    "id": "4530-61068",
+    "postalCode": "4530",
+    "municipality": "61068"
+  },
+  {
+    "id": "4537-61063",
+    "postalCode": "4537",
+    "municipality": "61063"
+  },
+  {
+    "id": "4540-61003",
+    "postalCode": "4540",
+    "municipality": "61003"
+  },
+  {
+    "id": "4550-61043",
+    "postalCode": "4550",
+    "municipality": "61043"
+  },
+  {
+    "id": "4557-61081",
+    "postalCode": "4557",
+    "municipality": "61081"
+  },
+  {
+    "id": "4560-61012",
+    "postalCode": "4560",
+    "municipality": "61012"
+  },
+  {
+    "id": "4570-61039",
+    "postalCode": "4570",
+    "municipality": "61039"
+  },
+  {
+    "id": "4577-61041",
+    "postalCode": "4577",
+    "municipality": "61041"
+  },
+  {
+    "id": "4590-61048",
+    "postalCode": "4590",
+    "municipality": "61048"
+  },
+  {
+    "id": "4600-62108",
+    "postalCode": "4600",
+    "municipality": "62108"
+  },
+  {
+    "id": "4601-62108",
+    "postalCode": "4601",
+    "municipality": "62108"
+  },
+  {
+    "id": "4602-62108",
+    "postalCode": "4602",
+    "municipality": "62108"
+  },
+  {
+    "id": "4606-62027",
+    "postalCode": "4606",
+    "municipality": "62027"
+  },
+  {
+    "id": "4607-62027",
+    "postalCode": "4607",
+    "municipality": "62027"
+  },
+  {
+    "id": "4608-62027",
+    "postalCode": "4608",
+    "municipality": "62027"
+  },
+  {
+    "id": "4610-62015",
+    "postalCode": "4610",
+    "municipality": "62015"
+  },
+  {
+    "id": "4620-62038",
+    "postalCode": "4620",
+    "municipality": "62038"
+  },
+  {
+    "id": "4621-62038",
+    "postalCode": "4621",
+    "municipality": "62038"
+  },
+  {
+    "id": "4623-62038",
+    "postalCode": "4623",
+    "municipality": "62038"
+  },
+  {
+    "id": "4624-62038",
+    "postalCode": "4624",
+    "municipality": "62038"
+  },
+  {
+    "id": "4630-62099",
+    "postalCode": "4630",
+    "municipality": "62099"
+  },
+  {
+    "id": "4631-62099",
+    "postalCode": "4631",
+    "municipality": "62099"
+  },
+  {
+    "id": "4632-62099",
+    "postalCode": "4632",
+    "municipality": "62099"
+  },
+  {
+    "id": "4633-62099",
+    "postalCode": "4633",
+    "municipality": "62099"
+  },
+  {
+    "id": "4650-63035",
+    "postalCode": "4650",
+    "municipality": "63035"
+  },
+  {
+    "id": "4651-63035",
+    "postalCode": "4651",
+    "municipality": "63035"
+  },
+  {
+    "id": "4652-63035",
+    "postalCode": "4652",
+    "municipality": "63035"
+  },
+  {
+    "id": "4653-63035",
+    "postalCode": "4653",
+    "municipality": "63035"
+  },
+  {
+    "id": "4654-63035",
+    "postalCode": "4654",
+    "municipality": "63035"
+  },
+  {
+    "id": "4670-62119",
+    "postalCode": "4670",
+    "municipality": "62119"
+  },
+  {
+    "id": "4671-62119",
+    "postalCode": "4671",
+    "municipality": "62119"
+  },
+  {
+    "id": "4672-62119",
+    "postalCode": "4672",
+    "municipality": "62119"
+  },
+  {
+    "id": "4680-62079",
+    "postalCode": "4680",
+    "municipality": "62079"
+  },
+  {
+    "id": "4681-62079",
+    "postalCode": "4681",
+    "municipality": "62079"
+  },
+  {
+    "id": "4682-62079",
+    "postalCode": "4682",
+    "municipality": "62079"
+  },
+  {
+    "id": "4683-62079",
+    "postalCode": "4683",
+    "municipality": "62079"
+  },
+  {
+    "id": "4684-62079",
+    "postalCode": "4684",
+    "municipality": "62079"
+  },
+  {
+    "id": "4690-62011",
+    "postalCode": "4690",
+    "municipality": "62011"
+  },
+  {
+    "id": "4700-63023",
+    "postalCode": "4700",
+    "municipality": "63023"
+  },
+  {
+    "id": "4701-63023",
+    "postalCode": "4701",
+    "municipality": "63023"
+  },
+  {
+    "id": "4710-63048",
+    "postalCode": "4710",
+    "municipality": "63048"
+  },
+  {
+    "id": "4711-63048",
+    "postalCode": "4711",
+    "municipality": "63048"
+  },
+  {
+    "id": "4720-63040",
+    "postalCode": "4720",
+    "municipality": "63040"
+  },
+  {
+    "id": "4721-63040",
+    "postalCode": "4721",
+    "municipality": "63040"
+  },
+  {
+    "id": "4728-63040",
+    "postalCode": "4728",
+    "municipality": "63040"
+  },
+  {
+    "id": "4730-63061",
+    "postalCode": "4730",
+    "municipality": "63061"
+  },
+  {
+    "id": "4731-63061",
+    "postalCode": "4731",
+    "municipality": "63061"
+  },
+  {
+    "id": "4750-63013",
+    "postalCode": "4750",
+    "municipality": "63013"
+  },
+  {
+    "id": "4760-63012",
+    "postalCode": "4760",
+    "municipality": "63012"
+  },
+  {
+    "id": "4761-63012",
+    "postalCode": "4761",
+    "municipality": "63012"
+  },
+  {
+    "id": "4770-63001",
+    "postalCode": "4770",
+    "municipality": "63001"
+  },
+  {
+    "id": "4771-63001",
+    "postalCode": "4771",
+    "municipality": "63001"
+  },
+  {
+    "id": "4780-63067",
+    "postalCode": "4780",
+    "municipality": "63067"
+  },
+  {
+    "id": "4782-63067",
+    "postalCode": "4782",
+    "municipality": "63067"
+  },
+  {
+    "id": "4783-63067",
+    "postalCode": "4783",
+    "municipality": "63067"
+  },
+  {
+    "id": "4784-63067",
+    "postalCode": "4784",
+    "municipality": "63067"
+  },
+  {
+    "id": "4790-63087",
+    "postalCode": "4790",
+    "municipality": "63087"
+  },
+  {
+    "id": "4791-63087",
+    "postalCode": "4791",
+    "municipality": "63087"
+  },
+  {
+    "id": "4800-63079",
+    "postalCode": "4800",
+    "municipality": "63079"
+  },
+  {
+    "id": "4801-63079",
+    "postalCode": "4801",
+    "municipality": "63079"
+  },
+  {
+    "id": "4802-63079",
+    "postalCode": "4802",
+    "municipality": "63079"
+  },
+  {
+    "id": "4820-63020",
+    "postalCode": "4820",
+    "municipality": "63020"
+  },
+  {
+    "id": "4821-63020",
+    "postalCode": "4821",
+    "municipality": "63020"
+  },
+  {
+    "id": "4830-63046",
+    "postalCode": "4830",
+    "municipality": "63046"
+  },
+  {
+    "id": "4831-63046",
+    "postalCode": "4831",
+    "municipality": "63046"
+  },
+  {
+    "id": "4834-63046",
+    "postalCode": "4834",
+    "municipality": "63046"
+  },
+  {
+    "id": "4837-63004",
+    "postalCode": "4837",
+    "municipality": "63004"
+  },
+  {
+    "id": "4840-63084",
+    "postalCode": "4840",
+    "municipality": "63084"
+  },
+  {
+    "id": "4841-63084",
+    "postalCode": "4841",
+    "municipality": "63084"
+  },
+  {
+    "id": "4845-63038",
+    "postalCode": "4845",
+    "municipality": "63038"
+  },
+  {
+    "id": "4850-63088",
+    "postalCode": "4850",
+    "municipality": "63088"
+  },
+  {
+    "id": "4851-63088",
+    "postalCode": "4851",
+    "municipality": "63088"
+  },
+  {
+    "id": "4852-63088",
+    "postalCode": "4852",
+    "municipality": "63088"
+  },
+  {
+    "id": "4860-63058",
+    "postalCode": "4860",
+    "municipality": "63058"
+  },
+  {
+    "id": "4861-63058",
+    "postalCode": "4861",
+    "municipality": "63058"
+  },
+  {
+    "id": "4870-62122",
+    "postalCode": "4870",
+    "municipality": "62122"
+  },
+  {
+    "id": "4877-63057",
+    "postalCode": "4877",
+    "municipality": "63057"
+  },
+  {
+    "id": "4880-63003",
+    "postalCode": "4880",
+    "municipality": "63003"
+  },
+  {
+    "id": "4890-63089",
+    "postalCode": "4890",
+    "municipality": "63089"
+  },
+  {
+    "id": "4900-63072",
+    "postalCode": "4900",
+    "municipality": "63072"
+  },
+  {
+    "id": "4910-63076",
+    "postalCode": "4910",
+    "municipality": "63076"
+  },
+  {
+    "id": "4920-62009",
+    "postalCode": "4920",
+    "municipality": "62009"
+  },
+  {
+    "id": "4950-63080",
+    "postalCode": "4950",
+    "municipality": "63080"
+  },
+  {
+    "id": "4960-63049",
+    "postalCode": "4960",
+    "municipality": "63049"
+  },
+  {
+    "id": "4970-63073",
+    "postalCode": "4970",
+    "municipality": "63073"
+  },
+  {
+    "id": "4980-63086",
+    "postalCode": "4980",
+    "municipality": "63086"
+  },
+  {
+    "id": "4983-63086",
+    "postalCode": "4983",
+    "municipality": "63086"
+  },
+  {
+    "id": "4987-63075",
+    "postalCode": "4987",
+    "municipality": "63075"
+  },
+  {
+    "id": "4990-63045",
+    "postalCode": "4990",
+    "municipality": "63045"
+  },
+  {
+    "id": "5000-92094",
+    "postalCode": "5000",
+    "municipality": "92094"
+  },
+  {
+    "id": "5001-92094",
+    "postalCode": "5001",
+    "municipality": "92094"
+  },
+  {
+    "id": "5002-92094",
+    "postalCode": "5002",
+    "municipality": "92094"
+  },
+  {
+    "id": "5003-92094",
+    "postalCode": "5003",
+    "municipality": "92094"
+  },
+  {
+    "id": "5004-92094",
+    "postalCode": "5004",
+    "municipality": "92094"
+  },
+  {
+    "id": "5020-92094",
+    "postalCode": "5020",
+    "municipality": "92094"
+  },
+  {
+    "id": "5021-92094",
+    "postalCode": "5021",
+    "municipality": "92094"
+  },
+  {
+    "id": "5022-92094",
+    "postalCode": "5022",
+    "municipality": "92094"
+  },
+  {
+    "id": "5024-92094",
+    "postalCode": "5024",
+    "municipality": "92094"
+  },
+  {
+    "id": "5030-92142",
+    "postalCode": "5030",
+    "municipality": "92142"
+  },
+  {
+    "id": "5031-92142",
+    "postalCode": "5031",
+    "municipality": "92142"
+  },
+  {
+    "id": "5032-92142",
+    "postalCode": "5032",
+    "municipality": "92142"
+  },
+  {
+    "id": "5060-92137",
+    "postalCode": "5060",
+    "municipality": "92137"
+  },
+  {
+    "id": "5070-92048",
+    "postalCode": "5070",
+    "municipality": "92048"
+  },
+  {
+    "id": "5080-92141",
+    "postalCode": "5080",
+    "municipality": "92141"
+  },
+  {
+    "id": "5081-92141",
+    "postalCode": "5081",
+    "municipality": "92141"
+  },
+  {
+    "id": "5100-92094",
+    "postalCode": "5100",
+    "municipality": "92094"
+  },
+  {
+    "id": "5101-92094",
+    "postalCode": "5101",
+    "municipality": "92094"
+  },
+  {
+    "id": "5140-92114",
+    "postalCode": "5140",
+    "municipality": "92114"
+  },
+  {
+    "id": "5150-92045",
+    "postalCode": "5150",
+    "municipality": "92045"
+  },
+  {
+    "id": "5170-92101",
+    "postalCode": "5170",
+    "municipality": "92101"
+  },
+  {
+    "id": "5190-92140",
+    "postalCode": "5190",
+    "municipality": "92140"
+  },
+  {
+    "id": "5300-92003",
+    "postalCode": "5300",
+    "municipality": "92003"
+  },
+  {
+    "id": "5310-92035",
+    "postalCode": "5310",
+    "municipality": "92035"
+  },
+  {
+    "id": "5330-92006",
+    "postalCode": "5330",
+    "municipality": "92006"
+  },
+  {
+    "id": "5332-92006",
+    "postalCode": "5332",
+    "municipality": "92006"
+  },
+  {
+    "id": "5333-92006",
+    "postalCode": "5333",
+    "municipality": "92006"
+  },
+  {
+    "id": "5334-92006",
+    "postalCode": "5334",
+    "municipality": "92006"
+  },
+  {
+    "id": "5336-92006",
+    "postalCode": "5336",
+    "municipality": "92006"
+  },
+  {
+    "id": "5340-92054",
+    "postalCode": "5340",
+    "municipality": "92054"
+  },
+  {
+    "id": "5350-92097",
+    "postalCode": "5350",
+    "municipality": "92097"
+  },
+  {
+    "id": "5351-92097",
+    "postalCode": "5351",
+    "municipality": "92097"
+  },
+  {
+    "id": "5352-92097",
+    "postalCode": "5352",
+    "municipality": "92097"
+  },
+  {
+    "id": "5353-92097",
+    "postalCode": "5353",
+    "municipality": "92097"
+  },
+  {
+    "id": "5354-92097",
+    "postalCode": "5354",
+    "municipality": "92097"
+  },
+  {
+    "id": "5360-91059",
+    "postalCode": "5360",
+    "municipality": "91059"
+  },
+  {
+    "id": "5361-91059",
+    "postalCode": "5361",
+    "municipality": "91059"
+  },
+  {
+    "id": "5362-91059",
+    "postalCode": "5362",
+    "municipality": "91059"
+  },
+  {
+    "id": "5363-91059",
+    "postalCode": "5363",
+    "municipality": "91059"
+  },
+  {
+    "id": "5364-91059",
+    "postalCode": "5364",
+    "municipality": "91059"
+  },
+  {
+    "id": "5370-91064",
+    "postalCode": "5370",
+    "municipality": "91064"
+  },
+  {
+    "id": "5372-91064",
+    "postalCode": "5372",
+    "municipality": "91064"
+  },
+  {
+    "id": "5374-91064",
+    "postalCode": "5374",
+    "municipality": "91064"
+  },
+  {
+    "id": "5376-91064",
+    "postalCode": "5376",
+    "municipality": "91064"
+  },
+  {
+    "id": "5377-91120",
+    "postalCode": "5377",
+    "municipality": "91120"
+  },
+  {
+    "id": "5380-92138",
+    "postalCode": "5380",
+    "municipality": "92138"
+  },
+  {
+    "id": "5500-91034",
+    "postalCode": "5500",
+    "municipality": "91034"
+  },
+  {
+    "id": "5501-91034",
+    "postalCode": "5501",
+    "municipality": "91034"
+  },
+  {
+    "id": "5502-91034",
+    "postalCode": "5502",
+    "municipality": "91034"
+  },
+  {
+    "id": "5503-91034",
+    "postalCode": "5503",
+    "municipality": "91034"
+  },
+  {
+    "id": "5504-91034",
+    "postalCode": "5504",
+    "municipality": "91034"
+  },
+  {
+    "id": "5520-91103",
+    "postalCode": "5520",
+    "municipality": "91103"
+  },
+  {
+    "id": "5521-91103",
+    "postalCode": "5521",
+    "municipality": "91103"
+  },
+  {
+    "id": "5522-91103",
+    "postalCode": "5522",
+    "municipality": "91103"
+  },
+  {
+    "id": "5523-91103",
+    "postalCode": "5523",
+    "municipality": "91103"
+  },
+  {
+    "id": "5524-91103",
+    "postalCode": "5524",
+    "municipality": "91103"
+  },
+  {
+    "id": "5530-91141",
+    "postalCode": "5530",
+    "municipality": "91141"
+  },
+  {
+    "id": "5537-91005",
+    "postalCode": "5537",
+    "municipality": "91005"
+  },
+  {
+    "id": "5540-91142",
+    "postalCode": "5540",
+    "municipality": "91142"
+  },
+  {
+    "id": "5541-91142",
+    "postalCode": "5541",
+    "municipality": "91142"
+  },
+  {
+    "id": "5542-91142",
+    "postalCode": "5542",
+    "municipality": "91142"
+  },
+  {
+    "id": "5543-91142",
+    "postalCode": "5543",
+    "municipality": "91142"
+  },
+  {
+    "id": "5544-91142",
+    "postalCode": "5544",
+    "municipality": "91142"
+  },
+  {
+    "id": "5550-91143",
+    "postalCode": "5550",
+    "municipality": "91143"
+  },
+  {
+    "id": "5555-91015",
+    "postalCode": "5555",
+    "municipality": "91015"
+  },
+  {
+    "id": "5560-91072",
+    "postalCode": "5560",
+    "municipality": "91072"
+  },
+  {
+    "id": "5561-91072",
+    "postalCode": "5561",
+    "municipality": "91072"
+  },
+  {
+    "id": "5562-91072",
+    "postalCode": "5562",
+    "municipality": "91072"
+  },
+  {
+    "id": "5563-91072",
+    "postalCode": "5563",
+    "municipality": "91072"
+  },
+  {
+    "id": "5564-91072",
+    "postalCode": "5564",
+    "municipality": "91072"
+  },
+  {
+    "id": "5570-91013",
+    "postalCode": "5570",
+    "municipality": "91013"
+  },
+  {
+    "id": "5571-91013",
+    "postalCode": "5571",
+    "municipality": "91013"
+  },
+  {
+    "id": "5572-91013",
+    "postalCode": "5572",
+    "municipality": "91013"
+  },
+  {
+    "id": "5573-91013",
+    "postalCode": "5573",
+    "municipality": "91013"
+  },
+  {
+    "id": "5574-91013",
+    "postalCode": "5574",
+    "municipality": "91013"
+  },
+  {
+    "id": "5575-91054",
+    "postalCode": "5575",
+    "municipality": "91054"
+  },
+  {
+    "id": "5576-91013",
+    "postalCode": "5576",
+    "municipality": "91013"
+  },
+  {
+    "id": "5580-91114",
+    "postalCode": "5580",
+    "municipality": "91114"
+  },
+  {
+    "id": "5590-91030",
+    "postalCode": "5590",
+    "municipality": "91030"
+  },
+  {
+    "id": "5600-93056",
+    "postalCode": "5600",
+    "municipality": "93056"
+  },
+  {
+    "id": "5620-93022",
+    "postalCode": "5620",
+    "municipality": "93022"
+  },
+  {
+    "id": "5621-93022",
+    "postalCode": "5621",
+    "municipality": "93022"
+  },
+  {
+    "id": "5630-93010",
+    "postalCode": "5630",
+    "municipality": "93010"
+  },
+  {
+    "id": "5640-92087",
+    "postalCode": "5640",
+    "municipality": "92087"
+  },
+  {
+    "id": "5641-92087",
+    "postalCode": "5641",
+    "municipality": "92087"
+  },
+  {
+    "id": "5644-92087",
+    "postalCode": "5644",
+    "municipality": "92087"
+  },
+  {
+    "id": "5646-92087",
+    "postalCode": "5646",
+    "municipality": "92087"
+  },
+  {
+    "id": "5650-93088",
+    "postalCode": "5650",
+    "municipality": "93088"
+  },
+  {
+    "id": "5651-93088",
+    "postalCode": "5651",
+    "municipality": "93088"
+  },
+  {
+    "id": "5660-93014",
+    "postalCode": "5660",
+    "municipality": "93014"
+  },
+  {
+    "id": "5670-93090",
+    "postalCode": "5670",
+    "municipality": "93090"
+  },
+  {
+    "id": "5680-93018",
+    "postalCode": "5680",
+    "municipality": "93018"
+  },
+  {
+    "id": "6000-52011",
+    "postalCode": "6000",
+    "municipality": "52011"
+  },
+  {
+    "id": "6001-52011",
+    "postalCode": "6001",
+    "municipality": "52011"
+  },
+  {
+    "id": "6010-52011",
+    "postalCode": "6010",
+    "municipality": "52011"
+  },
+  {
+    "id": "6020-52011",
+    "postalCode": "6020",
+    "municipality": "52011"
+  },
+  {
+    "id": "6030-52011",
+    "postalCode": "6030",
+    "municipality": "52011"
+  },
+  {
+    "id": "6031-52011",
+    "postalCode": "6031",
+    "municipality": "52011"
+  },
+  {
+    "id": "6032-52011",
+    "postalCode": "6032",
+    "municipality": "52011"
+  },
+  {
+    "id": "6040-52011",
+    "postalCode": "6040",
+    "municipality": "52011"
+  },
+  {
+    "id": "6041-52011",
+    "postalCode": "6041",
+    "municipality": "52011"
+  },
+  {
+    "id": "6042-52011",
+    "postalCode": "6042",
+    "municipality": "52011"
+  },
+  {
+    "id": "6043-52011",
+    "postalCode": "6043",
+    "municipality": "52011"
+  },
+  {
+    "id": "6044-52011",
+    "postalCode": "6044",
+    "municipality": "52011"
+  },
+  {
+    "id": "6060-52011",
+    "postalCode": "6060",
+    "municipality": "52011"
+  },
+  {
+    "id": "6061-52011",
+    "postalCode": "6061",
+    "municipality": "52011"
+  },
+  {
+    "id": "6110-52048",
+    "postalCode": "6110",
+    "municipality": "52048"
+  },
+  {
+    "id": "6111-52048",
+    "postalCode": "6111",
+    "municipality": "52048"
+  },
+  {
+    "id": "6120-56086",
+    "postalCode": "6120",
+    "municipality": "56086"
+  },
+  {
+    "id": "6140-52022",
+    "postalCode": "6140",
+    "municipality": "52022"
+  },
+  {
+    "id": "6141-52022",
+    "postalCode": "6141",
+    "municipality": "52022"
+  },
+  {
+    "id": "6142-52022",
+    "postalCode": "6142",
+    "municipality": "52022"
+  },
+  {
+    "id": "6150-56001",
+    "postalCode": "6150",
+    "municipality": "56001"
+  },
+  {
+    "id": "6180-52015",
+    "postalCode": "6180",
+    "municipality": "52015"
+  },
+  {
+    "id": "6181-52015",
+    "postalCode": "6181",
+    "municipality": "52015"
+  },
+  {
+    "id": "6182-52015",
+    "postalCode": "6182",
+    "municipality": "52015"
+  },
+  {
+    "id": "6183-52015",
+    "postalCode": "6183",
+    "municipality": "52015"
+  },
+  {
+    "id": "6200-52012",
+    "postalCode": "6200",
+    "municipality": "52012"
+  },
+  {
+    "id": "6210-52075",
+    "postalCode": "6210",
+    "municipality": "52075"
+  },
+  {
+    "id": "6211-52075",
+    "postalCode": "6211",
+    "municipality": "52075"
+  },
+  {
+    "id": "6220-52021",
+    "postalCode": "6220",
+    "municipality": "52021"
+  },
+  {
+    "id": "6221-52021",
+    "postalCode": "6221",
+    "municipality": "52021"
+  },
+  {
+    "id": "6222-52021",
+    "postalCode": "6222",
+    "municipality": "52021"
+  },
+  {
+    "id": "6223-52021",
+    "postalCode": "6223",
+    "municipality": "52021"
+  },
+  {
+    "id": "6224-52021",
+    "postalCode": "6224",
+    "municipality": "52021"
+  },
+  {
+    "id": "6230-52055",
+    "postalCode": "6230",
+    "municipality": "52055"
+  },
+  {
+    "id": "6238-52055",
+    "postalCode": "6238",
+    "municipality": "52055"
+  },
+  {
+    "id": "6240-52018",
+    "postalCode": "6240",
+    "municipality": "52018"
+  },
+  {
+    "id": "6250-52074",
+    "postalCode": "6250",
+    "municipality": "52074"
+  },
+  {
+    "id": "6280-52025",
+    "postalCode": "6280",
+    "municipality": "52025"
+  },
+  {
+    "id": "6440-56029",
+    "postalCode": "6440",
+    "municipality": "56029"
+  },
+  {
+    "id": "6441-56029",
+    "postalCode": "6441",
+    "municipality": "56029"
+  },
+  {
+    "id": "6460-56016",
+    "postalCode": "6460",
+    "municipality": "56016"
+  },
+  {
+    "id": "6461-56016",
+    "postalCode": "6461",
+    "municipality": "56016"
+  },
+  {
+    "id": "6462-56016",
+    "postalCode": "6462",
+    "municipality": "56016"
+  },
+  {
+    "id": "6463-56016",
+    "postalCode": "6463",
+    "municipality": "56016"
+  },
+  {
+    "id": "6464-56016",
+    "postalCode": "6464",
+    "municipality": "56016"
+  },
+  {
+    "id": "6470-56088",
+    "postalCode": "6470",
+    "municipality": "56088"
+  },
+  {
+    "id": "6500-56005",
+    "postalCode": "6500",
+    "municipality": "56005"
+  },
+  {
+    "id": "6511-56005",
+    "postalCode": "6511",
+    "municipality": "56005"
+  },
+  {
+    "id": "6530-56078",
+    "postalCode": "6530",
+    "municipality": "56078"
+  },
+  {
+    "id": "6531-56078",
+    "postalCode": "6531",
+    "municipality": "56078"
+  },
+  {
+    "id": "6532-56078",
+    "postalCode": "6532",
+    "municipality": "56078"
+  },
+  {
+    "id": "6533-56078",
+    "postalCode": "6533",
+    "municipality": "56078"
+  },
+  {
+    "id": "6534-56078",
+    "postalCode": "6534",
+    "municipality": "56078"
+  },
+  {
+    "id": "6536-56078",
+    "postalCode": "6536",
+    "municipality": "56078"
+  },
+  {
+    "id": "6540-56044",
+    "postalCode": "6540",
+    "municipality": "56044"
+  },
+  {
+    "id": "6542-56044",
+    "postalCode": "6542",
+    "municipality": "56044"
+  },
+  {
+    "id": "6543-56044",
+    "postalCode": "6543",
+    "municipality": "56044"
+  },
+  {
+    "id": "6560-56022",
+    "postalCode": "6560",
+    "municipality": "56022"
+  },
+  {
+    "id": "6567-56049",
+    "postalCode": "6567",
+    "municipality": "56049"
+  },
+  {
+    "id": "6590-56051",
+    "postalCode": "6590",
+    "municipality": "56051"
+  },
+  {
+    "id": "6591-56051",
+    "postalCode": "6591",
+    "municipality": "56051"
+  },
+  {
+    "id": "6592-56051",
+    "postalCode": "6592",
+    "municipality": "56051"
+  },
+  {
+    "id": "6593-56051",
+    "postalCode": "6593",
+    "municipality": "56051"
+  },
+  {
+    "id": "6594-56051",
+    "postalCode": "6594",
+    "municipality": "56051"
+  },
+  {
+    "id": "6596-56051",
+    "postalCode": "6596",
+    "municipality": "56051"
+  },
+  {
+    "id": "6600-82039",
+    "postalCode": "6600",
+    "municipality": "82039"
+  },
+  {
+    "id": "6630-81013",
+    "postalCode": "6630",
+    "municipality": "81013"
+  },
+  {
+    "id": "6637-82009",
+    "postalCode": "6637",
+    "municipality": "82009"
+  },
+  {
+    "id": "6640-82036",
+    "postalCode": "6640",
+    "municipality": "82036"
+  },
+  {
+    "id": "6642-82036",
+    "postalCode": "6642",
+    "municipality": "82036"
+  },
+  {
+    "id": "6660-82014",
+    "postalCode": "6660",
+    "municipality": "82014"
+  },
+  {
+    "id": "6661-82014",
+    "postalCode": "6661",
+    "municipality": "82014"
+  },
+  {
+    "id": "6662-82014",
+    "postalCode": "6662",
+    "municipality": "82014"
+  },
+  {
+    "id": "6663-82014",
+    "postalCode": "6663",
+    "municipality": "82014"
+  },
+  {
+    "id": "6666-82014",
+    "postalCode": "6666",
+    "municipality": "82014"
+  },
+  {
+    "id": "6670-82037",
+    "postalCode": "6670",
+    "municipality": "82037"
+  },
+  {
+    "id": "6671-82037",
+    "postalCode": "6671",
+    "municipality": "82037"
+  },
+  {
+    "id": "6672-82037",
+    "postalCode": "6672",
+    "municipality": "82037"
+  },
+  {
+    "id": "6673-82037",
+    "postalCode": "6673",
+    "municipality": "82037"
+  },
+  {
+    "id": "6674-82037",
+    "postalCode": "6674",
+    "municipality": "82037"
+  },
+  {
+    "id": "6680-82038",
+    "postalCode": "6680",
+    "municipality": "82038"
+  },
+  {
+    "id": "6681-82038",
+    "postalCode": "6681",
+    "municipality": "82038"
+  },
+  {
+    "id": "6686-82039",
+    "postalCode": "6686",
+    "municipality": "82039"
+  },
+  {
+    "id": "6687-82039",
+    "postalCode": "6687",
+    "municipality": "82039"
+  },
+  {
+    "id": "6688-82039",
+    "postalCode": "6688",
+    "municipality": "82039"
+  },
+  {
+    "id": "6690-82032",
+    "postalCode": "6690",
+    "municipality": "82032"
+  },
+  {
+    "id": "6692-82032",
+    "postalCode": "6692",
+    "municipality": "82032"
+  },
+  {
+    "id": "6698-82032",
+    "postalCode": "6698",
+    "municipality": "82032"
+  },
+  {
+    "id": "6700-81001",
+    "postalCode": "6700",
+    "municipality": "81001"
+  },
+  {
+    "id": "6704-81001",
+    "postalCode": "6704",
+    "municipality": "81001"
+  },
+  {
+    "id": "6706-81001",
+    "postalCode": "6706",
+    "municipality": "81001"
+  },
+  {
+    "id": "6717-81003",
+    "postalCode": "6717",
+    "municipality": "81003"
+  },
+  {
+    "id": "6720-85046",
+    "postalCode": "6720",
+    "municipality": "85046"
+  },
+  {
+    "id": "6721-85046",
+    "postalCode": "6721",
+    "municipality": "85046"
+  },
+  {
+    "id": "6723-85046",
+    "postalCode": "6723",
+    "municipality": "85046"
+  },
+  {
+    "id": "6724-85046",
+    "postalCode": "6724",
+    "municipality": "85046"
+  },
+  {
+    "id": "6730-85039",
+    "postalCode": "6730",
+    "municipality": "85039"
+  },
+  {
+    "id": "6740-85009",
+    "postalCode": "6740",
+    "municipality": "85009"
+  },
+  {
+    "id": "6741-85009",
+    "postalCode": "6741",
+    "municipality": "85009"
+  },
+  {
+    "id": "6742-85009",
+    "postalCode": "6742",
+    "municipality": "85009"
+  },
+  {
+    "id": "6743-85009",
+    "postalCode": "6743",
+    "municipality": "85009"
+  },
+  {
+    "id": "6747-85034",
+    "postalCode": "6747",
+    "municipality": "85034"
+  },
+  {
+    "id": "6750-85026",
+    "postalCode": "6750",
+    "municipality": "85026"
+  },
+  {
+    "id": "6760-85045",
+    "postalCode": "6760",
+    "municipality": "85045"
+  },
+  {
+    "id": "6761-85045",
+    "postalCode": "6761",
+    "municipality": "85045"
+  },
+  {
+    "id": "6762-85045",
+    "postalCode": "6762",
+    "municipality": "85045"
+  },
+  {
+    "id": "6767-85047",
+    "postalCode": "6767",
+    "municipality": "85047"
+  },
+  {
+    "id": "6769-85024",
+    "postalCode": "6769",
+    "municipality": "85024"
+  },
+  {
+    "id": "6780-81015",
+    "postalCode": "6780",
+    "municipality": "81015"
+  },
+  {
+    "id": "6781-81015",
+    "postalCode": "6781",
+    "municipality": "81015"
+  },
+  {
+    "id": "6782-81015",
+    "postalCode": "6782",
+    "municipality": "81015"
+  },
+  {
+    "id": "6790-81004",
+    "postalCode": "6790",
+    "municipality": "81004"
+  },
+  {
+    "id": "6791-81004",
+    "postalCode": "6791",
+    "municipality": "81004"
+  },
+  {
+    "id": "6792-81004",
+    "postalCode": "6792",
+    "municipality": "81004"
+  },
+  {
+    "id": "6800-84077",
+    "postalCode": "6800",
+    "municipality": "84077"
+  },
+  {
+    "id": "6810-85007",
+    "postalCode": "6810",
+    "municipality": "85007"
+  },
+  {
+    "id": "6811-85007",
+    "postalCode": "6811",
+    "municipality": "85007"
+  },
+  {
+    "id": "6812-85007",
+    "postalCode": "6812",
+    "municipality": "85007"
+  },
+  {
+    "id": "6813-85007",
+    "postalCode": "6813",
+    "municipality": "85007"
+  },
+  {
+    "id": "6820-85011",
+    "postalCode": "6820",
+    "municipality": "85011"
+  },
+  {
+    "id": "6821-85011",
+    "postalCode": "6821",
+    "municipality": "85011"
+  },
+  {
+    "id": "6823-85011",
+    "postalCode": "6823",
+    "municipality": "85011"
+  },
+  {
+    "id": "6824-85011",
+    "postalCode": "6824",
+    "municipality": "85011"
+  },
+  {
+    "id": "6830-84010",
+    "postalCode": "6830",
+    "municipality": "84010"
+  },
+  {
+    "id": "6831-84010",
+    "postalCode": "6831",
+    "municipality": "84010"
+  },
+  {
+    "id": "6832-84010",
+    "postalCode": "6832",
+    "municipality": "84010"
+  },
+  {
+    "id": "6833-84010",
+    "postalCode": "6833",
+    "municipality": "84010"
+  },
+  {
+    "id": "6834-84010",
+    "postalCode": "6834",
+    "municipality": "84010"
+  },
+  {
+    "id": "6836-84010",
+    "postalCode": "6836",
+    "municipality": "84010"
+  },
+  {
+    "id": "6838-84010",
+    "postalCode": "6838",
+    "municipality": "84010"
+  },
+  {
+    "id": "6840-84043",
+    "postalCode": "6840",
+    "municipality": "84043"
+  },
+  {
+    "id": "6850-84050",
+    "postalCode": "6850",
+    "municipality": "84050"
+  },
+  {
+    "id": "6851-84050",
+    "postalCode": "6851",
+    "municipality": "84050"
+  },
+  {
+    "id": "6852-84050",
+    "postalCode": "6852",
+    "municipality": "84050"
+  },
+  {
+    "id": "6853-84050",
+    "postalCode": "6853",
+    "municipality": "84050"
+  },
+  {
+    "id": "6856-84050",
+    "postalCode": "6856",
+    "municipality": "84050"
+  },
+  {
+    "id": "6860-84033",
+    "postalCode": "6860",
+    "municipality": "84033"
+  },
+  {
+    "id": "6870-84059",
+    "postalCode": "6870",
+    "municipality": "84059"
+  },
+  {
+    "id": "6880-84009",
+    "postalCode": "6880",
+    "municipality": "84009"
+  },
+  {
+    "id": "6887-84029",
+    "postalCode": "6887",
+    "municipality": "84029"
+  },
+  {
+    "id": "6890-84035",
+    "postalCode": "6890",
+    "municipality": "84035"
+  },
+  {
+    "id": "6900-83034",
+    "postalCode": "6900",
+    "municipality": "83034"
+  },
+  {
+    "id": "6920-84075",
+    "postalCode": "6920",
+    "municipality": "84075"
+  },
+  {
+    "id": "6921-84075",
+    "postalCode": "6921",
+    "municipality": "84075"
+  },
+  {
+    "id": "6922-84075",
+    "postalCode": "6922",
+    "municipality": "84075"
+  },
+  {
+    "id": "6924-84075",
+    "postalCode": "6924",
+    "municipality": "84075"
+  },
+  {
+    "id": "6927-84068",
+    "postalCode": "6927",
+    "municipality": "84068"
+  },
+  {
+    "id": "6929-84016",
+    "postalCode": "6929",
+    "municipality": "84016"
+  },
+  {
+    "id": "6940-83012",
+    "postalCode": "6940",
+    "municipality": "83012"
+  },
+  {
+    "id": "6941-83012",
+    "postalCode": "6941",
+    "municipality": "83012"
+  },
+  {
+    "id": "6950-83040",
+    "postalCode": "6950",
+    "municipality": "83040"
+  },
+  {
+    "id": "6951-83040",
+    "postalCode": "6951",
+    "municipality": "83040"
+  },
+  {
+    "id": "6952-83040",
+    "postalCode": "6952",
+    "municipality": "83040"
+  },
+  {
+    "id": "6953-83040",
+    "postalCode": "6953",
+    "municipality": "83040"
+  },
+  {
+    "id": "6960-83055",
+    "postalCode": "6960",
+    "municipality": "83055"
+  },
+  {
+    "id": "6970-83049",
+    "postalCode": "6970",
+    "municipality": "83049"
+  },
+  {
+    "id": "6971-83049",
+    "postalCode": "6971",
+    "municipality": "83049"
+  },
+  {
+    "id": "6972-83049",
+    "postalCode": "6972",
+    "municipality": "83049"
+  },
+  {
+    "id": "6980-83031",
+    "postalCode": "6980",
+    "municipality": "83031"
+  },
+  {
+    "id": "6982-83031",
+    "postalCode": "6982",
+    "municipality": "83031"
+  },
+  {
+    "id": "6983-83031",
+    "postalCode": "6983",
+    "municipality": "83031"
+  },
+  {
+    "id": "6984-83031",
+    "postalCode": "6984",
+    "municipality": "83031"
+  },
+  {
+    "id": "6986-83031",
+    "postalCode": "6986",
+    "municipality": "83031"
+  },
+  {
+    "id": "6987-83044",
+    "postalCode": "6987",
+    "municipality": "83044"
+  },
+  {
+    "id": "6990-83028",
+    "postalCode": "6990",
+    "municipality": "83028"
+  },
+  {
+    "id": "6997-83013",
+    "postalCode": "6997",
+    "municipality": "83013"
+  },
+  {
+    "id": "7000-53053",
+    "postalCode": "7000",
+    "municipality": "53053"
+  },
+  {
+    "id": "7010-53053",
+    "postalCode": "7010",
+    "municipality": "53053"
+  },
+  {
+    "id": "7011-53053",
+    "postalCode": "7011",
+    "municipality": "53053"
+  },
+  {
+    "id": "7012-53053",
+    "postalCode": "7012",
+    "municipality": "53053"
+  },
+  {
+    "id": "7020-53053",
+    "postalCode": "7020",
+    "municipality": "53053"
+  },
+  {
+    "id": "7021-53053",
+    "postalCode": "7021",
+    "municipality": "53053"
+  },
+  {
+    "id": "7022-53053",
+    "postalCode": "7022",
+    "municipality": "53053"
+  },
+  {
+    "id": "7024-53053",
+    "postalCode": "7024",
+    "municipality": "53053"
+  },
+  {
+    "id": "7030-53053",
+    "postalCode": "7030",
+    "municipality": "53053"
+  },
+  {
+    "id": "7031-53053",
+    "postalCode": "7031",
+    "municipality": "53053"
+  },
+  {
+    "id": "7032-53053",
+    "postalCode": "7032",
+    "municipality": "53053"
+  },
+  {
+    "id": "7033-53053",
+    "postalCode": "7033",
+    "municipality": "53053"
+  },
+  {
+    "id": "7034-53053",
+    "postalCode": "7034",
+    "municipality": "53053"
+  },
+  {
+    "id": "7040-53084",
+    "postalCode": "7040",
+    "municipality": "53084"
+  },
+  {
+    "id": "7041-53084",
+    "postalCode": "7041",
+    "municipality": "53084"
+  },
+  {
+    "id": "7050-53044",
+    "postalCode": "7050",
+    "municipality": "53044"
+  },
+  {
+    "id": "7060-55040",
+    "postalCode": "7060",
+    "municipality": "55040"
+  },
+  {
+    "id": "7061-55040",
+    "postalCode": "7061",
+    "municipality": "55040"
+  },
+  {
+    "id": "7062-55040",
+    "postalCode": "7062",
+    "municipality": "55040"
+  },
+  {
+    "id": "7063-55040",
+    "postalCode": "7063",
+    "municipality": "55040"
+  },
+  {
+    "id": "7070-55035",
+    "postalCode": "7070",
+    "municipality": "55035"
+  },
+  {
+    "id": "7080-53028",
+    "postalCode": "7080",
+    "municipality": "53028"
+  },
+  {
+    "id": "7090-55004",
+    "postalCode": "7090",
+    "municipality": "55004"
+  },
+  {
+    "id": "7100-58001",
+    "postalCode": "7100",
+    "municipality": "58001"
+  },
+  {
+    "id": "7110-58001",
+    "postalCode": "7110",
+    "municipality": "58001"
+  },
+  {
+    "id": "7120-58003",
+    "postalCode": "7120",
+    "municipality": "58003"
+  },
+  {
+    "id": "7130-58002",
+    "postalCode": "7130",
+    "municipality": "58002"
+  },
+  {
+    "id": "7131-58002",
+    "postalCode": "7131",
+    "municipality": "58002"
+  },
+  {
+    "id": "7133-58002",
+    "postalCode": "7133",
+    "municipality": "58002"
+  },
+  {
+    "id": "7134-58002",
+    "postalCode": "7134",
+    "municipality": "58002"
+  },
+  {
+    "id": "7140-58004",
+    "postalCode": "7140",
+    "municipality": "58004"
+  },
+  {
+    "id": "7141-58004",
+    "postalCode": "7141",
+    "municipality": "58004"
+  },
+  {
+    "id": "7160-52010",
+    "postalCode": "7160",
+    "municipality": "52010"
+  },
+  {
+    "id": "7170-55086",
+    "postalCode": "7170",
+    "municipality": "55086"
+  },
+  {
+    "id": "7180-55085",
+    "postalCode": "7180",
+    "municipality": "55085"
+  },
+  {
+    "id": "7181-55085",
+    "postalCode": "7181",
+    "municipality": "55085"
+  },
+  {
+    "id": "7190-55050",
+    "postalCode": "7190",
+    "municipality": "55050"
+  },
+  {
+    "id": "7191-55050",
+    "postalCode": "7191",
+    "municipality": "55050"
+  },
+  {
+    "id": "7300-53014",
+    "postalCode": "7300",
+    "municipality": "53014"
+  },
+  {
+    "id": "7301-53014",
+    "postalCode": "7301",
+    "municipality": "53014"
+  },
+  {
+    "id": "7320-51009",
+    "postalCode": "7320",
+    "municipality": "51009"
+  },
+  {
+    "id": "7321-51009",
+    "postalCode": "7321",
+    "municipality": "51009"
+  },
+  {
+    "id": "7322-51009",
+    "postalCode": "7322",
+    "municipality": "51009"
+  },
+  {
+    "id": "7330-53070",
+    "postalCode": "7330",
+    "municipality": "53070"
+  },
+  {
+    "id": "7331-53070",
+    "postalCode": "7331",
+    "municipality": "53070"
+  },
+  {
+    "id": "7332-53070",
+    "postalCode": "7332",
+    "municipality": "53070"
+  },
+  {
+    "id": "7333-53070",
+    "postalCode": "7333",
+    "municipality": "53070"
+  },
+  {
+    "id": "7334-53070",
+    "postalCode": "7334",
+    "municipality": "53070"
+  },
+  {
+    "id": "7340-53082",
+    "postalCode": "7340",
+    "municipality": "53082"
+  },
+  {
+    "id": "7350-53039",
+    "postalCode": "7350",
+    "municipality": "53039"
+  },
+  {
+    "id": "7370-53020",
+    "postalCode": "7370",
+    "municipality": "53020"
+  },
+  {
+    "id": "7380-53068",
+    "postalCode": "7380",
+    "municipality": "53068"
+  },
+  {
+    "id": "7382-53068",
+    "postalCode": "7382",
+    "municipality": "53068"
+  },
+  {
+    "id": "7387-53083",
+    "postalCode": "7387",
+    "municipality": "53083"
+  },
+  {
+    "id": "7390-53065",
+    "postalCode": "7390",
+    "municipality": "53065"
+  },
+  {
+    "id": "7500-57081",
+    "postalCode": "7500",
+    "municipality": "57081"
+  },
+  {
+    "id": "7501-57081",
+    "postalCode": "7501",
+    "municipality": "57081"
+  },
+  {
+    "id": "7502-57081",
+    "postalCode": "7502",
+    "municipality": "57081"
+  },
+  {
+    "id": "7503-57081",
+    "postalCode": "7503",
+    "municipality": "57081"
+  },
+  {
+    "id": "7504-57081",
+    "postalCode": "7504",
+    "municipality": "57081"
+  },
+  {
+    "id": "7506-57081",
+    "postalCode": "7506",
+    "municipality": "57081"
+  },
+  {
+    "id": "7520-57081",
+    "postalCode": "7520",
+    "municipality": "57081"
+  },
+  {
+    "id": "7521-57081",
+    "postalCode": "7521",
+    "municipality": "57081"
+  },
+  {
+    "id": "7522-57081",
+    "postalCode": "7522",
+    "municipality": "57081"
+  },
+  {
+    "id": "7530-57081",
+    "postalCode": "7530",
+    "municipality": "57081"
+  },
+  {
+    "id": "7531-57081",
+    "postalCode": "7531",
+    "municipality": "57081"
+  },
+  {
+    "id": "7532-57081",
+    "postalCode": "7532",
+    "municipality": "57081"
+  },
+  {
+    "id": "7533-57081",
+    "postalCode": "7533",
+    "municipality": "57081"
+  },
+  {
+    "id": "7534-57081",
+    "postalCode": "7534",
+    "municipality": "57081"
+  },
+  {
+    "id": "7536-57081",
+    "postalCode": "7536",
+    "municipality": "57081"
+  },
+  {
+    "id": "7538-57081",
+    "postalCode": "7538",
+    "municipality": "57081"
+  },
+  {
+    "id": "7540-57081",
+    "postalCode": "7540",
+    "municipality": "57081"
+  },
+  {
+    "id": "7542-57081",
+    "postalCode": "7542",
+    "municipality": "57081"
+  },
+  {
+    "id": "7543-57081",
+    "postalCode": "7543",
+    "municipality": "57081"
+  },
+  {
+    "id": "7548-57081",
+    "postalCode": "7548",
+    "municipality": "57081"
+  },
+  {
+    "id": "7600-57064",
+    "postalCode": "7600",
+    "municipality": "57064"
+  },
+  {
+    "id": "7601-57064",
+    "postalCode": "7601",
+    "municipality": "57064"
+  },
+  {
+    "id": "7602-57064",
+    "postalCode": "7602",
+    "municipality": "57064"
+  },
+  {
+    "id": "7603-57064",
+    "postalCode": "7603",
+    "municipality": "57064"
+  },
+  {
+    "id": "7604-57064",
+    "postalCode": "7604",
+    "municipality": "57064"
+  },
+  {
+    "id": "7608-57064",
+    "postalCode": "7608",
+    "municipality": "57064"
+  },
+  {
+    "id": "7610-57072",
+    "postalCode": "7610",
+    "municipality": "57072"
+  },
+  {
+    "id": "7611-57072",
+    "postalCode": "7611",
+    "municipality": "57072"
+  },
+  {
+    "id": "7618-57072",
+    "postalCode": "7618",
+    "municipality": "57072"
+  },
+  {
+    "id": "7620-57093",
+    "postalCode": "7620",
+    "municipality": "57093"
+  },
+  {
+    "id": "7621-57093",
+    "postalCode": "7621",
+    "municipality": "57093"
+  },
+  {
+    "id": "7622-57093",
+    "postalCode": "7622",
+    "municipality": "57093"
+  },
+  {
+    "id": "7623-57093",
+    "postalCode": "7623",
+    "municipality": "57093"
+  },
+  {
+    "id": "7624-57093",
+    "postalCode": "7624",
+    "municipality": "57093"
+  },
+  {
+    "id": "7640-57003",
+    "postalCode": "7640",
+    "municipality": "57003"
+  },
+  {
+    "id": "7641-57003",
+    "postalCode": "7641",
+    "municipality": "57003"
+  },
+  {
+    "id": "7642-57003",
+    "postalCode": "7642",
+    "municipality": "57003"
+  },
+  {
+    "id": "7643-57003",
+    "postalCode": "7643",
+    "municipality": "57003"
+  },
+  {
+    "id": "7700-57096",
+    "postalCode": "7700",
+    "municipality": "57096"
+  },
+  {
+    "id": "7711-57096",
+    "postalCode": "7711",
+    "municipality": "57096"
+  },
+  {
+    "id": "7712-57096",
+    "postalCode": "7712",
+    "municipality": "57096"
+  },
+  {
+    "id": "7730-57027",
+    "postalCode": "7730",
+    "municipality": "57027"
+  },
+  {
+    "id": "7740-57062",
+    "postalCode": "7740",
+    "municipality": "57062"
+  },
+  {
+    "id": "7742-57062",
+    "postalCode": "7742",
+    "municipality": "57062"
+  },
+  {
+    "id": "7743-57062",
+    "postalCode": "7743",
+    "municipality": "57062"
+  },
+  {
+    "id": "7750-57095",
+    "postalCode": "7750",
+    "municipality": "57095"
+  },
+  {
+    "id": "7760-57018",
+    "postalCode": "7760",
+    "municipality": "57018"
+  },
+  {
+    "id": "7780-57097",
+    "postalCode": "7780",
+    "municipality": "57097"
+  },
+  {
+    "id": "7781-57097",
+    "postalCode": "7781",
+    "municipality": "57097"
+  },
+  {
+    "id": "7782-57097",
+    "postalCode": "7782",
+    "municipality": "57097"
+  },
+  {
+    "id": "7783-57097",
+    "postalCode": "7783",
+    "municipality": "57097"
+  },
+  {
+    "id": "7784-57097",
+    "postalCode": "7784",
+    "municipality": "57097"
+  },
+  {
+    "id": "7800-51004",
+    "postalCode": "7800",
+    "municipality": "51004"
+  },
+  {
+    "id": "7801-51004",
+    "postalCode": "7801",
+    "municipality": "51004"
+  },
+  {
+    "id": "7802-51004",
+    "postalCode": "7802",
+    "municipality": "51004"
+  },
+  {
+    "id": "7803-51004",
+    "postalCode": "7803",
+    "municipality": "51004"
+  },
+  {
+    "id": "7804-51004",
+    "postalCode": "7804",
+    "municipality": "51004"
+  },
+  {
+    "id": "7810-51004",
+    "postalCode": "7810",
+    "municipality": "51004"
+  },
+  {
+    "id": "7811-51004",
+    "postalCode": "7811",
+    "municipality": "51004"
+  },
+  {
+    "id": "7812-51004",
+    "postalCode": "7812",
+    "municipality": "51004"
+  },
+  {
+    "id": "7822-51004",
+    "postalCode": "7822",
+    "municipality": "51004"
+  },
+  {
+    "id": "7823-51004",
+    "postalCode": "7823",
+    "municipality": "51004"
+  },
+  {
+    "id": "7830-51068",
+    "postalCode": "7830",
+    "municipality": "51068"
+  },
+  {
+    "id": "7850-51067",
+    "postalCode": "7850",
+    "municipality": "51067"
+  },
+  {
+    "id": "7860-51069",
+    "postalCode": "7860",
+    "municipality": "51069"
+  },
+  {
+    "id": "7861-51069",
+    "postalCode": "7861",
+    "municipality": "51069"
+  },
+  {
+    "id": "7862-51069",
+    "postalCode": "7862",
+    "municipality": "51069"
+  },
+  {
+    "id": "7863-51069",
+    "postalCode": "7863",
+    "municipality": "51069"
+  },
+  {
+    "id": "7864-51069",
+    "postalCode": "7864",
+    "municipality": "51069"
+  },
+  {
+    "id": "7866-51069",
+    "postalCode": "7866",
+    "municipality": "51069"
+  },
+  {
+    "id": "7870-53046",
+    "postalCode": "7870",
+    "municipality": "53046"
+  },
+  {
+    "id": "7880-51019",
+    "postalCode": "7880",
+    "municipality": "51019"
+  },
+  {
+    "id": "7890-51017",
+    "postalCode": "7890",
+    "municipality": "51017"
+  },
+  {
+    "id": "7900-57094",
+    "postalCode": "7900",
+    "municipality": "57094"
+  },
+  {
+    "id": "7901-57094",
+    "postalCode": "7901",
+    "municipality": "57094"
+  },
+  {
+    "id": "7903-57094",
+    "postalCode": "7903",
+    "municipality": "57094"
+  },
+  {
+    "id": "7904-57094",
+    "postalCode": "7904",
+    "municipality": "57094"
+  },
+  {
+    "id": "7906-57094",
+    "postalCode": "7906",
+    "municipality": "57094"
+  },
+  {
+    "id": "7910-51065",
+    "postalCode": "7910",
+    "municipality": "51065"
+  },
+  {
+    "id": "7911-51065",
+    "postalCode": "7911",
+    "municipality": "51065"
+  },
+  {
+    "id": "7912-51065",
+    "postalCode": "7912",
+    "municipality": "51065"
+  },
+  {
+    "id": "7940-51012",
+    "postalCode": "7940",
+    "municipality": "51012"
+  },
+  {
+    "id": "7941-51012",
+    "postalCode": "7941",
+    "municipality": "51012"
+  },
+  {
+    "id": "7942-51012",
+    "postalCode": "7942",
+    "municipality": "51012"
+  },
+  {
+    "id": "7943-51012",
+    "postalCode": "7943",
+    "municipality": "51012"
+  },
+  {
+    "id": "7950-51014",
+    "postalCode": "7950",
+    "municipality": "51014"
+  },
+  {
+    "id": "7951-51014",
+    "postalCode": "7951",
+    "municipality": "51014"
+  },
+  {
+    "id": "7970-51008",
+    "postalCode": "7970",
+    "municipality": "51008"
+  },
+  {
+    "id": "7971-51008",
+    "postalCode": "7971",
+    "municipality": "51008"
+  },
+  {
+    "id": "7972-51008",
+    "postalCode": "7972",
+    "municipality": "51008"
+  },
+  {
+    "id": "7973-51008",
+    "postalCode": "7973",
+    "municipality": "51008"
+  },
+  {
+    "id": "8000-31005",
+    "postalCode": "8000",
+    "municipality": "31005"
+  },
+  {
+    "id": "8020-31022",
+    "postalCode": "8020",
+    "municipality": "31022"
+  },
+  {
+    "id": "8200-31005",
+    "postalCode": "8200",
+    "municipality": "31005"
+  },
+  {
+    "id": "8210-31040",
+    "postalCode": "8210",
+    "municipality": "31040"
+  },
+  {
+    "id": "8211-31040",
+    "postalCode": "8211",
+    "municipality": "31040"
+  },
+  {
+    "id": "8300-31043",
+    "postalCode": "8300",
+    "municipality": "31043"
+  },
+  {
+    "id": "8301-31043",
+    "postalCode": "8301",
+    "municipality": "31043"
+  },
+  {
+    "id": "8310-31005",
+    "postalCode": "8310",
+    "municipality": "31005"
+  },
+  {
+    "id": "8340-31006",
+    "postalCode": "8340",
+    "municipality": "31006"
+  },
+  {
+    "id": "8370-31004",
+    "postalCode": "8370",
+    "municipality": "31004"
+  },
+  {
+    "id": "8377-31042",
+    "postalCode": "8377",
+    "municipality": "31042"
+  },
+  {
+    "id": "8380-31005",
+    "postalCode": "8380",
+    "municipality": "31005"
+  },
+  {
+    "id": "8400-35013",
+    "postalCode": "8400",
+    "municipality": "35013"
+  },
+  {
+    "id": "8420-35029",
+    "postalCode": "8420",
+    "municipality": "35029"
+  },
+  {
+    "id": "8421-35029",
+    "postalCode": "8421",
+    "municipality": "35029"
+  },
+  {
+    "id": "8430-35011",
+    "postalCode": "8430",
+    "municipality": "35011"
+  },
+  {
+    "id": "8431-35011",
+    "postalCode": "8431",
+    "municipality": "35011"
+  },
+  {
+    "id": "8432-35011",
+    "postalCode": "8432",
+    "municipality": "35011"
+  },
+  {
+    "id": "8433-35011",
+    "postalCode": "8433",
+    "municipality": "35011"
+  },
+  {
+    "id": "8434-35011",
+    "postalCode": "8434",
+    "municipality": "35011"
+  },
+  {
+    "id": "8450-35002",
+    "postalCode": "8450",
+    "municipality": "35002"
+  },
+  {
+    "id": "8460-35014",
+    "postalCode": "8460",
+    "municipality": "35014"
+  },
+  {
+    "id": "8470-35005",
+    "postalCode": "8470",
+    "municipality": "35005"
+  },
+  {
+    "id": "8480-35006",
+    "postalCode": "8480",
+    "municipality": "35006"
+  },
+  {
+    "id": "8490-31012",
+    "postalCode": "8490",
+    "municipality": "31012"
+  },
+  {
+    "id": "8500-34022",
+    "postalCode": "8500",
+    "municipality": "34022"
+  },
+  {
+    "id": "8501-34022",
+    "postalCode": "8501",
+    "municipality": "34022"
+  },
+  {
+    "id": "8510-34022",
+    "postalCode": "8510",
+    "municipality": "34022"
+  },
+  {
+    "id": "8511-34022",
+    "postalCode": "8511",
+    "municipality": "34022"
+  },
+  {
+    "id": "8520-34023",
+    "postalCode": "8520",
+    "municipality": "34023"
+  },
+  {
+    "id": "8530-34013",
+    "postalCode": "8530",
+    "municipality": "34013"
+  },
+  {
+    "id": "8531-34013",
+    "postalCode": "8531",
+    "municipality": "34013"
+  },
+  {
+    "id": "8540-34009",
+    "postalCode": "8540",
+    "municipality": "34009"
+  },
+  {
+    "id": "8550-34042",
+    "postalCode": "8550",
+    "municipality": "34042"
+  },
+  {
+    "id": "8551-34042",
+    "postalCode": "8551",
+    "municipality": "34042"
+  },
+  {
+    "id": "8552-34042",
+    "postalCode": "8552",
+    "municipality": "34042"
+  },
+  {
+    "id": "8553-34042",
+    "postalCode": "8553",
+    "municipality": "34042"
+  },
+  {
+    "id": "8554-34042",
+    "postalCode": "8554",
+    "municipality": "34042"
+  },
+  {
+    "id": "8560-34041",
+    "postalCode": "8560",
+    "municipality": "34041"
+  },
+  {
+    "id": "8570-34002",
+    "postalCode": "8570",
+    "municipality": "34002"
+  },
+  {
+    "id": "8572-34002",
+    "postalCode": "8572",
+    "municipality": "34002"
+  },
+  {
+    "id": "8573-34002",
+    "postalCode": "8573",
+    "municipality": "34002"
+  },
+  {
+    "id": "8580-34003",
+    "postalCode": "8580",
+    "municipality": "34003"
+  },
+  {
+    "id": "8581-34003",
+    "postalCode": "8581",
+    "municipality": "34003"
+  },
+  {
+    "id": "8582-34003",
+    "postalCode": "8582",
+    "municipality": "34003"
+  },
+  {
+    "id": "8583-34003",
+    "postalCode": "8583",
+    "municipality": "34003"
+  },
+  {
+    "id": "8587-34043",
+    "postalCode": "8587",
+    "municipality": "34043"
+  },
+  {
+    "id": "8600-32003",
+    "postalCode": "8600",
+    "municipality": "32003"
+  },
+  {
+    "id": "8610-32011",
+    "postalCode": "8610",
+    "municipality": "32011"
+  },
+  {
+    "id": "8620-38016",
+    "postalCode": "8620",
+    "municipality": "38016"
+  },
+  {
+    "id": "8630-38025",
+    "postalCode": "8630",
+    "municipality": "38025"
+  },
+  {
+    "id": "8640-33041",
+    "postalCode": "8640",
+    "municipality": "33041"
+  },
+  {
+    "id": "8647-32030",
+    "postalCode": "8647",
+    "municipality": "32030"
+  },
+  {
+    "id": "8650-32006",
+    "postalCode": "8650",
+    "municipality": "32006"
+  },
+  {
+    "id": "8660-38008",
+    "postalCode": "8660",
+    "municipality": "38008"
+  },
+  {
+    "id": "8670-38014",
+    "postalCode": "8670",
+    "municipality": "38014"
+  },
+  {
+    "id": "8680-32010",
+    "postalCode": "8680",
+    "municipality": "32010"
+  },
+  {
+    "id": "8690-38002",
+    "postalCode": "8690",
+    "municipality": "38002"
+  },
+  {
+    "id": "8691-38002",
+    "postalCode": "8691",
+    "municipality": "38002"
+  },
+  {
+    "id": "8700-37022",
+    "postalCode": "8700",
+    "municipality": "37022"
+  },
+  {
+    "id": "8710-37017",
+    "postalCode": "8710",
+    "municipality": "37017"
+  },
+  {
+    "id": "8720-37002",
+    "postalCode": "8720",
+    "municipality": "37002"
+  },
+  {
+    "id": "8730-31003",
+    "postalCode": "8730",
+    "municipality": "31003"
+  },
+  {
+    "id": "8740-37011",
+    "postalCode": "8740",
+    "municipality": "37011"
+  },
+  {
+    "id": "8750-37021",
+    "postalCode": "8750",
+    "municipality": "37021"
+  },
+  {
+    "id": "8755-37021",
+    "postalCode": "8755",
+    "municipality": "37021"
+  },
+  {
+    "id": "8760-37022",
+    "postalCode": "8760",
+    "municipality": "37022"
+  },
+  {
+    "id": "8770-36007",
+    "postalCode": "8770",
+    "municipality": "36007"
+  },
+  {
+    "id": "8780-37010",
+    "postalCode": "8780",
+    "municipality": "37010"
+  },
+  {
+    "id": "8790-34040",
+    "postalCode": "8790",
+    "municipality": "34040"
+  },
+  {
+    "id": "8791-34040",
+    "postalCode": "8791",
+    "municipality": "34040"
+  },
+  {
+    "id": "8792-34040",
+    "postalCode": "8792",
+    "municipality": "34040"
+  },
+  {
+    "id": "8793-34040",
+    "postalCode": "8793",
+    "municipality": "34040"
+  },
+  {
+    "id": "8800-36015",
+    "postalCode": "8800",
+    "municipality": "36015"
+  },
+  {
+    "id": "8810-36011",
+    "postalCode": "8810",
+    "municipality": "36011"
+  },
+  {
+    "id": "8820-31033",
+    "postalCode": "8820",
+    "municipality": "31033"
+  },
+  {
+    "id": "8830-36006",
+    "postalCode": "8830",
+    "municipality": "36006"
+  },
+  {
+    "id": "8840-36019",
+    "postalCode": "8840",
+    "municipality": "36019"
+  },
+  {
+    "id": "8850-37020",
+    "postalCode": "8850",
+    "municipality": "37020"
+  },
+  {
+    "id": "8851-37020",
+    "postalCode": "8851",
+    "municipality": "37020"
+  },
+  {
+    "id": "8860-34025",
+    "postalCode": "8860",
+    "municipality": "34025"
+  },
+  {
+    "id": "8870-36008",
+    "postalCode": "8870",
+    "municipality": "36008"
+  },
+  {
+    "id": "8880-36010",
+    "postalCode": "8880",
+    "municipality": "36010"
+  },
+  {
+    "id": "8890-36012",
+    "postalCode": "8890",
+    "municipality": "36012"
+  },
+  {
+    "id": "8900-33011",
+    "postalCode": "8900",
+    "municipality": "33011"
+  },
+  {
+    "id": "8902-33011",
+    "postalCode": "8902",
+    "municipality": "33011"
+  },
+  {
+    "id": "8904-33011",
+    "postalCode": "8904",
+    "municipality": "33011"
+  },
+  {
+    "id": "8906-33011",
+    "postalCode": "8906",
+    "municipality": "33011"
+  },
+  {
+    "id": "8908-33011",
+    "postalCode": "8908",
+    "municipality": "33011"
+  },
+  {
+    "id": "8920-33040",
+    "postalCode": "8920",
+    "municipality": "33040"
+  },
+  {
+    "id": "8930-34027",
+    "postalCode": "8930",
+    "municipality": "34027"
+  },
+  {
+    "id": "8940-33029",
+    "postalCode": "8940",
+    "municipality": "33029"
+  },
+  {
+    "id": "8950-33039",
+    "postalCode": "8950",
+    "municipality": "33039"
+  },
+  {
+    "id": "8951-33039",
+    "postalCode": "8951",
+    "municipality": "33039"
+  },
+  {
+    "id": "8952-33039",
+    "postalCode": "8952",
+    "municipality": "33039"
+  },
+  {
+    "id": "8953-33039",
+    "postalCode": "8953",
+    "municipality": "33039"
+  },
+  {
+    "id": "8954-33039",
+    "postalCode": "8954",
+    "municipality": "33039"
+  },
+  {
+    "id": "8956-33039",
+    "postalCode": "8956",
+    "municipality": "33039"
+  },
+  {
+    "id": "8957-33016",
+    "postalCode": "8957",
+    "municipality": "33016"
+  },
+  {
+    "id": "8958-33039",
+    "postalCode": "8958",
+    "municipality": "33039"
+  },
+  {
+    "id": "8970-33021",
+    "postalCode": "8970",
+    "municipality": "33021"
+  },
+  {
+    "id": "8972-33021",
+    "postalCode": "8972",
+    "municipality": "33021"
+  },
+  {
+    "id": "8978-33021",
+    "postalCode": "8978",
+    "municipality": "33021"
+  },
+  {
+    "id": "8980-33037",
+    "postalCode": "8980",
+    "municipality": "33037"
+  },
+  {
+    "id": "9000-44021",
+    "postalCode": "9000",
+    "municipality": "44021"
+  },
+  {
+    "id": "9030-44021",
+    "postalCode": "9030",
+    "municipality": "44021"
+  },
+  {
+    "id": "9031-44021",
+    "postalCode": "9031",
+    "municipality": "44021"
+  },
+  {
+    "id": "9032-44021",
+    "postalCode": "9032",
+    "municipality": "44021"
+  },
+  {
+    "id": "9040-44021",
+    "postalCode": "9040",
+    "municipality": "44021"
+  },
+  {
+    "id": "9041-44021",
+    "postalCode": "9041",
+    "municipality": "44021"
+  },
+  {
+    "id": "9042-44021",
+    "postalCode": "9042",
+    "municipality": "44021"
+  },
+  {
+    "id": "9050-44021",
+    "postalCode": "9050",
+    "municipality": "44021"
+  },
+  {
+    "id": "9051-44021",
+    "postalCode": "9051",
+    "municipality": "44021"
+  },
+  {
+    "id": "9052-44021",
+    "postalCode": "9052",
+    "municipality": "44021"
+  },
+  {
+    "id": "9060-43018",
+    "postalCode": "9060",
+    "municipality": "43018"
+  },
+  {
+    "id": "9070-44013",
+    "postalCode": "9070",
+    "municipality": "44013"
+  },
+  {
+    "id": "9080-44087",
+    "postalCode": "9080",
+    "municipality": "44087"
+  },
+  {
+    "id": "9090-44088",
+    "postalCode": "9090",
+    "municipality": "44088"
+  },
+  {
+    "id": "9100-46021",
+    "postalCode": "9100",
+    "municipality": "46021"
+  },
+  {
+    "id": "9111-46021",
+    "postalCode": "9111",
+    "municipality": "46021"
+  },
+  {
+    "id": "9112-46021",
+    "postalCode": "9112",
+    "municipality": "46021"
+  },
+  {
+    "id": "9120-46030",
+    "postalCode": "9120",
+    "municipality": "46030"
+  },
+  {
+    "id": "9130-46030",
+    "postalCode": "9130",
+    "municipality": "46030"
+  },
+  {
+    "id": "9140-46025",
+    "postalCode": "9140",
+    "municipality": "46025"
+  },
+  {
+    "id": "9150-46030",
+    "postalCode": "9150",
+    "municipality": "46030"
+  },
+  {
+    "id": "9160-46029",
+    "postalCode": "9160",
+    "municipality": "46029"
+  },
+  {
+    "id": "9170-46020",
+    "postalCode": "9170",
+    "municipality": "46020"
+  },
+  {
+    "id": "9180-46029",
+    "postalCode": "9180",
+    "municipality": "46029"
+  },
+  {
+    "id": "9185-44087",
+    "postalCode": "9185",
+    "municipality": "44087"
+  },
+  {
+    "id": "9190-46024",
+    "postalCode": "9190",
+    "municipality": "46024"
+  },
+  {
+    "id": "9200-42006",
+    "postalCode": "9200",
+    "municipality": "42006"
+  },
+  {
+    "id": "9220-42008",
+    "postalCode": "9220",
+    "municipality": "42008"
+  },
+  {
+    "id": "9230-42025",
+    "postalCode": "9230",
+    "municipality": "42025"
+  },
+  {
+    "id": "9240-42028",
+    "postalCode": "9240",
+    "municipality": "42028"
+  },
+  {
+    "id": "9250-42023",
+    "postalCode": "9250",
+    "municipality": "42023"
+  },
+  {
+    "id": "9255-42004",
+    "postalCode": "9255",
+    "municipality": "42004"
+  },
+  {
+    "id": "9260-42026",
+    "postalCode": "9260",
+    "municipality": "42026"
+  },
+  {
+    "id": "9270-42010",
+    "postalCode": "9270",
+    "municipality": "42010"
+  },
+  {
+    "id": "9280-42011",
+    "postalCode": "9280",
+    "municipality": "42011"
+  },
+  {
+    "id": "9290-42003",
+    "postalCode": "9290",
+    "municipality": "42003"
+  },
+  {
+    "id": "9300-41002",
+    "postalCode": "9300",
+    "municipality": "41002"
+  },
+  {
+    "id": "9308-41002",
+    "postalCode": "9308",
+    "municipality": "41002"
+  },
+  {
+    "id": "9310-41002",
+    "postalCode": "9310",
+    "municipality": "41002"
+  },
+  {
+    "id": "9320-41002",
+    "postalCode": "9320",
+    "municipality": "41002"
+  },
+  {
+    "id": "9340-41034",
+    "postalCode": "9340",
+    "municipality": "41034"
+  },
+  {
+    "id": "9400-41048",
+    "postalCode": "9400",
+    "municipality": "41048"
+  },
+  {
+    "id": "9401-41048",
+    "postalCode": "9401",
+    "municipality": "41048"
+  },
+  {
+    "id": "9402-41048",
+    "postalCode": "9402",
+    "municipality": "41048"
+  },
+  {
+    "id": "9403-41048",
+    "postalCode": "9403",
+    "municipality": "41048"
+  },
+  {
+    "id": "9404-41048",
+    "postalCode": "9404",
+    "municipality": "41048"
+  },
+  {
+    "id": "9406-41048",
+    "postalCode": "9406",
+    "municipality": "41048"
+  },
+  {
+    "id": "9420-41082",
+    "postalCode": "9420",
+    "municipality": "41082"
+  },
+  {
+    "id": "9450-41024",
+    "postalCode": "9450",
+    "municipality": "41024"
+  },
+  {
+    "id": "9451-41024",
+    "postalCode": "9451",
+    "municipality": "41024"
+  },
+  {
+    "id": "9470-41011",
+    "postalCode": "9470",
+    "municipality": "41011"
+  },
+  {
+    "id": "9472-41011",
+    "postalCode": "9472",
+    "municipality": "41011"
+  },
+  {
+    "id": "9473-41011",
+    "postalCode": "9473",
+    "municipality": "41011"
+  },
+  {
+    "id": "9500-41018",
+    "postalCode": "9500",
+    "municipality": "41018"
+  },
+  {
+    "id": "9506-41018",
+    "postalCode": "9506",
+    "municipality": "41018"
+  },
+  {
+    "id": "9520-41063",
+    "postalCode": "9520",
+    "municipality": "41063"
+  },
+  {
+    "id": "9521-41063",
+    "postalCode": "9521",
+    "municipality": "41063"
+  },
+  {
+    "id": "9550-41027",
+    "postalCode": "9550",
+    "municipality": "41027"
+  },
+  {
+    "id": "9551-41027",
+    "postalCode": "9551",
+    "municipality": "41027"
+  },
+  {
+    "id": "9552-41027",
+    "postalCode": "9552",
+    "municipality": "41027"
+  },
+  {
+    "id": "9570-45063",
+    "postalCode": "9570",
+    "municipality": "45063"
+  },
+  {
+    "id": "9571-45063",
+    "postalCode": "9571",
+    "municipality": "45063"
+  },
+  {
+    "id": "9572-45063",
+    "postalCode": "9572",
+    "municipality": "45063"
+  },
+  {
+    "id": "9600-45041",
+    "postalCode": "9600",
+    "municipality": "45041"
+  },
+  {
+    "id": "9620-41081",
+    "postalCode": "9620",
+    "municipality": "41081"
+  },
+  {
+    "id": "9630-45065",
+    "postalCode": "9630",
+    "municipality": "45065"
+  },
+  {
+    "id": "9636-45065",
+    "postalCode": "9636",
+    "municipality": "45065"
+  },
+  {
+    "id": "9660-45059",
+    "postalCode": "9660",
+    "municipality": "45059"
+  },
+  {
+    "id": "9661-45059",
+    "postalCode": "9661",
+    "municipality": "45059"
+  },
+  {
+    "id": "9667-45062",
+    "postalCode": "9667",
+    "municipality": "45062"
+  },
+  {
+    "id": "9680-45064",
+    "postalCode": "9680",
+    "municipality": "45064"
+  },
+  {
+    "id": "9681-45064",
+    "postalCode": "9681",
+    "municipality": "45064"
+  },
+  {
+    "id": "9688-45064",
+    "postalCode": "9688",
+    "municipality": "45064"
+  },
+  {
+    "id": "9690-45060",
+    "postalCode": "9690",
+    "municipality": "45060"
+  },
+  {
+    "id": "9700-45035",
+    "postalCode": "9700",
+    "municipality": "45035"
+  },
+  {
+    "id": "9750-45068",
+    "postalCode": "9750",
+    "municipality": "45068"
+  },
+  {
+    "id": "9770-45068",
+    "postalCode": "9770",
+    "municipality": "45068"
+  },
+  {
+    "id": "9771-45068",
+    "postalCode": "9771",
+    "municipality": "45068"
+  },
+  {
+    "id": "9772-45068",
+    "postalCode": "9772",
+    "municipality": "45068"
+  },
+  {
+    "id": "9790-45061",
+    "postalCode": "9790",
+    "municipality": "45061"
+  },
+  {
+    "id": "9800-44083",
+    "postalCode": "9800",
+    "municipality": "44083"
+  },
+  {
+    "id": "9810-44086",
+    "postalCode": "9810",
+    "municipality": "44086"
+  },
+  {
+    "id": "9820-44088",
+    "postalCode": "9820",
+    "municipality": "44088"
+  },
+  {
+    "id": "9830-44064",
+    "postalCode": "9830",
+    "municipality": "44064"
+  },
+  {
+    "id": "9831-44064",
+    "postalCode": "9831",
+    "municipality": "44064"
+  },
+  {
+    "id": "9840-44086",
+    "postalCode": "9840",
+    "municipality": "44086"
+  },
+  {
+    "id": "9850-44083",
+    "postalCode": "9850",
+    "municipality": "44083"
+  },
+  {
+    "id": "9860-44052",
+    "postalCode": "9860",
+    "municipality": "44052"
+  },
+  {
+    "id": "9870-44081",
+    "postalCode": "9870",
+    "municipality": "44081"
+  },
+  {
+    "id": "9880-44084",
+    "postalCode": "9880",
+    "municipality": "44084"
+  },
+  {
+    "id": "9881-44084",
+    "postalCode": "9881",
+    "municipality": "44084"
+  },
+  {
+    "id": "9890-44020",
+    "postalCode": "9890",
+    "municipality": "44020"
+  },
+  {
+    "id": "9900-43005",
+    "postalCode": "9900",
+    "municipality": "43005"
+  },
+  {
+    "id": "9910-44084",
+    "postalCode": "9910",
+    "municipality": "44084"
+  },
+  {
+    "id": "9920-44085",
+    "postalCode": "9920",
+    "municipality": "44085"
+  },
+  {
+    "id": "9921-44085",
+    "postalCode": "9921",
+    "municipality": "44085"
+  },
+  {
+    "id": "9930-44085",
+    "postalCode": "9930",
+    "municipality": "44085"
+  },
+  {
+    "id": "9931-44085",
+    "postalCode": "9931",
+    "municipality": "44085"
+  },
+  {
+    "id": "9932-44085",
+    "postalCode": "9932",
+    "municipality": "44085"
+  },
+  {
+    "id": "9940-44019",
+    "postalCode": "9940",
+    "municipality": "44019"
+  },
+  {
+    "id": "9950-44085",
+    "postalCode": "9950",
+    "municipality": "44085"
+  },
+  {
+    "id": "9960-43002",
+    "postalCode": "9960",
+    "municipality": "43002"
+  },
+  {
+    "id": "9961-43002",
+    "postalCode": "9961",
+    "municipality": "43002"
+  },
+  {
+    "id": "9968-43002",
+    "postalCode": "9968",
+    "municipality": "43002"
+  },
+  {
+    "id": "9970-43007",
+    "postalCode": "9970",
+    "municipality": "43007"
+  },
+  {
+    "id": "9971-43007",
+    "postalCode": "9971",
+    "municipality": "43007"
+  },
+  {
+    "id": "9980-43014",
+    "postalCode": "9980",
+    "municipality": "43014"
+  },
+  {
+    "id": "9981-43014",
+    "postalCode": "9981",
+    "municipality": "43014"
+  },
+  {
+    "id": "9982-43014",
+    "postalCode": "9982",
+    "municipality": "43014"
+  },
+  {
+    "id": "9988-43014",
+    "postalCode": "9988",
+    "municipality": "43014"
+  },
+  {
+    "id": "9990-43010",
+    "postalCode": "9990",
+    "municipality": "43010"
+  },
+  {
+    "id": "9991-43010",
+    "postalCode": "9991",
+    "municipality": "43010"
+  },
+  {
+    "id": "9992-43010",
+    "postalCode": "9992",
+    "municipality": "43010"
+  }
+]

@@ -137,4 +137,43 @@ const statbel: Source = {
     },
 }
 
-export const sources: Source[] = [courts, prisons, housesOfJustice, statbel]
+/** Statbel's page on its geographic nomenclatures: REFNIS codes, sub-municipalities, postal codes */
+export const STATBEL_GEOGRAPHY =
+    'https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/geografie'
+
+/**
+ * Statbel's conversion tables from postal codes to REFNIS codes, one per state of the
+ * municipalities: `…_va01012025.xlsx` is valid from 1 January 2025
+ */
+export const isPostalCodeTable = (url: string) =>
+    /\/Conversion(?:%20| )Postal(?:%20| )code_Refnis(?:%20| )code_va\d{8}\.xlsx$/i.test(url)
+
+const postalCodes: Source = {
+    name: 'postal-codes',
+    description: 'Statbel: the conversion tables from postal codes to REFNIS codes',
+    async fetch(get) {
+        const res = await get(STATBEL_GEOGRAPHY)
+        for (const url of links(html(res), res.url).sort())
+            if (isPostalCodeTable(url)) await get(url)
+    },
+}
+
+/**
+ * The judicial cantons as geometry: the NGI's "Judicial cantons and arrondissements" dataset
+ * (Territorial Divisions), GeoPackage in WGS 84, from its geo.be record
+ * https://www.geo.be/catalog/details/e1f61c40-623a-11eb-9e7c-186571a04de3. The record also
+ * offers Belgian Lambert 2008 and shapefiles; the parser reads this one.
+ */
+export const NGI_CANTONS =
+    'https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip'
+
+const ngi: Source = {
+    name: 'ngi',
+    description:
+        'geo.be (National Geographic Institute): the boundaries of the judicial cantons, as a GeoPackage',
+    async fetch(get) {
+        await get(NGI_CANTONS)
+    },
+}
+
+export const sources: Source[] = [courts, prisons, housesOfJustice, statbel, postalCodes, ngi]
