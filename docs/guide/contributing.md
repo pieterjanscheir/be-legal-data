@@ -14,9 +14,14 @@ For the datasets kept by hand (judicial areas, arrondissements, interest rates):
    sources.
 3. `pnpm check`: regenerate the id types and schemas, typecheck, lint and format check, build,
    tests with coverage, and package lint. It fails when the generated files aren't committed.
-4. Add a line to `CHANGELOG.md` under Unreleased, and commit (including `schema/` and
-   `src/ids.generated.ts`). The build output (`dist/`) isn't committed: it's built for every
-   release and published to npm.
+4. Add a line to `CHANGELOG.md` under Unreleased, and commit (including `schema/`,
+   `src/ids.generated.ts` and `ids.lock.json`). The build output (`dist/`) isn't committed: it's
+   built for every release and published to npm.
+
+An id that was published stays: `ids.lock.json` lists them all and the tests fail when one is
+missing from the data. If a source renamed a record, map the new name to the existing id in the
+parser; if the record ended, keep it with a `validTo`. See
+[identifiers](./identifiers#stability).
 
 ### Cantons and municipalities
 
@@ -87,7 +92,7 @@ Every dataset gets the same treatment, so users can rely on it:
 | `pnpm test:package`         | Smoke tests of the built package with `import` and `require()`: run `pnpm build` first                                                                        |
 | `pnpm test:coverage`        | The same, failing below 100 % coverage of `src/`                                                                                                              |
 | `pnpm lint` / `pnpm format` | ESLint and Prettier: check / fix                                                                                                                              |
-| `pnpm generate`             | Regenerate `src/ids.generated.ts` (id types) and `schema/` from the data and types                                                                            |
+| `pnpm generate`             | Regenerate `src/ids.generated.ts` (id types) and `schema/` from the data and types, and add new ids to `ids.lock.json`                                        |
 | `pnpm lint:package`         | `publint` and `arethetypeswrong` on the packed package                                                                                                        |
 | `pnpm test:freshness`       | Date-based checks: missing rates, overdue reviews. Not part of `check`; `FRESHNESS_ONLINE=1` also checks the source URLs                                      |
 | `pnpm fetch:sources`        | Fetch the official sources into `.sources/`                                                                                                                   |
@@ -116,3 +121,13 @@ pnpm docs:preview  # serve the built site
 
 Every push to `main` deploys it to GitHub Pages. CI builds it on every pull request, so a broken
 page is caught before merging.
+
+### Translations
+
+The English pages in `docs/` are the source of truth. The Dutch (`docs/nl/`) and French
+(`docs/fr/`) pages are translations of them and are updated after the English page changes.
+When you change an English page, change the same page in `docs/nl/` and `docs/fr/` too, or say
+in the pull request that the translations lag behind. Code, ids, field names and official names
+stay as they are in every language, and every heading keeps the English anchor
+(`## Kop {#english-anchor}`) so cross-links and the language switcher keep working. The
+changelog is kept in English only.
