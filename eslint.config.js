@@ -11,6 +11,7 @@ export default tseslint.config(
             'docs/.vitepress/dist/',
             'docs/.vitepress/cache/',
             'src/ids.generated.ts',
+            'src/canton-names.generated.ts',
         ],
     },
     js.configs.recommended,

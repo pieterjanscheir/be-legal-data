@@ -35,7 +35,9 @@ détectent pas : les noms français de tribunaux qu'un ancien `formatCourtName` 
 valeur stockée peut être vérifiée par rapport à sa source.
 
 **Donc.** Les noms des tribunaux sont stockés tels que chaque tribunal les publie, dans chaque
-langue où il publie, et `formatCourtName` a disparu. Les territoires des cantons restent du texte
+langue où il publie. `formatCourtName` recherche un nom (`style: 'official'`) ; son style
+`'canton'` construit un libellé d'affichage à partir du numéro et du nom du canton ('Justice de
+paix 1er canton Gand'), documenté comme libellé et jamais comme nom officiel. Les territoires des cantons restent du texte
 légal verbatim, avec leur base légale sous forme de lien ELI. Quand une source manque, le champ
 manque : rien n'est complété par supposition. Il en va de même pour l'analyse : un texte d'heures
 d'ouverture contenant une remarque, un numéro de téléphone sans indicatif de zone ou une adresse

@@ -7,6 +7,28 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ## [Unreleased]
 
+### Added
+
+**Court names in a language: `formatCourtName(court, locale, { style })`**, in the root and
+`belgica/courts`. `style: 'official'` (the default) gives the name as the court publishes it,
+falling back to another language when it doesn't publish in `locale` (for German: French, then
+Dutch). `style: 'canton'` gives a justice of the peace a display label built from its canton:
+`Vredegerecht 1e kanton Gent`, `Justice de paix 1er canton Gand`, `Friedensgericht 1. Kanton
+Gent`, `Vredegerecht kanton Deinze`. It is documented as a label, not the court's official name,
+so the rule that legal facts are stored, not built, still holds for names. The French label
+uses `Justice de paix`, as the courts call themselves, not `Tribunal de paix`
+([#10](https://github.com/pieterjanscheir/belgica/issues/10)). Other courts and the seats of a
+justice of the peace get their official name in both styles. The cantons have no German names
+yet, since no official German text of the annex to the Judicial Code was available; German
+labels use the canton's name in the court's own language, French in Brussels and the
+German-speaking area ([#45](https://github.com/pieterjanscheir/belgica/issues/45)).
+
+**`belgica/courts` stays small.** The labels read each canton's name and number from
+`src/canton-names.generated.ts`, generated from `data/cantons.json` by `pnpm generate`, so the
+courts entry point doesn't load the cantons' territory texts. It grows by about 2 KB gzipped,
+to 52 KB. `pnpm test:package` fails if `belgica/courts` loads the cantons data or goes over
+54 KB gzipped.
+
 ## [0.3.1] - 2026-10-21
 
 ### Fixed
