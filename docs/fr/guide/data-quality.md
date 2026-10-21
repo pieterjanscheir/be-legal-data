@@ -14,6 +14,7 @@ package reste à jour, et jusqu'où vous pouvez faire confiance à chaque jeu de
 | Cours et tribunaux        | tribunaux-rechtbanken.be                 | Chaque semaine : snapshots + `pnpm build:data` | Un tribunal déménage ou change de contacts ou d'horaires           | Semaine               |
 | Prisons                   | justitie.belgium.be                      | Chaque semaine : snapshots + `pnpm build:data` | Une prison ouvre, ferme ou change de contacts                      | Semaine               |
 | Maisons de justice        | vlaanderen.be, maisonsdejustice.be       | Chaque semaine : snapshots + `pnpm build:data` | Une maison déménage ou change de contacts                          | Semaine               |
+| Codes postaux             | Table de conversion de Statbel           | Chaque semaine : snapshots + `pnpm build:data` | Statbel publie une nouvelle table (fusions, nouveaux codes)        | Semaine               |
 | Taux d'intérêt            | SPF Finances, Moniteur belge             | À la main                                      | Chaque année (légal) et chaque semestre (commercial)               | 6 mois                |
 
 Les jeux de données générés ne sont jamais modifiés à la main. `pnpm build:cantons` analyse le

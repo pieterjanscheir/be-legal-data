@@ -38,7 +38,7 @@ maison flamande (`justitiehuis-brussel`) et une maison francophone (`maison-just
 | `community` | `'flemish'` \| `'french'` \| `'german'` | La Communauté qui la gère                                                                                              |
 | `name`      | `{ nl }` ou `{ fr }`                    | Dans la langue de la Communauté                                                                                        |
 | `ovo`       | string?                                 | Numéro OVO dans le registre flamand des organisations, pour les maisons flamandes : `OVO001917`                        |
-| `address`   | `Address`                               |                                                                                                                        |
+| `address`   | `Address`                               | Avec la commune à laquelle le code postal appartient (`municipality`, par code REFNIS)                                 |
 | `contacts`  | `Contact[]`                             | Téléphone, fax et e-mail ; le service d'accueil des victimes d'une maison francophone a ses propres contacts, libellés |
 | `website`   | `{ nl }` ou `{ fr }`                    | La page où elle est répertoriée                                                                                        |
 | `sources`   | `{ url, retrieved }[]`                  | Les pages d'où l'enregistrement a été lu                                                                               |

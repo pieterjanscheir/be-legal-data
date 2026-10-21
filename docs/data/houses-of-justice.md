@@ -42,7 +42,7 @@ Not in the data yet: the German-speaking Community's house of justice in Eupen
 | `community`            | `'flemish'` \| `'french'` \| `'german'` | The Community that runs it                                                                                                   |
 | `name`                 | `{ nl }` or `{ fr }`                    | In the Community's language                                                                                                  |
 | `ovo`                  | string?                                 | OVO number in the Flemish organisation register, for the Flemish houses: `OVO001917`                                         |
-| `address`              | `Address`                               |                                                                                                                              |
+| `address`              | `Address`                               | With the municipality its postal code belongs to (`municipality`, by REFNIS code)                                            |
 | `contacts`             | `Contact[]`                             | Phone, fax and e-mail; the victims' service of a French-speaking house has its own, labelled contacts                        |
 | `website`              | `{ nl }` or `{ fr }`                    | The page it's listed on                                                                                                      |
 | `sources`              | `{ url, retrieved }[]`                  | The pages the record was read from                                                                                           |

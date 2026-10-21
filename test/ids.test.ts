@@ -13,6 +13,7 @@ import {
     housesOfJustice,
     judicialAreas,
     municipalities,
+    postalCodes,
     prisons,
 } from '../src'
 
@@ -25,7 +26,16 @@ const local = (arrondissement: string) =>
     :   'nl'
 
 describe('identifiers', () => {
-    const datasets = { judicialAreas, arrondissements, cantons, municipalities, courts }
+    const datasets = {
+        judicialAreas,
+        arrondissements,
+        cantons,
+        municipalities,
+        courts,
+        prisons,
+        housesOfJustice,
+        postalCodes,
+    }
 
     // A record may have several versions (validFrom), never two with the same start
     it.each(Object.entries(datasets))('are unique in %s, per version', (_name, records) => {
@@ -33,11 +43,20 @@ describe('identifiers', () => {
         expect(new Set(keys).size).toBe(keys.length)
     })
 
-    it('are lowercase kebab-case, or a REFNIS code for municipalities', () => {
-        for (const records of [judicialAreas, arrondissements, cantons, courts]) {
+    it('are lowercase kebab-case, or official codes for municipalities and postal codes', () => {
+        for (const records of [
+            judicialAreas,
+            arrondissements,
+            cantons,
+            courts,
+            prisons,
+            housesOfJustice,
+        ]) {
             for (const { id } of records) expect(id).toMatch(ID_PATTERN)
         }
         for (const { id } of municipalities) expect(id).toMatch(/^\d{5}$/)
+        // The postal code and the REFNIS code: neither alone names a record
+        for (const p of postalCodes) expect(p.id).toBe(`${p.postalCode}-${p.municipality}`)
     })
 
     it('derive from one of the official names', () => {
@@ -76,6 +95,7 @@ describe('identifiers', () => {
             courts: courts.map((r) => r.id),
             prisons: prisons.map((r) => r.id),
             'houses-of-justice': housesOfJustice.map((r) => r.id),
+            'postal-codes': postalCodes.map((r) => r.id),
         }
 
         it.each(DATASETS)('%s has every id it published before', (dataset) => {

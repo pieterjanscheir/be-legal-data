@@ -12,7 +12,6 @@ follow the [conventions](/guide/contributing#adding-a-dataset).
 | **The house of justice in Eupen** (German-speaking Community)                                         | The one house of justice the data doesn't have yet                                          | [#3](https://github.com/pieterjanscheir/be-legal-data/issues/3)   |
 | **History**: when cantons, municipalities and courts changed                                          | The model has validity periods and lookups by day; the earlier versions still need the data | [#27](https://github.com/pieterjanscheir/be-legal-data/issues/27) |
 | **Canton boundaries** as geometry                                                                     | Find the canton of an address in a split city; NGI publishes the boundaries on geo.be       | [#29](https://github.com/pieterjanscheir/be-legal-data/issues/29) |
-| **Address → municipality**                                                                            | Addresses come with a postal code, not a REFNIS code                                        | [#28](https://github.com/pieterjanscheir/be-legal-data/issues/28) |
 | **Bailiff offices** (gerechtsdeurwaarders / huissiers de justice)                                     | Find a bailiff in an arrondissement for service or enforcement                              | [#6](https://github.com/pieterjanscheir/be-legal-data/issues/6)   |
 | **Police zones** (politiezones / zones de police)                                                     | Which zone handles a municipality: complaints, copies of reports                            | [#7](https://github.com/pieterjanscheir/be-legal-data/issues/7)   |
 | **Cadastre and legal-certainty offices** (kadaster, former hypotheekkantoren)                         | Request mortgage certificates and cadastral extracts from the competent office              | [#8](https://github.com/pieterjanscheir/be-legal-data/issues/8)   |
@@ -22,9 +21,9 @@ follow the [conventions](/guide/contributing#adding-a-dataset).
 Collected in [#9](https://github.com/pieterjanscheir/be-legal-data/issues/9), roughly in order
 of how often they'd be used:
 
-- **Postal codes → municipality (REFNIS)**, with sub-municipalities (deelgemeenten). Addresses
-  come with a postal code, not a REFNIS code; this is the missing link for "which court for this
-  address?".
+- **Sub-municipalities** (deelgemeenten, sections de commune) per postal code. The
+  [postal codes](./postal-codes) stop at the municipality; bpost's list names the localities but
+  has no REFNIS code and no open licence.
 - **Court fees** (rolrechten / griffierechten) and the **procedural indemnity**
   (rechtsplegingsvergoeding) brackets, with their validity periods and indexation, like the
   interest rates.

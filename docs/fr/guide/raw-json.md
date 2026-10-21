@@ -66,6 +66,7 @@ communes d'un canton dans `canton-municipalities.csv`. Dans Excel, ouvrez-les vi
 | `data/courts.json`            | Chaque cour, tribunal, division et siège du portail des cours et tribunaux     |
 | `data/prisons.json`           | Les 39 prisons et maisons de détention                                         |
 | `data/houses-of-justice.json` | Les maisons de justice de la Communauté flamande et de la Communauté française |
+| `data/postal-codes.json`      | Chaque code postal avec la commune à laquelle il appartient                    |
 | `data/interest-rates.json`    | Taux d'intérêt légal et taux pour les transactions commerciales                |
 
 Les structures sont décrites sur les [pages des jeux de données](/fr/data/territory) et dans la

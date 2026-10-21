@@ -20,6 +20,8 @@ export interface SourceRef {
     retrieved: string
 }
 
+import type { MunicipalityId } from './ids.generated'
+
 /** A postal address, as published */
 export interface Address {
     /** A building's name, when one is published: 'Gerechtsgebouw' */
@@ -32,6 +34,12 @@ export interface Address {
     /** @pattern ^\d{4}$ */
     postalCode: string
     city: string
+    /**
+     * The municipality the postal code belongs to, by REFNIS code (data/postal-codes.json).
+     * Missing when the code is shared by two municipalities and the city line doesn't name
+     * one of them.
+     */
+    municipality?: MunicipalityId
 }
 
 /** @format uri */

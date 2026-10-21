@@ -13,6 +13,7 @@ niet uit elkaar kunnen groeien: CI faalt wanneer een van de drie het oneens is.
 | `data/courts.json`            | [`courts.schema.json`](/schema/courts.schema.json){target="_self"}                       |
 | `data/prisons.json`           | [`prisons.schema.json`](/schema/prisons.schema.json){target="_self"}                     |
 | `data/houses-of-justice.json` | [`houses-of-justice.schema.json`](/schema/houses-of-justice.schema.json){target="_self"} |
+| `data/postal-codes.json`      | [`postal-codes.schema.json`](/schema/postal-codes.schema.json){target="_self"}           |
 | `data/interest-rates.json`    | [`interest-rates.schema.json`](/schema/interest-rates.schema.json){target="_self"}       |
 
 De `$id` van elk schema is zijn URL op deze site, bv.

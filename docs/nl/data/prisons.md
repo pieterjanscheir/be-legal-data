@@ -30,7 +30,7 @@ Bestand: `data/prisons.json`. De 39 gevangenissen en detentiehuizen van de FOD J
 | `id`       | `PrisonId`                        | Uit de naam in de streektaal, zonder lidwoorden: `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk` |
 | `kind`     | `'prison'` \| `'detention-house'` | Een detentiehuis huisvest mensen met korte straffen, dicht bij huis                                          |
 | `name`     | `{ nl, fr, de }`                  | Zoals de FOD Justitie die publiceert                                                                         |
-| `address`  | `Address`                         | In de streektaal                                                                                             |
+| `address`  | `Address`                         | In de streektaal, met de gemeente waartoe de postcode behoort (`municipality`, op REFNIS-code)               |
 | `contacts` | `Contact[]`                       | Telefoon, fax, e-mail en de rekening voor geld voor gedetineerden, waar gepubliceerd                         |
 | `website`  | `{ nl, fr, de }`                  | De pagina van de gevangenis per taal                                                                         |
 | `sources`  | `{ url, retrieved }[]`            | De pagina's waaruit het record is gelezen                                                                    |

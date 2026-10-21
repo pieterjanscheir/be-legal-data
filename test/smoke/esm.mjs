@@ -7,6 +7,8 @@ import { getJusticeOfThePeace } from 'be-legal-data/courts'
 import { getInterestRate } from 'be-legal-data/interest-rates'
 import { getPrison } from 'be-legal-data/prisons'
 import { getHouseOfJustice } from 'be-legal-data/houses-of-justice'
+import { getMunicipalitiesForPostalCode } from 'be-legal-data/postal-codes'
+import { findCourtsForPostalCode, getMunicipality } from 'be-legal-data'
 import { createRequire } from 'node:module'
 
 assert.equal(getCourt('justice-of-the-peace-gent-1').name.nl, 'Vredegerecht Gent 1')
@@ -18,6 +20,8 @@ assert.deepEqual(
 assert.equal(getInterestRate('2024-06-15', 'legal').rate, 5.75)
 assert.equal(getPrison('gevangenis-gent').address.postalCode, '9000')
 assert.equal(getHouseOfJustice('justitiehuis-gent').ovo, 'OVO001917')
+assert.equal(getMunicipalitiesForPostalCode('9000')[0], getMunicipality('44021'))
+assert.equal(findCourtsForPostalCode('1040', 'police-court').length, 2)
 // The entry points share one copy of the data
 assert.equal(cantons, allCantons)
 

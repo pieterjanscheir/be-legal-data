@@ -4,24 +4,25 @@ Every dataset is a JSON file in `data/`, described by a [JSON Schema](/guide/sch
 in [`datapackage.json`](/guide/schema#datapackage-json) with its official sources, licence and
 the date it was last checked against them.
 
-| Dataset                                        | Records  | What you'd use it for                                                             |
-| ---------------------------------------------- | -------- | --------------------------------------------------------------------------------- |
-| [Judicial areas](./territory#judicial-areas)   | 5        | Which court of appeal (and labour court of appeal) hears an appeal                |
-| [Arrondissements](./territory#arrondissements) | 12       | Grouping courts, prosecutors and bailiffs; the unit most competence rules use     |
-| [Cantons](./territory#cantons)                 | 162      | Which justice of the peace is competent for an address                            |
-| [Municipalities](./territory#municipalities)   | 565      | Joining any Belgian address or statistic to the judicial map by REFNIS code       |
-| [Courts](./courts)                             | 347      | Names, addresses and registries' contacts to write to, file with or pay any court |
-| [Prisons](./prisons)                           | 39       | Addresses and contacts of every prison and detention house                        |
-| [Houses of justice](./houses-of-justice)       | 27       | Probation, victim support and social studies for the family courts                |
-| [Interest rates](./interest-rates)             | 2 series | Calculating late-payment interest on a claim                                      |
+| Dataset                                        | Records  | What you'd use it for                                                               |
+| ---------------------------------------------- | -------- | ----------------------------------------------------------------------------------- |
+| [Judicial areas](./territory#judicial-areas)   | 5        | Which court of appeal (and labour court of appeal) hears an appeal                  |
+| [Arrondissements](./territory#arrondissements) | 12       | Grouping courts, prosecutors and bailiffs; the unit most competence rules use       |
+| [Cantons](./territory#cantons)                 | 162      | Which justice of the peace is competent for an address                              |
+| [Municipalities](./territory#municipalities)   | 565      | Joining any Belgian address or statistic to the judicial map by REFNIS code         |
+| [Postal codes](./postal-codes)                 | 1 152    | From an address's postal code to its municipality, and on to its cantons and courts |
+| [Courts](./courts)                             | 347      | Names, addresses and registries' contacts to write to, file with or pay any court   |
+| [Prisons](./prisons)                           | 39       | Addresses and contacts of every prison and detention house                          |
+| [Houses of justice](./houses-of-justice)       | 27       | Probation, victim support and social studies for the family courts                  |
+| [Interest rates](./interest-rates)             | 2 series | Calculating late-payment interest on a claim                                        |
 
 ## How the datasets fit together
 
 ```
-Judicial area ──< Arrondissement ──< Canton >──< Municipality (REFNIS)
-      │                 │              │
-      └───────────── Court ────────────┘  a justice of the peace links to its canton
-                        │
+Judicial area ──< Arrondissement ──< Canton >──< Municipality (REFNIS) ──< Postal code
+      │                 │              │               │
+      └───────────── Court ────────────┘               │  a court's address links to its municipality
+                        │                              │
                         └──< Division      a division links to its court
 ```
 
@@ -30,8 +31,8 @@ Brussel, Luik, …) are in several.
 
 Records link to each other by id, never by name: a court has a `judicialArea` id and, when its
 area is one arrondissement, an `arrondissement` id; a canton lists the REFNIS codes of its
-municipalities. Names change spelling between sources and
-languages; ids don't.
+municipalities; a postal code and a court's address carry the REFNIS code of their
+municipality. Names change spelling between sources and languages; ids don't.
 
 ## Why this data is useful
 

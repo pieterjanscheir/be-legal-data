@@ -14,6 +14,10 @@ Sources:
 - Municipalities (data/municipalities.json) and the REFNIS codes in
   data/cantons.json: © Statbel (Directorate-general Statistics - Statistics
   Belgium), CC BY 4.0, https://statbel.fgov.be/
+- Postal codes (data/postal-codes.json) and the municipality of each address
+  (address.municipality in data/courts.json, data/prisons.json and
+  data/houses-of-justice.json): Statbel's conversion table from postal codes
+  to REFNIS codes, © Statbel, CC BY 4.0, https://statbel.fgov.be/en/cc-40
 - Cantons, arrondissements and judicial areas: the annex to the Belgian
   Judicial Code, as consolidated on Justel (https://www.ejustice.just.fgov.be/).
   Official acts are not protected by copyright in Belgium (art. XI.172 §2 WER).

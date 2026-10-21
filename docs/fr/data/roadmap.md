@@ -12,7 +12,6 @@ bienvenue : choisissez-en un et suivez les [conventions](/fr/guide/contributing#
 | **La maison de justice d'Eupen** (Communauté germanophone)                                                           | La seule maison de justice que les données n'ont pas encore                                                             | [#3](https://github.com/pieterjanscheir/be-legal-data/issues/3)   |
 | **Historique** : quand les cantons, les communes et les juridictions ont changé                                      | Le modèle a des périodes de validité et des recherches par jour ; les versions antérieures attendent encore les données | [#27](https://github.com/pieterjanscheir/be-legal-data/issues/27) |
 | **Limites des cantons** en géométrie                                                                                 | Trouver le canton d'une adresse dans une ville scindée ; l'IGN publie les limites sur geo.be                            | [#29](https://github.com/pieterjanscheir/be-legal-data/issues/29) |
-| **Adresse → commune**                                                                                                | Les adresses viennent avec un code postal, pas avec un code REFNIS                                                      | [#28](https://github.com/pieterjanscheir/be-legal-data/issues/28) |
 | **Études d'huissiers de justice** (gerechtsdeurwaarders / huissiers de justice)                                      | Trouver un huissier dans un arrondissement pour une signification ou une exécution                                      | [#6](https://github.com/pieterjanscheir/be-legal-data/issues/6)   |
 | **Zones de police** (politiezones / zones de police)                                                                 | Quelle zone couvre une commune : plaintes, copies de procès-verbaux                                                     | [#7](https://github.com/pieterjanscheir/be-legal-data/issues/7)   |
 | **Cadastre et bureaux de la sécurité juridique** (kadaster, anciens hypotheekkantoren)                               | Demander des certificats hypothécaires et des extraits cadastraux au bureau compétent                                   | [#8](https://github.com/pieterjanscheir/be-legal-data/issues/8)   |
@@ -22,9 +21,9 @@ bienvenue : choisissez-en un et suivez les [conventions](/fr/guide/contributing#
 Rassemblés dans [#9](https://github.com/pieterjanscheir/be-legal-data/issues/9), à peu près
 par ordre de fréquence d'utilisation :
 
-- **Codes postaux → commune (REFNIS)**, avec les sections de commune (deelgemeenten). Les
-  adresses viennent avec un code postal, pas avec un code REFNIS ; c'est le chaînon manquant pour
-  « quel tribunal pour cette adresse ? ».
+- **Les sections de commune** (deelgemeenten) par code postal. Les
+  [codes postaux](./postal-codes) s'arrêtent à la commune ; la liste de bpost nomme les localités,
+  mais sans code REFNIS ni licence ouverte.
 - **Droits de mise au rôle et droits de greffe** (rolrechten / griffierechten) et les tranches
   de l'**indemnité de procédure** (rechtsplegingsvergoeding), avec leurs périodes de validité et
   leur indexation, comme les taux d'intérêt.

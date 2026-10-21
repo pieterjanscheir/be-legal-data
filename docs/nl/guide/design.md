@@ -56,8 +56,10 @@ record bevatten, genoemd naar de dataset waarnaar ze wijzen (`arrondissement`, `
 beide kanten verandert. Een veld wordt gevalideerd door het schema (dat de geldige ids opsomt) en
 door de tests.
 
-**Dus.** Adressen van rechtbanken zullen op dezelfde manier naar hun gemeente verwijzen
-([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28)).
+**Dus.** Het adres van een gerecht, gevangenis of justitiehuis verwijst op dezelfde manier naar
+zijn gemeente (`address.municipality`), via de postcode in de conversietabel van Statbel, nooit
+via de plaatsnaam ([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28)); een
+postcoderecord verwijst naar zijn gemeente in plaats van haar naam te kopiëren.
 
 ## 5. Canonieke waarden, presentatie in code {#_5-canonical-values-presentation-in-code}
 

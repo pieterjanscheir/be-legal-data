@@ -16,6 +16,7 @@ export const files = {
     courts: 'CourtsFile',
     prisons: 'PrisonsFile',
     'houses-of-justice': 'HousesOfJusticeFile',
+    'postal-codes': 'PostalCodesFile',
     'interest-rates': 'InterestRatesFile',
 } as const
 

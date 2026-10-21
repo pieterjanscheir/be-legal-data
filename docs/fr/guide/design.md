@@ -59,8 +59,11 @@ autre.
 des deux côtés change. Un champ est validé par le schéma (qui liste les identifiants valides) et
 par les tests.
 
-**Donc.** Les adresses des tribunaux seront liées à leur commune de la même manière
-([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28)).
+**Donc.** L'adresse d'un tribunal, d'une prison ou d'une maison de justice est liée à sa commune
+de la même manière (`address.municipality`), par le code postal de la table de conversion de
+Statbel, jamais par le nom de la localité
+([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28)) ; un enregistrement de code
+postal renvoie à sa commune plutôt que d'en copier le nom.
 
 ## 5. Valeurs canoniques, présentation dans le code {#_5-canonical-values-presentation-in-code}
 

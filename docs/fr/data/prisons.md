@@ -29,7 +29,7 @@ Fichier : `data/prisons.json`. Les 39 prisons et maisons de détention du SPF Ju
 | `id`       | `PrisonId`                        | D'après le nom dans la langue locale, sans article : `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk` |
 | `kind`     | `'prison'` \| `'detention-house'` | Une maison de détention accueille des personnes condamnées à de courtes peines, près de chez elles               |
 | `name`     | `{ nl, fr, de }`                  | Tel que le SPF Justice le publie                                                                                 |
-| `address`  | `Address`                         | Dans la langue locale                                                                                            |
+| `address`  | `Address`                         | Dans la langue locale, avec la commune à laquelle le code postal appartient (`municipality`, par code REFNIS)    |
 | `contacts` | `Contact[]`                       | Téléphone, fax, e-mail et le compte pour l'argent destiné aux détenus, lorsqu'il est publié                      |
 | `website`  | `{ nl, fr, de }`                  | La page de la prison par langue                                                                                  |
 | `sources`  | `{ url, retrieved }[]`            | Les pages dont l'enregistrement a été lu                                                                         |

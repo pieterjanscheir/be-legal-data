@@ -64,6 +64,7 @@ data als JSON en als CSV-tabellen (UTF-8, kommagescheiden), samen met de schema'
 | `data/courts.json`            | Elke rechtbank, afdeling en zetel op het portaal van de rechtbanken             |
 | `data/prisons.json`           | De 39 gevangenissen en detentiehuizen                                           |
 | `data/houses-of-justice.json` | De justitiehuizen van de Vlaamse en de Franse Gemeenschap                       |
+| `data/postal-codes.json`      | Elke postcode met de gemeente waartoe hij behoort                               |
 | `data/interest-rates.json`    | Wettelijke interest en interest bij betalingsachterstand bij handelstransacties |
 
 De structuren staan beschreven op de [datapagina's](/nl/data/territory) en in de

@@ -7,6 +7,29 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ## [Unreleased]
 
+### Added
+
+**Postal codes.** `data/postal-codes.json`: every Belgian postal code with the municipality it
+belongs to, by REFNIS code, from Statbel's conversion table (CC BY 4.0): 1 152 records for 1 149
+codes, since `1040`, `1050` and `1804` each belong to two municipalities. Ids are the two
+official codes joined (`9000-44021`); every record carries a validity period read from the
+table's own date, and the build fails when a code points at an unknown municipality or a
+municipality has no code. Its own entry point, `be-legal-data/postal-codes`, with
+`getPostalCode`, `getMunicipalitiesForPostalCode`, `getPostalCodes` and `postalCodesCoverage`;
+in the root, `findCourtsForPostalCode(postalCode, type)` chains a postal code to the justices
+of the peace and the competent courts, per municipality, so a shared code is never resolved to
+one of them. Sub-municipalities aren't in the data: bpost's list has them, but no REFNIS code
+and no open licence
+([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28)).
+
+**Addresses link to their municipality.** `address.municipality` on courts, prisons and houses
+of justice holds the REFNIS code the postal code belongs to; for a shared code the published
+city line decides between the two, and the field is left out when it names both (the justice
+of the peace of Etterbeek, `1040 Brussel (Etterbeek)`). A test checks that every court sits in
+its arrondissement, or its judicial area's; the one exception, the justice of the peace of
+Limbourg with a temporary seat in Eupen, is named in the test
+([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28)).
+
 ### Changed
 
 **All courts, from the official source (breaking).** `data/courts.json` is now built every

@@ -14,6 +14,7 @@ each dataset.
 | Courts                          | tribunaux-rechtbanken.be              | Weekly: snapshots + `pnpm build:data` | A court moves or changes its contacts or hours      | Weekly       |
 | Prisons                         | justitie.belgium.be                   | Weekly: snapshots + `pnpm build:data` | A prison opens, closes or changes its contacts      | Weekly       |
 | Houses of justice               | vlaanderen.be, maisonsdejustice.be    | Weekly: snapshots + `pnpm build:data` | A house moves or changes its contacts               | Weekly       |
+| Postal codes                    | Statbel's conversion table            | Weekly: snapshots + `pnpm build:data` | Statbel publishes a new table (mergers, new codes)  | Weekly       |
 | Interest rates                  | FOD Financiën, Belgisch Staatsblad    | By hand                               | Every year (legal) and every semester (commercial)  | 6 months     |
 
 Generated datasets are never edited by hand. `pnpm build:cantons` parses the official text and

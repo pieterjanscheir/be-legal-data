@@ -11,6 +11,7 @@ export default defineConfig({
         prisons: 'src/prisons.ts',
         'houses-of-justice': 'src/houses-of-justice.ts',
         'interest-rates': 'src/interest-rates.ts',
+        'postal-codes': 'src/postal-codes.ts',
     },
     format: ['esm'],
     target: 'node22',

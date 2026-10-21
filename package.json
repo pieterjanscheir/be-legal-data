@@ -1,7 +1,7 @@
 {
     "name": "be-legal-data",
     "version": "0.2.0",
-    "description": "Belgian legal reference data: courts, judicial cantons and arrondissements, municipalities, and legal and commercial interest rates.",
+    "description": "Belgian legal reference data: courts, judicial cantons and arrondissements, municipalities and postal codes, and legal and commercial interest rates.",
     "keywords": [
         "belgium",
         "belgian",
@@ -11,6 +11,7 @@
         "arrondissements",
         "municipalities",
         "refnis",
+        "postal-codes",
         "interest-rates",
         "vredegerecht",
         "justice-of-the-peace"
@@ -56,6 +57,10 @@
         "./interest-rates": {
             "types": "./dist/interest-rates.d.ts",
             "default": "./dist/interest-rates.js"
+        },
+        "./postal-codes": {
+            "types": "./dist/postal-codes.d.ts",
+            "default": "./dist/postal-codes.js"
         },
         "./data/*": "./data/*",
         "./schema/*": "./schema/*",

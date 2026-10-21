@@ -38,6 +38,7 @@ text of their territories) are by far the largest:
 import { getInterestRate } from 'be-legal-data/interest-rates'
 import { getCourt } from 'be-legal-data/courts'
 import { getCanton } from 'be-legal-data/territory'
+import { getMunicipalitiesForPostalCode } from 'be-legal-data/postal-codes'
 ```
 
 <table v-if="stats.sizes">
@@ -109,6 +110,29 @@ findCompetentCourts('21004', 'labour-court') // the Dutch- and the French-speaki
 const [court] = findCompetentCourts('44021', 'enterprise-court')
 getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brugge, …
 ```
+
+#### From a postal code
+
+An address comes with a postal code, not a REFNIS code. `findCourtsForPostalCode` goes from the
+postal code to the municipality ([postal codes](/data/postal-codes)) and from there to the
+justices of the peace and the courts of a type. It answers per municipality: three postal codes
+(`1040`, `1050`, `1804`) belong to two municipalities, and the street then decides.
+
+```ts
+import { findCourtsForPostalCode, getMunicipalitiesForPostalCode } from 'be-legal-data'
+
+const [gent] = findCourtsForPostalCode('9050', 'labour-court')
+gent.municipality.name.nl // 'Gent'
+gent.courts.map((c) => c.id) // ['labour-court-gent']
+gent.justicesOfThePeace.map((c) => c.canton.id) // ['gent-1', …, 'gent-5']: the street decides
+
+findCourtsForPostalCode('1040', 'police-court').map((r) => r.municipality.name.nl) // ['Brussel', 'Etterbeek']
+getMunicipalitiesForPostalCode('9050').map((m) => m.id) // ['44021']
+```
+
+In a city split over cantons, the postal code narrows the question to the municipality; the
+canton still needs the street, and its boundaries are legal prose until
+[#29](https://github.com/pieterjanscheir/be-legal-data/issues/29) adds them as geometry.
 
 ### Interest due on a day
 
