@@ -1,0 +1,44 @@
+[
+  {
+    "id": "02000",
+    "name": {
+      "nl": "Vlaams Gewest",
+      "fr": "Région flamande",
+      "de": "Flämische Region"
+    },
+    "sources": [
+      {
+        "url": "https://statbel.fgov.be/sites/default/files/files/opendata/REFNIS%20code/TU_COM_REFNIS-20250101.zip",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "03000",
+    "name": {
+      "nl": "Waals Gewest",
+      "fr": "Région wallonne",
+      "de": "Wallonische Region"
+    },
+    "sources": [
+      {
+        "url": "https://statbel.fgov.be/sites/default/files/files/opendata/REFNIS%20code/TU_COM_REFNIS-20250101.zip",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "04000",
+    "name": {
+      "nl": "Brussels Hoofdstedelijk Gewest",
+      "fr": "Région de Bruxelles-Capitale",
+      "de": "Region Brüssel-Hauptstadt"
+    },
+    "sources": [
+      {
+        "url": "https://statbel.fgov.be/sites/default/files/files/opendata/REFNIS%20code/TU_COM_REFNIS-20250101.zip",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  }
+]

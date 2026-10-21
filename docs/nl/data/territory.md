@@ -1,12 +1,13 @@
 <script setup>
-import { judicialAreas, arrondissements, getJudicialArea } from '../../../src'
+import { judicialAreas, arrondissements, getJudicialArea, regions, provinces, getRegion } from '../../../src'
 </script>
 
 # Territorium en kantons {#territory-and-cantons}
 
 De Belgische gerechtelijke kaart heeft drie niveaus: **rechtsgebieden** (één per hof van beroep)
 bevatten **arrondissementen**, die **kantons** bevatten (één vredegerecht elk). Kantons worden
-omschreven in termen van **gemeenten**.
+omschreven in termen van **gemeenten**. Naast de gerechtelijke kaart de bestuurlijke: elke
+gemeente ligt in een **gewest** en, buiten Brussel, in een **provincie**.
 
 ## Waarvoor het dient {#why-it-s-useful}
 
@@ -26,14 +27,14 @@ bewaren de wettekst voor de gevallen waarin alleen de tekst uitsluitsel kan geve
 
 ## Bron en updates {#source-and-updates}
 
-|               |                                                                                                                                                                                                                                                                  |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Bron          | Bijvoegsel bij het Gerechtelijk Wetboek, "Gebiedsomschrijving en zetel van hoven en rechtbanken" ([ELI, numac 1967101058](https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel)), Nederlands en Frans; open data van Statbel voor de gemeenten |
-| Gebouwd door  | `pnpm build:cantons` (kantons, gemeenten); met de hand (rechtsgebieden, arrondissementen)                                                                                                                                                                        |
-| Verandert bij | Een wet die het bijvoegsel wijzigt; gemeentefusies (2019, 2025)                                                                                                                                                                                                  |
-| Dekt          | 1 januari 2025 en later: opzoekingen voor een vroegere dag gooien een `RangeError` ([tijd](/nl/api#time))                                                                                                                                                        |
-| Gecontroleerd | Met de hand herbouwd met `pnpm build:cantons`: ejustice weigert de servers van GitHub ([datakwaliteit](/nl/guide/data-quality))                                                                                                                                  |
-| Licentie      | CC BY 4.0; gemeentedata © Statbel, CC BY 4.0                                                                                                                                                                                                                     |
+|               |                                                                                                                                                                                                                                                                                          |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bron          | Bijvoegsel bij het Gerechtelijk Wetboek, "Gebiedsomschrijving en zetel van hoven en rechtbanken" ([ELI, numac 1967101058](https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel)), Nederlands en Frans; open data van Statbel voor de gemeenten, provincies en gewesten |
+| Gebouwd door  | `pnpm build:cantons` (kantons, gemeenten); wekelijkse snapshots + `pnpm build:data` (gewesten, provincies); met de hand (rechtsgebieden, arrondissementen)                                                                                                                               |
+| Verandert bij | Een wet die het bijvoegsel wijzigt; gemeentefusies (2019, 2025)                                                                                                                                                                                                                          |
+| Dekt          | 1 januari 2025 en later: opzoekingen voor een vroegere dag gooien een `RangeError` ([tijd](/nl/api#time))                                                                                                                                                                                |
+| Gecontroleerd | Met de hand herbouwd met `pnpm build:cantons`: ejustice weigert de servers van GitHub ([datakwaliteit](/nl/guide/data-quality))                                                                                                                                                          |
+| Licentie      | CC BY 4.0; gemeentedata © Statbel, CC BY 4.0                                                                                                                                                                                                                                             |
 
 ## Zoek het kanton van een gemeente {#find-the-canton-for-a-municipality}
 
@@ -142,20 +143,64 @@ De 565 gemeenten met hun REFNIS-code (NIS-code) van Statbel. Bestand: `data/muni
 interface Municipality {
     id: MunicipalityId // de REFNIS-code: '44021' voor Gent
     name: Bilingual
-    province: string // REFNIS-code van de provincie, of '04000' voor Brussel-Hoofdstad
+    province: ProvinceId | '04000' // REFNIS-code van de provincie; '04000' in Brussel
+    region: RegionId // REFNIS-code van het gewest
 }
 ```
 
-| Provinciecode | Provincie                      |
-| ------------- | ------------------------------ |
-| `04000`       | Brussels Hoofdstedelijk Gewest |
-| `10000`       | Antwerpen                      |
-| `20001`       | Vlaams-Brabant                 |
-| `20002`       | Brabant wallon                 |
-| `30000`       | West-Vlaanderen                |
-| `40000`       | Oost-Vlaanderen                |
-| `50000`       | Hainaut                        |
-| `60000`       | Liège                          |
-| `70000`       | Limburg                        |
-| `80000`       | Luxembourg                     |
-| `90000`       | Namur                          |
+De 19 gemeenten van het Brussels Hoofdstedelijk Gewest hebben geen provincie. Hun `province` is
+`04000`, de code van het gewest: dat is wat Statbel zelf in de provinciekolom van zijn bestanden
+zet. `getProvinceForMunicipality` geeft voor hen `undefined`; `getRegionForMunicipality` geeft
+het gewest. De codes staan hieronder, uit de data.
+
+## Gewesten {#regions}
+
+De 3 gewesten. Bestand: `data/regions.json` (gegenereerd uit de REFNIS-codelijst van Statbel;
+namen zoals Statbel ze publiceert). © Statbel, CC BY 4.0.
+
+<table>
+<thead><tr><th>Id (REFNIS)</th><th>nl</th><th>fr</th><th>de</th></tr></thead>
+<tbody>
+<tr v-for="r in regions" :key="r.id">
+<td><code>{{ r.id }}</code></td><td>{{ r.name.nl }}</td><td>{{ r.name.fr }}</td><td>{{ r.name.de }}</td>
+</tr>
+</tbody>
+</table>
+
+```ts
+interface Region {
+    id: RegionId // de REFNIS-code: '02000', '03000', '04000'
+    name: Translated // { nl, fr, de }, zoals Statbel ze publiceert
+    sources: SourceRef[] // de REFNIS-codelijst van Statbel
+}
+```
+
+## Provincies {#provinces}
+
+De 10 provincies, met hun gewest. Bestand: `data/provinces.json` (gegenereerd uit de
+REFNIS-codelijst van Statbel). © Statbel, CC BY 4.0. Het Brussels Hoofdstedelijk Gewest heeft
+geen provincie; de provincie Brabant, die op 31 december 1994 ophield te bestaan, valt vóór de
+dekking van de data.
+
+<table>
+<thead><tr><th>Id (REFNIS)</th><th>nl</th><th>fr</th><th>de</th><th>Gewest</th></tr></thead>
+<tbody>
+<tr v-for="p in provinces" :key="p.id">
+<td><code>{{ p.id }}</code></td><td>{{ p.name.nl }}</td><td>{{ p.name.fr }}</td><td>{{ p.name.de }}</td>
+<td>{{ getRegion(p.region).name.nl }}</td>
+</tr>
+</tbody>
+</table>
+
+```ts
+interface Province {
+    id: ProvinceId // de REFNIS-code: '40000' voor Oost-Vlaanderen
+    name: Translated // { nl, fr, de }, zoals Statbel ze publiceert
+    region: RegionId
+    sources: SourceRef[] // de REFNIS-codelijst van Statbel
+}
+```
+
+De namen zijn die van Statbel, met het woord voor het soort eenheid erbij (`Provincie
+Oost-Vlaanderen`, `Province de Flandre orientale`, `Provinz Ostflandern`): het pakket bewaart
+waarden zoals de bron ze publiceert en kort ze niet in.

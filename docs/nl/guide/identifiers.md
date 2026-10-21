@@ -51,6 +51,8 @@ doet falen.
 | Kantons          | `gent-1`, `merelbeke-melle`, `wavre-1`, `oudergem`, `eupen-sankt-vith-1`                                                  | Lokale naam + nummer  |
 | Kantongrenzen    | `gent-1`: één grens per kanton, met het id van het kanton, en `canton` als verwijzing                                     | Het id van het kanton |
 | Gemeenten        | `44021`, `21004`                                                                                                          | REFNIS-code           |
+| Provincies       | `10000`, `40000`                                                                                                          | REFNIS-code           |
+| Gewesten         | `02000`, `03000`, `04000`                                                                                                 | REFNIS-code           |
 | Rechtbanken      | `justice-of-the-peace-gent-1`, `enterprise-court-gent-brugge`, `police-court-brussel-fr`, `police-court-eupen-sankt-vith` | Type + plaats         |
 | Gevangenissen    | `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk`                                                               | Lokale naam           |
 | Justitiehuizen   | `justitiehuis-gent`, `maison-justice-arlon`                                                                               | Lokale naam           |
@@ -99,8 +101,8 @@ wordt door het schema en de tests gecontroleerd, en kan in beide richtingen gevo
 ## In TypeScript {#in-typescript}
 
 Elke dataset heeft een gegenereerd id-type (`CantonId`, `CourtId`, `MunicipalityId`,
-`ArrondissementId`, `JudicialAreaId`, `PrisonId`, `HouseOfJusticeId`), opnieuw gegenereerd uit
-de data door `pnpm build:ids`:
+`ProvinceId`, `RegionId`, `ArrondissementId`, `JudicialAreaId`, `PrisonId`, `HouseOfJusticeId`),
+opnieuw gegenereerd uit de data door `pnpm build:ids`:
 
 ```ts
 import { getCanton, type CantonId } from 'be-legal-data'

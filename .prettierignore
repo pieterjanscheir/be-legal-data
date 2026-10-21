@@ -8,6 +8,8 @@ src/ids.generated.ts
 data/cantons.json
 data/canton-boundaries.json
 data/municipalities.json
+data/regions.json
+data/provinces.json
 data/courts.json
 data/prisons.json
 data/houses-of-justice.json

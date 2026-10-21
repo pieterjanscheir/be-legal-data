@@ -5,7 +5,8 @@
       "nl": "Aartselaar",
       "fr": "Aartselaar"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11002",
@@ -13,7 +14,8 @@
       "nl": "Antwerpen",
       "fr": "Anvers"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11004",
@@ -21,7 +23,8 @@
       "nl": "Boechout",
       "fr": "Boechout"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11005",
@@ -29,7 +32,8 @@
       "nl": "Boom",
       "fr": "Boom"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11008",
@@ -37,7 +41,8 @@
       "nl": "Brasschaat",
       "fr": "Brasschaat"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11009",
@@ -45,7 +50,8 @@
       "nl": "Brecht",
       "fr": "Brecht"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11013",
@@ -53,7 +59,8 @@
       "nl": "Edegem",
       "fr": "Edegem"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11016",
@@ -61,7 +68,8 @@
       "nl": "Essen",
       "fr": "Essen"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11018",
@@ -69,7 +77,8 @@
       "nl": "Hemiksem",
       "fr": "Hemiksem"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11021",
@@ -77,7 +86,8 @@
       "nl": "Hove",
       "fr": "Hove"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11022",
@@ -85,7 +95,8 @@
       "nl": "Kalmthout",
       "fr": "Kalmthout"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11023",
@@ -93,7 +104,8 @@
       "nl": "Kapellen",
       "fr": "Kapellen"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11024",
@@ -101,7 +113,8 @@
       "nl": "Kontich",
       "fr": "Kontich"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11025",
@@ -109,7 +122,8 @@
       "nl": "Lint",
       "fr": "Lint"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11029",
@@ -117,7 +131,8 @@
       "nl": "Mortsel",
       "fr": "Mortsel"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11030",
@@ -125,7 +140,8 @@
       "nl": "Niel",
       "fr": "Niel"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11035",
@@ -133,7 +149,8 @@
       "nl": "Ranst",
       "fr": "Ranst"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11037",
@@ -141,7 +158,8 @@
       "nl": "Rumst",
       "fr": "Rumst"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11038",
@@ -149,7 +167,8 @@
       "nl": "Schelle",
       "fr": "Schelle"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11039",
@@ -157,7 +176,8 @@
       "nl": "Schilde",
       "fr": "Schilde"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11040",
@@ -165,7 +185,8 @@
       "nl": "Schoten",
       "fr": "Schoten"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11044",
@@ -173,7 +194,8 @@
       "nl": "Stabroek",
       "fr": "Stabroek"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11050",
@@ -181,7 +203,8 @@
       "nl": "Wijnegem",
       "fr": "Wijnegem"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11052",
@@ -189,7 +212,8 @@
       "nl": "Wommelgem",
       "fr": "Wommelgem"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11053",
@@ -197,7 +221,8 @@
       "nl": "Wuustwezel",
       "fr": "Wuustwezel"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11054",
@@ -205,7 +230,8 @@
       "nl": "Zandhoven",
       "fr": "Zandhoven"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11055",
@@ -213,7 +239,8 @@
       "nl": "Zoersel",
       "fr": "Zoersel"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "11057",
@@ -221,7 +248,8 @@
       "nl": "Malle",
       "fr": "Malle"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "12002",
@@ -229,7 +257,8 @@
       "nl": "Berlaar",
       "fr": "Berlaar"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "12005",
@@ -237,7 +266,8 @@
       "nl": "Bonheiden",
       "fr": "Bonheiden"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "12007",
@@ -245,7 +275,8 @@
       "nl": "Bornem",
       "fr": "Bornem"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "12009",
@@ -253,7 +284,8 @@
       "nl": "Duffel",
       "fr": "Duffel"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "12014",
@@ -261,7 +293,8 @@
       "nl": "Heist-op-den-Berg",
       "fr": "Heist-op-den-Berg"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "12021",
@@ -269,7 +302,8 @@
       "nl": "Lier",
       "fr": "Lierre"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "12025",
@@ -277,7 +311,8 @@
       "nl": "Mechelen",
       "fr": "Malines"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "12026",
@@ -285,7 +320,8 @@
       "nl": "Nijlen",
       "fr": "Nijlen"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "12029",
@@ -293,7 +329,8 @@
       "nl": "Putte",
       "fr": "Putte"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "12035",
@@ -301,7 +338,8 @@
       "nl": "Sint-Katelijne-Waver",
       "fr": "Sint-Katelijne-Waver"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "12040",
@@ -309,7 +347,8 @@
       "nl": "Willebroek",
       "fr": "Willebroek"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "12041",
@@ -317,7 +356,8 @@
       "nl": "Puurs-Sint-Amands",
       "fr": "Puurs-Sint-Amands"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13001",
@@ -325,7 +365,8 @@
       "nl": "Arendonk",
       "fr": "Arendonk"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13002",
@@ -333,7 +374,8 @@
       "nl": "Baarle-Hertog",
       "fr": "Baerle-Duc"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13003",
@@ -341,7 +383,8 @@
       "nl": "Balen",
       "fr": "Balen"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13004",
@@ -349,7 +392,8 @@
       "nl": "Beerse",
       "fr": "Beerse"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13006",
@@ -357,7 +401,8 @@
       "nl": "Dessel",
       "fr": "Dessel"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13008",
@@ -365,7 +410,8 @@
       "nl": "Geel",
       "fr": "Geel"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13010",
@@ -373,7 +419,8 @@
       "nl": "Grobbendonk",
       "fr": "Grobbendonk"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13011",
@@ -381,7 +428,8 @@
       "nl": "Herentals",
       "fr": "Herentals"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13012",
@@ -389,7 +437,8 @@
       "nl": "Herenthout",
       "fr": "Herenthout"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13013",
@@ -397,7 +446,8 @@
       "nl": "Herselt",
       "fr": "Herselt"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13014",
@@ -405,7 +455,8 @@
       "nl": "Hoogstraten",
       "fr": "Hoogstraten"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13016",
@@ -413,7 +464,8 @@
       "nl": "Hulshout",
       "fr": "Hulshout"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13017",
@@ -421,7 +473,8 @@
       "nl": "Kasterlee",
       "fr": "Kasterlee"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13019",
@@ -429,7 +482,8 @@
       "nl": "Lille",
       "fr": "Lille"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13021",
@@ -437,7 +491,8 @@
       "nl": "Meerhout",
       "fr": "Meerhout"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13023",
@@ -445,7 +500,8 @@
       "nl": "Merksplas",
       "fr": "Merksplas"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13025",
@@ -453,7 +509,8 @@
       "nl": "Mol",
       "fr": "Mol"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13029",
@@ -461,7 +518,8 @@
       "nl": "Olen",
       "fr": "Olen"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13031",
@@ -469,7 +527,8 @@
       "nl": "Oud-Turnhout",
       "fr": "Oud-Turnhout"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13035",
@@ -477,7 +536,8 @@
       "nl": "Ravels",
       "fr": "Ravels"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13036",
@@ -485,7 +545,8 @@
       "nl": "Retie",
       "fr": "Retie"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13037",
@@ -493,7 +554,8 @@
       "nl": "Rijkevorsel",
       "fr": "Rijkevorsel"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13040",
@@ -501,7 +563,8 @@
       "nl": "Turnhout",
       "fr": "Turnhout"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13044",
@@ -509,7 +572,8 @@
       "nl": "Vorselaar",
       "fr": "Vorselaar"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13046",
@@ -517,7 +581,8 @@
       "nl": "Vosselaar",
       "fr": "Vosselaar"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13049",
@@ -525,7 +590,8 @@
       "nl": "Westerlo",
       "fr": "Westerlo"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "13053",
@@ -533,7 +599,8 @@
       "nl": "Laakdal",
       "fr": "Laakdal"
     },
-    "province": "10000"
+    "province": "10000",
+    "region": "02000"
   },
   {
     "id": "21001",
@@ -541,7 +608,8 @@
       "nl": "Anderlecht",
       "fr": "Anderlecht"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21002",
@@ -549,7 +617,8 @@
       "nl": "Oudergem",
       "fr": "Auderghem"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21003",
@@ -557,7 +626,8 @@
       "nl": "Sint-Agatha-Berchem",
       "fr": "Berchem-Sainte-Agathe"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21004",
@@ -565,7 +635,8 @@
       "nl": "Brussel",
       "fr": "Bruxelles"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21005",
@@ -573,7 +644,8 @@
       "nl": "Etterbeek",
       "fr": "Etterbeek"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21006",
@@ -581,7 +653,8 @@
       "nl": "Evere",
       "fr": "Evere"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21007",
@@ -589,7 +662,8 @@
       "nl": "Vorst",
       "fr": "Forest"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21008",
@@ -597,7 +671,8 @@
       "nl": "Ganshoren",
       "fr": "Ganshoren"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21009",
@@ -605,7 +680,8 @@
       "nl": "Elsene",
       "fr": "Ixelles"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21010",
@@ -613,7 +689,8 @@
       "nl": "Jette",
       "fr": "Jette"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21011",
@@ -621,7 +698,8 @@
       "nl": "Koekelberg",
       "fr": "Koekelberg"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21012",
@@ -629,7 +707,8 @@
       "nl": "Sint-Jans-Molenbeek",
       "fr": "Molenbeek-Saint-Jean"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21013",
@@ -637,7 +716,8 @@
       "nl": "Sint-Gillis",
       "fr": "Saint-Gilles"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21014",
@@ -645,7 +725,8 @@
       "nl": "Sint-Joost-ten-Node",
       "fr": "Saint-Josse-ten-Noode"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21015",
@@ -653,7 +734,8 @@
       "nl": "Schaarbeek",
       "fr": "Schaerbeek"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21016",
@@ -661,7 +743,8 @@
       "nl": "Ukkel",
       "fr": "Uccle"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21017",
@@ -669,7 +752,8 @@
       "nl": "Watermaal-Bosvoorde",
       "fr": "Watermael-Boitsfort"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21018",
@@ -677,7 +761,8 @@
       "nl": "Sint-Lambrechts-Woluwe",
       "fr": "Woluwe-Saint-Lambert"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "21019",
@@ -685,7 +770,8 @@
       "nl": "Sint-Pieters-Woluwe",
       "fr": "Woluwe-Saint-Pierre"
     },
-    "province": "04000"
+    "province": "04000",
+    "region": "04000"
   },
   {
     "id": "23002",
@@ -693,7 +779,8 @@
       "nl": "Asse",
       "fr": "Asse"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23003",
@@ -701,7 +788,8 @@
       "nl": "Beersel",
       "fr": "Beersel"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23009",
@@ -709,7 +797,8 @@
       "nl": "Bever",
       "fr": "Biévène"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23016",
@@ -717,7 +806,8 @@
       "nl": "Dilbeek",
       "fr": "Dilbeek"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23025",
@@ -725,7 +815,8 @@
       "nl": "Grimbergen",
       "fr": "Grimbergen"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23027",
@@ -733,7 +824,8 @@
       "nl": "Halle",
       "fr": "Hal"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23033",
@@ -741,7 +833,8 @@
       "nl": "Hoeilaart",
       "fr": "Hoeilaart"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23038",
@@ -749,7 +842,8 @@
       "nl": "Kampenhout",
       "fr": "Kampenhout"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23039",
@@ -757,7 +851,8 @@
       "nl": "Kapelle-op-den-Bos",
       "fr": "Kapelle-op-den-Bos"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23044",
@@ -765,7 +860,8 @@
       "nl": "Liedekerke",
       "fr": "Liedekerke"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23045",
@@ -773,7 +869,8 @@
       "nl": "Londerzeel",
       "fr": "Londerzeel"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23047",
@@ -781,7 +878,8 @@
       "nl": "Machelen",
       "fr": "Machelen"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23050",
@@ -789,7 +887,8 @@
       "nl": "Meise",
       "fr": "Meise"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23052",
@@ -797,7 +896,8 @@
       "nl": "Merchtem",
       "fr": "Merchtem"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23060",
@@ -805,7 +905,8 @@
       "nl": "Opwijk",
       "fr": "Opwijk"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23062",
@@ -813,7 +914,8 @@
       "nl": "Overijse",
       "fr": "Overijse"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23064",
@@ -821,7 +923,8 @@
       "nl": "Pepingen",
       "fr": "Pepingen"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23077",
@@ -829,7 +932,8 @@
       "nl": "Sint-Pieters-Leeuw",
       "fr": "Sint-Pieters-Leeuw"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23081",
@@ -837,7 +941,8 @@
       "nl": "Steenokkerzeel",
       "fr": "Steenokkerzeel"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23086",
@@ -845,7 +950,8 @@
       "nl": "Ternat",
       "fr": "Ternat"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23088",
@@ -853,7 +959,8 @@
       "nl": "Vilvoorde",
       "fr": "Vilvorde"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23094",
@@ -861,7 +968,8 @@
       "nl": "Zaventem",
       "fr": "Zaventem"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23096",
@@ -869,7 +977,8 @@
       "nl": "Zemst",
       "fr": "Zemst"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23097",
@@ -877,7 +986,8 @@
       "nl": "Roosdaal",
       "fr": "Roosdaal"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23098",
@@ -885,7 +995,8 @@
       "nl": "Drogenbos",
       "fr": "Drogenbos"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23099",
@@ -893,7 +1004,8 @@
       "nl": "Kraainem",
       "fr": "Kraainem"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23100",
@@ -901,7 +1013,8 @@
       "nl": "Linkebeek",
       "fr": "Linkebeek"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23101",
@@ -909,7 +1022,8 @@
       "nl": "Sint-Genesius-Rode",
       "fr": "Rhode-Saint-Genèse"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23102",
@@ -917,7 +1031,8 @@
       "nl": "Wemmel",
       "fr": "Wemmel"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23103",
@@ -925,7 +1040,8 @@
       "nl": "Wezembeek-Oppem",
       "fr": "Wezembeek-Oppem"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23104",
@@ -933,7 +1049,8 @@
       "nl": "Lennik",
       "fr": "Lennik"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23105",
@@ -941,7 +1058,8 @@
       "nl": "Affligem",
       "fr": "Affligem"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "23106",
@@ -949,7 +1067,8 @@
       "nl": "Pajottegem",
       "fr": "Pajottegem"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24001",
@@ -957,7 +1076,8 @@
       "nl": "Aarschot",
       "fr": "Aarschot"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24007",
@@ -965,7 +1085,8 @@
       "nl": "Begijnendijk",
       "fr": "Begijnendijk"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24008",
@@ -973,7 +1094,8 @@
       "nl": "Bekkevoort",
       "fr": "Bekkevoort"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24009",
@@ -981,7 +1103,8 @@
       "nl": "Bertem",
       "fr": "Bertem"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24011",
@@ -989,7 +1112,8 @@
       "nl": "Bierbeek",
       "fr": "Bierbeek"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24014",
@@ -997,7 +1121,8 @@
       "nl": "Boortmeerbeek",
       "fr": "Boortmeerbeek"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24016",
@@ -1005,7 +1130,8 @@
       "nl": "Boutersem",
       "fr": "Boutersem"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24020",
@@ -1013,7 +1139,8 @@
       "nl": "Diest",
       "fr": "Diest"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24028",
@@ -1021,7 +1148,8 @@
       "nl": "Geetbets",
       "fr": "Geetbets"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24033",
@@ -1029,7 +1157,8 @@
       "nl": "Haacht",
       "fr": "Haacht"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24038",
@@ -1037,7 +1166,8 @@
       "nl": "Herent",
       "fr": "Herent"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24041",
@@ -1045,7 +1175,8 @@
       "nl": "Hoegaarden",
       "fr": "Hoegaarden"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24043",
@@ -1053,7 +1184,8 @@
       "nl": "Holsbeek",
       "fr": "Holsbeek"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24045",
@@ -1061,7 +1193,8 @@
       "nl": "Huldenberg",
       "fr": "Huldenberg"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24048",
@@ -1069,7 +1202,8 @@
       "nl": "Keerbergen",
       "fr": "Keerbergen"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24054",
@@ -1077,7 +1211,8 @@
       "nl": "Kortenaken",
       "fr": "Kortenaken"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24055",
@@ -1085,7 +1220,8 @@
       "nl": "Kortenberg",
       "fr": "Kortenberg"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24059",
@@ -1093,7 +1229,8 @@
       "nl": "Landen",
       "fr": "Landen"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24062",
@@ -1101,7 +1238,8 @@
       "nl": "Leuven",
       "fr": "Louvain"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24066",
@@ -1109,7 +1247,8 @@
       "nl": "Lubbeek",
       "fr": "Lubbeek"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24086",
@@ -1117,7 +1256,8 @@
       "nl": "Oud-Heverlee",
       "fr": "Oud-Heverlee"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24094",
@@ -1125,7 +1265,8 @@
       "nl": "Rotselaar",
       "fr": "Rotselaar"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24104",
@@ -1133,7 +1274,8 @@
       "nl": "Tervuren",
       "fr": "Tervuren"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24107",
@@ -1141,7 +1283,8 @@
       "nl": "Tienen",
       "fr": "Tirlemont"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24109",
@@ -1149,7 +1292,8 @@
       "nl": "Tremelo",
       "fr": "Tremelo"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24130",
@@ -1157,7 +1301,8 @@
       "nl": "Zoutleeuw",
       "fr": "Léau"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24133",
@@ -1165,7 +1310,8 @@
       "nl": "Linter",
       "fr": "Linter"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24134",
@@ -1173,7 +1319,8 @@
       "nl": "Scherpenheuvel-Zichem",
       "fr": "Montaigu-Zichem"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24135",
@@ -1181,7 +1328,8 @@
       "nl": "Tielt-Winge",
       "fr": "Tielt-Winge"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "24137",
@@ -1189,7 +1337,8 @@
       "nl": "Glabbeek",
       "fr": "Glabbeek"
     },
-    "province": "20001"
+    "province": "20001",
+    "region": "02000"
   },
   {
     "id": "25005",
@@ -1197,7 +1346,8 @@
       "nl": "Bevekom",
       "fr": "Beauvechain"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25014",
@@ -1205,7 +1355,8 @@
       "nl": "Eigenbrakel",
       "fr": "Braine-l’Alleud"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25015",
@@ -1213,7 +1364,8 @@
       "nl": "Kasteelbrakel",
       "fr": "Braine-le-Château"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25018",
@@ -1221,7 +1373,8 @@
       "nl": "Chaumont-Gistoux",
       "fr": "Chaumont-Gistoux"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25023",
@@ -1229,7 +1382,8 @@
       "nl": "Court-Saint-Etienne",
       "fr": "Court-Saint-Etienne"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25031",
@@ -1237,7 +1391,8 @@
       "nl": "Genepiën",
       "fr": "Genappe"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25037",
@@ -1245,7 +1400,8 @@
       "nl": "Graven",
       "fr": "Grez-Doiceau"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25043",
@@ -1253,7 +1409,8 @@
       "nl": "Incourt",
       "fr": "Incourt"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25044",
@@ -1261,7 +1418,8 @@
       "nl": "Itter",
       "fr": "Ittre"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25048",
@@ -1269,7 +1427,8 @@
       "nl": "Geldenaken",
       "fr": "Jodoigne"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25050",
@@ -1277,7 +1436,8 @@
       "nl": "Terhulpen",
       "fr": "La Hulpe"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25068",
@@ -1285,7 +1445,8 @@
       "nl": "Mont-Saint-Guibert",
       "fr": "Mont-Saint-Guibert"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25072",
@@ -1293,7 +1454,8 @@
       "nl": "Nijvel",
       "fr": "Nivelles"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25084",
@@ -1301,7 +1463,8 @@
       "nl": "Perwijs",
       "fr": "Perwez"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25091",
@@ -1309,7 +1472,8 @@
       "nl": "Rixensart",
       "fr": "Rixensart"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25105",
@@ -1317,7 +1481,8 @@
       "nl": "Tubeke",
       "fr": "Tubize"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25107",
@@ -1325,7 +1490,8 @@
       "nl": "Villers-la-Ville",
       "fr": "Villers-la-Ville"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25110",
@@ -1333,7 +1499,8 @@
       "nl": "Waterloo",
       "fr": "Waterloo"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25112",
@@ -1341,7 +1508,8 @@
       "nl": "Waver",
       "fr": "Wavre"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25117",
@@ -1349,7 +1517,8 @@
       "nl": "Chastre",
       "fr": "Chastre"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25118",
@@ -1357,7 +1526,8 @@
       "nl": "Hélécine",
       "fr": "Hélécine"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25119",
@@ -1365,7 +1535,8 @@
       "nl": "Lasne",
       "fr": "Lasne"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25120",
@@ -1373,7 +1544,8 @@
       "nl": "Orp-Jauche",
       "fr": "Orp-Jauche"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25121",
@@ -1381,7 +1553,8 @@
       "nl": "Ottignies-Louvain-la-Neuve",
       "fr": "Ottignies-Louvain-la-Neuve"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25122",
@@ -1389,7 +1562,8 @@
       "nl": "Ramillies",
       "fr": "Ramillies"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25123",
@@ -1397,7 +1571,8 @@
       "nl": "Rebecq",
       "fr": "Rebecq"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "25124",
@@ -1405,7 +1580,8 @@
       "nl": "Walhain",
       "fr": "Walhain"
     },
-    "province": "20002"
+    "province": "20002",
+    "region": "03000"
   },
   {
     "id": "31003",
@@ -1413,7 +1589,8 @@
       "nl": "Beernem",
       "fr": "Beernem"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "31004",
@@ -1421,7 +1598,8 @@
       "nl": "Blankenberge",
       "fr": "Blankenberge"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "31005",
@@ -1429,7 +1607,8 @@
       "nl": "Brugge",
       "fr": "Bruges"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "31006",
@@ -1437,7 +1616,8 @@
       "nl": "Damme",
       "fr": "Damme"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "31012",
@@ -1445,7 +1625,8 @@
       "nl": "Jabbeke",
       "fr": "Jabbeke"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "31022",
@@ -1453,7 +1634,8 @@
       "nl": "Oostkamp",
       "fr": "Oostkamp"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "31033",
@@ -1461,7 +1643,8 @@
       "nl": "Torhout",
       "fr": "Torhout"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "31040",
@@ -1469,7 +1652,8 @@
       "nl": "Zedelgem",
       "fr": "Zedelgem"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "31042",
@@ -1477,7 +1661,8 @@
       "nl": "Zuienkerke",
       "fr": "Zuienkerke"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "31043",
@@ -1485,7 +1670,8 @@
       "nl": "Knokke-Heist",
       "fr": "Knokke-Heist"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "32003",
@@ -1493,7 +1679,8 @@
       "nl": "Diksmuide",
       "fr": "Dixmude"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "32006",
@@ -1501,7 +1688,8 @@
       "nl": "Houthulst",
       "fr": "Houthulst"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "32010",
@@ -1509,7 +1697,8 @@
       "nl": "Koekelare",
       "fr": "Koekelare"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "32011",
@@ -1517,7 +1706,8 @@
       "nl": "Kortemark",
       "fr": "Kortemark"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "32030",
@@ -1525,7 +1715,8 @@
       "nl": "Lo-Reninge",
       "fr": "Lo-Reninge"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "33011",
@@ -1533,7 +1724,8 @@
       "nl": "Ieper",
       "fr": "Ypres"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "33016",
@@ -1541,7 +1733,8 @@
       "nl": "Mesen",
       "fr": "Messines"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "33021",
@@ -1549,7 +1742,8 @@
       "nl": "Poperinge",
       "fr": "Poperinge"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "33029",
@@ -1557,7 +1751,8 @@
       "nl": "Wervik",
       "fr": "Wervik"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "33037",
@@ -1565,7 +1760,8 @@
       "nl": "Zonnebeke",
       "fr": "Zonnebeke"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "33039",
@@ -1573,7 +1769,8 @@
       "nl": "Heuvelland",
       "fr": "Heuvelland"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "33040",
@@ -1581,7 +1778,8 @@
       "nl": "Langemark-Poelkapelle",
       "fr": "Langemark-Poelkapelle"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "33041",
@@ -1589,7 +1787,8 @@
       "nl": "Vleteren",
       "fr": "Vleteren"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "34002",
@@ -1597,7 +1796,8 @@
       "nl": "Anzegem",
       "fr": "Anzegem"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "34003",
@@ -1605,7 +1805,8 @@
       "nl": "Avelgem",
       "fr": "Avelgem"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "34009",
@@ -1613,7 +1814,8 @@
       "nl": "Deerlijk",
       "fr": "Deerlijk"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "34013",
@@ -1621,7 +1823,8 @@
       "nl": "Harelbeke",
       "fr": "Harelbeke"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "34022",
@@ -1629,7 +1832,8 @@
       "nl": "Kortrijk",
       "fr": "Courtrai"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "34023",
@@ -1637,7 +1841,8 @@
       "nl": "Kuurne",
       "fr": "Kuurne"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "34025",
@@ -1645,7 +1850,8 @@
       "nl": "Lendelede",
       "fr": "Lendelede"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "34027",
@@ -1653,7 +1859,8 @@
       "nl": "Menen",
       "fr": "Menin"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "34040",
@@ -1661,7 +1868,8 @@
       "nl": "Waregem",
       "fr": "Waregem"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "34041",
@@ -1669,7 +1877,8 @@
       "nl": "Wevelgem",
       "fr": "Wevelgem"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "34042",
@@ -1677,7 +1886,8 @@
       "nl": "Zwevegem",
       "fr": "Zwevegem"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "34043",
@@ -1685,7 +1895,8 @@
       "nl": "Spiere-Helkijn",
       "fr": "Espierres-Helchin"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "35002",
@@ -1693,7 +1904,8 @@
       "nl": "Bredene",
       "fr": "Bredene"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "35005",
@@ -1701,7 +1913,8 @@
       "nl": "Gistel",
       "fr": "Gistel"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "35006",
@@ -1709,7 +1922,8 @@
       "nl": "Ichtegem",
       "fr": "Ichtegem"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "35011",
@@ -1717,7 +1931,8 @@
       "nl": "Middelkerke",
       "fr": "Middelkerke"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "35013",
@@ -1725,7 +1940,8 @@
       "nl": "Oostende",
       "fr": "Ostende"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "35014",
@@ -1733,7 +1949,8 @@
       "nl": "Oudenburg",
       "fr": "Oudenburg"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "35029",
@@ -1741,7 +1958,8 @@
       "nl": "De Haan",
       "fr": "De Haan"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "36006",
@@ -1749,7 +1967,8 @@
       "nl": "Hooglede",
       "fr": "Hooglede"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "36007",
@@ -1757,7 +1976,8 @@
       "nl": "Ingelmunster",
       "fr": "Ingelmunster"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "36008",
@@ -1765,7 +1985,8 @@
       "nl": "Izegem",
       "fr": "Izegem"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "36010",
@@ -1773,7 +1994,8 @@
       "nl": "Ledegem",
       "fr": "Ledegem"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "36011",
@@ -1781,7 +2003,8 @@
       "nl": "Lichtervelde",
       "fr": "Lichtervelde"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "36012",
@@ -1789,7 +2012,8 @@
       "nl": "Moorslede",
       "fr": "Moorslede"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "36015",
@@ -1797,7 +2021,8 @@
       "nl": "Roeselare",
       "fr": "Roulers"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "36019",
@@ -1805,7 +2030,8 @@
       "nl": "Staden",
       "fr": "Staden"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "37002",
@@ -1813,7 +2039,8 @@
       "nl": "Dentergem",
       "fr": "Dentergem"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "37010",
@@ -1821,7 +2048,8 @@
       "nl": "Oostrozebeke",
       "fr": "Oostrozebeke"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "37011",
@@ -1829,7 +2057,8 @@
       "nl": "Pittem",
       "fr": "Pittem"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "37017",
@@ -1837,7 +2066,8 @@
       "nl": "Wielsbeke",
       "fr": "Wielsbeke"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "37020",
@@ -1845,7 +2075,8 @@
       "nl": "Ardooie",
       "fr": "Ardooie"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "37021",
@@ -1853,7 +2084,8 @@
       "nl": "Wingene",
       "fr": "Wingene"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "37022",
@@ -1861,7 +2093,8 @@
       "nl": "Tielt",
       "fr": "Tielt"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "38002",
@@ -1869,7 +2102,8 @@
       "nl": "Alveringem",
       "fr": "Alveringem"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "38008",
@@ -1877,7 +2111,8 @@
       "nl": "De Panne",
       "fr": "La Panne"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "38014",
@@ -1885,7 +2120,8 @@
       "nl": "Koksijde",
       "fr": "Koksijde"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "38016",
@@ -1893,7 +2129,8 @@
       "nl": "Nieuwpoort",
       "fr": "Nieuport"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "38025",
@@ -1901,7 +2138,8 @@
       "nl": "Veurne",
       "fr": "Furnes"
     },
-    "province": "30000"
+    "province": "30000",
+    "region": "02000"
   },
   {
     "id": "41002",
@@ -1909,7 +2147,8 @@
       "nl": "Aalst",
       "fr": "Alost"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "41011",
@@ -1917,7 +2156,8 @@
       "nl": "Denderleeuw",
       "fr": "Denderleeuw"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "41018",
@@ -1925,7 +2165,8 @@
       "nl": "Geraardsbergen",
       "fr": "Grammont"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "41024",
@@ -1933,7 +2174,8 @@
       "nl": "Haaltert",
       "fr": "Haaltert"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "41027",
@@ -1941,7 +2183,8 @@
       "nl": "Herzele",
       "fr": "Herzele"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "41034",
@@ -1949,7 +2192,8 @@
       "nl": "Lede",
       "fr": "Lede"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "41048",
@@ -1957,7 +2201,8 @@
       "nl": "Ninove",
       "fr": "Ninove"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "41063",
@@ -1965,7 +2210,8 @@
       "nl": "Sint-Lievens-Houtem",
       "fr": "Sint-Lievens-Houtem"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "41081",
@@ -1973,7 +2219,8 @@
       "nl": "Zottegem",
       "fr": "Zottegem"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "41082",
@@ -1981,7 +2228,8 @@
       "nl": "Erpe-Mere",
       "fr": "Erpe-Mere"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "42003",
@@ -1989,7 +2237,8 @@
       "nl": "Berlare",
       "fr": "Berlare"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "42004",
@@ -1997,7 +2246,8 @@
       "nl": "Buggenhout",
       "fr": "Buggenhout"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "42006",
@@ -2005,7 +2255,8 @@
       "nl": "Dendermonde",
       "fr": "Termonde"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "42008",
@@ -2013,7 +2264,8 @@
       "nl": "Hamme",
       "fr": "Hamme"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "42010",
@@ -2021,7 +2273,8 @@
       "nl": "Laarne",
       "fr": "Laarne"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "42011",
@@ -2029,7 +2282,8 @@
       "nl": "Lebbeke",
       "fr": "Lebbeke"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "42023",
@@ -2037,7 +2291,8 @@
       "nl": "Waasmunster",
       "fr": "Waasmunster"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "42025",
@@ -2045,7 +2300,8 @@
       "nl": "Wetteren",
       "fr": "Wetteren"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "42026",
@@ -2053,7 +2309,8 @@
       "nl": "Wichelen",
       "fr": "Wichelen"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "42028",
@@ -2061,7 +2318,8 @@
       "nl": "Zele",
       "fr": "Zele"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "43002",
@@ -2069,7 +2327,8 @@
       "nl": "Assenede",
       "fr": "Assenede"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "43005",
@@ -2077,7 +2336,8 @@
       "nl": "Eeklo",
       "fr": "Eeklo"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "43007",
@@ -2085,7 +2345,8 @@
       "nl": "Kaprijke",
       "fr": "Kaprijke"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "43010",
@@ -2093,7 +2354,8 @@
       "nl": "Maldegem",
       "fr": "Maldegem"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "43014",
@@ -2101,7 +2363,8 @@
       "nl": "Sint-Laureins",
       "fr": "Sint-Laureins"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "43018",
@@ -2109,7 +2372,8 @@
       "nl": "Zelzate",
       "fr": "Zelzate"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "44013",
@@ -2117,7 +2381,8 @@
       "nl": "Destelbergen",
       "fr": "Destelbergen"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "44019",
@@ -2125,7 +2390,8 @@
       "nl": "Evergem",
       "fr": "Evergem"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "44020",
@@ -2133,7 +2399,8 @@
       "nl": "Gavere",
       "fr": "Gavere"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "44021",
@@ -2141,7 +2408,8 @@
       "nl": "Gent",
       "fr": "Gand"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "44052",
@@ -2149,7 +2417,8 @@
       "nl": "Oosterzele",
       "fr": "Oosterzele"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "44064",
@@ -2157,7 +2426,8 @@
       "nl": "Sint-Martens-Latem",
       "fr": "Sint-Martens-Latem"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "44081",
@@ -2165,7 +2435,8 @@
       "nl": "Zulte",
       "fr": "Zulte"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "44083",
@@ -2173,7 +2444,8 @@
       "nl": "Deinze",
       "fr": "Deinze"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "44084",
@@ -2181,7 +2453,8 @@
       "nl": "Aalter",
       "fr": "Aalter"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "44085",
@@ -2189,7 +2462,8 @@
       "nl": "Lievegem",
       "fr": "Lievegem"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "44086",
@@ -2197,7 +2471,8 @@
       "nl": "Nazareth-De Pinte",
       "fr": "Nazareth-De Pinte"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "44087",
@@ -2205,7 +2480,8 @@
       "nl": "Lochristi",
       "fr": "Lochristi"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "44088",
@@ -2213,7 +2489,8 @@
       "nl": "Merelbeke-Melle",
       "fr": "Merelbeke-Melle"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "45035",
@@ -2221,7 +2498,8 @@
       "nl": "Oudenaarde",
       "fr": "Audenarde"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "45041",
@@ -2229,7 +2507,8 @@
       "nl": "Ronse",
       "fr": "Renaix"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "45059",
@@ -2237,7 +2516,8 @@
       "nl": "Brakel",
       "fr": "Brakel"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "45060",
@@ -2245,7 +2525,8 @@
       "nl": "Kluisbergen",
       "fr": "Kluisbergen"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "45061",
@@ -2253,7 +2534,8 @@
       "nl": "Wortegem-Petegem",
       "fr": "Wortegem-Petegem"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "45062",
@@ -2261,7 +2543,8 @@
       "nl": "Horebeke",
       "fr": "Horebeke"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "45063",
@@ -2269,7 +2552,8 @@
       "nl": "Lierde",
       "fr": "Lierde"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "45064",
@@ -2277,7 +2561,8 @@
       "nl": "Maarkedal",
       "fr": "Maarkedal"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "45065",
@@ -2285,7 +2570,8 @@
       "nl": "Zwalm",
       "fr": "Zwalin"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "45068",
@@ -2293,7 +2579,8 @@
       "nl": "Kruisem",
       "fr": "Kruisem"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "46020",
@@ -2301,7 +2588,8 @@
       "nl": "Sint-Gillis-Waas",
       "fr": "Sint-Gillis-Waas"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "46021",
@@ -2309,7 +2597,8 @@
       "nl": "Sint-Niklaas",
       "fr": "Sint-Niklaas"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "46024",
@@ -2317,7 +2606,8 @@
       "nl": "Stekene",
       "fr": "Stekene"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "46025",
@@ -2325,7 +2615,8 @@
       "nl": "Temse",
       "fr": "Tamise"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "46029",
@@ -2333,7 +2624,8 @@
       "nl": "Lokeren",
       "fr": "Lokeren"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "46030",
@@ -2341,7 +2633,8 @@
       "nl": "Beveren-Kruibeke-Zwijndrecht",
       "fr": "Beveren-Kruibeke-Zwijndrecht"
     },
-    "province": "40000"
+    "province": "40000",
+    "region": "02000"
   },
   {
     "id": "51004",
@@ -2349,7 +2642,8 @@
       "nl": "Aat",
       "fr": "Ath"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "51008",
@@ -2357,7 +2651,8 @@
       "nl": "Beloeil",
       "fr": "Beloeil"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "51009",
@@ -2365,7 +2660,8 @@
       "nl": "Bernissart",
       "fr": "Bernissart"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "51012",
@@ -2373,7 +2669,8 @@
       "nl": "Brugelette",
       "fr": "Brugelette"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "51014",
@@ -2381,7 +2678,8 @@
       "nl": "Chièvres",
       "fr": "Chièvres"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "51017",
@@ -2389,7 +2687,8 @@
       "nl": "Elzele",
       "fr": "Ellezelles"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "51019",
@@ -2397,7 +2696,8 @@
       "nl": "Vloesberg",
       "fr": "Flobecq"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "51065",
@@ -2405,7 +2705,8 @@
       "nl": "Frasnes-lez-Anvaing",
       "fr": "Frasnes-lez-Anvaing"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "51067",
@@ -2413,7 +2714,8 @@
       "nl": "Edingen",
       "fr": "Enghien"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "51068",
@@ -2421,7 +2723,8 @@
       "nl": "Opzullik",
       "fr": "Silly"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "51069",
@@ -2429,7 +2732,8 @@
       "nl": "Lessen",
       "fr": "Lessines"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "52010",
@@ -2437,7 +2741,8 @@
       "nl": "Chapelle-lez-Herlaimont",
       "fr": "Chapelle-lez-Herlaimont"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "52011",
@@ -2445,7 +2750,8 @@
       "nl": "Charleroi",
       "fr": "Charleroi"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "52012",
@@ -2453,7 +2759,8 @@
       "nl": "Châtelet",
       "fr": "Châtelet"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "52015",
@@ -2461,7 +2768,8 @@
       "nl": "Courcelles",
       "fr": "Courcelles"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "52018",
@@ -2469,7 +2777,8 @@
       "nl": "Farciennes",
       "fr": "Farciennes"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "52021",
@@ -2477,7 +2786,8 @@
       "nl": "Fleurus",
       "fr": "Fleurus"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "52022",
@@ -2485,7 +2795,8 @@
       "nl": "Fontaine-l’Evêque",
       "fr": "Fontaine-l’Evêque"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "52025",
@@ -2493,7 +2804,8 @@
       "nl": "Gerpinnes",
       "fr": "Gerpinnes"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "52048",
@@ -2501,7 +2813,8 @@
       "nl": "Montigny-le-Tilleul",
       "fr": "Montigny-le-Tilleul"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "52055",
@@ -2509,7 +2822,8 @@
       "nl": "Pont-à-Celles",
       "fr": "Pont-à-Celles"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "52074",
@@ -2517,7 +2831,8 @@
       "nl": "Aiseau-Presles",
       "fr": "Aiseau-Presles"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "52075",
@@ -2525,7 +2840,8 @@
       "nl": "Les Bons Villers",
       "fr": "Les Bons Villers"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "53014",
@@ -2533,7 +2849,8 @@
       "nl": "Boussu",
       "fr": "Boussu"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "53020",
@@ -2541,7 +2858,8 @@
       "nl": "Dour",
       "fr": "Dour"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "53028",
@@ -2549,7 +2867,8 @@
       "nl": "Frameries",
       "fr": "Frameries"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "53039",
@@ -2557,7 +2876,8 @@
       "nl": "Hensies",
       "fr": "Hensies"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "53044",
@@ -2565,7 +2885,8 @@
       "nl": "Jurbeke",
       "fr": "Jurbise"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "53046",
@@ -2573,7 +2894,8 @@
       "nl": "Lens",
       "fr": "Lens"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "53053",
@@ -2581,7 +2903,8 @@
       "nl": "Bergen",
       "fr": "Mons"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "53065",
@@ -2589,7 +2912,8 @@
       "nl": "Quaregnon",
       "fr": "Quaregnon"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "53068",
@@ -2597,7 +2921,8 @@
       "nl": "Quiévrain",
       "fr": "Quiévrain"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "53070",
@@ -2605,7 +2930,8 @@
       "nl": "Saint-Ghislain",
       "fr": "Saint-Ghislain"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "53082",
@@ -2613,7 +2939,8 @@
       "nl": "Colfontaine",
       "fr": "Colfontaine"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "53083",
@@ -2621,7 +2948,8 @@
       "nl": "Honnelles",
       "fr": "Honnelles"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "53084",
@@ -2629,7 +2957,8 @@
       "nl": "Quévy",
       "fr": "Quévy"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "55004",
@@ -2637,7 +2966,8 @@
       "nl": "’s Gravenbrakel",
       "fr": "Braine-le-Comte"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "55035",
@@ -2645,7 +2975,8 @@
       "nl": "Le Roeulx",
       "fr": "Le Roeulx"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "55040",
@@ -2653,7 +2984,8 @@
       "nl": "Zinnik",
       "fr": "Soignies"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "55050",
@@ -2661,7 +2993,8 @@
       "nl": "Ecaussinnes",
       "fr": "Ecaussinnes"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "55085",
@@ -2669,7 +3002,8 @@
       "nl": "Seneffe",
       "fr": "Seneffe"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "55086",
@@ -2677,7 +3011,8 @@
       "nl": "Manage",
       "fr": "Manage"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "56001",
@@ -2685,7 +3020,8 @@
       "nl": "Anderlues",
       "fr": "Anderlues"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "56005",
@@ -2693,7 +3029,8 @@
       "nl": "Beaumont",
       "fr": "Beaumont"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "56016",
@@ -2701,7 +3038,8 @@
       "nl": "Chimay",
       "fr": "Chimay"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "56022",
@@ -2709,7 +3047,8 @@
       "nl": "Erquelinnes",
       "fr": "Erquelinnes"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "56029",
@@ -2717,7 +3056,8 @@
       "nl": "Froidchapelle",
       "fr": "Froidchapelle"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "56044",
@@ -2725,7 +3065,8 @@
       "nl": "Lobbes",
       "fr": "Lobbes"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "56049",
@@ -2733,7 +3074,8 @@
       "nl": "Merbes-le-Château",
       "fr": "Merbes-le-Château"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "56051",
@@ -2741,7 +3083,8 @@
       "nl": "Momignies",
       "fr": "Momignies"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "56078",
@@ -2749,7 +3092,8 @@
       "nl": "Thuin",
       "fr": "Thuin"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "56086",
@@ -2757,7 +3101,8 @@
       "nl": "Ham-sur-Heure-Nalinnes",
       "fr": "Ham-sur-Heure-Nalinnes"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "56088",
@@ -2765,7 +3110,8 @@
       "nl": "Sivry-Rance",
       "fr": "Sivry-Rance"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "57003",
@@ -2773,7 +3119,8 @@
       "nl": "Antoing",
       "fr": "Antoing"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "57018",
@@ -2781,7 +3128,8 @@
       "nl": "Celles",
       "fr": "Celles"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "57027",
@@ -2789,7 +3137,8 @@
       "nl": "Estaimpuis",
       "fr": "Estaimpuis"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "57062",
@@ -2797,7 +3146,8 @@
       "nl": "Pecq",
       "fr": "Pecq"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "57064",
@@ -2805,7 +3155,8 @@
       "nl": "Péruwelz",
       "fr": "Péruwelz"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "57072",
@@ -2813,7 +3164,8 @@
       "nl": "Rumes",
       "fr": "Rumes"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "57081",
@@ -2821,7 +3173,8 @@
       "nl": "Doornik",
       "fr": "Tournai"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "57093",
@@ -2829,7 +3182,8 @@
       "nl": "Brunehaut",
       "fr": "Brunehaut"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "57094",
@@ -2837,7 +3191,8 @@
       "nl": "Leuze-en-Hainaut",
       "fr": "Leuze-en-Hainaut"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "57095",
@@ -2845,7 +3200,8 @@
       "nl": "Mont-de-l’Enclus",
       "fr": "Mont-de-l’Enclus"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "57096",
@@ -2853,7 +3209,8 @@
       "nl": "Moeskroen",
       "fr": "Mouscron"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "57097",
@@ -2861,7 +3218,8 @@
       "nl": "Komen-Waasten",
       "fr": "Comines-Warneton"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "58001",
@@ -2869,7 +3227,8 @@
       "nl": "La Louvière",
       "fr": "La Louvière"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "58002",
@@ -2877,7 +3236,8 @@
       "nl": "Binche",
       "fr": "Binche"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "58003",
@@ -2885,7 +3245,8 @@
       "nl": "Estinnes",
       "fr": "Estinnes"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "58004",
@@ -2893,7 +3254,8 @@
       "nl": "Morlanwelz",
       "fr": "Morlanwelz"
     },
-    "province": "50000"
+    "province": "50000",
+    "region": "03000"
   },
   {
     "id": "61003",
@@ -2901,7 +3263,8 @@
       "nl": "Amay",
       "fr": "Amay"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "61010",
@@ -2909,7 +3272,8 @@
       "nl": "Burdinne",
       "fr": "Burdinne"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "61012",
@@ -2917,7 +3281,8 @@
       "nl": "Clavier",
       "fr": "Clavier"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "61019",
@@ -2925,7 +3290,8 @@
       "nl": "Ferrières",
       "fr": "Ferrières"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "61024",
@@ -2933,7 +3299,8 @@
       "nl": "Hamoir",
       "fr": "Hamoir"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "61028",
@@ -2941,7 +3308,8 @@
       "nl": "Héron",
       "fr": "Héron"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "61031",
@@ -2949,7 +3317,8 @@
       "nl": "Hoei",
       "fr": "Huy"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "61039",
@@ -2957,7 +3326,8 @@
       "nl": "Marchin",
       "fr": "Marchin"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "61041",
@@ -2965,7 +3335,8 @@
       "nl": "Modave",
       "fr": "Modave"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "61043",
@@ -2973,7 +3344,8 @@
       "nl": "Nandrin",
       "fr": "Nandrin"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "61048",
@@ -2981,7 +3353,8 @@
       "nl": "Ouffet",
       "fr": "Ouffet"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "61063",
@@ -2989,7 +3362,8 @@
       "nl": "Verlaine",
       "fr": "Verlaine"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "61068",
@@ -2997,7 +3371,8 @@
       "nl": "Villers-Le-Bouillet",
       "fr": "Villers-Le-Bouillet"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "61072",
@@ -3005,7 +3380,8 @@
       "nl": "Wanze",
       "fr": "Wanze"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "61079",
@@ -3013,7 +3389,8 @@
       "nl": "Anthisnes",
       "fr": "Anthisnes"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "61080",
@@ -3021,7 +3398,8 @@
       "nl": "Engis",
       "fr": "Engis"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "61081",
@@ -3029,7 +3407,8 @@
       "nl": "Tinlot",
       "fr": "Tinlot"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62003",
@@ -3037,7 +3416,8 @@
       "nl": "Ans",
       "fr": "Ans"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62006",
@@ -3045,7 +3425,8 @@
       "nl": "Awans",
       "fr": "Awans"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62009",
@@ -3053,7 +3434,8 @@
       "nl": "Aywaille",
       "fr": "Aywaille"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62011",
@@ -3061,7 +3443,8 @@
       "nl": "Bitsingen",
       "fr": "Bassenge"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62015",
@@ -3069,7 +3452,8 @@
       "nl": "Beyne-Heusay",
       "fr": "Beyne-Heusay"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62022",
@@ -3077,7 +3461,8 @@
       "nl": "Chaudfontaine",
       "fr": "Chaudfontaine"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62026",
@@ -3085,7 +3470,8 @@
       "nl": "Comblain-au-Pont",
       "fr": "Comblain-au-Pont"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62027",
@@ -3093,7 +3479,8 @@
       "nl": "Dalhem",
       "fr": "Dalhem"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62032",
@@ -3101,7 +3488,8 @@
       "nl": "Esneux",
       "fr": "Esneux"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62038",
@@ -3109,7 +3497,8 @@
       "nl": "Fléron",
       "fr": "Fléron"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62051",
@@ -3117,7 +3506,8 @@
       "nl": "Herstal",
       "fr": "Herstal"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62060",
@@ -3125,7 +3515,8 @@
       "nl": "Juprelle",
       "fr": "Juprelle"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62063",
@@ -3133,7 +3524,8 @@
       "nl": "Luik",
       "fr": "Liège"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62079",
@@ -3141,7 +3533,8 @@
       "nl": "Oupeye",
       "fr": "Oupeye"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62093",
@@ -3149,7 +3542,8 @@
       "nl": "Saint-Nicolas",
       "fr": "Saint-Nicolas"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62096",
@@ -3157,7 +3551,8 @@
       "nl": "Seraing",
       "fr": "Seraing"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62099",
@@ -3165,7 +3560,8 @@
       "nl": "Soumagne",
       "fr": "Soumagne"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62100",
@@ -3173,7 +3569,8 @@
       "nl": "Sprimont",
       "fr": "Sprimont"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62108",
@@ -3181,7 +3578,8 @@
       "nl": "Wezet",
       "fr": "Visé"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62118",
@@ -3189,7 +3587,8 @@
       "nl": "Grâce-Hollogne",
       "fr": "Grâce-Hollogne"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62119",
@@ -3197,7 +3596,8 @@
       "nl": "Blegny",
       "fr": "Blegny"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62120",
@@ -3205,7 +3605,8 @@
       "nl": "Flémalle",
       "fr": "Flémalle"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62121",
@@ -3213,7 +3614,8 @@
       "nl": "Neupré",
       "fr": "Neupré"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "62122",
@@ -3221,7 +3623,8 @@
       "nl": "Trooz",
       "fr": "Trooz"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63001",
@@ -3229,7 +3632,8 @@
       "nl": "Amel",
       "fr": "Amblève"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63003",
@@ -3237,7 +3641,8 @@
       "nl": "Aubel",
       "fr": "Aubel"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63004",
@@ -3245,7 +3650,8 @@
       "nl": "Baelen",
       "fr": "Baelen"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63012",
@@ -3253,7 +3659,8 @@
       "nl": "Büllingen",
       "fr": "Bullange"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63013",
@@ -3261,7 +3668,8 @@
       "nl": "Bütgenbach",
       "fr": "Butgenbach"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63020",
@@ -3269,7 +3677,8 @@
       "nl": "Dison",
       "fr": "Dison"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63023",
@@ -3277,7 +3686,8 @@
       "nl": "Eupen",
       "fr": "Eupen"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63035",
@@ -3285,7 +3695,8 @@
       "nl": "Herve",
       "fr": "Herve"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63038",
@@ -3293,7 +3704,8 @@
       "nl": "Jalhay",
       "fr": "Jalhay"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63040",
@@ -3301,7 +3713,8 @@
       "nl": "Kelmis",
       "fr": "La Calamine"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63045",
@@ -3309,7 +3722,8 @@
       "nl": "Lierneux",
       "fr": "Lierneux"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63046",
@@ -3317,7 +3731,8 @@
       "nl": "Limburg",
       "fr": "Limbourg"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63048",
@@ -3325,7 +3740,8 @@
       "nl": "Lontzen",
       "fr": "Lontzen"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63049",
@@ -3333,7 +3749,8 @@
       "nl": "Malmedy",
       "fr": "Malmedy"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63057",
@@ -3341,7 +3758,8 @@
       "nl": "Olne",
       "fr": "Olne"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63058",
@@ -3349,7 +3767,8 @@
       "nl": "Pepinster",
       "fr": "Pepinster"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63061",
@@ -3357,7 +3776,8 @@
       "nl": "Raeren",
       "fr": "Raeren"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63067",
@@ -3365,7 +3785,8 @@
       "nl": "Sankt Vith",
       "fr": "Saint-Vith"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63072",
@@ -3373,7 +3794,8 @@
       "nl": "Spa",
       "fr": "Spa"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63073",
@@ -3381,7 +3803,8 @@
       "nl": "Stavelot",
       "fr": "Stavelot"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63075",
@@ -3389,7 +3812,8 @@
       "nl": "Stoumont",
       "fr": "Stoumont"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63076",
@@ -3397,7 +3821,8 @@
       "nl": "Theux",
       "fr": "Theux"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63079",
@@ -3405,7 +3830,8 @@
       "nl": "Verviers",
       "fr": "Verviers"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63080",
@@ -3413,7 +3839,8 @@
       "nl": "Weismes",
       "fr": "Waimes"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63084",
@@ -3421,7 +3848,8 @@
       "nl": "Welkenraedt",
       "fr": "Welkenraedt"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63086",
@@ -3429,7 +3857,8 @@
       "nl": "Trois-Ponts",
       "fr": "Trois-Ponts"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63087",
@@ -3437,7 +3866,8 @@
       "nl": "Burg-Reuland",
       "fr": "Burg-Reuland"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63088",
@@ -3445,7 +3875,8 @@
       "nl": "Plombières",
       "fr": "Plombières"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "63089",
@@ -3453,7 +3884,8 @@
       "nl": "Thimister-Clermont",
       "fr": "Thimister-Clermont"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "64008",
@@ -3461,7 +3893,8 @@
       "nl": "Berloz",
       "fr": "Berloz"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "64015",
@@ -3469,7 +3902,8 @@
       "nl": "Braives",
       "fr": "Braives"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "64021",
@@ -3477,7 +3911,8 @@
       "nl": "Crisnée",
       "fr": "Crisnée"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "64023",
@@ -3485,7 +3920,8 @@
       "nl": "Donceel",
       "fr": "Donceel"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "64025",
@@ -3493,7 +3929,8 @@
       "nl": "Fexhe-le-Haut-Clocher",
       "fr": "Fexhe-le-Haut-Clocher"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "64029",
@@ -3501,7 +3938,8 @@
       "nl": "Geer",
       "fr": "Geer"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "64034",
@@ -3509,7 +3947,8 @@
       "nl": "Hannuit",
       "fr": "Hannut"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "64047",
@@ -3517,7 +3956,8 @@
       "nl": "Lijsem",
       "fr": "Lincent"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "64056",
@@ -3525,7 +3965,8 @@
       "nl": "Oerle",
       "fr": "Oreye"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "64063",
@@ -3533,7 +3974,8 @@
       "nl": "Remicourt",
       "fr": "Remicourt"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "64065",
@@ -3541,7 +3983,8 @@
       "nl": "Saint-Georges-sur-Meuse",
       "fr": "Saint-Georges-sur-Meuse"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "64074",
@@ -3549,7 +3992,8 @@
       "nl": "Borgworm",
       "fr": "Waremme"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "64075",
@@ -3557,7 +4001,8 @@
       "nl": "Wasseiges",
       "fr": "Wasseiges"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "64076",
@@ -3565,7 +4010,8 @@
       "nl": "Faimes",
       "fr": "Faimes"
     },
-    "province": "60000"
+    "province": "60000",
+    "region": "03000"
   },
   {
     "id": "71002",
@@ -3573,7 +4019,8 @@
       "nl": "As",
       "fr": "As"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "71004",
@@ -3581,7 +4028,8 @@
       "nl": "Beringen",
       "fr": "Beringen"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "71011",
@@ -3589,7 +4037,8 @@
       "nl": "Diepenbeek",
       "fr": "Diepenbeek"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "71016",
@@ -3597,7 +4046,8 @@
       "nl": "Genk",
       "fr": "Genk"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "71017",
@@ -3605,7 +4055,8 @@
       "nl": "Gingelom",
       "fr": "Gingelom"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "71020",
@@ -3613,7 +4064,8 @@
       "nl": "Halen",
       "fr": "Halen"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "71024",
@@ -3621,7 +4073,8 @@
       "nl": "Herk-de-Stad",
       "fr": "Herck-la-Ville"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "71034",
@@ -3629,7 +4082,8 @@
       "nl": "Leopoldsburg",
       "fr": "Bourg-Léopold"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "71037",
@@ -3637,7 +4091,8 @@
       "nl": "Lummen",
       "fr": "Lummen"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "71045",
@@ -3645,7 +4100,8 @@
       "nl": "Nieuwerkerken",
       "fr": "Nieuwerkerken"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "71053",
@@ -3653,7 +4109,8 @@
       "nl": "Sint-Truiden",
       "fr": "Saint-Trond"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "71066",
@@ -3661,7 +4118,8 @@
       "nl": "Zonhoven",
       "fr": "Zonhoven"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "71067",
@@ -3669,7 +4127,8 @@
       "nl": "Zutendaal",
       "fr": "Zutendaal"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "71070",
@@ -3677,7 +4136,8 @@
       "nl": "Heusden-Zolder",
       "fr": "Heusden-Zolder"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "71071",
@@ -3685,7 +4145,8 @@
       "nl": "Tessenderlo-Ham",
       "fr": "Tessenderlo-Ham"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "71072",
@@ -3693,7 +4154,8 @@
       "nl": "Hasselt",
       "fr": "Hasselt"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "72003",
@@ -3701,7 +4163,8 @@
       "nl": "Bocholt",
       "fr": "Bocholt"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "72004",
@@ -3709,7 +4172,8 @@
       "nl": "Bree",
       "fr": "Bree"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "72018",
@@ -3717,7 +4181,8 @@
       "nl": "Kinrooi",
       "fr": "Kinrooi"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "72020",
@@ -3725,7 +4190,8 @@
       "nl": "Lommel",
       "fr": "Lommel"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "72021",
@@ -3733,7 +4199,8 @@
       "nl": "Maaseik",
       "fr": "Maaseik"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "72030",
@@ -3741,7 +4208,8 @@
       "nl": "Peer",
       "fr": "Peer"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "72037",
@@ -3749,7 +4217,8 @@
       "nl": "Hamont-Achel",
       "fr": "Hamont-Achel"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "72038",
@@ -3757,7 +4226,8 @@
       "nl": "Hechtel-Eksel",
       "fr": "Hechtel-Eksel"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "72039",
@@ -3765,7 +4235,8 @@
       "nl": "Houthalen-Helchteren",
       "fr": "Houthalen-Helchteren"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "72041",
@@ -3773,7 +4244,8 @@
       "nl": "Dilsen-Stokkem",
       "fr": "Dilsen-Stokkem"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "72042",
@@ -3781,7 +4253,8 @@
       "nl": "Oudsbergen",
       "fr": "Oudsbergen"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "72043",
@@ -3789,7 +4262,8 @@
       "nl": "Pelt",
       "fr": "Pelt"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "73001",
@@ -3797,7 +4271,8 @@
       "nl": "Alken",
       "fr": "Alken"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "73022",
@@ -3805,7 +4280,8 @@
       "nl": "Heers",
       "fr": "Heers"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "73028",
@@ -3813,7 +4289,8 @@
       "nl": "Herstappe",
       "fr": "Herstappe"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "73042",
@@ -3821,7 +4298,8 @@
       "nl": "Lanaken",
       "fr": "Lanaken"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "73066",
@@ -3829,7 +4307,8 @@
       "nl": "Riemst",
       "fr": "Riemst"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "73098",
@@ -3837,7 +4316,8 @@
       "nl": "Wellen",
       "fr": "Wellen"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "73107",
@@ -3845,7 +4325,8 @@
       "nl": "Maasmechelen",
       "fr": "Maasmechelen"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "73109",
@@ -3853,7 +4334,8 @@
       "nl": "Voeren",
       "fr": "Fourons"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "73110",
@@ -3861,7 +4343,8 @@
       "nl": "Bilzen-Hoeselt",
       "fr": "Bilzen-Hoeselt"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "73111",
@@ -3869,7 +4352,8 @@
       "nl": "Tongeren-Borgloon",
       "fr": "Tongres-Looz"
     },
-    "province": "70000"
+    "province": "70000",
+    "region": "02000"
   },
   {
     "id": "81001",
@@ -3877,7 +4361,8 @@
       "nl": "Aarlen",
       "fr": "Arlon"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "81003",
@@ -3885,7 +4370,8 @@
       "nl": "Attert",
       "fr": "Attert"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "81004",
@@ -3893,7 +4379,8 @@
       "nl": "Aubange",
       "fr": "Aubange"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "81013",
@@ -3901,7 +4388,8 @@
       "nl": "Martelange",
       "fr": "Martelange"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "81015",
@@ -3909,7 +4397,8 @@
       "nl": "Messancy",
       "fr": "Messancy"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "82009",
@@ -3917,7 +4406,8 @@
       "nl": "Fauvillers",
       "fr": "Fauvillers"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "82014",
@@ -3925,7 +4415,8 @@
       "nl": "Houffalize",
       "fr": "Houffalize"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "82032",
@@ -3933,7 +4424,8 @@
       "nl": "Vielsalm",
       "fr": "Vielsalm"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "82036",
@@ -3941,7 +4433,8 @@
       "nl": "Vaux-sur-Sûre",
       "fr": "Vaux-sur-Sûre"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "82037",
@@ -3949,7 +4442,8 @@
       "nl": "Gouvy",
       "fr": "Gouvy"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "82038",
@@ -3957,7 +4451,8 @@
       "nl": "Sainte-Ode",
       "fr": "Sainte-Ode"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "82039",
@@ -3965,7 +4460,8 @@
       "nl": "Bastenaken",
       "fr": "Bastogne"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "83012",
@@ -3973,7 +4469,8 @@
       "nl": "Durbuy",
       "fr": "Durbuy"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "83013",
@@ -3981,7 +4478,8 @@
       "nl": "Erezée",
       "fr": "Erezée"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "83028",
@@ -3989,7 +4487,8 @@
       "nl": "Hotton",
       "fr": "Hotton"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "83031",
@@ -3997,7 +4496,8 @@
       "nl": "La Roche-en-Ardenne",
       "fr": "La Roche-en-Ardenne"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "83034",
@@ -4005,7 +4505,8 @@
       "nl": "Marche-en-Famenne",
       "fr": "Marche-en-Famenne"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "83040",
@@ -4013,7 +4514,8 @@
       "nl": "Nassogne",
       "fr": "Nassogne"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "83044",
@@ -4021,7 +4523,8 @@
       "nl": "Rendeux",
       "fr": "Rendeux"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "83049",
@@ -4029,7 +4532,8 @@
       "nl": "Tenneville",
       "fr": "Tenneville"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "83055",
@@ -4037,7 +4541,8 @@
       "nl": "Manhay",
       "fr": "Manhay"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "84009",
@@ -4045,7 +4550,8 @@
       "nl": "Bertrix",
       "fr": "Bertrix"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "84010",
@@ -4053,7 +4559,8 @@
       "nl": "Bouillon",
       "fr": "Bouillon"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "84016",
@@ -4061,7 +4568,8 @@
       "nl": "Daverdisse",
       "fr": "Daverdisse"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "84029",
@@ -4069,7 +4577,8 @@
       "nl": "Herbeumont",
       "fr": "Herbeumont"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "84033",
@@ -4077,7 +4586,8 @@
       "nl": "Léglise",
       "fr": "Léglise"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "84035",
@@ -4085,7 +4595,8 @@
       "nl": "Libin",
       "fr": "Libin"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "84043",
@@ -4093,7 +4604,8 @@
       "nl": "Neufchâteau",
       "fr": "Neufchâteau"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "84050",
@@ -4101,7 +4613,8 @@
       "nl": "Paliseul",
       "fr": "Paliseul"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "84059",
@@ -4109,7 +4622,8 @@
       "nl": "Saint-Hubert",
       "fr": "Saint-Hubert"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "84068",
@@ -4117,7 +4631,8 @@
       "nl": "Tellin",
       "fr": "Tellin"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "84075",
@@ -4125,7 +4640,8 @@
       "nl": "Wellin",
       "fr": "Wellin"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "84077",
@@ -4133,7 +4649,8 @@
       "nl": "Libramont-Chevigny",
       "fr": "Libramont-Chevigny"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "85007",
@@ -4141,7 +4658,8 @@
       "nl": "Chiny",
       "fr": "Chiny"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "85009",
@@ -4149,7 +4667,8 @@
       "nl": "Etalle",
       "fr": "Etalle"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "85011",
@@ -4157,7 +4676,8 @@
       "nl": "Florenville",
       "fr": "Florenville"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "85024",
@@ -4165,7 +4685,8 @@
       "nl": "Meix-devant-Virton",
       "fr": "Meix-devant-Virton"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "85026",
@@ -4173,7 +4694,8 @@
       "nl": "Musson",
       "fr": "Musson"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "85034",
@@ -4181,7 +4703,8 @@
       "nl": "Saint-Léger",
       "fr": "Saint-Léger"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "85039",
@@ -4189,7 +4712,8 @@
       "nl": "Tintigny",
       "fr": "Tintigny"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "85045",
@@ -4197,7 +4721,8 @@
       "nl": "Virton",
       "fr": "Virton"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "85046",
@@ -4205,7 +4730,8 @@
       "nl": "Habay",
       "fr": "Habay"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "85047",
@@ -4213,7 +4739,8 @@
       "nl": "Rouvroy",
       "fr": "Rouvroy"
     },
-    "province": "80000"
+    "province": "80000",
+    "region": "03000"
   },
   {
     "id": "91005",
@@ -4221,7 +4748,8 @@
       "nl": "Anhée",
       "fr": "Anhée"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "91013",
@@ -4229,7 +4757,8 @@
       "nl": "Beauraing",
       "fr": "Beauraing"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "91015",
@@ -4237,7 +4766,8 @@
       "nl": "Bièvre",
       "fr": "Bièvre"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "91030",
@@ -4245,7 +4775,8 @@
       "nl": "Ciney",
       "fr": "Ciney"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "91034",
@@ -4253,7 +4784,8 @@
       "nl": "Dinant",
       "fr": "Dinant"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "91054",
@@ -4261,7 +4793,8 @@
       "nl": "Gedinne",
       "fr": "Gedinne"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "91059",
@@ -4269,7 +4802,8 @@
       "nl": "Hamois",
       "fr": "Hamois"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "91064",
@@ -4277,7 +4811,8 @@
       "nl": "Havelange",
       "fr": "Havelange"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "91072",
@@ -4285,7 +4820,8 @@
       "nl": "Houyet",
       "fr": "Houyet"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "91103",
@@ -4293,7 +4829,8 @@
       "nl": "Onhaye",
       "fr": "Onhaye"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "91114",
@@ -4301,7 +4838,8 @@
       "nl": "Rochefort",
       "fr": "Rochefort"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "91120",
@@ -4309,7 +4847,8 @@
       "nl": "Somme-Leuze",
       "fr": "Somme-Leuze"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "91141",
@@ -4317,7 +4856,8 @@
       "nl": "Yvoir",
       "fr": "Yvoir"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "91142",
@@ -4325,7 +4865,8 @@
       "nl": "Hastière",
       "fr": "Hastière"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "91143",
@@ -4333,7 +4874,8 @@
       "nl": "Vresse-sur-Semois",
       "fr": "Vresse-sur-Semois"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "92003",
@@ -4341,7 +4883,8 @@
       "nl": "Andenne",
       "fr": "Andenne"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "92006",
@@ -4349,7 +4892,8 @@
       "nl": "Assesse",
       "fr": "Assesse"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "92035",
@@ -4357,7 +4901,8 @@
       "nl": "Eghezée",
       "fr": "Eghezée"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "92045",
@@ -4365,7 +4910,8 @@
       "nl": "Floreffe",
       "fr": "Floreffe"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "92048",
@@ -4373,7 +4919,8 @@
       "nl": "Fosses-la-Ville",
       "fr": "Fosses-la-Ville"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "92054",
@@ -4381,7 +4928,8 @@
       "nl": "Gesves",
       "fr": "Gesves"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "92087",
@@ -4389,7 +4937,8 @@
       "nl": "Mettet",
       "fr": "Mettet"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "92094",
@@ -4397,7 +4946,8 @@
       "nl": "Namen",
       "fr": "Namur"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "92097",
@@ -4405,7 +4955,8 @@
       "nl": "Ohey",
       "fr": "Ohey"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "92101",
@@ -4413,7 +4964,8 @@
       "nl": "Profondeville",
       "fr": "Profondeville"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "92114",
@@ -4421,7 +4973,8 @@
       "nl": "Sombreffe",
       "fr": "Sombreffe"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "92137",
@@ -4429,7 +4982,8 @@
       "nl": "Sambreville",
       "fr": "Sambreville"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "92138",
@@ -4437,7 +4991,8 @@
       "nl": "Fernelmont",
       "fr": "Fernelmont"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "92140",
@@ -4445,7 +5000,8 @@
       "nl": "Jemeppe-sur-Sambre",
       "fr": "Jemeppe-sur-Sambre"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "92141",
@@ -4453,7 +5009,8 @@
       "nl": "La Bruyère",
       "fr": "La Bruyère"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "92142",
@@ -4461,7 +5018,8 @@
       "nl": "Gembloux",
       "fr": "Gembloux"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "93010",
@@ -4469,7 +5027,8 @@
       "nl": "Cerfontaine",
       "fr": "Cerfontaine"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "93014",
@@ -4477,7 +5036,8 @@
       "nl": "Couvin",
       "fr": "Couvin"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "93018",
@@ -4485,7 +5045,8 @@
       "nl": "Doische",
       "fr": "Doische"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "93022",
@@ -4493,7 +5054,8 @@
       "nl": "Florennes",
       "fr": "Florennes"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "93056",
@@ -4501,7 +5063,8 @@
       "nl": "Philippeville",
       "fr": "Philippeville"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "93088",
@@ -4509,7 +5072,8 @@
       "nl": "Walcourt",
       "fr": "Walcourt"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   },
   {
     "id": "93090",
@@ -4517,6 +5081,7 @@
       "nl": "Viroinval",
       "fr": "Viroinval"
     },
-    "province": "90000"
+    "province": "90000",
+    "region": "03000"
   }
 ]

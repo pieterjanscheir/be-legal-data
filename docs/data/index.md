@@ -11,6 +11,8 @@ the date it was last checked against them.
 | [Cantons](./territory#cantons)                 | 162      | Which justice of the peace is competent for an address                            |
 | [Canton boundaries](./canton-boundaries)       | 162      | The canton of a point in a split city; the cantons on a map (GeoJSON)             |
 | [Municipalities](./territory#municipalities)   | 565      | Joining any Belgian address or statistic to the judicial map by REFNIS code       |
+| [Regions](./territory#regions)                 | 3        | The region of a municipality, by REFNIS code, named in three languages            |
+| [Provinces](./territory#provinces)             | 10       | The province of a municipality (none in Brussels), with its region                |
 | [Courts](./courts)                             | 347      | Names, addresses and registries' contacts to write to, file with or pay any court |
 | [Prisons](./prisons)                           | 39       | Addresses and contacts of every prison and detention house                        |
 | [Houses of justice](./houses-of-justice)       | 27       | Probation, victim support and social studies for the family courts                |
@@ -28,7 +30,9 @@ Judicial area ──< Arrondissement ──< Canton >──< Municipality (REFNI
 ```
 
 `──<` reads "has many". A municipality is usually in one canton; split cities (Antwerpen, Gent,
-Brussel, Luik, …) are in several.
+Brussel, Luik, …) are in several. On the administrative side, `Region ──< Province ──<
+Municipality`, except that the Brussels-Capital Region has no province and holds its 19
+municipalities directly.
 
 Records link to each other by id, never by name: a court has a `judicialArea` id and, when its
 area is one arrondissement, an `arrondissement` id; a canton lists the REFNIS codes of its

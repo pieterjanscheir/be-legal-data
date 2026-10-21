@@ -9,6 +9,8 @@ const files = {
     JudicialAreaId: 'judicial-areas',
     ArrondissementId: 'arrondissements',
     CantonId: 'cantons',
+    RegionId: 'regions',
+    ProvinceId: 'provinces',
     MunicipalityId: 'municipalities',
     CourtId: 'courts',
     PrisonId: 'prisons',

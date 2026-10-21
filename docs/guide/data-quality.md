@@ -12,6 +12,7 @@ each dataset.
 | Cantons                         | Judicial Code, annex art. 1 (nl + fr) | Generated: `pnpm build:cantons`       | A law changes the annex; municipalities merge       | 12 months    |
 | Canton boundaries               | NGI (geo.be)                          | Weekly: snapshots + `pnpm build:data` | The NGI publishes a new version                     | Weekly       |
 | Municipalities                  | Statbel open data                     | Generated: `pnpm build:cantons`       | Municipalities merge (2019, 2025)                   | 12 months    |
+| Regions, provinces              | Statbel REFNIS code list              | Weekly: snapshots + `pnpm build:data` | Statbel changes its register (last in 1995)         | Weekly       |
 | Courts                          | tribunaux-rechtbanken.be              | Weekly: snapshots + `pnpm build:data` | A court moves or changes its contacts or hours      | Weekly       |
 | Prisons                         | justitie.belgium.be                   | Weekly: snapshots + `pnpm build:data` | A prison opens, closes or changes its contacts      | Weekly       |
 | Houses of justice               | vlaanderen.be, maisonsdejustice.be    | Weekly: snapshots + `pnpm build:data` | A house moves or changes its contacts               | Weekly       |

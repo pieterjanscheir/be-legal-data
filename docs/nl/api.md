@@ -14,18 +14,18 @@ import { getPrison } from 'be-legal-data/prisons'
 import { getHouseOfJustice } from 'be-legal-data/houses-of-justice'
 ```
 
-| Entry point                          | Inhoud                                                       |
-| ------------------------------------ | ------------------------------------------------------------ |
-| `be-legal-data`                      | Alles hieronder, behalve de kantongrenzen                    |
-| `be-legal-data/territory`            | Rechtsgebieden, arrondissementen, kantons, gemeenten         |
-| `be-legal-data/canton-boundaries`    | De geometrie van de kantons, en `findCantonsAt`              |
-| `be-legal-data/courts`               | Hoven en rechtbanken, en de helpers voor contactgegevens     |
-| `be-legal-data/prisons`              | Gevangenissen, en de helpers voor contactgegevens            |
-| `be-legal-data/houses-of-justice`    | Justitiehuizen, en de helpers voor contactgegevens           |
-| `be-legal-data/interest-rates`       | Rentevoeten                                                  |
-| `be-legal-data/data/*.json`          | De ruwe databestanden                                        |
-| `be-legal-data/schema/*.schema.json` | [JSON Schemas](/nl/guide/schema)                             |
-| `be-legal-data/datapackage.json`     | [Data package descriptor](/nl/guide/schema#datapackage-json) |
+| Entry point                          | Inhoud                                                                     |
+| ------------------------------------ | -------------------------------------------------------------------------- |
+| `be-legal-data`                      | Alles hieronder, behalve de kantongrenzen                                  |
+| `be-legal-data/territory`            | Rechtsgebieden, arrondissementen, kantons, gemeenten, provincies, gewesten |
+| `be-legal-data/canton-boundaries`    | De geometrie van de kantons, en `findCantonsAt`                            |
+| `be-legal-data/courts`               | Hoven en rechtbanken, en de helpers voor contactgegevens                   |
+| `be-legal-data/prisons`              | Gevangenissen, en de helpers voor contactgegevens                          |
+| `be-legal-data/houses-of-justice`    | Justitiehuizen, en de helpers voor contactgegevens                         |
+| `be-legal-data/interest-rates`       | Rentevoeten                                                                |
+| `be-legal-data/data/*.json`          | De ruwe databestanden                                                      |
+| `be-legal-data/schema/*.schema.json` | [JSON Schemas](/nl/guide/schema)                                           |
+| `be-legal-data/datapackage.json`     | [Data package descriptor](/nl/guide/schema#datapackage-json)               |
 
 Conventies:
 
@@ -69,6 +69,32 @@ function getMunicipality(id: string, options?: OnDay): Municipality | undefined
 
 ```ts
 getMunicipality('44021').name // { nl: 'Gent', fr: 'Gand' }
+getMunicipality('44021').province // '40000'
+getMunicipality('21004').province // '04000': Brussel heeft geen provincie, dit is de code van het gewest
+```
+
+### `getRegion(id)` {#getregion-id}
+
+```ts
+function getRegion(id: RegionId): Region
+function getRegion(id: string, options?: OnDay): Region | undefined
+```
+
+```ts
+getRegion('02000').name.fr // 'Région flamande'
+```
+
+### `getProvince(id)` {#getprovince-id}
+
+```ts
+function getProvince(id: ProvinceId): Province
+function getProvince(id: string, options?: OnDay): Province | undefined
+```
+
+```ts
+getProvince('40000').name.nl // 'Provincie Oost-Vlaanderen'
+getProvince('40000').region // '02000'
+getProvince('04000') // undefined: het Brussels Hoofdstedelijk Gewest is geen provincie
 ```
 
 ### `getCanton(id)` {#getcanton-id}
@@ -110,6 +136,30 @@ precies één arrondissement, ook een stad die over meerdere kantons gesplitst i
 
 ```ts
 getArrondissementForMunicipality('44021')?.id // 'oost-vlaanderen'
+```
+
+### `getProvinceForMunicipality(id)` {#getprovinceformunicipality-id}
+
+```ts
+function getProvinceForMunicipality(id: string, options?: OnDay): Province | undefined
+```
+
+De provincie waarin een gemeente ligt, op REFNIS-code. `undefined` voor de 19 gemeenten van het
+Brussels Hoofdstedelijk Gewest, dat geen provincie heeft, en voor een onbekende code.
+
+```ts
+getProvinceForMunicipality('44021')?.id // '40000'
+getProvinceForMunicipality('21004') // undefined: Brussel
+```
+
+### `getRegionForMunicipality(id)` {#getregionformunicipality-id}
+
+```ts
+function getRegionForMunicipality(id: string, options?: OnDay): Region | undefined
+```
+
+```ts
+getRegionForMunicipality('21004')?.name.nl // 'Brussels Hoofdstedelijk Gewest'
 ```
 
 ## Kantongrenzen {#canton-boundaries}
@@ -430,6 +480,8 @@ De volledige datasets, getypeerd:
 | `judicialAreas`   | `readonly JudicialArea[]`                            |
 | `arrondissements` | `readonly Arrondissement[]`                          |
 | `cantons`         | `readonly Canton[]`                                  |
+| `regions`         | `readonly Region[]`                                  |
+| `provinces`       | `readonly Province[]`                                |
 | `municipalities`  | `readonly Municipality[]`                            |
 | `courts`          | `readonly Court[]`                                   |
 | `prisons`         | `readonly Prison[]`                                  |
@@ -438,14 +490,14 @@ De volledige datasets, getypeerd:
 
 ## Types {#types}
 
-| Type                                                                                                                                                           | Beschreven op                                                                   |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `JudicialAreaId`, `ArrondissementId`, `CantonId`, `MunicipalityId`, `CourtId`, `PrisonId`, `HouseOfJusticeId`: unions van de ids in de data, mee geregenereerd | [Identifiers](/nl/guide/identifiers#in-typescript)                              |
-| `Locale` = `'nl' \| 'fr' \| 'de'`                                                                                                                              |                                                                                 |
-| `SourceRef` = `{ url: string; retrieved: string }`: waar de data van een record vandaan komt                                                                   | [Datakwaliteit en actualiteit](/nl/guide/data-quality)                          |
-| `Translated` = `Record<Locale, string>`                                                                                                                        |                                                                                 |
-| `Bilingual` = `Record<'nl' \| 'fr', string>`: namen zoals het Gerechtelijk Wetboek ze geeft                                                                    |                                                                                 |
-| `JudicialArea`, `Arrondissement`, `Canton`, `Municipality`, `LegalBasis`, `Validity`, `OnDay`                                                                  | [Territorium en kantons](/nl/data/territory)                                    |
-| `Court`, `CourtType`, `CourtFilter`, `Address`, `Contact`, `ContactType`, `CantonCourt`                                                                        | [Hoven en rechtbanken](/nl/data/courts#shape)                                   |
-| `Prison`, `HouseOfJustice`                                                                                                                                     | [Gevangenissen](/nl/data/prisons), [Justitiehuizen](/nl/data/houses-of-justice) |
-| `InterestType`, `InterestRatePeriod`, `InterestRateSeries`, `InterestRateResult`                                                                               | [Rentevoeten](/nl/data/interest-rates#shape)                                    |
+| Type                                                                                                                                                                                     | Beschreven op                                                                   |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `JudicialAreaId`, `ArrondissementId`, `CantonId`, `RegionId`, `ProvinceId`, `MunicipalityId`, `CourtId`, `PrisonId`, `HouseOfJusticeId`: unions van de ids in de data, mee geregenereerd | [Identifiers](/nl/guide/identifiers#in-typescript)                              |
+| `Locale` = `'nl' \| 'fr' \| 'de'`                                                                                                                                                        |                                                                                 |
+| `SourceRef` = `{ url: string; retrieved: string }`: waar de data van een record vandaan komt                                                                                             | [Datakwaliteit en actualiteit](/nl/guide/data-quality)                          |
+| `Translated` = `Record<Locale, string>`                                                                                                                                                  |                                                                                 |
+| `Bilingual` = `Record<'nl' \| 'fr', string>`: namen zoals het Gerechtelijk Wetboek ze geeft                                                                                              |                                                                                 |
+| `JudicialArea`, `Arrondissement`, `Canton`, `Region`, `Province`, `Municipality`, `LegalBasis`, `Validity`, `OnDay`                                                                      | [Territorium en kantons](/nl/data/territory)                                    |
+| `Court`, `CourtType`, `CourtFilter`, `Address`, `Contact`, `ContactType`, `CantonCourt`                                                                                                  | [Hoven en rechtbanken](/nl/data/courts#shape)                                   |
+| `Prison`, `HouseOfJustice`                                                                                                                                                               | [Gevangenissen](/nl/data/prisons), [Justitiehuizen](/nl/data/houses-of-justice) |
+| `InterestType`, `InterestRatePeriod`, `InterestRateSeries`, `InterestRateResult`                                                                                                         | [Rentevoeten](/nl/data/interest-rates#shape)                                    |
