@@ -50,6 +50,17 @@ export function appliesOn(record: Validity, day: string): boolean {
     )
 }
 
+/** Every version of each record by id, oldest first */
+export function versionsById<T extends { id: string } & Validity>(
+    items: readonly T[],
+): Map<string, T[]> {
+    const map = new Map<string, T[]>()
+    for (const item of items) map.set(item.id, [...(map.get(item.id) ?? []), item])
+    for (const list of map.values())
+        list.sort((a, b) => (a.validFrom ?? '').localeCompare(b.validFrom ?? ''))
+    return map
+}
+
 /**
  * A record's version as of a day, from its versions sorted by `validFrom`: the one that applies
  * on that day; for a record that has ended, its last version; for one that hasn't started, its
