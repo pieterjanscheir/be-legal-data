@@ -62,7 +62,7 @@ data als JSON en als CSV-tabellen (UTF-8, kommagescheiden), samen met de schema'
 | `data/cantons.json`           | Alle 162 gerechtelijke kantons                                                  |
 | `data/municipalities.json`    | De 565 gemeenten met REFNIS-code en provincie                                   |
 | `data/courts.json`            | Elke rechtbank, afdeling en zetel op het portaal van de rechtbanken             |
-| `data/prisons.json`           | De 39 gevangenissen en detentiehuizen                                           |
+| `data/prisons.json`           | De gevangenissen en detentiehuizen                                              |
 | `data/houses-of-justice.json` | De justitiehuizen van de Vlaamse en de Franse Gemeenschap                       |
 | `data/interest-rates.json`    | Wettelijke interest en interest bij betalingsachterstand bij handelstransacties |
 

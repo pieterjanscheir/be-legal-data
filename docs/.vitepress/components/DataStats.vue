@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { withBase } from 'vitepress'
 import {
+    appliesOn,
     judicialAreas,
     arrondissements,
     cantons,
     municipalities,
-    courts,
-    prisons,
-    housesOfJustice,
+    findCourts,
+    prisons as allPrisons,
+    housesOfJustice as allHouses,
+    toDay,
 } from '../../../src'
 import { fmt, useLocale, useStrings } from '../i18n'
 
@@ -63,6 +65,11 @@ const t = useStrings({
 // Links into the pages of the language the reader is in
 const link = (path: string) => withBase(`${prefix.value}${path}`)
 
+// Today's records: the files also hold retired versions
+const today = toDay(new Date())
+const courts = findCourts({})
+const prisons = allPrisons.filter((p) => appliesOn(p, today))
+const housesOfJustice = allHouses.filter((h) => appliesOn(h, today))
 const splitCantons = cantons.filter((c) => c.municipalities.some((m) => m.partial)).length
 const wholeCourts = courts.filter((c) => c.kind === 'court').length
 </script>

@@ -133,9 +133,26 @@ van vóór 1 januari 2025 zit nog niet in de data
 ([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)): een opzoeking voor een
 eerdere dag gooit een `RangeError` in plaats van te antwoorden met de kaart van vandaag.
 
+## Ids zijn ondoorzichtig {#ids-are-opaque}
+
+Een id is een sleutel, geen formaat. `court-of-first-instance-luxembourg-marche-en-famenne` is
+niet terug te splitsen in type, plaats en afdeling, omdat het type, de plaats en het
+taalachtervoegsel allemaal hetzelfde koppelteken gebruiken. Parse ids niet: elk deel ervan is ook
+een veld (`type`, `court`, `canton`, `arrondissement`), en de velden zijn wat de schema's en de
+tests controleren.
+
 ## Stabiliteit {#stability}
 
 Ids zijn publieke API. Records toevoegen is een minor-versie, een waarde corrigeren een patch, en
 een id verwijderen of hernoemen een major-versie. Versie 0.3.0 vervangt de vroegere
 PascalCase-ids (`VredegerechtGent1`, `EastFlanders`) door dit schema vóór het package gebruikers
 had; het [changelog](./changelog) vermeldt de mapping.
+
+De belofte wordt gecontroleerd, niet alleen gedaan. `ids.lock.json` somt elk id op dat het package
+gepubliceerd heeft, per dataset; `pnpm generate` voegt er nieuwe ids aan toe en verwijdert er nooit
+een, en `test/ids.test.ts` faalt wanneer een vergrendeld id in de data ontbreekt. Zo kan een scraper
+die een hernoemde pagina leest, een opnieuw gegenereerde kantonlijst of een handmatige bewerking geen
+id ongemerkt laten vallen of hernoemen: de wekelijkse data-pull-request faalt, en iemand mapt de
+nieuwe naam in de parser op het bestaande id, of beëindigt het record met een `validTo`. Een id uit
+de lock halen is een bewuste daad, voor een major-versie, met het id en zijn vervanger in het
+changelog.

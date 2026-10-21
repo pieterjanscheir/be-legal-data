@@ -2,6 +2,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { ID_PATTERN, toId } from '../scripts/id'
+import { DATASETS, lockIds, readLock } from '../scripts/lock-ids'
 import {
     arrondissements,
     cantons,
@@ -9,8 +10,10 @@ import {
     getArrondissement,
     getCanton,
     getCourt,
+    housesOfJustice,
     judicialAreas,
     municipalities,
+    prisons,
 } from '../src'
 
 const names = (name: Record<string, string>) => Object.values(name)
@@ -24,9 +27,10 @@ const local = (arrondissement: string) =>
 describe('identifiers', () => {
     const datasets = { judicialAreas, arrondissements, cantons, municipalities, courts }
 
-    it.each(Object.entries(datasets))('are unique in %s', (_name, records) => {
-        const ids = records.map((r) => r.id)
-        expect(new Set(ids).size).toBe(ids.length)
+    // A record may have several versions (validFrom), never two with the same start
+    it.each(Object.entries(datasets))('are unique in %s, per version', (_name, records) => {
+        const keys = records.map((r) => `${r.id}|${(r as { validFrom?: string }).validFrom ?? ''}`)
+        expect(new Set(keys).size).toBe(keys.length)
     })
 
     it('are lowercase kebab-case, or a REFNIS code for municipalities', () => {
@@ -58,6 +62,36 @@ describe('identifiers', () => {
         expect(getArrondissement('oost-vlaanderen').name.nl).toBe('Oost-Vlaanderen')
         expect(getArrondissement('brabant-wallon').name.fr).toBe('Brabant wallon')
         expect(getCanton('eupen-sankt-vith-1').name.nl).toBe('Eupen-Sankt-Vith')
+    })
+
+    // Ids are public API: one that was published must stay, whatever the sources do. Removing
+    // one is a major version, a changelog entry, and then its removal from ids.lock.json by hand.
+    describe('once published, stay', () => {
+        const lock = readLock()
+        const current: Record<(typeof DATASETS)[number], readonly string[]> = {
+            'judicial-areas': judicialAreas.map((r) => r.id),
+            arrondissements: arrondissements.map((r) => r.id),
+            cantons: cantons.map((r) => r.id),
+            municipalities: municipalities.map((r) => r.id),
+            courts: courts.map((r) => r.id),
+            prisons: prisons.map((r) => r.id),
+            'houses-of-justice': housesOfJustice.map((r) => r.id),
+        }
+
+        it.each(DATASETS)('%s has every id it published before', (dataset) => {
+            const ids = new Set(current[dataset])
+            const missing = lock[dataset].filter((id) => !ids.has(id))
+            expect(
+                missing,
+                `${dataset}: these published ids are gone. If a source renamed a record, map it ` +
+                    'to its id in the parser; if the record really ended, keep it with a validTo. ' +
+                    'Only a major version removes an id: note it in CHANGELOG.md and ids.lock.json.',
+            ).toEqual([])
+        })
+
+        it('has every current id in the lock (run pnpm generate)', () => {
+            expect(lockIds(lock, current)).toEqual(lock)
+        })
     })
 
     it('of courts are the court type followed by the place', () => {

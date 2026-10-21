@@ -1,3 +1,9 @@
+<script setup>
+import { data as stats } from '../../.vitepress/stats.data'
+
+const kb = (bytes) => `${Math.round(bytes / 1024)} KB`
+</script>
+
 # Aan de slag {#getting-started}
 
 ## Installatie {#install}
@@ -25,14 +31,24 @@ Node 22.12, 22, 24 en 26.
 ### Importeer alleen wat je nodig hebt {#import-only-what-you-need}
 
 De data zit mee in de JavaScript gebundeld, dus wie importeert vanuit de root van het package laadt
-elke dataset (ongeveer 250 KB, vooral de wettekst van de kantons). Elke dataset heeft een eigen
-entry point:
+elke dataset. Elke dataset heeft een eigen entry point, en de hoven en rechtbanken en de kantons (met
+de wettekst van hun grondgebied) zijn veruit de grootste:
 
 ```ts
-import { getInterestRate } from 'be-legal-data/interest-rates' // 12 KB
-import { getCourt } from 'be-legal-data/courts' // 32 KB
+import { getInterestRate } from 'be-legal-data/interest-rates'
+import { getCourt } from 'be-legal-data/courts'
 import { getCanton } from 'be-legal-data/territory'
 ```
+
+<table v-if="stats.sizes">
+<thead><tr><th>Entry point</th><th style="text-align:right">Geladen JavaScript</th><th style="text-align:right">gzip</th></tr></thead>
+<tbody>
+<tr v-for="s in stats.sizes" :key="s.entry">
+<td><code>{{ s.entry }}</code></td><td style="text-align:right">{{ kb(s.raw) }}</td><td style="text-align:right">{{ kb(s.gzip) }}</td>
+</tr>
+</tbody>
+</table>
+<p v-else class="bld-muted">De groottes worden uit de build gemeten wanneer de site gebouwd wordt (eerst <code>pnpm build</code>).</p>
 
 ## Een eerste blik {#a-first-look}
 
@@ -79,6 +95,22 @@ Wanneer een stad over meerdere kantons is gesplitst (Antwerpen, Gent, Brussel, L
 meer dan één resultaat. Het straatadres beslist, en de `territory` van elk kanton bevat de
 wettelijke omschrijving van zijn deel. Probeer het uit op de
 [pagina Territorium en kantons](/nl/data/territory#find-the-canton-for-a-municipality).
+
+### Welke rechtbank voor een gemeente? {#which-court-for-a-municipality}
+
+Elke rechtbank behalve een vredegerecht vermeldt de kantons die ze bestrijkt (`cantons`), zoals
+de wet ze vastlegt. `findCompetentCourts` zoekt de kantons van een gemeente daarin op.
+
+```ts
+import { findCompetentCourts, getDivisions } from 'be-legal-data'
+
+findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde], niet Brussel
+findCompetentCourts('21004', 'labour-court') // de Nederlandstalige en de Franstalige rechtbank van Brussel
+
+// De rechtbank als geheel; welke afdeling de zaak behandelt zit nog niet in de data
+const [court] = findCompetentCourts('44021', 'enterprise-court')
+getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brugge, …
+```
 
 ### Verschuldigde interest op een dag {#interest-due-on-a-day}
 

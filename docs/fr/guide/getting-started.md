@@ -1,3 +1,9 @@
+<script setup>
+import { data as stats } from '../../.vitepress/stats.data'
+
+const kb = (bytes) => `${Math.round(bytes / 1024)} Ko`
+</script>
+
 # Premiers pas {#getting-started}
 
 ## Installation {#install}
@@ -25,14 +31,24 @@ le charge aussi. Il est testé sous Node 22.12, 22, 24 et 26.
 ### N'importez que ce dont vous avez besoin {#import-only-what-you-need}
 
 Les données sont intégrées au JavaScript : importer depuis la racine du package charge donc tous
-les jeux de données (environ 250 Ko, surtout le texte légal des cantons). Chaque jeu de données a
-son propre point d'entrée :
+les jeux de données. Chaque jeu de données a son propre point d'entrée, et les juridictions et les
+cantons (avec le texte légal de leurs territoires) sont de loin les plus volumineux :
 
 ```ts
-import { getInterestRate } from 'be-legal-data/interest-rates' // 12 Ko
-import { getCourt } from 'be-legal-data/courts' // 32 Ko
+import { getInterestRate } from 'be-legal-data/interest-rates'
+import { getCourt } from 'be-legal-data/courts'
 import { getCanton } from 'be-legal-data/territory'
 ```
+
+<table v-if="stats.sizes">
+<thead><tr><th>Point d'entrée</th><th style="text-align:right">JavaScript chargé</th><th style="text-align:right">gzip</th></tr></thead>
+<tbody>
+<tr v-for="s in stats.sizes" :key="s.entry">
+<td><code>{{ s.entry }}</code></td><td style="text-align:right">{{ kb(s.raw) }}</td><td style="text-align:right">{{ kb(s.gzip) }}</td>
+</tr>
+</tbody>
+</table>
+<p v-else class="bld-muted">Les tailles sont mesurées à partir du build lors de la construction du site (<code>pnpm build</code> d'abord).</p>
 
 ## Un premier aperçu {#a-first-look}
 
@@ -78,6 +94,22 @@ Quand une ville est scindée en plusieurs cantons (Anvers, Gand, Bruxelles, Liè
 plus d'un résultat. C'est l'adresse (la rue) qui tranche, et le `territory` de chaque canton
 contient la description légale de sa partie. Essayez-le sur la
 [page Territoire et cantons](/fr/data/territory#find-the-canton-for-a-municipality).
+
+### Quel tribunal pour une commune ? {#which-court-for-a-municipality}
+
+Tout tribunal autre qu'une justice de paix liste les cantons qu'il couvre (`cantons`), tels que la
+loi les fixe. `findCompetentCourts` y recherche les cantons d'une commune.
+
+```ts
+import { findCompetentCourts, getDivisions } from 'be-legal-data'
+
+findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde], pas Bruxelles
+findCompetentCourts('21004', 'labour-court') // le tribunal néerlandophone et le tribunal francophone de Bruxelles
+
+// Le tribunal dans son ensemble ; la division qui connaît de l'affaire n'est pas encore dans les données
+const [court] = findCompetentCourts('44021', 'enterprise-court')
+getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brugge, …
+```
 
 ### Intérêts dus à une date donnée {#interest-due-on-a-day}
 

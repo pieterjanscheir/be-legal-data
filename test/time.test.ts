@@ -74,4 +74,15 @@ describe('versionsById', () => {
         ])
         expect(map.get('b')).toEqual([{ id: 'b' }])
     })
+
+    it('puts a version without a start before one with, whichever comes first', () => {
+        const map = versionsById([
+            { id: 'c', validFrom: '2025-01-01' },
+            { id: 'c' },
+            { id: 'd' },
+            { id: 'd', validFrom: '2025-01-01' },
+        ])
+        expect(map.get('c')?.map((v) => v.validFrom)).toEqual([undefined, '2025-01-01'])
+        expect(map.get('d')?.map((v) => v.validFrom)).toEqual([undefined, '2025-01-01'])
+    })
 })

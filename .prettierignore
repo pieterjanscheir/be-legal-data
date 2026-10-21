@@ -12,3 +12,4 @@ data/prisons.json
 data/houses-of-justice.json
 schema/
 test/fixtures/
+ids.lock.json

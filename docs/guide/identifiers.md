@@ -122,9 +122,24 @@ before 1 January 2025 isn't in the data yet
 ([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)): a lookup for an earlier
 day throws a `RangeError` rather than answer with today's map.
 
+## Ids are opaque
+
+An id is a key, not a format. `court-of-first-instance-luxembourg-marche-en-famenne` cannot be
+split back into type, place and division, because the type, the place and the language suffix
+all use the same hyphen. Don't parse ids: every part of one is also a field (`type`, `court`,
+`canton`, `arrondissement`), and the fields are what the schemas and the tests check.
+
 ## Stability
 
 Ids are public API. Adding records is a minor version, correcting a value a patch, and removing
 or renaming an id a major version. Version 0.3.0 replaces the earlier PascalCase ids
 (`VredegerechtGent1`, `EastFlanders`) with this scheme before the package had any users; the
 [changelog](./changelog) lists the mapping.
+
+The promise is checked, not just made. `ids.lock.json` lists every id the package has
+published, per dataset; `pnpm generate` adds new ids to it and never removes one, and
+`test/ids.test.ts` fails when a locked id is missing from the data. So a scraper that reads a
+retitled page, a regenerated canton list or a hand edit can't drop or rename an id unnoticed:
+the weekly data pull request fails, and a person maps the new name to the existing id in the
+parser, or ends the record with a `validTo`. Taking an id out of the lock is a deliberate act,
+for a major version, with the id and its replacement in the changelog.
