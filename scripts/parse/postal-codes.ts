@@ -68,11 +68,15 @@ export function postalCodesFrom(
     municipalities: ReadonlySet<string>,
 ): { postalCodes: PostalCode[]; problems: string[] } {
     const sorted = [...tables].sort((a, b) => a.validFrom.localeCompare(b.validFrom))
-    // Only the tables that apply on a day of the coverage: the last one starting before it
-    // applies on its first day
+    for (const [i, table] of sorted.entries())
+        if (sorted[i + 1]?.validFrom === table.validFrom)
+            throw new Error(`Two postal code tables apply from ${table.validFrom}`)
+    // Only the tables that apply on a day of the coverage: the last one starting on or before
+    // its first day applies then. Without one, the data would have a gap at the start of the
+    // coverage that the lookups couldn't tell from an unknown code.
     const first = sorted.findLastIndex((t) => t.validFrom <= COVERAGE_FROM)
-    const applying = sorted.slice(Math.max(first, 0))
-    if (applying.length === 0) throw new Error('No postal code table applies to the coverage')
+    if (first === -1) throw new Error(`No postal code table applies on ${COVERAGE_FROM}`)
+    const applying = sorted.slice(first)
     const problems: string[] = []
     const versions = new Map<string, PostalCode[]>()
     const open = new Map<string, PostalCode>()

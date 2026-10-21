@@ -131,6 +131,7 @@ interface Address {
     street: string // tel que publié, avec numéro, boîte ou étage : 'Beverstraat 7B (eerste verdieping)'
     postalCode: string
     city: string
+    municipality?: MunicipalityId // par le code postal ; voir la page Codes postaux
 }
 
 interface Contact {

@@ -239,9 +239,22 @@ describe('postalCodesFrom', () => {
         ])
     })
 
-    it('needs a table that applies to the coverage', () => {
-        expect(() => postalCodesFrom([], known)).toThrow('No postal code table')
+    it('needs a table that applies on the first day of the coverage', () => {
+        expect(() => postalCodesFrom([], known)).toThrow('No postal code table applies on')
+        // Only a later table: the coverage would start with a gap
+        expect(() => postalCodesFrom([t('2027-01-01', [['9000', '44021']])], known)).toThrow(
+            `No postal code table applies on ${COVERAGE_FROM}`,
+        )
         expect(COVERAGE_FROM).toBe(postalCodesCoverage.from)
+    })
+
+    it('refuses two tables that apply from the same day', () => {
+        expect(() =>
+            postalCodesFrom(
+                [t('2025-01-01', [['9000', '44021']]), t('2025-01-01', [['9001', '44021']])],
+                known,
+            ),
+        ).toThrow('Two postal code tables apply from 2025-01-01')
     })
 })
 
