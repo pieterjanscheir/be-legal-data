@@ -1,0 +1,50 @@
+# Houses of justice
+
+File: `data/houses-of-justice.json`. The houses of justice (justitiehuizen, maisons de
+justice) of the Flemish and French Communities: 27 records.
+
+Houses of justice guide and supervise offenders on the courts' and prosecutors' behalf
+(probation, electronic monitoring, community service), welcome victims, and write social
+studies for the family courts. The Communities run them since 2015.
+
+## Why it's useful
+
+- **Family law.** A family court orders a social study from the house of justice of the
+  family's area; lawyers and parties need its contacts.
+- **Criminal law.** Probation conditions, alternative sentences and electronic monitoring are
+  followed up by the house of justice; so is the reception of victims.
+- **Linking.** The Flemish houses carry their OVO number, the identifier in the Flemish
+  organisation register ([Wegwijs](https://wegwijs.vlaanderen.be)), so the data joins with
+  other Flemish government data.
+
+## Source and updates
+
+|          |                                                                                                                                                                                                                                                     |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Source   | [vlaanderen.be: Justitiehuizen](https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen) (Flemish Community) and [maisonsdejustice.be](https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/) (French Community) |
+| Built by | `scripts/parse` from the weekly snapshots                                                                                                                                                                                                           |
+| Checked  | Every week, by the [sources workflow](/guide/data-quality#how-the-data-is-built)                                                                                                                                                                    |
+
+Not in the data yet: the German-speaking Community's house of justice in Eupen
+([#3](https://github.com/pieterjanscheir/be-legal-data/issues/3)). Brussels has both a Flemish
+(`justitiehuis-brussel`) and a French-speaking house (`maison-justice-bruxelles`).
+
+## Fields
+
+| Field       | Type                                    | Description                                                                                           |
+| ----------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `id`        | `HouseOfJusticeId`                      | From the name, without articles: `justitiehuis-gent`, `maison-justice-arlon`                          |
+| `community` | `'flemish'` \| `'french'` \| `'german'` | The Community that runs it                                                                            |
+| `name`      | `{ nl }` or `{ fr }`                    | In the Community's language                                                                           |
+| `ovo`       | string?                                 | OVO number in the Flemish organisation register, for the Flemish houses: `OVO001917`                  |
+| `address`   | `Address`                               |                                                                                                       |
+| `contacts`  | `Contact[]`                             | Phone, fax and e-mail; the victims' service of a French-speaking house has its own, labelled contacts |
+| `website`   | `{ nl }` or `{ fr }`                    | The page it's listed on                                                                               |
+| `sources`   | `{ url, retrieved }[]`                  | The pages the record was read from                                                                    |
+
+```ts
+import { getHouseOfJustice, getContact } from 'be-legal-data/houses-of-justice'
+
+getHouseOfJustice('justitiehuis-gent').ovo // 'OVO001917'
+getContact(getHouseOfJustice('maison-justice-arlon'), 'email', "service d'accueil des victimes")
+```

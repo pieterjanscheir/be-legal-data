@@ -5,7 +5,6 @@ import {
     getCantonsForMunicipality,
     getArrondissement,
     getJusticeOfThePeace,
-    formatCourtName,
     getContact,
 } from '../../../src'
 
@@ -107,13 +106,12 @@ function label(m: { name: { nl: string; fr: string } }) {
                         </td>
                         <td>{{ getArrondissement(c.arrondissement)?.name.nl }}</td>
                         <td>
-                            <template v-if="getJusticeOfThePeace(c.id)">
-                                {{ formatCourtName(getJusticeOfThePeace(c.id)!) }}<br />
-                                <span class="bld-muted">{{
-                                    getContact(getJusticeOfThePeace(c.id)!, 'email')
-                                }}</span>
+                            <template v-for="court in [getJusticeOfThePeace(c.id)]" :key="c.id">
+                                <template v-if="court">
+                                    {{ court.name.nl ?? court.name.fr ?? court.name.de }}<br />
+                                    <span class="bld-muted">{{ getContact(court, 'email') }}</span>
+                                </template>
                             </template>
-                            <span v-else class="bld-muted">not in courts.json yet</span>
                         </td>
                     </tr>
                 </tbody>

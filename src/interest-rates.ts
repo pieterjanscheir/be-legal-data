@@ -1,4 +1,5 @@
 import interestRatesData from '../data/interest-rates.json'
+import { toDay } from './time'
 
 /** 'legal' = wettelijke interest, 'commercial' = handelstransacties */
 export type InterestType = 'legal' | 'commercial'
@@ -39,28 +40,6 @@ export const interestRates: Readonly<Record<InterestType, InterestRateSeries>> =
 export interface InterestRateResult {
     rate: number
     period: { from: string; to: string }
-}
-
-/**
- * Local calendar day as YYYY-MM-DD. Strings must start with a valid YYYY-MM-DD day (a time
- * after it is ignored): periods are compared as strings, so '2013-1-15' would otherwise
- * silently fall in the wrong period.
- */
-function toDay(date: Date | string): string {
-    if (typeof date === 'string') {
-        const match = /^(\d{4})-(\d{2})-(\d{2})(?:$|T)/.exec(date)
-        const [y = NaN, m = NaN, d = NaN] = (match ?? []).slice(1).map(Number)
-        // Date.UTC rolls an impossible day over ('2013-02-30' → 2 March), which this catches
-        const check = new Date(Date.UTC(y, m - 1, d))
-        if (check.getUTCMonth() !== m - 1 || check.getUTCDate() !== d) {
-            throw new RangeError(`Expected a day as YYYY-MM-DD, got '${date}'`)
-        }
-        return date.slice(0, 10)
-    }
-    if (Number.isNaN(date.getTime())) throw new RangeError('Invalid Date')
-    const m = String(date.getMonth() + 1).padStart(2, '0')
-    const d = String(date.getDate()).padStart(2, '0')
-    return `${date.getFullYear()}-${m}-${d}`
 }
 
 /**

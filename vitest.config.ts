@@ -4,7 +4,7 @@ import { defineConfig } from 'vitest/config'
 // (pnpm test:freshness), not on every change.
 export default defineConfig({
     test: {
-        include: ['test/*.test.ts'],
+        include: ['test/*.test.ts', 'test/parse/*.test.ts'],
         typecheck: { enabled: true, include: ['test/*.test.ts'] },
         coverage: {
             provider: 'v8',

@@ -1,0 +1,221 @@
+{
+    "source": "courts",
+    "entries": [
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/nl/vredegerecht-gent-1",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/nl/vredegerecht-gent-1.html",
+            "sha256": "a3b896356288a8d6db62c4f35aff89feb99bb766d9500ecc4c737158fa096527",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/nl/vredegerecht-meise",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/nl/vredegerecht-meise.html",
+            "sha256": "5e1cfa97363e2cbd71654a8a3dda7bbb00e095b40ebaa3ac22bb3d590d196d12",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-meise",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-meise.html",
+            "sha256": "09567e59a8261f48f6c6e07d8f3b3e3137d7326035e5c9a1b5686e646fdb39d2",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/nl/ondernemingsrechtbank-gent",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/nl/ondernemingsrechtbank-gent.html",
+            "sha256": "57def2ac7076e30cc022542ab35e235b1d41d286bd80a15ae27f4016863e697a",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/nl/ondernemingsrechtbank-gent-afdeling-brugge",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/nl/ondernemingsrechtbank-gent-afdeling-brugge.html",
+            "sha256": "0135d3561d2d1b8b4e4e85cedafb93cdb8da9ce62f05e8d02000311f31c1630c",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/de/polizeigericht-eupen-abteilung-sankt-vith",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/de/polizeigericht-eupen-abteilung-sankt-vith.html",
+            "sha256": "2c64f327d6280abecc9ebfdbe74aece7b400e6e227db38f583b6173b7c8aab61",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/fr/tribunal-de-police-deupen-division-saint-vith",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/fr/tribunal-de-police-deupen-division-saint-vith.html",
+            "sha256": "3d143852d0587bc1ce48da5b276fbb1c69bc88b7728c8d230997da7a516e8301",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-philippeville-siege-couvin",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-philippeville-siege-couvin.html",
+            "sha256": "7f6c73cc3b95e684a23814e87e15779fe40083f64c99d5c4eee5d24fd6a68d85",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-tongres-fourons",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-tongres-fourons.html",
+            "sha256": "aa86a7a8b5f6fa9e8d3e90547a064bdbb2af72e3f6f6554d534ed012d92070b0",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/nl/vredegerecht-tongeren-borgloon",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/nl/vredegerecht-tongeren-borgloon.html",
+            "sha256": "9fb649ae8f4311ad8dcc02b28f7301739b37f3987d6371cd24a6c18e812a3d3a",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/fr/cour-dappel-de-liege",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/fr/cour-dappel-de-liege.html",
+            "sha256": "f6b6a86fe5c763820dfcec6ae6ecb4b75bd898a25cb95bbce3cf05ad2b4985d9",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/nl/vredegerechten-antwerpen",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/nl/vredegerechten-antwerpen.html",
+            "sha256": "70a1b41480c68979bb4db877fdeaf434bdc9da91387ae4739b2d1e5e5e7bc0e2",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/nl/vredegerecht-gent-1/contact",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/nl/vredegerecht-gent-1/contact.html",
+            "sha256": "3e00266a28253bb473554f28b507e6c72b2e4dd768b4a5de816be37eab8a6149",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/nl/vredegerecht-meise/contact",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/nl/vredegerecht-meise/contact.html",
+            "sha256": "e4e1fe12d42bdcd54073c7acf6bdf0686abdfc57eabb77f4befb345f6313f7d7",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-meise/contact",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-meise/contact.html",
+            "sha256": "2aec4b43592cc1c0f7b4c80a7803c1e501c05c1f011b185ac272682e86b5adc2",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/nl/ondernemingsrechtbank-gent/contact",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/nl/ondernemingsrechtbank-gent/contact.html",
+            "sha256": "8e57cfb087a31a9279814c7d8404854bb18cdc3ccc8d26cb6686a42fd71ae5b5",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/nl/ondernemingsrechtbank-gent-afdeling-brugge/contact",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/nl/ondernemingsrechtbank-gent-afdeling-brugge/contact.html",
+            "sha256": "e1ce45696ff9a6bc3ce8622e9f221430f8710f6198e07e0f4ad86992005c3682",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/de/polizeigericht-eupen-abteilung-sankt-vith/contact",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/de/polizeigericht-eupen-abteilung-sankt-vith/contact.html",
+            "sha256": "8321ef3502c0a3381084313784314a348d807a3120a8a0f2b9ceee913c3c9d8f",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/fr/tribunal-de-police-deupen-division-saint-vith/contact",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/fr/tribunal-de-police-deupen-division-saint-vith/contact.html",
+            "sha256": "e4680fec4f6b901d2b5d9567211b6a6983713cb2e23c01ecc3904bb91513b561",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-philippeville-siege-couvin/contact",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-philippeville-siege-couvin/contact.html",
+            "sha256": "422119a582f7b2c0c898d86e697eadb93fe57d20a210dc9806cc5a89cae3364f",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-tongres-fourons/contact",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-tongres-fourons/contact.html",
+            "sha256": "cfc258fe1b8ae8e9eccb37521d96d1bf4de62deeee75f492323323ba1aa4c0a4",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/nl/vredegerecht-tongeren-borgloon/contact",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/nl/vredegerecht-tongeren-borgloon/contact.html",
+            "sha256": "8dfb12419b934cc33cce8ee328a5c57224e8717e53aa3f301739aeb55431c458",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/fr/cour-dappel-de-liege/contact",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/fr/cour-dappel-de-liege/contact.html",
+            "sha256": "2c95297a69edc35b1639f72b3d43dc9cd23eaee39d818ffbd5333a9b4a1fa235",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://www.tribunaux-rechtbanken.be/nl/vredegerechten-antwerpen/contact",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "www.tribunaux-rechtbanken.be/nl/vredegerechten-antwerpen/contact.html",
+            "sha256": "d56cf5e20023db015bfd3076178700d9b63254e1e5fc99f049eb42bef13bacfe",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        }
+    ]
+}

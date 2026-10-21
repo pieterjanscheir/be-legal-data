@@ -1,0 +1,43 @@
+{
+    "source": "prisons",
+    "entries": [
+        {
+            "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen.html",
+            "sha256": "0e8f89c47eb0cefd0ef098801b20b59ca68b913dfeec050623bcfad50020d393",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_gent",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_gent.html",
+            "sha256": "6d50baded72345a0b20e1fff8341f6841eb2ae15a201ff5cd8c26fad9e6894f9",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_gent",
+            "finalUrl": "https://justice.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_gent",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_gent.html",
+            "sha256": "62d6ac7bdd8448377783e03e691b41dff4aadbb576953b4a956bd17e6d04a80d",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        },
+        {
+            "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_gent",
+            "finalUrl": "https://justiz.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_gent",
+            "status": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "file": "justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_gent.html",
+            "sha256": "0c02ccea33ba58b575ac25519e851b113bc2d8dd0e82c20f01a464f99a6d9050",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        }
+    ]
+}

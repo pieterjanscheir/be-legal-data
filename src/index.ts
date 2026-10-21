@@ -1,5 +1,8 @@
 export * from './common'
+export { appliesOn, toDay, type OnDay, type Validity } from './time'
 export * from './territory'
 export * from './courts'
+export * from './prisons'
+export * from './houses-of-justice'
 export * from './interest-rates'
 export * from './competence'

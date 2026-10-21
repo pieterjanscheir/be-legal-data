@@ -9,6 +9,39 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ### Changed
 
+**All courts, from the official source (breaking).** `data/courts.json` is now built every
+week from the courts' portal, tribunaux-rechtbanken.be, instead of by hand: 347 courts,
+divisions and seats instead of 46, and every canton has its justice of the peace.
+
+- `Court` is one interface for every type of court: `type` adds `police-court`,
+  `court-of-first-instance`, `labour-court`, `court-of-appeal`, `labour-court-of-appeal` and
+  `court-of-assize`; `kind` says whether a record is a court, a division or a seat, and
+  `court` links a division to its court. `JusticeOfThePeace` and `EnterpriseCourtDivision` are
+  gone.
+- `name` is the name as the court publishes it, in each language it has a page in
+  (`Vredegerecht Gent 1`), instead of a place name. `seat` and `number` are gone.
+  `formatCourtName` is removed: it built names, and the French ones were wrong.
+- `arrondissement` is optional (courts of appeal cover a judicial area); every court has a
+  `judicialArea`.
+- Contacts are `phone`, `fax`, `email` or `bank-account`, with the registry they belong to as
+  `label` and the text published with them as `note`. `ContactLabel` and `bankAccount` are
+  gone: a court has a bank account per registry, as a contact.
+- `address` is optional (a court whose divisions each have an address has none), keeps the
+  street line as published, and has no `houseNumber`.
+- New fields: `ecli` (the court's ECLI codes), `openingHoursText` (the hours as published, per
+  language), `website` per language, and `sources` on every record.
+- `getContact` takes any record with contacts and a free-text label.
+- Most phone numbers changed: the courts moved to central `02 682` numbers. 21 bank accounts
+  that were in the hand-made data aren't on the courts' pages any more and are gone.
+
+**Time.** Territory records can carry a validity period (`validFrom`, `validTo`), the territory
+data describes 1 January 2025 onwards (`territoryCoverage`), and the territory lookups and
+`findJusticesOfThePeace` take an optional day: `getCantonsForMunicipality('44021', { on:
+'2025-09-15' })`. A day before the coverage throws a `RangeError`.
+
+**Legal basis.** A canton's `legalBasis` is `{ url, provision }`: the annex's ELI link (numac
+1967101058, not the Justel file number 1967101007) and the section.
+
 **New identifiers (breaking).** Every id now follows one rule: an official code where one exists, otherwise lowercase
 kebab-case from the local-language name. See
 [identifiers](https://pieterjanscheir.github.io/be-legal-data/guide/identifiers). The package
@@ -24,9 +57,8 @@ had no users yet, so this was done before 1.0 rather than carried forever.
   `enterprise-court-gent-brugge`.
 - Municipalities: the REFNIS code moves from `refnis` to `id`; a canton's
   `municipalities[].refnis` is now `municipalities[].municipality`.
-- A justice of the peace links to its canton through a new `canton` field (the canton id). Its
-  canton number, which was in `canton`, is now `number`. `getJusticeOfThePeace` follows the link
-  instead of building an id.
+- A justice of the peace links to its canton through a new `canton` field (the canton id).
+  `getJusticeOfThePeace` follows the link instead of building an id.
 - A canton's `source` (the article of the annex) is now `legalBasis`, so it isn't confused with
   the `sources` (URLs) on other records.
 
@@ -36,8 +68,7 @@ npm.
 
 **Canonical data (breaking).** Court phone numbers are E.164 (`+3253820701`), IBANs are in
 electronic format (`BE73679200844560`), e-mail addresses lowercase, and opening hours in
-OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`). Contact labels are a
-closed `ContactLabel` type.
+OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
 
 **Other changes.**
 
@@ -50,6 +81,15 @@ closed `ContactLabel` type.
 - `package.json` declares `"sideEffects": false`, so bundlers can drop unused datasets.
 
 ### Added
+
+- Prisons: the 39 prisons and detention houses, in `data/prisons.json` and
+  `be-legal-data/prisons`.
+- Houses of justice: the 14 Flemish (with OVO number) and 13 French-speaking houses, in
+  `data/houses-of-justice.json` and `be-legal-data/houses-of-justice`.
+- `getDivisions(courtId)`; `findCourts` filters by `kind` and `judicialArea` too.
+- A weekly workflow that fetches the official sources, keeps snapshots on the `sources` branch,
+  rebuilds the data and opens a pull request when it changed.
+- CSV tables of all data, attached with the JSON and schemas to every GitHub release.
 
 - `formatPhoneNumber` and `formatIban` for display, `getArrondissementForMunicipality`, and
   `findJusticesOfThePeace(municipalityId)`, which answers "which justice of the peace?" for a
@@ -68,9 +108,9 @@ closed `ContactLabel` type.
 - JSON Schemas for every data file (`schema/`, also published on the documentation site).
 - `datapackage.json`: a Frictionless Data Package descriptor with sources, licences and review
   dates for every dataset.
-- Optional `website` and `sources` fields on courts, and a shared `SourceRef` type.
+- A shared `SourceRef` type.
 - Weekly freshness check that opens an issue when a rate is missing, a dataset is overdue for
-  review, a source URL is dead, or the Judicial Code or Statbel data changed.
+  review or a source URL is dead.
 
 ### Fixed
 

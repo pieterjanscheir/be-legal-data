@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import { withBase } from 'vitepress'
-import { judicialAreas, arrondissements, cantons, municipalities, courts } from '../../../src'
+import {
+    judicialAreas,
+    arrondissements,
+    cantons,
+    municipalities,
+    courts,
+    prisons,
+    housesOfJustice,
+} from '../../../src'
 
 const splitCantons = cantons.filter((c) => c.municipalities.some((m) => m.partial)).length
 </script>
@@ -39,8 +47,21 @@ const splitCantons = cantons.filter((c) => c.municipalities.some((m) => m.partia
             </tr>
             <tr>
                 <td>Courts</td>
-                <td>{{ courts.length }}</td>
+                <td>
+                    {{ courts.length }} ({{ courts.filter((c) => c.kind === 'court').length }}
+                    courts, the rest divisions and seats)
+                </td>
                 <td><a :href="withBase('/data/courts')">Courts</a></td>
+            </tr>
+            <tr>
+                <td>Prisons</td>
+                <td>{{ prisons.length }}</td>
+                <td><a :href="withBase('/data/prisons')">Prisons</a></td>
+            </tr>
+            <tr>
+                <td>Houses of justice</td>
+                <td>{{ housesOfJustice.length }}</td>
+                <td><a :href="withBase('/data/houses-of-justice')">Houses of justice</a></td>
             </tr>
         </tbody>
     </table>

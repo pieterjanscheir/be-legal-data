@@ -1,0 +1,1783 @@
+[
+  {
+    "id": "centrale-gevangenis-leuven",
+    "kind": "prison",
+    "name": {
+      "nl": "Centrale gevangenis van Leuven",
+      "fr": "Prison centrale de Louvain",
+      "de": "Zentralgefängnis Löwen"
+    },
+    "address": {
+      "street": "Geldenaaksevest 64",
+      "postalCode": "3000",
+      "city": "Leuven"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3216310350"
+      },
+      {
+        "type": "email",
+        "value": "leuvencentraal.griffie.epi@just.fgov.be"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE73679200553560"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_leuven",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_leuven",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_loewen"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_leuven",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_leuven",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_loewen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "centre-detention-saint-hubert",
+    "kind": "prison",
+    "name": {
+      "nl": "Detentiecentrum van Saint-Hubert",
+      "fr": "Centre de détention de Saint-Hubert",
+      "de": "Haftzentrum Saint-Hubert"
+    },
+    "address": {
+      "street": "Thier del Borne",
+      "postalCode": "6870",
+      "city": "Saint-Hubert"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3261280400"
+      },
+      {
+        "type": "fax",
+        "value": "+3261280405"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE06679200559422"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_sthubert",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_sthubert",
+      "de": "https://justitie.belgium.be/de/themen/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengniss_sthubert"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_sthubert",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_sthubert",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengniss_sthubert",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "centre-penitentiaire-ecole-marneffe",
+    "kind": "prison",
+    "name": {
+      "nl": "Penitentiair schoolcentrum van Marneffe",
+      "fr": "Centre pénitentiaire école de Marneffe",
+      "de": "Strafanstalt für den offenen Vollzug Marneffe"
+    },
+    "address": {
+      "street": "Rue du Sart 11",
+      "postalCode": "4210",
+      "city": "Marneffe"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3285710200"
+      },
+      {
+        "type": "fax",
+        "value": "+3285710224"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE33679200552146"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_marneffe",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_marneffe",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_marneffe"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_marneffe",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_marneffe",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_marneffe",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "detentiehuis-kortrijk",
+    "kind": "detention-house",
+    "name": {
+      "nl": "Detentiehuis Kortrijk",
+      "fr": "Maison de détention de Courtrai",
+      "de": "Haftanstalt Kortrijk"
+    },
+    "address": {
+      "street": "Sint-Denijseweg 1",
+      "postalCode": "8500",
+      "city": "Kortrijk"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3256260400"
+      },
+      {
+        "type": "email",
+        "value": "info.detentiehuis.kortrijk@just.fgov.be"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/detentiehuizen/adres_detentiehuis_kortrijk",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/maisons_de_d%C3%A9tention/adres_maison_de_d%C3%A9tention_courtrai",
+      "de": "https://justitie.belgium.be/de/themen/gefaengnisse/belgische_gefaengnisse/haftanstalten/haftanstalt_kortrijk"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/detentiehuizen/adres_detentiehuis_kortrijk",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/maisons_de_d%C3%A9tention/adres_maison_de_d%C3%A9tention_courtrai",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen/gefaengnisse/belgische_gefaengnisse/haftanstalten/haftanstalt_kortrijk",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "detentiehuis-olen",
+    "kind": "detention-house",
+    "name": {
+      "nl": "Detentiehuis Olen",
+      "fr": "Maison de détention d'Olen",
+      "de": "Haftanstalt Olen"
+    },
+    "address": {
+      "street": "Sterrenwijzer 7/11 Olen",
+      "postalCode": "2250",
+      "city": "Olen"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3214431875"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE31679200417255"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/detentiehuizen/adres_detentiehuis_olen",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/maisons_de_detention/adres_maison_de_detention_olen",
+      "de": "https://justitie.belgium.be/de/themen/gefaengnisse/belgische_gefaengnisse/haftanstalten/haftanstalt_olen"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/detentiehuizen/adres_detentiehuis_olen",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/maisons_de_detention/adres_maison_de_detention_olen",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen/gefaengnisse/belgische_gefaengnisse/haftanstalten/haftanstalt_olen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "detentiehuis-vorst",
+    "kind": "detention-house",
+    "name": {
+      "nl": "Detentiehuis Vorst",
+      "fr": "Maison de détention de Forest",
+      "de": "Haftanstalt Forest"
+    },
+    "address": {
+      "street": "Berkendaelstraat 42",
+      "postalCode": "1190",
+      "city": "Vorst"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3223493211"
+      },
+      {
+        "type": "email",
+        "value": "forestmaisondedetention.adm.epi@just.fgov.be"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE42679200417154"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/detentiehuizen/adres_detentiehuis_vorst",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/maisons_de_d%C3%A9tention/adres_maison_de_d%C3%A9tention_forest",
+      "de": "https://justitie.belgium.be/de/themen/gefaengnisse/belgische_gefaengnisse/haftanstalt/haftanstalt_forest"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/detentiehuizen/adres_detentiehuis_vorst",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/maisons_de_d%C3%A9tention/adres_maison_de_d%C3%A9tention_forest",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen/gefaengnisse/belgische_gefaengnisse/haftanstalt/haftanstalt_forest",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "etablissement-defense-sociale-paifve",
+    "kind": "prison",
+    "name": {
+      "nl": "Inrichting tot bescherming van de maatschappij van Paifve",
+      "fr": "Etablissement de défense sociale de Paifve",
+      "de": "Maßregelvollzugs-Einrichtung Paifve"
+    },
+    "address": {
+      "street": "Route de Glons",
+      "postalCode": "4452",
+      "city": "Paifve"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3242238500"
+      },
+      {
+        "type": "fax",
+        "value": "+3242893623"
+      },
+      {
+        "type": "email",
+        "value": "grf.paifve@just.fgov.be"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE71679200554469"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_paifve",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_paifve",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_paifve"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_paifve",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_paifve",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_paifve",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "gevangenis-antwerpen",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Antwerpen",
+      "fr": "Prison d'Anvers",
+      "de": "Gefängnis Antwerpen"
+    },
+    "address": {
+      "street": "Begijnenstraat 42",
+      "postalCode": "2000",
+      "city": "Antwerpen"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3232061100"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_antwerpen_0",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_antwerpen_0",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_antwerpen_0"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_antwerpen_0",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_antwerpen_0",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_antwerpen_0",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "gevangenis-beveren",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Beveren",
+      "fr": "Prison de Beveren",
+      "de": "Gefängnis Beveren"
+    },
+    "address": {
+      "street": "Schaarbeekstraat 2",
+      "postalCode": "9120",
+      "city": "Beveren"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3232534411"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE55679200416144"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_beveren",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_beveren",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_beveren"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_beveren",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_beveren",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_beveren",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "gevangenis-dendermonde",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Dendermonde",
+      "fr": "Prison de Termonde",
+      "de": "Gefängnis Dendermonde"
+    },
+    "address": {
+      "street": "Tanneweg 1",
+      "postalCode": "9200",
+      "city": "Dendermonde"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3252253400"
+      },
+      {
+        "type": "email",
+        "value": "nieuwdendermonde.info.epi@just.fgov.be"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE86679200416750"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_dendermonde",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_dendermonde",
+      "de": "https://justitie.belgium.be/de/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_dendermonde"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_dendermonde",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_dendermonde",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_dendermonde",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "gevangenis-gent",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Gent",
+      "fr": "Prison de Gand",
+      "de": "Gefängnis Gent"
+    },
+    "address": {
+      "street": "Nieuwe Wandeling 89",
+      "postalCode": "9000",
+      "city": "Gent"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3292346500"
+      },
+      {
+        "type": "fax",
+        "value": "+3292346589"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE42679200552954"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_gent",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_gent",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_gent"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_gent",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_gent",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_gent",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "gevangenis-haren",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Haren",
+      "fr": "Prison de Haren",
+      "de": "Gefängnis Haren"
+    },
+    "address": {
+      "street": "Witloofstraat 135",
+      "postalCode": "1130",
+      "city": "Haren"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3222086600"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE75679200416851"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_haren",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_haren",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_haren"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_haren",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_haren",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_haren",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "gevangenis-hasselt",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Hasselt",
+      "fr": "Prison de Hasselt",
+      "de": "Gefängnis Hasselt"
+    },
+    "address": {
+      "street": "Zwarte-Brugstraat 4",
+      "postalCode": "3500",
+      "city": "Hasselt"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3211278000"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_hasselt",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_hasselt",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_hasselt"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_hasselt",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_hasselt",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_hasselt",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "gevangenis-ieper",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Ieper",
+      "fr": "Prison d'Ypres",
+      "de": "Gefängnis Ypern"
+    },
+    "address": {
+      "street": "Elverdingestraat 72",
+      "postalCode": "8900",
+      "city": "Ieper"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3257220500"
+      },
+      {
+        "type": "email",
+        "value": "info.ieper.gevangenis@just.fgov.be"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE09679200553257"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_ieper",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_ieper",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_ieper"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_ieper",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_ieper",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_ieper",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "gevangenis-mechelen",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Mechelen",
+      "fr": "Prison de Malines",
+      "de": "Gefängnis Mecheln"
+    },
+    "address": {
+      "street": "Liersesteenweg 2",
+      "postalCode": "2800",
+      "city": "Mechelen"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3215446900"
+      },
+      {
+        "type": "fax",
+        "value": "+3215446902"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE64679200552752"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_mechelen",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_mechelen",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_mecheln"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_mechelen",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_mechelen",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_mecheln",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "gevangenis-merksplas",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Merksplas",
+      "fr": "Prison de Merksplas",
+      "de": "Gefängnis Merksplas"
+    },
+    "address": {
+      "street": "Steenweg op Wortel 1",
+      "postalCode": "2330",
+      "city": "Merksplas"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3214473311"
+      },
+      {
+        "type": "fax",
+        "value": "+3214473383"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE18679200554065"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_merksplas",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_merksplas",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_merksplas"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_merksplas",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_merksplas",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_merksplas",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "gevangenis-oudenaarde",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Oudenaarde",
+      "fr": "Prison d'Audenarde",
+      "de": "Gefängnis Oudenaarde"
+    },
+    "address": {
+      "street": "Bourgondiëstraat 6",
+      "postalCode": "9700",
+      "city": "Oudenaarde"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3255338686"
+      },
+      {
+        "type": "fax",
+        "value": "+3255338687"
+      },
+      {
+        "type": "email",
+        "value": "info.oudenaarde@just.fgov.be"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE86679200552550"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_oudenaarde",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_oudenaarde",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_oudenaarde"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_oudenaarde",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_oudenaarde",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_oudenaarde",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "gevangenis-sint-gillis",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Sint-Gillis",
+      "fr": "Prison de Saint-Gilles",
+      "de": "Gefängnis Saint-Gilles"
+    },
+    "address": {
+      "street": "Ducpétiauxlaan 106",
+      "postalCode": "1060",
+      "city": "Sint-Gillis"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3225435831"
+      },
+      {
+        "type": "phone",
+        "value": "+3225435826"
+      },
+      {
+        "type": "fax",
+        "value": "+3225435658"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE66679200551843"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_stgillis",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_stgillis",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_stgilles"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_stgillis",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_stgillis",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_stgilles",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "gevangenis-tongeren",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Tongeren",
+      "fr": "Prison de Tongres",
+      "de": "Gefängnis Tongeren"
+    },
+    "address": {
+      "street": "Wijngaardstraat 65",
+      "postalCode": "3700",
+      "city": "Tongeren"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3212259111"
+      },
+      {
+        "type": "email",
+        "value": "griffie.tongeren@just.fgov.be"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_tongeren",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_tongeren",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_tongeren"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_tongeren",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_tongeren",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_tongeren",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "gevangenis-turnhout",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Turnhout",
+      "fr": "Prison de Turnhout",
+      "de": "Gefängnis Turnhout"
+    },
+    "address": {
+      "street": "Wezenstraat 1",
+      "postalCode": "2300",
+      "city": "Turnhout"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3214408930"
+      },
+      {
+        "type": "fax",
+        "value": "+3214420350"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE53679200552853"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_turnhout",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_turnhout",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_turnhout"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_turnhout",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_turnhout",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_turnhout",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "gevangenis-wortel",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Wortel",
+      "fr": "Prison de Wortel",
+      "de": "Gefängnis Wortel"
+    },
+    "address": {
+      "street": "Kolonie 17",
+      "postalCode": "2323",
+      "city": "Wortel"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3233404511"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE93679200554267"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_wortel",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_wortel",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_wortel"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_wortel",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_wortel",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_wortel",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "hulpgevangenis-dendermonde",
+    "kind": "prison",
+    "name": {
+      "nl": "Hulpgevangenis van Dendermonde",
+      "fr": "Prison de Termonde secondaire",
+      "de": "Nebengefängnis Dendermonde"
+    },
+    "address": {
+      "street": "St.-Jacobstraat 26",
+      "postalCode": "9200",
+      "city": "Dendermonde"
+    },
+    "contacts": [
+      {
+        "type": "bank-account",
+        "value": "BE31679200553055"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_dendemonde_hulp",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_dendemonde_hulp",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_dendemonde_hulp"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_dendemonde_hulp",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_dendemonde_hulp",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_dendemonde_hulp",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "hulpgevangenis-leuven",
+    "kind": "prison",
+    "name": {
+      "nl": "Hulpgevangenis van Leuven",
+      "fr": "Prison de Louvain secondaire",
+      "de": "Nebenefängnis Löwen"
+    },
+    "address": {
+      "street": "Maria Theresiastraat 74",
+      "postalCode": "3000",
+      "city": "Leuven"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3216284711"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE62679200553661"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_leuvenhulp",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_antwerpen",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_antwerpen"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_leuvenhulp",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_antwerpen",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_antwerpen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "penitentiair-complex-brugge",
+    "kind": "prison",
+    "name": {
+      "nl": "Penitentiair complex van Brugge",
+      "fr": "Complexe pénitentiaire de Bruges",
+      "de": "Gefängniskomplex Brügge"
+    },
+    "address": {
+      "street": "Legeweg 200",
+      "postalCode": "8200",
+      "city": "St.-Andries-Brugge"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3250457111"
+      },
+      {
+        "type": "fax",
+        "value": "+3250457189"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE20679200553156"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_brugge",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_brugge",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_bruegge"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_brugge",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_brugge",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_bruegge",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "penitentiair-landbouwcentrum-ruiselede",
+    "kind": "prison",
+    "name": {
+      "nl": "Penitentiair landbouwcentrum van Ruiselede",
+      "fr": "Centre pénitentiaire agricole de Ruiselede",
+      "de": "Landwirtschaftliche Strafanstalt Ruiselede"
+    },
+    "address": {
+      "street": "Vagevuurstraat 8",
+      "postalCode": "8755",
+      "city": "Wingene"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3251650360"
+      },
+      {
+        "type": "fax",
+        "value": "+3251650380"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_ruiselede",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_ruiselede",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_ruiselede"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_ruiselede",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_ruiselede",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_ruiselede",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "penitentiair-schoolcentrum-hoogstraten",
+    "kind": "prison",
+    "name": {
+      "nl": "Penitentiair schoolcentrum van Hoogstraten",
+      "fr": "Centre pénitentiaire école de Hoogstraten",
+      "de": "Strafanstalt für den offenen Vollzug Hoogstraten"
+    },
+    "address": {
+      "street": "Gelmelstraat 131",
+      "postalCode": "2320",
+      "city": "Hoogstraten"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3233404800"
+      },
+      {
+        "type": "fax",
+        "value": "+3233404880"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE51679200553762"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_hoogstraten",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_hoogstraten",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_hoogstraten"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_hoogstraten",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_hoogstraten",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_hoogstraten",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "prison-andenne",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Andenne",
+      "fr": "Prison d'Andenne",
+      "de": "Gefängnis Andenne"
+    },
+    "address": {
+      "street": "Rue du Géron 2",
+      "postalCode": "5300",
+      "city": "Andenne"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3285245600"
+      },
+      {
+        "type": "email",
+        "value": "andenne.greffe.epi@just.fgov.be"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE11679200843348"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_andenne",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_andenne",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_andenne"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_andenne",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_andenne",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_andenne",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "prison-arlon",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Aarlen",
+      "fr": "Prison d'Arlon",
+      "de": "Gefängnis Arlon"
+    },
+    "address": {
+      "street": "Rue Léon Castilhon 29",
+      "postalCode": "6700",
+      "city": "Arlon"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3263242811"
+      },
+      {
+        "type": "fax",
+        "value": "+3263242807"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE68679200550934"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_aarlen",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_aarlen",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_aarlen"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_aarlen",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_aarlen",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_aarlen",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "prison-dinant",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Dinant",
+      "fr": "Prison de Dinant",
+      "de": "Gefängnis Dinant"
+    },
+    "address": {
+      "street": "Place d'Armes 1",
+      "postalCode": "5500",
+      "city": "Dinant"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3282213780"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE46679200551136"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_dinant",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_dinant",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_dinant"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_dinant",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_dinant",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_dinant",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "prison-huy",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Hoei",
+      "fr": "Prison de Huy",
+      "de": "Gefängnis Huy"
+    },
+    "address": {
+      "street": "Rue de la Résistance 4",
+      "postalCode": "4500",
+      "city": "Huy"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3285278100"
+      },
+      {
+        "type": "fax",
+        "value": "+3285236477"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE24679200551338"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_hoei",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_hoei",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_huy"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_hoei",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_hoei",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_huy",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "prison-ittre",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Itter",
+      "fr": "Prison d'Ittre",
+      "de": "Gefängnis Ittre"
+    },
+    "address": {
+      "street": "Rue de Clabecq 100",
+      "postalCode": "1460",
+      "city": "Ittre"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3223670000"
+      },
+      {
+        "type": "fax",
+        "value": "+3223670065"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE79679200415033"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_ittre",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_ittre",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_ittre"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_ittre",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_ittre",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_ittre",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "prison-jamioulx",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Jamioulx",
+      "fr": "Prison de Jamioulx",
+      "de": "Gefängnis Jamioulx"
+    },
+    "address": {
+      "street": "Rue Fr. Vandamme 172",
+      "postalCode": "6120",
+      "city": "Jamioulx"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3271229470"
+      },
+      {
+        "type": "fax",
+        "value": "+3271215778"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE57679200551035"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_jamioulx",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_jamioulx",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_jamioulx"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_jamioulx",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_jamioulx",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_jamioulx",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "prison-lantin",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Lantin",
+      "fr": "Prison de Lantin",
+      "de": "Gefängnis Lantin"
+    },
+    "address": {
+      "street": "Rue des Aubépines 2",
+      "postalCode": "4450",
+      "city": "Lantin"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3242396500"
+      },
+      {
+        "type": "fax",
+        "value": "+3242396511"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE13679200551439"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_lantin",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_lantin",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_lantin"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_lantin",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_lantin",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_lantin",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "prison-leuze-en-hainaut",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Leuze-en-Hainaut",
+      "fr": "Prison de Leuze-en-Hainaut",
+      "de": "Gefängnis Leuze-en-Hainaut"
+    },
+    "address": {
+      "street": "Avenue de l'Europe 1A",
+      "postalCode": "7900",
+      "city": "Leuze-en-Hainaut"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3269849111"
+      },
+      {
+        "type": "fax",
+        "value": "+3269849288"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE44679200416245"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_leuze",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_leuze",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_leuze"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_leuze",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_leuze",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_leuze",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "prison-marche-en-famenne",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Marche-en-Famenne",
+      "fr": "Prison de Marche-en-Famenne",
+      "de": "Gefängnis Marche-en-Famenne"
+    },
+    "address": {
+      "street": "Chaussée de Liège 178",
+      "postalCode": "6900",
+      "city": "Marche-en-Famenne"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3284326100"
+      },
+      {
+        "type": "fax",
+        "value": "+3284326213"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE66679200416043"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_marche-en-famenne",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_marche-en-famenne",
+      "de": "https://justitie.belgium.be/de/themes_and_dossiers/gefaengnisse/belgische_gefaengnisse/adresse_gefaengnis_marche-en-famenne"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_marche-en-famenne",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_marche-en-famenne",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themes_and_dossiers/gefaengnisse/belgische_gefaengnisse/adresse_gefaengnis_marche-en-famenne",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "prison-mons",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Bergen",
+      "fr": "Prison de Mons",
+      "de": "Gefängnis Mons"
+    },
+    "address": {
+      "street": "Boulevard W. Churchill 24",
+      "postalCode": "7000",
+      "city": "Mons"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3265402800"
+      },
+      {
+        "type": "fax",
+        "value": "+3265346108"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE02679200551540"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_mons",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_mons",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_mons"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_mons",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_mons",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_mons",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "prison-namur",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Namen",
+      "fr": "Prison de Namur",
+      "de": "Gefängnis Namur"
+    },
+    "address": {
+      "street": "Place Abbé Joseph André 7",
+      "postalCode": "5000",
+      "city": "Namur"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3281715460"
+      },
+      {
+        "type": "fax",
+        "value": "+3281714320"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE88679200551641"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_namen",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_namen",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_namur"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_namen",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_namen",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_namur",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "prison-nivelles",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Nijvel",
+      "fr": "Prison de Nivelles",
+      "de": "Gefängnis Nivelles"
+    },
+    "address": {
+      "street": "Avenue de Burlet 4",
+      "postalCode": "1400",
+      "city": "Nivelles"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3267895100"
+      },
+      {
+        "type": "fax",
+        "value": "+3267895101"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE77679200551742"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_nijvel",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_nijvel",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_nivelles"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_nijvel",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_nijvel",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_nivelles",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "prison-tournai",
+    "kind": "prison",
+    "name": {
+      "nl": "Gevangenis van Doornik",
+      "fr": "Prison de Tournai",
+      "de": "Gefängnis Tournai"
+    },
+    "address": {
+      "street": "Rue de Chantier 1",
+      "postalCode": "7500",
+      "city": "Tournai"
+    },
+    "contacts": [
+      {
+        "type": "phone",
+        "value": "+3269890310"
+      },
+      {
+        "type": "bank-account",
+        "value": "BE55679200551944"
+      }
+    ],
+    "website": {
+      "nl": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_tournai",
+      "fr": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_tournai",
+      "de": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_tournai"
+    },
+    "sources": [
+      {
+        "url": "https://justitie.belgium.be/nl/themas_en_dossiers/gevangenissen/belgische_gevangenissen/gevangenissen/adres_gevangenis_tournai",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/fr/themes_et_dossiers/prisons/prisons_belges/prisons/adres_gevangenis_tournai",
+        "retrieved": "2026-10-20"
+      },
+      {
+        "url": "https://justitie.belgium.be/de/themen_und_akten/gefaengnisse/belgische_gefaengnisse/gefaengnisse/adresse_gefaengnis_tournai",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  }
+]

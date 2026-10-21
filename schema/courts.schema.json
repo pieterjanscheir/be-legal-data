@@ -11,32 +11,64 @@
       }
     },
     "Court": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/JusticeOfThePeace"
-        },
-        {
-          "$ref": "#/definitions/EnterpriseCourtDivision"
-        }
-      ]
-    },
-    "JusticeOfThePeace": {
       "type": "object",
       "properties": {
         "id": {
           "$ref": "#/definitions/CourtId",
-          "description": "Stable id: the court `type` followed by its place, e.g. 'justice-of-the-peace-gent-1' or 'enterprise-court-gent-brugge'"
+          "description": "Stable id: the type, then the place in the court's own language (Dutch for Brussels, with `-nl` or `-fr` for the courts split by language); a division or seat adds its place. 'justice-of-the-peace-gent-1', 'enterprise-court-gent-brugge', 'police-court-brussel-fr'"
+        },
+        "type": {
+          "$ref": "#/definitions/CourtType"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "court",
+            "division",
+            "seat"
+          ]
+        },
+        "court": {
+          "$ref": "#/definitions/CourtId",
+          "description": "For a division or seat: the court it belongs to"
+        },
+        "name": {
+          "type": "object",
+          "properties": {
+            "nl": {
+              "type": "string"
+            },
+            "fr": {
+              "type": "string"
+            },
+            "de": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "description": "The court's name as it publishes it, in each language it publishes in: 'Vredegerecht Gent 1', 'Tribunal de l'entreprise du Hainaut - division Mons'"
+        },
+        "judicialArea": {
+          "$ref": "#/definitions/JudicialAreaId"
         },
         "arrondissement": {
           "$ref": "#/definitions/ArrondissementId",
-          "description": "The judicial arrondissement the court lies in"
+          "description": "The arrondissement, for a court whose area is one arrondissement or lies within one"
         },
-        "name": {
-          "$ref": "#/definitions/Translated",
-          "description": "Place name of the court (or division)"
+        "canton": {
+          "$ref": "#/definitions/CantonId",
+          "description": "For a justice of the peace: the canton it serves"
+        },
+        "ecli": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The court's codes in European Case Law Identifiers (ECLI:BE:<code>:…), one per language it judges in; only codes seen in published decisions"
         },
         "address": {
-          "$ref": "#/definitions/Address"
+          "$ref": "#/definitions/Address",
+          "description": "Where the registry is; missing when the court publishes no single address"
         },
         "contacts": {
           "type": "array",
@@ -44,54 +76,129 @@
             "$ref": "#/definitions/Contact"
           }
         },
-        "bankAccount": {
-          "type": "string",
-          "description": "IBAN in electronic format (no spaces), checksum verified; `formatIban` groups it by four",
-          "pattern": "^BE\\d{14}$"
-        },
         "openingHours": {
           "type": "string",
-          "description": "When the registry is open, in OpenStreetMap `opening_hours` syntax, e.g. 'Mo-Fr 08:30-12:30,13:30-16:00'"
+          "description": "When the registry is open, in OpenStreetMap `opening_hours` syntax: 'Mo-Fr 08:30-12:30,13:30-16:00'. Only when the published text reads to it without doubt."
+        },
+        "openingHoursText": {
+          "type": "object",
+          "properties": {
+            "nl": {
+              "type": "string"
+            },
+            "fr": {
+              "type": "string"
+            },
+            "de": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "description": "The opening hours as the court publishes them, per language"
         },
         "website": {
-          "type": "string",
-          "description": "The court's own web page",
-          "format": "uri"
+          "type": "object",
+          "properties": {
+            "nl": {
+              "$ref": "#/definitions/Url"
+            },
+            "fr": {
+              "$ref": "#/definitions/Url"
+            },
+            "de": {
+              "$ref": "#/definitions/Url"
+            }
+          },
+          "additionalProperties": false,
+          "description": "The court's page, per language"
         },
         "sources": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/SourceRef"
           },
-          "description": "Where the record's data comes from"
-        },
-        "type": {
-          "type": "string",
-          "const": "justice-of-the-peace"
-        },
-        "canton": {
-          "$ref": "#/definitions/CantonId",
-          "description": "The canton the justice of the peace serves"
-        },
-        "number": {
-          "type": "number",
-          "description": "The canton's number in places with several cantons (Gent 1–5, …). Part of the court's official name, so kept here; always equal to the canton's `number`."
+          "description": "The pages the record was read from"
         }
       },
       "required": [
-        "address",
-        "arrondissement",
-        "canton",
-        "contacts",
         "id",
+        "type",
+        "kind",
         "name",
-        "type"
+        "judicialArea",
+        "contacts",
+        "website",
+        "sources"
       ],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "description": "A court, a division of one (afdeling, division, Abteilung), or one of the seats of a justice of the peace that sits in several places."
     },
     "CourtId": {
       "type": "string",
       "enum": [
+        "court-of-appeal-antwerpen",
+        "court-of-appeal-brussel",
+        "court-of-appeal-gent",
+        "court-of-appeal-liege",
+        "court-of-appeal-mons",
+        "court-of-assize-antwerpen",
+        "court-of-assize-brabant-wallon",
+        "court-of-assize-brussel-hoofdstad",
+        "court-of-assize-hainaut",
+        "court-of-assize-liege",
+        "court-of-assize-limburg",
+        "court-of-assize-luxembourg",
+        "court-of-assize-namur",
+        "court-of-assize-oost-vlaanderen",
+        "court-of-assize-vlaams-brabant",
+        "court-of-assize-west-vlaanderen",
+        "court-of-first-instance-antwerpen",
+        "court-of-first-instance-antwerpen-antwerpen",
+        "court-of-first-instance-antwerpen-mechelen",
+        "court-of-first-instance-antwerpen-turnhout",
+        "court-of-first-instance-brabant-wallon",
+        "court-of-first-instance-brussel-fr",
+        "court-of-first-instance-brussel-nl",
+        "court-of-first-instance-eupen",
+        "court-of-first-instance-hainaut",
+        "court-of-first-instance-hainaut-charleroi",
+        "court-of-first-instance-hainaut-mons",
+        "court-of-first-instance-hainaut-tournai",
+        "court-of-first-instance-leuven",
+        "court-of-first-instance-liege",
+        "court-of-first-instance-liege-huy",
+        "court-of-first-instance-liege-liege",
+        "court-of-first-instance-liege-verviers",
+        "court-of-first-instance-limburg",
+        "court-of-first-instance-limburg-hasselt",
+        "court-of-first-instance-limburg-tongeren-borgloon",
+        "court-of-first-instance-luxembourg",
+        "court-of-first-instance-luxembourg-arlon",
+        "court-of-first-instance-luxembourg-marche-en-famenne",
+        "court-of-first-instance-luxembourg-neufchateau",
+        "court-of-first-instance-namur",
+        "court-of-first-instance-namur-dinant",
+        "court-of-first-instance-namur-namur",
+        "court-of-first-instance-oost-vlaanderen",
+        "court-of-first-instance-oost-vlaanderen-dendermonde",
+        "court-of-first-instance-oost-vlaanderen-gent",
+        "court-of-first-instance-oost-vlaanderen-oudenaarde",
+        "court-of-first-instance-west-vlaanderen",
+        "court-of-first-instance-west-vlaanderen-brugge",
+        "court-of-first-instance-west-vlaanderen-ieper",
+        "court-of-first-instance-west-vlaanderen-kortrijk",
+        "court-of-first-instance-west-vlaanderen-veurne",
+        "enterprise-court-antwerpen",
+        "enterprise-court-antwerpen-antwerpen",
+        "enterprise-court-antwerpen-hasselt",
+        "enterprise-court-antwerpen-mechelen",
+        "enterprise-court-antwerpen-tongeren-borgloon",
+        "enterprise-court-antwerpen-turnhout",
+        "enterprise-court-brabant-wallon",
+        "enterprise-court-brussel-fr",
+        "enterprise-court-brussel-nl",
+        "enterprise-court-eupen",
+        "enterprise-court-gent",
         "enterprise-court-gent-brugge",
         "enterprise-court-gent-dendermonde",
         "enterprise-court-gent-gent",
@@ -100,46 +207,308 @@
         "enterprise-court-gent-oostende",
         "enterprise-court-gent-oudenaarde",
         "enterprise-court-gent-veurne",
+        "enterprise-court-hainaut",
+        "enterprise-court-hainaut-charleroi",
+        "enterprise-court-hainaut-mons",
+        "enterprise-court-hainaut-tournai",
+        "enterprise-court-leuven",
+        "enterprise-court-liege",
+        "enterprise-court-liege-arlon",
+        "enterprise-court-liege-dinant",
+        "enterprise-court-liege-huy",
+        "enterprise-court-liege-liege",
+        "enterprise-court-liege-marche-en-famenne",
+        "enterprise-court-liege-namur",
+        "enterprise-court-liege-neufchateau",
+        "enterprise-court-liege-verviers",
         "justice-of-the-peace-aalst-1",
         "justice-of-the-peace-aalst-2",
+        "justice-of-the-peace-aarschot",
+        "justice-of-the-peace-andenne",
+        "justice-of-the-peace-anderlecht-1",
+        "justice-of-the-peace-anderlecht-2",
+        "justice-of-the-peace-antwerpen-1",
+        "justice-of-the-peace-antwerpen-2",
+        "justice-of-the-peace-antwerpen-3",
+        "justice-of-the-peace-antwerpen-4",
+        "justice-of-the-peace-antwerpen-5",
+        "justice-of-the-peace-antwerpen-6",
+        "justice-of-the-peace-antwerpen-7",
+        "justice-of-the-peace-arlon",
+        "justice-of-the-peace-asse",
+        "justice-of-the-peace-ath",
+        "justice-of-the-peace-bastogne",
+        "justice-of-the-peace-beringen",
         "justice-of-the-peace-beveren-kruibeke-zwijndrecht",
+        "justice-of-the-peace-bilzen-hoeselt",
+        "justice-of-the-peace-binche",
+        "justice-of-the-peace-boom",
+        "justice-of-the-peace-boussu-colfontaine-1",
+        "justice-of-the-peace-boussu-colfontaine-2",
+        "justice-of-the-peace-braine-l-alleud",
+        "justice-of-the-peace-brasschaat",
+        "justice-of-the-peace-bree",
         "justice-of-the-peace-brugge-1",
         "justice-of-the-peace-brugge-2",
         "justice-of-the-peace-brugge-3",
         "justice-of-the-peace-brugge-4",
+        "justice-of-the-peace-brussel-1",
+        "justice-of-the-peace-brussel-2",
+        "justice-of-the-peace-brussel-3",
+        "justice-of-the-peace-brussel-4",
+        "justice-of-the-peace-charleroi-1",
+        "justice-of-the-peace-charleroi-2",
+        "justice-of-the-peace-charleroi-3",
+        "justice-of-the-peace-charleroi-4",
+        "justice-of-the-peace-chatelet",
+        "justice-of-the-peace-chimay",
+        "justice-of-the-peace-ciney",
         "justice-of-the-peace-deinze",
         "justice-of-the-peace-dendermonde",
+        "justice-of-the-peace-deurne",
+        "justice-of-the-peace-diest",
+        "justice-of-the-peace-dinant",
         "justice-of-the-peace-eeklo",
+        "justice-of-the-peace-elsene",
+        "justice-of-the-peace-etterbeek",
+        "justice-of-the-peace-eupen-sankt-vith-1",
+        "justice-of-the-peace-eupen-sankt-vith-2",
+        "justice-of-the-peace-fleron",
+        "justice-of-the-peace-fosses-la-ville",
+        "justice-of-the-peace-ganshoren",
+        "justice-of-the-peace-gembloux",
+        "justice-of-the-peace-genk",
         "justice-of-the-peace-gent-1",
         "justice-of-the-peace-gent-2",
         "justice-of-the-peace-gent-3",
         "justice-of-the-peace-gent-4",
         "justice-of-the-peace-gent-5",
         "justice-of-the-peace-geraardsbergen",
+        "justice-of-the-peace-grace-hollogne",
+        "justice-of-the-peace-halle",
         "justice-of-the-peace-hamme",
+        "justice-of-the-peace-hasselt-1",
+        "justice-of-the-peace-hasselt-2",
+        "justice-of-the-peace-heist-op-den-berg",
+        "justice-of-the-peace-herstal",
         "justice-of-the-peace-herzele",
+        "justice-of-the-peace-houthalen-helchteren",
+        "justice-of-the-peace-huy-1",
+        "justice-of-the-peace-huy-2",
         "justice-of-the-peace-ieper",
         "justice-of-the-peace-izegem",
+        "justice-of-the-peace-jette",
+        "justice-of-the-peace-jodoigne",
+        "justice-of-the-peace-kapellen",
+        "justice-of-the-peace-kontich",
         "justice-of-the-peace-kortrijk-1",
         "justice-of-the-peace-kortrijk-2",
+        "justice-of-the-peace-la-louviere",
+        "justice-of-the-peace-lennik",
+        "justice-of-the-peace-leuven-1",
+        "justice-of-the-peace-leuven-2",
+        "justice-of-the-peace-leuven-3",
+        "justice-of-the-peace-leuze-en-hainaut",
+        "justice-of-the-peace-liege-1",
+        "justice-of-the-peace-liege-2",
+        "justice-of-the-peace-liege-3",
+        "justice-of-the-peace-liege-4",
+        "justice-of-the-peace-lier",
+        "justice-of-the-peace-limbourg",
         "justice-of-the-peace-lokeren",
+        "justice-of-the-peace-maasmechelen",
+        "justice-of-the-peace-marche-en-famenne",
+        "justice-of-the-peace-mechelen",
+        "justice-of-the-peace-meise",
         "justice-of-the-peace-menen",
         "justice-of-the-peace-merelbeke-melle",
+        "justice-of-the-peace-merksem",
+        "justice-of-the-peace-mol-geel-1",
+        "justice-of-the-peace-mol-geel-2",
+        "justice-of-the-peace-mons-1",
+        "justice-of-the-peace-mons-2",
+        "justice-of-the-peace-mouscron",
+        "justice-of-the-peace-namur-1",
+        "justice-of-the-peace-namur-2",
+        "justice-of-the-peace-neufchateau",
         "justice-of-the-peace-ninove",
+        "justice-of-the-peace-nivelles",
         "justice-of-the-peace-oostende-1",
         "justice-of-the-peace-oostende-2",
         "justice-of-the-peace-oudenaarde",
+        "justice-of-the-peace-oudergem",
+        "justice-of-the-peace-pelt",
+        "justice-of-the-peace-philippeville",
+        "justice-of-the-peace-philippeville-couvin",
+        "justice-of-the-peace-philippeville-florennes",
         "justice-of-the-peace-poperinge",
         "justice-of-the-peace-roeselare",
+        "justice-of-the-peace-schaarbeek-1",
+        "justice-of-the-peace-schaarbeek-2",
+        "justice-of-the-peace-seneffe",
+        "justice-of-the-peace-seraing",
+        "justice-of-the-peace-sint-genesius-rode",
+        "justice-of-the-peace-sint-gillis",
+        "justice-of-the-peace-sint-jans-molenbeek",
+        "justice-of-the-peace-sint-joost-ten-node",
         "justice-of-the-peace-sint-niklaas",
+        "justice-of-the-peace-sint-pieters-woluwe",
+        "justice-of-the-peace-sint-truiden",
+        "justice-of-the-peace-soignies",
+        "justice-of-the-peace-spa",
+        "justice-of-the-peace-sprimont",
+        "justice-of-the-peace-thuin",
         "justice-of-the-peace-tielt",
+        "justice-of-the-peace-tienen",
+        "justice-of-the-peace-tongeren-borgloon",
         "justice-of-the-peace-torhout",
+        "justice-of-the-peace-tournai-1",
+        "justice-of-the-peace-tournai-2",
+        "justice-of-the-peace-turnhout-1",
+        "justice-of-the-peace-turnhout-2",
+        "justice-of-the-peace-ukkel",
+        "justice-of-the-peace-verviers-1",
+        "justice-of-the-peace-verviers-2",
         "justice-of-the-peace-veurne",
+        "justice-of-the-peace-vilvoorde",
+        "justice-of-the-peace-virton",
+        "justice-of-the-peace-vise",
+        "justice-of-the-peace-vorst",
         "justice-of-the-peace-waregem",
+        "justice-of-the-peace-waremme",
+        "justice-of-the-peace-wavre-1",
+        "justice-of-the-peace-wavre-2",
+        "justice-of-the-peace-westerlo",
         "justice-of-the-peace-wetteren",
-        "justice-of-the-peace-zelzate"
+        "justice-of-the-peace-willebroek",
+        "justice-of-the-peace-zandhoven",
+        "justice-of-the-peace-zaventem",
+        "justice-of-the-peace-zelzate",
+        "justice-of-the-peace-zoutleeuw",
+        "labour-court-antwerpen",
+        "labour-court-antwerpen-antwerpen",
+        "labour-court-antwerpen-hasselt",
+        "labour-court-antwerpen-mechelen",
+        "labour-court-antwerpen-tongeren-borgloon",
+        "labour-court-antwerpen-turnhout",
+        "labour-court-brabant-wallon",
+        "labour-court-brussel-fr",
+        "labour-court-brussel-nl",
+        "labour-court-eupen",
+        "labour-court-gent",
+        "labour-court-gent-aalst",
+        "labour-court-gent-brugge",
+        "labour-court-gent-dendermonde",
+        "labour-court-gent-gent",
+        "labour-court-gent-ieper",
+        "labour-court-gent-kortrijk",
+        "labour-court-gent-oudenaarde",
+        "labour-court-gent-roeselare",
+        "labour-court-gent-sint-niklaas",
+        "labour-court-gent-veurne",
+        "labour-court-hainaut",
+        "labour-court-hainaut-binche",
+        "labour-court-hainaut-charleroi",
+        "labour-court-hainaut-la-louviere",
+        "labour-court-hainaut-mons",
+        "labour-court-hainaut-mouscron",
+        "labour-court-hainaut-tournai",
+        "labour-court-leuven",
+        "labour-court-liege",
+        "labour-court-liege-arlon",
+        "labour-court-liege-dinant",
+        "labour-court-liege-huy",
+        "labour-court-liege-liege",
+        "labour-court-liege-marche-en-famenne",
+        "labour-court-liege-namur",
+        "labour-court-liege-neufchateau",
+        "labour-court-liege-verviers",
+        "labour-court-of-appeal-antwerpen",
+        "labour-court-of-appeal-antwerpen-antwerpen",
+        "labour-court-of-appeal-antwerpen-hasselt",
+        "labour-court-of-appeal-brussel",
+        "labour-court-of-appeal-gent",
+        "labour-court-of-appeal-gent-brugge",
+        "labour-court-of-appeal-gent-gent",
+        "labour-court-of-appeal-liege",
+        "labour-court-of-appeal-liege-liege",
+        "labour-court-of-appeal-liege-namur",
+        "labour-court-of-appeal-liege-neufchateau",
+        "labour-court-of-appeal-mons",
+        "police-court-antwerpen",
+        "police-court-antwerpen-antwerpen",
+        "police-court-antwerpen-mechelen",
+        "police-court-antwerpen-turnhout",
+        "police-court-brabant-wallon",
+        "police-court-brabant-wallon-nivelles",
+        "police-court-brabant-wallon-wavre",
+        "police-court-brussel-fr",
+        "police-court-brussel-nl",
+        "police-court-eupen",
+        "police-court-eupen-eupen",
+        "police-court-eupen-sankt-vith",
+        "police-court-hainaut",
+        "police-court-hainaut-charleroi",
+        "police-court-hainaut-mons",
+        "police-court-hainaut-tournai",
+        "police-court-halle",
+        "police-court-leuven",
+        "police-court-liege",
+        "police-court-liege-huy",
+        "police-court-liege-liege",
+        "police-court-liege-verviers",
+        "police-court-limburg",
+        "police-court-limburg-beringen",
+        "police-court-limburg-genk",
+        "police-court-limburg-hasselt",
+        "police-court-limburg-maaseik",
+        "police-court-limburg-sint-truiden",
+        "police-court-limburg-tongeren-borgloon",
+        "police-court-luxembourg",
+        "police-court-luxembourg-arlon",
+        "police-court-luxembourg-marche-en-famenne",
+        "police-court-luxembourg-neufchateau",
+        "police-court-namur",
+        "police-court-namur-dinant",
+        "police-court-namur-namur",
+        "police-court-oost-vlaanderen",
+        "police-court-oost-vlaanderen-aalst",
+        "police-court-oost-vlaanderen-dendermonde",
+        "police-court-oost-vlaanderen-gent",
+        "police-court-oost-vlaanderen-oudenaarde",
+        "police-court-oost-vlaanderen-sint-niklaas",
+        "police-court-vilvoorde",
+        "police-court-west-vlaanderen",
+        "police-court-west-vlaanderen-brugge",
+        "police-court-west-vlaanderen-ieper",
+        "police-court-west-vlaanderen-kortrijk",
+        "police-court-west-vlaanderen-veurne"
       ],
       "description": "Id of a record in data/courts.json"
+    },
+    "CourtType": {
+      "type": "string",
+      "enum": [
+        "justice-of-the-peace",
+        "police-court",
+        "court-of-first-instance",
+        "enterprise-court",
+        "labour-court",
+        "court-of-appeal",
+        "labour-court-of-appeal",
+        "court-of-assize"
+      ]
+    },
+    "JudicialAreaId": {
+      "type": "string",
+      "enum": [
+        "antwerpen",
+        "brussel",
+        "gent",
+        "liege",
+        "mons"
+      ],
+      "description": "Id of a record in data/judicial-areas.json"
     },
     "ArrondissementId": {
       "type": "string",
@@ -158,133 +527,6 @@
         "west-vlaanderen"
       ],
       "description": "Id of a record in data/arrondissements.json"
-    },
-    "Translated": {
-      "type": "object",
-      "properties": {
-        "nl": {
-          "type": "string"
-        },
-        "fr": {
-          "type": "string"
-        },
-        "de": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "nl",
-        "fr",
-        "de"
-      ],
-      "additionalProperties": false,
-      "description": "A name in the three national languages"
-    },
-    "Address": {
-      "type": "object",
-      "properties": {
-        "building": {
-          "type": "string"
-        },
-        "street": {
-          "type": "string"
-        },
-        "houseNumber": {
-          "type": "string"
-        },
-        "postalCode": {
-          "type": "string",
-          "pattern": "^\\d{4}$"
-        },
-        "city": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "street",
-        "postalCode",
-        "city"
-      ],
-      "additionalProperties": false
-    },
-    "Contact": {
-      "anyOf": [
-        {
-          "type": "object",
-          "properties": {
-            "type": {
-              "type": "string",
-              "const": "phone"
-            },
-            "value": {
-              "type": "string",
-              "description": "E.164, e.g. '+3292343210'; `formatPhoneNumber` gives the Belgian national form",
-              "pattern": "^\\+32\\d{8,9}$"
-            },
-            "label": {
-              "$ref": "#/definitions/ContactLabel"
-            }
-          },
-          "required": [
-            "type",
-            "value"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "type": {
-              "type": "string",
-              "const": "email"
-            },
-            "value": {
-              "type": "string",
-              "description": "Lowercase",
-              "format": "email"
-            },
-            "label": {
-              "$ref": "#/definitions/ContactLabel"
-            }
-          },
-          "required": [
-            "type",
-            "value"
-          ],
-          "additionalProperties": false
-        }
-      ]
-    },
-    "ContactLabel": {
-      "type": "string",
-      "enum": [
-        "griffie",
-        "A-rol",
-        "B-rol",
-        "rechtspersonenregister"
-      ],
-      "description": "What a contact is for, in the courts' own (Dutch) terms: the registry ('griffie'), a specific roll of the enterprise court ('A-rol', 'B-rol') or its register of legal entities ('rechtspersonenregister'). No label: the court's general contact."
-    },
-    "SourceRef": {
-      "type": "object",
-      "properties": {
-        "url": {
-          "type": "string",
-          "description": "The exact official page or file the data comes from",
-          "format": "uri"
-        },
-        "retrieved": {
-          "type": "string",
-          "description": "Day the source was last checked, YYYY-MM-DD",
-          "format": "date"
-        }
-      },
-      "required": [
-        "url",
-        "retrieved"
-      ],
-      "additionalProperties": false,
-      "description": "Where a record's data was taken from"
     },
     "CantonId": {
       "type": "string",
@@ -454,70 +696,92 @@
       ],
       "description": "Id of a record in data/cantons.json"
     },
-    "EnterpriseCourtDivision": {
+    "Address": {
       "type": "object",
       "properties": {
-        "id": {
-          "$ref": "#/definitions/CourtId",
-          "description": "Stable id: the court `type` followed by its place, e.g. 'justice-of-the-peace-gent-1' or 'enterprise-court-gent-brugge'"
-        },
-        "arrondissement": {
-          "$ref": "#/definitions/ArrondissementId",
-          "description": "The judicial arrondissement the court lies in"
-        },
-        "name": {
-          "$ref": "#/definitions/Translated",
-          "description": "Place name of the court (or division)"
-        },
-        "address": {
-          "$ref": "#/definitions/Address"
-        },
-        "contacts": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Contact"
-          }
-        },
-        "bankAccount": {
+        "building": {
           "type": "string",
-          "description": "IBAN in electronic format (no spaces), checksum verified; `formatIban` groups it by four",
-          "pattern": "^BE\\d{14}$"
+          "description": "A building's name, when one is published: 'Gerechtsgebouw'"
         },
-        "openingHours": {
+        "street": {
           "type": "string",
-          "description": "When the registry is open, in OpenStreetMap `opening_hours` syntax, e.g. 'Mo-Fr 08:30-12:30,13:30-16:00'"
+          "description": "The street line as published, with its number, box or floor: 'Kazernevest 3', 'Beverstraat 7B (eerste verdieping)'"
         },
-        "website": {
+        "postalCode": {
           "type": "string",
-          "description": "The court's own web page",
-          "format": "uri"
+          "pattern": "^\\d{4}$"
         },
-        "sources": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SourceRef"
-          },
-          "description": "Where the record's data comes from"
-        },
-        "type": {
-          "type": "string",
-          "const": "enterprise-court"
-        },
-        "seat": {
-          "$ref": "#/definitions/Translated",
-          "description": "Place name of the court's seat; `name` is the division"
+        "city": {
+          "type": "string"
         }
       },
       "required": [
-        "address",
-        "arrondissement",
-        "contacts",
-        "id",
-        "name",
-        "seat",
-        "type"
+        "street",
+        "postalCode",
+        "city"
+      ],
+      "additionalProperties": false,
+      "description": "A postal address, as published"
+    },
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/ContactType"
+        },
+        "value": {
+          "type": "string",
+          "description": "Phone and fax: E.164 ('+3292343210'; `formatPhoneNumber` gives the national form). Email: lowercase. Bank account: IBAN in electronic form, checksum verified (`formatIban` groups it by four).",
+          "pattern": "^(\\+32\\d{8,9}|[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}|BE\\d{14})$"
+        },
+        "label": {
+          "type": "string",
+          "description": "The registry or service the contact belongs to, as the source titles it, in that page's language: 'Burgerlijke griffie', 'Greffe pénal'. No label: the general contact."
+        },
+        "note": {
+          "type": "string",
+          "description": "Text published with the value: 'griffie', 'druk 1', 'tapez 2'"
+        }
+      },
+      "required": [
+        "type",
+        "value"
       ],
       "additionalProperties": false
+    },
+    "ContactType": {
+      "type": "string",
+      "enum": [
+        "phone",
+        "fax",
+        "email",
+        "bank-account"
+      ]
+    },
+    "Url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "SourceRef": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The exact official page or file the data comes from",
+          "format": "uri"
+        },
+        "retrieved": {
+          "type": "string",
+          "description": "Day the source was last checked, YYYY-MM-DD",
+          "format": "date"
+        }
+      },
+      "required": [
+        "url",
+        "retrieved"
+      ],
+      "additionalProperties": false,
+      "description": "Where a record's data was taken from"
     }
   }
 }

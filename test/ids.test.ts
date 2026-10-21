@@ -8,6 +8,7 @@ import {
     courts,
     getArrondissement,
     getCanton,
+    getCourt,
     judicialAreas,
     municipalities,
 } from '../src'
@@ -61,11 +62,16 @@ describe('identifiers', () => {
 
     it('of courts are the court type followed by the place', () => {
         for (const c of courts) {
-            const place =
-                c.type === 'justice-of-the-peace' ?
-                    c.canton
-                :   `${toId(c.seat[local(c.arrondissement)])}-${toId(c.name[local(c.arrondissement)])}`
-            expect(c.id).toBe(`${c.type}-${place}`)
+            expect(c.id, c.id).toMatch(ID_PATTERN)
+            if (c.type === 'justice-of-the-peace' && c.kind === 'court')
+                expect(c.id).toBe(`justice-of-the-peace-${c.canton ?? ''}`)
+            else expect(c.id.startsWith(`${c.type}-`), c.id).toBe(true)
         }
+        expect(getCourt('police-court-brussel-fr').name.fr).toBe(
+            'Tribunal de police francophone de Bruxelles',
+        )
+        expect(getCourt('police-court-eupen-sankt-vith').name.de).toBe(
+            'Polizeigericht Eupen, Abteilung Sankt Vith',
+        )
     })
 })

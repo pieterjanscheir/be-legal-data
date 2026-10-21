@@ -2,6 +2,13 @@
 
 ## Updating data
 
+The courts, prisons and houses of justice are built from the official sources every week
+([how](./data-quality#how-the-data-is-built)): don't edit them by hand. Fix the parser in
+`scripts/parse`, or, if the source itself is wrong, report it to the court. The weekly pull
+request is reviewed like any other: compare the diff with the sources before merging.
+
+For the datasets kept by hand (judicial areas, arrondissements, interest rates):
+
 1. Edit the JSON in `data/`. Keep the existing ids: projects store them.
 2. Update `lastReviewed` for the dataset in `datapackage.json` if you checked it against its
    sources.
@@ -17,7 +24,7 @@
 `pnpm build:cantons` (needs network access and `unzip`). It reads:
 
 - the annex to the Judicial Code, "Gebiedsomschrijving en zetel van hoven en rechtbanken"
-  ([Justel 1967101007](https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel)),
+  ([ELI, numac 1967101058](https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel)),
   in Dutch and French;
 - Statbel's population-by-municipality file for the current municipalities and REFNIS codes.
 
@@ -29,6 +36,20 @@ mentions it can't tell apart are listed at the top of the script.
 Rerun it after a law changes the annex or municipalities merge. Canton ids follow the local
 language (Dutch in Flanders and Brussels, French in Wallonia, German around Eupen); the justice of
 the peace of canton `x` has id `justice-of-the-peace-x` and links to it through its `canton` field.
+
+### Scraped datasets
+
+```bash
+pnpm fetch:sources            # every source into .sources/ (about 20 minutes, politely)
+pnpm fetch:sources courts     # or one source
+pnpm build:data               # rebuild the scraped datasets from .sources/
+```
+
+Or check out the latest snapshots instead of fetching: `git worktree add .sources origin/sources`.
+
+A source is a walk in `scripts/sources/catalog.ts`; a parser reads its snapshots in
+`scripts/parse`. When a site changes its markup, the parser tests in `test/parse` (on trimmed
+copies of real pages in `test/fixtures/sources`) show what broke.
 
 ### New interest rates
 
@@ -51,8 +72,9 @@ Every dataset gets the same treatment, so users can rely on it:
 5. **Types and helpers**: `src/<name>.ts`, exported from `src/index.ts`, plus an entry point in
    `tsup.config.ts` and `package.json` `exports`.
 6. **Schema**: add the file type to `scripts/schema-types.ts` and `scripts/build-schemas.ts`.
-7. **Script**: if the source can be fetched, a `scripts/build-<name>.ts` that rebuilds the file,
-   so the freshness check can detect changes.
+7. **Source and parser**: a walk in `scripts/sources/catalog.ts` that fetches the official
+   pages, and a parser in `scripts/parse` that builds the file from the snapshots, with
+   fixtures and tests. It reads only what it can read for certain and reports the rest.
 8. **Tests**: unique ids, references that resolve, and the count the official source gives.
 9. **Docs**: a page under `docs/data/` with why it's useful, source and updates, and a field table.
 
@@ -68,6 +90,9 @@ Every dataset gets the same treatment, so users can rely on it:
 | `pnpm generate`             | Regenerate `src/ids.generated.ts` (id types) and `schema/` from the data and types                                                                            |
 | `pnpm lint:package`         | `publint` and `arethetypeswrong` on the packed package                                                                                                        |
 | `pnpm test:freshness`       | Date-based checks: missing rates, overdue reviews. Not part of `check`; `FRESHNESS_ONLINE=1` also checks the source URLs                                      |
+| `pnpm fetch:sources`        | Fetch the official sources into `.sources/`                                                                                                                   |
+| `pnpm build:data`           | Rebuild the courts, prisons and houses of justice from `.sources/`                                                                                            |
+| `pnpm build:csv`            | Write the data as CSV tables into `csv/`                                                                                                                      |
 
 ## Releasing
 
@@ -76,7 +101,7 @@ Every dataset gets the same treatment, so users can rely on it:
 3. Tag it and push: `git tag v0.3.0 && git push && git push --tags`.
 
 The release workflow runs `pnpm check`, publishes the tag to npm with provenance, and creates
-a GitHub release. The tag has to match `version`.
+a GitHub release with the data, schemas and CSV tables attached. The tag has to match `version`.
 
 ## This website
 

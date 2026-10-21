@@ -1,8 +1,10 @@
 name: Data freshness
 
 # Weekly: is a newly published interest rate missing, is a dataset overdue for review, are the
-# official sources still online, and do the generated datasets still match the law and Statbel?
-# Opens (or updates) one issue labelled data-freshness when something needs attention.
+# official sources still online? Opens (or updates) one issue labelled data-freshness when
+# something needs attention. The scraped datasets are rebuilt by the sources workflow; the
+# cantons need ejustice, which refuses GitHub's runners, so they're rebuilt by hand (pnpm
+# build:cantons).
 on:
     schedule:
         - cron: '17 6 * * 1'
@@ -44,16 +46,8 @@ jobs:
                   set -o pipefail
                   pnpm vitest run --config vitest.freshness.config.ts test/freshness/sources.test.ts 2>&1 | tee sources.log
 
-            - name: Regenerate cantons and municipalities
-              id: cantons
-              continue-on-error: true
-              run: |
-                  set -o pipefail
-                  pnpm build:cantons 2>&1 | tee cantons.log
-                  git diff --stat --exit-code -- data | tee -a cantons.log
-
             - name: Open or update the freshness issue
-              if: steps.rates.outcome == 'failure' || steps.sources.outcome == 'failure' || steps.cantons.outcome == 'failure'
+              if: steps.rates.outcome == 'failure' || steps.sources.outcome == 'failure'
               env:
                   GH_TOKEN: ${{ github.token }}
                   RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
@@ -61,7 +55,7 @@ jobs:
                   {
                     echo "The weekly freshness check found something to look at: $RUN_URL"
                     echo
-                    for step in rates sources cantons; do
+                    for step in rates sources; do
                       echo "### $step"
                       echo '```'
                       grep -E "FAIL|×|AssertionError|expected|Error|changed|insertion|deletion" "$step.log" | head -40 || true
@@ -77,5 +71,5 @@ jobs:
                   fi
 
             - name: Fail the run when something is out of date
-              if: steps.rates.outcome == 'failure' || steps.sources.outcome == 'failure' || steps.cantons.outcome == 'failure'
+              if: steps.rates.outcome == 'failure' || steps.sources.outcome == 'failure'
               run: exit 1

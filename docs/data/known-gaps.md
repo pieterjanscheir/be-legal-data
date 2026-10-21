@@ -1,19 +1,34 @@
 # Known gaps
 
-- Courts only cover East and West Flanders so far: justices of the peace and the
-  Ondernemingsrechtbank Gent. All 162 cantons are in `data/cantons.json`, so the missing justices
-  of the peace are known; other court types still need a manifest.
-- Canton names and seats are in Dutch and French only: the annex has no consolidated German text.
-- Split municipalities (Antwerpen, Gent, Brussel, Luik, …) map to several cantons. Picking the
-  right one needs the street address, and the boundaries exist only as legal prose in `territory`.
-- The French name of canton Beveren-Kruibeke-Zwijndrecht in `courts.json`
-  (`Beveren-Cruybeke-Zwijndrecht`) differs from the annex (`Beveren-Kruibeke-Zwijndrecht`).
-- `formatCourtName` builds French and German names that may not match official usage
-  (`Tribunal de paix 1e canton Gand`, where Belgian usage is likely _justice de paix_ and
-  _1er canton_): [#10](https://github.com/pieterjanscheir/be-legal-data/issues/10).
-- Courts don't yet record a source URL per record:
-  [#5](https://github.com/pieterjanscheir/be-legal-data/issues/5).
-- The Ondernemingsrechtbank Gent, division Oostende, has no house number (Canadaplein).
+- **Courts not on the portal** aren't in the data: the Court of Cassation, the Constitutional
+  Court, the Council of State and the disciplinary courts
+  ([#4](https://github.com/pieterjanscheir/be-legal-data/issues/4)).
+- **26 courts have no single address**: a court whose divisions each have their own (the
+  address is on the division), or one that publishes its addresses as a sentence. Their
+  `address` is missing rather than guessed; the divisions have theirs.
+- **Opening hours**: 227 of the 344 courts that publish hours have them in `opening_hours`
+  syntax. The rest publish text with notes or temporary arrangements, kept as
+  `openingHoursText` only.
+- **Contact labels are in the page's language**: for a bilingual court, the Dutch page's (the
+  German page's in Eupen). The French page's names and hours are there too.
+- **Some values on the source pages can't be read**, and are left out: a phone number without
+  its area code (`+32 682 05 28`), a fax that is "désactivé". The weekly data pull request
+  lists them, so they can be reported to the court.
+- **The French page of the justice of the peace of Tongeren-Borgloon** still calls it
+  `Justice de paix de Tongres-Fourons`, its name before the 2025 municipal mergers. The data
+  keeps the name as published and links it to the right canton.
+- **No history yet**: the territory data describes 1 January 2025 onwards, and the court data
+  the day it was read. Lookups for an earlier day throw rather than answer with today's map
+  ([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
+- **Canton names and seats** are in Dutch and French only: the annex to the Judicial Code has
+  no consolidated German text.
+- **Split municipalities** (Antwerpen, Gent, Brussel, Luik, …) map to several cantons. Picking
+  the right one needs the street address, and the boundaries exist only as legal prose in
+  `territory` ([#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)).
+- **ECLI codes** are only given where they appear in published decisions; the justices of the
+  peace and most police courts have none there.
+- **The house of justice in Eupen** is missing
+  ([#3](https://github.com/pieterjanscheir/be-legal-data/issues/3)).
 
 Found something wrong or missing?
 [Report a data correction](https://github.com/pieterjanscheir/be-legal-data/issues/new?template=data-correction.yml)

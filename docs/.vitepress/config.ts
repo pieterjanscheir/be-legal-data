@@ -49,6 +49,8 @@ export default defineConfig({
                     { text: 'Overview', link: '/data/' },
                     { text: 'Territory & cantons', link: '/data/territory' },
                     { text: 'Courts', link: '/data/courts' },
+                    { text: 'Prisons', link: '/data/prisons' },
+                    { text: 'Houses of justice', link: '/data/houses-of-justice' },
                     { text: 'Interest rates', link: '/data/interest-rates' },
                     { text: 'Known gaps', link: '/data/known-gaps' },
                     { text: 'Roadmap', link: '/data/roadmap' },

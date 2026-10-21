@@ -39,14 +39,13 @@ import { getCanton } from 'be-legal-data/territory'
 ```ts
 import {
     getCourt,
-    formatCourtName,
     findCourts,
     getCanton,
     getCantonsForMunicipality,
     getInterestRate,
 } from 'be-legal-data'
 
-formatCourtName(getCourt('justice-of-the-peace-gent-1')) // 'Vredegerecht 1e kanton Gent'
+getCourt('justice-of-the-peace-gent-1').name.nl // 'Vredegerecht Gent 1'
 findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' })
 
 getCantonsForMunicipality('44088') // [Canton merelbeke-melle]
@@ -68,8 +67,11 @@ import { getCantonsForMunicipality, getJusticeOfThePeace } from 'be-legal-data'
 
 const cantons = getCantonsForMunicipality('44088')
 if (cantons.length === 1) {
-    const court = getJusticeOfThePeace(cantons[0].id) // undefined outside East and West Flanders, for now
+    const court = getJusticeOfThePeace(cantons[0].id) // every canton has its court
 }
+
+// On the day the summons was served, rather than today
+getCantonsForMunicipality('44088', { on: '2025-09-15' })
 ```
 
 When a city is split over several cantons (Antwerpen, Gent, Brussel, Luik, …), you get more than
@@ -93,9 +95,13 @@ silently using 0 %. It throws a `RangeError` for a malformed day such as `'2024-
 
 ### Court names in another language
 
+Names are as each court publishes them, in every language it has a page in. A court in
+Flanders publishes in Dutch only; bilingual courts in Brussels in Dutch and French; the courts
+in Eupen in German and French.
+
 ```ts
-formatCourtName(getCourt('justice-of-the-peace-gent-1'), 'fr') // 'Tribunal de paix 1e canton Gand'
-formatCourtName(getCourt('enterprise-court-gent-brugge')) // 'Ondernemingsrechtbank Gent - afdeling Brugge'
+getCourt('court-of-appeal-brussel').name.fr // "Cour d'appel de Bruxelles"
+getCourt('police-court-eupen-sankt-vith').name.de // 'Polizeigericht Eupen, Abteilung Sankt Vith'
 ```
 
 ## Raw JSON

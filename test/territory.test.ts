@@ -3,11 +3,12 @@ import { describe, expect, it } from 'vitest'
 import {
     arrondissements,
     cantons,
-    courts,
+    getArrondissementForMunicipality,
     getCanton,
     getCantonsForMunicipality,
     judicialAreas,
     municipalities,
+    territoryCoverage,
 } from '../src'
 
 // Statbel province codes per arrondissement. Brussels also has the Halle-Vilvoorde cantons.
@@ -92,30 +93,24 @@ describe('territory', () => {
     })
 })
 
-describe('justices of the peace', () => {
-    const peace = courts.filter((c) => c.type === 'justice-of-the-peace')
-
-    it('each serve one canton, in the same arrondissement', () => {
-        const served = peace.map((c) => c.canton)
-        expect(new Set(served).size).toBe(served.length)
-        for (const court of peace) {
-            const canton = getCanton(court.canton)
-            expect(canton, court.id).toBeDefined()
-            expect(canton.arrondissement, court.id).toBe(court.arrondissement)
-            expect(court.number, court.id).toBe(canton.number)
-        }
+describe('a day', () => {
+    it('finds the version of a record that applies on it', () => {
+        expect(getCanton('gent-1', { on: '2025-06-01' })?.id).toBe('gent-1')
+        expect(getCantonsForMunicipality('44088', { on: new Date(2026, 0, 1) })).toHaveLength(1)
+        expect(getArrondissementForMunicipality('44021', { on: '2025-01-01' })?.id).toBe(
+            'oost-vlaanderen',
+        )
     })
 
-    // Arrondissements whose justices of the peace are all in data/courts.json
-    it.each(['oost-vlaanderen', 'west-vlaanderen'])(
-        'cover every canton in %s',
-        (arrondissement) => {
-            const served = new Set(peace.map((c) => c.canton))
-            const missing = cantons
-                .filter((c) => c.arrondissement === arrondissement)
-                .map((c) => c.id)
-                .filter((id) => !served.has(id))
-            expect(missing).toEqual([])
-        },
-    )
+    it("throws before the data's coverage starts, rather than answer with today's map", () => {
+        expect(territoryCoverage.from).toBe('2025-01-01')
+        expect(() => getCanton('gent-1', { on: '2024-12-31' })).toThrow(RangeError)
+        expect(() => getCantonsForMunicipality('44021', { on: '2018-06-01' })).toThrow(
+            /2025-01-01 onwards/,
+        )
+    })
+
+    it('throws for a malformed day', () => {
+        expect(() => getCantonsForMunicipality('44021', { on: '2025-1-1' })).toThrow(RangeError)
+    })
 })

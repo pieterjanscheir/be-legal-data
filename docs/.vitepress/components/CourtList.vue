@@ -3,19 +3,35 @@ import { computed, ref } from 'vue'
 import {
     courts,
     arrondissements,
-    formatCourtName,
     formatPhoneNumber,
+    formatIban,
     getArrondissement,
+    getJudicialArea,
+    type Court,
     type CourtType,
-    type Locale,
 } from '../../../src'
+
+const types: [CourtType, string][] = [
+    ['justice-of-the-peace', 'Justice of the peace'],
+    ['police-court', 'Police court'],
+    ['court-of-first-instance', 'Court of first instance'],
+    ['enterprise-court', 'Enterprise court'],
+    ['labour-court', 'Labour court'],
+    ['court-of-appeal', 'Court of appeal'],
+    ['labour-court-of-appeal', 'Labour court of appeal'],
+    ['court-of-assize', 'Court of assize'],
+]
 
 const type = ref<CourtType | ''>('')
 const arrondissement = ref('')
-const locale = ref<Locale>('nl')
 const query = ref('')
+const limit = ref(50)
 
-const used = arrondissements.filter((a) => courts.some((c) => c.arrondissement === a.id))
+const name = (c: Court) => c.name.nl ?? c.name.fr ?? c.name.de ?? c.id
+const where = (c: Court) =>
+    c.arrondissement ?
+        getArrondissement(c.arrondissement)?.name.nl
+    :   `${getJudicialArea(c.judicialArea)?.name.nl ?? ''} (judicial area)`
 
 const rows = computed(() => {
     const q = query.value.trim().toLowerCase()
@@ -24,8 +40,9 @@ const rows = computed(() => {
             (!type.value || c.type === type.value) &&
             (!arrondissement.value || c.arrondissement === arrondissement.value) &&
             (!q ||
-                c.id.toLowerCase().includes(q) ||
-                formatCourtName(c, locale.value).toLowerCase().includes(q)),
+                c.id.includes(q) ||
+                Object.values(c.name).some((n) => n.toLowerCase().includes(q)) ||
+                c.address?.city.toLowerCase().includes(q)),
     )
 })
 </script>
@@ -35,69 +52,83 @@ const rows = computed(() => {
         <div class="bld-controls">
             <label>
                 Search
-                <input v-model="query" placeholder="Name or id" />
+                <input v-model="query" placeholder="Name, city or id" />
             </label>
             <label>
                 Type
                 <select v-model="type">
                     <option value="">All</option>
-                    <option value="justice-of-the-peace">Justice of the peace</option>
-                    <option value="enterprise-court">Enterprise court</option>
+                    <option v-for="[value, label] in types" :key="value" :value="value">
+                        {{ label }}
+                    </option>
                 </select>
             </label>
             <label>
                 Arrondissement
                 <select v-model="arrondissement">
                     <option value="">All</option>
-                    <option v-for="a in used" :key="a.id" :value="a.id">{{ a.name.nl }}</option>
-                </select>
-            </label>
-            <label>
-                Language
-                <select v-model="locale">
-                    <option value="nl">nl</option>
-                    <option value="fr">fr</option>
-                    <option value="de">de</option>
+                    <option v-for="a in arrondissements" :key="a.id" :value="a.id">
+                        {{ a.name.nl }}
+                    </option>
                 </select>
             </label>
         </div>
-        <p class="bld-muted">{{ rows.length }} of {{ courts.length }} courts</p>
+        <p class="bld-muted">
+            {{ rows.length }} of {{ courts.length }} courts, divisions and seats
+        </p>
         <table>
             <thead>
                 <tr>
-                    <th>Name (<code>formatCourtName</code>)</th>
-                    <th>Id</th>
+                    <th>Name, as published</th>
                     <th>Address</th>
-                    <th>Contact</th>
+                    <th>Contacts</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="c in rows" :key="c.id">
+                <tr v-for="c in rows.slice(0, limit)" :key="c.id">
                     <td>
-                        {{ formatCourtName(c, locale) }}<br />
-                        <span class="bld-muted">{{
-                            getArrondissement(c.arrondissement)?.name[locale]
-                        }}</span>
+                        <template v-for="(n, lang) in c.name" :key="lang">
+                            <a :href="c.website[lang]">{{ n }}</a
+                            ><br />
+                        </template>
+                        <code>{{ c.id }}</code
+                        ><br />
+                        <span class="bld-muted">{{ where(c) }}</span>
                     </td>
                     <td>
-                        <code>{{ c.id }}</code>
+                        <template v-if="c.address">
+                            <span v-if="c.address.building">{{ c.address.building }}<br /></span>
+                            {{ c.address.street }}<br />
+                            {{ c.address.postalCode }} {{ c.address.city }}
+                        </template>
+                        <span v-else class="bld-muted">No single address</span>
+                        <div v-if="c.openingHours" class="bld-muted">
+                            <code>{{ c.openingHours }}</code>
+                        </div>
                     </td>
                     <td>
-                        <span v-if="c.address.building">{{ c.address.building }}<br /></span>
-                        {{ c.address.street }} {{ c.address.houseNumber }}<br />
-                        {{ c.address.postalCode }} {{ c.address.city }}
-                    </td>
-                    <td>
-                        <div v-for="k in c.contacts" :key="k.type + k.value + k.label">
+                        <div v-for="k in c.contacts.slice(0, 6)" :key="k.type + k.value + k.label">
                             <a v-if="k.type === 'email'" :href="'mailto:' + k.value">{{
                                 k.value
                             }}</a>
-                            <a v-else :href="'tel:' + k.value">{{ formatPhoneNumber(k.value) }}</a>
-                            <span v-if="k.label" class="bld-muted"> ({{ k.label }})</span>
+                            <span v-else-if="k.type === 'bank-account'">{{
+                                formatIban(k.value)
+                            }}</span>
+                            <a v-else :href="'tel:' + k.value"
+                                >{{ k.type === 'fax' ? 'fax ' : ''
+                                }}{{ formatPhoneNumber(k.value) }}</a
+                            >
+                            <span v-if="k.label || k.note" class="bld-muted">
+                                ({{ [k.label, k.note].filter(Boolean).join(': ') }})</span
+                            >
+                        </div>
+                        <div v-if="c.contacts.length > 6" class="bld-muted">
+                            and {{ c.contacts.length - 6 }} more
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
+        <button v-if="rows.length > limit" class="bld-more" @click="limit += 50">Show more</button>
     </div>
 </template>

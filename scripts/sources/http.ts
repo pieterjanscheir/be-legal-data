@@ -1,0 +1,52 @@
+/**
+ * A polite HTTP client for the official sources: one request per second per host, an honest
+ * user agent, and retries with backoff for network errors and server errors.
+ */
+const USER_AGENT =
+    'be-legal-data (+https://github.com/pieterjanscheir/be-legal-data; open data, weekly source check)'
+const DELAY_MS = 1000
+const RETRIES = 3
+
+const lastRequest = new Map<string, number>()
+const sleep = (ms: number) =>
+    new Promise<void>((resolve) => {
+        setTimeout(resolve, ms)
+    })
+
+export interface Response {
+    /** The URL after redirects */
+    url: string
+    status: number
+    contentType: string
+    body: Buffer
+}
+
+async function throttle(host: string): Promise<void> {
+    const wait = (lastRequest.get(host) ?? 0) + DELAY_MS - Date.now()
+    if (wait > 0) await sleep(wait)
+    lastRequest.set(host, Date.now())
+}
+
+export async function get(url: string): Promise<Response> {
+    for (let attempt = 0; ; attempt++) {
+        await throttle(new URL(url).host)
+        try {
+            const res = await fetch(url, {
+                headers: { 'user-agent': USER_AGENT },
+                redirect: 'follow',
+                signal: AbortSignal.timeout(60_000),
+            })
+            const body = Buffer.from(await res.arrayBuffer())
+            if (res.status >= 500 && attempt < RETRIES) throw new Error(`HTTP ${res.status}`)
+            return {
+                url: res.url,
+                status: res.status,
+                contentType: res.headers.get('content-type') ?? '',
+                body,
+            }
+        } catch (error) {
+            if (attempt >= RETRIES) throw error
+            await sleep(2 ** attempt * 5000)
+        }
+    }
+}

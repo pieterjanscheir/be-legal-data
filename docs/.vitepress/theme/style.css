@@ -81,3 +81,16 @@
 .vp-doc .bld-panel table {
     margin: 12px 0 0;
 }
+
+.bld-more {
+    margin-top: 8px;
+    padding: 4px 14px;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--vp-c-brand-1);
+}
+
+.bld-more:hover {
+    border-color: var(--vp-c-brand-1);
+}

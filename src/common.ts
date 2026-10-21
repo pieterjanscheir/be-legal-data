@@ -19,3 +19,40 @@ export interface SourceRef {
      */
     retrieved: string
 }
+
+/** A postal address, as published */
+export interface Address {
+    /** A building's name, when one is published: 'Gerechtsgebouw' */
+    building?: string
+    /**
+     * The street line as published, with its number, box or floor: 'Kazernevest 3',
+     * 'Beverstraat 7B (eerste verdieping)'
+     */
+    street: string
+    /** @pattern ^\d{4}$ */
+    postalCode: string
+    city: string
+}
+
+/** @format uri */
+export type Url = string
+
+export type ContactType = 'phone' | 'fax' | 'email' | 'bank-account'
+
+export interface Contact {
+    type: ContactType
+    /**
+     * Phone and fax: E.164 ('+3292343210'; `formatPhoneNumber` gives the national form).
+     * Email: lowercase. Bank account: IBAN in electronic form, checksum verified (`formatIban`
+     * groups it by four).
+     * @pattern ^(\+32\d{8,9}|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}|BE\d{14})$
+     */
+    value: string
+    /**
+     * The registry or service the contact belongs to, as the source titles it, in that page's
+     * language: 'Burgerlijke griffie', 'Greffe pénal'. No label: the general contact.
+     */
+    label?: string
+    /** Text published with the value: 'griffie', 'druk 1', 'tapez 2' */
+    note?: string
+}

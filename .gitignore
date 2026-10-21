@@ -4,3 +4,5 @@ docs/.vitepress/dist/
 docs/.vitepress/cache/
 dist/
 coverage/
+.sources/
+csv/

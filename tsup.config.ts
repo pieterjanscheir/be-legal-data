@@ -8,6 +8,8 @@ export default defineConfig({
         index: 'src/index.ts',
         territory: 'src/territory.ts',
         courts: 'src/courts.ts',
+        prisons: 'src/prisons.ts',
+        'houses-of-justice': 'src/houses-of-justice.ts',
         'interest-rates': 'src/interest-rates.ts',
     },
     format: ['esm'],
