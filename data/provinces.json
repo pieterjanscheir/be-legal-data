@@ -1,0 +1,152 @@
+[
+  {
+    "id": "10000",
+    "name": {
+      "nl": "Provincie Antwerpen",
+      "fr": "Province d’Anvers",
+      "de": "Provinz Antwerpen"
+    },
+    "region": "02000",
+    "sources": [
+      {
+        "url": "https://statbel.fgov.be/sites/default/files/files/opendata/REFNIS%20code/TU_COM_REFNIS-20250101.zip",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "20001",
+    "name": {
+      "nl": "Provincie Vlaams-Brabant",
+      "fr": "Province du Brabant flamand",
+      "de": "Provinz Flämisch-Brabant"
+    },
+    "region": "02000",
+    "sources": [
+      {
+        "url": "https://statbel.fgov.be/sites/default/files/files/opendata/REFNIS%20code/TU_COM_REFNIS-20250101.zip",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "20002",
+    "name": {
+      "nl": "Provincie Waals-Brabant",
+      "fr": "Province du Brabant wallon",
+      "de": "Provinz Wallonisch-Brabant"
+    },
+    "region": "03000",
+    "sources": [
+      {
+        "url": "https://statbel.fgov.be/sites/default/files/files/opendata/REFNIS%20code/TU_COM_REFNIS-20250101.zip",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "30000",
+    "name": {
+      "nl": "Provincie West-Vlaanderen",
+      "fr": "Province de Flandre occidentale",
+      "de": "Provinz Westflandern"
+    },
+    "region": "02000",
+    "sources": [
+      {
+        "url": "https://statbel.fgov.be/sites/default/files/files/opendata/REFNIS%20code/TU_COM_REFNIS-20250101.zip",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "40000",
+    "name": {
+      "nl": "Provincie Oost-Vlaanderen",
+      "fr": "Province de Flandre orientale",
+      "de": "Provinz Ostflandern"
+    },
+    "region": "02000",
+    "sources": [
+      {
+        "url": "https://statbel.fgov.be/sites/default/files/files/opendata/REFNIS%20code/TU_COM_REFNIS-20250101.zip",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "50000",
+    "name": {
+      "nl": "Provincie Henegouwen",
+      "fr": "Province du Hainaut",
+      "de": "Provinz Hennegau"
+    },
+    "region": "03000",
+    "sources": [
+      {
+        "url": "https://statbel.fgov.be/sites/default/files/files/opendata/REFNIS%20code/TU_COM_REFNIS-20250101.zip",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "60000",
+    "name": {
+      "nl": "Provincie Luik",
+      "fr": "Province de Liège",
+      "de": "Provinz Lüttich"
+    },
+    "region": "03000",
+    "sources": [
+      {
+        "url": "https://statbel.fgov.be/sites/default/files/files/opendata/REFNIS%20code/TU_COM_REFNIS-20250101.zip",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "70000",
+    "name": {
+      "nl": "Provincie Limburg",
+      "fr": "Province du Limbourg",
+      "de": "Provinz Limburg"
+    },
+    "region": "02000",
+    "sources": [
+      {
+        "url": "https://statbel.fgov.be/sites/default/files/files/opendata/REFNIS%20code/TU_COM_REFNIS-20250101.zip",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "80000",
+    "name": {
+      "nl": "Provincie Luxemburg",
+      "fr": "Province du Luxembourg",
+      "de": "Provinz Luxemburg"
+    },
+    "region": "03000",
+    "sources": [
+      {
+        "url": "https://statbel.fgov.be/sites/default/files/files/opendata/REFNIS%20code/TU_COM_REFNIS-20250101.zip",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "90000",
+    "name": {
+      "nl": "Provincie Namen",
+      "fr": "Province de Namur",
+      "de": "Provinz Namur"
+    },
+    "region": "03000",
+    "sources": [
+      {
+        "url": "https://statbel.fgov.be/sites/default/files/files/opendata/REFNIS%20code/TU_COM_REFNIS-20250101.zip",
+        "retrieved": "2026-10-20"
+      }
+    ]
+  }
+]

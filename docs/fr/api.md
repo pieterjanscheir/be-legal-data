@@ -16,7 +16,7 @@ import { getHouseOfJustice } from 'be-legal-data/houses-of-justice'
 | Point d'entrée                       | Contenu                                                          |
 | ------------------------------------ | ---------------------------------------------------------------- |
 | `be-legal-data`                      | Tout ce qui suit                                                 |
-| `be-legal-data/territory`            | Ressorts, arrondissements, cantons, communes                     |
+| `be-legal-data/territory`            | Ressorts, arrondissements, cantons, communes, provinces, régions |
 | `be-legal-data/courts`               | Cours et tribunaux, et les helpers de coordonnées                |
 | `be-legal-data/prisons`              | Prisons, et les helpers de coordonnées                           |
 | `be-legal-data/houses-of-justice`    | Maisons de justice, et les helpers de coordonnées                |
@@ -67,6 +67,32 @@ function getMunicipality(id: string, options?: OnDay): Municipality | undefined
 
 ```ts
 getMunicipality('44021').name // { nl: 'Gent', fr: 'Gand' }
+getMunicipality('44021').province // '40000'
+getMunicipality('21004').province // '04000' : Bruxelles n'a pas de province, c'est le code de la région
+```
+
+### `getRegion(id)` {#getregion-id}
+
+```ts
+function getRegion(id: RegionId): Region
+function getRegion(id: string, options?: OnDay): Region | undefined
+```
+
+```ts
+getRegion('02000').name.fr // 'Région flamande'
+```
+
+### `getProvince(id)` {#getprovince-id}
+
+```ts
+function getProvince(id: ProvinceId): Province
+function getProvince(id: string, options?: OnDay): Province | undefined
+```
+
+```ts
+getProvince('40000').name.nl // 'Provincie Oost-Vlaanderen'
+getProvince('40000').region // '02000'
+getProvince('04000') // undefined : la Région de Bruxelles-Capitale n'est pas une province
 ```
 
 ### `getCanton(id)` {#getcanton-id}
@@ -108,6 +134,30 @@ arrondissement, même une ville scindée en plusieurs cantons.
 
 ```ts
 getArrondissementForMunicipality('44021')?.id // 'oost-vlaanderen'
+```
+
+### `getProvinceForMunicipality(id)` {#getprovinceformunicipality-id}
+
+```ts
+function getProvinceForMunicipality(id: string, options?: OnDay): Province | undefined
+```
+
+La province dans laquelle se situe une commune, par code REFNIS. `undefined` pour les 19 communes
+de la Région de Bruxelles-Capitale, qui n'a pas de province, et pour un code inconnu.
+
+```ts
+getProvinceForMunicipality('44021')?.id // '40000'
+getProvinceForMunicipality('21004') // undefined : Bruxelles
+```
+
+### `getRegionForMunicipality(id)` {#getregionformunicipality-id}
+
+```ts
+function getRegionForMunicipality(id: string, options?: OnDay): Region | undefined
+```
+
+```ts
+getRegionForMunicipality('21004')?.name.fr // 'Région de Bruxelles-Capitale'
 ```
 
 ## Cours et tribunaux {#courts}
@@ -394,6 +444,8 @@ Les jeux de données complets, typés :
 | `judicialAreas`   | `readonly JudicialArea[]`                            |
 | `arrondissements` | `readonly Arrondissement[]`                          |
 | `cantons`         | `readonly Canton[]`                                  |
+| `regions`         | `readonly Region[]`                                  |
+| `provinces`       | `readonly Province[]`                                |
 | `municipalities`  | `readonly Municipality[]`                            |
 | `courts`          | `readonly Court[]`                                   |
 | `prisons`         | `readonly Prison[]`                                  |
@@ -402,14 +454,14 @@ Les jeux de données complets, typés :
 
 ## Types {#types}
 
-| Type                                                                                                                                                                            | Décrit sur                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `JudicialAreaId`, `ArrondissementId`, `CantonId`, `MunicipalityId`, `CourtId`, `PrisonId`, `HouseOfJusticeId` : unions des ids présents dans les données, régénérées avec elles | [Identifiants](/fr/guide/identifiers#in-typescript)                           |
-| `Locale` = `'nl' \| 'fr' \| 'de'`                                                                                                                                               |                                                                               |
-| `SourceRef` = `{ url: string; retrieved: string }` : d'où proviennent les données d'un enregistrement                                                                           | [Qualité et fraîcheur des données](/fr/guide/data-quality)                    |
-| `Translated` = `Record<Locale, string>`                                                                                                                                         |                                                                               |
-| `Bilingual` = `Record<'nl' \| 'fr', string>` : les noms tels que le Code judiciaire les donne                                                                                   |                                                                               |
-| `JudicialArea`, `Arrondissement`, `Canton`, `Municipality`, `LegalBasis`, `Validity`, `OnDay`                                                                                   | [Territoire et cantons](/fr/data/territory)                                   |
-| `Court`, `CourtType`, `CourtFilter`, `Address`, `Contact`, `ContactType`, `CantonCourt`                                                                                         | [Cours et tribunaux](/fr/data/courts#shape)                                   |
-| `Prison`, `HouseOfJustice`                                                                                                                                                      | [Prisons](/fr/data/prisons), [Maisons de justice](/fr/data/houses-of-justice) |
-| `InterestType`, `InterestRatePeriod`, `InterestRateSeries`, `InterestRateResult`                                                                                                | [Taux d'intérêt](/fr/data/interest-rates#shape)                               |
+| Type                                                                                                                                                                                                      | Décrit sur                                                                    |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `JudicialAreaId`, `ArrondissementId`, `CantonId`, `RegionId`, `ProvinceId`, `MunicipalityId`, `CourtId`, `PrisonId`, `HouseOfJusticeId` : unions des ids présents dans les données, régénérées avec elles | [Identifiants](/fr/guide/identifiers#in-typescript)                           |
+| `Locale` = `'nl' \| 'fr' \| 'de'`                                                                                                                                                                         |                                                                               |
+| `SourceRef` = `{ url: string; retrieved: string }` : d'où proviennent les données d'un enregistrement                                                                                                     | [Qualité et fraîcheur des données](/fr/guide/data-quality)                    |
+| `Translated` = `Record<Locale, string>`                                                                                                                                                                   |                                                                               |
+| `Bilingual` = `Record<'nl' \| 'fr', string>` : les noms tels que le Code judiciaire les donne                                                                                                             |                                                                               |
+| `JudicialArea`, `Arrondissement`, `Canton`, `Region`, `Province`, `Municipality`, `LegalBasis`, `Validity`, `OnDay`                                                                                       | [Territoire et cantons](/fr/data/territory)                                   |
+| `Court`, `CourtType`, `CourtFilter`, `Address`, `Contact`, `ContactType`, `CantonCourt`                                                                                                                   | [Cours et tribunaux](/fr/data/courts#shape)                                   |
+| `Prison`, `HouseOfJustice`                                                                                                                                                                                | [Prisons](/fr/data/prisons), [Maisons de justice](/fr/data/houses-of-justice) |
+| `InterestType`, `InterestRatePeriod`, `InterestRateSeries`, `InterestRateResult`                                                                                                                          | [Taux d'intérêt](/fr/data/interest-rates#shape)                               |

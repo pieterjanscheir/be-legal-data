@@ -33,7 +33,6 @@ of how often they'd be used:
 - **Notaries and notarial chambers**, **bars** (balies / barreaux).
 - **Municipality mergers**: old → new REFNIS codes for 2019 and 2025, so older data can be
   mapped.
-- **Provinces and regions** as their own dataset (today only codes).
 - **The health index** (gezondheidsindex) for rent indexation.
 
 ## Why some datasets aren't here yet

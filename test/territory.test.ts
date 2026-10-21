@@ -6,8 +6,14 @@ import {
     getArrondissementForMunicipality,
     getCanton,
     getCantonsForMunicipality,
+    getProvince,
+    getProvinceForMunicipality,
+    getRegion,
+    getRegionForMunicipality,
     judicialAreas,
     municipalities,
+    provinces,
+    regions,
     territoryCoverage,
 } from '../src'
 
@@ -93,6 +99,53 @@ describe('territory', () => {
     })
 })
 
+describe('regions and provinces', () => {
+    it('has the 3 regions and the 10 provinces, named in three languages', () => {
+        expect(regions.map((r) => r.id)).toEqual(['02000', '03000', '04000'])
+        expect(provinces).toHaveLength(10)
+        for (const r of [...regions, ...provinces]) {
+            expect(Object.keys(r.name).sort(), r.id).toEqual(['de', 'fr', 'nl'])
+            expect(r.sources.length, r.id).toBeGreaterThan(0)
+        }
+        expect(getRegion('02000').name).toEqual({
+            nl: 'Vlaams Gewest',
+            fr: 'Région flamande',
+            de: 'Flämische Region',
+        })
+        expect(getProvince('10000').name.fr).toBe('Province d’Anvers')
+    })
+
+    it('puts five provinces in each of the Flemish and Walloon Regions, none in Brussels', () => {
+        const inRegion = (id: string) => provinces.filter((p) => p.region === id).length
+        expect(inRegion('02000')).toBe(5)
+        expect(inRegion('03000')).toBe(5)
+        expect(inRegion('04000')).toBe(0)
+        for (const p of provinces) expect(getRegion(p.region), p.id).toBeDefined()
+    })
+
+    it('gives every municipality a region, and a province outside Brussels', () => {
+        for (const m of municipalities) {
+            const region = getRegion(m.region)
+            expect(region, m.id).toBeDefined()
+            const province = getProvince(m.province)
+            if (m.region === '04000') {
+                expect(m.province, m.id).toBe('04000')
+                expect(province, m.id).toBeUndefined()
+            } else expect(province?.region, m.id).toBe(m.region)
+        }
+        expect(municipalities.filter((m) => m.region === '04000')).toHaveLength(19)
+    })
+
+    it('finds the province and region of a municipality', () => {
+        expect(getProvinceForMunicipality('44021')?.id).toBe('40000')
+        expect(getRegionForMunicipality('44021')?.id).toBe('02000')
+        expect(getProvinceForMunicipality('21004')).toBeUndefined()
+        expect(getRegionForMunicipality('21004')?.name.nl).toBe('Brussels Hoofdstedelijk Gewest')
+        expect(getProvinceForMunicipality('99999')).toBeUndefined()
+        expect(getRegionForMunicipality('99999')).toBeUndefined()
+    })
+})
+
 describe('a day', () => {
     it('finds the version of a record that applies on it', () => {
         expect(getCanton('gent-1', { on: '2025-06-01' })?.id).toBe('gent-1')
@@ -100,6 +153,9 @@ describe('a day', () => {
         expect(getArrondissementForMunicipality('44021', { on: '2025-01-01' })?.id).toBe(
             'oost-vlaanderen',
         )
+        expect(getProvinceForMunicipality('44021', { on: '2025-01-01' })?.id).toBe('40000')
+        expect(getRegionForMunicipality('21004', { on: new Date(2026, 5, 1) })?.id).toBe('04000')
+        expect(getProvince('20000', { on: '2025-06-01' })).toBeUndefined()
     })
 
     it("throws before the data's coverage starts, rather than answer with today's map", () => {
@@ -108,6 +164,8 @@ describe('a day', () => {
         expect(() => getCantonsForMunicipality('44021', { on: '2018-06-01' })).toThrow(
             /2025-01-01 onwards/,
         )
+        expect(() => getProvinceForMunicipality('44021', { on: '1994-12-31' })).toThrow(RangeError)
+        expect(() => getRegion('02000', { on: '2024-12-31' })).toThrow(RangeError)
     })
 
     it('throws for a malformed day', () => {
