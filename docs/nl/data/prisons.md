@@ -1,6 +1,10 @@
 # Gevangenissen {#prisons}
 
-Bestand: `data/prisons.json`. De 39 gevangenissen en detentiehuizen van de FOD Justitie
+<script setup>
+import { data as stats } from '../../.vitepress/stats.data'
+</script>
+
+Bestand: `data/prisons.json`. De {{ stats.prisons }} gevangenissen en detentiehuizen van de FOD Justitie
 (Directoraat-generaal Penitentiaire Inrichtingen).
 
 ## Waarvoor het dient {#why-it-s-useful}
@@ -25,15 +29,16 @@ Bestand: `data/prisons.json`. De 39 gevangenissen en detentiehuizen van de FOD J
 
 ## Velden {#fields}
 
-| Veld       | Type                              | Beschrijving                                                                                                 |
-| ---------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `id`       | `PrisonId`                        | Uit de naam in de streektaal, zonder lidwoorden: `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk` |
-| `kind`     | `'prison'` \| `'detention-house'` | Een detentiehuis huisvest mensen met korte straffen, dicht bij huis                                          |
-| `name`     | `{ nl, fr, de }`                  | Zoals de FOD Justitie die publiceert                                                                         |
-| `address`  | `Address`                         | In de streektaal                                                                                             |
-| `contacts` | `Contact[]`                       | Telefoon, fax, e-mail en de rekening voor geld voor gedetineerden, waar gepubliceerd                         |
-| `website`  | `{ nl, fr, de }`                  | De pagina van de gevangenis per taal                                                                         |
-| `sources`  | `{ url, retrieved }[]`            | De pagina's waaruit het record is gelezen                                                                    |
+| Veld                   | Type                              | Beschrijving                                                                                                                                       |
+| ---------------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                   | `PrisonId`                        | Uit de naam in de streektaal, zonder lidwoorden: `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk`                                       |
+| `validFrom`, `validTo` | string?                           | De dagen waarop het record geldt, zoals de site het vermeldde; geen: sinds het begin van de dekking, of geldt nog steeds. Zie [tijd](/nl/api#time) |
+| `kind`                 | `'prison'` \| `'detention-house'` | Een detentiehuis huisvest mensen met korte straffen, dicht bij huis                                                                                |
+| `name`                 | `{ nl, fr, de }`                  | Zoals de FOD Justitie die publiceert                                                                                                               |
+| `address`              | `Address`                         | In de streektaal                                                                                                                                   |
+| `contacts`             | `Contact[]`                       | Telefoon, fax, e-mail en de rekening voor geld voor gedetineerden, waar gepubliceerd                                                               |
+| `website`              | `{ nl, fr, de }`                  | De pagina van de gevangenis per taal                                                                                                               |
+| `sources`              | `{ url, retrieved }[]`            | De pagina's waaruit het record is gelezen                                                                                                          |
 
 De naam van de directeur, die de pagina's ook geven, is weggelaten: hij verandert, en het zijn
 persoonsgegevens die het package niet nodig heeft.

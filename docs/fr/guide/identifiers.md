@@ -139,6 +139,14 @@ L'historique antérieur au 1er janvier 2025 n'est pas encore dans les données
 ([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)) : une recherche pour un jour
 antérieur lève une `RangeError` plutôt que de répondre avec la carte d'aujourd'hui.
 
+## Les identifiants sont opaques {#ids-are-opaque}
+
+Un identifiant est une clé, pas un format. `court-of-first-instance-luxembourg-marche-en-famenne`
+ne peut pas être redécoupé en type, lieu et division, parce que le type, le lieu et le suffixe de
+langue utilisent tous le même trait d'union. N'analysez pas les identifiants : chaque partie de
+l'un d'eux est aussi un champ (`type`, `court`, `canton`, `arrondissement`), et ce sont les champs
+que les schémas et les tests vérifient.
+
 ## Stabilité {#stability}
 
 Les identifiants font partie de l'API publique. Ajouter des enregistrements est une version
@@ -146,3 +154,13 @@ mineure, corriger une valeur un patch, et supprimer ou renommer un identifiant u
 majeure. La version 0.3.0 remplace les anciens identifiants en PascalCase (`VredegerechtGent1`,
 `EastFlanders`) par ce schéma avant que le package n'ait le moindre utilisateur ; le
 [Changelog](./changelog) liste la correspondance.
+
+La promesse est vérifiée, pas seulement faite. `ids.lock.json` liste chaque identifiant que le
+package a publié, par jeu de données ; `pnpm generate` y ajoute les nouveaux identifiants et n'en
+retire jamais aucun, et `test/ids.test.ts` échoue quand un identifiant verrouillé manque dans les
+données. Ainsi, un scraper qui lit une page retitrée, une liste de cantons régénérée ou une
+modification à la main ne peut pas supprimer ni renommer un identifiant sans qu'on s'en
+aperçoive : la pull request hebdomadaire des données échoue, et une personne fait correspondre
+le nouveau nom à l'identifiant existant dans le parser, ou clôture l'enregistrement avec un
+`validTo`. Retirer un identifiant du verrou est un acte délibéré, réservé à une version majeure,
+avec l'identifiant et son remplaçant dans le changelog.

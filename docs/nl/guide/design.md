@@ -116,8 +116,10 @@ en meer om te testen. Gecommitte build-output veroudert en brak geautomatiseerde
 dependency-updates.
 
 **Dus.** `import` en `require()` werken allebei, getest op Node 22.12, 22, 24 en 26. Elke
-dataset heeft een eigen entry point, zodat een app die alleen de rentevoeten nodig heeft 12 KB
-laadt, niet 250 KB.
+dataset heeft een eigen entry point, zodat een app die alleen de rentevoeten nodig heeft enkele
+kilobytes laadt, niet de hoven en rechtbanken en de wettekst van elk kanton (de
+[pagina Aan de slag](./getting-started#import-only-what-you-need) meet elk entry point uit de
+build).
 
 ## 9. Types die de garanties van de data dragen {#_9-types-that-carry-the-data-s-guarantees}
 
@@ -158,6 +160,10 @@ opzoeking veranderen, dus zit ze in het model vóór de geschiedenis in de data 
 
 **Dus.** Rentevoeten hebben al periodes. Een opzoeking op id zonder dag geeft de versie van
 vandaag, zodat bekende ids hun niet-`undefined` type behouden; met een dag kan ze niets vinden.
+Elke dataset draagt de periode, niet alleen het territorium: een gescrapet record dat de bron niet
+langer vermeldt, wordt beëindigd met een `validTo` in plaats van gewist (`scripts/parse/retire.ts`),
+zodat een id, eenmaal gepubliceerd, blijft, en een gerecht dat sluit nog altijd het gerecht is dat
+de dagvaarding van vorig jaar noemde.
 
 ## 12. Releases dragen de data, niet alleen het package {#_12-releases-carry-the-data-not-only-the-package}
 

@@ -5,7 +5,7 @@ Alles wordt geëxporteerd vanuit de root van het package, en elke dataset heeft 
 ```ts
 import { getCanton, getInterestRate /* … */ } from 'be-legal-data'
 
-// Alleen wat je gebruikt: 12 KB voor de rentevoeten in plaats van alles
+// Alleen wat je gebruikt: de rentevoeten alleen zijn maar enkele kilobytes
 import { getInterestRate } from 'be-legal-data/interest-rates'
 import { getCourt, getJusticeOfThePeace } from 'be-legal-data/courts'
 import { getCanton, getCantonsForMunicipality } from 'be-legal-data/territory'
@@ -32,7 +32,7 @@ Conventies:
 - Opzoekingen op id geven `undefined` terug als niets overeenkomt; lijstfuncties geven een lege array terug.
 - Functies gooien alleen een fout bij ongeldige invoer: een misvormde dag, of een dag vóór de
   dekking van de data (`RangeError`). Nooit voor ontbrekende data.
-- Opzoekingen in het territorium nemen een optionele dag, `{ on: '2025-06-01' }` of een `Date`, en antwoorden voor
+- Elke opzoeking neemt een optionele dag, `{ on: '2025-06-01' }` of een `Date`, en antwoordt voor
   vandaag als je er geen meegeeft. Een opzoeking op id vindt altijd een bekend record: de versie van vandaag, of de laatste
   versie van een record dat is beëindigd. Zie [tijd](#time).
 - Geëxporteerde datasets zijn `readonly`: kopieer ze voor je sorteert of wijzigt (`[...courts].sort()`).
@@ -151,7 +151,7 @@ getCantonBoundary('gent-1').geometry.type // 'MultiPolygon'
 
 ```ts
 function getCourt(id: CourtId): Court
-function getCourt(id: string): Court | undefined
+function getCourt(id: string, options?: OnDay): Court | undefined
 ```
 
 Een rechtbank, afdeling of zetel. Ids zijn het `type` van de rechtbank gevolgd door de plaats:
@@ -165,10 +165,12 @@ getCourt('court-of-appeal-brussel').name // { nl: 'Hof van Beroep Brussel', fr: 
 
 ```ts
 function getJusticeOfThePeace(cantonId: CantonId): Court
-function getJusticeOfThePeace(cantonId: string): Court | undefined
+function getJusticeOfThePeace(cantonId: string, options?: OnDay): Court | undefined
 ```
 
-Het vredegerecht van een kanton. Elk kanton heeft er één.
+Het vredegerecht van een kanton. Elk kanton heeft er één. Een vredegerecht dat op meerdere
+plaatsen zitting houdt (Philippeville, in Couvin en Florennes) heeft geen eigen adres of
+contactgegevens: zijn zetels hebben die, zie `getDivisions`.
 
 ```ts
 const [canton] = getCantonsForMunicipality('44088')
@@ -178,11 +180,11 @@ getJusticeOfThePeace(canton.id).address // het vredegerecht van Merelbeke-Melle
 ### `getDivisions(courtId)` {#getdivisions-courtid}
 
 ```ts
-function getDivisions(courtId: string): Court[]
+function getDivisions(courtId: string, options?: OnDay): Court[]
 ```
 
-De afdelingen van een rechtbank, of de zetels van een vredegerecht dat op meerdere plaatsen zitting houdt; leeg
-voor een rechtbank zonder.
+De afdelingen van een rechtbank, of de zetels van een vredegerecht dat op meerdere plaatsen zitting houdt, op een
+dag (standaard vandaag); leeg voor een rechtbank zonder.
 
 ```ts
 getDivisions('labour-court-gent').map((c) => c.id) // ['labour-court-gent-aalst', …]
@@ -194,9 +196,9 @@ getDivisions('labour-court-gent').map((c) => c.id) // ['labour-court-gent-aalst'
 function getCourtsForCanton(cantonId: string, options?: OnDay): Court[]
 ```
 
-De hoven en rechtbanken in wier gebied een kanton ligt op een dag (standaard vandaag): zijn vredegerecht en, van elk ander type, de
-rechtbank die het bestrijkt (de rechtbank als geheel, niet haar afdelingen); in Brussel beide taalrollen
-van een type. Leeg voor een onbekend kanton.
+De hoven en rechtbanken in wier gebied een kanton ligt op een dag (standaard vandaag): zijn vredegerecht en,
+van elk ander type, de rechtbank die het bestrijkt (de rechtbank als geheel, niet haar afdelingen); in
+Brussel beide taalrollen van een type. Leeg voor een onbekend kanton.
 
 ```ts
 getCourtsForCanton('gent-1').map((c) => c.id)
@@ -206,15 +208,19 @@ getCourtsForCanton('gent-1').map((c) => c.id)
 ### `findCourts(filter)` {#findcourts-filter}
 
 ```ts
-function findCourts(filter: {
-    type?: CourtType
-    kind?: 'court' | 'division' | 'seat'
-    arrondissement?: string
-    judicialArea?: string
-}): Court[]
+function findCourts(
+    filter: {
+        type?: CourtType
+        kind?: 'court' | 'division' | 'seat'
+        arrondissement?: string
+        judicialArea?: string
+    },
+    options?: OnDay,
+): Court[]
 ```
 
-De hoven en rechtbanken die aan elk opgegeven filter voldoen; een leeg filter geeft ze allemaal terug.
+De hoven en rechtbanken die aan elk opgegeven filter voldoen en op een dag gelden (standaard vandaag); een leeg
+filter geeft elke rechtbank van die dag terug.
 
 ```ts
 findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' }) // de afdelingen ervan daar
@@ -275,7 +281,7 @@ formatIban('BE73679200844560') // 'BE73 6792 0084 4560'
 
 ```ts
 function getPrison(id: PrisonId): Prison
-function getPrison(id: string): Prison | undefined
+function getPrison(id: string, options?: OnDay): Prison | undefined
 ```
 
 ```ts
@@ -288,7 +294,7 @@ getPrison('gevangenis-gent').name.fr // 'Prison de Gand'
 
 ```ts
 function getHouseOfJustice(id: HouseOfJusticeId): HouseOfJustice
-function getHouseOfJustice(id: string): HouseOfJustice | undefined
+function getHouseOfJustice(id: string, options?: OnDay): HouseOfJustice | undefined
 ```
 
 ```ts
@@ -381,7 +387,7 @@ De laatste dag waarvoor een rentevoet bekend is, `YYYY-MM-DD`.
 
 ## Tijd {#time}
 
-Territoriumrecords hebben een geldigheidsperiode, en opzoekingen in het territorium nemen een dag. De helpers worden
+Elk record heeft een geldigheidsperiode, en elke opzoeking neemt een dag. De helpers worden
 geëxporteerd voor je eigen records.
 
 ```ts
@@ -395,14 +401,25 @@ interface OnDay {
 }
 
 const territoryCoverage: { from: '2025-01-01' }
+const courtsCoverage: { from: '2025-01-01' }
+const prisonsCoverage: { from: '2026-10-20' }
+const housesOfJusticeCoverage: { from: '2026-10-20' }
 
 function appliesOn(record: Validity, day: string): boolean
 function toDay(date: Date | string): string // 'YYYY-MM-DD', of een RangeError
 ```
 
-De territoriumdata beschrijft 1 januari 2025 en later; een opzoeking voor een vroegere dag gooit een
-`RangeError` in plaats van te antwoorden met de kaart van vandaag. Vroegere versies zijn gepland
-([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
+Elke dataset zegt vanaf welke dag ze de situatie beschrijft; een opzoeking voor een vroegere dag
+gooit een `RangeError` in plaats van te antwoorden met de kaart van vandaag. Het territorium en de lijst
+van hoven en rechtbanken volgen uit de wet zoals gewijzigd voor 1 januari 2025; gevangenissen en
+justitiehuizen zijn bekend vanaf de dag waarop hun sites voor het eerst gelezen zijn. Vroegere versies
+zijn gepland ([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
+
+De geëxporteerde arrays (`courts`, `prisons`, …) bevatten elke versie van elk record. Een record dat de
+bron niet langer vermeldt, wordt niet gewist: het behoudt zijn id en krijgt een `validTo`, de dag vóór de
+wekelijkse controle die het miste. Een record dat de bron begint te vermelden, krijgt een `validFrom`.
+Een opzoeking op id zonder dag geeft dus de versie van vandaag, of de laatste versie van een record dat is
+beëindigd: controleer `validTo` voor je er iets neerlegt.
 
 ## Datasets {#datasets}
 

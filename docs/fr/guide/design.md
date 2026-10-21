@@ -123,7 +123,9 @@ a cassé les mises à jour automatiques de dépendances.
 
 **Donc.** `import` et `require()` fonctionnent tous deux, testés sous Node 22.12, 22, 24 et 26.
 Chaque jeu de données a son propre point d'entrée, si bien qu'une application qui n'a besoin que
-des taux d'intérêt charge 12 Ko, pas 250 Ko.
+des taux d'intérêt charge quelques kilooctets, et non les tribunaux et le texte légal de chaque
+canton (la [page Premiers pas](./getting-started#import-only-what-you-need) mesure chaque point
+d'entrée à partir du build).
 
 ## 9. Des types qui portent les garanties des données {#_9-types-that-carry-the-data-s-guarantees}
 
@@ -166,7 +168,11 @@ dans le modèle avant que l'historique ne soit dans les données
 
 **Donc.** Les taux d'intérêt ont déjà des périodes. Une recherche par identifiant sans jour donne
 la version d'aujourd'hui, de sorte que les identifiants connus gardent leur type non-`undefined` ;
-avec un jour, elle peut ne rien trouver.
+avec un jour, elle peut ne rien trouver. Chaque jeu de données porte la période, pas seulement le
+territoire : un enregistrement extrait d'un site que la source cesse de recenser est clôturé par
+un `validTo` plutôt que supprimé (`scripts/parse/retire.ts`), si bien qu'un identifiant, une fois
+publié, reste, et qu'un tribunal qui ferme est toujours celui que nommait la citation de l'an
+dernier.
 
 ## 12. Les releases transportent les données, pas seulement le package {#_12-releases-carry-the-data-not-only-the-package}
 

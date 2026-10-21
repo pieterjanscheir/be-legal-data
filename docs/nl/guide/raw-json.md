@@ -65,7 +65,7 @@ ze via Gegevens > Uit tekst/CSV.
 | `data/canton-boundaries.json` | De grens van elk kanton als GeoJSON-geometrie (23 MB)                           |
 | `data/municipalities.json`    | De 565 gemeenten met REFNIS-code en provincie                                   |
 | `data/courts.json`            | Elke rechtbank, afdeling en zetel op het portaal van de rechtbanken             |
-| `data/prisons.json`           | De 39 gevangenissen en detentiehuizen                                           |
+| `data/prisons.json`           | De gevangenissen en detentiehuizen                                              |
 | `data/houses-of-justice.json` | De justitiehuizen van de Vlaamse en de Franse Gemeenschap                       |
 | `data/interest-rates.json`    | Wettelijke interest en interest bij betalingsachterstand bij handelstransacties |
 

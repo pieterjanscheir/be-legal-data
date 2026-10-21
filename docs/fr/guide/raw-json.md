@@ -66,7 +66,7 @@ tabulaire et reste dans le JSON ; `canton-boundaries.csv` contient les identifia
 | `data/canton-boundaries.json` | La limite de chaque canton en géométrie GeoJSON (23 Mo)                        |
 | `data/municipalities.json`    | Les 565 communes avec leur code REFNIS et leur province                        |
 | `data/courts.json`            | Chaque cour, tribunal, division et siège du portail des cours et tribunaux     |
-| `data/prisons.json`           | Les 39 prisons et maisons de détention                                         |
+| `data/prisons.json`           | Les prisons et maisons de détention                                            |
 | `data/houses-of-justice.json` | Les maisons de justice de la Communauté flamande et de la Communauté française |
 | `data/interest-rates.json`    | Taux d'intérêt légal et taux pour les transactions commerciales                |
 

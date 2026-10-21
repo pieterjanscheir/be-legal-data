@@ -17,9 +17,14 @@ Pour les jeux de données tenus à la main (ressorts, arrondissements, taux d'in
 3. `pnpm check` : régénère les types d'identifiants et les schémas, vérifie les types, lance le
    lint et le contrôle de formatage, construit le package, exécute les tests avec couverture et
    le lint du package. Il échoue quand les fichiers générés ne sont pas commités.
-4. Ajoutez une ligne à `CHANGELOG.md` sous Unreleased, et commitez (y compris `schema/` et
-   `src/ids.generated.ts`). La sortie de build (`dist/`) n'est pas commitée : elle est
-   construite pour chaque version et publiée sur npm.
+4. Ajoutez une ligne à `CHANGELOG.md` sous Unreleased, et commitez (y compris `schema/`,
+   `src/ids.generated.ts` et `ids.lock.json`). La sortie de build (`dist/`) n'est pas commitée :
+   elle est construite pour chaque version et publiée sur npm.
+
+Un identifiant publié reste : `ids.lock.json` les liste tous et les tests échouent quand l'un
+d'eux manque dans les données. Si une source a renommé un enregistrement, faites correspondre le
+nouveau nom à l'identifiant existant dans le parser ; si l'enregistrement a pris fin, gardez-le
+avec un `validTo`. Voir [Identifiants](./identifiers#stability).
 
 ### Cantons et communes {#cantons-and-municipalities}
 
@@ -106,7 +111,7 @@ Chaque jeu de données reçoit le même traitement, pour que les utilisateurs pu
 | `pnpm test:package`         | Tests de fumée du package construit avec `import` et `require()` : lancez `pnpm build` d'abord                                                                               |
 | `pnpm test:coverage`        | Les mêmes, en échouant sous 100 % de couverture de `src/`                                                                                                                    |
 | `pnpm lint` / `pnpm format` | ESLint et Prettier : contrôle / correction                                                                                                                                   |
-| `pnpm generate`             | Régénère `src/ids.generated.ts` (types d'identifiants) et `schema/` à partir des données et des types                                                                        |
+| `pnpm generate`             | Régénère `src/ids.generated.ts` (types d'identifiants) et `schema/` à partir des données et des types, et ajoute les nouveaux identifiants à `ids.lock.json`                 |
 | `pnpm lint:package`         | `publint` et `arethetypeswrong` sur le package empaqueté                                                                                                                     |
 | `pnpm test:freshness`       | Contrôles liés à la date : taux manquants, vérifications en retard. Ne fait pas partie de `check` ; `FRESHNESS_ONLINE=1` vérifie aussi les URL des sources                   |
 | `pnpm fetch:sources`        | Récupère les sources officielles dans `.sources/`                                                                                                                            |
