@@ -14,6 +14,8 @@ import {
     judicialAreas,
     municipalities,
     prisons,
+    provinces,
+    regions,
 } from '../src'
 
 const names = (name: Record<string, string>) => Object.values(name)
@@ -25,7 +27,15 @@ const local = (arrondissement: string) =>
     :   'nl'
 
 describe('identifiers', () => {
-    const datasets = { judicialAreas, arrondissements, cantons, municipalities, courts }
+    const datasets = {
+        judicialAreas,
+        arrondissements,
+        cantons,
+        regions,
+        provinces,
+        municipalities,
+        courts,
+    }
 
     // A record may have several versions (validFrom), never two with the same start
     it.each(Object.entries(datasets))('are unique in %s, per version', (_name, records) => {
@@ -33,11 +43,13 @@ describe('identifiers', () => {
         expect(new Set(keys).size).toBe(keys.length)
     })
 
-    it('are lowercase kebab-case, or a REFNIS code for municipalities', () => {
+    it('are lowercase kebab-case, or a REFNIS code for regions, provinces and municipalities', () => {
         for (const records of [judicialAreas, arrondissements, cantons, courts]) {
             for (const { id } of records) expect(id).toMatch(ID_PATTERN)
         }
-        for (const { id } of municipalities) expect(id).toMatch(/^\d{5}$/)
+        for (const records of [regions, provinces, municipalities]) {
+            for (const { id } of records) expect(id).toMatch(/^\d{5}$/)
+        }
     })
 
     it('derive from one of the official names', () => {
@@ -72,6 +84,8 @@ describe('identifiers', () => {
             'judicial-areas': judicialAreas.map((r) => r.id),
             arrondissements: arrondissements.map((r) => r.id),
             cantons: cantons.map((r) => r.id),
+            regions: regions.map((r) => r.id),
+            provinces: provinces.map((r) => r.id),
             municipalities: municipalities.map((r) => r.id),
             courts: courts.map((r) => r.id),
             prisons: prisons.map((r) => r.id),

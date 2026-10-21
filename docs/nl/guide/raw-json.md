@@ -60,7 +60,9 @@ data als JSON en als CSV-tabellen (UTF-8, kommagescheiden), samen met de schema'
 | `data/judicial-areas.json`    | De 5 rechtsgebieden (hoven van beroep)                                          |
 | `data/arrondissements.json`   | De 12 gerechtelijke arrondissementen en hun rechtsgebied                        |
 | `data/cantons.json`           | Alle 162 gerechtelijke kantons                                                  |
-| `data/municipalities.json`    | De 565 gemeenten met REFNIS-code en provincie                                   |
+| `data/municipalities.json`    | De 565 gemeenten met REFNIS-code, provincie en gewest                           |
+| `data/regions.json`           | De 3 gewesten, in drie talen benoemd                                            |
+| `data/provinces.json`         | De 10 provincies, met hun gewest                                                |
 | `data/courts.json`            | Elke rechtbank, afdeling en zetel op het portaal van de rechtbanken             |
 | `data/prisons.json`           | De 39 gevangenissen en detentiehuizen                                           |
 | `data/houses-of-justice.json` | De justitiehuizen van de Vlaamse en de Franse Gemeenschap                       |

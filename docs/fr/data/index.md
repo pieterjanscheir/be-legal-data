@@ -10,6 +10,8 @@ la date de sa dernière vérification par rapport à celles-ci.
 | [Arrondissements](./territory#arrondissements) | 12              | Regrouper les tribunaux, les parquets et les huissiers de justice ; l'unité qu'utilisent la plupart des règles de compétence |
 | [Cantons](./territory#cantons)                 | 162             | Quelle justice de paix est compétente pour une adresse                                                                       |
 | [Communes](./territory#municipalities)         | 565             | Relier toute adresse ou statistique belge à la carte judiciaire par le code REFNIS                                           |
+| [Régions](./territory#regions)                 | 3               | La région d'une commune, par code REFNIS, nommée en trois langues                                                            |
+| [Provinces](./territory#provinces)             | 10              | La province d'une commune (aucune à Bruxelles), avec sa région                                                               |
 | [Cours et tribunaux](./courts)                 | 347             | Noms, adresses et coordonnées des greffes pour écrire à n'importe quelle juridiction, y déposer un acte ou la payer          |
 | [Prisons](./prisons)                           | 39              | Adresses et coordonnées de chaque prison et maison de détention                                                              |
 | [Maisons de justice](./houses-of-justice)      | 27              | Probation, aide aux victimes et études sociales pour les tribunaux de la famille                                             |
@@ -26,7 +28,8 @@ Ressort ──< Arrondissement ──< Canton >──< Commune (REFNIS)
 ```
 
 `──<` se lit « a plusieurs ». Une commune est généralement dans un seul canton ; les villes scindées (Anvers, Gand,
-Bruxelles, Liège, …) en couvrent plusieurs.
+Bruxelles, Liège, …) en couvrent plusieurs. Côté administratif : `Région ──< Province ──< Commune`,
+sauf que la Région de Bruxelles-Capitale n'a pas de province et contient directement ses 19 communes.
 
 Les enregistrements se renvoient les uns aux autres par identifiant, jamais par nom : une juridiction porte un
 identifiant `judicialArea` et, lorsque son territoire se limite à un arrondissement, un identifiant

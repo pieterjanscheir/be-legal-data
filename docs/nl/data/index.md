@@ -10,6 +10,8 @@ licentie en de datum waarop hij voor het laatst tegen die bronnen is gecontrolee
 | [Arrondissementen](./territory#arrondissements) | 12        | Rechtbanken, parketten en gerechtsdeurwaarders groeperen; de eenheid waar de meeste bevoegdheidsregels mee werken   |
 | [Kantons](./territory#cantons)                  | 162       | Welk vredegerecht bevoegd is voor een adres                                                                         |
 | [Gemeenten](./territory#municipalities)         | 565       | Elk Belgisch adres of elke statistiek via de REFNIS-code aan de gerechtelijke kaart koppelen                        |
+| [Gewesten](./territory#regions)                 | 3         | Het gewest van een gemeente, op REFNIS-code, in drie talen benoemd                                                  |
+| [Provincies](./territory#provinces)             | 10        | De provincie van een gemeente (geen in Brussel), met haar gewest                                                    |
 | [Hoven en rechtbanken](./courts)                | 347       | Namen, adressen en contactgegevens van de griffies om elk gerecht aan te schrijven, er neer te leggen of te betalen |
 | [Gevangenissen](./prisons)                      | 39        | Adressen en contactgegevens van elke gevangenis en elk detentiehuis                                                 |
 | [Justitiehuizen](./houses-of-justice)           | 27        | Probatie, slachtofferonthaal en maatschappelijke onderzoeken voor de familierechtbanken                             |
@@ -26,7 +28,9 @@ Rechtsgebied ──< Arrondissement ──< Kanton >──< Gemeente (REFNIS)
 ```
 
 `──<` lees je als "heeft meerdere". Een gemeente ligt meestal in één kanton; gesplitste steden
-(Antwerpen, Gent, Brussel, Luik, …) liggen in meerdere.
+(Antwerpen, Gent, Brussel, Luik, …) liggen in meerdere. Aan de bestuurlijke kant: `Gewest ──<
+Provincie ──< Gemeente`, behalve dat het Brussels Hoofdstedelijk Gewest geen provincie heeft en
+zijn 19 gemeenten rechtstreeks omvat.
 
 Records verwijzen naar elkaar met een id, nooit met een naam: een gerecht heeft een
 `judicialArea`-id en, als zijn gebied één arrondissement is, een `arrondissement`-id; een kanton

@@ -1,12 +1,13 @@
 <script setup>
-import { judicialAreas, arrondissements, getJudicialArea } from '../../src'
+import { judicialAreas, arrondissements, getJudicialArea, regions, provinces, getRegion } from '../../src'
 </script>
 
 # Territory and cantons
 
 Belgium's judicial map has three levels: **judicial areas** (one per court of appeal) contain
 **arrondissements**, which contain **cantons** (one justice of the peace each). Cantons are
-defined in terms of **municipalities**.
+defined in terms of **municipalities**. Next to the judicial map, the administrative one:
+every municipality lies in a **region** and, outside Brussels, in a **province**.
 
 ## Why it's useful
 
@@ -26,14 +27,14 @@ legal text for the cases where only the text can decide.
 
 ## Source and updates
 
-|              |                                                                                                                                                                                                                                               |
-| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Source       | Annex to the Judicial Code, "Gebiedsomschrijving en zetel van hoven en rechtbanken" ([ELI, numac 1967101058](https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel)), Dutch and French; Statbel open data for municipalities |
-| Built by     | `pnpm build:cantons` (cantons, municipalities); by hand (areas, arrondissements)                                                                                                                                                              |
-| Changes when | A law amends the annex; municipalities merge (2019, 2025)                                                                                                                                                                                     |
-| Covers       | 1 January 2025 onwards: lookups for an earlier day throw a `RangeError` ([time](/api#time))                                                                                                                                                   |
-| Checked      | Rebuilt by hand with `pnpm build:cantons`: ejustice refuses GitHub's servers ([data quality](/guide/data-quality))                                                                                                                            |
-| Licence      | CC BY 4.0; municipality data © Statbel, CC BY 4.0                                                                                                                                                                                             |
+|              |                                                                                                                                                                                                                                                                      |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Source       | Annex to the Judicial Code, "Gebiedsomschrijving en zetel van hoven en rechtbanken" ([ELI, numac 1967101058](https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel)), Dutch and French; Statbel open data for municipalities, provinces and regions |
+| Built by     | `pnpm build:cantons` (cantons, municipalities); weekly snapshots + `pnpm build:data` (regions, provinces); by hand (areas, arrondissements)                                                                                                                          |
+| Changes when | A law amends the annex; municipalities merge (2019, 2025)                                                                                                                                                                                                            |
+| Covers       | 1 January 2025 onwards: lookups for an earlier day throw a `RangeError` ([time](/api#time))                                                                                                                                                                          |
+| Checked      | Rebuilt by hand with `pnpm build:cantons`: ejustice refuses GitHub's servers ([data quality](/guide/data-quality))                                                                                                                                                   |
+| Licence      | CC BY 4.0; municipality data © Statbel, CC BY 4.0                                                                                                                                                                                                                    |
 
 ## Find the canton for a municipality
 
@@ -138,20 +139,63 @@ The 565 municipalities with their Statbel REFNIS (NIS) code. File: `data/municip
 interface Municipality {
     id: MunicipalityId // the REFNIS code: '44021' for Gent
     name: Bilingual
-    province: string // REFNIS code of the province, or '04000' for Brussels-Capital
+    province: ProvinceId | '04000' // REFNIS code of the province; '04000' in Brussels
+    region: RegionId // REFNIS code of the region
 }
 ```
 
-| Province code | Province                |
-| ------------- | ----------------------- |
-| `04000`       | Brussels-Capital Region |
-| `10000`       | Antwerpen               |
-| `20001`       | Vlaams-Brabant          |
-| `20002`       | Brabant wallon          |
-| `30000`       | West-Vlaanderen         |
-| `40000`       | Oost-Vlaanderen         |
-| `50000`       | Hainaut                 |
-| `60000`       | Liège                   |
-| `70000`       | Limburg                 |
-| `80000`       | Luxembourg              |
-| `90000`       | Namur                   |
+The 19 municipalities of the Brussels-Capital Region have no province. Their `province` is
+`04000`, the region's code, which is what Statbel puts in the province column of its own files,
+and `getProvinceForMunicipality` returns `undefined` for them; `getRegionForMunicipality` gives
+the region. The codes are listed below, from the data.
+
+## Regions
+
+The 3 regions (gewesten, régions). File: `data/regions.json` (generated from Statbel's REFNIS
+code list; names as Statbel publishes them). © Statbel, CC BY 4.0.
+
+<table>
+<thead><tr><th>Id (REFNIS)</th><th>nl</th><th>fr</th><th>de</th></tr></thead>
+<tbody>
+<tr v-for="r in regions" :key="r.id">
+<td><code>{{ r.id }}</code></td><td>{{ r.name.nl }}</td><td>{{ r.name.fr }}</td><td>{{ r.name.de }}</td>
+</tr>
+</tbody>
+</table>
+
+```ts
+interface Region {
+    id: RegionId // the REFNIS code: '02000', '03000', '04000'
+    name: Translated // { nl, fr, de }, as Statbel publishes them
+    sources: SourceRef[] // Statbel's REFNIS code list
+}
+```
+
+## Provinces
+
+The 10 provinces, with their region. File: `data/provinces.json` (generated from Statbel's
+REFNIS code list). © Statbel, CC BY 4.0. The Brussels-Capital Region has no province; the
+province of Brabant, which ended on 31 December 1994, is before the data's coverage.
+
+<table>
+<thead><tr><th>Id (REFNIS)</th><th>nl</th><th>fr</th><th>de</th><th>Region</th></tr></thead>
+<tbody>
+<tr v-for="p in provinces" :key="p.id">
+<td><code>{{ p.id }}</code></td><td>{{ p.name.nl }}</td><td>{{ p.name.fr }}</td><td>{{ p.name.de }}</td>
+<td>{{ getRegion(p.region).name.nl }}</td>
+</tr>
+</tbody>
+</table>
+
+```ts
+interface Province {
+    id: ProvinceId // the REFNIS code: '40000' for Oost-Vlaanderen
+    name: Translated // { nl, fr, de }, as Statbel publishes them
+    region: RegionId
+    sources: SourceRef[] // Statbel's REFNIS code list
+}
+```
+
+Names are Statbel's, including the word for the kind of unit (`Provincie Oost-Vlaanderen`,
+`Province de Flandre orientale`, `Provinz Ostflandern`): the package stores values as the source
+publishes them, and doesn't shorten them.
