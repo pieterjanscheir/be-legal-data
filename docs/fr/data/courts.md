@@ -1,18 +1,45 @@
+<script setup>
+import { data as stats } from '../../.vitepress/stats.data'
+
+const labels = {
+    'justice-of-the-peace': 'Justice de paix',
+    'police-court': 'Tribunal de police',
+    'court-of-first-instance': 'Tribunal de première instance',
+    'enterprise-court': "Tribunal de l'entreprise",
+    'labour-court': 'Tribunal du travail',
+    'court-of-appeal': "Cour d'appel",
+    'labour-court-of-appeal': 'Cour du travail',
+    'court-of-assize': "Cour d'assises",
+}
+
+const areas = {
+    'justice-of-the-peace': 'Un canton ; Philippeville siège en deux endroits',
+    'police-court': 'Un arrondissement (Bruxelles scindé par langue, Hal, Vilvorde)',
+    'court-of-first-instance': 'Un arrondissement (Bruxelles scindé par langue)',
+    'enterprise-court': "Un arrondissement, ou le ressort d'une cour d'appel",
+    'labour-court': "Un arrondissement, ou le ressort d'une cour d'appel",
+    'court-of-appeal': 'Un ressort',
+    'labour-court-of-appeal': 'Un ressort',
+    'court-of-assize': 'Une province, ou Bruxelles-Capitale',
+}
+</script>
+
 # Cours et tribunaux {#courts}
 
 Fichier : `data/courts.json`. Toutes les juridictions de l'ordre judiciaire que recense le portail des
-cours et tribunaux, [tribunaux-rechtbanken.be](https://www.tribunaux-rechtbanken.be) : 347 enregistrements.
+cours et tribunaux, [tribunaux-rechtbanken.be](https://www.tribunaux-rechtbanken.be) : {{ stats.courts.total }}
+enregistrements en vigueur aujourd'hui<span v-if="stats.courts.retired">, et {{ stats.courts.retired }} versions
+retirées que le portail ne recense plus</span>. Les nombres de cette page sont calculés à partir des données lors de
+la construction du site.
 
-| Type                          | Juridictions | Divisions ou sièges | Territoire                                                     |
-| ----------------------------- | -----------: | ------------------: | -------------------------------------------------------------- |
-| Justice de paix               |          162 |                   2 | Un canton ; Philippeville siège en deux endroits               |
-| Tribunal de police            |           15 |                  34 | Un arrondissement (Bruxelles scindé par langue, Hal, Vilvorde) |
-| Tribunal de première instance |           13 |                  23 | Un arrondissement (Bruxelles scindé par langue)                |
-| Tribunal de l'entreprise      |            9 |                  24 | Un arrondissement, ou le ressort d'une cour d'appel            |
-| Tribunal du travail           |            9 |                  29 | Un arrondissement, ou le ressort d'une cour d'appel            |
-| Cour d'appel                  |            5 |                   0 | Un ressort                                                     |
-| Cour du travail               |            5 |                   7 | Un ressort                                                     |
-| Cour d'assises                |           11 |                   0 | Une province, ou Bruxelles-Capitale                            |
+<table>
+<thead><tr><th>Type</th><th style="text-align:right">Juridictions</th><th style="text-align:right">Divisions ou sièges</th><th>Territoire</th></tr></thead>
+<tbody>
+<tr v-for="t in stats.courts.byType" :key="t.type">
+<td>{{ labels[t.type] }}</td><td style="text-align:right">{{ t.courts }}</td><td style="text-align:right">{{ t.divisions }}</td><td>{{ areas[t.type] }}</td>
+</tr>
+</tbody>
+</table>
 
 Absents du portail, donc pas encore ici : la Cour de cassation, la Cour constitutionnelle et le Conseil
 d'État, ainsi que les juridictions disciplinaires.
@@ -52,6 +79,8 @@ package : quand cela compte, vérifiez la page de la juridiction (`website`).
 | Champ              | Type                                  | Description                                                                                                                                                                                                            |
 | ------------------ | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `id`               | `CourtId`                             | Identifiant stable : le `type`, puis le lieu dans la langue de la juridiction : `justice-of-the-peace-gent-1`, `police-court-brussel-fr`, `enterprise-court-gent-brugge`. Voyez [Identifiants](/fr/guide/identifiers)  |
+| `validFrom`        | string?                               | Premier jour où l'enregistrement s'applique, `YYYY-MM-DD` : le jour où le portail l'a recensé pour la première fois. Absent : depuis le début de la couverture                                                         |
+| `validTo`          | string?                               | Dernier jour où l'enregistrement s'applique : la veille de la vérification hebdomadaire qui ne l'a plus trouvé sur le portail. Absent : toujours en vigueur                                                            |
 | `type`             | `CourtType`                           | `justice-of-the-peace`, `police-court`, `court-of-first-instance`, `enterprise-court`, `labour-court`, `court-of-appeal`, `labour-court-of-appeal`, `court-of-assize`                                                  |
 | `kind`             | `'court'` \| `'division'` \| `'seat'` | La juridiction elle-même, l'une de ses divisions (afdeling, division, Abteilung), ou l'un des lieux où siège une justice de paix                                                                                       |
 | `court`            | `CourtId`?                            | Pour une division ou un siège : la juridiction dont elle relève                                                                                                                                                        |
@@ -59,6 +88,7 @@ package : quand cela compte, vérifiez la page de la juridiction (`website`).
 | `judicialArea`     | `JudicialAreaId`                      | Le ressort                                                                                                                                                                                                             |
 | `arrondissement`   | `ArrondissementId`?                   | L'arrondissement, pour une juridiction ou une division dont le territoire est un arrondissement ou s'y inscrit                                                                                                         |
 | `canton`           | `CantonId`?                           | Pour une justice de paix : le canton qu'elle dessert                                                                                                                                                                   |
+| `cantons`          | `CantonId[]`?                         | Pour toute autre juridiction (pas ses divisions) : les cantons qu'elle couvre, tels que les fixent l'annexe au Code judiciaire (art. 3 à 5) et l'art. 114 du Code                                                      |
 | `ecli`             | `string[]`?                           | Les codes ECLI de la juridiction, un par langue dans laquelle elle juge ; seuls les codes relevés dans des décisions publiées                                                                                          |
 | `address`          | `Address`?                            | Où se trouve le greffe. Absent quand la juridiction ne publie pas d'adresse unique (une juridiction dont chaque division a la sienne)                                                                                  |
 | `contacts`         | `Contact[]`                           | Téléphone, fax, e-mail et compte bancaire, chacun avec le greffe auquel il appartient (`label`) et le texte publié avec lui (`note`)                                                                                   |
@@ -77,6 +107,8 @@ gardez une branche `default` pour qu'un nouveau type ne casse pas votre code.
 ```ts
 interface Court {
     id: CourtId
+    validFrom?: string
+    validTo?: string
     type: CourtType
     kind: 'court' | 'division' | 'seat'
     court?: CourtId
@@ -84,6 +116,7 @@ interface Court {
     judicialArea: JudicialAreaId
     arrondissement?: ArrondissementId
     canton?: CantonId
+    cantons?: CantonId[]
     ecli?: string[]
     address?: Address
     contacts: Contact[]
@@ -114,6 +147,8 @@ interface Contact {
 getCourt('justice-of-the-peace-gent-1')
 getJusticeOfThePeace('gent-1') // la même juridiction, par identifiant de canton
 getDivisions('enterprise-court-gent') // ses huit divisions
+getCourtsForCanton('gent-1') // sa justice de paix, et une juridiction de chaque autre type
+findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde], par code REFNIS
 findCourts({ type: 'police-court', kind: 'court', judicialArea: 'gent' })
 getContact(court, 'email', 'Greffe pénal') // la valeur du premier contact correspondant
 formatPhoneNumber('+3253820701') // '053 82 07 01'
@@ -134,10 +169,15 @@ et une en allemand. L'analyseur :
 3. lit les blocs de coordonnées des greffes, en gardant chaque valeur avec son greffe ;
 4. convertit les heures d'ouverture publiées en syntaxe `opening_hours` uniquement quand chaque mot est
    compris et que chaque langue dit la même chose. Un texte comportant une remarque ou un régime
-   temporaire (« OPGELET: tot 31 december… ») ne garde que le texte publié.
+   temporaire (« OPGELET: tot 31 december… ») ne garde que le texte publié ;
+5. attribue à chaque juridiction les cantons que la loi lui assigne (`cantons`), d'après une table de
+   l'annexe au Code judiciaire dans `scripts/parse/jurisdictions.ts`, et en déduit son `arrondissement`.
+   La table et le portail se vérifient l'un l'autre : une juridiction présente sur le portail mais absente
+   de la table de la loi, ou l'inverse, arrête la construction.
 
 Il refuse d'écrire quoi que ce soit quand une page ne peut être située (un type de juridiction inconnu,
-une justice de paix sans canton) ou qu'un canton n'a pas de juridiction. Ce qu'il ne peut lire (un numéro
+une justice de paix sans canton), qu'un canton n'a pas de juridiction, ou que la table de la loi et le
+portail ne s'accordent pas sur les juridictions qui existent. Ce qu'il ne peut lire (un numéro
 de téléphone sans indicatif de zone, une adresse rédigée en phrase) est signalé avec la pull request
 hebdomadaire, et laissé hors des données plutôt que deviné.
 

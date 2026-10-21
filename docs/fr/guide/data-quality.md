@@ -35,8 +35,11 @@ site officiel ──fetch──> snapshots (branche sources) ──parse──> 
    l'historique de la branche montre ce qui a changé quel jour. Une page en échec (une erreur
    serveur, une 404) garde son dernier snapshot valide et arrête l'exécution, ce qui ouvre une
    issue : les données ne sont jamais reconstruites à partir d'une image incomplète. Une page
-   vers laquelle la source ne renvoie plus est abandonnée ; un tribunal qui ferme quitte donc
-   les données.
+   vers laquelle la source ne renvoie plus est retirée des snapshots ; son enregistrement reste
+   dans les données, clôturé par un `validTo` (la veille de la vérification qui ne l'a plus
+   trouvée), de sorte que son identifiant continue de fonctionner et qu'une recherche pour un
+   jour antérieur le trouve encore. Une page qui apparaît reçoit un enregistrement avec un
+   `validFrom`.
 2. **Analyse.** `pnpm build:data` lit les snapshots (`scripts/parse`) et écrit les cours et
    tribunaux, les prisons et les maisons de justice. Il signale ce qu'il ne peut pas lire, et
    échoue quand une page ne peut pas être rattachée.
@@ -62,7 +65,9 @@ Moniteur belge refuse les serveurs de GitHub
   commune est dans exactement un canton ou scindée entre plusieurs ; chaque canton reste dans
   les provinces de son arrondissement ; chaque canton a exactement une justice de paix ; chaque
   division a le type et le ressort de son tribunal ; chaque catégorie de juridiction compte le
-  nombre de tribunaux que la loi fixe.
+  nombre de tribunaux que la loi fixe ; chaque canton relève d'un tribunal de chaque type (un
+  par langue à Bruxelles), et les cantons d'un tribunal se situent dans son arrondissement et
+  dans son ressort.
 - **Parsers** : testés de bout en bout sur des copies élaguées de pages réelles
   (`test/fixtures/sources`), et chaque lecteur (numéros de téléphone, IBAN, adresses, heures
   d'ouverture) sur les formes rencontrées dans les sources et sur ce qu'il doit refuser.

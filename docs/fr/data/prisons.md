@@ -1,6 +1,10 @@
 # Prisons {#prisons}
 
-Fichier : `data/prisons.json`. Les 39 prisons et maisons de détention du SPF Justice
+<script setup>
+import { data as stats } from '../../.vitepress/stats.data'
+</script>
+
+Fichier : `data/prisons.json`. Les {{ stats.prisons }} prisons et maisons de détention du SPF Justice
 (Direction générale des Établissements pénitentiaires).
 
 ## À quoi ça sert {#why-it-s-useful}
@@ -24,15 +28,16 @@ Fichier : `data/prisons.json`. Les 39 prisons et maisons de détention du SPF Ju
 
 ## Champs {#fields}
 
-| Champ      | Type                              | Description                                                                                                      |
-| ---------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `id`       | `PrisonId`                        | D'après le nom dans la langue locale, sans article : `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk` |
-| `kind`     | `'prison'` \| `'detention-house'` | Une maison de détention accueille des personnes condamnées à de courtes peines, près de chez elles               |
-| `name`     | `{ nl, fr, de }`                  | Tel que le SPF Justice le publie                                                                                 |
-| `address`  | `Address`                         | Dans la langue locale                                                                                            |
-| `contacts` | `Contact[]`                       | Téléphone, fax, e-mail et le compte pour l'argent destiné aux détenus, lorsqu'il est publié                      |
-| `website`  | `{ nl, fr, de }`                  | La page de la prison par langue                                                                                  |
-| `sources`  | `{ url, retrieved }[]`            | Les pages dont l'enregistrement a été lu                                                                         |
+| Champ                  | Type                              | Description                                                                                                                                                             |
+| ---------------------- | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                   | `PrisonId`                        | D'après le nom dans la langue locale, sans article : `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk`                                                        |
+| `validFrom`, `validTo` | string?                           | Les jours où l'enregistrement s'applique, tels que le site l'a recensé ; absents : depuis le début de la couverture, ou toujours en vigueur. Voir [temps](/fr/api#time) |
+| `kind`                 | `'prison'` \| `'detention-house'` | Une maison de détention accueille des personnes condamnées à de courtes peines, près de chez elles                                                                      |
+| `name`                 | `{ nl, fr, de }`                  | Tel que le SPF Justice le publie                                                                                                                                        |
+| `address`              | `Address`                         | Dans la langue locale                                                                                                                                                   |
+| `contacts`             | `Contact[]`                       | Téléphone, fax, e-mail et le compte pour l'argent destiné aux détenus, lorsqu'il est publié                                                                             |
+| `website`              | `{ nl, fr, de }`                  | La page de la prison par langue                                                                                                                                         |
+| `sources`              | `{ url, retrieved }[]`            | Les pages dont l'enregistrement a été lu                                                                                                                                |
 
 Le nom du directeur, que les pages donnent aussi, est laissé de côté : il change, et c'est une donnée à
 caractère personnel dont le package n'a pas besoin.

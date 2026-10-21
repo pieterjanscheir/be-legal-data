@@ -1,7 +1,11 @@
+<script setup>
+import { data as stats } from '../../.vitepress/stats.data'
+</script>
+
 # Maisons de justice {#houses-of-justice}
 
 Fichier : `data/houses-of-justice.json`. Les maisons de justice (justitiehuizen, maisons de
-justice) des Communautés flamande et française : 27 enregistrements.
+justice) des Communautés flamande et française : {{ stats.housesOfJustice }} enregistrements.
 
 Les maisons de justice guident et surveillent les justiciables pour le compte des cours,
 tribunaux et parquets (probation, surveillance électronique, peine de travail), assurent
@@ -32,16 +36,17 @@ maison flamande (`justitiehuis-brussel`) et une maison francophone (`maison-just
 
 ## Champs {#fields}
 
-| Champ       | Type                                    | Description                                                                                                            |
-| ----------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `id`        | `HouseOfJusticeId`                      | Dérivé du nom, sans articles : `justitiehuis-gent`, `maison-justice-arlon`                                             |
-| `community` | `'flemish'` \| `'french'` \| `'german'` | La Communauté qui la gère                                                                                              |
-| `name`      | `{ nl }` ou `{ fr }`                    | Dans la langue de la Communauté                                                                                        |
-| `ovo`       | string?                                 | Numéro OVO dans le registre flamand des organisations, pour les maisons flamandes : `OVO001917`                        |
-| `address`   | `Address`                               |                                                                                                                        |
-| `contacts`  | `Contact[]`                             | Téléphone, fax et e-mail ; le service d'accueil des victimes d'une maison francophone a ses propres contacts, libellés |
-| `website`   | `{ nl }` ou `{ fr }`                    | La page où elle est répertoriée                                                                                        |
-| `sources`   | `{ url, retrieved }[]`                  | Les pages d'où l'enregistrement a été lu                                                                               |
+| Champ                  | Type                                    | Description                                                                                                                                                             |
+| ---------------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                   | `HouseOfJusticeId`                      | Dérivé du nom, sans articles : `justitiehuis-gent`, `maison-justice-arlon`                                                                                              |
+| `validFrom`, `validTo` | string?                                 | Les jours où l'enregistrement s'applique, tels que le site l'a recensé ; absents : depuis le début de la couverture, ou toujours en vigueur. Voir [temps](/fr/api#time) |
+| `community`            | `'flemish'` \| `'french'` \| `'german'` | La Communauté qui la gère                                                                                                                                               |
+| `name`                 | `{ nl }` ou `{ fr }`                    | Dans la langue de la Communauté                                                                                                                                         |
+| `ovo`                  | string?                                 | Numéro OVO dans le registre flamand des organisations, pour les maisons flamandes : `OVO001917`                                                                         |
+| `address`              | `Address`                               |                                                                                                                                                                         |
+| `contacts`             | `Contact[]`                             | Téléphone, fax et e-mail ; le service d'accueil des victimes d'une maison francophone a ses propres contacts, libellés                                                  |
+| `website`              | `{ nl }` ou `{ fr }`                    | La page où elle est répertoriée                                                                                                                                         |
+| `sources`              | `{ url, retrieved }[]`                  | Les pages d'où l'enregistrement a été lu                                                                                                                                |
 
 ```ts
 import { getHouseOfJustice, getContact } from 'be-legal-data/houses-of-justice'

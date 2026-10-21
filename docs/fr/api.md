@@ -5,7 +5,7 @@ Tout est exporté depuis la racine du package, et chaque jeu de données a aussi
 ```ts
 import { getCanton, getInterestRate /* … */ } from 'be-legal-data'
 
-// Seulement ce que vous utilisez : 12 Ko pour les taux d'intérêt au lieu de tout
+// Seulement ce que vous utilisez : les taux d'intérêt seuls ne pèsent que quelques kilooctets
 import { getInterestRate } from 'be-legal-data/interest-rates'
 import { getCourt, getJusticeOfThePeace } from 'be-legal-data/courts'
 import { getCanton, getCantonsForMunicipality } from 'be-legal-data/territory'
@@ -30,7 +30,7 @@ Conventions :
 - Les recherches par id renvoient `undefined` quand rien ne correspond ; les fonctions de liste renvoient un tableau vide.
 - Les fonctions ne lèvent une erreur que pour une entrée invalide : un jour mal formé, ou un jour antérieur à la
   couverture des données (`RangeError`). Jamais pour des données manquantes.
-- Les recherches territoriales acceptent un jour facultatif, `{ on: '2025-06-01' }` ou une `Date`, et répondent pour
+- Chaque recherche accepte un jour facultatif, `{ on: '2025-06-01' }` ou une `Date`, et répond pour
   aujourd'hui sans. Une recherche par id trouve toujours un enregistrement connu : la version d'aujourd'hui, ou la
   dernière d'un enregistrement qui a pris fin. Voir [temps](#time).
 - Les jeux de données exportés sont `readonly` : copiez avant de trier ou de modifier (`[...courts].sort()`).
@@ -116,7 +116,7 @@ getArrondissementForMunicipality('44021')?.id // 'oost-vlaanderen'
 
 ```ts
 function getCourt(id: CourtId): Court
-function getCourt(id: string): Court | undefined
+function getCourt(id: string, options?: OnDay): Court | undefined
 ```
 
 Une cour ou un tribunal, une division ou un siège. Les ids sont le `type` de la juridiction suivi du lieu :
@@ -130,10 +130,12 @@ getCourt('court-of-appeal-brussel').name // { nl: 'Hof van Beroep Brussel', fr: 
 
 ```ts
 function getJusticeOfThePeace(cantonId: CantonId): Court
-function getJusticeOfThePeace(cantonId: string): Court | undefined
+function getJusticeOfThePeace(cantonId: string, options?: OnDay): Court | undefined
 ```
 
-La justice de paix d'un canton. Chaque canton en a une.
+La justice de paix d'un canton. Chaque canton en a une. Une justice de paix qui siège en plusieurs lieux
+(Philippeville, à Couvin et à Florennes) n'a ni adresse ni coordonnées propres : ce sont ses sièges qui les ont,
+voir `getDivisions`.
 
 ```ts
 const [canton] = getCantonsForMunicipality('44088')
@@ -143,11 +145,11 @@ getJusticeOfThePeace(canton.id).address // la justice de paix de Merelbeke-Melle
 ### `getDivisions(courtId)` {#getdivisions-courtid}
 
 ```ts
-function getDivisions(courtId: string): Court[]
+function getDivisions(courtId: string, options?: OnDay): Court[]
 ```
 
-Les divisions d'une juridiction, ou les sièges d'une justice de paix qui siège en plusieurs lieux ; vide pour une
-juridiction qui n'en a pas.
+Les divisions d'une juridiction, ou les sièges d'une justice de paix qui siège en plusieurs lieux, un jour donné
+(aujourd'hui par défaut) ; vide pour une juridiction qui n'en a pas.
 
 ```ts
 getDivisions('labour-court-gent').map((c) => c.id) // ['labour-court-gent-aalst', …]
@@ -159,9 +161,9 @@ getDivisions('labour-court-gent').map((c) => c.id) // ['labour-court-gent-aalst'
 function getCourtsForCanton(cantonId: string, options?: OnDay): Court[]
 ```
 
-Les juridictions dont le ressort comprend un canton un jour donné (aujourd’hui par défaut) : sa justice de paix et, pour chaque autre type, la juridiction
-qui le couvre (la juridiction dans son ensemble, pas ses divisions) ; à Bruxelles, les deux juridictions linguistiques
-d'un même type. Vide pour un canton inconnu.
+Les juridictions dont le ressort comprend un canton un jour donné (aujourd'hui par défaut) : sa justice de paix et,
+pour chaque autre type, la juridiction qui le couvre (la juridiction dans son ensemble, pas ses divisions) ; à
+Bruxelles, les deux juridictions linguistiques d'un même type. Vide pour un canton inconnu.
 
 ```ts
 getCourtsForCanton('gent-1').map((c) => c.id)
@@ -171,15 +173,19 @@ getCourtsForCanton('gent-1').map((c) => c.id)
 ### `findCourts(filter)` {#findcourts-filter}
 
 ```ts
-function findCourts(filter: {
-    type?: CourtType
-    kind?: 'court' | 'division' | 'seat'
-    arrondissement?: string
-    judicialArea?: string
-}): Court[]
+function findCourts(
+    filter: {
+        type?: CourtType
+        kind?: 'court' | 'division' | 'seat'
+        arrondissement?: string
+        judicialArea?: string
+    },
+    options?: OnDay,
+): Court[]
 ```
 
-Les juridictions qui satisfont à chacun des filtres donnés ; un filtre vide renvoie toutes les juridictions.
+Les juridictions qui satisfont à chacun des filtres donnés et qui s'appliquent un jour donné (aujourd'hui par
+défaut) ; un filtre vide renvoie toutes les juridictions de ce jour-là.
 
 ```ts
 findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' }) // ses divisions dans cet arrondissement
@@ -240,7 +246,7 @@ formatIban('BE73679200844560') // 'BE73 6792 0084 4560'
 
 ```ts
 function getPrison(id: PrisonId): Prison
-function getPrison(id: string): Prison | undefined
+function getPrison(id: string, options?: OnDay): Prison | undefined
 ```
 
 ```ts
@@ -253,7 +259,7 @@ getPrison('gevangenis-gent').name.fr // 'Prison de Gand'
 
 ```ts
 function getHouseOfJustice(id: HouseOfJusticeId): HouseOfJustice
-function getHouseOfJustice(id: string): HouseOfJustice | undefined
+function getHouseOfJustice(id: string, options?: OnDay): HouseOfJustice | undefined
 ```
 
 ```ts
@@ -345,8 +351,8 @@ Le dernier jour pour lequel un taux est enregistré, `YYYY-MM-DD`.
 
 ## Temps {#time}
 
-Les enregistrements territoriaux ont une période de validité, et les recherches territoriales acceptent un jour. Les
-helpers sont exportés pour vos propres enregistrements.
+Chaque enregistrement a une période de validité, et chaque recherche accepte un jour. Les helpers sont exportés pour
+vos propres enregistrements.
 
 ```ts
 interface Validity {
@@ -359,14 +365,25 @@ interface OnDay {
 }
 
 const territoryCoverage: { from: '2025-01-01' }
+const courtsCoverage: { from: '2025-01-01' }
+const prisonsCoverage: { from: '2026-10-20' }
+const housesOfJusticeCoverage: { from: '2026-10-20' }
 
 function appliesOn(record: Validity, day: string): boolean
 function toDay(date: Date | string): string // 'YYYY-MM-DD', ou une RangeError
 ```
 
-Les données territoriales décrivent la situation à partir du 1er janvier 2025 ; une recherche pour un jour antérieur
-lève une `RangeError` plutôt que de répondre avec la carte d'aujourd'hui. Des versions antérieures sont prévues
+Chaque jeu de données indique à partir de quel jour il décrit la situation ; une recherche pour un jour antérieur
+lève une `RangeError` plutôt que de répondre avec la carte d'aujourd'hui. Le territoire et la liste des juridictions
+découlent de la loi telle que modifiée au 1er janvier 2025 ; les prisons et les maisons de justice sont connues
+depuis le jour où leurs sites ont été lus pour la première fois. Des versions antérieures sont prévues
 ([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
+
+Les tableaux exportés (`courts`, `prisons`, …) contiennent chaque version de chaque enregistrement. Un enregistrement
+que la source cesse de recenser n'est pas supprimé : il garde son id et reçoit un `validTo`, la veille de la
+vérification hebdomadaire qui ne l'a plus trouvé. Un enregistrement que la source commence à recenser reçoit un
+`validFrom`. Une recherche par id sans jour renvoie donc la version d'aujourd'hui, ou la dernière version d'un
+enregistrement qui a pris fin : vérifiez `validTo` avant d'y déposer quoi que ce soit.
 
 ## Jeux de données {#datasets}
 
