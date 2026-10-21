@@ -127,7 +127,9 @@ interface Canton {
 - **Noms allemands** seulement là où un texte officiel allemand nomme le canton : l'annexe n'a pas de
   traduction allemande. Aujourd'hui, ce sont les deux cantons d'Eupen-Saint-Vith, d'après la
   traduction allemande de l'arrêté ministériel du 31 octobre 2023 (Moniteur belge du 18 juillet
-  2024), indiquée dans `sources`. Aucun nom n'est traduit à la main.
+  2024), qui nomme le second ; le premier est aussi nommé sur la page allemande de son tribunal sur
+  le portail des cours et tribunaux. Les deux figurent dans `sources`. Aucun nom n'est traduit à la
+  main.
 
 ### Communes scindées {#split-municipalities}
 

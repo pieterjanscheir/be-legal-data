@@ -429,7 +429,7 @@ const cantons = nlItems.map((nlItem, i) => {
         ].sort((a, b) => a.municipality.localeCompare(b.municipality)),
         territory: { nl: nl.territory, fr: fr.territory },
         legalBasis: { url: ANNEX_ELI, provision: `Bijvoegsel art. 1, afdeling ${ref}` },
-        ...(german ? { sources: [german.source] } : {}),
+        ...(german ? { sources: german.sources } : {}),
     }
 })
 

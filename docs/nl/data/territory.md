@@ -125,8 +125,9 @@ interface Canton {
   `territory` zegt dan welk deel (straten, huisnummers, waterlopen) bij dit kanton hoort.
 - **Duitse namen** alleen waar een officiële Duitse tekst het kanton noemt: het bijvoegsel heeft geen
   Duitse vertaling. Vandaag zijn dat de twee kantons Eupen-Sankt Vith, uit de Duitse vertaling van
-  het ministerieel besluit van 31 oktober 2023 (Belgisch Staatsblad van 18 juli 2024), vermeld in
-  `sources`. Geen enkele naam wordt met de hand vertaald.
+  het ministerieel besluit van 31 oktober 2023 (Belgisch Staatsblad van 18 juli 2024), dat het
+  tweede noemt; het eerste staat ook op de Duitse pagina van zijn rechtbank op het portaal van de
+  hoven en rechtbanken. Beide staan in `sources`. Geen enkele naam wordt met de hand vertaald.
 
 ### Gesplitste gemeenten {#split-municipalities}
 

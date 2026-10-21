@@ -228,7 +228,7 @@ describe('German canton names', () => {
         for (const canton of withGerman) {
             const german = germanCantonNames[canton.id]
             expect(canton.name.de).toBe(german?.name)
-            expect(canton.sources).toEqual([german?.source])
+            expect(canton.sources).toEqual(german?.sources)
         }
         expect(cantons.filter((c) => c.sources !== undefined)).toEqual(withGerman)
     })

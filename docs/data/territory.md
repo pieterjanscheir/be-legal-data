@@ -125,8 +125,9 @@ interface Canton {
   text then says which part (streets, numbers, waterways) belongs to this canton.
 - **German names** only where an official German text names the canton: the annex has no German
   translation. Today that's the two cantons of Eupen-Sankt Vith, from the German translation of the
-  ministerial decree of 31 October 2023 (Belgisches Staatsblatt of 18 July 2024), listed in
-  `sources`. No name is translated by hand.
+  ministerial decree of 31 October 2023 (Belgisches Staatsblatt of 18 July 2024), which names the
+  second; the first is also named on its court's German page on the courts' portal. Both are listed
+  in `sources`. No name is translated by hand.
 
 ### Split municipalities
 

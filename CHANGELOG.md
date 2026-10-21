@@ -24,8 +24,10 @@ Brussels ([#45](https://github.com/pieterjanscheir/belgica/issues/45)).
 
 **German names for the cantons of Eupen-Sankt Vith.** `name.de` is `Eupen-Sankt Vith` for
 `eupen-sankt-vith-1` and `-2`, from the official German translation of the ministerial decree of
-31 October 2023 (Belgisches Staatsblatt of 18 July 2024, numac 2024006205), now in the cantons'
-new `sources` field and in `datapackage.json`. The annex to the Judicial Code has no German
+31 October 2023 (Belgisches Staatsblatt of 18 July 2024, numac 2024006205), which names the second
+canton; the first is also named on its court's German page on the courts' portal ("Friedensgericht
+des ersten Kantons Eupen-Sankt Vith"). Both are in the cantons' new `sources` field, and the
+decree in `datapackage.json`. The annex to the Judicial Code has no German
 translation, so no other canton has a German name: `scripts/german-canton-names.ts` lists the
 sourced ones, and a test checks the data against it. `cantons.csv` gets a `name_de` column.
 
