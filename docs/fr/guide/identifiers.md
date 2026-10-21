@@ -16,7 +16,7 @@ modifie la chose qu'un identifiant désigne.
    dans `ecli`, les maisons de justice flamandes leur numéro OVO dans `ovo` (voir
    [pourquoi](#why-not-the-official-court-codes)).
 3. **Sinon, du kebab-case ASCII en minuscules** : `^[a-z0-9]+(-[a-z0-9]+)*$`, construit par
-   [`scripts/id.ts`](https://github.com/pieterjanscheir/be-legal-data/blob/main/scripts/id.ts) :
+   [`scripts/id.ts`](https://github.com/pieterjanscheir/belgica/blob/main/scripts/id.ts) :
    les accents sont supprimés, tout ce qui n'est ni lettre ni chiffre devient un seul tiret.
    `Merelbeke-Melle` → `merelbeke-melle`, `Braine-l'Alleud` → `braine-l-alleud`,
    `Liège` → `liege`.
@@ -118,7 +118,7 @@ Chaque jeu de données a un type d'identifiant généré (`CantonId`, `CourtId`,
 régénéré à partir des données par `pnpm build:ids` :
 
 ```ts
-import { getCanton, type CantonId } from 'be-legal-data'
+import { getCanton, type CantonId } from 'belgica'
 
 getCanton('gent-1') // Canton : un identifiant connu trouve toujours son enregistrement
 getCanton(userInput) // Canton | undefined : toute autre chaîne peut ne rien trouver
@@ -146,7 +146,7 @@ et des lois redessinent les cantons. Les enregistrements portent une période de
 
 Un simple changement de nom, comme une correction orthographique, ne change pas l'identifiant.
 L'historique antérieur au 1er janvier 2025 n'est pas encore dans les données
-([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)) : une recherche pour un jour
+([#27](https://github.com/pieterjanscheir/belgica/issues/27)) : une recherche pour un jour
 antérieur lève une `RangeError` plutôt que de répondre avec la carte d'aujourd'hui.
 
 ## Les identifiants sont opaques {#ids-are-opaque}

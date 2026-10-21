@@ -6,19 +6,19 @@ volg de [conventies](/nl/guide/contributing#adding-a-dataset).
 
 ## Gepland {#planned}
 
-| Dataset                                                                                              | Waarvoor het dient                                                                                                  | Issue                                                             |
-| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| **De andere rechtscolleges**: Hof van Cassatie, Grondwettelijk Hof, Raad van State, tuchtrechtbanken | De hoogste rechtscolleges staan niet op het portaal van de hoven en rechtbanken, dus ze hebben eigen bronnen nodig  | [#4](https://github.com/pieterjanscheir/be-legal-data/issues/4)   |
-| **Het justitiehuis in Eupen** (Duitstalige Gemeenschap)                                              | Het ene justitiehuis dat de data nog niet heeft                                                                     | [#3](https://github.com/pieterjanscheir/be-legal-data/issues/3)   |
-| **Historiek**: wanneer kantons, gemeenten en gerechten veranderden                                   | Het model heeft geldigheidsperiodes en opzoekingen per dag; de vroegere versies hebben nog de data nodig            | [#27](https://github.com/pieterjanscheir/be-legal-data/issues/27) |
-| **Adres → coördinaten**                                                                              | De [kantongrenzen](./canton-boundaries) vinden het kanton van een punt; het adres geocoderen is de ontbrekende stap | [#28](https://github.com/pieterjanscheir/be-legal-data/issues/28) |
-| **Gerechtsdeurwaarderskantoren** (gerechtsdeurwaarders / huissiers de justice)                       | Een gerechtsdeurwaarder in een arrondissement vinden voor betekening of tenuitvoerlegging                           | [#6](https://github.com/pieterjanscheir/be-legal-data/issues/6)   |
-| **Politiezones** (politiezones / zones de police)                                                    | Welke zone een gemeente behandelt: klachten, afschriften van processen-verbaal                                      | [#7](https://github.com/pieterjanscheir/be-legal-data/issues/7)   |
-| **Kantoren van het kadaster en van de rechtszekerheid** (kadaster, vroegere hypotheekkantoren)       | Hypothecaire getuigschriften en kadastrale uittreksels aanvragen bij het bevoegde kantoor                           | [#8](https://github.com/pieterjanscheir/be-legal-data/issues/8)   |
+| Dataset                                                                                              | Waarvoor het dient                                                                                                  | Issue                                                       |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **De andere rechtscolleges**: Hof van Cassatie, Grondwettelijk Hof, Raad van State, tuchtrechtbanken | De hoogste rechtscolleges staan niet op het portaal van de hoven en rechtbanken, dus ze hebben eigen bronnen nodig  | [#4](https://github.com/pieterjanscheir/belgica/issues/4)   |
+| **Het justitiehuis in Eupen** (Duitstalige Gemeenschap)                                              | Het ene justitiehuis dat de data nog niet heeft                                                                     | [#3](https://github.com/pieterjanscheir/belgica/issues/3)   |
+| **Historiek**: wanneer kantons, gemeenten en gerechten veranderden                                   | Het model heeft geldigheidsperiodes en opzoekingen per dag; de vroegere versies hebben nog de data nodig            | [#27](https://github.com/pieterjanscheir/belgica/issues/27) |
+| **Adres → coördinaten**                                                                              | De [kantongrenzen](./canton-boundaries) vinden het kanton van een punt; het adres geocoderen is de ontbrekende stap | [#28](https://github.com/pieterjanscheir/belgica/issues/28) |
+| **Gerechtsdeurwaarderskantoren** (gerechtsdeurwaarders / huissiers de justice)                       | Een gerechtsdeurwaarder in een arrondissement vinden voor betekening of tenuitvoerlegging                           | [#6](https://github.com/pieterjanscheir/belgica/issues/6)   |
+| **Politiezones** (politiezones / zones de police)                                                    | Welke zone een gemeente behandelt: klachten, afschriften van processen-verbaal                                      | [#7](https://github.com/pieterjanscheir/belgica/issues/7)   |
+| **Kantoren van het kadaster en van de rechtszekerheid** (kadaster, vroegere hypotheekkantoren)       | Hypothecaire getuigschriften en kadastrale uittreksels aanvragen bij het bevoegde kantoor                           | [#8](https://github.com/pieterjanscheir/belgica/issues/8)   |
 
 ## Het overwegen waard {#worth-considering}
 
-Verzameld in [#9](https://github.com/pieterjanscheir/be-legal-data/issues/9), ruwweg in volgorde
+Verzameld in [#9](https://github.com/pieterjanscheir/belgica/issues/9), ruwweg in volgorde
 van hoe vaak ze gebruikt zouden worden:
 
 - **Deelgemeenten** per postcode. De [postcodes](./postal-codes) stoppen bij de gemeente; de
@@ -40,7 +40,7 @@ snapshots van zijn bron, en de meeste bronnen worden elke week door GitHub Actio
 Twee kunnen dat voorlopig niet: de site van het Belgisch Staatsblad (ejustice), waar de kantons
 uit komen, en police.be weigeren allebei verbindingen van de servers van GitHub; ze worden in
 de plaats daarvan vanaf een gewone machine opgehaald
-([#24](https://github.com/pieterjanscheir/be-legal-data/issues/24)). De
+([#24](https://github.com/pieterjanscheir/belgica/issues/24)). De
 gerechtsdeurwaardersgids wordt in de browser opgebouwd, dus die vereist een browser om te
 lezen, of de data van de Nationale Kamer
-([#6](https://github.com/pieterjanscheir/be-legal-data/issues/6)).
+([#6](https://github.com/pieterjanscheir/belgica/issues/6)).

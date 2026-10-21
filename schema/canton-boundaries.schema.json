@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://pieterjanscheir.github.io/be-legal-data/schema/canton-boundaries.schema.json",
-  "title": "be-legal-data: data/canton-boundaries.json",
+  "$id": "https://pieterjanscheir.github.io/belgica/schema/canton-boundaries.schema.json",
+  "title": "belgica: data/canton-boundaries.json",
   "$ref": "#/definitions/CantonBoundariesFile",
   "definitions": {
     "CantonBoundariesFile": {

@@ -10,7 +10,7 @@
  * date, so nothing is inferred from when a weekly walk stopped seeing it.
  *
  * Only rows that still apply on the first day the territory data covers are written; the
- * history before that is https://github.com/pieterjanscheir/be-legal-data/issues/27. Reading
+ * history before that is https://github.com/pieterjanscheir/belgica/issues/27. Reading
  * the zip needs the `unzip` command, as scripts/build-cantons.ts does.
  */
 import { execFileSync } from 'node:child_process'

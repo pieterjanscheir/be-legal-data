@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-    name: be-legal-data
+    name: belgica
     text: Belgian legal reference data
     tagline: Courts, judicial cantons and arrondissements, municipalities, and the legal and commercial interest rates. JSON, with TypeScript types and helpers.
     actions:
@@ -32,7 +32,7 @@ features:
 <DataStats />
 
 ```ts
-import { getCantonsForMunicipality, getInterestRate } from 'be-legal-data'
+import { getCantonsForMunicipality, getInterestRate } from 'belgica'
 
 getCantonsForMunicipality('44088') // [Canton merelbeke-melle]
 getInterestRate('2024-06-15', 'legal') // { rate: 5.75, period: { from: '2024-01-01', to: '2024-12-31' } }

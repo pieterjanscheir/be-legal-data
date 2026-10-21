@@ -128,7 +128,7 @@ interface Canton {
 55 cantons cover only part of a municipality. For these, the canton can't be determined from the
 municipality alone: it depends on the street (and sometimes the house number). The `territory`
 text names the boundaries. With the address's coordinates, `findCantonsAt(lon, lat)` from
-`be-legal-data/canton-boundaries` finds the canton in the NGI's
+`belgica/canton-boundaries` finds the canton in the NGI's
 [canton boundaries](./canton-boundaries); without them, show the candidate cantons and their
 text, and let a person decide. Where the geometry and the text disagree, the text is the law.
 

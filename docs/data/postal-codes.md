@@ -18,7 +18,7 @@ because {{ stats.postalCodes.shared }} postal codes belong to two municipalities
   that an address and a REFNIS code agree: `getPostalCodes('44021')`.
 - **The municipality of every court, prison and house of justice.** Their
   `address.municipality` is this link, applied to the postal code of the published address
-  ([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28)).
+  ([#28](https://github.com/pieterjanscheir/belgica/issues/28)).
 
 ## Source and updates
 
@@ -80,13 +80,13 @@ interface PostalCode {
 - **The street.** In a city split over cantons (Antwerpen, Gent, Brussel, Luik, …) the postal
   code gives the municipality, and the municipality gives several cantons; the street then
   decides, and the boundaries exist only as legal prose in each canton's `territory` until
-  [#29](https://github.com/pieterjanscheir/be-legal-data/issues/29) adds them as geometry.
+  [#29](https://github.com/pieterjanscheir/belgica/issues/29) adds them as geometry.
 
 ## Helpers
 
 ```ts
-import { getMunicipalitiesForPostalCode, getPostalCodes } from 'be-legal-data/postal-codes'
-import { findCourtsForPostalCode } from 'be-legal-data'
+import { getMunicipalitiesForPostalCode, getPostalCodes } from 'belgica/postal-codes'
+import { findCourtsForPostalCode } from 'belgica'
 
 getMunicipalitiesForPostalCode('9050').map((m) => m.name.nl) // ['Gent']
 getMunicipalitiesForPostalCode('1040').map((m) => m.name.nl) // ['Brussel', 'Etterbeek']

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://pieterjanscheir.github.io/be-legal-data/schema/arrondissements.schema.json",
-  "title": "be-legal-data: data/arrondissements.json",
+  "$id": "https://pieterjanscheir.github.io/belgica/schema/arrondissements.schema.json",
+  "title": "belgica: data/arrondissements.json",
   "$ref": "#/definitions/ArrondissementsFile",
   "definitions": {
     "ArrondissementsFile": {

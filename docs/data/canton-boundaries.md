@@ -85,13 +85,13 @@ Anything else stops the build.
 ## Size
 
 The boundaries are by far the largest dataset: about a million positions. They have their own
-entry point, `be-legal-data/canton-boundaries`, and the package root doesn't re-export them,
+entry point, `belgica/canton-boundaries`, and the package root doesn't re-export them,
 so nothing loads them unless it asks:
 
 <table v-if="stats.sizes">
 <thead><tr><th>Entry point</th><th style="text-align:right">JavaScript loaded</th><th style="text-align:right">gzip</th></tr></thead>
 <tbody>
-<tr v-for="s in stats.sizes.filter((s) => s.entry === 'be-legal-data' || s.entry.endsWith('canton-boundaries'))" :key="s.entry">
+<tr v-for="s in stats.sizes.filter((s) => s.entry === 'belgica' || s.entry.endsWith('canton-boundaries'))" :key="s.entry">
 <td><code>{{ s.entry }}</code></td><td style="text-align:right">{{ mb(s.raw) }}</td><td style="text-align:right">{{ mb(s.gzip) }}</td>
 </tr>
 </tbody>
@@ -104,8 +104,8 @@ Python, PostGIS and GIS tools can read it without the JavaScript.
 ## Finding the canton of a point
 
 ```ts
-import { findCantonsAt, getCantonBoundary } from 'be-legal-data/canton-boundaries'
-import { getJusticeOfThePeace } from 'be-legal-data/courts'
+import { findCantonsAt, getCantonBoundary } from 'belgica/canton-boundaries'
+import { getJusticeOfThePeace } from 'belgica/courts'
 
 // Longitude first, then latitude, as GeoJSON orders them
 const [canton] = findCantonsAt(3.7268, 51.053) // Sint-Baafskathedraal, Gent → gent-1

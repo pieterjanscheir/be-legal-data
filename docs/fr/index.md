@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-    name: be-legal-data
+    name: belgica
     text: Données juridiques belges de référence
     tagline: Cours et tribunaux, cantons judiciaires et arrondissements, communes, et les taux de l'intérêt légal et des transactions commerciales. En JSON, avec types TypeScript et helpers.
     actions:
@@ -32,7 +32,7 @@ features:
 <DataStats />
 
 ```ts
-import { getCantonsForMunicipality, getInterestRate } from 'be-legal-data'
+import { getCantonsForMunicipality, getInterestRate } from 'belgica'
 
 getCantonsForMunicipality('44088') // [Canton merelbeke-melle]
 getInterestRate('2024-06-15', 'legal') // { rate: 5.75, period: { from: '2024-01-01', to: '2024-12-31' } }

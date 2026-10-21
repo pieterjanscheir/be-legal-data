@@ -19,7 +19,7 @@ communes.
   adresse et un code REFNIS concordent : `getPostalCodes('44021')`.
 - **La commune de chaque juridiction, prison et maison de justice.** Leur `address.municipality`
   est ce lien, appliqué au code postal de l'adresse publiée
-  ([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28)).
+  ([#28](https://github.com/pieterjanscheir/belgica/issues/28)).
 
 ## Source et mises à jour {#source-and-updates}
 
@@ -81,14 +81,14 @@ interface PostalCode {
 - **La rue.** Dans une ville scindée en cantons (Anvers, Gand, Bruxelles, Liège, …), le code
   postal donne la commune, et la commune donne plusieurs cantons ; c'est alors la rue qui tranche,
   et les limites n'existent que sous forme de prose juridique dans le `territory` de chaque canton
-  jusqu'à ce que [#29](https://github.com/pieterjanscheir/be-legal-data/issues/29) les ajoute en
+  jusqu'à ce que [#29](https://github.com/pieterjanscheir/belgica/issues/29) les ajoute en
   géométrie.
 
 ## Helpers {#helpers}
 
 ```ts
-import { getMunicipalitiesForPostalCode, getPostalCodes } from 'be-legal-data/postal-codes'
-import { findCourtsForPostalCode } from 'be-legal-data'
+import { getMunicipalitiesForPostalCode, getPostalCodes } from 'belgica/postal-codes'
+import { findCourtsForPostalCode } from 'belgica'
 
 getMunicipalitiesForPostalCode('9050').map((m) => m.name.fr) // ['Gand']
 getMunicipalitiesForPostalCode('1040').map((m) => m.name.fr) // ['Bruxelles', 'Etterbeek']

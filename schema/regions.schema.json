@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://pieterjanscheir.github.io/be-legal-data/schema/regions.schema.json",
-  "title": "be-legal-data: data/regions.json",
+  "$id": "https://pieterjanscheir.github.io/belgica/schema/regions.schema.json",
+  "title": "belgica: data/regions.json",
   "$ref": "#/definitions/RegionsFile",
   "definitions": {
     "RegionsFile": {

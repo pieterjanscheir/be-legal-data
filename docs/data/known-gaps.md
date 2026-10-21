@@ -6,7 +6,7 @@ import { data as stats } from '../.vitepress/stats.data'
 
 - **Courts not on the portal** aren't in the data: the Court of Cassation, the Constitutional
   Court, the Council of State and the disciplinary courts
-  ([#4](https://github.com/pieterjanscheir/be-legal-data/issues/4)).
+  ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
 - **Competence stops at the court.** `cantons` and `findCompetentCourts` say which court
   covers a municipality, not which of its divisions: a division's area is set by royal decree
   and isn't in the data yet.
@@ -27,7 +27,7 @@ import { data as stats } from '../.vitepress/stats.data'
   keeps the name as published and links it to the right canton.
 - **No history yet**: the territory data describes 1 January 2025 onwards, and the court data
   the day it was read. Lookups for an earlier day throw rather than answer with today's map
-  ([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
+  ([#27](https://github.com/pieterjanscheir/belgica/issues/27)).
 - **Canton names and seats** are in Dutch and French only: the annex to the Judicial Code has
   no consolidated German text.
 - **Split municipalities** (Antwerpen, Gent, Brussel, Luik, …) map to several cantons. A postal
@@ -47,8 +47,8 @@ import { data as stats } from '../.vitepress/stats.data'
 - **ECLI codes** are only given where they appear in published decisions; the justices of the
   peace and most police courts have none there.
 - **The house of justice in Eupen** is missing
-  ([#3](https://github.com/pieterjanscheir/be-legal-data/issues/3)).
+  ([#3](https://github.com/pieterjanscheir/belgica/issues/3)).
 
 Found something wrong or missing?
-[Report a data correction](https://github.com/pieterjanscheir/be-legal-data/issues/new?template=data-correction.yml)
+[Report a data correction](https://github.com/pieterjanscheir/belgica/issues/new?template=data-correction.yml)
 or see [contributing](/guide/contributing). Planned datasets are on the [roadmap](./roadmap).

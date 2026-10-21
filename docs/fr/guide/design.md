@@ -31,7 +31,7 @@ rechercher ; il ne peut pas construire un fait juridique.
 **Pourquoi.** Un code qui assemble un fait peut se tromper d'une manière que les tests ne
 détectent pas : les noms français de tribunaux qu'un ancien `formatCourtName` construisait
 étaient faux (`Tribunal de paix …`, alors que les juridictions s'appellent elles-mêmes
-`Justice de paix …` ; [#10](https://github.com/pieterjanscheir/be-legal-data/issues/10)). Une
+`Justice de paix …` ; [#10](https://github.com/pieterjanscheir/belgica/issues/10)). Une
 valeur stockée peut être vérifiée par rapport à sa source.
 
 **Donc.** Les noms des tribunaux sont stockés tels que chaque tribunal les publie, dans chaque
@@ -62,7 +62,7 @@ par les tests.
 **Donc.** L'adresse d'un tribunal, d'une prison ou d'une maison de justice est liée à sa commune
 de la même manière (`address.municipality`), par le code postal de la table de conversion de
 Statbel, jamais par le nom de la localité
-([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28)) ; un enregistrement de code
+([#28](https://github.com/pieterjanscheir/belgica/issues/28)) ; un enregistrement de code
 postal renvoie à sa commune plutôt que d'en copier le nom.
 
 ## 5. Valeurs canoniques, présentation dans le code {#_5-canonical-values-presentation-in-code}
@@ -111,7 +111,7 @@ soit pas alourdi de mégaoctets de HTML. Les analyseurs sont testés sur des cop
 vraies pages. Une page que l'analyseur ne parvient pas à situer arrête la construction au lieu de
 produire un enregistrement à moitié correct. Deux sources refusent les serveurs de GitHub
 (ejustice, police.be) ; elles sont récupérées depuis une machine ordinaire
-([#24](https://github.com/pieterjanscheir/be-legal-data/issues/24)).
+([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
 
 ## 8. Distribution : ESM uniquement, Node 22.12+, construit à la release {#_8-distribution-esm-only-node-22-12-built-on-release}
 
@@ -167,7 +167,7 @@ cantons, les communes et les tribunaux changent ; un modèle qui ne connaît que
 répond aux questions sur le passé avec la carte d'aujourd'hui, et semble avoir raison en le
 faisant. Ajouter le temps plus tard changerait chaque identifiant et chaque recherche, il est donc
 dans le modèle avant que l'historique ne soit dans les données
-([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
+([#27](https://github.com/pieterjanscheir/belgica/issues/27)).
 
 **Donc.** Les taux d'intérêt ont déjà des périodes. Une recherche par identifiant sans jour donne
 la version d'aujourd'hui, de sorte que les identifiants connus gardent leur type non-`undefined` ;
@@ -204,11 +204,11 @@ personne ne doit les charger par accident.
 **Donc.** `findCantonsAt(lon, lat)` répond à partir de la géométrie et la documentation le dit ;
 un point proche d'une ligne est un cas pour le texte. Le build hebdomadaire échoue quand un canton
 n'a pas de limite ou qu'une entité ne correspond à aucun canton
-([#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)).
+([#29](https://github.com/pieterjanscheir/belgica/issues/29)).
 
 ## Pas encore décidé {#not-decided-yet}
 
 | Question                                                                    | Issue                                                                                                  |
 | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| L'historique antérieur au 1er janvier 2025                                  | [#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)                                      |
+| L'historique antérieur au 1er janvier 2025                                  | [#27](https://github.com/pieterjanscheir/belgica/issues/27)                                            |
 | Le calcul des intérêts sur une période (décompte des jours, capitalisation) | Pas prévu tant que la méthode ne peut pas être tirée de la jurisprudence ou d'une directive officielle |

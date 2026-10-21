@@ -86,13 +86,13 @@ dans `CANTON_ALIASES` du parser. Tout le reste arrête le build.
 ## Taille {#size}
 
 Les limites sont de loin le plus volumineux des jeux de données : environ un million de positions.
-Elles ont leur propre point d'entrée, `be-legal-data/canton-boundaries`, et la racine du package ne
+Elles ont leur propre point d'entrée, `belgica/canton-boundaries`, et la racine du package ne
 les réexporte pas, si bien que rien ne les charge sans le demander :
 
 <table v-if="stats.sizes">
 <thead><tr><th>Point d'entrée</th><th style="text-align:right">JavaScript chargé</th><th style="text-align:right">gzip</th></tr></thead>
 <tbody>
-<tr v-for="s in stats.sizes.filter((s) => s.entry === 'be-legal-data' || s.entry.endsWith('canton-boundaries'))" :key="s.entry">
+<tr v-for="s in stats.sizes.filter((s) => s.entry === 'belgica' || s.entry.endsWith('canton-boundaries'))" :key="s.entry">
 <td><code>{{ s.entry }}</code></td><td style="text-align:right">{{ mb(s.raw) }}</td><td style="text-align:right">{{ mb(s.gzip) }}</td>
 </tr>
 </tbody>
@@ -105,8 +105,8 @@ sorte que Python, PostGIS et les outils SIG peuvent le lire sans le JavaScript.
 ## Trouver le canton d'un point {#finding-the-canton-of-a-point}
 
 ```ts
-import { findCantonsAt, getCantonBoundary } from 'be-legal-data/canton-boundaries'
-import { getJusticeOfThePeace } from 'be-legal-data/courts'
+import { findCantonsAt, getCantonBoundary } from 'belgica/canton-boundaries'
+import { getJusticeOfThePeace } from 'belgica/courts'
 
 // Longitude d'abord, puis latitude, comme les ordonne GeoJSON
 const [canton] = findCantonsAt(3.7268, 51.053) // Sint-Baafskathedraal, Gand → gent-1

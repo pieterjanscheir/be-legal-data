@@ -14,7 +14,7 @@ waarom elke regel bestaat, en wat er gebeurt wanneer de wet verandert wat een id
    bewaard: rechtbanken hebben hun ECLI-codes in `ecli`, Vlaamse justitiehuizen hun OVO-nummer in
    `ovo` (zie [waarom](#why-not-the-official-court-codes)).
 3. **Anders kebab-case in kleine letters, ASCII**: `^[a-z0-9]+(-[a-z0-9]+)*$`, gebouwd door
-   [`scripts/id.ts`](https://github.com/pieterjanscheir/be-legal-data/blob/main/scripts/id.ts):
+   [`scripts/id.ts`](https://github.com/pieterjanscheir/belgica/blob/main/scripts/id.ts):
    accenten weggelaten, al het andere dat geen letter of cijfer is, wordt één koppelteken.
    `Merelbeke-Melle` → `merelbeke-melle`, `Braine-l'Alleud` → `braine-l-alleud`,
    `Liège` → `liege`.
@@ -112,7 +112,7 @@ Elke dataset heeft een gegenereerd id-type (`CantonId`, `CourtId`, `Municipality
 opnieuw gegenereerd uit de data door `pnpm build:ids`:
 
 ```ts
-import { getCanton, type CantonId } from 'be-legal-data'
+import { getCanton, type CantonId } from 'belgica'
 
 getCanton('gent-1') // Canton: een bekend id vindt altijd zijn record
 getCanton(userInput) // Canton | undefined: elke andere string misschien niet
@@ -140,7 +140,7 @@ wijziging voegt geschiedenis toe in plaats van ze te wissen:
 
 Een naamswijziging alleen, zoals een spellingcorrectie, verandert het id niet. De geschiedenis
 van vóór 1 januari 2025 zit nog niet in de data
-([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)): een opzoeking voor een
+([#27](https://github.com/pieterjanscheir/belgica/issues/27)): een opzoeking voor een
 eerdere dag gooit een `RangeError` in plaats van te antwoorden met de kaart van vandaag.
 
 ## Ids zijn ondoorzichtig {#ids-are-opaque}

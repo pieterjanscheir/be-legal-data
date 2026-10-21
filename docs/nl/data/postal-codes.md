@@ -18,7 +18,7 @@ records, omdat {{ stats.postalCodes.shared }} postcodes bij twee gemeenten horen
   een adres en een REFNIS-code overeenstemmen: `getPostalCodes('44021')`.
 - **De gemeente van elk gerecht, elke gevangenis en elk justitiehuis.** Hun
   `address.municipality` is deze koppeling, toegepast op de postcode van het gepubliceerde adres
-  ([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28)).
+  ([#28](https://github.com/pieterjanscheir/belgica/issues/28)).
 
 ## Bron en updates {#source-and-updates}
 
@@ -80,13 +80,13 @@ interface PostalCode {
 - **De straat.** In een stad die over kantons gesplitst is (Antwerpen, Gent, Brussel, Luik, …)
   geeft de postcode de gemeente, en de gemeente meerdere kantons; dan beslist de straat, en de
   grenzen bestaan alleen als juridisch proza in de `territory` van elk kanton tot
-  [#29](https://github.com/pieterjanscheir/be-legal-data/issues/29) ze als geometrie toevoegt.
+  [#29](https://github.com/pieterjanscheir/belgica/issues/29) ze als geometrie toevoegt.
 
 ## Helpers {#helpers}
 
 ```ts
-import { getMunicipalitiesForPostalCode, getPostalCodes } from 'be-legal-data/postal-codes'
-import { findCourtsForPostalCode } from 'be-legal-data'
+import { getMunicipalitiesForPostalCode, getPostalCodes } from 'belgica/postal-codes'
+import { findCourtsForPostalCode } from 'belgica'
 
 getMunicipalitiesForPostalCode('9050').map((m) => m.name.nl) // ['Gent']
 getMunicipalitiesForPostalCode('1040').map((m) => m.name.nl) // ['Brussel', 'Etterbeek']

@@ -2,7 +2,7 @@
 
 All notable changes to this package. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow the
-[id rules](https://pieterjanscheir.github.io/be-legal-data/guide/identifiers): adding data is a
+[id rules](https://pieterjanscheir.github.io/belgica/guide/identifiers): adding data is a
 minor version, fixing a value a patch, removing or renaming an id a major version.
 
 ## [Unreleased]
@@ -14,13 +14,13 @@ belongs to, by REFNIS code, from Statbel's conversion table (CC BY 4.0): 1 152 r
 codes, since `1040`, `1050` and `1804` each belong to two municipalities. Ids are the two
 official codes joined (`9000-44021`); every record carries a validity period read from the
 table's own date, and the build fails when a code points at an unknown municipality or a
-municipality has no code. Its own entry point, `be-legal-data/postal-codes`, with
+municipality has no code. Its own entry point, `belgica/postal-codes`, with
 `getPostalCode`, `getMunicipalitiesForPostalCode`, `getPostalCodes` and `postalCodesCoverage`;
 in the root, `findCourtsForPostalCode(postalCode, type)` chains a postal code to the justices
 of the peace and the competent courts, per municipality, so a shared code is never resolved to
 one of them. Sub-municipalities aren't in the data: bpost's list has them, but no REFNIS code
 and no open licence
-([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28)).
+([#28](https://github.com/pieterjanscheir/belgica/issues/28)).
 
 **Addresses link to their municipality.** `address.municipality` on courts, prisons and houses
 of justice holds the REFNIS code the postal code belongs to; for a shared code the published
@@ -28,20 +28,24 @@ city line decides between the two, and the field is left out when it names both 
 of the peace of Etterbeek, `1040 Brussel (Etterbeek)`). A test checks that every court sits in
 its arrondissement, or its judicial area's; the one exception, the justice of the peace of
 Limbourg with a temporary seat in Eupen, is named in the test
-([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28)).
+([#28](https://github.com/pieterjanscheir/belgica/issues/28)).
 
-**Canton boundaries** ([#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)).
+**Canton boundaries** ([#29](https://github.com/pieterjanscheir/belgica/issues/29)).
 `data/canton-boundaries.json` has the boundary of every canton as GeoJSON `MultiPolygon`
 geometry in WGS 84, as the National Geographic Institute digitised it from the annex to the
 Judicial Code (geo.be, CC BY 4.0), with the NGI's object id and canton code, fetched every week
 with the other sources. One record per canton, keyed by the canton's id. The geometry is the
-NGI's, unsimplified, to 7 decimals. A new entry point, `be-legal-data/canton-boundaries`,
+NGI's, unsimplified, to 7 decimals. A new entry point, `belgica/canton-boundaries`,
 exports `cantonBoundaries`, `getCantonBoundary(cantonId)` and `findCantonsAt(lon, lat)`, the
 cantons whose boundary holds a point: one for a point in Belgium, none outside it. The package
 root doesn't re-export them: the file is 23 MB. The legal text in a canton's `territory` wins
 where the geometry disagrees.
 
 ### Changed
+
+**Renamed to `belgica` (breaking).** The package was `be-legal-data` up to 0.2.0; install
+`belgica` and change the imports (`be-legal-data/courts` becomes `belgica/courts`). The data and
+its ids are the same. The name leaves room for Belgian reference data beyond the legal kind.
 
 **All courts, from the official source (breaking).** `data/courts.json` is now built every
 week from the courts' portal, tribunaux-rechtbanken.be, instead of by hand: 347 courts,
@@ -86,7 +90,7 @@ that missed it) instead of removing it, and a record the source starts listing g
 
 **New identifiers (breaking).** Every id now follows one rule: an official code where one exists, otherwise lowercase
 kebab-case from the local-language name. See
-[identifiers](https://pieterjanscheir.github.io/be-legal-data/guide/identifiers). The package
+[identifiers](https://pieterjanscheir.github.io/belgica/guide/identifiers). The package
 had no users yet, so this was done before 1.0 rather than carried forever.
 
 - Judicial areas: `Antwerp` → `antwerpen`, `Brussels` → `brussel`, `Ghent` → `gent`, `Liege` → `liege`, `Mons` → `mons`.
@@ -150,9 +154,9 @@ OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
   municipality, including the Halle and Vilvoorde police courts and both language courts in
   Brussels; `getCourtsForCanton(cantonId)`; and a `court-cantons.csv` table in the releases.
 - Prisons: the 39 prisons and detention houses, in `data/prisons.json` and
-  `be-legal-data/prisons`.
+  `belgica/prisons`.
 - Houses of justice: the 14 Flemish (with OVO number) and 13 French-speaking houses, in
-  `data/houses-of-justice.json` and `be-legal-data/houses-of-justice`.
+  `data/houses-of-justice.json` and `belgica/houses-of-justice`.
 - `getDivisions(courtId)`; `findCourts` filters by `kind` and `judicialArea` too.
 - A weekly workflow that fetches the official sources, keeps snapshots on the `sources` branch,
   rebuilds the data and opens a pull request when it changed.
@@ -163,13 +167,13 @@ OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
   municipality, including split cities.
 - Quality gates: strict TypeScript, ESLint (type-aware), Prettier, 100 % coverage, IBAN checksum
   and contact-format tests, type tests.
-- A [design decisions](https://pieterjanscheir.github.io/be-legal-data/guide/design) page.
+- A [design decisions](https://pieterjanscheir.github.io/belgica/guide/design) page.
 - Generated id types (`CantonId`, `CourtId`, `MunicipalityId`, `ArrondissementId`,
   `JudicialAreaId`). Lookups with a known id return the record without `undefined`; the JSON
   Schemas list the valid ids, so a dangling link fails validation.
 
-- Entry points per dataset: `be-legal-data/territory`, `be-legal-data/courts` and
-  `be-legal-data/interest-rates`. Importing only the interest rates no longer bundles the
+- Entry points per dataset: `belgica/territory`, `belgica/courts` and
+  `belgica/interest-rates`. Importing only the interest rates no longer bundles the
   canton texts (12 KB instead of 250 KB).
 - `getJusticeOfThePeace(cantonId)`.
 - JSON Schemas for every data file (`schema/`, also published on the documentation site).
@@ -200,6 +204,6 @@ OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
 - Courts (justices of the peace in East and West Flanders, Ondernemingsrechtbank Gent) and the
   legal and commercial interest rates.
 
-[Unreleased]: https://github.com/pieterjanscheir/be-legal-data/compare/72889e0...HEAD
-[0.2.0]: https://github.com/pieterjanscheir/be-legal-data/commit/72889e0
-[0.1.0]: https://github.com/pieterjanscheir/be-legal-data/commit/c113197
+[Unreleased]: https://github.com/pieterjanscheir/belgica/compare/72889e0...HEAD
+[0.2.0]: https://github.com/pieterjanscheir/belgica/commit/72889e0
+[0.1.0]: https://github.com/pieterjanscheir/belgica/commit/c113197

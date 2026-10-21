@@ -20,4 +20,4 @@ body:
       id: fields
       attributes:
           label: Proposed fields
-          description: See https://pieterjanscheir.github.io/be-legal-data/guide/identifiers for the id rules
+          description: See https://pieterjanscheir.github.io/belgica/guide/identifiers for the id rules

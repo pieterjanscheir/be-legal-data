@@ -44,7 +44,7 @@ De naam van de directeur, die de pagina's ook geven, is weggelaten: hij verander
 persoonsgegevens die het package niet nodig heeft.
 
 ```ts
-import { getPrison, prisons } from 'be-legal-data/prisons'
+import { getPrison, prisons } from 'belgica/prisons'
 
 getPrison('gevangenis-gent').name.fr // 'Prison de Gand'
 prisons.filter((p) => p.kind === 'detention-house') // Kortrijk, Olen, Vorst

@@ -3,12 +3,12 @@
 The JSON files in `data/` are the source of truth; the TypeScript only adds types and helpers.
 You can read them from any language:
 
-- from the npm package (`node_modules/be-legal-data/data/`);
+- from the npm package (`node_modules/belgica/data/`);
 - as a git submodule;
 - from a raw URL pinned to a release tag.
 
 ```
-https://raw.githubusercontent.com/pieterjanscheir/be-legal-data/v0.3.0/data/cantons.json
+https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.3.0/data/cantons.json
 ```
 
 Pin a tag rather than `main`, so the data only changes when you choose to upgrade.
@@ -19,7 +19,7 @@ Pin a tag rather than `main`, so the data only changes when you choose to upgrad
 import json
 from urllib.request import urlopen
 
-BASE = "https://raw.githubusercontent.com/pieterjanscheir/be-legal-data/v0.3.0/data"
+BASE = "https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.3.0/data"
 
 cantons = json.load(urlopen(f"{BASE}/cantons.json"))
 
@@ -46,7 +46,7 @@ def interest_rate(day: str, kind: str, contract_after_20130316: bool = False) ->
 
 ## CSV
 
-Every [release](https://github.com/pieterjanscheir/be-legal-data/releases) has a zip with the
+Every [release](https://github.com/pieterjanscheir/belgica/releases) has a zip with the
 data as JSON and as CSV tables (UTF-8, comma-separated), with the schemas and
 `datapackage.json`. Nested values are tables of their own: a court's contacts are in
 `court-contacts.csv`, keyed by court id; a canton's municipalities in

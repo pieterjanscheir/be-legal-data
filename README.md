@@ -1,4 +1,4 @@
-# be-legal-data
+# belgica
 
 Belgian legal reference data as JSON and CSV, with TypeScript types and helpers: every court
 with its registries' contacts, prisons, houses of justice, judicial cantons and arrondissements,
@@ -6,7 +6,7 @@ municipalities and their postal codes, and the legal and commercial interest rat
 from, and the scraped data is rebuilt from the official sources every week.
 
 Documentation, with a canton lookup, a court list and interest-rate tables:
-**https://pieterjanscheir.github.io/be-legal-data/**
+**https://pieterjanscheir.github.io/belgica/**
 
 It's reference data, not legal advice: check the official sources before relying on it.
 
@@ -29,11 +29,11 @@ It's reference data, not legal advice: check the official sources before relying
 
 The official sources are the truth; the files in `data/` are built from them. Every file has a
 [JSON Schema](schema/), and [`datapackage.json`](datapackage.json) lists each dataset's sources,
-licence, coverage and when it was last checked. Each [release](https://github.com/pieterjanscheir/be-legal-data/releases)
+licence, coverage and when it was last checked. Each [release](https://github.com/pieterjanscheir/belgica/releases)
 has the data as JSON and CSV in one zip.
 
 Planned: the highest courts, history before 2025, bailiffs, police zones and the cadastre
-offices. See the [roadmap](https://pieterjanscheir.github.io/be-legal-data/data/roadmap).
+offices. See the [roadmap](https://pieterjanscheir.github.io/belgica/data/roadmap).
 
 Municipality, province, region and postal-code data © Statbel, canton boundaries © National
 Geographic Institute (NGI), both [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
@@ -43,12 +43,12 @@ Geographic Institute (NGI), both [CC BY 4.0](https://creativecommons.org/license
 ### TypeScript / JavaScript
 
 ```bash
-pnpm add be-legal-data
+pnpm add belgica
 ```
 
 ESM with TypeScript types and no runtime dependencies. Node 22.12 or later (where `require()`
 loads it too), Deno, Bun and browsers. Design choices are explained in
-[design decisions](https://pieterjanscheir.github.io/be-legal-data/guide/design).
+[design decisions](https://pieterjanscheir.github.io/belgica/guide/design).
 
 ```ts
 import {
@@ -60,7 +60,7 @@ import {
     findCompetentCourts,
     findCourtsForPostalCode,
     getInterestRate,
-} from 'be-legal-data'
+} from 'belgica'
 
 getCourt('court-of-appeal-brussel').name // { nl: 'Hof van Beroep Brussel', fr: "Cour d'appel de Bruxelles" }
 getContact(getCourt('court-of-appeal-liege'), 'email', 'Greffe pénal') // 'liege.ca.greffepenal@just.fgov.be'
@@ -69,7 +69,7 @@ findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' })
 const [canton] = getCantonsForMunicipality('44088') // merelbeke-melle
 getJusticeOfThePeace(canton.id).address // where to file
 getCantonsForMunicipality('44021', { on: '2025-09-15' }) // Gent 1–5 on that day: a split city
-findCantonsAt(3.7268, 51.053) // [gent-1]: the canton of a point (be-legal-data/canton-boundaries)
+findCantonsAt(3.7268, 51.053) // [gent-1]: the canton of a point (belgica/canton-boundaries)
 findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde]: which court, by REFNIS code
 findCourtsForPostalCode('1040', 'police-court') // per municipality: Brussel and Etterbeek share the code
 
@@ -80,19 +80,19 @@ getInterestRate(new Date(2014, 5, 15), 'commercial', { contractAfter20130316: tr
 `getInterestRate` returns `null` for a day with no rate on file, so callers can warn instead of
 silently using 0 %. Malformed days, and days before a dataset's coverage, throw a `RangeError`.
 
-Import a single dataset to keep bundles small: `be-legal-data/interest-rates`,
-`be-legal-data/courts`, `be-legal-data/prisons`, `be-legal-data/houses-of-justice`,
-`be-legal-data/territory`, `be-legal-data/postal-codes`. The canton boundaries (a million
-positions of GeoJSON) are only in `be-legal-data/canton-boundaries`; the root never loads
+Import a single dataset to keep bundles small: `belgica/interest-rates`,
+`belgica/courts`, `belgica/prisons`, `belgica/houses-of-justice`,
+`belgica/territory`, `belgica/postal-codes`. The canton boundaries (a million
+positions of GeoJSON) are only in `belgica/canton-boundaries`; the root never loads
 them.
 
-The raw files are also exported: `import courts from 'be-legal-data/data/courts.json' with { type: 'json' }`.
+The raw files are also exported: `import courts from 'belgica/data/courts.json' with { type: 'json' }`.
 
 ### Python, spreadsheets and anything else
 
 Read the JSON files in `data/` directly: from the npm package, a git submodule, or a raw URL
-pinned to a tag (`https://raw.githubusercontent.com/pieterjanscheir/be-legal-data/v0.3.0/data/cantons.json`).
-For spreadsheets, take the CSV tables from a [release](https://github.com/pieterjanscheir/be-legal-data/releases).
+pinned to a tag (`https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.3.0/data/cantons.json`).
+For spreadsheets, take the CSV tables from a [release](https://github.com/pieterjanscheir/belgica/releases).
 
 ## How the data is kept up to date
 
@@ -110,7 +110,7 @@ pnpm check           # everything CI runs
 ```
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) and the
-[data quality](https://pieterjanscheir.github.io/be-legal-data/guide/data-quality) page.
+[data quality](https://pieterjanscheir.github.io/belgica/guide/data-quality) page.
 
 ### Releasing
 
@@ -127,7 +127,7 @@ has to match `version`.
 
 ## Known gaps
 
-See [known gaps](https://pieterjanscheir.github.io/be-legal-data/data/known-gaps). The main ones:
+See [known gaps](https://pieterjanscheir.github.io/belgica/data/known-gaps). The main ones:
 the highest courts aren't on the courts' portal yet, history before 1 January 2025 isn't in the
 data (lookups for earlier days throw), and split cities need the address's coordinates to pick a
 canton.

@@ -11,15 +11,15 @@ const kb = (bytes) => `${Math.round(bytes / 1024)} Ko`
 ::: code-group
 
 ```bash [pnpm]
-pnpm add be-legal-data
+pnpm add belgica
 ```
 
 ```bash [npm]
-npm install be-legal-data
+npm install belgica
 ```
 
 ```bash [yarn]
-yarn add be-legal-data
+yarn add belgica
 ```
 
 :::
@@ -35,14 +35,14 @@ les jeux de données. Chaque jeu de données a son propre point d'entrée, et le
 cantons (avec le texte légal de leurs territoires) sont de loin les plus volumineux :
 
 ```ts
-import { getInterestRate } from 'be-legal-data/interest-rates'
-import { getCourt } from 'be-legal-data/courts'
-import { getCanton } from 'be-legal-data/territory'
-import { getMunicipalitiesForPostalCode } from 'be-legal-data/postal-codes'
+import { getInterestRate } from 'belgica/interest-rates'
+import { getCourt } from 'belgica/courts'
+import { getCanton } from 'belgica/territory'
+import { getMunicipalitiesForPostalCode } from 'belgica/postal-codes'
 ```
 
 Les [limites des cantons](/fr/data/canton-boundaries) font exception : un million de positions de
-géométrie, seulement dans `be-legal-data/canton-boundaries`, jamais chargées par la racine du package.
+géométrie, seulement dans `belgica/canton-boundaries`, jamais chargées par la racine du package.
 
 <table v-if="stats.sizes">
 <thead><tr><th>Point d'entrée</th><th style="text-align:right">JavaScript chargé</th><th style="text-align:right">gzip</th></tr></thead>
@@ -63,7 +63,7 @@ import {
     getCanton,
     getCantonsForMunicipality,
     getInterestRate,
-} from 'be-legal-data'
+} from 'belgica'
 
 getCourt('justice-of-the-peace-gent-1').name.nl // 'Vredegerecht Gent 1'
 findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' })
@@ -83,7 +83,7 @@ getInterestRate(new Date(2014, 5, 15), 'commercial', { contractAfter20130316: tr
 Cherchez le code REFNIS de la commune et obtenez ses cantons, puis la justice de paix du canton.
 
 ```ts
-import { getCantonsForMunicipality, getJusticeOfThePeace } from 'be-legal-data'
+import { getCantonsForMunicipality, getJusticeOfThePeace } from 'belgica'
 
 const cantons = getCantonsForMunicipality('44088')
 if (cantons.length === 1) {
@@ -102,7 +102,7 @@ contient la description légale de sa partie. Essayez-le sur la
 Avec les coordonnées de l'adresse, les [limites des cantons](/fr/data/canton-boundaries) tranchent :
 
 ```ts
-import { findCantonsAt } from 'be-legal-data/canton-boundaries'
+import { findCantonsAt } from 'belgica/canton-boundaries'
 
 const [canton] = findCantonsAt(3.7268, 51.053) // longitude, latitude : gent-1
 const court = getJusticeOfThePeace(canton.id)
@@ -114,7 +114,7 @@ Tout tribunal autre qu'une justice de paix liste les cantons qu'il couvre (`cant
 loi les fixe. `findCompetentCourts` y recherche les cantons d'une commune.
 
 ```ts
-import { findCompetentCourts, getDivisions } from 'be-legal-data'
+import { findCompetentCourts, getDivisions } from 'belgica'
 
 findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde], pas Bruxelles
 findCompetentCourts('21004', 'labour-court') // le tribunal néerlandophone et le tribunal francophone de Bruxelles
@@ -132,7 +132,7 @@ et aux juridictions d'un type. Il répond par commune : trois codes postaux (`10
 `1804`) appartiennent à deux communes, et c'est alors la rue qui tranche.
 
 ```ts
-import { findCourtsForPostalCode, getMunicipalitiesForPostalCode } from 'be-legal-data'
+import { findCourtsForPostalCode, getMunicipalitiesForPostalCode } from 'belgica'
 
 const [gent] = findCourtsForPostalCode('9050', 'labour-court')
 gent.municipality.name.fr // 'Gand'
@@ -145,12 +145,12 @@ getMunicipalitiesForPostalCode('9050').map((m) => m.id) // ['44021']
 
 Dans une ville scindée en cantons, le code postal ramène la question à la commune ; le canton a
 toujours besoin de la rue, et ses limites restent de la prose juridique jusqu'à ce que
-[#29](https://github.com/pieterjanscheir/be-legal-data/issues/29) les ajoute en géométrie.
+[#29](https://github.com/pieterjanscheir/belgica/issues/29) les ajoute en géométrie.
 
 ### Intérêts dus à une date donnée {#interest-due-on-a-day}
 
 ```ts
-import { getInterestRate, getLatestKnownRateDate } from 'be-legal-data'
+import { getInterestRate, getLatestKnownRateDate } from 'belgica'
 
 const result = getInterestRate(new Date(), 'commercial')
 if (!result) {
@@ -178,7 +178,7 @@ getCourt('police-court-eupen-sankt-vith').name.de // 'Polizeigericht Eupen, Abte
 Les fichiers de données sont exportés eux aussi :
 
 ```ts
-import courts from 'be-legal-data/data/courts.json' with { type: 'json' }
+import courts from 'belgica/data/courts.json' with { type: 'json' }
 ```
 
 ## Les identifiants font partie de l'API publique {#ids-are-public-api}

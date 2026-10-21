@@ -1,11 +1,11 @@
 // CommonJS consumers: same checks as esm.mjs
 const assert = require('node:assert/strict')
-const { getCourt } = require('be-legal-data')
-const { getCantonsForMunicipality } = require('be-legal-data/territory')
-const { getJusticeOfThePeace } = require('be-legal-data/courts')
-const { getInterestRate } = require('be-legal-data/interest-rates')
-const { getPostalCodes } = require('be-legal-data/postal-codes')
-const { findCantonsAt } = require('be-legal-data/canton-boundaries')
+const { getCourt } = require('belgica')
+const { getCantonsForMunicipality } = require('belgica/territory')
+const { getJusticeOfThePeace } = require('belgica/courts')
+const { getInterestRate } = require('belgica/interest-rates')
+const { getPostalCodes } = require('belgica/postal-codes')
+const { findCantonsAt } = require('belgica/canton-boundaries')
 
 assert.equal(getCourt('justice-of-the-peace-gent-1').name.nl, 'Vredegerecht Gent 1')
 assert.equal(getJusticeOfThePeace('gent-1').id, 'justice-of-the-peace-gent-1')

@@ -13,7 +13,7 @@
  *
  * Run with `pnpm build:cantons`, by hand on a regular machine: it needs network access and the
  * `unzip` command, and ejustice refuses connections from GitHub's runners
- * (https://github.com/pieterjanscheir/be-legal-data/issues/24), so the weekly workflow can't
+ * (https://github.com/pieterjanscheir/belgica/issues/24), so the weekly workflow can't
  * run it. Rerun it after a law changes the annex or municipalities merge.
  */
 import { execFileSync } from 'node:child_process'

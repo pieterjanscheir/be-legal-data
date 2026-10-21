@@ -1,9 +1,9 @@
 {
   "$schema": "https://datapackage.org/profiles/2.0/datapackage.json",
-  "name": "be-legal-data",
+  "name": "belgica",
   "title": "Belgian legal reference data",
   "description": "Courts, prisons, houses of justice, judicial areas, arrondissements and cantons with their boundaries, regions, provinces, municipalities and postal codes, and the legal and commercial interest rates of Belgium, with their official sources.",
-  "homepage": "https://pieterjanscheir.github.io/be-legal-data/",
+  "homepage": "https://pieterjanscheir.github.io/belgica/",
   "licenses": [
     {
       "name": "CC-BY-4.0",

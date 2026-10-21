@@ -6,7 +6,7 @@
 import { writeFileSync } from 'node:fs'
 import { createGenerator } from 'ts-json-schema-generator'
 
-const SITE = 'https://pieterjanscheir.github.io/be-legal-data'
+const SITE = 'https://pieterjanscheir.github.io/belgica'
 
 export const files = {
     'judicial-areas': 'JudicialAreasFile',
@@ -35,7 +35,7 @@ for (const [name, type] of Object.entries(files)) {
     const schema = {
         $schema,
         $id: `${SITE}/schema/${name}.schema.json`,
-        title: `be-legal-data: data/${name}.json`,
+        title: `belgica: data/${name}.json`,
         ...rest,
     }
     writeFileSync(`schema/${name}.schema.json`, JSON.stringify(schema, null, 2) + '\n')

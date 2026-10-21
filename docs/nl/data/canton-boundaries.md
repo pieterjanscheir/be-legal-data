@@ -85,13 +85,13 @@ zegt; `Gerechtelijk kanton Huy`, waar ze `Hoei` zegt); die worden gekoppeld via 
 ## Omvang {#size}
 
 De grenzen zijn veruit de grootste dataset: ongeveer een miljoen posities. Ze hebben een eigen
-entry point, `be-legal-data/canton-boundaries`, en de root van het package exporteert ze niet
+entry point, `belgica/canton-boundaries`, en de root van het package exporteert ze niet
 opnieuw, dus niets laadt ze tenzij erom wordt gevraagd:
 
 <table v-if="stats.sizes">
 <thead><tr><th>Entry point</th><th style="text-align:right">JavaScript geladen</th><th style="text-align:right">gzip</th></tr></thead>
 <tbody>
-<tr v-for="s in stats.sizes.filter((s) => s.entry === 'be-legal-data' || s.entry.endsWith('canton-boundaries'))" :key="s.entry">
+<tr v-for="s in stats.sizes.filter((s) => s.entry === 'belgica' || s.entry.endsWith('canton-boundaries'))" :key="s.entry">
 <td><code>{{ s.entry }}</code></td><td style="text-align:right">{{ mb(s.raw) }}</td><td style="text-align:right">{{ mb(s.gzip) }}</td>
 </tr>
 </tbody>
@@ -104,8 +104,8 @@ Python, PostGIS en GIS-tools het kunnen lezen zonder de JavaScript.
 ## Het kanton van een punt vinden {#finding-the-canton-of-a-point}
 
 ```ts
-import { findCantonsAt, getCantonBoundary } from 'be-legal-data/canton-boundaries'
-import { getJusticeOfThePeace } from 'be-legal-data/courts'
+import { findCantonsAt, getCantonBoundary } from 'belgica/canton-boundaries'
+import { getJusticeOfThePeace } from 'belgica/courts'
 
 // Eerst de lengtegraad, dan de breedtegraad, zoals GeoJSON ze ordent
 const [canton] = findCantonsAt(3.7268, 51.053) // Sint-Baafskathedraal, Gent → gent-1

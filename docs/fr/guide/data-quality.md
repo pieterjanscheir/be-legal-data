@@ -31,7 +31,7 @@ pas de limite dans le fichier de l'IGN.
 site officiel ──fetch──> snapshots (branche sources) ──parse──> data/*.json ──> pull request
 ```
 
-1. **Récupération.** Chaque lundi, le [workflow sources](https://github.com/pieterjanscheir/be-legal-data/actions/workflows/sources.yml)
+1. **Récupération.** Chaque lundi, le [workflow sources](https://github.com/pieterjanscheir/belgica/actions/workflows/sources.yml)
    récupère chaque page des sources (`scripts/sources`), avec courtoisie : une requête par
    seconde et par site, avec un user agent qui nomme le projet. Il conserve chaque page sur la
    branche `sources`, avec un index de ce qui a été récupéré, quand, et un hachage de son
@@ -57,7 +57,7 @@ Pour l'exécuter vous-même : `pnpm fetch:sources` (écrit dans `.sources/`), pu
 
 Les cantons et les communes sont reconstruits à la main avec `pnpm build:cantons` : le site du
 Moniteur belge refuse les serveurs de GitHub
-([#24](https://github.com/pieterjanscheir/be-legal-data/issues/24)).
+([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
 
 ## Contrôles automatiques {#automatic-checks}
 
@@ -92,9 +92,9 @@ Moniteur belge refuse les serveurs de GitHub
 
 ### Chaque semaine (planifié) {#every-week-scheduled}
 
-Le [workflow freshness](https://github.com/pieterjanscheir/be-legal-data/actions/workflows/freshness.yml)
+Le [workflow freshness](https://github.com/pieterjanscheir/belgica/actions/workflows/freshness.yml)
 s'exécute chaque lundi et ouvre une issue étiquetée
-[`data-freshness`](https://github.com/pieterjanscheir/be-legal-data/issues?q=label%3Adata-freshness)
+[`data-freshness`](https://github.com/pieterjanscheir/belgica/issues?q=label%3Adata-freshness)
 quand il trouve quelque chose :
 
 - **Taux manquants** : pas de taux légal ou commercial pour aujourd'hui, ou pas de taux
@@ -125,6 +125,6 @@ URL).
 
 ## Signaler une erreur {#reporting-a-mistake}
 
-[Ouvrez une correction de données](https://github.com/pieterjanscheir/be-legal-data/issues/new?template=data-correction.yml)
+[Ouvrez une correction de données](https://github.com/pieterjanscheir/belgica/issues/new?template=data-correction.yml)
 avec l'identifiant de l'enregistrement et un lien vers la source officielle. Les corrections
 sont publiées en versions patch.

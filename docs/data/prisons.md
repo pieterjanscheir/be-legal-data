@@ -43,7 +43,7 @@ The name of the director, which the pages also give, is left out: it changes, an
 personal data the package doesn't need.
 
 ```ts
-import { getPrison, prisons } from 'be-legal-data/prisons'
+import { getPrison, prisons } from 'belgica/prisons'
 
 getPrison('gevangenis-gent').name.fr // 'Prison de Gand'
 prisons.filter((p) => p.kind === 'detention-house') // Kortrijk, Olen, Vorst

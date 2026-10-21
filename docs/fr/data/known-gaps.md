@@ -6,7 +6,7 @@ import { data as stats } from '../../.vitepress/stats.data'
 
 - **Les juridictions absentes du portail** ne sont pas dans les données : la Cour de cassation,
   la Cour constitutionnelle, le Conseil d'État et les juridictions disciplinaires
-  ([#4](https://github.com/pieterjanscheir/be-legal-data/issues/4)).
+  ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
 - **La compétence s'arrête à la juridiction.** `cantons` et `findCompetentCourts` disent quelle
   juridiction couvre une commune, pas laquelle de ses divisions : le territoire d'une division est
   fixé par arrêté royal et n'est pas encore dans les données.
@@ -29,7 +29,7 @@ import { data as stats } from '../../.vitepress/stats.data'
 - **Pas encore d'historique** : les données territoriales décrivent la situation à partir du
   1er janvier 2025, et les données des juridictions celle du jour où elles ont été lues. Une
   recherche pour un jour antérieur lève une erreur plutôt que de répondre avec la carte
-  d'aujourd'hui ([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
+  d'aujourd'hui ([#27](https://github.com/pieterjanscheir/belgica/issues/27)).
 - **Les noms et sièges des cantons** sont en néerlandais et en français seulement : l'annexe au
   Code judiciaire n'a pas de texte allemand consolidé.
 - **Les communes scindées** (Anvers, Gand, Bruxelles, Liège, …) correspondent à plusieurs
@@ -50,9 +50,9 @@ import { data as stats } from '../../.vitepress/stats.data'
 - **Les codes ECLI** ne sont donnés que là où ils apparaissent dans les décisions publiées ; les
   justices de paix et la plupart des tribunaux de police n'en ont pas.
 - **La maison de justice d'Eupen** manque
-  ([#3](https://github.com/pieterjanscheir/be-legal-data/issues/3)).
+  ([#3](https://github.com/pieterjanscheir/belgica/issues/3)).
 
 Vous avez trouvé une erreur ou un manque ?
-[Signalez une correction de données](https://github.com/pieterjanscheir/be-legal-data/issues/new?template=data-correction.yml)
+[Signalez une correction de données](https://github.com/pieterjanscheir/belgica/issues/new?template=data-correction.yml)
 ou consultez [Contribuer](/fr/guide/contributing). Les jeux de données prévus sont sur la
 [feuille de route](./roadmap).
