@@ -137,6 +137,27 @@ const statbel: Source = {
     },
 }
 
+/** Statbel's page on its geographic nomenclatures: REFNIS codes, sub-municipalities, postal codes */
+export const STATBEL_GEOGRAPHY =
+    'https://statbel.fgov.be/nl/over-statbel/methodologie/classificaties/geografie'
+
+/**
+ * Statbel's conversion tables from postal codes to REFNIS codes, one per state of the
+ * municipalities: `…_va01012025.xlsx` is valid from 1 January 2025
+ */
+export const isPostalCodeTable = (url: string) =>
+    /\/Conversion(?:%20| )Postal(?:%20| )code_Refnis(?:%20| )code_va\d{8}\.xlsx$/i.test(url)
+
+const postalCodes: Source = {
+    name: 'postal-codes',
+    description: 'Statbel: the conversion tables from postal codes to REFNIS codes',
+    async fetch(get) {
+        const res = await get(STATBEL_GEOGRAPHY)
+        for (const url of links(html(res), res.url).sort())
+            if (isPostalCodeTable(url)) await get(url)
+    },
+}
+
 /**
  * The judicial cantons as geometry: the NGI's "Judicial cantons and arrondissements" dataset
  * (Territorial Divisions), GeoPackage in WGS 84, from its geo.be record
@@ -155,4 +176,4 @@ const ngi: Source = {
     },
 }
 
-export const sources: Source[] = [courts, prisons, housesOfJustice, statbel, ngi]
+export const sources: Source[] = [courts, prisons, housesOfJustice, statbel, postalCodes, ngi]

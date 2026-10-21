@@ -30,11 +30,20 @@ import { data as stats } from '../.vitepress/stats.data'
   ([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
 - **Canton names and seats** are in Dutch and French only: the annex to the Judicial Code has
   no consolidated German text.
-- **Split municipalities** (Antwerpen, Gent, Brussel, Luik, …) map to several cantons. Picking
-  the right one needs the street address: `findCantonsAt(lon, lat)` finds it from coordinates
-  with the [canton boundaries](./canton-boundaries), but geocoding the address is up to you,
-  and the boundaries are the NGI's reading of the legal text in `territory`, which wins where
-  they disagree.
+- **Split municipalities** (Antwerpen, Gent, Brussel, Luik, …) map to several cantons. A postal
+  code gets you to the municipality (`findCourtsForPostalCode`); picking the canton needs the
+  street address: `findCantonsAt(lon, lat)` finds it from coordinates with the
+  [canton boundaries](./canton-boundaries), but geocoding the address is up to you, and the
+  boundaries are the NGI's reading of the legal text in `territory`, which wins where they
+  disagree.
+- **Postal codes stop at the municipality.** Sub-municipalities (deelgemeenten) aren't in the
+  data: Statbel's table has none, and bpost's list isn't openly licensed. Three codes (`1040`,
+  `1050`, `1804`) belong to two municipalities; the lookups return both.
+- **One court address without a municipality**: the justice of the peace of Etterbeek
+  publishes `1040 Brussel (Etterbeek)`, a shared code with a city line that names both
+  municipalities, so `address.municipality` is left out rather than guessed. The justice of
+  the peace of Limbourg publishes a temporary seat in Eupen's courthouse, so its municipality
+  lies outside its arrondissement, as its page says.
 - **ECLI codes** are only given where they appear in published decisions; the justices of the
   peace and most police courts have none there.
 - **The house of justice in Eupen** is missing

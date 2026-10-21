@@ -12,6 +12,7 @@ import { getCanton, getCantonsForMunicipality } from 'be-legal-data/territory'
 import { findCantonsAt } from 'be-legal-data/canton-boundaries'
 import { getPrison } from 'be-legal-data/prisons'
 import { getHouseOfJustice } from 'be-legal-data/houses-of-justice'
+import { getMunicipalitiesForPostalCode } from 'be-legal-data/postal-codes'
 ```
 
 | Entry point                          | Inhoud                                                                     |
@@ -23,6 +24,7 @@ import { getHouseOfJustice } from 'be-legal-data/houses-of-justice'
 | `be-legal-data/prisons`              | Gevangenissen, en de helpers voor contactgegevens                          |
 | `be-legal-data/houses-of-justice`    | Justitiehuizen, en de helpers voor contactgegevens                         |
 | `be-legal-data/interest-rates`       | Rentevoeten                                                                |
+| `be-legal-data/postal-codes`         | Postcodes, met de gemeenten waartoe ze behoren                             |
 | `be-legal-data/data/*.json`          | De ruwe databestanden                                                      |
 | `be-legal-data/schema/*.schema.json` | [JSON Schemas](/nl/guide/schema)                                           |
 | `be-legal-data/datapackage.json`     | [Data package descriptor](/nl/guide/schema#datapackage-json)               |
@@ -351,6 +353,46 @@ function getHouseOfJustice(id: string, options?: OnDay): HouseOfJustice | undefi
 getHouseOfJustice('justitiehuis-gent').ovo // 'OVO001917'
 ```
 
+## Postcodes {#postal-codes}
+
+### `getPostalCode(id)` {#getpostalcode-id}
+
+```ts
+function getPostalCode(id: PostalCodeId): PostalCode
+function getPostalCode(id: string, options?: OnDay): PostalCode | undefined
+```
+
+Een record op id: de postcode en de REFNIS-code aan elkaar, `'9000-44021'`.
+
+### `getMunicipalitiesForPostalCode(postalCode)` {#getmunicipalitiesforpostalcode-postalcode}
+
+```ts
+function getMunicipalitiesForPostalCode(postalCode: string, options?: OnDay): Municipality[]
+```
+
+De gemeenten waartoe een postcode behoort op een dag (standaard vandaag): één voor bijna elke
+code; twee voor `1040`, `1050` en `1804`, waar de straat beslist. Dezelfde `Municipality`-records
+als `getMunicipality` geeft. Leeg voor een onbekende code.
+
+```ts
+getMunicipalitiesForPostalCode('9050').map((m) => m.name.nl) // ['Gent']
+getMunicipalitiesForPostalCode('1040').map((m) => m.name.nl) // ['Brussel', 'Etterbeek']
+getMunicipalitiesForPostalCode('0000') // []
+```
+
+### `getPostalCodes(municipalityId)` {#getpostalcodes-municipalityid}
+
+```ts
+function getPostalCodes(municipalityId: string, options?: OnDay): PostalCode[]
+```
+
+De postcodes van een gemeente op een dag (standaard vandaag), op REFNIS-code, in volgorde. Leeg
+voor een onbekende code.
+
+```ts
+getPostalCodes('44021').map((p) => p.postalCode) // ['9000', '9030', '9031', …]
+```
+
 ## Bevoegdheid {#competence}
 
 Vragen die datasets combineren. Ze zitten alleen in de root van het package, omdat ze zowel het
@@ -397,6 +439,36 @@ findJusticesOfThePeace('44088')
 // [{ canton: { id: 'merelbeke-melle', … }, court: { id: 'justice-of-the-peace-merelbeke-melle', … }, partial: false }]
 
 findJusticesOfThePeace('44021').map((c) => c.canton.id) // ['gent-1', 'gent-2', 'gent-3', 'gent-4', 'gent-5']
+```
+
+### `findCourtsForPostalCode(postalCode, type)` {#findcourtsforpostalcode-postalcode-type}
+
+```ts
+function findCourtsForPostalCode(
+    postalCode: string,
+    type: CourtType,
+    options?: OnDay,
+): PostalCodeCourts[]
+
+interface PostalCodeCourts {
+    municipality: Municipality
+    justicesOfThePeace: CantonCourt[] // findJusticesOfThePeace(municipality.id)
+    courts: Court[] // findCompetentCourts(municipality.id, type)
+}
+```
+
+De gerechten voor een postcode op een dag (standaard vandaag), per gemeente: de postcode geeft
+de gemeente ([postcodes](/nl/data/postal-codes)), de gemeente haar vredegerechten en haar
+gerechten van het gevraagde type. Eén item voor bijna elke code; twee voor `1040`, `1050` en
+`1804`, die bij twee gemeenten horen, zodat het antwoord nooit tot een van beide wordt herleid.
+Leeg voor een onbekende code. In een stad die over kantons gesplitst is, beslist de straat nog
+altijd tussen de vredegerechten, zoals bij `findJusticesOfThePeace`.
+
+```ts
+findCourtsForPostalCode('9050', 'labour-court')
+// [{ municipality: { id: '44021', … }, justicesOfThePeace: [gent-1 … gent-5], courts: [labour-court-gent] }]
+
+findCourtsForPostalCode('1040', 'police-court').map((r) => r.municipality.name.nl) // ['Brussel', 'Etterbeek']
 ```
 
 ## Rentevoeten {#interest-rates}
@@ -454,6 +526,7 @@ const territoryCoverage: { from: '2025-01-01' }
 const courtsCoverage: { from: '2025-01-01' }
 const prisonsCoverage: { from: '2026-10-20' }
 const housesOfJusticeCoverage: { from: '2026-10-20' }
+const postalCodesCoverage: { from: '2025-01-01' }
 
 function appliesOn(record: Validity, day: string): boolean
 function toDay(date: Date | string): string // 'YYYY-MM-DD', of een RangeError
@@ -486,18 +559,20 @@ De volledige datasets, getypeerd:
 | `courts`          | `readonly Court[]`                                   |
 | `prisons`         | `readonly Prison[]`                                  |
 | `housesOfJustice` | `readonly HouseOfJustice[]`                          |
+| `postalCodes`     | `readonly PostalCode[]`                              |
 | `interestRates`   | `Readonly<Record<InterestType, InterestRateSeries>>` |
 
 ## Types {#types}
 
-| Type                                                                                                                                                                                     | Beschreven op                                                                   |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `JudicialAreaId`, `ArrondissementId`, `CantonId`, `RegionId`, `ProvinceId`, `MunicipalityId`, `CourtId`, `PrisonId`, `HouseOfJusticeId`: unions van de ids in de data, mee geregenereerd | [Identifiers](/nl/guide/identifiers#in-typescript)                              |
-| `Locale` = `'nl' \| 'fr' \| 'de'`                                                                                                                                                        |                                                                                 |
-| `SourceRef` = `{ url: string; retrieved: string }`: waar de data van een record vandaan komt                                                                                             | [Datakwaliteit en actualiteit](/nl/guide/data-quality)                          |
-| `Translated` = `Record<Locale, string>`                                                                                                                                                  |                                                                                 |
-| `Bilingual` = `Record<'nl' \| 'fr', string>`: namen zoals het Gerechtelijk Wetboek ze geeft                                                                                              |                                                                                 |
-| `JudicialArea`, `Arrondissement`, `Canton`, `Region`, `Province`, `Municipality`, `LegalBasis`, `Validity`, `OnDay`                                                                      | [Territorium en kantons](/nl/data/territory)                                    |
-| `Court`, `CourtType`, `CourtFilter`, `Address`, `Contact`, `ContactType`, `CantonCourt`                                                                                                  | [Hoven en rechtbanken](/nl/data/courts#shape)                                   |
-| `Prison`, `HouseOfJustice`                                                                                                                                                               | [Gevangenissen](/nl/data/prisons), [Justitiehuizen](/nl/data/houses-of-justice) |
-| `InterestType`, `InterestRatePeriod`, `InterestRateSeries`, `InterestRateResult`                                                                                                         | [Rentevoeten](/nl/data/interest-rates#shape)                                    |
+| Type                                                                                                                                                                                                     | Beschreven op                                                                   |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `JudicialAreaId`, `ArrondissementId`, `CantonId`, `RegionId`, `ProvinceId`, `MunicipalityId`, `CourtId`, `PrisonId`, `HouseOfJusticeId`, `PostalCodeId`: unions van de ids in de data, mee geregenereerd | [Identifiers](/nl/guide/identifiers#in-typescript)                              |
+| `Locale` = `'nl' \| 'fr' \| 'de'`                                                                                                                                                                        |                                                                                 |
+| `SourceRef` = `{ url: string; retrieved: string }`: waar de data van een record vandaan komt                                                                                                             | [Datakwaliteit en actualiteit](/nl/guide/data-quality)                          |
+| `Translated` = `Record<Locale, string>`                                                                                                                                                                  |                                                                                 |
+| `Bilingual` = `Record<'nl' \| 'fr', string>`: namen zoals het Gerechtelijk Wetboek ze geeft                                                                                                              |                                                                                 |
+| `JudicialArea`, `Arrondissement`, `Canton`, `Region`, `Province`, `Municipality`, `LegalBasis`, `Validity`, `OnDay`                                                                                      | [Territorium en kantons](/nl/data/territory)                                    |
+| `Court`, `CourtType`, `CourtFilter`, `Address`, `Contact`, `ContactType`, `CantonCourt`                                                                                                                  | [Hoven en rechtbanken](/nl/data/courts#shape)                                   |
+| `PostalCode`, `PostalCodeCourts`                                                                                                                                                                         | [Postcodes](/nl/data/postal-codes)                                              |
+| `Prison`, `HouseOfJustice`                                                                                                                                                                               | [Gevangenissen](/nl/data/prisons), [Justitiehuizen](/nl/data/houses-of-justice) |
+| `InterestType`, `InterestRatePeriod`, `InterestRateSeries`, `InterestRateResult`                                                                                                                         | [Rentevoeten](/nl/data/interest-rates#shape)                                    |

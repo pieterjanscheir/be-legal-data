@@ -22,6 +22,7 @@ import type {
     InterestType,
     JudicialArea,
     Municipality,
+    PostalCode,
     Prison,
     Province,
     Region,
@@ -39,6 +40,7 @@ const cantonBoundaries = read('canton-boundaries') as CantonBoundary[]
 const courts = read('courts') as Court[]
 const prisons = read('prisons') as Prison[]
 const housesOfJustice = read('houses-of-justice') as HouseOfJustice[]
+const postalCodes = read('postal-codes') as PostalCode[]
 const interestRates = read('interest-rates') as Record<InterestType, InterestRateSeries>
 
 type Cell = string | number | boolean | undefined
@@ -109,6 +111,12 @@ export const tables: Record<string, Row[]> = {
         region: m.region,
         ...validity(m),
     })),
+    'postal-codes': postalCodes.map((p) => ({
+        id: p.id,
+        postal_code: p.postalCode,
+        municipality: p.municipality,
+        ...validity(p),
+    })),
     cantons: cantons.map((c) => ({
         id: c.id,
         arrondissement: c.arrondissement,
@@ -156,6 +164,7 @@ export const tables: Record<string, Row[]> = {
         street: c.address?.street,
         postal_code: c.address?.postalCode,
         city: c.address?.city,
+        municipality: c.address?.municipality,
         opening_hours: c.openingHours,
         website_nl: c.website.nl,
         website_fr: c.website.fr,
@@ -176,6 +185,7 @@ export const tables: Record<string, Row[]> = {
         street: p.address.street,
         postal_code: p.address.postalCode,
         city: p.address.city,
+        municipality: p.address.municipality,
         website_nl: p.website.nl,
     })),
     'prison-contacts': prisons.flatMap((p) => contactRows('prison', p.id, p.contacts)),
@@ -188,6 +198,7 @@ export const tables: Record<string, Row[]> = {
         street: h.address.street,
         postal_code: h.address.postalCode,
         city: h.address.city,
+        municipality: h.address.municipality,
     })),
     'house-of-justice-contacts': housesOfJustice.flatMap((h) =>
         contactRows('house_of_justice', h.id, h.contacts),

@@ -44,19 +44,20 @@ doet falen.
 
 ## De ids {#the-ids}
 
-| Dataset          | Voorbeelden                                                                                                               | Regel                 |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------- |
-| Rechtsgebieden   | `antwerpen`, `brussel`, `gent`, `liege`, `mons`                                                                           | Lokale naam           |
-| Arrondissementen | `oost-vlaanderen`, `brabant-wallon`, `eupen`                                                                              | Lokale naam           |
-| Kantons          | `gent-1`, `merelbeke-melle`, `wavre-1`, `oudergem`, `eupen-sankt-vith-1`                                                  | Lokale naam + nummer  |
-| Kantongrenzen    | `gent-1`: één grens per kanton, met het id van het kanton, en `canton` als verwijzing                                     | Het id van het kanton |
-| Gemeenten        | `44021`, `21004`                                                                                                          | REFNIS-code           |
-| Provincies       | `10000`, `40000`                                                                                                          | REFNIS-code           |
-| Gewesten         | `02000`, `03000`, `04000`                                                                                                 | REFNIS-code           |
-| Rechtbanken      | `justice-of-the-peace-gent-1`, `enterprise-court-gent-brugge`, `police-court-brussel-fr`, `police-court-eupen-sankt-vith` | Type + plaats         |
-| Gevangenissen    | `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk`                                                               | Lokale naam           |
-| Justitiehuizen   | `justitiehuis-gent`, `maison-justice-arlon`                                                                               | Lokale naam           |
-| Rentevoeten      | `legal`, `commercial`                                                                                                     | Vaste sleutels        |
+| Dataset          | Voorbeelden                                                                                                               | Regel                  |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| Rechtsgebieden   | `antwerpen`, `brussel`, `gent`, `liege`, `mons`                                                                           | Lokale naam            |
+| Arrondissementen | `oost-vlaanderen`, `brabant-wallon`, `eupen`                                                                              | Lokale naam            |
+| Kantons          | `gent-1`, `merelbeke-melle`, `wavre-1`, `oudergem`, `eupen-sankt-vith-1`                                                  | Lokale naam + nummer   |
+| Kantongrenzen    | `gent-1`: één grens per kanton, met het id van het kanton, en `canton` als verwijzing                                     | Het id van het kanton  |
+| Gemeenten        | `44021`, `21004`                                                                                                          | REFNIS-code            |
+| Provincies       | `10000`, `40000`                                                                                                          | REFNIS-code            |
+| Gewesten         | `02000`, `03000`, `04000`                                                                                                 | REFNIS-code            |
+| Postcodes        | `9000-44021`, `1040-21005`                                                                                                | Postcode + REFNIS-code |
+| Rechtbanken      | `justice-of-the-peace-gent-1`, `enterprise-court-gent-brugge`, `police-court-brussel-fr`, `police-court-eupen-sankt-vith` | Type + plaats          |
+| Gevangenissen    | `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk`                                                               | Lokale naam            |
+| Justitiehuizen   | `justitiehuis-gent`, `maison-justice-arlon`                                                                               | Lokale naam            |
+| Rentevoeten      | `legal`, `commercial`                                                                                                     | Vaste sleutels         |
 
 ## Waarom deze keuzes {#why-these-choices}
 
@@ -80,6 +81,12 @@ officiële teksten.
 gebruiken. Met de code als id heeft het koppelen van om het even welke daarvan aan kantons en
 rechtbanken geen mappingtabel nodig.
 
+**Waarom twee codes voor een postcode?** Een postcode alleen benoemt geen record: `1040` hoort
+bij Brussel én bij Etterbeek, en elk paar is een eigen record met een eigen geldigheid. Het paar
+officiële codes, `1040-21005`, is uniek en blijft wat het is tot de tabel van Statbel het paar
+verandert, en dan is een nieuw record precies juist. De gemeente is ook een veld
+(`municipality`), zoals regel 8 vraagt: de id is een sleutel, niet iets om te splitsen.
+
 **Waarom `type` in de ids van rechtbanken?** Binnen één plaats zijn er meerdere rechtbanken, en
 het aantal types zal groeien (politierechtbanken, arbeidsrechtbanken, rechtbanken van eerste
 aanleg …). De eigen velden van een rechtbank zeggen wat ze is; het id hoeft alleen uniek en
@@ -101,7 +108,7 @@ wordt door het schema en de tests gecontroleerd, en kan in beide richtingen gevo
 ## In TypeScript {#in-typescript}
 
 Elke dataset heeft een gegenereerd id-type (`CantonId`, `CourtId`, `MunicipalityId`,
-`ProvinceId`, `RegionId`, `ArrondissementId`, `JudicialAreaId`, `PrisonId`, `HouseOfJusticeId`),
+`ProvinceId`, `RegionId`, `ArrondissementId`, `JudicialAreaId`, `PrisonId`, `HouseOfJusticeId`, `PostalCodeId`),
 opnieuw gegenereerd uit de data door `pnpm build:ids`:
 
 ```ts

@@ -16,6 +16,7 @@ bijblijft, en hoe ver je elke dataset kunt vertrouwen.
 | Hoven en rechtbanken             | tribunaux-rechtbanken.be                       | Wekelijks: snapshots + `pnpm build:data` | Een gerecht verhuist of wijzigt zijn contactgegevens of uren      | Wekelijks        |
 | Gevangenissen                    | justitie.belgium.be                            | Wekelijks: snapshots + `pnpm build:data` | Een gevangenis opent, sluit of wijzigt haar contactgegevens       | Wekelijks        |
 | Justitiehuizen                   | vlaanderen.be, maisonsdejustice.be             | Wekelijks: snapshots + `pnpm build:data` | Een justitiehuis verhuist of wijzigt zijn contactgegevens         | Wekelijks        |
+| Postcodes                        | Conversietabel van Statbel                     | Wekelijks: snapshots + `pnpm build:data` | Statbel publiceert een nieuwe tabel (fusies, nieuwe codes)        | Wekelijks        |
 | Rentevoeten                      | FOD Financiën, Belgisch Staatsblad             | Met de hand                              | Elk jaar (wettelijk) en elk semester (handelstransacties)         | Om de 6 maanden  |
 
 Gegenereerde datasets worden nooit met de hand bewerkt. `pnpm build:cantons` parst de officiële

@@ -34,7 +34,7 @@ File: `data/prisons.json`. The {{ stats.prisons }} prisons and detention houses 
 | `validFrom`, `validTo` | string?                           | The days the record applies, as the site listed it; none: since the coverage starts, or still applies. See [time](/api#time) |
 | `kind`                 | `'prison'` \| `'detention-house'` | A detention house holds people with short sentences, close to home                                                           |
 | `name`                 | `{ nl, fr, de }`                  | As FPS Justice publishes it                                                                                                  |
-| `address`              | `Address`                         | In the local language                                                                                                        |
+| `address`              | `Address`                         | In the local language, with the municipality its postal code belongs to (`municipality`, by REFNIS code)                     |
 | `contacts`             | `Contact[]`                       | Phone, fax, e-mail and the account for money for detainees, where published                                                  |
 | `website`              | `{ nl, fr, de }`                  | The prison's page per language                                                                                               |
 | `sources`              | `{ url, retrieved }[]`            | The pages the record was read from                                                                                           |

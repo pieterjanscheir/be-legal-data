@@ -92,7 +92,7 @@ package: als het ertoe doet, controleer dan de pagina van het gerecht (`website`
 | `canton`           | `CantonId`?                           | Voor een vredegerecht: het kanton dat het bedient                                                                                                                                                                      |
 | `cantons`          | `CantonId[]`?                         | Voor elk ander gerecht (niet zijn afdelingen): de kantons die het bestrijkt, zoals de bijlage bij het Gerechtelijk Wetboek (art. 3–5) en art. 114 van het Wetboek ze vastleggen                                        |
 | `ecli`             | `string[]`?                           | De ECLI-codes van het gerecht, één per taal waarin het rechtspreekt; alleen codes die in gepubliceerde beslissingen voorkomen                                                                                          |
-| `address`          | `Address`?                            | Waar de griffie is. Ontbreekt als het gerecht geen enkel adres publiceert (een gerecht waarvan elke afdeling haar eigen adres heeft)                                                                                   |
+| `address`          | `Address`?                            | Waar de griffie is, met de gemeente waartoe de postcode behoort (`municipality`, op REFNIS-code). Ontbreekt als het gerecht geen enkel adres publiceert (een gerecht waarvan elke afdeling haar eigen adres heeft)     |
 | `contacts`         | `Contact[]`                           | Telefoon, fax, e-mail en bankrekening, elk met de griffie waar het bij hoort (`label`) en de tekst die erbij gepubliceerd is (`note`)                                                                                  |
 | `openingHours`     | string?                               | Openingsuren van de griffie in de OpenStreetMap-syntaxis [`opening_hours`](https://wiki.openstreetmap.org/wiki/Key:opening_hours): `Mo-Fr 08:30-12:30,13:30-16:00`, alleen als de gepubliceerde tekst precies dat zegt |
 | `openingHoursText` | `{ nl?, fr?, de? }`?                  | De openingsuren zoals gepubliceerd, per taal                                                                                                                                                                           |
@@ -133,6 +133,7 @@ interface Address {
     street: string // zoals gepubliceerd, met nummer, bus of verdieping: 'Beverstraat 7B (eerste verdieping)'
     postalCode: string
     city: string
+    municipality?: MunicipalityId // via de postcode; zie de pagina Postcodes
 }
 
 interface Contact {

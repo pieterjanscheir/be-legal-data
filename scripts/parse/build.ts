@@ -4,24 +4,46 @@
  *     node scripts/parse/build.ts        # reads $SOURCES_DIR, or .sources/
  *
  * Prints what it couldn't read. Fails, and writes nothing, when a page can't be placed (a court
- * without a canton, an unknown kind of court), a canton has no court, or a canton has no
- * boundary in the NGI's file: those need a person.
+ * without a canton, an unknown kind of court), a canton has no court or no boundary in the
+ * NGI's file, a postal code points at an unknown municipality or a municipality has no postal
+ * code: those need a person.
  */
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 
+import type { Municipality } from '../../src/territory.ts'
 import { Snapshots } from '../sources/store.ts'
 import { buildCantonBoundaries, stringifyBoundaries } from './boundaries.ts'
 import { buildCourts } from './courts.ts'
 import { buildHousesOfJustice, buildPrisons } from './places.ts'
+import { buildPostalCodes, linkMunicipalities, municipalityResolver } from './postal-codes.ts'
 import { buildRegionsAndProvinces } from './refnis.ts'
 import { carryOver, walkDay, type Dated } from './retire.ts'
 import type { CantonBoundary, Court, HouseOfJustice, Prison } from './types.ts'
 
 const root = process.env['SOURCES_DIR'] ?? '.sources'
-const { courts: freshCourts, report } = buildCourts(root)
+const municipalities = JSON.parse(
+    readFileSync('data/municipalities.json', 'utf8'),
+) as Municipality[]
+const { postalCodes, problems: postalCodeProblems } = buildPostalCodes(root, municipalities)
 
-const { prisons: freshPrisons, problems: prisonProblems } = buildPrisons(root)
-const { houses: freshHouses, problems: houseProblems } = buildHousesOfJustice(root)
+// Every address links to its municipality through its postal code (#28)
+const resolve = municipalityResolver(postalCodes, municipalities)
+const { courts: builtCourts, report } = buildCourts(root)
+const { records: freshCourts, unresolved: courtAddresses } = linkMunicipalities(
+    builtCourts,
+    resolve,
+)
+const built = { prisons: buildPrisons(root), houses: buildHousesOfJustice(root) }
+const { records: freshPrisons, unresolved: prisonAddresses } = linkMunicipalities(
+    built.prisons.prisons,
+    resolve,
+)
+const { records: freshHouses, unresolved: houseAddresses } = linkMunicipalities(
+    built.houses.houses,
+    resolve,
+)
+const prisonProblems = built.prisons.problems
+const houseProblems = built.houses.problems
 const { boundaries: freshBoundaries, report: boundaryReport } = buildCantonBoundaries(root)
 // Their validity comes from Statbel's register itself, so they aren't carried over below
 const { regions, provinces } = buildRegionsAndProvinces(root)
@@ -45,8 +67,11 @@ const boundaries = carryOver(
     day('ngi'),
 )
 for (const line of [...prisonProblems, ...houseProblems]) console.warn(`unreadable: ${line}`)
+for (const line of [...courtAddresses, ...prisonAddresses, ...houseAddresses])
+    console.warn(`unreadable: ${line}`)
 
 const problems = [
+    ...postalCodeProblems,
     ...report.unmatched,
     ...report.conflicts,
     ...report.cantonsWithoutCourt.map((id) => `canton ${id} has no court`),
@@ -72,6 +97,7 @@ const write = (file: string, data: unknown) => {
 write('courts', courts)
 write('prisons', prisons)
 write('houses-of-justice', houses)
+write('postal-codes', postalCodes)
 writeFileSync('data/canton-boundaries.json', stringifyBoundaries(boundaries))
 write('regions', regions)
 write('provinces', provinces)

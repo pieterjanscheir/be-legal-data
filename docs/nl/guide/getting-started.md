@@ -38,6 +38,7 @@ de wettekst van hun grondgebied) zijn veruit de grootste:
 import { getInterestRate } from 'be-legal-data/interest-rates'
 import { getCourt } from 'be-legal-data/courts'
 import { getCanton } from 'be-legal-data/territory'
+import { getMunicipalitiesForPostalCode } from 'be-legal-data/postal-codes'
 ```
 
 De [kantongrenzen](/nl/data/canton-boundaries) zijn de uitzondering: een miljoen posities
@@ -124,6 +125,29 @@ findCompetentCourts('21004', 'labour-court') // de Nederlandstalige en de Franst
 const [court] = findCompetentCourts('44021', 'enterprise-court')
 getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brugge, …
 ```
+
+#### Vanaf een postcode {#from-a-postal-code}
+
+Een adres komt met een postcode, niet met een REFNIS-code. `findCourtsForPostalCode` gaat van
+de postcode naar de gemeente ([postcodes](/nl/data/postal-codes)) en van daar naar de
+vredegerechten en de gerechten van een type. Het antwoordt per gemeente: drie postcodes (`1040`,
+`1050`, `1804`) horen bij twee gemeenten, en dan beslist de straat.
+
+```ts
+import { findCourtsForPostalCode, getMunicipalitiesForPostalCode } from 'be-legal-data'
+
+const [gent] = findCourtsForPostalCode('9050', 'labour-court')
+gent.municipality.name.nl // 'Gent'
+gent.courts.map((c) => c.id) // ['labour-court-gent']
+gent.justicesOfThePeace.map((c) => c.canton.id) // ['gent-1', …, 'gent-5']: de straat beslist
+
+findCourtsForPostalCode('1040', 'police-court').map((r) => r.municipality.name.nl) // ['Brussel', 'Etterbeek']
+getMunicipalitiesForPostalCode('9050').map((m) => m.id) // ['44021']
+```
+
+In een stad die over kantons gesplitst is, brengt de postcode de vraag terug tot de gemeente;
+het kanton heeft nog altijd de straat nodig, en zijn grenzen zijn juridisch proza tot
+[#29](https://github.com/pieterjanscheir/be-legal-data/issues/29) ze als geometrie toevoegt.
 
 ### Verschuldigde interest op een dag {#interest-due-on-a-day}
 

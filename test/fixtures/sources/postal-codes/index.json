@@ -1,0 +1,14 @@
+{
+    "source": "postal-codes",
+    "entries": [
+        {
+            "url": "https://statbel.fgov.be/sites/default/files/Over_Statbel_FR/Nomenclaturen/Conversion%20Postal%20code_Refnis%20code_va01012025.xlsx",
+            "status": 200,
+            "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "file": "statbel.fgov.be/sites/default/files/Over_Statbel_FR/Nomenclaturen/Conversion_Postal_code_Refnis_code_va01012025.xlsx",
+            "sha256": "4e412456b198cb928684d48c67e8cf70bd1180154227db3e79eb2001e6cf5574",
+            "retrieved": "2026-10-21",
+            "checked": "2026-10-21"
+        }
+    ]
+}

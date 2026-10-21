@@ -2,7 +2,7 @@
 
 Belgian legal reference data as JSON and CSV, with TypeScript types and helpers: every court
 with its registries' contacts, prisons, houses of justice, judicial cantons and arrondissements,
-municipalities, and the legal and commercial interest rates. Every record says where it comes
+municipalities and their postal codes, and the legal and commercial interest rates. Every record says where it comes
 from, and the scraped data is rebuilt from the official sources every week.
 
 Documentation, with a canton lookup, a court list and interest-rate tables:
@@ -24,6 +24,7 @@ It's reference data, not legal advice: check the official sources before relying
 | [`data/courts.json`](data/courts.json)                       | Every court, division and seat: every justice of the peace, police court, court of first instance, enterprise and labour court, court of appeal, labour court of appeal and court of assize, with names as published, addresses, registries' contacts, opening hours, ECLI codes and the cantons each covers | tribunaux-rechtbanken.be (scraped weekly)           |
 | [`data/prisons.json`](data/prisons.json)                     | Every prison and detention house, names in three languages                                                                                                                                                                                                                                                   | justitie.belgium.be (scraped weekly)                |
 | [`data/houses-of-justice.json`](data/houses-of-justice.json) | The houses of justice of the Flemish (with OVO number) and French Communities                                                                                                                                                                                                                                | vlaanderen.be, maisonsdejustice.be (scraped weekly) |
+| [`data/postal-codes.json`](data/postal-codes.json)           | Every postal code with the municipality it belongs to, by REFNIS code (three codes belong to two)                                                                                                                                                                                                            | Statbel conversion table (fetched weekly)           |
 | [`data/interest-rates.json`](data/interest-rates.json)       | Legal interest rate (per year, since 1970) and commercial-transaction rate (per semester, since 2002)                                                                                                                                                                                                        | FOD Financiën / Belgisch Staatsblad                 |
 
 The official sources are the truth; the files in `data/` are built from them. Every file has a
@@ -34,8 +35,8 @@ has the data as JSON and CSV in one zip.
 Planned: the highest courts, history before 2025, bailiffs, police zones and the cadastre
 offices. See the [roadmap](https://pieterjanscheir.github.io/be-legal-data/data/roadmap).
 
-Municipality, province and region data © Statbel, canton boundaries © National Geographic
-Institute (NGI), both [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+Municipality, province, region and postal-code data © Statbel, canton boundaries © National
+Geographic Institute (NGI), both [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 ## Using it
 
@@ -57,6 +58,7 @@ import {
     getJusticeOfThePeace,
     getCantonsForMunicipality,
     findCompetentCourts,
+    findCourtsForPostalCode,
     getInterestRate,
 } from 'be-legal-data'
 
@@ -69,6 +71,7 @@ getJusticeOfThePeace(canton.id).address // where to file
 getCantonsForMunicipality('44021', { on: '2025-09-15' }) // Gent 1–5 on that day: a split city
 findCantonsAt(3.7268, 51.053) // [gent-1]: the canton of a point (be-legal-data/canton-boundaries)
 findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde]: which court, by REFNIS code
+findCourtsForPostalCode('1040', 'police-court') // per municipality: Brussel and Etterbeek share the code
 
 getInterestRate('2024-06-15', 'legal') // { rate: 5.75, period: { from: '2024-01-01', to: '2024-12-31' } }
 getInterestRate(new Date(2014, 5, 15), 'commercial', { contractAfter20130316: true }) // { rate: 8.5, … }
@@ -79,8 +82,9 @@ silently using 0 %. Malformed days, and days before a dataset's coverage, throw 
 
 Import a single dataset to keep bundles small: `be-legal-data/interest-rates`,
 `be-legal-data/courts`, `be-legal-data/prisons`, `be-legal-data/houses-of-justice`,
-`be-legal-data/territory`. The canton boundaries (a million positions of GeoJSON) are only in
-`be-legal-data/canton-boundaries`; the root never loads them.
+`be-legal-data/territory`, `be-legal-data/postal-codes`. The canton boundaries (a million
+positions of GeoJSON) are only in `be-legal-data/canton-boundaries`; the root never loads
+them.
 
 The raw files are also exported: `import courts from 'be-legal-data/data/courts.json' with { type: 'json' }`.
 
@@ -100,7 +104,7 @@ new interest rate is missing, a dataset is overdue for review or a source is gon
 
 ```bash
 pnpm fetch:sources   # the official sources into .sources/
-pnpm build:data      # rebuild the scraped datasets from them
+pnpm build:data      # rebuild the courts, prisons, houses of justice and postal codes from them
 pnpm build:cantons   # rebuild cantons and municipalities from the law and Statbel
 pnpm check           # everything CI runs
 ```

@@ -13,6 +13,7 @@ la date de sa dernière vérification par rapport à celles-ci.
 | [Communes](./territory#municipalities)         | 565             | Relier toute adresse ou statistique belge à la carte judiciaire par le code REFNIS                                           |
 | [Régions](./territory#regions)                 | 3               | La région d'une commune, par code REFNIS, nommée en trois langues                                                            |
 | [Provinces](./territory#provinces)             | 10              | La province d'une commune (aucune à Bruxelles), avec sa région                                                               |
+| [Codes postaux](./postal-codes)                | 1 152           | Du code postal d'une adresse à sa commune, puis à ses cantons et à ses juridictions                                          |
 | [Cours et tribunaux](./courts)                 | 347             | Noms, adresses et coordonnées des greffes pour écrire à n'importe quelle juridiction, y déposer un acte ou la payer          |
 | [Prisons](./prisons)                           | 39              | Adresses et coordonnées de chaque prison et maison de détention                                                              |
 | [Maisons de justice](./houses-of-justice)      | 27              | Probation, aide aux victimes et études sociales pour les tribunaux de la famille                                             |
@@ -21,11 +22,11 @@ la date de sa dernière vérification par rapport à celles-ci.
 ## Comment les jeux de données s'articulent {#how-the-datasets-fit-together}
 
 ```
-Ressort ──< Arrondissement ──< Canton >──< Commune (REFNIS)
+Ressort ──< Arrondissement ──< Canton >──< Commune (REFNIS) ──< Code postal
    │              │              │  │
    │              │              │  └── Limite de canton   la géométrie du canton (IGN)
-   └────────── Tribunal ─────────┘  une justice de paix renvoie à son canton
-                  │
+   └────────── Tribunal ─────────┘  une justice de paix renvoie à son canton,
+                  │                 et l'adresse de chaque tribunal à sa commune
                   └──< Division     une division renvoie à son tribunal
 ```
 
@@ -35,8 +36,9 @@ sauf que la Région de Bruxelles-Capitale n'a pas de province et contient direct
 
 Les enregistrements se renvoient les uns aux autres par identifiant, jamais par nom : une juridiction porte un
 identifiant `judicialArea` et, lorsque son territoire se limite à un arrondissement, un identifiant
-`arrondissement` ; un canton énumère les codes REFNIS de ses communes. L'orthographe des noms varie d'une
-source et d'une langue à l'autre ; les identifiants, non.
+`arrondissement` ; un canton énumère les codes REFNIS de ses communes ; un code postal et l'adresse d'un
+tribunal portent le code REFNIS de leur commune. L'orthographe des noms varie d'une source et d'une
+langue à l'autre ; les identifiants, non.
 
 ## À quoi ces données servent {#why-this-data-is-useful}
 

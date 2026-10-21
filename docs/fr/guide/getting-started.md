@@ -38,6 +38,7 @@ cantons (avec le texte légal de leurs territoires) sont de loin les plus volumi
 import { getInterestRate } from 'be-legal-data/interest-rates'
 import { getCourt } from 'be-legal-data/courts'
 import { getCanton } from 'be-legal-data/territory'
+import { getMunicipalitiesForPostalCode } from 'be-legal-data/postal-codes'
 ```
 
 Les [limites des cantons](/fr/data/canton-boundaries) font exception : un million de positions de
@@ -122,6 +123,29 @@ findCompetentCourts('21004', 'labour-court') // le tribunal néerlandophone et l
 const [court] = findCompetentCourts('44021', 'enterprise-court')
 getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brugge, …
 ```
+
+#### À partir d'un code postal {#from-a-postal-code}
+
+Une adresse vient avec un code postal, pas avec un code REFNIS. `findCourtsForPostalCode` va du
+code postal à la commune ([codes postaux](/fr/data/postal-codes)) et de là aux justices de paix
+et aux juridictions d'un type. Il répond par commune : trois codes postaux (`1040`, `1050`,
+`1804`) appartiennent à deux communes, et c'est alors la rue qui tranche.
+
+```ts
+import { findCourtsForPostalCode, getMunicipalitiesForPostalCode } from 'be-legal-data'
+
+const [gent] = findCourtsForPostalCode('9050', 'labour-court')
+gent.municipality.name.fr // 'Gand'
+gent.courts.map((c) => c.id) // ['labour-court-gent']
+gent.justicesOfThePeace.map((c) => c.canton.id) // ['gent-1', …, 'gent-5'] : la rue tranche
+
+findCourtsForPostalCode('1040', 'police-court').map((r) => r.municipality.name.fr) // ['Bruxelles', 'Etterbeek']
+getMunicipalitiesForPostalCode('9050').map((m) => m.id) // ['44021']
+```
+
+Dans une ville scindée en cantons, le code postal ramène la question à la commune ; le canton a
+toujours besoin de la rue, et ses limites restent de la prose juridique jusqu'à ce que
+[#29](https://github.com/pieterjanscheir/be-legal-data/issues/29) les ajoute en géométrie.
 
 ### Intérêts dus à une date donnée {#interest-due-on-a-day}
 

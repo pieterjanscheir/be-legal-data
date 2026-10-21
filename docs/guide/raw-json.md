@@ -68,6 +68,7 @@ Data > From Text/CSV.
 | `data/courts.json`            | Every court, division and seat on the courts' portal         |
 | `data/prisons.json`           | The prisons and detention houses                             |
 | `data/houses-of-justice.json` | The houses of justice of the Flemish and French Communities  |
+| `data/postal-codes.json`      | Every postal code with the municipality it belongs to        |
 | `data/interest-rates.json`    | Legal and commercial-transaction interest rates              |
 
 The shapes are described on the [data pages](/data/territory) and in the [API reference](/api#types).

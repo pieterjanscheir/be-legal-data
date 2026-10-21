@@ -33,6 +33,7 @@ interface Strings {
         prisons: string
         housesOfJustice: string
         interestRates: string
+        postalCodes: string
         knownGaps: string
         roadmap: string
         api: string
@@ -84,6 +85,7 @@ const en: Strings = {
         prisons: 'Prisons',
         housesOfJustice: 'Houses of justice',
         interestRates: 'Interest rates',
+        postalCodes: 'Postal codes',
         knownGaps: 'Known gaps',
         roadmap: 'Roadmap',
         api: 'API reference',
@@ -141,6 +143,7 @@ const nl: Strings = {
         prisons: 'Gevangenissen',
         housesOfJustice: 'Justitiehuizen',
         interestRates: 'Rentevoeten',
+        postalCodes: 'Postcodes',
         knownGaps: 'Bekende hiaten',
         roadmap: 'Roadmap',
         api: 'API-referentie',
@@ -198,6 +201,7 @@ const fr: Strings = {
         prisons: 'Prisons',
         housesOfJustice: 'Maisons de justice',
         interestRates: "Taux d'intérêt",
+        postalCodes: 'Codes postaux',
         knownGaps: 'Lacunes connues',
         roadmap: 'Feuille de route',
         api: "Référence de l'API",
@@ -273,6 +277,7 @@ function themeConfig(prefix: string, t: Strings): DefaultTheme.Config {
                     { text: t.sidebar.courts, link: `${prefix}/data/courts` },
                     { text: t.sidebar.prisons, link: `${prefix}/data/prisons` },
                     { text: t.sidebar.housesOfJustice, link: `${prefix}/data/houses-of-justice` },
+                    { text: t.sidebar.postalCodes, link: `${prefix}/data/postal-codes` },
                     { text: t.sidebar.interestRates, link: `${prefix}/data/interest-rates` },
                     { text: t.sidebar.knownGaps, link: `${prefix}/data/known-gaps` },
                     { text: t.sidebar.roadmap, link: `${prefix}/data/roadmap` },

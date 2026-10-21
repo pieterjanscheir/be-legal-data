@@ -47,7 +47,7 @@ the peace of canton `x` has id `justice-of-the-peace-x` and links to it through 
 ```bash
 pnpm fetch:sources            # every source into .sources/ (about 20 minutes, politely)
 pnpm fetch:sources courts     # or one source
-pnpm build:data               # rebuild the scraped datasets, and the regions and provinces, from .sources/
+pnpm build:data               # rebuild the courts, prisons, houses of justice, postal codes, regions and provinces from .sources/
 ```
 
 The canton boundaries come from the NGI's GeoPackage (source `ngi`), read with Node's own
@@ -100,7 +100,7 @@ Every dataset gets the same treatment, so users can rely on it:
 | `pnpm lint:package`         | `publint` and `arethetypeswrong` on the packed package                                                                                                        |
 | `pnpm test:freshness`       | Date-based checks: missing rates, overdue reviews. Not part of `check`; `FRESHNESS_ONLINE=1` also checks the source URLs                                      |
 | `pnpm fetch:sources`        | Fetch the official sources into `.sources/`                                                                                                                   |
-| `pnpm build:data`           | Rebuild the courts, prisons, houses of justice, regions, provinces and canton boundaries from `.sources/`                                                     |
+| `pnpm build:data`           | Rebuild the courts, prisons, houses of justice, postal codes, regions, provinces and canton boundaries from `.sources/`                                       |
 | `pnpm build:csv`            | Write the data as CSV tables into `csv/`                                                                                                                      |
 
 ## Releasing

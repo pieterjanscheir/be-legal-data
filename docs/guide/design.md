@@ -50,8 +50,10 @@ built from another.
 **Why.** A relation hidden in a string format breaks silently when either side changes. A field
 is validated by the schema (which lists the valid ids) and by the tests.
 
-**So.** Court addresses will link to their municipality the same way
-([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28)).
+**So.** The address of a court, prison or house of justice links to its municipality the same
+way (`address.municipality`), through the postal code in Statbel's conversion table, never
+through the city name ([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28));
+a postal code record links to its municipality rather than copy its name.
 
 ## 5. Canonical values, presentation in code
 
