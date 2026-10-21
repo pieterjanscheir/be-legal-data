@@ -78,7 +78,8 @@ getInterestRate(new Date(2014, 5, 15), 'commercial', { contractAfter20130316: tr
 ```
 
 `getInterestRate` returns `null` for a day with no rate on file, so callers can warn instead of
-silently using 0 %. Malformed days, and days before a dataset's coverage, throw a `RangeError`.
+silently using 0 %. Malformed days throw a `RangeError`, and so do territory and court lookups
+for a day before that data's coverage.
 
 Import a single dataset to keep bundles small: `belgica/interest-rates`,
 `belgica/courts`, `belgica/prisons`, `belgica/houses-of-justice`,
