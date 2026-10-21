@@ -51,7 +51,9 @@ Elke [release](https://github.com/pieterjanscheir/be-legal-data/releases) heeft 
 data als JSON en als CSV-tabellen (UTF-8, kommagescheiden), samen met de schema's en
 `datapackage.json`. Geneste waarden zijn tabellen op zich: de contacten van een rechtbank staan in
 `court-contacts.csv`, gekoppeld via het id van de rechtbank; de gemeenten van een kanton in
-`canton-municipalities.csv`. In Excel open je ze via Gegevens > Uit tekst/CSV.
+`canton-municipalities.csv`. De geometrie van de kantongrenzen is niet tabellair en blijft in de
+JSON; `canton-boundaries.csv` heeft de identificatoren van het NGI per kanton. In Excel open je
+ze via Gegevens > Uit tekst/CSV.
 
 ## Bestanden {#files}
 
@@ -60,6 +62,7 @@ data als JSON en als CSV-tabellen (UTF-8, kommagescheiden), samen met de schema'
 | `data/judicial-areas.json`    | De 5 rechtsgebieden (hoven van beroep)                                          |
 | `data/arrondissements.json`   | De 12 gerechtelijke arrondissementen en hun rechtsgebied                        |
 | `data/cantons.json`           | Alle 162 gerechtelijke kantons                                                  |
+| `data/canton-boundaries.json` | De grens van elk kanton als GeoJSON-geometrie (23 MB)                           |
 | `data/municipalities.json`    | De 565 gemeenten met REFNIS-code en provincie                                   |
 | `data/courts.json`            | Elke rechtbank, afdeling en zetel op het portaal van de rechtbanken             |
 | `data/prisons.json`           | De 39 gevangenissen en detentiehuizen                                           |
@@ -73,4 +76,4 @@ De structuren staan beschreven op de [datapagina's](/nl/data/territory) en in de
 
 De data is [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): hergebruik ze vrij, ook
 commercieel, met vermelding van dit project en van de bronnen die bij elke dataset staan.
-Gemeentedata © Statbel.
+Gemeentedata © Statbel; kantongrenzen © Nationaal Geografisch Instituut (NGI).

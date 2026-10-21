@@ -167,10 +167,29 @@ en `datapackage.json`, in één zip. npm is één manier om de data te krijgen, 
 **Waarom.** De mensen die Belgische juridische referentiedata het meest nodig hebben, werken in
 rekenbladen en andere talen, niet in JavaScript.
 
+## 13. Geometrie is een tweede bron, en de tekst wint {#_13-geometry-is-a-second-source-and-the-text-wins}
+
+**Beslissing.** De kantongrenzen zijn de digitalisering door het Nationaal Geografisch Instituut
+van de bijlage bij het Gerechtelijk Wetboek, genomen zoals gepubliceerd (punt voor punt, zonder
+vereenvoudiging, coördinaten op een centimeter) en per naam in beide talen aan de kantons
+gekoppeld, met een expliciete aliastabel voor de rest. De `territory`-tekst van het kanton blijft
+de wet: waar de geometrie en de tekst van elkaar afwijken, wint de tekst. De geometrie heeft een
+eigen entry point en de root van het package exporteert ze niet opnieuw.
+
+**Waarom.** De polygonen van het NGI zijn een officiële lezing van dezelfde tekst, dus ze kunnen
+worden geciteerd en herbouwd; een grens die hier uit straatdata werd afgeleid, zou een derde
+lezing zijn die niemand kan controleren. Vereenvoudigen zou de lijn verschuiven, en de lijnen
+tellen het meest waar kantons aan elkaar grenzen. Een miljoen posities zouden elke andere dataset
+overschaduwen, dus niemand mag ze per ongeluk laden.
+
+**Dus.** `findCantonsAt(lon, lat)` antwoordt uit de geometrie en de documentatie zegt dat; een
+punt vlak bij een lijn is een geval voor de tekst. De wekelijkse build faalt wanneer een kanton
+geen grens heeft of een feature bij geen enkel kanton past
+([#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)).
+
 ## Nog niet beslist {#not-decided-yet}
 
 | Vraag                                                           | Issue                                                                                   |
 | --------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| Kantongrenzen als geometrie voor gesplitste steden              | [#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)                       |
 | Geschiedenis van vóór 1 januari 2025                            | [#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)                       |
 | Interestberekening over een periode (dagtelling, kapitalisatie) | Niet gepland tot de methode uit rechtspraak of officiële richtlijnen kan worden gehaald |

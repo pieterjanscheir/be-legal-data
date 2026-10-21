@@ -34,6 +34,10 @@ import { getCourt } from 'be-legal-data/courts' // 32 KB
 import { getCanton } from 'be-legal-data/territory'
 ```
 
+De [kantongrenzen](/nl/data/canton-boundaries) zijn de uitzondering: een miljoen posities
+geometrie, alleen in `be-legal-data/canton-boundaries`, nooit geladen door de root van het
+package.
+
 ## Een eerste blik {#a-first-look}
 
 ```ts
@@ -79,6 +83,15 @@ Wanneer een stad over meerdere kantons is gesplitst (Antwerpen, Gent, Brussel, L
 meer dan één resultaat. Het straatadres beslist, en de `territory` van elk kanton bevat de
 wettelijke omschrijving van zijn deel. Probeer het uit op de
 [pagina Territorium en kantons](/nl/data/territory#find-the-canton-for-a-municipality).
+
+Met de coördinaten van het adres beslissen de [kantongrenzen](/nl/data/canton-boundaries) het:
+
+```ts
+import { findCantonsAt } from 'be-legal-data/canton-boundaries'
+
+const [canton] = findCantonsAt(3.7268, 51.053) // lengtegraad, breedtegraad: gent-1
+const court = getJusticeOfThePeace(canton.id)
+```
 
 ### Welke rechtbank voor een gemeente? {#which-court-for-a-municipality}
 
