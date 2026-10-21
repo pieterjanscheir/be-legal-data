@@ -269,12 +269,12 @@
       {
         "type": "phone",
         "value": "+3292344215",
-        "note": "en (secretariaat eerste voorzitter)"
+        "note": "secretariaat eerste voorzitter"
       },
       {
         "type": "phone",
         "value": "+3292344201",
-        "note": "en (secretariaat eerste voorzitter)"
+        "note": "secretariaat eerste voorzitter"
       }
     ],
     "openingHours": "Mo-Fr 08:30-12:30,13:30-16:00",
@@ -4395,7 +4395,7 @@
       "nl": "Openingsuren dienst rechtspersonen (neerleggen publicaties Belgisch Staatsblad): iedere werkdag van 8u30 tot 12u30 (namiddag gesloten!) Wenst u een afgestempeld exemplaar van een per post opgestuurde publicatie teruggestuurd te krijgen? Gelieve dan een vooraf gefrankeerde envelop bij uw zending bij te voegen. Openingsuren griffie: iedere werkdag van 8u30 tot 12u30 en van 13u30 tot 16u Openingsuren secretariaat: iedere werkdag van 9u30 tot 15u30"
     },
     "website": {
-      "nl": "https://www.tribunaux-rechtbanken.be/nl/ondernemings-rechtbank-gent-afdeling-dendermonde"
+      "nl": "https://www.tribunaux-rechtbanken.be/nl/ondernemingsrechtbank-gent"
     },
     "sources": [
       {
@@ -4404,14 +4404,6 @@
       },
       {
         "url": "https://www.tribunaux-rechtbanken.be/nl/ondernemingsrechtbank-gent/contact",
-        "retrieved": "2026-10-20"
-      },
-      {
-        "url": "https://www.tribunaux-rechtbanken.be/nl/ondernemings-rechtbank-gent-afdeling-dendermonde",
-        "retrieved": "2026-10-20"
-      },
-      {
-        "url": "https://www.tribunaux-rechtbanken.be/nl/ondernemings-rechtbank-gent-afdeling-dendermonde/contact",
         "retrieved": "2026-10-20"
       }
     ]
@@ -4521,16 +4513,6 @@
     "contacts": [
       {
         "type": "phone",
-        "value": "+3226820158",
-        "label": "Secretariaat van de voorzitter"
-      },
-      {
-        "type": "email",
-        "value": "orb.gent.secretariaat@just.fgov.be",
-        "label": "Secretariaat van de voorzitter"
-      },
-      {
-        "type": "phone",
         "value": "+3226820681",
         "label": "Griffie faillissementen"
       },
@@ -4556,6 +4538,11 @@
       },
       {
         "type": "phone",
+        "value": "+3226820158",
+        "label": "Ressortsecretariaat"
+      },
+      {
+        "type": "phone",
         "value": "+3226820681"
       },
       {
@@ -4574,14 +4561,6 @@
       "nl": "https://www.tribunaux-rechtbanken.be/nl/ondernemings-rechtbank-gent-afdeling-dendermonde"
     },
     "sources": [
-      {
-        "url": "https://www.tribunaux-rechtbanken.be/nl/ondernemingsrechtbank-gent",
-        "retrieved": "2026-10-20"
-      },
-      {
-        "url": "https://www.tribunaux-rechtbanken.be/nl/ondernemingsrechtbank-gent/contact",
-        "retrieved": "2026-10-20"
-      },
       {
         "url": "https://www.tribunaux-rechtbanken.be/nl/ondernemings-rechtbank-gent-afdeling-dendermonde",
         "retrieved": "2026-10-20"
@@ -11813,16 +11792,14 @@
     "arrondissement": "namur",
     "canton": "philippeville",
     "contacts": [],
-    "website": {
-      "fr": "https://www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-philippeville-siege-couvin"
-    },
+    "website": {},
     "sources": [
       {
         "url": "https://www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-philippeville-siege-couvin",
         "retrieved": "2026-10-20"
       },
       {
-        "url": "https://www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-philippeville-siege-couvin/contact",
+        "url": "https://www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-philippeville-siege-florennes",
         "retrieved": "2026-10-20"
       }
     ]

@@ -54,6 +54,30 @@ describe('buildCourts', () => {
         })
     })
 
+    it('keeps a court and its divisions apart', () => {
+        const gent = court('enterprise-court-gent')
+        const brugge = court('enterprise-court-gent-brugge')
+        expect(gent?.website).toEqual({
+            nl: 'https://www.tribunaux-rechtbanken.be/nl/ondernemingsrechtbank-gent',
+        })
+        expect(brugge?.website.nl).toMatch(/afdeling-brugge$/)
+        expect(gent?.sources.some((s) => s.url.includes('afdeling'))).toBe(false)
+        expect(gent?.contacts).not.toBe(brugge?.contacts)
+    })
+
+    it('cites the pages that named a court known only from its seats', () => {
+        expect(court('justice-of-the-peace-philippeville')).toMatchObject({
+            name: { fr: 'Justice de paix de Philippeville' },
+            website: {},
+            contacts: [],
+            sources: [
+                {
+                    url: 'https://www.tribunaux-rechtbanken.be/fr/justice-de-paix-de-philippeville-siege-couvin',
+                },
+            ],
+        })
+    })
+
     it('labels contacts with their registry', () => {
         const liege = court('court-of-appeal-liege')
         expect(liege?.ecli).toEqual(['CALIE'])

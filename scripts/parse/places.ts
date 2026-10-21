@@ -7,35 +7,12 @@ import { parse, type HTMLElement } from 'node-html-parser'
 import { toId } from '../id.ts'
 import { links, translations } from '../sources/catalog.ts'
 import { Snapshots } from '../sources/store.ts'
-import { clean, toAddress, toE164, toEmail, toIban, type Address } from './normalize.ts'
+import { clean, toAddress, toE164, toEmail, toIban } from './normalize.ts'
+import type { Contact, HouseOfJustice, Locale, Prison } from './types.ts'
 
-type Lang = 'nl' | 'fr' | 'de'
+type Lang = Locale
 
-export interface Contact {
-    type: 'phone' | 'fax' | 'email' | 'bank-account'
-    value: string
-    label?: string
-}
-
-interface Place {
-    id: string
-    name: Partial<Record<Lang, string>>
-    address: Address
-    contacts: Contact[]
-    website: Partial<Record<Lang, string>>
-    sources: { url: string; retrieved: string }[]
-}
-
-export interface Prison extends Place {
-    kind: 'prison' | 'detention-house'
-}
-
-export interface HouseOfJustice extends Place {
-    /** The Community that runs it */
-    community: 'flemish' | 'french' | 'german'
-    /** Identifier in the Flemish organisation register (OVO), for the Flemish houses */
-    ovo?: string
-}
+export type { HouseOfJustice, Prison } from './types.ts'
 
 /**
  * The language a place takes its id from, by postal code: Brussels (1000–1299) takes Dutch, as

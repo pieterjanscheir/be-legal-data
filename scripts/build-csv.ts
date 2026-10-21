@@ -9,6 +9,7 @@
  */
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { pathToFileURL } from 'node:url'
 
 import type {
     Arrondissement,
@@ -21,6 +22,7 @@ import type {
     JudicialArea,
     Municipality,
     Prison,
+    Validity,
 } from '../src/index.ts'
 
 const read = (file: string): unknown => JSON.parse(readFileSync(`data/${file}.json`, 'utf8'))
@@ -47,6 +49,12 @@ export function toCsv(rows: Row[]): string {
     return '﻿' + lines.map((line) => line.map(quote).join(',')).join('\r\n') + '\r\n'
 }
 
+/**
+ * A record's validity period. A record can have several versions with the same id, so the
+ * territory tables always have these columns, even while every value is empty.
+ */
+const validity = (r: Validity) => ({ valid_from: r.validFrom, valid_to: r.validTo })
+
 const contactRows = (owner: string, id: string, contacts: readonly Contact[]) =>
     contacts.map((c) => ({
         [owner]: id,
@@ -62,6 +70,7 @@ export const tables: Record<string, Row[]> = {
         name_nl: a.name.nl,
         name_fr: a.name.fr,
         name_de: a.name.de,
+        ...validity(a),
     })),
     arrondissements: arrondissements.map((a) => ({
         id: a.id,
@@ -69,12 +78,14 @@ export const tables: Record<string, Row[]> = {
         name_nl: a.name.nl,
         name_fr: a.name.fr,
         name_de: a.name.de,
+        ...validity(a),
     })),
     municipalities: municipalities.map((m) => ({
         refnis: m.id,
         name_nl: m.name.nl,
         name_fr: m.name.fr,
         province: m.province,
+        ...validity(m),
     })),
     cantons: cantons.map((c) => ({
         id: c.id,
@@ -88,10 +99,12 @@ export const tables: Record<string, Row[]> = {
         territory_fr: c.territory.fr,
         legal_basis: c.legalBasis.provision,
         legal_basis_url: c.legalBasis.url,
+        ...validity(c),
     })),
     'canton-municipalities': cantons.flatMap((c) =>
         c.municipalities.map((m) => ({
             canton: c.id,
+            canton_valid_from: c.validFrom,
             municipality: m.municipality,
             partial: m.partial ?? false,
         })),
@@ -153,7 +166,9 @@ export const tables: Record<string, Row[]> = {
     ),
 }
 
-if (import.meta.url === `file://${process.argv[1] ?? ''}`) {
+// Run as a script, not imported by the tests. pathToFileURL escapes spaces and the like, which
+// a hand-built file:// URL wouldn't.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
     const dir = process.argv[2] ?? 'csv'
     mkdirSync(dir, { recursive: true })
     for (const [name, rows] of Object.entries(tables))

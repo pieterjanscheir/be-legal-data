@@ -112,8 +112,9 @@ rather than erasing it:
 
 1. The old record stays, with a `validTo`; the new one gets a new id and a `validFrom`. An id
    is never reused for a different thing, so an id stored years ago still finds what it meant.
-2. A lookup by id without a day gives the latest version; with `{ on }` it gives the version
-   of that day. Lists such as `getCantonsForMunicipality` answer for today unless given a day.
+2. Without a day, lookups answer for today: a lookup by id gives the version that applies
+   today (the last one, for a record that has ended), and lists such as
+   `getCantonsForMunicipality` only what applies today. With `{ on }` both answer for that day.
 3. The changelog lists every new id and the ids it replaces.
 
 A change of name alone, such as a spelling correction, doesn't change the id. The history

@@ -26,6 +26,8 @@ describe('toOpeningHours', () => {
         ],
         ['Montag bis Freitag von 8.30 bis 12.30 Uhr', 'Mo-Fr 08:30-12:30'],
         ['Maandag, dinsdag en donderdag van 9u tot 12u', 'Mo,Tu,Th 09:00-12:00'],
+        // Days with no hours, said once, are simply closed
+        ['Maandag tot donderdag van 9u tot 12u. Vrijdag gesloten.', 'Mo-Th 09:00-12:00'],
     ])('reads %j', (text, expected) => {
         expect(toOpeningHours(text)).toBe(expected)
     })
@@ -40,6 +42,13 @@ describe('toOpeningHours', () => {
         'Maandag van 12u tot 9u',
         'Maandag van 25u tot 26u',
         'Maandag van 3u tot 4u',
+        // A day described twice: the text corrects itself, and either reading could be wrong
+        'Maandag tot vrijdag van 8u30 tot 12u. Woensdag gesloten.',
+        'Maandag tot vrijdag van 8u30 tot 12u en van 13u tot 16u. Woensdag namiddag gesloten.',
+        'Maandag tot vrijdag van 9u tot 16u. Woensdag van 9u tot 12u.',
+        // Closed after hours for the same days, or an afternoon closed without morning hours
+        'Maandag van 9u tot 12u gesloten',
+        'Woensdag namiddag gesloten',
         // Times without days, days without times
         'van 8u30 tot 12u30',
         'Maandag gesloten',

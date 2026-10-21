@@ -30,9 +30,9 @@ Conventions:
 - Lookups by id return `undefined` when nothing matches; list functions return an empty array.
 - Functions only throw for invalid input: a malformed day, or a day before the data's
   coverage (`RangeError`). Never for missing data.
-- Territory lookups take an optional day, `{ on: '2025-06-01' }` or a `Date`. Lists answer for
-  today by default; a lookup by id without a day gives the record's latest version. See
-  [time](#time).
+- Territory lookups take an optional day, `{ on: '2025-06-01' }` or a `Date`, and answer for
+  today without one. A lookup by id always finds a known record: today's version, or the last
+  one of a record that has ended. See [time](#time).
 - Exported datasets are `readonly`: copy before sorting or changing (`[...courts].sort()`).
 - A lookup with a known id (a literal like `'gent-1'`, or a value typed `CantonId`) returns the
   record itself, never `undefined`. Any other string returns `Record | undefined`.

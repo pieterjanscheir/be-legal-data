@@ -4,7 +4,7 @@ import judicialAreasData from '../data/judicial-areas.json'
 import municipalitiesData from '../data/municipalities.json'
 import type { Bilingual, Translated } from './common'
 import type { ArrondissementId, CantonId, JudicialAreaId, MunicipalityId } from './ids.generated'
-import { appliesOn, lookupDay, type OnDay, type Validity } from './time'
+import { appliesOn, currentVersion, lookupDay, toDay, type OnDay, type Validity } from './time'
 
 export type { Bilingual, Locale, SourceRef, Translated } from './common'
 export type { ArrondissementId, CantonId, JudicialAreaId, MunicipalityId } from './ids.generated'
@@ -92,14 +92,19 @@ const versionsById = <T extends { id: string } & Validity>(items: readonly T[]) 
     return map
 }
 
-/** The latest version, or with `on` the version that applies on that day */
+/**
+ * With `on`, the version that applies on that day, if any. Without, today's version (see
+ * `currentVersion`): a known id always finds a record, and the same one the lists give today.
+ */
 function pick<T extends Validity>(
     list: T[] | undefined,
     options: OnDay | undefined,
 ): T | undefined {
-    if (options?.on === undefined) return list?.at(-1)
-    const day = lookupDay(options, territoryCoverage.from, 'territory')
-    return list?.find((record) => appliesOn(record, day))
+    if (options?.on !== undefined) {
+        const day = lookupDay(options, territoryCoverage.from, 'territory')
+        return list?.find((record) => appliesOn(record, day))
+    }
+    return list && currentVersion(list, toDay(new Date()))
 }
 
 const judicialAreasById = versionsById(judicialAreas)
@@ -117,7 +122,7 @@ for (const canton of cantons) {
 }
 
 // Each lookup by id has two signatures: a known id (a literal, or a value typed with the id
-// union) always finds the record's latest version; any other string, or a lookup on a given
+// union) always finds the record as it is today; any other string, or a lookup on a given
 // day, may not. A day before the data's coverage throws a RangeError.
 
 /** A judicial area by id, e.g. 'gent' */

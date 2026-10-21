@@ -143,7 +143,7 @@ looks right while doing it. Adding time later would change every id and lookup, 
 model before the history is in the data
 ([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
 
-**So.** Interest rates already have periods. A lookup by id without a day gives the latest
+**So.** Interest rates already have periods. A lookup by id without a day gives today's
 version, so known ids keep their non-`undefined` type; with a day it may find nothing.
 
 ## 12. Releases carry the data, not only the package

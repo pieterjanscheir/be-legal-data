@@ -63,7 +63,7 @@ type Token =
     | { kind: 'day'; day: number }
     | { kind: 'time'; minutes: number }
     | { kind: 'to' }
-    | { kind: 'closed' }
+    | { kind: 'closed'; part: 'afternoon' | 'day' }
     | { kind: 'sep' }
 
 function tokenize(text: string): Token[] | undefined {
@@ -73,7 +73,7 @@ function tokenize(text: string): Token[] | undefined {
         .replace(WORKDAYS, ' @workdays ')
         .replace(
             /\b(?:namiddag|middag|'s middags|après-midi|nachmittags?)\s+(?:gesloten|fermé|geschlossen)\b/g,
-            ' @closed ',
+            ' @afternoonclosed ',
         )
         .replace(/\b(?:gesloten|fermé|geschlossen)\b/g, ' @closed ')
         .replace(
@@ -84,8 +84,8 @@ function tokenize(text: string): Token[] | undefined {
     for (const word of s.split(/[\s,;:|/]+|(?<=\S)(?=\.)|\.(?=\s|$)/).filter(Boolean)) {
         if (word === '@workdays') {
             tokens.push({ kind: 'day', day: 0 }, { kind: 'to' }, { kind: 'day', day: 4 })
-        } else if (word === '@closed') {
-            tokens.push({ kind: 'closed' })
+        } else if (word === '@closed' || word === '@afternoonclosed') {
+            tokens.push({ kind: 'closed', part: word === '@closed' ? 'day' : 'afternoon' })
         } else if (word.startsWith('@t')) {
             const [h = 0, m = 0] = word.slice(2).split('_').map(Number)
             if (h > 23 || m > 59) return undefined
@@ -112,24 +112,34 @@ export function toOpeningHours(text: string): string | undefined {
     const schedule = new Map<number, string[]>()
     let days: number[] = []
     let daysClosed = false // a new day list starts once times follow the previous one
+    let hasHours = false // the current day list has hours
+    // Days a finished day list described. A day described twice ("Monday to Friday 9 to 16.
+    // Wednesday 9 to 12", "… Wednesday closed") means the text corrects itself; rather than
+    // decide which part wins, give up.
+    const described = new Set<number>()
     for (let i = 0; i < tokens.length; i++) {
         const t = tokens[i]
         if (!t) break
         if (t.kind === 'sep') continue
         if (t.kind === 'day') {
             if (daysClosed) {
+                for (const d of days) described.add(d)
                 days = []
                 daysClosed = false
+                hasHours = false
             }
             const next = tokens[i + 1]
             const end = tokens[i + 2]
+            const listed: number[] = []
             if (next?.kind === 'to' && end?.kind === 'day') {
                 if (end.day < t.day) return undefined
-                for (let d = t.day; d <= end.day; d++) days.push(d)
+                for (let d = t.day; d <= end.day; d++) listed.push(d)
                 i += 2
             } else {
-                days.push(t.day)
+                listed.push(t.day)
             }
+            if (listed.some((d) => described.has(d))) return undefined
+            days.push(...listed)
         } else if (t.kind === 'time') {
             const to = tokens[i + 1]
             const end = tokens[i + 2]
@@ -142,13 +152,15 @@ export function toOpeningHours(text: string): string | undefined {
                     `${hhmm(t.minutes)}-${hhmm(end.minutes)}`,
                 ])
             daysClosed = true
+            hasHours = true
             i += 2
         } else if (t.kind === 'to') {
             // A dash between parts ("van 9 tot 12.30 – namiddag gesloten") only separates them
             continue
         } else {
-            // Closed: ends the day list without adding hours
-            if (days.length === 0) return undefined
+            // "Afternoon closed" only completes hours given for the morning; "closed" only goes
+            // with days that have no hours
+            if (days.length === 0 || (t.part === 'afternoon') !== hasHours) return undefined
             daysClosed = true
         }
     }

@@ -93,6 +93,19 @@ describe('data integrity', () => {
         expect(count('court-of-assize')).toBe(11)
     })
 
+    it("gives every record its own pages: a court never has a division's page", () => {
+        const owner = new Map<string, string>()
+        for (const c of courts) {
+            for (const url of Object.values(c.website)) {
+                expect(
+                    owner.get(url),
+                    `${c.id} and ${owner.get(url) ?? ''} share ${url}`,
+                ).toBeUndefined()
+                owner.set(url, c.id)
+            }
+        }
+    })
+
     it('has a source for every record', () => {
         for (const c of courts) {
             expect(c.sources.length, c.id).toBeGreaterThan(0)

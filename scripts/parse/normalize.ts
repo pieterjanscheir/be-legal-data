@@ -3,6 +3,7 @@
  * `undefined` for a value it can't read with certainty, so the parsers leave it out rather
  * than guess.
  */
+import type { Address } from './types.ts'
 
 /** Text with whitespace collapsed, soft hyphens removed and typographic quotes made plain */
 export function clean(text: string): string {
@@ -42,13 +43,6 @@ export function toEmail(text: string): string | undefined {
         .replace(/^mailto:/i, '')
         .toLowerCase()
     return /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email) ? email : undefined
-}
-
-export interface Address {
-    building?: string
-    street: string
-    postalCode: string
-    city: string
 }
 
 /**

@@ -9,18 +9,8 @@
  */
 import { parse, type HTMLElement } from 'node-html-parser'
 
-import { clean, toAddress, toE164, toEmail, toIban, type Address } from './normalize.ts'
-
-export type ContactType = 'phone' | 'fax' | 'email' | 'bank-account'
-
-export interface Contact {
-    type: ContactType
-    value: string
-    /** The registry or service the contact belongs to, as the page titles it */
-    label?: string
-    /** Text published with the value: "griffie", "druk 1", "secretariaat eerste voorzitter" */
-    note?: string
-}
+import { clean, toAddress, toE164, toEmail, toIban } from './normalize.ts'
+import type { Address, Contact, ContactType } from './types.ts'
 
 export interface CourtPage {
     url: string
@@ -40,6 +30,10 @@ const SITE_SUFFIX =
 const text = (el: HTMLElement | null | undefined) => (el ? clean(el.textContent) : '')
 
 const PHONE = /(?:\+|00)?\d[\d\s/.()-]{6,}\d/g
+/** A dash or slash with spaces around it, between two numbers: "02 508 65 11 - 02 508 65 12" */
+const BETWEEN_NUMBERS = /(\d)\s+[-–/]\s+(?=(?:\+|0)\d)/g
+/** Words that only join two values: "09 234 42 15 en 09 234 42 01" */
+const JOINING_WORD = /^(?:en|et|und|of|ou|oder)\b\s*/i
 
 /**
  * The values in one published contact item, with the text around them as a note: "+32 2 682 05
@@ -72,7 +66,7 @@ function readContacts(
             }
         }
     } else {
-        for (const match of raw.match(PHONE) ?? []) {
+        for (const match of raw.replace(BETWEEN_NUMBERS, '$1 | ').match(PHONE) ?? []) {
             const phone = toE164(match.replace(/\(0\)/, ''))
             if (phone) {
                 values.push(phone)
@@ -84,12 +78,17 @@ function readContacts(
         unreadable.push(`${type}: ${raw}`)
         return []
     }
-    const note = clean(rest.replace(/^[\s:;,./-]+|[\s:;,./-]+$/g, '').replace(/^\((.*)\)$/, '$1'))
+    const note = clean(
+        rest
+            .replace(/^[\s:;,./|–-]+|[\s:;,./|–-]+$/g, '')
+            .replace(JOINING_WORD, '')
+            .replace(/^\((.*)\)$/, '$1'),
+    )
     return [...new Set(values)].map((value) => ({
         type,
         value,
         ...(card ? { label: card } : {}),
-        ...(note && !/^(en|et|und)$/i.test(note) ? { note } : {}),
+        ...(note ? { note } : {}),
     }))
 }
 

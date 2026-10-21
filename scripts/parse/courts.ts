@@ -11,39 +11,13 @@ import { readFileSync } from 'node:fs'
 import { toId } from '../id.ts'
 import { isCourtPage } from '../sources/catalog.ts'
 import { Snapshots } from '../sources/store.ts'
-import { readCourtPage, type Contact, type CourtPage } from './court-page.ts'
-import type { Address } from './normalize.ts'
+import { dedupe, readCourtPage, type CourtPage } from './court-page.ts'
 import { toOpeningHours } from './opening-hours.ts'
+import type { Court, CourtType, Locale } from './types.ts'
 
-type Lang = 'nl' | 'fr' | 'de'
+export type { Court, CourtType } from './types.ts'
 
-export type CourtType =
-    | 'justice-of-the-peace'
-    | 'police-court'
-    | 'court-of-first-instance'
-    | 'enterprise-court'
-    | 'labour-court'
-    | 'court-of-appeal'
-    | 'labour-court-of-appeal'
-    | 'court-of-assize'
-
-export interface Court {
-    id: string
-    type: CourtType
-    kind: 'court' | 'division' | 'seat'
-    court?: string
-    name: Partial<Record<Lang, string>>
-    judicialArea: string
-    arrondissement?: string
-    canton?: string
-    ecli?: string[]
-    address?: Address
-    contacts: Contact[]
-    openingHours?: string
-    openingHoursText?: Partial<Record<Lang, string>>
-    website: Partial<Record<Lang, string>>
-    sources: { url: string; retrieved: string }[]
-}
+type Lang = Locale
 
 // The name of each type, as it opens a court's name in each language
 const TYPES: [CourtType, RegExp][] = [
@@ -275,11 +249,17 @@ export function buildCourts(root: string, dataDir = 'data'): { courts: Court[]; 
     }
     const areaOf = new Map(arrondissements.map((a) => [a.id, a.judicialArea]))
 
-    const drafts = new Map<string, { court: Court; pages: CourtPage[] }>()
-    const add = (court: Court, page?: CourtPage) => {
-        const draft = drafts.get(court.id)
-        if (!draft) drafts.set(court.id, { court, pages: page ? [page] : [] })
-        else if (page) draft.pages.push(page)
+    // A court known only from its divisions' pages (Philippeville has no page of its own, only
+    // its seats) takes its name from them, and cites them as its source
+    const drafts = new Map<string, { court: Court; pages: CourtPage[]; namedBy: Set<string> }>()
+    const add = (court: Court, page?: CourtPage, namedBy?: string) => {
+        let draft = drafts.get(court.id)
+        if (!draft) {
+            draft = { court, pages: [], namedBy: new Set() }
+            drafts.set(court.id, draft)
+        }
+        if (page) draft.pages.push(page)
+        if (namedBy) draft.namedBy.add(namedBy)
     }
 
     for (const entry of snapshots.entries()) {
@@ -287,7 +267,10 @@ export function buildCourts(root: string, dataDir = 'data'): { courts: Court[]; 
         const contactUrl = entry.url + '/contact'
         const home = snapshots.text(entry.url)
         const contact = snapshots.text(contactUrl)
-        if (home === undefined || contact === undefined) continue
+        if (home === undefined || contact === undefined) {
+            report.unmatched.push(`${entry.url}: no good snapshot of the page or its contact page`)
+            continue
+        }
         const page = readCourtPage(entry.url, home, contact)
         report.unreadable.push(...page.unreadable.map((u) => `${entry.url}: ${u}`))
         const parsed = parseTitle(page.title)
@@ -337,7 +320,9 @@ export function buildCourts(root: string, dataDir = 'data'): { courts: Court[]; 
             continue
         }
 
-        const base = {
+        // A function, so a court and its division never share the arrays and objects the pages
+        // are merged into
+        const base = () => ({
             type: parsed.type,
             judicialArea,
             ...(arrondissement ? { arrondissement } : {}),
@@ -345,7 +330,7 @@ export function buildCourts(root: string, dataDir = 'data'): { courts: Court[]; 
             contacts: [],
             website: {},
             sources: [],
-        }
+        })
         const sub = parsed.division ?? parsed.seat
         if (sub) {
             const parentId = id
@@ -353,7 +338,11 @@ export function buildCourts(root: string, dataDir = 'data'): { courts: Court[]; 
                 /\s+(?:-\s+)?(afdeling|division|abteilung|siège|zetel)\s+.*$/i,
                 '',
             )
-            add({ ...base, id: parentId, kind: 'court', name: { [page.lang]: parentName } })
+            add(
+                { ...base(), id: parentId, kind: 'court', name: { [page.lang]: parentName } },
+                undefined,
+                entry.url,
+            )
             id = `${parentId}-${placeId(sub)}`
             const where = arrondissementByPlace.get(toId(sub))
             if (!where) {
@@ -364,7 +353,7 @@ export function buildCourts(root: string, dataDir = 'data'): { courts: Court[]; 
                 report.conflicts.push(`${id}: in ${where}, but its court is in ${arrondissement}`)
             add(
                 {
-                    ...base,
+                    ...base(),
                     arrondissement: where,
                     id,
                     kind: parsed.seat ? 'seat' : 'division',
@@ -374,12 +363,18 @@ export function buildCourts(root: string, dataDir = 'data'): { courts: Court[]; 
                 page,
             )
         } else {
-            add({ ...base, id, kind: 'court', name: {} }, page)
+            add({ ...base(), id, kind: 'court', name: {} }, page)
         }
     }
 
     const courts: Court[] = []
-    for (const { court, pages } of drafts.values()) {
+    for (const { court, pages, namedBy } of drafts.values()) {
+        if (pages.length === 0) {
+            for (const url of [...namedBy].sort()) {
+                const retrieved = snapshots.entry(url)?.retrieved
+                if (retrieved) court.sources.push({ url, retrieved })
+            }
+        }
         for (const page of pages.sort(
             (a, b) => 'nl de fr'.indexOf(a.lang) - 'nl de fr'.indexOf(b.lang),
         )) {
@@ -412,7 +407,7 @@ export function buildCourts(root: string, dataDir = 'data'): { courts: Court[]; 
         if (texts.length > 0 && hours.size === 1 && only) court.openingHours = only
         const codes = ECLI[court.id]
         if (codes) court.ecli = codes
-        court.contacts = uniqueContacts(court.contacts)
+        court.contacts = dedupe(court.contacts)
         courts.push(court)
     }
 
@@ -422,16 +417,6 @@ export function buildCourts(root: string, dataDir = 'data'): { courts: Court[]; 
 
     courts.sort((a, b) => a.id.localeCompare(b.id))
     return { courts: courts.map(ordered), report }
-}
-
-function uniqueContacts(contacts: Contact[]): Contact[] {
-    const seen = new Set<string>()
-    return contacts.filter((c) => {
-        const key = JSON.stringify([c.type, c.value, c.label, c.note])
-        if (seen.has(key)) return false
-        seen.add(key)
-        return true
-    })
 }
 
 /** Fields in a fixed order, for stable diffs */

@@ -51,6 +51,18 @@ export function appliesOn(record: Validity, day: string): boolean {
 }
 
 /**
+ * A record's version as of a day, from its versions sorted by `validFrom`: the one that applies
+ * on that day; for a record that has ended, its last version; for one that hasn't started, its
+ * first. Never a version that starts later while an earlier one applies.
+ */
+export function currentVersion<T extends Validity>(
+    versions: readonly T[],
+    day: string,
+): T | undefined {
+    return versions.findLast((v) => (v.validFrom ?? '') <= day) ?? versions[0]
+}
+
+/**
  * The day to look up, checked against the first day a dataset describes: before it, the data
  * can't say, and a guess would look like an answer.
  */
