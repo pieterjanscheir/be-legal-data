@@ -6,6 +6,8 @@
  *   its seat, and the municipalities (or parts of them) it covers.
  * - Statbel's population-by-municipality file, for the current municipalities with their
  *   REFNIS codes and the codes of their province and region (CC BY 4.0).
+ * - German names, for the few cantons an official German text names: see
+ *   scripts/german-canton-names.ts.
  *
  * The Dutch and French texts are parsed independently and must agree, and every municipality
  * must be covered exactly once (or split over several cantons). The script refuses to write
@@ -20,6 +22,7 @@ import { execFileSync } from 'node:child_process'
 import { mkdtempSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
+import { germanCantonNames } from './german-canton-names.ts'
 import { toId } from './id.ts'
 
 const JUSTEL_ID = '1967101007'
@@ -410,10 +413,12 @@ const cantons = nlItems.map((nlItem, i) => {
     const arrondissement = arrondissementOf(nlItem.section, nl.name)
     // Ids follow the local language; the Dutch text uses the German names around Eupen
     const french = sectionOf(nlItem.section).french && arrondissement !== 'eupen'
+    const id = toId(french ? fr.name : nl.name, nl.number)
+    const german = germanCantonNames[id]
     return {
-        id: toId(french ? fr.name : nl.name, nl.number),
+        id,
         arrondissement,
-        name: { nl: nl.name, fr: fr.name },
+        name: { nl: nl.name, fr: fr.name, ...(german ? { de: german.name } : {}) },
         ...(nl.number ? { number: nl.number } : {}),
         seat: { nl: nl.seat, fr: fr.seat },
         municipalities: [
@@ -424,6 +429,7 @@ const cantons = nlItems.map((nlItem, i) => {
         ].sort((a, b) => a.municipality.localeCompare(b.municipality)),
         territory: { nl: nl.territory, fr: fr.territory },
         legalBasis: { url: ANNEX_ELI, provision: `Bijvoegsel art. 1, afdeling ${ref}` },
+        ...(german ? { sources: [german.source] } : {}),
     }
 })
 
@@ -448,6 +454,8 @@ for (const mu of municipalities) {
         errors.push(`${label} is only partly covered, by ${e.partial.join(', ')}`)
 }
 const ids = parsed.map((c) => c.id)
+for (const id of Object.keys(germanCantonNames))
+    if (!ids.includes(id)) errors.push(`German name for unknown canton ${id}`)
 for (const id of ids.filter((id, i) => ids.indexOf(id) !== i)) errors.push(`Duplicate id ${id}`)
 
 if (errors.length) {

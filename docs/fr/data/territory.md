@@ -96,23 +96,25 @@ Les 162 cantons judiciaires : le territoire d'une justice de paix chacun. Fichie
 | ---------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
 | `id`             | `CantonId`                     | Identifiant stable dans la langue locale, numéroté là où il y a plusieurs cantons : `gent-1`, `merelbeke-melle`, `wavre-1` |
 | `arrondissement` | string                         | Identifiant de l'arrondissement                                                                                            |
-| `name`           | `{ nl, fr }`                   | Nom du canton tel que l'annexe le donne                                                                                    |
+| `name`           | `{ nl, fr, de? }`              | Nom du canton tel que l'annexe le donne ; `de` seulement là où un texte officiel allemand nomme le canton                  |
 | `number`         | number?                        | Numéro du canton là où il y en a plusieurs (Gent 1–5)                                                                      |
 | `seat`           | `{ nl, fr }`                   | Siège de la justice de paix ; peut différer du nom                                                                         |
 | `municipalities` | `{ municipality, partial? }[]` | Communes couvertes, par code REFNIS ; `partial: true` quand seule une partie l'est                                         |
 | `territory`      | `{ nl, fr }`                   | Le territoire du canton, tel quel dans l'annexe                                                                            |
 | `legalBasis`     | `{ url, provision }`           | Où la loi le définit : l'ELI de l'annexe et la section, p. ex. `Bijvoegsel art. 1, afdeling 6.15` (Gent 4)                 |
+| `sources`        | `{ url, retrieved }[]`?        | Le texte officiel allemand dont provient le nom allemand                                                                   |
 
 ```ts
 interface Canton {
     id: CantonId // 'gent-1', 'merelbeke-melle'
     arrondissement: ArrondissementId
-    name: Bilingual // { nl, fr } ; généralement le siège, mais pas toujours
+    name: Bilingual & { de?: string } // généralement le siège, mais pas toujours
     number?: number // pour les lieux à plusieurs cantons (Gent 1–5, …)
     seat: Bilingual // le siège de la justice de paix
     municipalities: { municipality: MunicipalityId; partial?: boolean }[]
     territory: Bilingual // le territoire du canton, tel quel dans l'annexe
     legalBasis: { url: string; provision: string } // l'ELI de l'annexe, et la section
+    sources?: SourceRef[] // le texte officiel allemand, pour un canton avec un nom allemand
 }
 ```
 
@@ -122,7 +124,10 @@ interface Canton {
 - **Le nom et le siège peuvent différer** : le canton `oudergem` siège à Etterbeek.
 - **`partial: true`** marque une commune scindée entre plusieurs cantons. Le texte `territory` précise
   alors quelle partie (rues, numéros, cours d'eau) relève de ce canton.
-- Les noms n'existent qu'en néerlandais et en français : l'annexe n'a pas de texte allemand consolidé.
+- **Noms allemands** seulement là où un texte officiel allemand nomme le canton : l'annexe n'a pas de
+  traduction allemande. Aujourd'hui, ce sont les deux cantons d'Eupen-Saint-Vith, d'après la
+  traduction allemande de l'arrêté ministériel du 31 octobre 2023 (Moniteur belge du 18 juillet
+  2024), indiquée dans `sources`. Aucun nom n'est traduit à la main.
 
 ### Communes scindées {#split-municipalities}
 

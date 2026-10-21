@@ -43,8 +43,24 @@ describe('formatCourtName', () => {
         ])
     })
 
-    it("uses the court's own language for the German canton name", () => {
-        // The cantons have no German names: Dutch for a Flemish court, French for the others
+    it('uses the German canton name where an official text gives one', () => {
+        expect(
+            formatCourtName(getCourt('justice-of-the-peace-eupen-sankt-vith-1'), 'de', {
+                style: 'canton',
+            }),
+        ).toBe('Friedensgericht 1. Kanton Eupen-Sankt Vith')
+        expect(
+            formatCourtName(getCourt('justice-of-the-peace-eupen-sankt-vith-2'), 'fr', {
+                style: 'canton',
+            }),
+        ).toBe('Justice de paix 2e canton Eupen-Saint-Vith')
+    })
+
+    it("uses the court's own language for the German canton name otherwise", () => {
+        // Most cantons have no German name: Dutch for a Flemish court, French for the others
+        expect(
+            formatCourtName(getCourt('justice-of-the-peace-gent-1'), 'de', { style: 'canton' }),
+        ).toBe('Friedensgericht 1. Kanton Gent')
         expect(
             formatCourtName(getCourt('justice-of-the-peace-brussel-1'), 'de', { style: 'canton' }),
         ).toBe('Friedensgericht 1. Kanton Bruxelles')
@@ -122,7 +138,7 @@ describe('formatCourtName', () => {
                 expect(formatCourtName(court, locale).trim()).not.toBe('')
                 const label = formatCourtName(court, locale, { style: 'canton' })
                 expect(label).not.toMatch(/undefined|\s{2}|^\s|\s$/)
-                const name = locale === 'de' ? undefined : canton.name[locale]
+                const name = canton.name[locale]
                 if (name !== undefined) expect(label.endsWith(` ${name}`)).toBe(true)
                 // The number in the label is the canton's
                 const number = /(\d+)(?:e|er|\.) [kK]anton|(\d+)(?:e|er) canton/.exec(label)

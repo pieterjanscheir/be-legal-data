@@ -95,23 +95,25 @@ Alle 162 gerechtelijke kantons: het gebied van telkens één vredegerecht. Besta
 | ---------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
 | `id`             | `CantonId`                     | Stabiele id in de streektaal, met een nummer voor plaatsen met meerdere kantons: `gent-1`, `merelbeke-melle`, `wavre-1` |
 | `arrondissement` | string                         | Id van het arrondissement                                                                                               |
-| `name`           | `{ nl, fr }`                   | Naam van het kanton zoals het bijvoegsel die geeft                                                                      |
+| `name`           | `{ nl, fr, de? }`              | Naam van het kanton zoals het bijvoegsel die geeft; `de` alleen waar een officiële Duitse tekst het kanton noemt        |
 | `number`         | number?                        | Kantonnummer in plaatsen met meerdere kantons (Gent 1–5)                                                                |
 | `seat`           | `{ nl, fr }`                   | Waar het vredegerecht zetelt; kan verschillen van de naam                                                               |
 | `municipalities` | `{ municipality, partial? }[]` | De gemeenten die het dekt, per REFNIS-code; `partial: true` als dat maar gedeeltelijk is                                |
 | `territory`      | `{ nl, fr }`                   | Het gebied van het kanton, letterlijk uit het bijvoegsel                                                                |
 | `legalBasis`     | `{ url, provision }`           | Waar de wet het omschrijft: de ELI van het bijvoegsel en de afdeling, bv. `Bijvoegsel art. 1, afdeling 6.15` (Gent 4)   |
+| `sources`        | `{ url, retrieved }[]`?        | De officiële Duitse tekst waaruit de Duitse naam komt                                                                   |
 
 ```ts
 interface Canton {
     id: CantonId // 'gent-1', 'merelbeke-melle'
     arrondissement: ArrondissementId
-    name: Bilingual // { nl, fr }; meestal de zetel, maar niet altijd
+    name: Bilingual & { de?: string } // meestal de zetel, maar niet altijd
     number?: number // voor plaatsen met meerdere kantons (Gent 1–5, …)
     seat: Bilingual // waar het vredegerecht zetelt
     municipalities: { municipality: MunicipalityId; partial?: boolean }[]
     territory: Bilingual // het gebied van het kanton, letterlijk uit het bijvoegsel
     legalBasis: { url: string; provision: string } // de ELI van het bijvoegsel, en de afdeling
+    sources?: SourceRef[] // de officiële Duitse tekst, voor een kanton met een Duitse naam
 }
 ```
 
@@ -121,8 +123,10 @@ interface Canton {
 - **Naam en zetel kunnen verschillen**: kanton `oudergem` zetelt in Etterbeek.
 - **`partial: true`** markeert een gemeente die over meerdere kantons is gesplitst. De tekst in
   `territory` zegt dan welk deel (straten, huisnummers, waterlopen) bij dit kanton hoort.
-- Namen zijn er alleen in het Nederlands en het Frans: het bijvoegsel heeft geen geconsolideerde
-  Duitse tekst.
+- **Duitse namen** alleen waar een officiële Duitse tekst het kanton noemt: het bijvoegsel heeft geen
+  Duitse vertaling. Vandaag zijn dat de twee kantons Eupen-Sankt Vith, uit de Duitse vertaling van
+  het ministerieel besluit van 31 oktober 2023 (Belgisch Staatsblad van 18 juli 2024), vermeld in
+  `sources`. Geen enkele naam wordt met de hand vertaald.
 
 ### Gesplitste gemeenten {#split-municipalities}
 

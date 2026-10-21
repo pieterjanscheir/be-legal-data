@@ -95,23 +95,25 @@ All 162 judicial cantons: the area of one justice of the peace each. File: `data
 | ---------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------- |
 | `id`             | `CantonId`                     | Stable id in the local language, with a number for multi-canton places: `gent-1`, `merelbeke-melle`, `wavre-1` |
 | `arrondissement` | string                         | Arrondissement id                                                                                              |
-| `name`           | `{ nl, fr }`                   | Name of the canton as the annex gives it                                                                       |
+| `name`           | `{ nl, fr, de? }`              | Name of the canton as the annex gives it; `de` only where an official German text names it                     |
 | `number`         | number?                        | Canton number in places with several (Gent 1–5)                                                                |
 | `seat`           | `{ nl, fr }`                   | Where the justice of the peace sits; can differ from the name                                                  |
 | `municipalities` | `{ municipality, partial? }[]` | Municipalities covered, by REFNIS code; `partial: true` when only part is                                      |
 | `territory`      | `{ nl, fr }`                   | The canton's area, verbatim from the annex                                                                     |
 | `legalBasis`     | `{ url, provision }`           | Where the law defines it: the annex's ELI and the section, e.g. `Bijvoegsel art. 1, afdeling 6.15` (Gent 4)    |
+| `sources`        | `{ url, retrieved }[]`?        | The official German text the German name is taken from                                                         |
 
 ```ts
 interface Canton {
     id: CantonId // 'gent-1', 'merelbeke-melle'
     arrondissement: ArrondissementId
-    name: Bilingual // { nl, fr }; usually the seat, but not always
+    name: Bilingual & { de?: string } // usually the seat, but not always
     number?: number // for places with several cantons (Gent 1–5, …)
     seat: Bilingual // where the justice of the peace sits
     municipalities: { municipality: MunicipalityId; partial?: boolean }[]
     territory: Bilingual // the canton's area, verbatim from the annex
     legalBasis: { url: string; provision: string } // the annex's ELI, and the section
+    sources?: SourceRef[] // the official German text, for a canton with a German name
 }
 ```
 
@@ -121,7 +123,10 @@ interface Canton {
 - **Name and seat can differ**: canton `oudergem` sits in Etterbeek.
 - **`partial: true`** marks a municipality that is split over several cantons. The `territory`
   text then says which part (streets, numbers, waterways) belongs to this canton.
-- Names are in Dutch and French only: the annex has no consolidated German text.
+- **German names** only where an official German text names the canton: the annex has no German
+  translation. Today that's the two cantons of Eupen-Sankt Vith, from the German translation of the
+  ministerial decree of 31 October 2023 (Belgisches Staatsblatt of 18 July 2024), listed in
+  `sources`. No name is translated by hand.
 
 ### Split municipalities
 

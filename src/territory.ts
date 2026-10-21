@@ -110,8 +110,12 @@ export interface Canton extends Validity {
     id: CantonId
     /** The judicial arrondissement */
     arrondissement: ArrondissementId
-    /** Name of the canton; usually the seat, but not always ('Oudergem' sits in Etterbeek) */
-    name: Bilingual
+    /**
+     * Name of the canton; usually the seat, but not always ('Oudergem' sits in Etterbeek). In
+     * Dutch and French from the annex to the Judicial Code; in German only where an official
+     * German text names the canton (see `sources`), since the annex has no German translation.
+     */
+    name: Bilingual & { de?: string }
     /** Canton number for places with several cantons (Gent 1–5, …) */
     number?: number
     /** Where the justice of the peace sits */
@@ -125,6 +129,8 @@ export interface Canton extends Validity {
     territory: Bilingual
     /** Where the law defines the canton */
     legalBasis: LegalBasis
+    /** The official texts the German name is taken from, for a canton that has one */
+    sources?: SourceRef[]
 }
 
 // The data is validated against the JSON Schemas generated from these types (test/schema.test.ts)

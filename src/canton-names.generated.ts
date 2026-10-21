@@ -6,7 +6,7 @@ import type { Validity } from './time'
 /** The fields of a canton that court labels use */
 export interface CantonName extends Validity {
     id: CantonId
-    name: Bilingual
+    name: Bilingual & { de?: string }
     number?: number
 }
 
@@ -121,8 +121,8 @@ export const cantonNames: readonly CantonName[] = [
     { id: 'roeselare', name: { nl: 'Roeselare', fr: 'Roulers' } },
     { id: 'waregem', name: { nl: 'Waregem', fr: 'Waregem' } },
     { id: 'veurne', name: { nl: 'Veurne', fr: 'Furnes' } },
-    { id: 'eupen-sankt-vith-1', name: { nl: 'Eupen-Sankt-Vith', fr: 'Eupen-Saint-Vith' }, number: 1 },
-    { id: 'eupen-sankt-vith-2', name: { nl: 'Eupen-Sankt-Vith', fr: 'Eupen-Saint-Vith' }, number: 2 },
+    { id: 'eupen-sankt-vith-1', name: { nl: 'Eupen-Sankt-Vith', fr: 'Eupen-Saint-Vith', de: 'Eupen-Sankt Vith' }, number: 1 },
+    { id: 'eupen-sankt-vith-2', name: { nl: 'Eupen-Sankt-Vith', fr: 'Eupen-Saint-Vith', de: 'Eupen-Sankt Vith' }, number: 2 },
     { id: 'huy-1', name: { nl: 'Hoei', fr: 'Huy' }, number: 1 },
     { id: 'huy-2', name: { nl: 'Hoei', fr: 'Huy' }, number: 2 },
     { id: 'fleron', name: { nl: 'Fléron', fr: 'Fléron' } },

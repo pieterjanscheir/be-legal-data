@@ -18,10 +18,16 @@ Gent`, `Vredegerecht kanton Deinze`. It is documented as a label, not the court'
 so the rule that legal facts are stored, not built, still holds for names. The French label
 uses `Justice de paix`, as the courts call themselves, not `Tribunal de paix`
 ([#10](https://github.com/pieterjanscheir/belgica/issues/10)). Other courts and the seats of a
-justice of the peace get their official name in both styles. The cantons have no German names
-yet, since no official German text of the annex to the Judicial Code was available; German
-labels use the canton's name in the court's own language, French in Brussels and the
-German-speaking area ([#45](https://github.com/pieterjanscheir/belgica/issues/45)).
+justice of the peace get their official name in both styles. German labels use the canton's
+German name where it has one, and otherwise its name in the court's own language, French in
+Brussels ([#45](https://github.com/pieterjanscheir/belgica/issues/45)).
+
+**German names for the cantons of Eupen-Sankt Vith.** `name.de` is `Eupen-Sankt Vith` for
+`eupen-sankt-vith-1` and `-2`, from the official German translation of the ministerial decree of
+31 October 2023 (Belgisches Staatsblatt of 18 July 2024, numac 2024006205), now in the cantons'
+new `sources` field and in `datapackage.json`. The annex to the Judicial Code has no German
+translation, so no other canton has a German name: `scripts/german-canton-names.ts` lists the
+sourced ones, and a test checks the data against it. `cantons.csv` gets a `name_de` column.
 
 **`belgica/courts` stays small.** The labels read each canton's name and number from
 `src/canton-names.generated.ts`, generated from `data/cantons.json` by `pnpm generate`, so the

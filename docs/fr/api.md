@@ -299,9 +299,9 @@ publie dans sa propre langue : c'est celle-là que vous obtenez.
 de son canton, de la même façon dans chaque langue. **C'est un libellé d'affichage, pas le nom
 officiel du tribunal** : utilisez `'official'` là où le nom a une portée juridique. Tout autre
 tribunal, et un siège d'une justice de paix, reçoit son nom officiel, de sorte qu'une liste de
-tribunaux de types différents peut utiliser un seul style. Les cantons n'ont pas encore de nom
-allemand : en allemand, le nom du canton est dans la langue du tribunal (le français à Bruxelles
-et dans la région de langue allemande).
+tribunaux de types différents peut utiliser un seul style. Seuls les cantons d'Eupen-Saint-Vith
+ont un nom allemand (tiré d'un texte officiel allemand) ; pour les autres, en allemand, le nom du
+canton est dans la langue du tribunal (le français à Bruxelles).
 
 ```ts
 const court = getCourt('justice-of-the-peace-gent-1')

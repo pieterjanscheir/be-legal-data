@@ -122,6 +122,7 @@ export const tables: Record<string, Row[]> = {
         arrondissement: c.arrondissement,
         name_nl: c.name.nl,
         name_fr: c.name.fr,
+        name_de: c.name.de,
         number: c.number,
         seat_nl: c.seat.nl,
         seat_fr: c.seat.fr,

@@ -217,10 +217,10 @@ const cantonNamesById = versionsById(cantonNames)
  * With `style: 'canton'`, a justice of the peace gets a label built from its canton's number and
  * name: 'Vredegerecht 1e kanton Gent', 'Justice de paix 1er canton Gand', 'Friedensgericht 1.
  * Kanton Gent', and without a number 'Vredegerecht kanton Deinze'. It is a label for display,
- * not the court's official name. The canton name is in `locale`; the cantons have no German
- * names yet, so German uses the canton's name in the court's own language (French in Brussels
- * and the German-speaking area). Any other court, and a seat of a justice of the peace, gets its
- * official name.
+ * not the court's official name. The canton name is in `locale`. Only the cantons of
+ * Eupen-Sankt Vith have a German name; for the others, German uses the canton's name in the
+ * court's own language (French in Brussels). Any other court, and a seat of a justice of the
+ * peace, gets its official name.
  */
 export function formatCourtName(
     court: Court,
@@ -236,13 +236,13 @@ export function formatCourtName(
         // The canton as it was on the court's last day, or today for a court that still applies
         const canton = versions && currentVersion(versions, court.validTo ?? toDay(new Date()))
         if (canton) {
-            const language =
-                locale !== 'de' ? locale
-                : court.name.nl !== undefined && court.name.fr === undefined ? 'nl'
-                : 'fr'
+            // Most cantons have no German name: then the one in the court's own language
+            const ownLanguage =
+                court.name.nl !== undefined && court.name.fr === undefined ? 'nl' : 'fr'
+            const name = canton.name[locale] ?? canton.name[ownLanguage]
             const { court: type, canton: word } = cantonLabel[locale]
             const number = canton.number === undefined ? '' : `${ordinal[locale](canton.number)} `
-            return `${type} ${number}${word} ${canton.name[language]}`
+            return `${type} ${number}${word} ${name}`
         }
     }
     for (const language of fallbackOrder[locale]) {

@@ -297,9 +297,9 @@ Dutch. Each court publishes in its own language, so that is what you get.
 `style: 'canton'` gives a justice of the peace a label built from its canton's number and name,
 the same in every language. **It is a display label, not the court's official name**: use
 `'official'` where the name has legal weight. Any other court, and a seat of a justice of the
-peace, gets its official name, so a list of mixed courts can use one style. The cantons have no
-German names yet: German uses the canton's name in the court's own language (French in Brussels
-and the German-speaking area).
+peace, gets its official name, so a list of mixed courts can use one style. Only the cantons of Eupen-Sankt
+Vith have a German name (from an official German text); for the others, German uses the canton's
+name in the court's own language (French in Brussels).
 
 ```ts
 const court = getCourt('justice-of-the-peace-gent-1')

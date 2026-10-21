@@ -3581,7 +3581,8 @@
     "arrondissement": "eupen",
     "name": {
       "nl": "Eupen-Sankt-Vith",
-      "fr": "Eupen-Saint-Vith"
+      "fr": "Eupen-Saint-Vith",
+      "de": "Eupen-Sankt Vith"
     },
     "number": 1,
     "seat": {
@@ -3609,14 +3610,21 @@
     "legalBasis": {
       "url": "https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel",
       "provision": "Bijvoegsel art. 1, afdeling 8.1"
-    }
+    },
+    "sources": [
+      {
+        "url": "https://www.ejustice.just.fgov.be/mopdf/2024/07/18_1.pdf#page=124",
+        "retrieved": "2026-10-21"
+      }
+    ]
   },
   {
     "id": "eupen-sankt-vith-2",
     "arrondissement": "eupen",
     "name": {
       "nl": "Eupen-Sankt-Vith",
-      "fr": "Eupen-Saint-Vith"
+      "fr": "Eupen-Saint-Vith",
+      "de": "Eupen-Sankt Vith"
     },
     "number": 2,
     "seat": {
@@ -3647,7 +3655,13 @@
     "legalBasis": {
       "url": "https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101058/justel",
       "provision": "Bijvoegsel art. 1, afdeling 8.2"
-    }
+    },
+    "sources": [
+      {
+        "url": "https://www.ejustice.just.fgov.be/mopdf/2024/07/18_1.pdf#page=124",
+        "retrieved": "2026-10-21"
+      }
+    ]
   },
   {
     "id": "huy-1",

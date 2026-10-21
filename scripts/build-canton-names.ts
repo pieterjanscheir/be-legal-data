@@ -8,7 +8,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 
 interface Canton {
     id: string
-    name: { nl: string; fr: string }
+    name: { nl: string; fr: string; de?: string }
     number?: number
     validFrom?: string
     validTo?: string
@@ -25,14 +25,15 @@ import type { Validity } from './time'
 /** The fields of a canton that court labels use */
 export interface CantonName extends Validity {
     id: CantonId
-    name: Bilingual
+    name: Bilingual & { de?: string }
     number?: number
 }
 
 export const cantonNames: readonly CantonName[] = [
 `
 for (const { id, name, number, validFrom, validTo } of cantons) {
-    const fields = [`id: ${str(id)}`, `name: { nl: ${str(name.nl)}, fr: ${str(name.fr)} }`]
+    const de = name.de === undefined ? '' : `, de: ${str(name.de)}`
+    const fields = [`id: ${str(id)}`, `name: { nl: ${str(name.nl)}, fr: ${str(name.fr)}${de} }`]
     if (number !== undefined) fields.push(`number: ${number}`)
     if (validFrom !== undefined) fields.push(`validFrom: ${str(validFrom)}`)
     if (validTo !== undefined) fields.push(`validTo: ${str(validTo)}`)

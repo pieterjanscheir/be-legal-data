@@ -299,9 +299,9 @@ dus die krijg je.
 wordt opgebouwd, in elke taal op dezelfde manier. **Het is een label voor weergave, niet de
 officiële naam van de rechtbank**: gebruik `'official'` waar de naam juridisch gewicht heeft.
 Elke andere rechtbank, en een zetel van een vredegerecht, krijgt haar officiële naam, zodat een
-lijst met verschillende rechtbanken één stijl kan gebruiken. De kantons hebben nog geen Duitse
-namen: in het Duits staat de naam van het kanton in de eigen taal van de rechtbank (Frans in
-Brussel en het Duitse taalgebied).
+lijst met verschillende rechtbanken één stijl kan gebruiken. Alleen de kantons Eupen-Sankt Vith
+hebben een Duitse naam (uit een officiële Duitse tekst); voor de andere staat in het Duits de
+naam van het kanton in de eigen taal van de rechtbank (Frans in Brussel).
 
 ```ts
 const court = getCourt('justice-of-the-peace-gent-1')
