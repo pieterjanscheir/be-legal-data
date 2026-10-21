@@ -30,6 +30,17 @@ its arrondissement, or its judicial area's; the one exception, the justice of th
 Limbourg with a temporary seat in Eupen, is named in the test
 ([#28](https://github.com/pieterjanscheir/be-legal-data/issues/28)).
 
+**Canton boundaries** ([#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)).
+`data/canton-boundaries.json` has the boundary of every canton as GeoJSON `MultiPolygon`
+geometry in WGS 84, as the National Geographic Institute digitised it from the annex to the
+Judicial Code (geo.be, CC BY 4.0), with the NGI's object id and canton code, fetched every week
+with the other sources. One record per canton, keyed by the canton's id. The geometry is the
+NGI's, unsimplified, to 7 decimals. A new entry point, `be-legal-data/canton-boundaries`,
+exports `cantonBoundaries`, `getCantonBoundary(cantonId)` and `findCantonsAt(lon, lat)`, the
+cantons whose boundary holds a point: one for a point in Belgium, none outside it. The package
+root doesn't re-export them: the file is 23 MB. The legal text in a canton's `territory` wins
+where the geometry disagrees.
+
 ### Changed
 
 **All courts, from the official source (breaking).** `data/courts.json` is now built every

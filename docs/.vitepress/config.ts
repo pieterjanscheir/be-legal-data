@@ -28,6 +28,7 @@ interface Strings {
         data: string
         overview: string
         territory: string
+        cantonBoundaries: string
         courts: string
         prisons: string
         housesOfJustice: string
@@ -79,6 +80,7 @@ const en: Strings = {
         data: 'Data',
         overview: 'Overview',
         territory: 'Territory & cantons',
+        cantonBoundaries: 'Canton boundaries',
         courts: 'Courts',
         prisons: 'Prisons',
         housesOfJustice: 'Houses of justice',
@@ -136,6 +138,7 @@ const nl: Strings = {
         data: 'Data',
         overview: 'Overzicht',
         territory: 'Territorium en kantons',
+        cantonBoundaries: 'Kantongrenzen',
         courts: 'Hoven en rechtbanken',
         prisons: 'Gevangenissen',
         housesOfJustice: 'Justitiehuizen',
@@ -193,6 +196,7 @@ const fr: Strings = {
         data: 'Données',
         overview: 'Aperçu',
         territory: 'Territoire et cantons',
+        cantonBoundaries: 'Limites des cantons',
         courts: 'Cours et tribunaux',
         prisons: 'Prisons',
         housesOfJustice: 'Maisons de justice',
@@ -266,6 +270,10 @@ function themeConfig(prefix: string, t: Strings): DefaultTheme.Config {
                 items: [
                     { text: t.sidebar.overview, link: `${prefix}/data/` },
                     { text: t.sidebar.territory, link: `${prefix}/data/territory` },
+                    {
+                        text: t.sidebar.cantonBoundaries,
+                        link: `${prefix}/data/canton-boundaries`,
+                    },
                     { text: t.sidebar.courts, link: `${prefix}/data/courts` },
                     { text: t.sidebar.prisons, link: `${prefix}/data/prisons` },
                     { text: t.sidebar.housesOfJustice, link: `${prefix}/data/houses-of-justice` },

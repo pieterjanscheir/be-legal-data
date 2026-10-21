@@ -31,9 +31,11 @@ import { data as stats } from '../.vitepress/stats.data'
 - **Canton names and seats** are in Dutch and French only: the annex to the Judicial Code has
   no consolidated German text.
 - **Split municipalities** (Antwerpen, Gent, Brussel, Luik, …) map to several cantons. A postal
-  code gets you to the municipality (`findCourtsForPostalCode`), but picking the canton needs
-  the street address, and the boundaries exist only as legal prose in `territory`
-  ([#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)).
+  code gets you to the municipality (`findCourtsForPostalCode`); picking the canton needs the
+  street address: `findCantonsAt(lon, lat)` finds it from coordinates with the
+  [canton boundaries](./canton-boundaries), but geocoding the address is up to you, and the
+  boundaries are the NGI's reading of the legal text in `territory`, which wins where they
+  disagree.
 - **Postal codes stop at the municipality.** Sub-municipalities (deelgemeenten) aren't in the
   data: Statbel's table has none, and bpost's list isn't openly licensed. Three codes (`1040`,
   `1050`, `1804`) belong to two municipalities; the lookups return both.

@@ -33,9 +33,11 @@ import { data as stats } from '../../.vitepress/stats.data'
 - **Kantonnamen en zetels** zijn er alleen in het Nederlands en het Frans: het bijvoegsel bij
   het Gerechtelijk Wetboek heeft geen geconsolideerde Duitse tekst.
 - **Gesplitste gemeenten** (Antwerpen, Gent, Brussel, Luik, …) horen bij meerdere kantons. Een
-  postcode brengt je tot de gemeente (`findCourtsForPostalCode`), maar het kanton kiezen
-  vereist het straatadres, en de grenzen bestaan alleen als juridisch proza in `territory`
-  ([#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)).
+  postcode brengt je tot de gemeente (`findCourtsForPostalCode`); het kanton kiezen vereist het
+  straatadres: `findCantonsAt(lon, lat)` vindt het aan de hand van coördinaten met de
+  [kantongrenzen](./canton-boundaries), maar het adres geocoderen is aan jou, en de grenzen
+  zijn de lezing van het NGI van de wettekst in `territory`, die voorrang heeft waar ze van
+  elkaar afwijken.
 - **Postcodes stoppen bij de gemeente.** Deelgemeenten zitten niet in de data: de tabel van
   Statbel heeft er geen, en de lijst van bpost heeft geen open licentie. Drie codes (`1040`,
   `1050`, `1804`) horen bij twee gemeenten; de opzoekingen geven beide terug.

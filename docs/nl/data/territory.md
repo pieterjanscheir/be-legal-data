@@ -128,9 +128,11 @@ interface Canton {
 
 55 kantons dekken maar een deel van een gemeente. Voor die kantons kun je het kanton niet
 bepalen op basis van de gemeente alleen: het hangt af van de straat (en soms van het
-huisnummer). De tekst in `territory` noemt de grenzen. Die grenzen geocoderen is een mogelijke
-toekomstige uitbreiding; tot dan toon je de kandidaat-kantons met hun tekst en laat je een
-mens beslissen.
+huisnummer). De tekst in `territory` noemt de grenzen. Met de coördinaten van het adres vindt
+`findCantonsAt(lon, lat)` uit `be-legal-data/canton-boundaries` het kanton in de
+[kantongrenzen](./canton-boundaries) van het NGI; zonder coördinaten toon je de
+kandidaat-kantons met hun tekst en laat je een mens beslissen. Waar de geometrie en de tekst
+van elkaar afwijken, is de tekst de wet.
 
 ## Gemeenten {#municipalities}
 

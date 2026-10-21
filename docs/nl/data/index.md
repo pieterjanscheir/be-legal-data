@@ -9,6 +9,7 @@ licentie en de datum waarop hij voor het laatst tegen die bronnen is gecontrolee
 | [Rechtsgebieden](./territory#judicial-areas)    | 5         | Welk hof van beroep (en arbeidshof) een beroep behandelt                                                            |
 | [Arrondissementen](./territory#arrondissements) | 12        | Rechtbanken, parketten en gerechtsdeurwaarders groeperen; de eenheid waar de meeste bevoegdheidsregels mee werken   |
 | [Kantons](./territory#cantons)                  | 162       | Welk vredegerecht bevoegd is voor een adres                                                                         |
+| [Kantongrenzen](./canton-boundaries)            | 162       | Het kanton van een punt in een gesplitste stad; de kantons op een kaart (GeoJSON)                                   |
 | [Gemeenten](./territory#municipalities)         | 565       | Elk Belgisch adres of elke statistiek via de REFNIS-code aan de gerechtelijke kaart koppelen                        |
 | [Gewesten](./territory#regions)                 | 3         | Het gewest van een gemeente, op REFNIS-code, in drie talen benoemd                                                  |
 | [Provincies](./territory#provinces)             | 10        | De provincie van een gemeente (geen in Brussel), met haar gewest                                                    |
@@ -22,9 +23,10 @@ licentie en de datum waarop hij voor het laatst tegen die bronnen is gecontrolee
 
 ```
 Rechtsgebied ──< Arrondissement ──< Kanton >──< Gemeente (REFNIS) ──< Postcode
-      │                 │              │              │
-      └──────────── Gerecht ───────────┘              │  het adres van een gerecht verwijst naar zijn gemeente
-                        │                             │
+      │                 │              │  │
+      │                 │              │  └── Kantongrens   de geometrie van het kanton (NGI)
+      └──────────── Gerecht ───────────┘  een vredegerecht verwijst naar zijn kanton,
+                        │                 en het adres van elk gerecht naar zijn gemeente
                         └──< Afdeling     een afdeling verwijst naar haar gerecht
 ```
 
@@ -63,8 +65,7 @@ bronnen zijn vanuit code moeilijk te gebruiken:
 
 Zie [bekende hiaten](./known-gaps) voor de beperkingen van de huidige data en de
 [roadmap](./roadmap) voor geplande datasets: de hoogste rechtscolleges, historiek,
-kantongrenzen, gerechtsdeurwaarders, politiezones en de kantoren van het kadaster en de
-hypotheken.
+gerechtsdeurwaarders, politiezones en de kantoren van het kadaster en de hypotheken.
 
 ::: warning Referentiedata, geen juridisch advies
 De data wordt tegen officiële bronnen gecontroleerd, maar bronnen veranderen en fouten gebeuren.

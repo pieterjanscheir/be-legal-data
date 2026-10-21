@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest'
 
 import { ID_PATTERN, toId } from '../scripts/id'
 import { DATASETS, lockIds, readLock } from '../scripts/lock-ids'
+import { cantonBoundaries } from '../src/canton-boundaries'
 import {
     arrondissements,
     cantons,
@@ -32,6 +33,7 @@ describe('identifiers', () => {
         judicialAreas,
         arrondissements,
         cantons,
+        cantonBoundaries,
         regions,
         provinces,
         municipalities,
@@ -97,6 +99,7 @@ describe('identifiers', () => {
             'judicial-areas': judicialAreas.map((r) => r.id),
             arrondissements: arrondissements.map((r) => r.id),
             cantons: cantons.map((r) => r.id),
+            'canton-boundaries': cantonBoundaries.map((r) => r.id),
             regions: regions.map((r) => r.id),
             provinces: provinces.map((r) => r.id),
             municipalities: municipalities.map((r) => r.id),

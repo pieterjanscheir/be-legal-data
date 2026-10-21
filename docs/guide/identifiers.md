@@ -45,6 +45,7 @@ All of these are enforced by tests (`test/ids.test.ts`) and by the
 | Judicial areas    | `antwerpen`, `brussel`, `gent`, `liege`, `mons`                                                                           | Local name                |
 | Arrondissements   | `oost-vlaanderen`, `brabant-wallon`, `eupen`                                                                              | Local name                |
 | Cantons           | `gent-1`, `merelbeke-melle`, `wavre-1`, `oudergem`, `eupen-sankt-vith-1`                                                  | Local name + number       |
+| Canton boundaries | `gent-1`: one boundary per canton, with the canton's id, and `canton` as the link                                         | The canton's id           |
 | Municipalities    | `44021`, `21004`                                                                                                          | REFNIS code               |
 | Provinces         | `10000`, `40000`                                                                                                          | REFNIS code               |
 | Regions           | `02000`, `03000`, `04000`                                                                                                 | REFNIS code               |

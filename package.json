@@ -12,6 +12,7 @@
         "municipalities",
         "refnis",
         "postal-codes",
+        "geojson",
         "interest-rates",
         "vredegerecht",
         "justice-of-the-peace"
@@ -41,6 +42,10 @@
         "./territory": {
             "types": "./dist/territory.d.ts",
             "default": "./dist/territory.js"
+        },
+        "./canton-boundaries": {
+            "types": "./dist/canton-boundaries.d.ts",
+            "default": "./dist/canton-boundaries.js"
         },
         "./courts": {
             "types": "./dist/courts.d.ts",

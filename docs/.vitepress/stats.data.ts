@@ -72,6 +72,7 @@ const DIST = join(import.meta.dirname, '../../dist')
 const ENTRIES = [
     'index',
     'territory',
+    'canton-boundaries',
     'courts',
     'prisons',
     'houses-of-justice',

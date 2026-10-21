@@ -1,4 +1,5 @@
 // The shape of each file in data/, for scripts/build-schemas.ts
+import type { CantonBoundary } from '../src/canton-boundaries'
 import type { Court } from '../src/courts'
 import type { HouseOfJustice } from '../src/houses-of-justice'
 import type { PostalCode } from '../src/postal-codes'
@@ -16,6 +17,7 @@ import type {
 export type JudicialAreasFile = JudicialArea[]
 export type ArrondissementsFile = Arrondissement[]
 export type CantonsFile = Canton[]
+export type CantonBoundariesFile = CantonBoundary[]
 export type RegionsFile = Region[]
 export type ProvincesFile = Province[]
 export type MunicipalitiesFile = Municipality[]

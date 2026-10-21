@@ -128,8 +128,10 @@ interface Canton {
 
 55 cantons ne couvrent qu'une partie d'une commune. Pour ceux-ci, le canton ne peut se déduire de la seule
 commune : il dépend de la rue (et parfois du numéro de maison). Le texte `territory` en nomme les
-limites. Le géocodage de ces limites est un ajout possible à l'avenir ; d'ici là, affichez les cantons
-candidats et leur texte, et laissez une personne trancher.
+limites. Avec les coordonnées de l'adresse, `findCantonsAt(lon, lat)`, de
+`be-legal-data/canton-boundaries`, trouve le canton dans les
+[limites des cantons](./canton-boundaries) de l'IGN ; sans elles, affichez les cantons candidats et leur
+texte, et laissez une personne trancher. Là où la géométrie et le texte divergent, le texte fait loi.
 
 ## Communes {#municipalities}
 

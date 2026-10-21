@@ -41,6 +41,9 @@ import { getCanton } from 'be-legal-data/territory'
 import { getMunicipalitiesForPostalCode } from 'be-legal-data/postal-codes'
 ```
 
+The [canton boundaries](/data/canton-boundaries) are the exception: a million positions of
+geometry, only in `be-legal-data/canton-boundaries`, never loaded by the package root.
+
 <table v-if="stats.sizes">
 <thead><tr><th>Entry point</th><th style="text-align:right">JavaScript loaded</th><th style="text-align:right">gzip</th></tr></thead>
 <tbody>
@@ -94,6 +97,15 @@ getCantonsForMunicipality('44088', { on: '2025-09-15' })
 When a city is split over several cantons (Antwerpen, Gent, Brussel, Luik, …), you get more than
 one result. The street address decides, and each canton's `territory` holds the legal
 description of its part. Try it on the [territory page](/data/territory#find-the-canton-for-a-municipality).
+
+With the address's coordinates, the [canton boundaries](/data/canton-boundaries) settle it:
+
+```ts
+import { findCantonsAt } from 'be-legal-data/canton-boundaries'
+
+const [canton] = findCantonsAt(3.7268, 51.053) // longitude, latitude: gent-1
+const court = getJusticeOfThePeace(canton.id)
+```
 
 ### Which court for a municipality?
 

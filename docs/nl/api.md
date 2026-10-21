@@ -9,6 +9,7 @@ import { getCanton, getInterestRate /* … */ } from 'be-legal-data'
 import { getInterestRate } from 'be-legal-data/interest-rates'
 import { getCourt, getJusticeOfThePeace } from 'be-legal-data/courts'
 import { getCanton, getCantonsForMunicipality } from 'be-legal-data/territory'
+import { findCantonsAt } from 'be-legal-data/canton-boundaries'
 import { getPrison } from 'be-legal-data/prisons'
 import { getHouseOfJustice } from 'be-legal-data/houses-of-justice'
 import { getMunicipalitiesForPostalCode } from 'be-legal-data/postal-codes'
@@ -16,8 +17,9 @@ import { getMunicipalitiesForPostalCode } from 'be-legal-data/postal-codes'
 
 | Entry point                          | Inhoud                                                                     |
 | ------------------------------------ | -------------------------------------------------------------------------- |
-| `be-legal-data`                      | Alles hieronder                                                            |
+| `be-legal-data`                      | Alles hieronder, behalve de kantongrenzen                                  |
 | `be-legal-data/territory`            | Rechtsgebieden, arrondissementen, kantons, gemeenten, provincies, gewesten |
+| `be-legal-data/canton-boundaries`    | De geometrie van de kantons, en `findCantonsAt`                            |
 | `be-legal-data/courts`               | Hoven en rechtbanken, en de helpers voor contactgegevens                   |
 | `be-legal-data/prisons`              | Gevangenissen, en de helpers voor contactgegevens                          |
 | `be-legal-data/houses-of-justice`    | Justitiehuizen, en de helpers voor contactgegevens                         |
@@ -160,6 +162,39 @@ function getRegionForMunicipality(id: string, options?: OnDay): Region | undefin
 
 ```ts
 getRegionForMunicipality('21004')?.name.nl // 'Brussels Hoofdstedelijk Gewest'
+```
+
+## Kantongrenzen {#canton-boundaries}
+
+Alleen in `be-legal-data/canton-boundaries`: de geometrie is ongeveer een miljoen posities, dus
+de root van het package exporteert ze niet opnieuw (de types wel). Zie de
+[datapagina](/nl/data/canton-boundaries).
+
+### `findCantonsAt(longitude, latitude)` {#findcantonsat-longitude-latitude}
+
+```ts
+function findCantonsAt(longitude: number, latitude: number, options?: OnDay): Canton[]
+```
+
+De kantons wiens grens een punt bevat, op een dag (standaard vandaag). Eerst de lengtegraad, dan
+de breedtegraad, in decimale graden (WGS 84), zoals GeoJSON ze ordent. Eén kanton voor een punt
+in België; geen buiten België; twee voor een punt op de lijn tussen twee kantons. Gooit een
+`RangeError` voor coördinaten die geen eindige getallen zijn.
+
+```ts
+findCantonsAt(3.7268, 51.053).map((c) => c.id) // ['gent-1']: Sint-Baafskathedraal
+findCantonsAt(2.3522, 48.8566) // []: Parijs
+```
+
+### `getCantonBoundary(cantonId)` {#getcantonboundary-cantonid}
+
+```ts
+function getCantonBoundary(id: CantonId): CantonBoundary
+function getCantonBoundary(id: string, options?: OnDay): CantonBoundary | undefined
+```
+
+```ts
+getCantonBoundary('gent-1').geometry.type // 'MultiPolygon'
 ```
 
 ## Hoven en rechtbanken {#courts}
