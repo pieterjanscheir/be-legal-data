@@ -70,7 +70,8 @@ export function getInterestRate(
 export function getLatestKnownRateDate(type: InterestType): string {
     // Periods are sorted and never empty (test/data.test.ts), so the last one ends latest
     const last = interestRates[type].periods.at(-1)
-    /* v8 ignore next */
+    /* v8 ignore start */
     if (!last) throw new Error(`No ${type} interest rates on file`)
+    /* v8 ignore stop */
     return last.to
 }

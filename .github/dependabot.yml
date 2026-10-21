@@ -11,6 +11,10 @@ updates:
           # tsup can't build the type declarations with TypeScript 7 yet: see issue #19
           - dependency-name: typescript
             versions: ['>=7']
+          # The types match the oldest Node the package supports (engines: >=22.12), so code
+          # can't use an API that Node 22 doesn't have. Raise them with the engines field.
+          - dependency-name: '@types/node'
+            update-types: ['version-update:semver-major']
     - package-ecosystem: github-actions
       directory: /
       schedule:

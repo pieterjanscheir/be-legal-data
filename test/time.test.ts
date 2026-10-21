@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { appliesOn, currentVersion, lookupDay, toDay } from '../src/time'
+import { appliesOn, currentVersion, lookupDay, toDay, versionsById } from '../src/time'
 
 describe('appliesOn', () => {
     const record = { validFrom: '2018-09-01', validTo: '2024-12-31' }
@@ -54,5 +54,24 @@ describe('currentVersion', () => {
             currentVersion([{ name: 'future', validFrom: '2030-01-01' }], '2026-10-21')?.name,
         ).toBe('future')
         expect(currentVersion<{ validFrom?: string }>([], '2026-10-21')).toBeUndefined()
+    })
+})
+
+describe('versionsById', () => {
+    it('groups the versions of each record, oldest first', () => {
+        const map = versionsById([
+            { id: 'a', validFrom: '2030-01-01' },
+            { id: 'a', validFrom: '2025-01-01' },
+            { id: 'b' },
+            { id: 'a', validTo: '2024-12-31' },
+            { id: 'a', validFrom: '2027-01-01' },
+        ])
+        expect(map.get('a')?.map((v) => v.validFrom ?? 'first')).toEqual([
+            'first',
+            '2025-01-01',
+            '2027-01-01',
+            '2030-01-01',
+        ])
+        expect(map.get('b')).toEqual([{ id: 'b' }])
     })
 })

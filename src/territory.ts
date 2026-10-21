@@ -4,7 +4,15 @@ import judicialAreasData from '../data/judicial-areas.json'
 import municipalitiesData from '../data/municipalities.json'
 import type { Bilingual, Translated } from './common'
 import type { ArrondissementId, CantonId, JudicialAreaId, MunicipalityId } from './ids.generated'
-import { appliesOn, currentVersion, lookupDay, toDay, type OnDay, type Validity } from './time'
+import {
+    appliesOn,
+    currentVersion,
+    lookupDay,
+    toDay,
+    versionsById,
+    type OnDay,
+    type Validity,
+} from './time'
 
 export type { Bilingual, Locale, SourceRef, Translated } from './common'
 export type { ArrondissementId, CantonId, JudicialAreaId, MunicipalityId } from './ids.generated'
@@ -82,15 +90,6 @@ export const judicialAreas = judicialAreasData as readonly JudicialArea[]
 export const arrondissements = arrondissementsData as readonly Arrondissement[]
 export const municipalities = municipalitiesData as readonly Municipality[]
 export const cantons = cantonsData as readonly Canton[]
-
-/** Every version of each record, oldest first */
-const versionsById = <T extends { id: string } & Validity>(items: readonly T[]) => {
-    const map = new Map<string, T[]>()
-    for (const item of items) map.set(item.id, [...(map.get(item.id) ?? []), item])
-    for (const list of map.values())
-        list.sort((a, b) => (a.validFrom ?? '').localeCompare(b.validFrom ?? ''))
-    return map
-}
 
 /**
  * With `on`, the version that applies on that day, if any. Without, today's version (see
