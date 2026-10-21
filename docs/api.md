@@ -153,6 +153,21 @@ for a court without.
 getDivisions('labour-court-gent').map((c) => c.id) // ['labour-court-gent-aalst', …]
 ```
 
+### `getCourtsForCanton(cantonId)`
+
+```ts
+function getCourtsForCanton(cantonId: string): Court[]
+```
+
+The courts whose area holds a canton: its justice of the peace and, of each other type, the
+court that covers it (the court as a whole, not its divisions); in Brussels both language
+courts of a type. Empty for an unknown canton.
+
+```ts
+getCourtsForCanton('gent-1').map((c) => c.id)
+// ['court-of-appeal-gent', 'court-of-assize-oost-vlaanderen', 'court-of-first-instance-oost-vlaanderen', …]
+```
+
 ### `findCourts(filter)`
 
 ```ts
@@ -249,6 +264,26 @@ getHouseOfJustice('justitiehuis-gent').ovo // 'OVO001917'
 
 Questions that combine datasets. They're in the package root only, since they need both the
 territory and the courts.
+
+### `findCompetentCourts(municipalityId, type)`
+
+```ts
+function findCompetentCourts(municipalityId: string, type: CourtType, options?: OnDay): Court[]
+```
+
+The courts of a type competent for a municipality on a day (today by default), by REFNIS code:
+the courts whose area, as the law sets it (`cantons`), holds one of the municipality's cantons.
+One court for most municipalities; in Brussels the Dutch- and the French-speaking court; for a
+city split over cantons, every justice of the peace that serves one of them. It gives the court
+as a whole: which of its divisions hears a case is set by royal decree and isn't in the data
+yet, so pick among `getDivisions(court.id)`. Empty for an unknown code.
+
+```ts
+findCompetentCourts('23088', 'police-court').map((c) => c.id) // ['police-court-vilvoorde']
+findCompetentCourts('21004', 'court-of-first-instance').map((c) => c.id)
+// ['court-of-first-instance-brussel-fr', 'court-of-first-instance-brussel-nl']
+findCompetentCourts('44021', 'labour-court').map((c) => c.id) // ['labour-court-gent']
+```
 
 ### `findJusticesOfThePeace(municipalityId)`
 

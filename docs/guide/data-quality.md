@@ -56,7 +56,9 @@ Official Journal's site refuses GitHub's servers
   municipality, court) points at a record that exists; every municipality is in exactly one
   canton or split over several; every canton stays within its arrondissement's provinces; every
   canton has exactly one justice of the peace; every division has its court's type and area;
-  every kind of court has the number of courts the law sets.
+  every kind of court has the number of courts the law sets; every canton falls under one
+  court of each type (one per language in Brussels), and a court's cantons lie in its
+  arrondissement and judicial area.
 - **Parsers**: tested end to end on trimmed copies of real pages (`test/fixtures/sources`), and
   each reader (phone numbers, IBANs, addresses, opening hours) on the forms seen in the sources
   and on what it must refuse.

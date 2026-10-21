@@ -131,6 +131,10 @@ export const tables: Record<string, Row[]> = {
         website_de: c.website.de,
     })),
     'court-contacts': courts.flatMap((c) => contactRows('court', c.id, c.contacts)),
+    // The area of each court other than a justice of the peace, whose canton is in courts.csv
+    'court-cantons': courts.flatMap((c) =>
+        (c.cantons ?? []).map((canton) => ({ court: c.id, canton })),
+    ),
     prisons: prisons.map((p) => ({
         id: p.id,
         kind: p.kind,

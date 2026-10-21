@@ -23,6 +23,10 @@ const problems = [
     ...report.conflicts,
     ...report.cantonsWithoutCourt.map((id) => `canton ${id} has no court`),
     ...report.eclisWithoutCourt.map((id) => `the ECLI table has ${id}, the sources don't`),
+    ...report.courtsWithoutJurisdiction.map(
+        (id) => `${id} is on the portal, but not in the law table`,
+    ),
+    ...report.jurisdictionsWithoutCourt.map((id) => `the law table has ${id}, the sources don't`),
 ]
 for (const line of report.unreadable) console.warn(`unreadable: ${line}`)
 const withoutAddress = courts.filter((c) => !c.address).map((c) => c.id)

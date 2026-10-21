@@ -78,6 +78,22 @@ When a city is split over several cantons (Antwerpen, Gent, Brussel, Luik, …),
 one result. The street address decides, and each canton's `territory` holds the legal
 description of its part. Try it on the [territory page](/data/territory#find-the-canton-for-a-municipality).
 
+### Which court for a municipality?
+
+Every court other than a justice of the peace lists the cantons it covers (`cantons`), as the
+law sets them. `findCompetentCourts` looks a municipality's cantons up in them.
+
+```ts
+import { findCompetentCourts, getDivisions } from 'be-legal-data'
+
+findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde], not Brussels
+findCompetentCourts('21004', 'labour-court') // the Dutch- and the French-speaking court of Brussels
+
+// The court as a whole; which division hears the case isn't in the data yet
+const [court] = findCompetentCourts('44021', 'enterprise-court')
+getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brugge, …
+```
+
 ### Interest due on a day
 
 ```ts

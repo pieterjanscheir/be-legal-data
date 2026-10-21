@@ -8,6 +8,8 @@ import {
     type Municipality,
     type MunicipalityId,
     cantons,
+    findCompetentCourts,
+    findJusticesOfThePeace,
     getCanton,
     getCourt,
     getMunicipality,
@@ -51,6 +53,55 @@ describe('getJusticeOfThePeace', () => {
 
     it('returns undefined for an unknown canton', () => {
         expect(getJusticeOfThePeace('NoSuchCanton')).toBeUndefined()
+    })
+})
+
+describe('findCompetentCourts', () => {
+    it('finds the police court of Halle-Vilvoorde, not Brussels', () => {
+        // Vilvoorde
+        expect(findCompetentCourts('23088', 'police-court').map((c) => c.id)).toEqual([
+            'police-court-vilvoorde',
+        ])
+    })
+
+    it('finds both language courts in Brussels', () => {
+        // Brussel
+        expect(findCompetentCourts('21004', 'court-of-first-instance').map((c) => c.id)).toEqual([
+            'court-of-first-instance-brussel-fr',
+            'court-of-first-instance-brussel-nl',
+        ])
+    })
+
+    it('finds one court for a city split over cantons, and every justice of the peace', () => {
+        // Gent
+        expect(findCompetentCourts('44021', 'labour-court').map((c) => c.id)).toEqual([
+            'labour-court-gent',
+        ])
+        expect(findCompetentCourts('44021', 'justice-of-the-peace').map((c) => c.canton)).toEqual(
+            findJusticesOfThePeace('44021').map((c) => c.canton.id),
+        )
+    })
+
+    it('finds the court of assize of the province', () => {
+        // Vilvoorde lies in the judicial arrondissement of Brussels, but the province of Vlaams-Brabant
+        expect(findCompetentCourts('23088', 'court-of-assize').map((c) => c.id)).toEqual([
+            'court-of-assize-vlaams-brabant',
+        ])
+        // Eupen: the court of assize of Liège
+        expect(findCompetentCourts('63023', 'court-of-assize').map((c) => c.id)).toEqual([
+            'court-of-assize-liege',
+        ])
+    })
+
+    it('answers for a day, within the coverage', () => {
+        expect(findCompetentCourts('23088', 'police-court', { on: '2025-06-01' })).toHaveLength(1)
+        expect(() => findCompetentCourts('23088', 'police-court', { on: '2024-12-31' })).toThrow(
+            RangeError,
+        )
+    })
+
+    it('returns an empty list for an unknown code', () => {
+        expect(findCompetentCourts('99999', 'police-court')).toEqual([])
     })
 })
 

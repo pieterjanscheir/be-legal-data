@@ -52,6 +52,7 @@ import {
     findCourts,
     getJusticeOfThePeace,
     getCantonsForMunicipality,
+    findCompetentCourts,
     getInterestRate,
 } from 'be-legal-data'
 
@@ -62,6 +63,7 @@ findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' })
 const [canton] = getCantonsForMunicipality('44088') // merelbeke-melle
 getJusticeOfThePeace(canton.id).address // where to file
 getCantonsForMunicipality('44021', { on: '2025-09-15' }) // Gent 1–5 on that day: a split city
+findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde]: which court, by REFNIS code
 
 getInterestRate('2024-06-15', 'legal') // { rate: 5.75, period: { from: '2024-01-01', to: '2024-12-31' } }
 getInterestRate(new Date(2014, 5, 15), 'commercial', { contractAfter20130316: true }) // { rate: 8.5, … }

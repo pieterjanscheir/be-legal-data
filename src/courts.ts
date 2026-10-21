@@ -41,6 +41,12 @@ export interface Court {
     /** For a justice of the peace: the canton it serves */
     canton?: CantonId
     /**
+     * For a court other than a justice of the peace: the cantons it covers, as the annex to the
+     * Judicial Code (art. 3–5) and art. 114 of the Code set them. A justice of the peace covers
+     * its `canton`; a division or seat has neither: see `court`.
+     */
+    cantons?: CantonId[]
+    /**
      * The court's codes in European Case Law Identifiers (ECLI:BE:<code>:…), one per language
      * it judges in; only codes seen in published decisions
      */
@@ -67,11 +73,19 @@ export const courts = courtsData as readonly Court[]
 const courtsById = new Map<string, Court>(courts.map((c) => [c.id, c]))
 const justicesOfThePeaceByCanton = new Map<string, Court>()
 const divisionsByCourt = new Map<string, Court[]>()
+const courtsByCanton = new Map<string, Court[]>()
+const cover = (canton: string, court: Court) => {
+    courtsByCanton.set(canton, [...(courtsByCanton.get(canton) ?? []), court])
+}
 for (const court of courts) {
     if (court.type === 'justice-of-the-peace' && court.kind === 'court' && court.canton)
         justicesOfThePeaceByCanton.set(court.canton, court)
     if (court.court)
         divisionsByCourt.set(court.court, [...(divisionsByCourt.get(court.court) ?? []), court])
+    if (court.kind === 'court') {
+        for (const canton of court.cantons ?? []) cover(canton, court)
+        if (court.canton !== undefined) cover(court.canton, court)
+    }
 }
 
 /** A court, division or seat by id, e.g. 'justice-of-the-peace-gent-1' */
@@ -91,6 +105,15 @@ export function getJusticeOfThePeace(cantonId: string): Court | undefined {
 /** A court's divisions, or a justice of the peace's seats; empty for a court without */
 export function getDivisions(courtId: string): Court[] {
     return [...(divisionsByCourt.get(courtId) ?? [])]
+}
+
+/**
+ * The courts whose area holds a canton, by canton id: its justice of the peace and, of each
+ * other type, the court (not its divisions) that covers it; in Brussels, both language courts
+ * of a type. Empty for an unknown canton.
+ */
+export function getCourtsForCanton(cantonId: string): Court[] {
+    return [...(courtsByCanton.get(cantonId) ?? [])]
 }
 
 export interface CourtFilter {

@@ -3,6 +3,9 @@
 - **Courts not on the portal** aren't in the data: the Court of Cassation, the Constitutional
   Court, the Council of State and the disciplinary courts
   ([#4](https://github.com/pieterjanscheir/be-legal-data/issues/4)).
+- **Competence stops at the court.** `cantons` and `findCompetentCourts` say which court
+  covers a municipality, not which of its divisions: a division's area is set by royal decree
+  and isn't in the data yet.
 - **26 courts have no single address**: a court whose divisions each have their own (the
   address is on the division), or one that publishes its addresses as a sentence. Their
   `address` is missing rather than guessed; the divisions have theirs.

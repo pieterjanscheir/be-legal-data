@@ -1,4 +1,4 @@
-import { getJusticeOfThePeace, type Court } from './courts'
+import { getCourtsForCanton, getJusticeOfThePeace, type Court, type CourtType } from './courts'
 import { getCantonsForMunicipality, type Canton } from './territory'
 import type { OnDay } from './time'
 
@@ -26,4 +26,24 @@ export function findJusticesOfThePeace(municipalityId: string, options: OnDay = 
             (m) => m.municipality === municipalityId && m.partial === true,
         ),
     }))
+}
+
+/**
+ * The courts of a type competent for a municipality on a day (today by default), by REFNIS
+ * code: the courts whose area, as the law sets it, holds one of its cantons. One court for most
+ * municipalities; in Brussels the Dutch- and the French-speaking court; for a city split over
+ * cantons, every justice of the peace that serves one of them (the street address decides, see
+ * `findJusticesOfThePeace`). The court as a whole: which of its divisions hears a case is set
+ * by royal decree and isn't in the data; see `getDivisions`. Empty for an unknown code.
+ */
+export function findCompetentCourts(
+    municipalityId: string,
+    type: CourtType,
+    options: OnDay = {},
+): Court[] {
+    const found = new Set<Court>()
+    for (const canton of getCantonsForMunicipality(municipalityId, options)) {
+        for (const court of getCourtsForCanton(canton.id)) if (court.type === type) found.add(court)
+    }
+    return [...found]
 }

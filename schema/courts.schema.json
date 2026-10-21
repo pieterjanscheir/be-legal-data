@@ -59,6 +59,13 @@
           "$ref": "#/definitions/CantonId",
           "description": "For a justice of the peace: the canton it serves"
         },
+        "cantons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CantonId"
+          },
+          "description": "For a court other than a justice of the peace: the cantons it covers, as the annex to the Judicial Code (art. 3–5) and art. 114 of the Code set them. A justice of the peace covers its `canton`; a division or seat has neither: see `court`."
+        },
         "ecli": {
           "type": "array",
           "items": {

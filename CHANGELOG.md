@@ -82,6 +82,15 @@ OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
 
 ### Added
 
+- Every court other than a justice of the peace lists the cantons it covers (`cantons`), as the
+  annex to the Judicial Code (art. 3–5) and art. 114 of the Code set them, from a law table in
+  `scripts/parse/jurisdictions.ts` that the build checks against the portal both ways. A
+  court's `arrondissement` now follows from its cantons: the courts of appeal and labour court
+  of appeal of Mons and the court of assize of Brussels-Capital gain one, the court of assize
+  of Liège, which covers Eupen too, loses it.
+- `findCompetentCourts(municipalityId, type)`: which court of a type is competent for a
+  municipality, including the Halle and Vilvoorde police courts and both language courts in
+  Brussels; `getCourtsForCanton(cantonId)`; and a `court-cantons.csv` table in the releases.
 - Prisons: the 39 prisons and detention houses, in `data/prisons.json` and
   `be-legal-data/prisons`.
 - Houses of justice: the 14 Flemish (with OVO number) and 13 French-speaking houses, in
