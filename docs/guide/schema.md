@@ -11,6 +11,8 @@ can't drift apart: CI fails when any of the three disagree.
 | `data/cantons.json`           | [`cantons.schema.json`](/schema/cantons.schema.json){target="_self"}                     |
 | `data/canton-boundaries.json` | [`canton-boundaries.schema.json`](/schema/canton-boundaries.schema.json){target="_self"} |
 | `data/municipalities.json`    | [`municipalities.schema.json`](/schema/municipalities.schema.json){target="_self"}       |
+| `data/regions.json`           | [`regions.schema.json`](/schema/regions.schema.json){target="_self"}                     |
+| `data/provinces.json`         | [`provinces.schema.json`](/schema/provinces.schema.json){target="_self"}                 |
 | `data/courts.json`            | [`courts.schema.json`](/schema/courts.schema.json){target="_self"}                       |
 | `data/prisons.json`           | [`prisons.schema.json`](/schema/prisons.schema.json){target="_self"}                     |
 | `data/houses-of-justice.json` | [`houses-of-justice.schema.json`](/schema/houses-of-justice.schema.json){target="_self"} |

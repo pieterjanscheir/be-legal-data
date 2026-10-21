@@ -13,6 +13,8 @@ export const files = {
     arrondissements: 'ArrondissementsFile',
     cantons: 'CantonsFile',
     'canton-boundaries': 'CantonBoundariesFile',
+    regions: 'RegionsFile',
+    provinces: 'ProvincesFile',
     municipalities: 'MunicipalitiesFile',
     courts: 'CourtsFile',
     prisons: 'PrisonsFile',

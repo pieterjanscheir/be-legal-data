@@ -33,7 +33,6 @@ par ordre de fréquence d'utilisation :
 - **Notaires et chambres des notaires**, **barreaux** (balies / barreaux).
 - **Fusions de communes** : anciens → nouveaux codes REFNIS pour 2019 et 2025, pour pouvoir
   convertir des données plus anciennes.
-- **Provinces et régions** comme jeu de données à part entière (aujourd'hui seulement des codes).
 - **L'indice santé** (gezondheidsindex) pour l'indexation des loyers.
 
 ## Pourquoi certains jeux de données ne sont pas encore là {#why-some-datasets-aren-t-here-yet}

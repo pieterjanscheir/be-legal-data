@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://pieterjanscheir.github.io/be-legal-data/schema/provinces.schema.json",
+  "title": "be-legal-data: data/provinces.json",
+  "$ref": "#/definitions/ProvincesFile",
+  "definitions": {
+    "ProvincesFile": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Province"
+      }
+    },
+    "Province": {
+      "type": "object",
+      "properties": {
+        "validFrom": {
+          "type": "string",
+          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts.",
+          "format": "date"
+        },
+        "validTo": {
+          "type": "string",
+          "description": "Last day the record applies, YYYY-MM-DD",
+          "format": "date"
+        },
+        "id": {
+          "$ref": "#/definitions/ProvinceId",
+          "description": "The province's Statbel REFNIS code, e.g. '40000' for Oost-Vlaanderen"
+        },
+        "name": {
+          "$ref": "#/definitions/Translated",
+          "description": "The name as Statbel publishes it: 'Provincie Oost-Vlaanderen', 'Province de Flandre orientale', 'Provinz Ostflandern'"
+        },
+        "region": {
+          "$ref": "#/definitions/RegionId",
+          "description": "The region the province lies in"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SourceRef"
+          },
+          "description": "Statbel's REFNIS code list, and the day its content was first seen"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "region",
+        "sources"
+      ],
+      "additionalProperties": false,
+      "description": "One of the ten provinces. The Brussels-Capital Region has none."
+    },
+    "ProvinceId": {
+      "type": "string",
+      "enum": [
+        "10000",
+        "20001",
+        "20002",
+        "30000",
+        "40000",
+        "50000",
+        "60000",
+        "70000",
+        "80000",
+        "90000"
+      ],
+      "description": "Id of a record in data/provinces.json"
+    },
+    "Translated": {
+      "type": "object",
+      "properties": {
+        "nl": {
+          "type": "string"
+        },
+        "fr": {
+          "type": "string"
+        },
+        "de": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nl",
+        "fr",
+        "de"
+      ],
+      "additionalProperties": false,
+      "description": "A name in the three national languages"
+    },
+    "RegionId": {
+      "type": "string",
+      "enum": [
+        "02000",
+        "03000",
+        "04000"
+      ],
+      "description": "Id of a record in data/regions.json"
+    },
+    "SourceRef": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "The exact official page or file the data comes from",
+          "format": "uri"
+        },
+        "retrieved": {
+          "type": "string",
+          "description": "Day the source was last checked, YYYY-MM-DD",
+          "format": "date"
+        }
+      },
+      "required": [
+        "url",
+        "retrieved"
+      ],
+      "additionalProperties": false,
+      "description": "Where a record's data was taken from"
+    }
+  }
+}

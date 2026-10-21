@@ -15,6 +15,8 @@ import {
     judicialAreas,
     municipalities,
     prisons,
+    provinces,
+    regions,
 } from '../src'
 
 const names = (name: Record<string, string>) => Object.values(name)
@@ -31,6 +33,8 @@ describe('identifiers', () => {
         arrondissements,
         cantons,
         cantonBoundaries,
+        regions,
+        provinces,
         municipalities,
         courts,
     }
@@ -41,11 +45,13 @@ describe('identifiers', () => {
         expect(new Set(keys).size).toBe(keys.length)
     })
 
-    it('are lowercase kebab-case, or a REFNIS code for municipalities', () => {
+    it('are lowercase kebab-case, or a REFNIS code for regions, provinces and municipalities', () => {
         for (const records of [judicialAreas, arrondissements, cantons, courts]) {
             for (const { id } of records) expect(id).toMatch(ID_PATTERN)
         }
-        for (const { id } of municipalities) expect(id).toMatch(/^\d{5}$/)
+        for (const records of [regions, provinces, municipalities]) {
+            for (const { id } of records) expect(id).toMatch(/^\d{5}$/)
+        }
     })
 
     it('derive from one of the official names', () => {
@@ -81,6 +87,8 @@ describe('identifiers', () => {
             arrondissements: arrondissements.map((r) => r.id),
             cantons: cantons.map((r) => r.id),
             'canton-boundaries': cantonBoundaries.map((r) => r.id),
+            regions: regions.map((r) => r.id),
+            provinces: provinces.map((r) => r.id),
             municipalities: municipalities.map((r) => r.id),
             courts: courts.map((r) => r.id),
             prisons: prisons.map((r) => r.id),

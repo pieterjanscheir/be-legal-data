@@ -103,6 +103,16 @@ OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
 
 ### Added
 
+- Regions and provinces as datasets: `data/regions.json` (the 3 regions) and
+  `data/provinces.json` (the 10 provinces, each with its `region`), keyed by their Statbel
+  REFNIS code, with the names in Dutch, French and German as Statbel's REFNIS code list gives
+  them, built weekly from the snapshots of that list. Every municipality gains a `region`;
+  `Municipality.province` is typed `ProvinceId | '04000'` instead of `string` (a narrowing: the
+  values are unchanged, and the 19 municipalities of the Brussels-Capital Region, which has no
+  province, keep `'04000'`, the region's code, as Statbel's files have it). New lookups
+  `getRegion`, `getProvince`, `getProvinceForMunicipality` (`undefined` in Brussels) and
+  `getRegionForMunicipality`, types `Region`, `Province`, `RegionId` and `ProvinceId`, and
+  `regions.csv` and `provinces.csv` in the releases.
 - The documentation site is available in Dutch (/nl/) and French (/fr/) next to English, with a
   language switcher. English is the source; the translations follow it.
 - `ids.lock.json`: every id the package has published, per dataset. `pnpm generate` adds new

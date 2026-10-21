@@ -56,17 +56,19 @@ Data > From Text/CSV.
 
 ## Files
 
-| File                          | Contents                                                    |
-| ----------------------------- | ----------------------------------------------------------- |
-| `data/judicial-areas.json`    | The 5 judicial areas (courts of appeal)                     |
-| `data/arrondissements.json`   | The 12 judicial arrondissements and their judicial area     |
-| `data/cantons.json`           | All 162 judicial cantons                                    |
-| `data/canton-boundaries.json` | The boundary of every canton as GeoJSON geometry (23 MB)    |
-| `data/municipalities.json`    | The 565 municipalities with REFNIS code and province        |
-| `data/courts.json`            | Every court, division and seat on the courts' portal        |
-| `data/prisons.json`           | The prisons and detention houses                            |
-| `data/houses-of-justice.json` | The houses of justice of the Flemish and French Communities |
-| `data/interest-rates.json`    | Legal and commercial-transaction interest rates             |
+| File                          | Contents                                                     |
+| ----------------------------- | ------------------------------------------------------------ |
+| `data/judicial-areas.json`    | The 5 judicial areas (courts of appeal)                      |
+| `data/arrondissements.json`   | The 12 judicial arrondissements and their judicial area      |
+| `data/cantons.json`           | All 162 judicial cantons                                     |
+| `data/canton-boundaries.json` | The boundary of every canton as GeoJSON geometry (23 MB)     |
+| `data/municipalities.json`    | The 565 municipalities with REFNIS code, province and region |
+| `data/regions.json`           | The 3 regions, named in three languages                      |
+| `data/provinces.json`         | The 10 provinces, with their region                          |
+| `data/courts.json`            | Every court, division and seat on the courts' portal         |
+| `data/prisons.json`           | The prisons and detention houses                             |
+| `data/houses-of-justice.json` | The houses of justice of the Flemish and French Communities  |
+| `data/interest-rates.json`    | Legal and commercial-transaction interest rates              |
 
 The shapes are described on the [data pages](/data/territory) and in the [API reference](/api#types).
 

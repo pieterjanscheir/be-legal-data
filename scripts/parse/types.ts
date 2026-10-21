@@ -9,6 +9,10 @@ import type {
 import type { Court as PublishedCourt } from '../../src/courts.ts'
 import type { HouseOfJustice as PublishedHouseOfJustice } from '../../src/houses-of-justice.ts'
 import type { Prison as PublishedPrison } from '../../src/prisons.ts'
+import type {
+    Province as PublishedProvince,
+    Region as PublishedRegion,
+} from '../../src/territory.ts'
 
 export type { Address, Contact, ContactType, Locale } from '../../src/common.ts'
 export type { CourtType } from '../../src/courts.ts'
@@ -31,3 +35,5 @@ export type CantonBoundary = Omit<PublishedCantonBoundary, 'id' | 'canton'> & {
     id: string
     canton: string
 }
+export type Region = Omit<PublishedRegion, 'id'> & { id: string }
+export type Province = Omit<PublishedProvince, 'id' | 'region'> & { id: string; region: string }

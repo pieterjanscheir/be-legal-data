@@ -13,6 +13,7 @@ import { Snapshots } from '../sources/store.ts'
 import { buildCantonBoundaries, stringifyBoundaries } from './boundaries.ts'
 import { buildCourts } from './courts.ts'
 import { buildHousesOfJustice, buildPrisons } from './places.ts'
+import { buildRegionsAndProvinces } from './refnis.ts'
 import { carryOver, walkDay, type Dated } from './retire.ts'
 import type { CantonBoundary, Court, HouseOfJustice, Prison } from './types.ts'
 
@@ -22,6 +23,8 @@ const { courts: freshCourts, report } = buildCourts(root)
 const { prisons: freshPrisons, problems: prisonProblems } = buildPrisons(root)
 const { houses: freshHouses, problems: houseProblems } = buildHousesOfJustice(root)
 const { boundaries: freshBoundaries, report: boundaryReport } = buildCantonBoundaries(root)
+// Their validity comes from Statbel's register itself, so they aren't carried over below
+const { regions, provinces } = buildRegionsAndProvinces(root)
 
 // A record a source no longer lists is retired with a validTo, never deleted (retire.ts)
 const previous = <T extends Dated>(file: string): T[] =>
@@ -70,3 +73,5 @@ write('courts', courts)
 write('prisons', prisons)
 write('houses-of-justice', houses)
 writeFileSync('data/canton-boundaries.json', stringifyBoundaries(boundaries))
+write('regions', regions)
+write('provinces', provinces)

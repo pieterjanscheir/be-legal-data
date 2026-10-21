@@ -4,12 +4,21 @@ import type { Court } from '../src/courts'
 import type { HouseOfJustice } from '../src/houses-of-justice'
 import type { Prison } from '../src/prisons'
 import type { InterestRateSeries, InterestType } from '../src/interest-rates'
-import type { Arrondissement, Canton, JudicialArea, Municipality } from '../src/territory'
+import type {
+    Arrondissement,
+    Canton,
+    JudicialArea,
+    Municipality,
+    Province,
+    Region,
+} from '../src/territory'
 
 export type JudicialAreasFile = JudicialArea[]
 export type ArrondissementsFile = Arrondissement[]
 export type CantonsFile = Canton[]
 export type CantonBoundariesFile = CantonBoundary[]
+export type RegionsFile = Region[]
+export type ProvincesFile = Province[]
 export type MunicipalitiesFile = Municipality[]
 export type CourtsFile = Court[]
 export type PrisonsFile = Prison[]
