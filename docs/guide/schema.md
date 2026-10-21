@@ -20,9 +20,8 @@ can't drift apart: CI fails when any of the three disagree.
 | `data/interest-rates.json`    | [`interest-rates.schema.json`](/schema/interest-rates.schema.json){target="_self"}       |
 
 Each schema's `$id` is its URL on this site, e.g.
-`https://pieterjanscheir.github.io/belgica/schema/courts.schema.json`. From the next
-release they're also in the npm package as `belgica/schema/courts.schema.json` (0.2.0
-doesn't include them).
+`https://pieterjanscheir.github.io/belgica/schema/courts.schema.json`. They're also in the
+npm package as `belgica/schema/courts.schema.json`.
 
 ## Validating the data
 

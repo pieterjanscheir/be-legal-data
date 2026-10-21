@@ -20,9 +20,8 @@ niet uit elkaar kunnen groeien: CI faalt wanneer een van de drie het oneens is.
 | `data/interest-rates.json`    | [`interest-rates.schema.json`](/schema/interest-rates.schema.json){target="_self"}       |
 
 De `$id` van elk schema is zijn URL op deze site, bv.
-`https://pieterjanscheir.github.io/belgica/schema/courts.schema.json`. Vanaf de volgende
-release zitten ze ook in het npm-package als `belgica/schema/courts.schema.json` (0.2.0
-bevat ze niet).
+`https://pieterjanscheir.github.io/belgica/schema/courts.schema.json`. Ze zitten ook in het
+npm-package als `belgica/schema/courts.schema.json`.
 
 ## De data valideren {#validating-the-data}
 
