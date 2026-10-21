@@ -121,6 +121,25 @@ describe('buildCourts', () => {
         expect(report.eclisWithoutCourt).not.toContain('court-of-appeal-liege')
     })
 
+    it('gives a court the cantons the law assigns it, and the arrondissement they share', () => {
+        const gent = court('enterprise-court-gent')
+        expect(gent?.cantons).toContain('gent-1')
+        expect(gent?.cantons).toContain('brugge-1')
+        expect(gent?.arrondissement).toBeUndefined()
+        expect(court('police-court-eupen')).toMatchObject({
+            cantons: ['eupen-sankt-vith-1', 'eupen-sankt-vith-2'],
+            arrondissement: 'eupen',
+        })
+        expect(court('enterprise-court-gent-brugge')?.cantons).toBeUndefined()
+        expect(court('justice-of-the-peace-gent-1')?.cantons).toBeUndefined()
+    })
+
+    it('reports courts in the law table that the sources lack', () => {
+        expect(report.jurisdictionsWithoutCourt).toContain('court-of-appeal-mons')
+        expect(report.jurisdictionsWithoutCourt).not.toContain('court-of-appeal-liege')
+        expect(report.courtsWithoutJurisdiction).toEqual([])
+    })
+
     it('reports every canton without a court', () => {
         expect(report.cantonsWithoutCourt).toContain('antwerpen-1')
         expect(report.cantonsWithoutCourt).not.toContain('gent-1')

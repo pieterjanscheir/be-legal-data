@@ -12,6 +12,7 @@ import { toId } from '../id.ts'
 import { isCourtPage } from '../sources/catalog.ts'
 import { Snapshots } from '../sources/store.ts'
 import { dedupe, readCourtPage, type CourtPage } from './court-page.ts'
+import { JURISDICTIONS, cantonsIn, namedCantons } from './jurisdictions.ts'
 import { toOpeningHours } from './opening-hours.ts'
 import type { Court, CourtType, Locale } from './types.ts'
 
@@ -114,13 +115,13 @@ interface Named {
 interface Canton extends Named {
     arrondissement: string
     number?: number
+    municipalities: { municipality: string }[]
 }
 interface Arrondissement extends Named {
     judicialArea: string
 }
-interface CantonMunicipalities {
-    arrondissement: string
-    municipalities: { municipality: string }[]
+interface Municipality extends Named {
+    province: string
 }
 
 const read = (path: string): unknown => JSON.parse(readFileSync(path, 'utf8'))
@@ -214,6 +215,10 @@ export interface Report {
     cantonsWithoutCourt: string[]
     /** Courts in the ECLI table that the sources don't have */
     eclisWithoutCourt: string[]
+    /** Courts on the portal (other than justices of the peace) that the law table doesn't have */
+    courtsWithoutJurisdiction: string[]
+    /** Courts in the law table that the sources don't have */
+    jurisdictionsWithoutCourt: string[]
 }
 
 export function buildCourts(root: string, dataDir = 'data'): { courts: Court[]; report: Report } {
@@ -226,6 +231,8 @@ export function buildCourts(root: string, dataDir = 'data'): { courts: Court[]; 
         conflicts: [],
         cantonsWithoutCourt: [],
         eclisWithoutCourt: [],
+        courtsWithoutJurisdiction: [],
+        jurisdictionsWithoutCourt: [],
     }
 
     const cantonByName = new Map<string, Canton>()
@@ -233,11 +240,13 @@ export function buildCourts(root: string, dataDir = 'data'): { courts: Court[]; 
         for (const name of Object.values(c.name))
             cantonByName.set(`${toId(name)}|${c.number ?? ''}`, c)
     }
+    const cantonIds = new Set(cantons.map((c) => c.id))
     const arrondissementIds = new Set(arrondissements.map((a) => a.id))
     // A division sits in a municipality of its name: Brugge, Tongeren-Borgloon, La Louvière
-    const municipalities = read(`${dataDir}/municipalities.json`) as Named[]
+    const municipalities = read(`${dataDir}/municipalities.json`) as Municipality[]
+    const provinceOf = new Map(municipalities.map((m) => [m.id, m.province]))
     const arrondissementOfMunicipality = new Map<string, string>()
-    for (const c of read(`${dataDir}/cantons.json`) as CantonMunicipalities[])
+    for (const c of cantons)
         for (const { municipality } of c.municipalities)
             arrondissementOfMunicipality.set(municipality, c.arrondissement)
     const arrondissementByPlace = new Map<string, string>()
@@ -407,6 +416,29 @@ export function buildCourts(root: string, dataDir = 'data'): { courts: Court[]; 
         if (texts.length > 0 && hours.size === 1 && only) court.openingHours = only
         const codes = ECLI[court.id]
         if (codes) court.ecli = codes
+        if (court.kind === 'court' && court.type !== 'justice-of-the-peace') {
+            // The area the law gives the court, as cantons. Its arrondissement follows from
+            // them, rather than from the place in its name: a court of assize covers a
+            // province, which may hold several arrondissements (Liège holds Eupen too)
+            const area = JURISDICTIONS[court.id]
+            if (!area) report.courtsWithoutJurisdiction.push(court.id)
+            else {
+                court.cantons = cantonsIn(area, cantons, areaOf, provinceOf)
+                if (court.cantons.length === 0)
+                    report.conflicts.push(`${court.id}: covers no canton`)
+                const held = new Set(
+                    court.cantons.map((id) => cantons.find((c) => c.id === id)?.arrondissement),
+                )
+                const [only] = held
+                if (held.size === 1 && only !== undefined) {
+                    if (court.arrondissement !== undefined && court.arrondissement !== only)
+                        report.conflicts.push(
+                            `${court.id}: named after ${court.arrondissement}, but the law puts it in ${only}`,
+                        )
+                    court.arrondissement = only
+                } else delete court.arrondissement
+            }
+        }
         court.contacts = dedupe(court.contacts)
         courts.push(court)
     }
@@ -414,6 +446,10 @@ export function buildCourts(root: string, dataDir = 'data'): { courts: Court[]; 
     const served = new Set(courts.map((c) => c.canton))
     report.cantonsWithoutCourt = cantons.filter((c) => !served.has(c.id)).map((c) => c.id)
     report.eclisWithoutCourt = Object.keys(ECLI).filter((id) => !drafts.has(id))
+    report.jurisdictionsWithoutCourt = Object.keys(JURISDICTIONS).filter((id) => !drafts.has(id))
+    for (const [id, area] of Object.entries(JURISDICTIONS))
+        for (const canton of namedCantons(area))
+            if (!cantonIds.has(canton)) report.conflicts.push(`${id}: no canton "${canton}"`)
 
     courts.sort((a, b) => a.id.localeCompare(b.id))
     return { courts: courts.map(ordered), report }
@@ -430,6 +466,7 @@ function ordered(c: Court): Court {
         judicialArea: c.judicialArea,
         ...(c.arrondissement ? { arrondissement: c.arrondissement } : {}),
         ...(c.canton ? { canton: c.canton } : {}),
+        ...(c.cantons ? { cantons: c.cantons } : {}),
         ...(c.ecli ? { ecli: c.ecli } : {}),
         ...(c.address ? { address: c.address } : {}),
         contacts: c.contacts,

@@ -51,7 +51,7 @@ export function toCsv(rows: Row[]): string {
 
 /**
  * A record's validity period. A record can have several versions with the same id, so the
- * territory tables always have these columns, even while every value is empty.
+ * tables always have these columns, even while every value is empty.
  */
 const validity = (r: Validity) => ({ valid_from: r.validFrom, valid_to: r.validTo })
 
@@ -111,6 +111,7 @@ export const tables: Record<string, Row[]> = {
     ),
     courts: courts.map((c) => ({
         id: c.id,
+        ...validity(c),
         type: c.type,
         kind: c.kind,
         court: c.court,
@@ -131,8 +132,13 @@ export const tables: Record<string, Row[]> = {
         website_de: c.website.de,
     })),
     'court-contacts': courts.flatMap((c) => contactRows('court', c.id, c.contacts)),
+    // The area of each court other than a justice of the peace, whose canton is in courts.csv
+    'court-cantons': courts.flatMap((c) =>
+        (c.cantons ?? []).map((canton) => ({ court: c.id, canton })),
+    ),
     prisons: prisons.map((p) => ({
         id: p.id,
+        ...validity(p),
         kind: p.kind,
         name_nl: p.name.nl,
         name_fr: p.name.fr,
@@ -145,6 +151,7 @@ export const tables: Record<string, Row[]> = {
     'prison-contacts': prisons.flatMap((p) => contactRows('prison', p.id, p.contacts)),
     'houses-of-justice': housesOfJustice.map((h) => ({
         id: h.id,
+        ...validity(h),
         community: h.community,
         name: h.name.nl ?? h.name.fr ?? h.name.de,
         ovo: h.ovo,

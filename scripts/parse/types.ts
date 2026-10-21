@@ -11,13 +11,14 @@ export type { CourtType } from '../../src/courts.ts'
 
 export type Court = Omit<
     PublishedCourt,
-    'id' | 'court' | 'judicialArea' | 'arrondissement' | 'canton'
+    'id' | 'court' | 'judicialArea' | 'arrondissement' | 'canton' | 'cantons'
 > & {
     id: string
     court?: string
     judicialArea: string
     arrondissement?: string
     canton?: string
+    cantons?: string[]
 }
 export type Prison = Omit<PublishedPrison, 'id'> & { id: string }
 export type HouseOfJustice = Omit<PublishedHouseOfJustice, 'id'> & { id: string }

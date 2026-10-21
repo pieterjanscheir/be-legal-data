@@ -1,17 +1,20 @@
 import { describe, expect, it } from 'vitest'
 
 import {
+    appliesOn,
     arrondissements,
     cantons,
     courts,
     findCourts,
     getContact,
     getCourt,
+    getCourtsForCanton,
     getDivisions,
     judicialAreas,
     getInterestRate,
     getLatestKnownRateDate,
     interestRates,
+    toDay,
     type InterestType,
 } from '../src'
 
@@ -22,9 +25,15 @@ const consecutive = <T>(items: readonly T[]): [T, T][] =>
         return next === undefined ? [] : [[item, next] as [T, T]]
     })
 
+// The records that apply today; the files hold every version (validFrom, validTo)
+const today = toDay(new Date())
+const current = courts.filter((c) => appliesOn(c, today))
+
 describe('data integrity', () => {
-    it('has unique court ids', () => {
-        const ids = courts.map((c) => c.id)
+    it('has one version of each court per day: unique (id, validFrom), and no overlaps', () => {
+        const keys = courts.map((c) => `${c.id}|${c.validFrom ?? ''}`)
+        expect(new Set(keys).size).toBe(keys.length)
+        const ids = current.map((c) => c.id)
         expect(new Set(ids).size).toBe(ids.length)
     })
 
@@ -68,7 +77,7 @@ describe('data integrity', () => {
     })
 
     it('has a justice of the peace for every canton, serving only that canton', () => {
-        const served = courts
+        const served = current
             .filter((c) => c.type === 'justice-of-the-peace' && c.kind === 'court')
             .map((c) => c.canton)
         expect([...served].sort()).toEqual(cantons.map((c) => c.id).sort())
@@ -78,9 +87,58 @@ describe('data integrity', () => {
         }
     })
 
+    it('gives every court other than a justice of the peace the cantons it covers', () => {
+        const cantonIds = new Set(cantons.map((c) => c.id))
+        for (const c of courts) {
+            if (c.kind === 'court' && c.type !== 'justice-of-the-peace') {
+                expect(c.cantons?.length, c.id).toBeGreaterThan(0)
+                for (const id of c.cantons ?? []) expect(cantonIds, `${c.id}: ${id}`).toContain(id)
+            } else expect(c.cantons, c.id).toBeUndefined()
+        }
+    })
+
+    it("keeps a court's cantons within its arrondissement and judicial area", () => {
+        const arrondissementOf = new Map<string, string>(
+            cantons.map((c) => [c.id, c.arrondissement]),
+        )
+        const areaOf = new Map<string, string>(arrondissements.map((a) => [a.id, a.judicialArea]))
+        for (const c of courts) {
+            const held = new Set((c.cantons ?? []).map((id) => arrondissementOf.get(id)))
+            if (c.cantons)
+                expect(c.arrondissement, c.id).toBe(held.size === 1 ? [...held][0] : undefined)
+            for (const arrondissement of held)
+                expect(areaOf.get(arrondissement ?? ''), `${c.id}: ${arrondissement ?? ''}`).toBe(
+                    c.judicialArea,
+                )
+        }
+    })
+
+    // Art. 3–5 of the annex: every canton falls under one court of each type, or a Dutch- and
+    // a French-speaking one in Brussels
+    it.each([
+        'police-court',
+        'court-of-first-instance',
+        'enterprise-court',
+        'labour-court',
+        'court-of-appeal',
+        'labour-court-of-appeal',
+        'court-of-assize',
+    ])('puts every canton under one %s, or one per language in Brussels', (type) => {
+        for (const canton of cantons) {
+            const covering = current.filter(
+                (c) => c.kind === 'court' && c.type === type && c.cantons?.includes(canton.id),
+            )
+            const languages = covering.map((c) => /-(nl|fr)$/.exec(c.id)?.[1] ?? '-').sort()
+            expect(
+                [['-'], ['fr', 'nl']],
+                `${canton.id}: ${covering.map((c) => c.id).join(', ')}`,
+            ).toContainEqual(languages)
+        }
+    })
+
     it('has every kind of court', () => {
         const count = (type: string) =>
-            courts.filter((c) => c.type === type && c.kind === 'court').length
+            current.filter((c) => c.type === type && c.kind === 'court').length
         expect(count('court-of-appeal')).toBe(5)
         expect(count('labour-court-of-appeal')).toBe(5)
         // 12 arrondissements, with Brussels split by language
@@ -174,6 +232,31 @@ describe('courts', () => {
         expect(
             findCourts({ kind: 'court', type: 'court-of-appeal', judicialArea: 'mons' }),
         ).toEqual([getCourt('court-of-appeal-mons')])
+    })
+
+    it('lists the courts of a canton: one of each type', () => {
+        expect(getCourtsForCanton('gent-1').map((c) => c.id)).toEqual([
+            'court-of-appeal-gent',
+            'court-of-assize-oost-vlaanderen',
+            'court-of-first-instance-oost-vlaanderen',
+            'enterprise-court-gent',
+            'justice-of-the-peace-gent-1',
+            'labour-court-gent',
+            'labour-court-of-appeal-gent',
+            'police-court-oost-vlaanderen',
+        ])
+        // The capital's cantons have both language courts; Halle-Vilvoorde its own police court
+        expect(
+            getCourtsForCanton('etterbeek')
+                .filter((c) => c.type === 'police-court')
+                .map((c) => c.id),
+        ).toEqual(['police-court-brussel-fr', 'police-court-brussel-nl'])
+        expect(
+            getCourtsForCanton('halle')
+                .filter((c) => c.type === 'police-court')
+                .map((c) => c.id),
+        ).toEqual(['police-court-halle'])
+        expect(getCourtsForCanton('no-such-canton')).toEqual([])
     })
 
     it("lists a court's divisions", () => {

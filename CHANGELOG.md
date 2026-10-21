@@ -34,10 +34,18 @@ divisions and seats instead of 46, and every canton has its justice of the peace
 - Most phone numbers changed: the courts moved to central `02 682` numbers. 21 bank accounts
   that were in the hand-made data aren't on the courts' pages any more and are gone.
 
-**Time.** Territory records can carry a validity period (`validFrom`, `validTo`), the territory
-data describes 1 January 2025 onwards (`territoryCoverage`), and the territory lookups and
-`findJusticesOfThePeace` take an optional day: `getCantonsForMunicipality('44021', { on:
-'2025-09-15' })`. A day before the coverage throws a `RangeError`.
+**Time.** Every record carries a validity period (`validFrom`, `validTo`), every dataset says
+from which day it describes the situation (`territoryCoverage` and `courtsCoverage`: 1 January
+2025; `prisonsCoverage` and `housesOfJusticeCoverage`: 20 October 2026, when their sites were
+first read), and every lookup takes an optional day: `getCantonsForMunicipality('44021', { on:
+'2025-09-15' })`, `getCourt(id, { on })`, `findCourts(filter, { on })`, `getPrison(id, { on })`.
+A day before the coverage throws a `RangeError`. The exported arrays hold every version of a
+record; a lookup by id without a day gives today's version.
+
+**Scraped records are retired, never deleted.** When a source stops listing a court, prison or
+house of justice, the weekly build keeps its record with a `validTo` (the day before the check
+that missed it) instead of removing it, and a record the source starts listing gets a
+`validFrom`. Ids, once published, stay.
 
 **Legal basis.** A canton's `legalBasis` is `{ url, provision }`: the annex's ELI link (numac
 1967101058, not the Justel file number 1967101007) and the section.
@@ -82,6 +90,19 @@ OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
 
 ### Added
 
+- `ids.lock.json`: every id the package has published, per dataset. `pnpm generate` adds new
+  ids and never removes one, and the tests fail when a locked id is missing from the data, so a
+  record can't disappear or be renamed by accident. Removing an id is a deliberate act, for a
+  major version.
+- Every court other than a justice of the peace lists the cantons it covers (`cantons`), as the
+  annex to the Judicial Code (art. 3–5) and art. 114 of the Code set them, from a law table in
+  `scripts/parse/jurisdictions.ts` that the build checks against the portal both ways. A
+  court's `arrondissement` now follows from its cantons: the courts of appeal and labour court
+  of appeal of Mons and the court of assize of Brussels-Capital gain one, the court of assize
+  of Liège, which covers Eupen too, loses it.
+- `findCompetentCourts(municipalityId, type)`: which court of a type is competent for a
+  municipality, including the Halle and Vilvoorde police courts and both language courts in
+  Brussels; `getCourtsForCanton(cantonId)`; and a `court-cantons.csv` table in the releases.
 - Prisons: the 39 prisons and detention houses, in `data/prisons.json` and
   `be-legal-data/prisons`.
 - Houses of justice: the 14 Flemish (with OVO number) and 13 French-speaking houses, in

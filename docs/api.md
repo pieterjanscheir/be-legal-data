@@ -5,7 +5,7 @@ Everything is exported from the package root, and each dataset also has its own 
 ```ts
 import { getCanton, getInterestRate /* … */ } from 'be-legal-data'
 
-// Only what you use: 12 KB for the interest rates instead of everything
+// Only what you use: the interest rates alone are a few kilobytes
 import { getInterestRate } from 'be-legal-data/interest-rates'
 import { getCourt, getJusticeOfThePeace } from 'be-legal-data/courts'
 import { getCanton, getCantonsForMunicipality } from 'be-legal-data/territory'
@@ -30,7 +30,7 @@ Conventions:
 - Lookups by id return `undefined` when nothing matches; list functions return an empty array.
 - Functions only throw for invalid input: a malformed day, or a day before the data's
   coverage (`RangeError`). Never for missing data.
-- Territory lookups take an optional day, `{ on: '2025-06-01' }` or a `Date`, and answer for
+- Every lookup takes an optional day, `{ on: '2025-06-01' }` or a `Date`, and answers for
   today without one. A lookup by id always finds a known record: today's version, or the last
   one of a record that has ended. See [time](#time).
 - Exported datasets are `readonly`: copy before sorting or changing (`[...courts].sort()`).
@@ -116,7 +116,7 @@ getArrondissementForMunicipality('44021')?.id // 'oost-vlaanderen'
 
 ```ts
 function getCourt(id: CourtId): Court
-function getCourt(id: string): Court | undefined
+function getCourt(id: string, options?: OnDay): Court | undefined
 ```
 
 A court, division or seat. Ids are the court `type` followed by the place:
@@ -130,10 +130,12 @@ getCourt('court-of-appeal-brussel').name // { nl: 'Hof van Beroep Brussel', fr: 
 
 ```ts
 function getJusticeOfThePeace(cantonId: CantonId): Court
-function getJusticeOfThePeace(cantonId: string): Court | undefined
+function getJusticeOfThePeace(cantonId: string, options?: OnDay): Court | undefined
 ```
 
-The justice of the peace of a canton. Every canton has one.
+The justice of the peace of a canton. Every canton has one. A justice of the peace that sits in
+several places (Philippeville, in Couvin and Florennes) has no address or contacts of its own:
+its seats have them, see `getDivisions`.
 
 ```ts
 const [canton] = getCantonsForMunicipality('44088')
@@ -143,28 +145,47 @@ getJusticeOfThePeace(canton.id).address // Merelbeke-Melle's court
 ### `getDivisions(courtId)`
 
 ```ts
-function getDivisions(courtId: string): Court[]
+function getDivisions(courtId: string, options?: OnDay): Court[]
 ```
 
-A court's divisions, or the seats of a justice of the peace that sits in several places; empty
-for a court without.
+A court's divisions, or the seats of a justice of the peace that sits in several places, on a
+day (today by default); empty for a court without.
 
 ```ts
 getDivisions('labour-court-gent').map((c) => c.id) // ['labour-court-gent-aalst', …]
 ```
 
+### `getCourtsForCanton(cantonId)`
+
+```ts
+function getCourtsForCanton(cantonId: string, options?: OnDay): Court[]
+```
+
+The courts whose area holds a canton on a day (today by default): its justice of the peace and,
+of each other type, the court that covers it (the court as a whole, not its divisions); in
+Brussels both language courts of a type. Empty for an unknown canton.
+
+```ts
+getCourtsForCanton('gent-1').map((c) => c.id)
+// ['court-of-appeal-gent', 'court-of-assize-oost-vlaanderen', 'court-of-first-instance-oost-vlaanderen', …]
+```
+
 ### `findCourts(filter)`
 
 ```ts
-function findCourts(filter: {
-    type?: CourtType
-    kind?: 'court' | 'division' | 'seat'
-    arrondissement?: string
-    judicialArea?: string
-}): Court[]
+function findCourts(
+    filter: {
+        type?: CourtType
+        kind?: 'court' | 'division' | 'seat'
+        arrondissement?: string
+        judicialArea?: string
+    },
+    options?: OnDay,
+): Court[]
 ```
 
-The courts that match every given filter; an empty filter returns every court.
+The courts that match every given filter and apply on a day (today by default); an empty
+filter returns every court of that day.
 
 ```ts
 findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' }) // its divisions there
@@ -225,7 +246,7 @@ formatIban('BE73679200844560') // 'BE73 6792 0084 4560'
 
 ```ts
 function getPrison(id: PrisonId): Prison
-function getPrison(id: string): Prison | undefined
+function getPrison(id: string, options?: OnDay): Prison | undefined
 ```
 
 ```ts
@@ -238,7 +259,7 @@ getPrison('gevangenis-gent').name.fr // 'Prison de Gand'
 
 ```ts
 function getHouseOfJustice(id: HouseOfJusticeId): HouseOfJustice
-function getHouseOfJustice(id: string): HouseOfJustice | undefined
+function getHouseOfJustice(id: string, options?: OnDay): HouseOfJustice | undefined
 ```
 
 ```ts
@@ -249,6 +270,26 @@ getHouseOfJustice('justitiehuis-gent').ovo // 'OVO001917'
 
 Questions that combine datasets. They're in the package root only, since they need both the
 territory and the courts.
+
+### `findCompetentCourts(municipalityId, type)`
+
+```ts
+function findCompetentCourts(municipalityId: string, type: CourtType, options?: OnDay): Court[]
+```
+
+The courts of a type competent for a municipality on a day (today by default), by REFNIS code:
+the courts whose area, as the law sets it (`cantons`), holds one of the municipality's cantons.
+One court for most municipalities; in Brussels the Dutch- and the French-speaking court; for a
+city split over cantons, every justice of the peace that serves one of them. It gives the court
+as a whole: which of its divisions hears a case is set by royal decree and isn't in the data
+yet, so pick among `getDivisions(court.id)`. Empty for an unknown code.
+
+```ts
+findCompetentCourts('23088', 'police-court').map((c) => c.id) // ['police-court-vilvoorde']
+findCompetentCourts('21004', 'court-of-first-instance').map((c) => c.id)
+// ['court-of-first-instance-brussel-fr', 'court-of-first-instance-brussel-nl']
+findCompetentCourts('44021', 'labour-court').map((c) => c.id) // ['labour-court-gent']
+```
 
 ### `findJusticesOfThePeace(municipalityId)`
 
@@ -311,8 +352,8 @@ The last day for which a rate is on file, `YYYY-MM-DD`.
 
 ## Time
 
-Territory records have a validity period, and territory lookups take a day. The helpers are
-exported for your own records.
+Every record has a validity period, and every lookup takes a day. The helpers are exported for
+your own records.
 
 ```ts
 interface Validity {
@@ -325,14 +366,25 @@ interface OnDay {
 }
 
 const territoryCoverage: { from: '2025-01-01' }
+const courtsCoverage: { from: '2025-01-01' }
+const prisonsCoverage: { from: '2026-10-20' }
+const housesOfJusticeCoverage: { from: '2026-10-20' }
 
 function appliesOn(record: Validity, day: string): boolean
 function toDay(date: Date | string): string // 'YYYY-MM-DD', or a RangeError
 ```
 
-The territory data describes 1 January 2025 onwards; a lookup for an earlier day throws a
-`RangeError` rather than answer with today's map. Earlier versions are planned
+Each dataset says from which day it describes the situation; a lookup for an earlier day
+throws a `RangeError` rather than answer with today's map. The territory and the list of courts
+follow from the law as amended for 1 January 2025; prisons and houses of justice are known from
+the day their sites were first read. Earlier versions are planned
 ([#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)).
+
+The exported arrays (`courts`, `prisons`, …) hold every version of every record. A record the
+source stops listing isn't deleted: it keeps its id and gets a `validTo`, the day before the
+weekly check that missed it. One the source starts listing gets a `validFrom`. So a lookup by id
+without a day returns today's version, or the last version of a record that has ended: check
+`validTo` before you file something there.
 
 ## Datasets
 

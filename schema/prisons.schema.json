@@ -13,6 +13,16 @@
     "Prison": {
       "type": "object",
       "properties": {
+        "validFrom": {
+          "type": "string",
+          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts.",
+          "format": "date"
+        },
+        "validTo": {
+          "type": "string",
+          "description": "Last day the record applies, YYYY-MM-DD",
+          "format": "date"
+        },
         "id": {
           "$ref": "#/definitions/PrisonId",
           "description": "Stable id from the name in the local language (Dutch in Brussels), without articles: 'gevangenis-gent', 'prison-lantin', 'detentiehuis-kortrijk'"
