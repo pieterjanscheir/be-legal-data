@@ -1,0 +1,140 @@
+# Canton boundaries
+
+<script setup>
+import { data as stats } from '../.vitepress/stats.data'
+
+const kb = (bytes) => `${Math.round(bytes / 1024)} KB`
+const mb = (bytes) => `${(bytes / 1024 / 1024).toFixed(1)} MB`
+</script>
+
+File: `data/canton-boundaries.json`. The boundary of each of the {{ stats.cantons }} judicial
+cantons as GeoJSON geometry, as the National Geographic Institute (NGI) digitised it from the
+annex to the Judicial Code.
+
+## Why it's useful
+
+- **The canton of an address in a split city.** {{ stats.splitCantons }} cantons cover only
+  part of a municipality (Antwerpen, Gent, Brussel, Luik, Charleroi, …), and
+  `getCantonsForMunicipality` can only list the candidates. With the address geocoded,
+  `findCantonsAt(lon, lat)` gives the one canton, and so the justice of the peace.
+- **Maps.** The geometry is standard GeoJSON in WGS 84: draw the cantons on a map, join
+  them to other geodata, or load them into PostGIS, QGIS or a spreadsheet with a map.
+- **Checking the legal text.** The NGI's polygons are a second reading of the same annex,
+  next to the `territory` text of each canton.
+
+::: warning The legal text wins
+The boundary is the NGI's interpretation of the annex to the Judicial Code, digitised on
+cadastral municipality boundaries, watercourses and roads. The annex itself, quoted verbatim
+in each canton's `territory`, is the law. For a point close to a boundary line, read the
+text; it names the streets and the house numbers.
+:::
+
+## Source and updates
+
+|              |                                                                                                                                                                                                                                                   |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Source       | NGI, [Judicial cantons and arrondissements](https://www.geo.be/catalog/details/e1f61c40-623a-11eb-9e7c-186571a04de3) (Territorial Divisions) on geo.be: the GeoPackage in WGS 84 (EPSG:4326), feature type `judicialcanton`, revised 16 July 2026 |
+| Licence      | © NGI, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)                                                                                                                                                                                  |
+| Built by     | `scripts/parse/boundaries.ts` from the weekly snapshot of the GeoPackage                                                                                                                                                                          |
+| Changes when | The NGI publishes a new version: every year, when the FPS Finance's municipal boundaries are updated, or when a law changes the annex                                                                                                             |
+| Covers       | 21 October 2026 onwards, the day the file was first read: lookups for an earlier day throw a `RangeError` ([time](/api#time))                                                                                                                     |
+| Checked      | Every week, by the [sources workflow](/guide/data-quality#how-the-data-is-built): the build fails when a canton has no boundary or a boundary matches no canton                                                                                   |
+
+How the NGI drew the boundaries, in its own words: where the annex refers to municipal
+boundaries, it used the cadastral boundaries of the FPS Finance; where it refers to
+watercourses or roads, the NGI's own topographic data; where it refers to former
+municipalities, the NGI's boundaries of those. The scale is 1:10 000.
+
+## Fields
+
+| Field                  | Type                   | Description                                                                                                                                                           |
+| ---------------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                   | `CantonId`             | The canton's id: a canton has one boundary, which takes its key                                                                                                       |
+| `validFrom`, `validTo` | string?                | The days the record applies; none: since the coverage starts, or still applies. See [time](/api#time)                                                                 |
+| `canton`               | `CantonId`             | The canton the boundary belongs to                                                                                                                                    |
+| `ngiId`                | string                 | The NGI's identifier of the object (its `tgid`), a GUID                                                                                                               |
+| `cantonCode`           | `{ nl, fr }`           | The canton code in the NGI's data: six digits (`248112` for Gent 1), with an `N` or `F` prefix per language in Brussels-Capital and in Sint-Genesius-Rode (`N238104`) |
+| `geometry`             | `MultiPolygon`         | GeoJSON ([RFC 7946](https://www.rfc-editor.org/rfc/rfc7946)): WGS 84, longitude first, exterior rings counter-clockwise, holes clockwise                              |
+| `sources`              | `{ url, retrieved }[]` | The NGI file the record was read from                                                                                                                                 |
+
+```ts
+interface CantonBoundary {
+    id: CantonId // 'gent-1'
+    canton: CantonId // 'gent-1'
+    ngiId: string // '{3905ED53-F233-4C4E-8225-4E43FEC7C541}'
+    cantonCode: Bilingual // { nl: '248114', fr: '248114' }
+    geometry: MultiPolygon // { type: 'MultiPolygon', coordinates: [[[[lon, lat], …]]] }
+    sources: SourceRef[]
+}
+```
+
+The geometry is the NGI's, vertex for vertex: nothing is simplified. Coordinates are rounded to
+7 decimals, about a centimetre, below the source's own precision. Every boundary is one
+`MultiPolygon`, even when it has one polygon, so every record has the same shape.
+
+### How cantons are matched to the NGI's features
+
+The NGI names each feature in Dutch and in French (`Eerste gerechtelijk kanton Gent`,
+`Premier canton judiciaire de Gand`). A feature is the boundary of a canton when both names,
+turned into an id the [usual way](/guide/identifiers), give that canton and agree on its
+number. Seven features are named by their local name in both languages where the annex uses an
+exonym (`Canton judiciaire de Halle`, where the annex says `Hal`; `Gerechtelijk kanton Huy`,
+where it says `Hoei`); those are mapped by their canton code in `CANTON_ALIASES` in the parser.
+Anything else stops the build.
+
+## Size
+
+The boundaries are by far the largest dataset: about a million positions. They have their own
+entry point, `be-legal-data/canton-boundaries`, and the package root doesn't re-export them,
+so nothing loads them unless it asks:
+
+<table v-if="stats.sizes">
+<thead><tr><th>Entry point</th><th style="text-align:right">JavaScript loaded</th><th style="text-align:right">gzip</th></tr></thead>
+<tbody>
+<tr v-for="s in stats.sizes.filter((s) => s.entry === 'be-legal-data' || s.entry.endsWith('canton-boundaries'))" :key="s.entry">
+<td><code>{{ s.entry }}</code></td><td style="text-align:right">{{ mb(s.raw) }}</td><td style="text-align:right">{{ mb(s.gzip) }}</td>
+</tr>
+</tbody>
+</table>
+<p v-else class="bld-muted">Sizes are measured from the build when the site is built (<code>pnpm build</code> first).</p>
+
+The raw file, `data/canton-boundaries.json`, is in the npm package and in every release, so
+Python, PostGIS and GIS tools can read it without the JavaScript.
+
+## Finding the canton of a point
+
+```ts
+import { findCantonsAt, getCantonBoundary } from 'be-legal-data/canton-boundaries'
+import { getJusticeOfThePeace } from 'be-legal-data/courts'
+
+// Longitude first, then latitude, as GeoJSON orders them
+const [canton] = findCantonsAt(3.7268, 51.053) // Sint-Baafskathedraal, Gent → gent-1
+getJusticeOfThePeace(canton.id).address // where to file
+
+findCantonsAt(2.3522, 48.8566) // [] : Paris, outside Belgium
+getCantonBoundary('gent-1').geometry // the MultiPolygon
+```
+
+`findCantonsAt` returns one canton for a point in Belgium, none outside it, and both cantons
+for a point exactly on the line between two. It needs no dependency: a plain point-in-polygon
+test over the boundaries, about a millisecond per lookup. Geocoding the address (street and
+number to coordinates) is up to you: the regions' address registers (Flanders' Adressenregister,
+Brussels' UrbIS, Wallonia's ICAR) and the federal BeSt address data on geo.be do that.
+
+## In other languages
+
+The file is plain GeoJSON geometry per record, so any GIS reads it. In Python with Shapely:
+
+```python
+import json
+from shapely.geometry import Point, shape
+
+boundaries = json.load(open("data/canton-boundaries.json"))
+polygons = {b["canton"]: shape(b["geometry"]) for b in boundaries}
+
+def cantons_at(lon: float, lat: float) -> list[str]:
+    point = Point(lon, lat)
+    return [canton for canton, polygon in polygons.items() if polygon.covers(point)]
+
+cantons_at(3.7268, 51.053)  # ['gent-1']
+```

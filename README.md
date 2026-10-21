@@ -17,6 +17,7 @@ It's reference data, not legal advice: check the official sources before relying
 | [`data/judicial-areas.json`](data/judicial-areas.json)       | The 5 judicial areas (courts of appeal)                                                                                                                                                                                                                                                                      | Judicial Code, annex art. 5                         |
 | [`data/arrondissements.json`](data/arrondissements.json)     | The 12 judicial arrondissements and their judicial area                                                                                                                                                                                                                                                      | Judicial Code, annex art. 4                         |
 | [`data/cantons.json`](data/cantons.json)                     | All 162 judicial cantons: name, seat, municipalities, the legal description of their area, and its ELI                                                                                                                                                                                                       | Judicial Code, annex art. 1 (generated)             |
+| [`data/canton-boundaries.json`](data/canton-boundaries.json) | The boundary of every canton as GeoJSON geometry (WGS 84), to find the canton of a point in a split city                                                                                                                                                                                                     | NGI, geo.be (fetched weekly)                        |
 | [`data/municipalities.json`](data/municipalities.json)       | The 565 municipalities with REFNIS code, province and region                                                                                                                                                                                                                                                 | Statbel (generated)                                 |
 | [`data/regions.json`](data/regions.json)                     | The 3 regions, named in Dutch, French and German                                                                                                                                                                                                                                                             | Statbel REFNIS code list (generated weekly)         |
 | [`data/provinces.json`](data/provinces.json)                 | The 10 provinces, with their region                                                                                                                                                                                                                                                                          | Statbel REFNIS code list (generated weekly)         |
@@ -30,10 +31,11 @@ The official sources are the truth; the files in `data/` are built from them. Ev
 licence, coverage and when it was last checked. Each [release](https://github.com/pieterjanscheir/be-legal-data/releases)
 has the data as JSON and CSV in one zip.
 
-Planned: the highest courts, history before 2025, canton boundaries, bailiffs, police zones and
-the cadastre offices. See the [roadmap](https://pieterjanscheir.github.io/be-legal-data/data/roadmap).
+Planned: the highest courts, history before 2025, bailiffs, police zones and the cadastre
+offices. See the [roadmap](https://pieterjanscheir.github.io/be-legal-data/data/roadmap).
 
-Municipality, province and region data © Statbel, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+Municipality, province and region data © Statbel, canton boundaries © National Geographic
+Institute (NGI), both [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 ## Using it
 
@@ -65,6 +67,7 @@ findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' })
 const [canton] = getCantonsForMunicipality('44088') // merelbeke-melle
 getJusticeOfThePeace(canton.id).address // where to file
 getCantonsForMunicipality('44021', { on: '2025-09-15' }) // Gent 1–5 on that day: a split city
+findCantonsAt(3.7268, 51.053) // [gent-1]: the canton of a point (be-legal-data/canton-boundaries)
 findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde]: which court, by REFNIS code
 
 getInterestRate('2024-06-15', 'legal') // { rate: 5.75, period: { from: '2024-01-01', to: '2024-12-31' } }
@@ -76,7 +79,8 @@ silently using 0 %. Malformed days, and days before a dataset's coverage, throw 
 
 Import a single dataset to keep bundles small: `be-legal-data/interest-rates`,
 `be-legal-data/courts`, `be-legal-data/prisons`, `be-legal-data/houses-of-justice`,
-`be-legal-data/territory`.
+`be-legal-data/territory`. The canton boundaries (a million positions of GeoJSON) are only in
+`be-legal-data/canton-boundaries`; the root never loads them.
 
 The raw files are also exported: `import courts from 'be-legal-data/data/courts.json' with { type: 'json' }`.
 
@@ -90,8 +94,8 @@ For spreadsheets, take the CSV tables from a [release](https://github.com/pieter
 
 Every Monday the [sources workflow](.github/workflows/sources.yml) fetches every page of the
 official sources, keeps them as snapshots on the [`sources`](../../tree/sources) branch, rebuilds
-the courts, prisons and houses of justice from them, tests the result, and opens a pull request
-when anything changed. A [freshness check](.github/workflows/freshness.yml) opens an issue when a
+the courts, prisons, houses of justice and canton boundaries from them, tests the result, and
+opens a pull request when anything changed. A [freshness check](.github/workflows/freshness.yml) opens an issue when a
 new interest rate is missing, a dataset is overdue for review or a source is gone.
 
 ```bash
@@ -121,7 +125,8 @@ has to match `version`.
 
 See [known gaps](https://pieterjanscheir.github.io/be-legal-data/data/known-gaps). The main ones:
 the highest courts aren't on the courts' portal yet, history before 1 January 2025 isn't in the
-data (lookups for earlier days throw), and split cities need the street address to pick a canton.
+data (lookups for earlier days throw), and split cities need the address's coordinates to pick a
+canton.
 
 ## Licence
 

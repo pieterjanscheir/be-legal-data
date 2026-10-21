@@ -10,6 +10,7 @@ bijblijft, en hoe ver je elke dataset kunt vertrouwen.
 | -------------------------------- | ---------------------------------------------- | ---------------------------------------- | ----------------------------------------------------------------- | ---------------- |
 | Rechtsgebieden, arrondissementen | Gerechtelijk Wetboek, bijlage art. 4–5         | Met de hand                              | Een wet hertekent de gerechtelijke kaart (zelden; laatst in 2014) | Om de 24 maanden |
 | Kantons                          | Gerechtelijk Wetboek, bijlage art. 1 (nl + fr) | Gegenereerd: `pnpm build:cantons`        | Een wet wijzigt de bijlage; gemeenten fuseren                     | Om de 12 maanden |
+| Kantongrenzen                    | NGI (geo.be)                                   | Wekelijks: snapshots + `pnpm build:data` | Het NGI publiceert een nieuwe versie                              | Wekelijks        |
 | Gemeenten                        | Open data van Statbel                          | Gegenereerd: `pnpm build:cantons`        | Gemeenten fuseren (2019, 2025)                                    | Om de 12 maanden |
 | Gewesten, provincies             | REFNIS-codelijst van Statbel                   | Wekelijks: snapshots + `pnpm build:data` | Statbel wijzigt zijn register (laatst in 1995)                    | Wekelijks        |
 | Hoven en rechtbanken             | tribunaux-rechtbanken.be                       | Wekelijks: snapshots + `pnpm build:data` | Een gerecht verhuist of wijzigt zijn contactgegevens of uren      | Wekelijks        |
@@ -19,8 +20,8 @@ bijblijft, en hoe ver je elke dataset kunt vertrouwen.
 
 Gegenereerde datasets worden nooit met de hand bewerkt. `pnpm build:cantons` parst de officiële
 tekst en weigert iets te schrijven tenzij de Nederlandse en de Franse versie overeenstemmen en
-elke gemeente gedekt is; `pnpm build:data` weigert wanneer een pagina niet te plaatsen is of een
-kanton geen gerecht heeft.
+elke gemeente gedekt is; `pnpm build:data` weigert wanneer een pagina niet te plaatsen is, een
+kanton geen gerecht heeft of een kanton geen grens heeft in het bestand van het NGI.
 
 ## Hoe de data wordt gebouwd {#how-the-data-is-built}
 
@@ -40,8 +41,8 @@ official site ──fetch──> snapshots (sources branch) ──parse──> d
    controle die ze miste), zodat haar id blijft werken en een opzoeking voor een vroegere dag ze
    nog vindt. Een pagina die verschijnt, krijgt een record met een `validFrom`.
 2. **Parsen.** `pnpm build:data` leest de snapshots (`scripts/parse`) en schrijft de hoven en
-   rechtbanken, gevangenissen en justitiehuizen. Het rapporteert wat het niet kan lezen, en
-   faalt wanneer een pagina niet te plaatsen is.
+   rechtbanken, gevangenissen, justitiehuizen en kantongrenzen. Het rapporteert wat het niet kan
+   lezen, en faalt wanneer een pagina niet te plaatsen is.
 3. **Testen.** De workflow typecheckt en draait de tests op de nieuwe data.
 4. **Nazicht.** Als de data veranderd is, opent of actualiseert hij één pull request met de diff
    en de lijst van onleesbare waarden. Iemand controleert die tegen de bronnen en merget ze.
@@ -58,7 +59,9 @@ Belgisch Staatsblad weigert de servers van GitHub
 
 - **Schemavalidatie**: elk databestand voldoet aan zijn [JSON Schema](./schema).
 - **Integriteit**: ids zijn uniek en goed gevormd; elke verwijzing (arrondissement, kanton,
-  gemeente, gerecht) wijst naar een record dat bestaat; elke gemeente ligt in precies één
+  gemeente, gerecht, grens) wijst naar een record dat bestaat; elk kanton heeft één grens,
+  geldige GeoJSON binnen België die optelt tot de oppervlakte van het land zonder overlappingen;
+  elke gemeente ligt in precies één
   kanton of is over meerdere gesplitst; elk kanton blijft binnen de provincies van zijn
   arrondissement; elk kanton heeft precies één vredegerecht; elke afdeling heeft het type en
   het gebied van haar gerecht; elke soort gerecht telt het aantal gerechten dat de wet bepaalt;
@@ -109,8 +112,8 @@ controleren).
   veranderen zonder aankondiging. Elk record zegt van welke pagina's het is gelezen en wanneer
   (`sources`); controleer de pagina van het gerecht (`website`) als het ertoe doet.
 - **De wettekst wint.** Bij gesplitste gemeenten is de `territory` van het kanton de eigen
-  tekst van de wet, letterlijk. Als een samenvatting en de tekst van elkaar afwijken, heeft de
-  tekst gelijk.
+  tekst van de wet, letterlijk. Als een samenvatting, of de [grens](/nl/data/canton-boundaries) van het NGI, en de tekst van
+  elkaar afwijken, heeft de tekst gelijk.
 
 ## Een fout melden {#reporting-a-mistake}
 

@@ -33,9 +33,10 @@ import { data as stats } from '../../.vitepress/stats.data'
 - **Les noms et sièges des cantons** sont en néerlandais et en français seulement : l'annexe au
   Code judiciaire n'a pas de texte allemand consolidé.
 - **Les communes scindées** (Anvers, Gand, Bruxelles, Liège, …) correspondent à plusieurs
-  cantons. Choisir le bon exige l'adresse de rue, et les limites n'existent que sous forme de
-  prose juridique dans `territory`
-  ([#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)).
+  cantons. Choisir le bon exige l'adresse de rue : `findCantonsAt(lon, lat)` le trouve à partir de
+  coordonnées grâce aux [limites des cantons](./canton-boundaries), mais géocoder l'adresse vous
+  revient, et les limites sont la lecture de l'IGN du texte légal de `territory`, qui l'emporte
+  là où ils divergent.
 - **Les codes ECLI** ne sont donnés que là où ils apparaissent dans les décisions publiées ; les
   justices de paix et la plupart des tribunaux de police n'en ont pas.
 - **La maison de justice d'Eupen** manque

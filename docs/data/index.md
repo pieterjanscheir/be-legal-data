@@ -9,6 +9,7 @@ the date it was last checked against them.
 | [Judicial areas](./territory#judicial-areas)   | 5        | Which court of appeal (and labour court of appeal) hears an appeal                |
 | [Arrondissements](./territory#arrondissements) | 12       | Grouping courts, prosecutors and bailiffs; the unit most competence rules use     |
 | [Cantons](./territory#cantons)                 | 162      | Which justice of the peace is competent for an address                            |
+| [Canton boundaries](./canton-boundaries)       | 162      | The canton of a point in a split city; the cantons on a map (GeoJSON)             |
 | [Municipalities](./territory#municipalities)   | 565      | Joining any Belgian address or statistic to the judicial map by REFNIS code       |
 | [Regions](./territory#regions)                 | 3        | The region of a municipality, by REFNIS code, named in three languages            |
 | [Provinces](./territory#provinces)             | 10       | The province of a municipality (none in Brussels), with its region                |
@@ -21,7 +22,8 @@ the date it was last checked against them.
 
 ```
 Judicial area ──< Arrondissement ──< Canton >──< Municipality (REFNIS)
-      │                 │              │
+      │                 │              │  │
+      │                 │              │  └── Canton boundary   the canton's geometry (NGI)
       └───────────── Court ────────────┘  a justice of the peace links to its canton
                         │
                         └──< Division      a division links to its court
@@ -45,7 +47,8 @@ to use from code:
 - **Competence.** The justice of the peace, police court and many other courts are competent
   by place. The law (the annex to the Judicial Code) describes those areas in prose, partly
   street by street. `cantons.json` turns that into a lookup from municipality to canton, and
-  keeps the legal text for the split cities.
+  keeps the legal text for the split cities; `canton-boundaries.json` adds the NGI's geometry,
+  so a point in a split city finds its canton.
 - **Correct names and addresses.** Writs, conclusions and letters must address the right court
   as it names itself, such as `Vredegerecht Gent 1` or
   `Ondernemingsrechtbank Gent - afdeling Brugge`, and reach the right registry. The names are
@@ -61,8 +64,8 @@ to use from code:
 ## What isn't in it (yet)
 
 See [known gaps](./known-gaps) for limitations of the current data and the
-[roadmap](./roadmap) for datasets that are planned: the highest courts, history, canton
-boundaries, bailiffs, police zones and the cadastre and mortgage offices.
+[roadmap](./roadmap) for datasets that are planned: the highest courts, history, bailiffs,
+police zones and the cadastre and mortgage offices.
 
 ::: warning Reference data, not legal advice
 The data is checked against official sources, but sources change and mistakes happen. Check

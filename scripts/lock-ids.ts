@@ -15,6 +15,7 @@ export const DATASETS = [
     'judicial-areas',
     'arrondissements',
     'cantons',
+    'canton-boundaries',
     'regions',
     'provinces',
     'municipalities',

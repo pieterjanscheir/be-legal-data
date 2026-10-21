@@ -40,6 +40,9 @@ import { getCourt } from 'be-legal-data/courts'
 import { getCanton } from 'be-legal-data/territory'
 ```
 
+Les [limites des cantons](/fr/data/canton-boundaries) font exception : un million de positions de
+géométrie, seulement dans `be-legal-data/canton-boundaries`, jamais chargées par la racine du package.
+
 <table v-if="stats.sizes">
 <thead><tr><th>Point d'entrée</th><th style="text-align:right">JavaScript chargé</th><th style="text-align:right">gzip</th></tr></thead>
 <tbody>
@@ -94,6 +97,15 @@ Quand une ville est scindée en plusieurs cantons (Anvers, Gand, Bruxelles, Liè
 plus d'un résultat. C'est l'adresse (la rue) qui tranche, et le `territory` de chaque canton
 contient la description légale de sa partie. Essayez-le sur la
 [page Territoire et cantons](/fr/data/territory#find-the-canton-for-a-municipality).
+
+Avec les coordonnées de l'adresse, les [limites des cantons](/fr/data/canton-boundaries) tranchent :
+
+```ts
+import { findCantonsAt } from 'be-legal-data/canton-boundaries'
+
+const [canton] = findCantonsAt(3.7268, 51.053) // longitude, latitude : gent-1
+const court = getJusticeOfThePeace(canton.id)
+```
 
 ### Quel tribunal pour une commune ? {#which-court-for-a-municipality}
 

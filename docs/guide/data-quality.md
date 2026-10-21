@@ -10,6 +10,7 @@ each dataset.
 | ------------------------------- | ------------------------------------- | ------------------------------------- | --------------------------------------------------- | ------------ |
 | Judicial areas, arrondissements | Judicial Code, annex art. 4–5         | By hand                               | A law redraws the judicial map (rare; last in 2014) | 24 months    |
 | Cantons                         | Judicial Code, annex art. 1 (nl + fr) | Generated: `pnpm build:cantons`       | A law changes the annex; municipalities merge       | 12 months    |
+| Canton boundaries               | NGI (geo.be)                          | Weekly: snapshots + `pnpm build:data` | The NGI publishes a new version                     | Weekly       |
 | Municipalities                  | Statbel open data                     | Generated: `pnpm build:cantons`       | Municipalities merge (2019, 2025)                   | 12 months    |
 | Regions, provinces              | Statbel REFNIS code list              | Weekly: snapshots + `pnpm build:data` | Statbel changes its register (last in 1995)         | Weekly       |
 | Courts                          | tribunaux-rechtbanken.be              | Weekly: snapshots + `pnpm build:data` | A court moves or changes its contacts or hours      | Weekly       |
@@ -19,7 +20,8 @@ each dataset.
 
 Generated datasets are never edited by hand. `pnpm build:cantons` parses the official text and
 refuses to write anything unless the Dutch and French versions agree and every municipality is
-covered; `pnpm build:data` refuses when a page can't be placed or a canton has no court.
+covered; `pnpm build:data` refuses when a page can't be placed, a canton has no court, or a
+canton has no boundary in the NGI's file.
 
 ## How the data is built
 
@@ -38,8 +40,8 @@ official site ──fetch──> snapshots (sources branch) ──parse──> d
    with a `validTo` (the day before the check that missed it), so its id keeps working and a
    lookup for an earlier day still finds it. A page that appears gets a record with a `validFrom`.
 2. **Parse.** `pnpm build:data` reads the snapshots (`scripts/parse`) and writes the courts,
-   prisons and houses of justice. It reports what it can't read, and fails when a page can't be
-   placed.
+   prisons, houses of justice and canton boundaries. It reports what it can't read, and fails
+   when a page can't be placed.
 3. **Test.** The workflow typechecks and runs the tests on the new data.
 4. **Review.** When the data changed, it opens or updates one pull request with the diff and the
    list of unreadable values. A person checks it against the sources and merges it.
@@ -56,7 +58,8 @@ Official Journal's site refuses GitHub's servers
 
 - **Schema validation**: every data file matches its [JSON Schema](./schema).
 - **Integrity**: ids are unique and well-formed; every reference (arrondissement, canton,
-  municipality, court) points at a record that exists; every municipality is in exactly one
+  municipality, court, boundary) points at a record that exists; every canton has one boundary,
+  valid GeoJSON within Belgium that adds up to the country's area without overlaps; every municipality is in exactly one
   canton or split over several; every canton stays within its arrondissement's provinces; every
   canton has exactly one justice of the peace; every division has its court's type and area;
   every kind of court has the number of courts the law sets; every canton falls under one
@@ -102,7 +105,8 @@ Run them yourself with `pnpm test:freshness` (add `FRESHNESS_ONLINE=1` to check 
   change without notice. Every record says which pages it was read from and when (`sources`);
   check the court's page (`website`) when it matters.
 - **Legal text wins.** For split municipalities, the canton's `territory` is the law's own
-  text, verbatim. When a summary and the text disagree, the text is right.
+  text, verbatim. When a summary, or the NGI's [boundary](/data/canton-boundaries), and the
+  text disagree, the text is right.
 
 ## Reporting a mistake
 

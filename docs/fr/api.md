@@ -9,14 +9,16 @@ import { getCanton, getInterestRate /* … */ } from 'be-legal-data'
 import { getInterestRate } from 'be-legal-data/interest-rates'
 import { getCourt, getJusticeOfThePeace } from 'be-legal-data/courts'
 import { getCanton, getCantonsForMunicipality } from 'be-legal-data/territory'
+import { findCantonsAt } from 'be-legal-data/canton-boundaries'
 import { getPrison } from 'be-legal-data/prisons'
 import { getHouseOfJustice } from 'be-legal-data/houses-of-justice'
 ```
 
 | Point d'entrée                       | Contenu                                                          |
 | ------------------------------------ | ---------------------------------------------------------------- |
-| `be-legal-data`                      | Tout ce qui suit                                                 |
+| `be-legal-data`                      | Tout ce qui suit, sauf les limites des cantons                   |
 | `be-legal-data/territory`            | Ressorts, arrondissements, cantons, communes, provinces, régions |
+| `be-legal-data/canton-boundaries`    | La géométrie des cantons, et `findCantonsAt`                     |
 | `be-legal-data/courts`               | Cours et tribunaux, et les helpers de coordonnées                |
 | `be-legal-data/prisons`              | Prisons, et les helpers de coordonnées                           |
 | `be-legal-data/houses-of-justice`    | Maisons de justice, et les helpers de coordonnées                |
@@ -158,6 +160,39 @@ function getRegionForMunicipality(id: string, options?: OnDay): Region | undefin
 
 ```ts
 getRegionForMunicipality('21004')?.name.fr // 'Région de Bruxelles-Capitale'
+```
+
+## Limites des cantons {#canton-boundaries}
+
+Seulement dans `be-legal-data/canton-boundaries` : la géométrie représente environ un million de
+positions, si bien que la racine du package ne la réexporte pas (les types, si). Voyez la
+[page du jeu de données](/fr/data/canton-boundaries).
+
+### `findCantonsAt(longitude, latitude)` {#findcantonsat-longitude-latitude}
+
+```ts
+function findCantonsAt(longitude: number, latitude: number, options?: OnDay): Canton[]
+```
+
+Les cantons dont la limite contient un point, à un jour donné (aujourd'hui par défaut). La
+longitude d'abord, puis la latitude, en degrés décimaux (WGS 84), comme les ordonne GeoJSON. Un
+seul canton pour un point en Belgique ; aucun hors de celle-ci ; deux pour un point sur la ligne
+entre deux cantons. Lève une `RangeError` pour des coordonnées qui ne sont pas des nombres finis.
+
+```ts
+findCantonsAt(3.7268, 51.053).map((c) => c.id) // ['gent-1'] : Sint-Baafskathedraal
+findCantonsAt(2.3522, 48.8566) // [] : Paris
+```
+
+### `getCantonBoundary(cantonId)` {#getcantonboundary-cantonid}
+
+```ts
+function getCantonBoundary(id: CantonId): CantonBoundary
+function getCantonBoundary(id: string, options?: OnDay): CantonBoundary | undefined
+```
+
+```ts
+getCantonBoundary('gent-1').geometry.type // 'MultiPolygon'
 ```
 
 ## Cours et tribunaux {#courts}

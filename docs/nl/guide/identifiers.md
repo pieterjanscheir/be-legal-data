@@ -44,18 +44,19 @@ doet falen.
 
 ## De ids {#the-ids}
 
-| Dataset          | Voorbeelden                                                                                                               | Regel                |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------- | -------------------- |
-| Rechtsgebieden   | `antwerpen`, `brussel`, `gent`, `liege`, `mons`                                                                           | Lokale naam          |
-| Arrondissementen | `oost-vlaanderen`, `brabant-wallon`, `eupen`                                                                              | Lokale naam          |
-| Kantons          | `gent-1`, `merelbeke-melle`, `wavre-1`, `oudergem`, `eupen-sankt-vith-1`                                                  | Lokale naam + nummer |
-| Gemeenten        | `44021`, `21004`                                                                                                          | REFNIS-code          |
-| Provincies       | `10000`, `40000`                                                                                                          | REFNIS-code          |
-| Gewesten         | `02000`, `03000`, `04000`                                                                                                 | REFNIS-code          |
-| Rechtbanken      | `justice-of-the-peace-gent-1`, `enterprise-court-gent-brugge`, `police-court-brussel-fr`, `police-court-eupen-sankt-vith` | Type + plaats        |
-| Gevangenissen    | `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk`                                                               | Lokale naam          |
-| Justitiehuizen   | `justitiehuis-gent`, `maison-justice-arlon`                                                                               | Lokale naam          |
-| Rentevoeten      | `legal`, `commercial`                                                                                                     | Vaste sleutels       |
+| Dataset          | Voorbeelden                                                                                                               | Regel                 |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| Rechtsgebieden   | `antwerpen`, `brussel`, `gent`, `liege`, `mons`                                                                           | Lokale naam           |
+| Arrondissementen | `oost-vlaanderen`, `brabant-wallon`, `eupen`                                                                              | Lokale naam           |
+| Kantons          | `gent-1`, `merelbeke-melle`, `wavre-1`, `oudergem`, `eupen-sankt-vith-1`                                                  | Lokale naam + nummer  |
+| Kantongrenzen    | `gent-1`: één grens per kanton, met het id van het kanton, en `canton` als verwijzing                                     | Het id van het kanton |
+| Gemeenten        | `44021`, `21004`                                                                                                          | REFNIS-code           |
+| Provincies       | `10000`, `40000`                                                                                                          | REFNIS-code           |
+| Gewesten         | `02000`, `03000`, `04000`                                                                                                 | REFNIS-code           |
+| Rechtbanken      | `justice-of-the-peace-gent-1`, `enterprise-court-gent-brugge`, `police-court-brussel-fr`, `police-court-eupen-sankt-vith` | Type + plaats         |
+| Gevangenissen    | `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk`                                                               | Lokale naam           |
+| Justitiehuizen   | `justitiehuis-gent`, `maison-justice-arlon`                                                                               | Lokale naam           |
+| Rentevoeten      | `legal`, `commercial`                                                                                                     | Vaste sleutels        |
 
 ## Waarom deze keuzes {#why-these-choices}
 
