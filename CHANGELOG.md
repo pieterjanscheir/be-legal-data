@@ -7,6 +7,15 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-10-21
+
+### Fixed
+
+The README said a day before a dataset's coverage throws a `RangeError`, right under
+`getInterestRate`. `getInterestRate` returns `null` for any day without a rate, early days
+included; only territory and court lookups throw for a day before their coverage. No code or
+data changed.
+
 ## [0.3.0] - 2026-10-21
 
 ### Added
@@ -206,7 +215,8 @@ OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
 - Courts (justices of the peace in East and West Flanders, Ondernemingsrechtbank Gent) and the
   legal and commercial interest rates.
 
-[Unreleased]: https://github.com/pieterjanscheir/belgica/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/pieterjanscheir/belgica/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/pieterjanscheir/belgica/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/pieterjanscheir/belgica/compare/72889e0...v0.3.0
 [0.2.0]: https://github.com/pieterjanscheir/belgica/commit/72889e0
 [0.1.0]: https://github.com/pieterjanscheir/belgica/commit/c113197

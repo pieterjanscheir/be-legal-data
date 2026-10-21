@@ -1,6 +1,6 @@
 {
     "name": "belgica",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Belgian legal reference data: courts, judicial cantons and arrondissements, municipalities and postal codes, and legal and commercial interest rates.",
     "keywords": [
         "belgium",
