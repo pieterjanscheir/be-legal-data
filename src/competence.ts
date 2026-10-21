@@ -22,8 +22,9 @@ export function findJusticesOfThePeace(municipalityId: string, options: OnDay = 
         const court = getJusticeOfThePeace(canton.id, options)
         // Every canton has its court on every day of the coverage (test/data.test.ts); the
         // branch is there for the type
-        /* v8 ignore next */
+        /* v8 ignore start */
         if (!court) return []
+        /* v8 ignore stop */
         return [
             {
                 canton,
