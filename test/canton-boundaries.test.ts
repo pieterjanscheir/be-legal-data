@@ -217,11 +217,18 @@ describe('findCantonsAt', () => {
     })
 
     it('gives both cantons for a point on the line between them', () => {
+        // The first vertices of Aalst 1's ring lie on its line with Ninove; stop at the first
         const [exterior = []] = getCantonBoundary('aalst-1').geometry.coordinates[0] ?? []
-        const shared = exterior
-            .map(([lon, lat]) => findCantonsAt(lon, lat))
-            .find((f) => f.length === 2)
-        expect(shared?.map((c) => c.id)).toContain('aalst-1')
+        let shared: string[] = []
+        for (const [lon, lat] of exterior.slice(0, 100)) {
+            const found = findCantonsAt(lon, lat).map((c) => c.id)
+            if (found.length === 2) {
+                shared = found
+                break
+            }
+        }
+        expect(shared).toContain('aalst-1')
+        expect(shared).toHaveLength(2)
     })
 
     it('answers for a day, and throws before the coverage or for bad coordinates', () => {

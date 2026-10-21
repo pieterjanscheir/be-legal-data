@@ -97,8 +97,9 @@ const ON_EDGE = 1e-7
 
 function boundingBox(geometry: MultiPolygon): BoundingBox {
     const box: BoundingBox = [Infinity, Infinity, -Infinity, -Infinity]
-    for (const polygon of geometry.coordinates) {
-        for (const [lon, lat] of polygon[0] ?? []) {
+    // The holes lie within the exterior ring, so every ring may go in
+    for (const ring of geometry.coordinates.flat()) {
+        for (const [lon, lat] of ring) {
             box[0] = Math.min(box[0], lon)
             box[1] = Math.min(box[1], lat)
             box[2] = Math.max(box[2], lon)
