@@ -90,6 +90,8 @@ OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
 
 ### Added
 
+- The documentation site is available in Dutch (/nl/) and French (/fr/) next to English, with a
+  language switcher. English is the source; the translations follow it.
 - `ids.lock.json`: every id the package has published, per dataset. `pnpm generate` adds new
   ids and never removes one, and the tests fail when a locked id is missing from the data, so a
   record can't disappear or be renamed by accident. Removing an id is a deliberate act, for a
