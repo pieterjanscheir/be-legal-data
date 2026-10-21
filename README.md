@@ -34,8 +34,8 @@ has the data as JSON and CSV in one zip.
 Planned: the highest courts, history before 2025, bailiffs, police zones and the cadastre
 offices. See the [roadmap](https://pieterjanscheir.github.io/be-legal-data/data/roadmap).
 
-Municipality, province and region data © Statbel; canton boundaries © National Geographic
-Institute (NGI); all [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+Municipality, province and region data © Statbel, canton boundaries © National Geographic
+Institute (NGI), both [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 ## Using it
 
