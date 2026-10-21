@@ -11,6 +11,7 @@ bijblijft, en hoe ver je elke dataset kunt vertrouwen.
 | Rechtsgebieden, arrondissementen | Gerechtelijk Wetboek, bijlage art. 4–5         | Met de hand                              | Een wet hertekent de gerechtelijke kaart (zelden; laatst in 2014) | Om de 24 maanden |
 | Kantons                          | Gerechtelijk Wetboek, bijlage art. 1 (nl + fr) | Gegenereerd: `pnpm build:cantons`        | Een wet wijzigt de bijlage; gemeenten fuseren                     | Om de 12 maanden |
 | Gemeenten                        | Open data van Statbel                          | Gegenereerd: `pnpm build:cantons`        | Gemeenten fuseren (2019, 2025)                                    | Om de 12 maanden |
+| Gewesten, provincies             | REFNIS-codelijst van Statbel                   | Wekelijks: snapshots + `pnpm build:data` | Statbel wijzigt zijn register (laatst in 1995)                    | Wekelijks        |
 | Hoven en rechtbanken             | tribunaux-rechtbanken.be                       | Wekelijks: snapshots + `pnpm build:data` | Een gerecht verhuist of wijzigt zijn contactgegevens of uren      | Wekelijks        |
 | Gevangenissen                    | justitie.belgium.be                            | Wekelijks: snapshots + `pnpm build:data` | Een gevangenis opent, sluit of wijzigt haar contactgegevens       | Wekelijks        |
 | Justitiehuizen                   | vlaanderen.be, maisonsdejustice.be             | Wekelijks: snapshots + `pnpm build:data` | Een justitiehuis verhuist of wijzigt zijn contactgegevens         | Wekelijks        |

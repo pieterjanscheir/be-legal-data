@@ -15,6 +15,8 @@ export const DATASETS = [
     'judicial-areas',
     'arrondissements',
     'cantons',
+    'regions',
+    'provinces',
     'municipalities',
     'courts',
     'prisons',
@@ -24,7 +26,7 @@ export const DATASETS = [
 
 export type Lock = Record<(typeof DATASETS)[number], string[]>
 
-/** The lock file; a dataset it doesn't list yet (a new one) has published no ids */
+/** The committed lock; a dataset it doesn't list yet has published nothing */
 export function readLock(path = LOCK_FILE): Lock {
     const empty = Object.fromEntries(DATASETS.map((d) => [d, []])) as unknown as Lock
     if (!existsSync(path)) return empty

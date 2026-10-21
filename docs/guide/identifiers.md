@@ -46,6 +46,8 @@ All of these are enforced by tests (`test/ids.test.ts`) and by the
 | Arrondissements   | `oost-vlaanderen`, `brabant-wallon`, `eupen`                                                                              | Local name                |
 | Cantons           | `gent-1`, `merelbeke-melle`, `wavre-1`, `oudergem`, `eupen-sankt-vith-1`                                                  | Local name + number       |
 | Municipalities    | `44021`, `21004`                                                                                                          | REFNIS code               |
+| Provinces         | `10000`, `40000`                                                                                                          | REFNIS code               |
+| Regions           | `02000`, `03000`, `04000`                                                                                                 | REFNIS code               |
 | Postal codes      | `9000-44021`, `1040-21005`                                                                                                | Postal code + REFNIS code |
 | Courts            | `justice-of-the-peace-gent-1`, `enterprise-court-gent-brugge`, `police-court-brussel-fr`, `police-court-eupen-sankt-vith` | Type + place              |
 | Prisons           | `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk`                                                               | Local name                |
@@ -96,9 +98,9 @@ be followed in both directions.
 
 ## In TypeScript
 
-Every dataset has a generated id type (`CantonId`, `CourtId`, `MunicipalityId`,
-`ArrondissementId`, `JudicialAreaId`, `PrisonId`, `HouseOfJusticeId`, `PostalCodeId`),
-regenerated from the data by `pnpm build:ids`:
+Every dataset has a generated id type (`CantonId`, `CourtId`, `MunicipalityId`, `ProvinceId`,
+`RegionId`, `ArrondissementId`, `JudicialAreaId`, `PrisonId`, `HouseOfJusticeId`, `PostalCodeId`), regenerated
+from the data by `pnpm build:ids`:
 
 ```ts
 import { getCanton, type CantonId } from 'be-legal-data'

@@ -1,0 +1,14 @@
+{
+    "source": "statbel",
+    "entries": [
+        {
+            "url": "https://statbel.fgov.be/sites/default/files/files/opendata/REFNIS%20code/TU_COM_REFNIS-20250101.zip",
+            "status": 200,
+            "contentType": "application/zip",
+            "file": "statbel.fgov.be/sites/default/files/files/opendata/REFNIS_code/TU_COM_REFNIS-20250101.zip",
+            "sha256": "2b4fd9cce780ca1104495dd7e2c81401991bc035ee41024695ca9e91882ebceb",
+            "retrieved": "2026-10-20",
+            "checked": "2026-10-20"
+        }
+    ]
+}

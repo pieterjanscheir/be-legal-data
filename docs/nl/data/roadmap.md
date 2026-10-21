@@ -30,7 +30,6 @@ van hoe vaak ze gebruikt zouden worden:
 - **Notarissen en notariële kamers**, **balies** (balies / barreaux).
 - **Gemeentefusies**: oude → nieuwe REFNIS-codes voor 2019 en 2025, zodat oudere data te mappen
   is.
-- **Provincies en gewesten** als eigen dataset (vandaag alleen codes).
 - **De gezondheidsindex** voor de indexering van huurprijzen.
 
 ## Waarom sommige datasets er nog niet zijn {#why-some-datasets-aren-t-here-yet}

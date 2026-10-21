@@ -188,6 +188,25 @@ export type CantonId =
     | 'zelzate'
     | 'zoutleeuw'
 
+/** Id of a record in data/regions.json */
+export type RegionId =
+    | '02000'
+    | '03000'
+    | '04000'
+
+/** Id of a record in data/provinces.json */
+export type ProvinceId =
+    | '10000'
+    | '20001'
+    | '20002'
+    | '30000'
+    | '40000'
+    | '50000'
+    | '60000'
+    | '70000'
+    | '80000'
+    | '90000'
+
 /** Id of a record in data/municipalities.json */
 export type MunicipalityId =
     | '11001'

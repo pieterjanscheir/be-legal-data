@@ -54,7 +54,7 @@ l'identifiant `justice-of-the-peace-x` et y renvoie par son champ `canton`.
 ```bash
 pnpm fetch:sources            # chaque source dans .sources/ (environ 20 minutes, avec courtoisie)
 pnpm fetch:sources courts     # ou une seule source
-pnpm build:data               # reconstruit les cours et tribunaux, prisons, maisons de justice et codes postaux à partir de .sources/
+pnpm build:data               # reconstruit les cours et tribunaux, prisons, maisons de justice, codes postaux, régions et provinces à partir de .sources/
 ```
 
 Ou récupérez les derniers snapshots au lieu de les télécharger :
@@ -111,7 +111,7 @@ Chaque jeu de données reçoit le même traitement, pour que les utilisateurs pu
 | `pnpm lint:package`         | `publint` et `arethetypeswrong` sur le package empaqueté                                                                                                                     |
 | `pnpm test:freshness`       | Contrôles liés à la date : taux manquants, vérifications en retard. Ne fait pas partie de `check` ; `FRESHNESS_ONLINE=1` vérifie aussi les URL des sources                   |
 | `pnpm fetch:sources`        | Récupère les sources officielles dans `.sources/`                                                                                                                            |
-| `pnpm build:data`           | Reconstruit les cours et tribunaux, les prisons, les maisons de justice et les codes postaux à partir de `.sources/`                                                         |
+| `pnpm build:data`           | Reconstruit les cours et tribunaux, les prisons, les maisons de justice, les codes postaux, les régions et les provinces à partir de `.sources/`                             |
 | `pnpm build:csv`            | Écrit les données sous forme de tables CSV dans `csv/`                                                                                                                       |
 
 ## Publier une version {#releasing}

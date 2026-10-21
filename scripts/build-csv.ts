@@ -23,12 +23,16 @@ import type {
     Municipality,
     PostalCode,
     Prison,
+    Province,
+    Region,
     Validity,
 } from '../src/index.ts'
 
 const read = (file: string): unknown => JSON.parse(readFileSync(`data/${file}.json`, 'utf8'))
 const judicialAreas = read('judicial-areas') as JudicialArea[]
 const arrondissements = read('arrondissements') as Arrondissement[]
+const regions = read('regions') as Region[]
+const provinces = read('provinces') as Province[]
 const municipalities = read('municipalities') as Municipality[]
 const cantons = read('cantons') as Canton[]
 const courts = read('courts') as Court[]
@@ -82,11 +86,27 @@ export const tables: Record<string, Row[]> = {
         name_de: a.name.de,
         ...validity(a),
     })),
+    regions: regions.map((r) => ({
+        refnis: r.id,
+        name_nl: r.name.nl,
+        name_fr: r.name.fr,
+        name_de: r.name.de,
+        ...validity(r),
+    })),
+    provinces: provinces.map((p) => ({
+        refnis: p.id,
+        region: p.region,
+        name_nl: p.name.nl,
+        name_fr: p.name.fr,
+        name_de: p.name.de,
+        ...validity(p),
+    })),
     municipalities: municipalities.map((m) => ({
         refnis: m.id,
         name_nl: m.name.nl,
         name_fr: m.name.fr,
         province: m.province,
+        region: m.region,
         ...validity(m),
     })),
     'postal-codes': postalCodes.map((p) => ({

@@ -7,6 +7,10 @@ import type { Court as PublishedCourt } from '../../src/courts.ts'
 import type { HouseOfJustice as PublishedHouseOfJustice } from '../../src/houses-of-justice.ts'
 import type { PostalCode as PublishedPostalCode } from '../../src/postal-codes.ts'
 import type { Prison as PublishedPrison } from '../../src/prisons.ts'
+import type {
+    Province as PublishedProvince,
+    Region as PublishedRegion,
+} from '../../src/territory.ts'
 
 export type { Contact, ContactType, Locale } from '../../src/common.ts'
 export type { CourtType } from '../../src/courts.ts'
@@ -33,3 +37,5 @@ export type PostalCode = Omit<PublishedPostalCode, 'id' | 'municipality'> & {
     id: string
     municipality: string
 }
+export type Region = Omit<PublishedRegion, 'id'> & { id: string }
+export type Province = Omit<PublishedProvince, 'id' | 'region'> & { id: string; region: string }

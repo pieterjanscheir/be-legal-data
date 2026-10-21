@@ -52,6 +52,8 @@ listent les identifiants valides, de sorte qu'un lien pendant échoue à la vali
 | Arrondissements    | `oost-vlaanderen`, `brabant-wallon`, `eupen`                                                                              | Nom local                 |
 | Cantons            | `gent-1`, `merelbeke-melle`, `wavre-1`, `oudergem`, `eupen-sankt-vith-1`                                                  | Nom local + numéro        |
 | Communes           | `44021`, `21004`                                                                                                          | Code REFNIS               |
+| Provinces          | `10000`, `40000`                                                                                                          | Code REFNIS               |
+| Régions            | `02000`, `03000`, `04000`                                                                                                 | Code REFNIS               |
 | Codes postaux      | `9000-44021`, `1040-21005`                                                                                                | Code postal + code REFNIS |
 | Cours et tribunaux | `justice-of-the-peace-gent-1`, `enterprise-court-gent-brugge`, `police-court-brussel-fr`, `police-court-eupen-sankt-vith` | Type + lieu               |
 | Prisons            | `gevangenis-gent`, `prison-lantin`, `detentiehuis-kortrijk`                                                               | Nom local                 |
@@ -111,8 +113,8 @@ d'une chaîne, qui se brise dès qu'un tribunal dessert deux cantons ou qu'un no
 ## En TypeScript {#in-typescript}
 
 Chaque jeu de données a un type d'identifiant généré (`CantonId`, `CourtId`, `MunicipalityId`,
-`ArrondissementId`, `JudicialAreaId`, `PrisonId`, `HouseOfJusticeId`, `PostalCodeId`), régénéré à
-partir des données par `pnpm build:ids` :
+`ProvinceId`, `RegionId`, `ArrondissementId`, `JudicialAreaId`, `PrisonId`, `HouseOfJusticeId`, `PostalCodeId`),
+régénéré à partir des données par `pnpm build:ids` :
 
 ```ts
 import { getCanton, type CantonId } from 'be-legal-data'

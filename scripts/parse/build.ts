@@ -14,6 +14,7 @@ import { Snapshots } from '../sources/store.ts'
 import { buildCourts } from './courts.ts'
 import { buildHousesOfJustice, buildPrisons } from './places.ts'
 import { buildPostalCodes, linkMunicipalities, municipalityResolver } from './postal-codes.ts'
+import { buildRegionsAndProvinces } from './refnis.ts'
 import { carryOver, walkDay, type Dated } from './retire.ts'
 import type { Court, HouseOfJustice, Prison } from './types.ts'
 
@@ -41,6 +42,8 @@ const { records: freshHouses, unresolved: houseAddresses } = linkMunicipalities(
 )
 const prisonProblems = built.prisons.problems
 const houseProblems = built.houses.problems
+// Their validity comes from Statbel's register itself, so they aren't carried over below
+const { regions, provinces } = buildRegionsAndProvinces(root)
 
 // A record a source no longer lists is retired with a validTo, never deleted (retire.ts)
 const previous = <T extends Dated>(file: string): T[] =>
@@ -83,3 +86,5 @@ write('courts', courts)
 write('prisons', prisons)
 write('houses-of-justice', houses)
 write('postal-codes', postalCodes)
+write('regions', regions)
+write('provinces', provinces)
