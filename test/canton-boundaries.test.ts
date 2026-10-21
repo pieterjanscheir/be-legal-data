@@ -83,7 +83,10 @@ describe('canton boundaries', () => {
 
     it('cites the NGI file every record was read from', () => {
         for (const b of cantonBoundaries) {
-            expect(b.sources.map((s) => s.url), b.id).toEqual([NGI_CANTONS])
+            expect(
+                b.sources.map((s) => s.url),
+                b.id,
+            ).toEqual([NGI_CANTONS])
             expect(b.sources[0]?.retrieved, b.id).toMatch(/^\d{4}-\d{2}-\d{2}$/)
         }
     })

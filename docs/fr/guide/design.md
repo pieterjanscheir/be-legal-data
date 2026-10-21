@@ -177,10 +177,29 @@ la seule.
 **Pourquoi.** Les personnes qui ont le plus besoin de données de référence juridiques belges
 travaillent dans des tableurs et dans d'autres langages, pas en JavaScript.
 
+## 13. La géométrie est une seconde source, et le texte l'emporte {#_13-geometry-is-a-second-source-and-the-text-wins}
+
+**Décision.** Les limites des cantons sont la numérisation par l'Institut géographique national
+(IGN) de l'annexe au Code judiciaire, prise telle que publiée (sommet par sommet, sans
+simplification, coordonnées au centimètre) et rattachée aux cantons par leur nom dans les deux
+langues, avec une table d'alias explicite pour le reste. Le texte `territory` du canton reste la
+loi : là où la géométrie et le texte divergent, le texte l'emporte. La géométrie a son propre
+point d'entrée et la racine du package ne la réexporte pas.
+
+**Pourquoi.** Les polygones de l'IGN sont une lecture officielle du même texte : on peut les citer
+et les reconstruire ; une limite dérivée ici de données de rues serait une troisième lecture que
+personne ne peut vérifier. Simplifier déplacerait la ligne, et les lignes comptent le plus là où
+les cantons se touchent. Un million de positions éclipserait tous les autres jeux de données :
+personne ne doit les charger par accident.
+
+**Donc.** `findCantonsAt(lon, lat)` répond à partir de la géométrie et la documentation le dit ;
+un point proche d'une ligne est un cas pour le texte. Le build hebdomadaire échoue quand un canton
+n'a pas de limite ou qu'une entité ne correspond à aucun canton
+([#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)).
+
 ## Pas encore décidé {#not-decided-yet}
 
 | Question                                                                    | Issue                                                                                                  |
 | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| Les limites des cantons sous forme de géométrie pour les villes scindées    | [#29](https://github.com/pieterjanscheir/be-legal-data/issues/29)                                      |
 | L'historique antérieur au 1er janvier 2025                                  | [#27](https://github.com/pieterjanscheir/be-legal-data/issues/27)                                      |
 | Le calcul des intérêts sur une période (décompte des jours, capitalisation) | Pas prévu tant que la méthode ne peut pas être tirée de la jurisprudence ou d'une directive officielle |

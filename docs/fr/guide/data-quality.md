@@ -10,6 +10,7 @@ package reste à jour, et jusqu'où vous pouvez faire confiance à chaque jeu de
 | ------------------------- | ---------------------------------------- | ---------------------------------------------- | ------------------------------------------------------------------ | --------------------- |
 | Ressorts, arrondissements | Code judiciaire, annexe art. 4–5         | À la main                                      | Une loi redessine la carte judiciaire (rare ; la dernière en 2014) | 24 mois               |
 | Cantons                   | Code judiciaire, annexe art. 1 (nl + fr) | Générés : `pnpm build:cantons`                 | Une loi modifie l'annexe ; des communes fusionnent                 | 12 mois               |
+| Limites des cantons       | IGN (geo.be)                             | Chaque semaine : snapshots + `pnpm build:data` | L'IGN publie une nouvelle version                                  | Semaine               |
 | Communes                  | Données ouvertes de Statbel              | Générées : `pnpm build:cantons`                | Des communes fusionnent (2019, 2025)                               | 12 mois               |
 | Cours et tribunaux        | tribunaux-rechtbanken.be                 | Chaque semaine : snapshots + `pnpm build:data` | Un tribunal déménage ou change de contacts ou d'horaires           | Semaine               |
 | Prisons                   | justitie.belgium.be                      | Chaque semaine : snapshots + `pnpm build:data` | Une prison ouvre, ferme ou change de contacts                      | Semaine               |
@@ -19,7 +20,8 @@ package reste à jour, et jusqu'où vous pouvez faire confiance à chaque jeu de
 Les jeux de données générés ne sont jamais modifiés à la main. `pnpm build:cantons` analyse le
 texte officiel et refuse d'écrire quoi que ce soit tant que les versions néerlandaise et
 française ne concordent pas et que chaque commune n'est pas couverte ; `pnpm build:data` refuse
-quand une page ne peut pas être rattachée ou qu'un canton n'a pas de tribunal.
+quand une page ne peut pas être rattachée, qu'un canton n'a pas de tribunal ou qu'un canton n'a
+pas de limite dans le fichier de l'IGN.
 
 ## Comment les données sont construites {#how-the-data-is-built}
 
@@ -38,8 +40,8 @@ site officiel ──fetch──> snapshots (branche sources) ──parse──> 
    vers laquelle la source ne renvoie plus est abandonnée ; un tribunal qui ferme quitte donc
    les données.
 2. **Analyse.** `pnpm build:data` lit les snapshots (`scripts/parse`) et écrit les cours et
-   tribunaux, les prisons et les maisons de justice. Il signale ce qu'il ne peut pas lire, et
-   échoue quand une page ne peut pas être rattachée.
+   tribunaux, les prisons, les maisons de justice et les limites des cantons. Il signale ce qu'il ne
+   peut pas lire, et échoue quand une page ne peut pas être rattachée.
 3. **Tests.** Le workflow vérifie les types et exécute les tests sur les nouvelles données.
 4. **Relecture.** Quand les données ont changé, il ouvre ou met à jour une seule pull request
    avec le diff et la liste des valeurs illisibles. Une personne la vérifie par rapport aux
@@ -58,7 +60,9 @@ Moniteur belge refuse les serveurs de GitHub
 
 - **Validation des schémas** : chaque fichier de données respecte son [JSON Schema](./schema).
 - **Intégrité** : les identifiants sont uniques et bien formés ; chaque référence
-  (arrondissement, canton, commune, tribunal) pointe vers un enregistrement existant ; chaque
+  (arrondissement, canton, commune, tribunal, limite) pointe vers un enregistrement existant ; chaque
+  canton a une limite, en GeoJSON valide situé en Belgique, qui recouvre la superficie du pays sans
+  chevauchement ; chaque
   commune est dans exactement un canton ou scindée entre plusieurs ; chaque canton reste dans
   les provinces de son arrondissement ; chaque canton a exactement une justice de paix ; chaque
   division a le type et le ressort de son tribunal ; chaque catégorie de juridiction compte le
@@ -109,8 +113,8 @@ URL).
   quelles pages il a été lu et quand (`sources`) ; consultez la page du tribunal (`website`)
   quand cela compte.
 - **Le texte légal l'emporte.** Pour les communes scindées, le `territory` du canton est le
-  texte même de la loi, mot pour mot. Quand un résumé et le texte divergent, c'est le texte qui a
-  raison.
+  texte même de la loi, mot pour mot. Quand un résumé, ou la [limite](/fr/data/canton-boundaries) de l'IGN, et le texte
+  divergent, c'est le texte qui a raison.
 
 ## Signaler une erreur {#reporting-a-mistake}
 

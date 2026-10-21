@@ -9,6 +9,7 @@ la date de sa dernière vérification par rapport à celles-ci.
 | [Ressorts](./territory#judicial-areas)         | 5               | Quelle cour d'appel (et quelle cour du travail) connaît d'un appel                                                           |
 | [Arrondissements](./territory#arrondissements) | 12              | Regrouper les tribunaux, les parquets et les huissiers de justice ; l'unité qu'utilisent la plupart des règles de compétence |
 | [Cantons](./territory#cantons)                 | 162             | Quelle justice de paix est compétente pour une adresse                                                                       |
+| [Limites des cantons](./canton-boundaries)     | 162             | Le canton d'un point dans une ville scindée ; les cantons sur une carte (GeoJSON)                                            |
 | [Communes](./territory#municipalities)         | 565             | Relier toute adresse ou statistique belge à la carte judiciaire par le code REFNIS                                           |
 | [Cours et tribunaux](./courts)                 | 347             | Noms, adresses et coordonnées des greffes pour écrire à n'importe quelle juridiction, y déposer un acte ou la payer          |
 | [Prisons](./prisons)                           | 39              | Adresses et coordonnées de chaque prison et maison de détention                                                              |
@@ -19,7 +20,8 @@ la date de sa dernière vérification par rapport à celles-ci.
 
 ```
 Ressort ──< Arrondissement ──< Canton >──< Commune (REFNIS)
-   │              │              │
+   │              │              │  │
+   │              │              │  └── Limite de canton   la géométrie du canton (IGN)
    └────────── Tribunal ─────────┘  une justice de paix renvoie à son canton
                   │
                   └──< Division     une division renvoie à son tribunal
@@ -41,7 +43,8 @@ mal à une exploitation par programme :
 - **Compétence.** La justice de paix, le tribunal de police et bien d'autres juridictions sont compétents
   en fonction du lieu. La loi (l'annexe au Code judiciaire) décrit ces territoires en prose, parfois
   rue par rue. `cantons.json` en fait une table de correspondance de la commune au canton, et
-  conserve le texte légal pour les villes scindées.
+  conserve le texte légal pour les villes scindées ; `canton-boundaries.json` y ajoute la géométrie
+  de l'IGN, si bien qu'un point d'une ville scindée trouve son canton.
 - **Noms et adresses exacts.** Les exploits, conclusions et courriers doivent désigner la juridiction
   telle qu'elle se nomme elle-même, par exemple `Vredegerecht Gent 1` ou
   `Ondernemingsrechtbank Gent - afdeling Brugge`, et parvenir au bon greffe. Les noms sont
@@ -58,8 +61,7 @@ mal à une exploitation par programme :
 
 Voyez les [lacunes connues](./known-gaps) pour les limites des données actuelles et la
 [feuille de route](./roadmap) pour les jeux de données prévus : les juridictions suprêmes, l'historique, les
-limites des cantons, les huissiers de justice, les zones de police, ainsi que les bureaux du cadastre et des
-hypothèques.
+huissiers de justice, les zones de police, ainsi que les bureaux du cadastre et des hypothèques.
 
 ::: warning Données de référence, pas un avis juridique
 Les données sont vérifiées par rapport aux sources officielles, mais les sources changent et les erreurs
