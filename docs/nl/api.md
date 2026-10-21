@@ -441,6 +441,7 @@ const territoryCoverage: { from: '2025-01-01' }
 const courtsCoverage: { from: '2025-01-01' }
 const prisonsCoverage: { from: '2026-10-20' }
 const housesOfJusticeCoverage: { from: '2026-10-20' }
+const postalCodesCoverage: { from: '2025-01-01' }
 
 function appliesOn(record: Validity, day: string): boolean
 function toDay(date: Date | string): string // 'YYYY-MM-DD', of een RangeError
