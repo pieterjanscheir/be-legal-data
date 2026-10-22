@@ -77,15 +77,3 @@ datamodel-codegen --input courts.schema.json --input-file-type jsonschema --outp
 - `lastReviewed`：そのデータセットを最後に情報源と照合した日
 - `reviewEveryMonths`：次に照合しなければならない間隔。データセットの照合期限が過ぎると、
   [鮮度チェック](./data-quality#automatic-checks)が issue を作成します。
-
-## なぜ Swagger / OpenAPI ではないのか {#why-not-swagger-openapi}
-
-Swagger（OpenAPI）が記述するのは **HTTP API**、つまりエンドポイント、パラメータ、レスポンスです。
-このパッケージにはサーバーもエンドポイントもありません。ライブラリと静的な JSON ファイルだけなので、
-OpenAPI で記述するものがないのです。データファイルを記述するための対応する標準は JSON Schema
-であり（OpenAPI 自体もデータモデルに JSON Schema を使っています）、上のファイルが提供しているのは
-まさにそれです。
-
-将来 HTTP API が追加された場合（たとえば同じデータを提供する小さな読み取り専用サービス）、
-それには OpenAPI ドキュメントを用意し、レスポンスのモデルにはこれらのスキーマをそのまま
-再利用できます。

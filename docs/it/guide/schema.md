@@ -78,14 +78,3 @@ licenza e due campi nostri:
 - `reviewEveryMonths`: ogni quanto deve essere verificato di nuovo. Il
   [controllo di aggiornamento](./data-quality#automatic-checks) apre una issue quando un dataset
   è in ritardo.
-
-## Perché non Swagger / OpenAPI? {#why-not-swagger-openapi}
-
-Swagger (OpenAPI) descrive **API HTTP**: endpoint, parametri, risposte. Questo package non ha
-né server né endpoint. È una libreria più file JSON statici, quindi OpenAPI non avrebbe nulla da
-descrivere. JSON Schema è lo standard corrispondente per descrivere file di dati (OpenAPI stesso
-usa JSON Schema per i suoi modelli di dati), ed è ciò che forniscono i file qui sopra.
-
-Se in futuro si aggiungerà un'API HTTP (per esempio un piccolo servizio in sola lettura sugli
-stessi dati), avrà un documento OpenAPI, e i suoi modelli di risposta potranno riutilizzare
-direttamente questi schemi.

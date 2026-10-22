@@ -77,14 +77,3 @@ açıklaması, şeması, resmî kaynakları, lisansı ve bize ait iki alanla bir
 - `lastReviewed`: veri kümesinin kaynaklarıyla en son karşılaştırıldığı gün;
 - `reviewEveryMonths`: ne sıklıkla yeniden kontrol edilmesi gerektiği. Bir veri kümesinin süresi
   geçtiğinde [güncellik kontrolü](./data-quality#automatic-checks) bir issue açar.
-
-## Neden Swagger / OpenAPI değil? {#why-not-swagger-openapi}
-
-Swagger (OpenAPI) **HTTP API'lerini** tanımlar: endpoint'ler, parametreler, yanıtlar. Bu paketin
-ne sunucusu ne de endpoint'i vardır. Bir kütüphane ile statik JSON dosyalarından ibarettir; yani
-OpenAPI'nin tanımlayacağı bir şey yoktur. Veri dosyalarını tanımlamak için uygun standart JSON
-Schema'dır (OpenAPI de veri modelleri için JSON Schema kullanır) ve yukarıdaki dosyaların sunduğu
-da budur.
-
-İleride bir HTTP API eklenirse (örneğin aynı veriler üzerinde küçük, salt okunur bir servis), ona
-bir OpenAPI belgesi yazılır ve yanıt modelleri bu şemaları doğrudan yeniden kullanabilir.

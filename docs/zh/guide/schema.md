@@ -74,12 +74,3 @@ datamodel-codegen --input courts.schema.json --input-file-type jsonschema --outp
 - `lastReviewed`：最近一次根据来源核对该数据集的日期；
 - `reviewEveryMonths`：需要多久重新核对一次。数据集逾期未核对时，
   [时效检查](./data-quality#automatic-checks)会自动开一个 issue。
-
-## 为什么不用 Swagger / OpenAPI？ {#why-not-swagger-openapi}
-
-Swagger（OpenAPI）描述的是 **HTTP API**：端点、参数和响应。这个包没有服务器，也没有端点。它是一个库加上一些静态
-JSON 文件，OpenAPI 在这里没有可描述的对象。描述数据文件的对应标准是 JSON Schema（OpenAPI 本身也用 JSON Schema
-描述数据模型），上面这些文件提供的正是它。
-
-如果以后增加了 HTTP API（例如基于同一份数据的小型只读服务），它会有一份 OpenAPI 文档，其响应模型可以直接复用这些
-schema。
