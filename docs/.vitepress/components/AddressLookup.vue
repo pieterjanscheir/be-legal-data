@@ -27,6 +27,7 @@ const t = useStrings('AddressLookup', {
             'The register knows the street but not this house number: the point is somewhere on the street, which may itself be the boundary between two cantons. Check the number.',
         canton: 'Canton',
         outside: 'This point lies in no canton: is it in Belgium?',
+        onLine: 'The address lies on the boundary between {cantons}: the courts of each are listed, and the law decides. Read each canton’s area below.',
         near: 'The address is {m} m from the boundary with {other}. The NGI drew the boundary from the law, and the law decides: read both cantons’ areas below.',
         split: '{name} is split over several cantons; the address decides which.',
         legalText: 'The canton’s area in the law',
@@ -55,6 +56,7 @@ const t = useStrings('AddressLookup', {
             'Het register kent de straat maar niet dit huisnummer: het punt ligt ergens in de straat, die zelf de grens tussen twee kantons kan zijn. Controleer het nummer.',
         canton: 'Kanton',
         outside: 'Dit punt ligt in geen enkel kanton: ligt het in België?',
+        onLine: 'Het adres ligt op de grens tussen {cantons}: de rechtbanken van elk staan hieronder, en de wet beslist. Lees hieronder het gebied van elk kanton.',
         near: 'Het adres ligt {m} m van de grens met {other}. Het NGI tekende de grens naar de wet, en de wet beslist: lees hieronder het gebied van beide kantons.',
         split: '{name} is verdeeld over meerdere kantons; het adres beslist welk.',
         legalText: 'Het gebied van het kanton volgens de wet',
@@ -83,6 +85,7 @@ const t = useStrings('AddressLookup', {
             'Le registre connaît la rue mais pas ce numéro : le point est quelque part dans la rue, qui peut elle-même être la limite entre deux cantons. Vérifiez le numéro.',
         canton: 'Canton',
         outside: 'Ce point ne se trouve dans aucun canton : est-il en Belgique ?',
+        onLine: 'L’adresse se trouve sur la limite entre {cantons} : les juridictions de chacun sont listées, et la loi décide. Lisez ci-dessous le territoire de chaque canton.',
         near: 'L’adresse est à {m} m de la limite avec {other}. L’IGN a tracé la limite d’après la loi, et la loi décide : lisez ci-dessous le territoire des deux cantons.',
         split: '{name} est répartie sur plusieurs cantons ; l’adresse décide lequel.',
         legalText: 'Le territoire du canton selon la loi',
@@ -144,14 +147,17 @@ async function search(address = query.value) {
     query.value = address
     if (!address.trim()) return
     controller?.abort()
-    controller = new AbortController()
+    // Only the latest search writes its results: an earlier one can finish after it starts
+    const current = new AbortController()
+    controller = current
     loading.value = true
     try {
         const [result] = await Promise.all([
-            geocode(address, controller.signal),
+            geocode(address, current.signal),
             boundaries.value ??
                 import('../../../src/canton-boundaries').then((m) => (boundaries.value = m)),
         ])
+        if (controller !== current) return
         candidates.value = result.candidates
         failed.value = result.failed
         selected.value = 0
@@ -159,7 +165,7 @@ async function search(address = query.value) {
     } catch (error) {
         if ((error as Error).name !== 'AbortError') throw error
     } finally {
-        loading.value = false
+        if (controller === current) loading.value = false
     }
 }
 
@@ -219,10 +225,12 @@ const nearby = computed(() => {
         .sort((a, b) => a.metres - b.metres)
 })
 
+// A point on the line between two cantons gets both, and the courts of each
 const courts = computed(() => {
-    const canton = cantons.value[0]
-    if (!canton) return []
-    return getCourtsForCanton(canton.id).sort(
+    const found = new Map(
+        cantons.value.flatMap((c) => getCourtsForCanton(c.id)).map((court) => [court.id, court]),
+    )
+    return [...found.values()].sort(
         (a, b) => COURT_ORDER.indexOf(a.type) - COURT_ORDER.indexOf(b.type),
     )
 })
@@ -298,8 +306,13 @@ const osm = computed(() => {
                 <p v-if="!cantons.length" class="bld-warning">{{ t.outside }}</p>
                 <template v-else>
                     <p class="bld-result">
-                        {{ cantonName(cantons[0]) }}
-                        <code class="bld-muted">{{ cantons[0]!.id }}</code>
+                        <template v-for="(c, i) in cantons" :key="c.id">
+                            <span v-if="i"> / </span>{{ cantonName(c) }}
+                            <code class="bld-muted">{{ c.id }}</code>
+                        </template>
+                    </p>
+                    <p v-if="cantons.length > 1" class="bld-warning">
+                        {{ fmt(t.onLine, { cantons: cantons.map(cantonName).join(' / ') }) }}
                     </p>
                     <p v-if="splitMunicipality" class="bld-muted">
                         {{
@@ -336,7 +349,7 @@ const osm = computed(() => {
                         </tbody>
                     </table>
 
-                    <details v-if="splitMunicipality || nearby.length">
+                    <details v-if="splitMunicipality || nearby.length || cantons.length > 1">
                         <summary>{{ t.legalText }}</summary>
                         <div v-for="c in cantons" :key="c.id">
                             <h4>
