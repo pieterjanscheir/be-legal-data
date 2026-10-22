@@ -23,6 +23,10 @@ const prisonsById = versionsById(prisons)
 
 /** A prison by id, e.g. 'gevangenis-gent': today's version, or the one of a given day */
 export function getPrison(id: PrisonId): Prison
+/**
+ * A prison by id, as on a given day (today by default). `undefined` for an unknown id or one
+ * not in force that day. A day before the data's coverage throws a `RangeError`.
+ */
 export function getPrison(id: string, options?: OnDay): Prison | undefined
 export function getPrison(id: string, options?: OnDay): Prison | undefined {
     return pickVersion(prisonsById.get(id), options, prisonsCoverage, 'prisons')

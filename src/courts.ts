@@ -58,6 +58,11 @@ const applying = (list: readonly Court[], options: OnDay) =>
 
 /** A court, division or seat by id, e.g. 'justice-of-the-peace-gent-1' */
 export function getCourt(id: CourtId): Court
+/**
+ * A court, division or seat by id, as on a given day (today by default). `undefined` for an
+ * unknown id or one not in force that day. A day before the data's coverage throws a
+ * `RangeError`.
+ */
 export function getCourt(id: string, options?: OnDay): Court | undefined
 export function getCourt(id: string, options?: OnDay): Court | undefined {
     return pick(courtsById.get(id), options)
@@ -69,6 +74,11 @@ export function getCourt(id: string, options?: OnDay): Court | undefined {
  * `getDivisions`.
  */
 export function getJusticeOfThePeace(cantonId: CantonId): Court
+/**
+ * The justice of the peace of a canton, by canton id, as on a given day (today by default).
+ * `undefined` for an unknown id or one not in force that day. A day before the data's coverage
+ * throws a `RangeError`.
+ */
 export function getJusticeOfThePeace(cantonId: string, options?: OnDay): Court | undefined
 export function getJusticeOfThePeace(cantonId: string, options?: OnDay): Court | undefined {
     return pick(justicesOfThePeaceByCanton.get(cantonId), options)

@@ -1,7 +1,9 @@
 import { z } from 'zod'
 import { municipalityIdSchema } from '../ids.generated.ts'
 
+/** A national language: Dutch, French or German */
 export const localeSchema = z.enum(['nl', 'fr', 'de'])
+/** A national language: Dutch, French or German */
 export type Locale = z.infer<typeof localeSchema>
 
 /** A name in the three national languages */
@@ -94,6 +96,7 @@ const contactShape = {
 }
 const e164Schema = z.string().regex(/^\+32\d{8,9}$/)
 
+/** A phone or fax number, an email address or a bank account, by `type` */
 export const contactSchema = z.discriminatedUnion('type', [
     z.strictObject({
         type: z.literal('phone'),
@@ -120,5 +123,7 @@ export const contactSchema = z.discriminatedUnion('type', [
         ...contactShape,
     }),
 ])
+/** A phone or fax number, an email address or a bank account, by `type` */
 export type Contact = z.infer<typeof contactSchema>
+/** 'phone', 'fax', 'email' or 'bank-account' */
 export type ContactType = Contact['type']

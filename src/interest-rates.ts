@@ -5,6 +5,7 @@ import { toDay } from './time'
 export type { InterestRatePeriod, InterestRateSeries, InterestType } from './schemas/interest-rates'
 
 // The data is validated against the zod schemas in ./schemas (test/schema.test.ts)
+/** Every rate on file, by type: each a series of periods, oldest first */
 export const interestRates: Readonly<Record<InterestType, InterestRateSeries>> = interestRatesData
 
 export interface InterestRateResult {

@@ -15,6 +15,7 @@ import {
     websiteSchema,
 } from './common.ts'
 
+/** The kind of court, from the justice of the peace up to the court of assize */
 export const courtTypeSchema = z.enum([
     'justice-of-the-peace',
     'police-court',
@@ -25,6 +26,7 @@ export const courtTypeSchema = z.enum([
     'labour-court-of-appeal',
     'court-of-assize',
 ])
+/** The kind of court, from the justice of the peace up to the court of assize */
 export type CourtType = z.infer<typeof courtTypeSchema>
 
 /**

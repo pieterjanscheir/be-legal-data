@@ -49,6 +49,17 @@ describe('JSON Schemas', () => {
         expect(validate.errors?.slice(0, 5) ?? [], file).toEqual([])
         expect(valid).toBe(true)
     })
+
+    // The descriptions are the zod schemas' doc comments, which ESLint requires on every export
+    it.each(dataFiles)('every definition in the schema of data/%s has a description', (file) => {
+        const { definitions } = read(`schema/${file.replace('.json', '.schema.json')}`) as {
+            definitions: Record<string, { description?: string }>
+        }
+        const undescribed = Object.entries(definitions)
+            .filter(([, definition]) => !definition.description)
+            .map(([name]) => name)
+        expect(undescribed).toEqual([])
+    })
 })
 
 describe('datapackage.json', () => {

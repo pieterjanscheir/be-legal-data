@@ -31,13 +31,16 @@ export const publicHolidayRuleSchema = z.discriminatedUnion('type', [
         daysAfterEaster: z.int().min(1),
     }),
 ])
+/** When a holiday falls each year */
 export type PublicHolidayRule = z.infer<typeof publicHolidayRuleSchema>
 
+/** One public holiday: its id, its name and the rule that dates it */
 export const publicHolidayDefinitionSchema = z.strictObject({
     id: publicHolidayIdSchema,
     name: translatedSchema,
     rule: publicHolidayRuleSchema,
 })
+/** One public holiday: its id, its name and the rule that dates it */
 export type PublicHolidayDefinition = z.infer<typeof publicHolidayDefinitionSchema>
 
 /** A year in which a holiday was moved to another day by royal decree */
@@ -52,6 +55,7 @@ export const publicHolidayReplacementSchema = z.strictObject({
 })
 export type PublicHolidayReplacement = z.infer<typeof publicHolidayReplacementSchema>
 
+/** The public holidays data file: the ten holidays and the years one was moved */
 export const publicHolidaysSchema = z.strictObject({
     description: z.string(),
     /** The law and decree that set the holidays */
@@ -61,4 +65,5 @@ export const publicHolidaysSchema = z.strictObject({
     holidays: z.array(publicHolidayDefinitionSchema).length(10),
     replacements: z.array(publicHolidayReplacementSchema),
 })
+/** The public holidays data file: the ten holidays and the years one was moved */
 export type PublicHolidays = z.infer<typeof publicHolidaysSchema>

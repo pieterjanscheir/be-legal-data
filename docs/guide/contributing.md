@@ -98,7 +98,7 @@ Every dataset gets the same treatment, so users can rely on it:
 | `pnpm test`                 | Unit, integrity, schema and type tests on the source (no build needed; it splits `data/courts/` and `data/cantons/` first)                                    |
 | `pnpm test:package`         | Smoke tests of the built package with `import` and `require()`: run `pnpm build` first                                                                        |
 | `pnpm test:coverage`        | The same, failing below 100 % coverage of `src/`                                                                                                              |
-| `pnpm lint` / `pnpm format` | ESLint and Prettier: check / fix                                                                                                                              |
+| `pnpm lint` / `pnpm format` | ESLint and Prettier: check / fix. ESLint also requires a doc comment on every export in `src/`                                                                |
 | `pnpm generate`             | Regenerate the courts' `label`, `src/ids.generated.ts` (id types) and `schema/`, add new ids to `ids.lock.json`, and split `data/courts/` and `data/cantons/` |
 | `pnpm lint:package`         | `publint` and `arethetypeswrong` on the packed package                                                                                                        |
 | `pnpm test:freshness`       | Date-based checks: missing rates, overdue reviews. Not part of `check`; `FRESHNESS_ONLINE=1` also checks the source URLs                                      |

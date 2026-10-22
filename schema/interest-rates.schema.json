@@ -21,17 +21,20 @@
       "type": "object",
       "properties": {
         "description": {
-          "type": "string"
+          "type": "string",
+          "description": "What the rate is and its legal basis, in Dutch"
         },
         "source": {
-          "type": "string"
+          "type": "string",
+          "description": "Where the rates are published: a publisher or a URL"
         },
         "periods": {
           "minItems": 1,
           "type": "array",
           "items": {
             "$ref": "#/definitions/InterestRatePeriod"
-          }
+          },
+          "description": "Every period on file, oldest first"
         }
       },
       "required": [
@@ -39,7 +42,8 @@
         "source",
         "periods"
       ],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "description": "The rates of one type of interest, with their source"
     },
     "InterestRatePeriod": {
       "type": "object",
@@ -73,7 +77,8 @@
         "to",
         "rate"
       ],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "description": "A period during which one rate applies"
     },
     "Day": {
       "type": "string",

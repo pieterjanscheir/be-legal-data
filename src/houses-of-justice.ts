@@ -23,6 +23,10 @@ const byId = versionsById(housesOfJustice)
 
 /** A house of justice by id, e.g. 'justitiehuis-gent': today's version, or the one of a given day */
 export function getHouseOfJustice(id: HouseOfJusticeId): HouseOfJustice
+/**
+ * A house of justice by id, as on a given day (today by default). `undefined` for an unknown id
+ * or one not in force that day. A day before the data's coverage throws a `RangeError`.
+ */
 export function getHouseOfJustice(id: string, options?: OnDay): HouseOfJustice | undefined
 export function getHouseOfJustice(id: string, options?: OnDay): HouseOfJustice | undefined {
     return pickVersion(byId.get(id), options, housesOfJusticeCoverage, 'houses of justice')

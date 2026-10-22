@@ -18,4 +18,6 @@ The short version:
 4. Run `pnpm check` before pushing, and commit `schema/`, `src/ids.generated.ts` and
    `ids.lock.json` with your change. The build output (`dist/`) isn't committed, and neither are
    the files `pnpm generate` splits into `data/courts/` and `data/cantons/`.
-5. Add a line to `CHANGELOG.md` under Unreleased.
+5. Give every export in `src/` a doc comment: it is what editors show on hover, and
+   `pnpm lint` fails without it.
+6. Add a line to `CHANGELOG.md` under Unreleased.

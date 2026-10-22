@@ -48,11 +48,17 @@ export type { Coverage, OnDay, Validity } from './time'
 export { territoryCoverage } from './territory-coverage'
 
 // The data is validated against the zod schemas in ./schemas (test/schema.test.ts)
+/** Every judicial area (rechtsgebied / ressort), every version */
 export const judicialAreas = judicialAreasData as readonly JudicialArea[]
+/** Every judicial arrondissement, every version */
 export const arrondissements = arrondissementsData as readonly Arrondissement[]
+/** The three regions, every version */
 export const regions = regionsData as readonly Region[]
+/** The ten provinces, every version */
 export const provinces = provincesData as readonly Province[]
+/** Every municipality, every version, by REFNIS code */
 export const municipalities = municipalitiesData as readonly Municipality[]
+/** Every judicial canton, every version, with its `territory` */
 export const cantons = cantonsData as readonly Canton[]
 
 const pick = <T extends Validity>(list: T[] | undefined, options: OnDay | undefined) =>
@@ -80,6 +86,10 @@ for (const canton of cantons) {
 
 /** A judicial area by id, e.g. 'gent' */
 export function getJudicialArea(id: JudicialAreaId): JudicialArea
+/**
+ * A judicial area by id, as on a given day (today by default). `undefined` for an unknown id or
+ * one not in force that day. A day before the data's coverage throws a `RangeError`.
+ */
 export function getJudicialArea(id: string, options?: OnDay): JudicialArea | undefined
 export function getJudicialArea(id: string, options?: OnDay): JudicialArea | undefined {
     return pick(judicialAreasById.get(id), options)
@@ -87,6 +97,11 @@ export function getJudicialArea(id: string, options?: OnDay): JudicialArea | und
 
 /** A judicial arrondissement by id, e.g. 'oost-vlaanderen' */
 export function getArrondissement(id: ArrondissementId): Arrondissement
+/**
+ * A judicial arrondissement by id, as on a given day (today by default). `undefined` for an
+ * unknown id or one not in force that day. A day before the data's coverage throws a
+ * `RangeError`.
+ */
 export function getArrondissement(id: string, options?: OnDay): Arrondissement | undefined
 export function getArrondissement(id: string, options?: OnDay): Arrondissement | undefined {
     return pick(arrondissementsById.get(id), options)
@@ -94,6 +109,10 @@ export function getArrondissement(id: string, options?: OnDay): Arrondissement |
 
 /** A region by its REFNIS code: '02000' Flemish, '03000' Walloon, '04000' Brussels-Capital */
 export function getRegion(id: RegionId): Region
+/**
+ * A region by its REFNIS code, as on a given day (today by default). `undefined` for an unknown
+ * id or one not in force that day. A day before the data's coverage throws a `RangeError`.
+ */
 export function getRegion(id: string, options?: OnDay): Region | undefined
 export function getRegion(id: string, options?: OnDay): Region | undefined {
     return pick(regionsById.get(id), options)
@@ -101,6 +120,11 @@ export function getRegion(id: string, options?: OnDay): Region | undefined {
 
 /** A province by its REFNIS code, e.g. '40000' for Oost-Vlaanderen */
 export function getProvince(id: ProvinceId): Province
+/**
+ * A province by its REFNIS code, as on a given day (today by default). `undefined` for an
+ * unknown id or one not in force that day. A day before the data's coverage throws a
+ * `RangeError`.
+ */
 export function getProvince(id: string, options?: OnDay): Province | undefined
 export function getProvince(id: string, options?: OnDay): Province | undefined {
     return pick(provincesById.get(id), options)
@@ -108,6 +132,11 @@ export function getProvince(id: string, options?: OnDay): Province | undefined {
 
 /** A municipality by its REFNIS code, e.g. '44021' for Gent */
 export function getMunicipality(id: MunicipalityId): Municipality
+/**
+ * A municipality by its REFNIS code, as on a given day (today by default). `undefined` for an
+ * unknown id or one not in force that day. A day before the data's coverage throws a
+ * `RangeError`.
+ */
 export function getMunicipality(id: string, options?: OnDay): Municipality | undefined
 export function getMunicipality(id: string, options?: OnDay): Municipality | undefined {
     return pick(municipalitiesById.get(id), options)
@@ -115,6 +144,10 @@ export function getMunicipality(id: string, options?: OnDay): Municipality | und
 
 /** A judicial canton by id, e.g. 'gent-1' */
 export function getCanton(id: CantonId): Canton
+/**
+ * A judicial canton by id, as on a given day (today by default). `undefined` for an unknown id
+ * or one not in force that day. A day before the data's coverage throws a `RangeError`.
+ */
 export function getCanton(id: string, options?: OnDay): Canton | undefined
 export function getCanton(id: string, options?: OnDay): Canton | undefined {
     return pick(cantonsById.get(id), options)

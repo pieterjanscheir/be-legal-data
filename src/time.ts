@@ -31,6 +31,7 @@ export function toDay(date: Date | string): string {
     return `${date.getFullYear()}-${m}-${d}`
 }
 
+/** Whether a record is in force on a day (YYYY-MM-DD): both validity bounds are inclusive */
 export function appliesOn(record: Validity, day: string): boolean {
     return (
         (record.validFrom === undefined || record.validFrom <= day) &&
