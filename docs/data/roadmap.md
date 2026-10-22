@@ -32,16 +32,19 @@ follow the [conventions](/guide/contributing#adding-a-dataset).
 
 ## Amounts, rates and calendars
 
-| Dataset                                                                                 | Why it's useful                                                                      | Issue                                                       |
-| --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
-| **Court fees** (rolrechten / droits de mise au rôle, griffierechten / droits de greffe) | Cost estimates and e-filing; the fee depends on the filing date                      | [#59](https://github.com/pieterjanscheir/belgica/issues/59) |
-| **Procedural indemnity** (rechtsplegingsvergoeding / indemnité de procédure)            | The brackets and their indexation, for every cost estimate and judgment              | [#60](https://github.com/pieterjanscheir/belgica/issues/60) |
-| **Amount thresholds for competence and appeal** (art. 590, 617 Ger.W.)                  | Which court hears a claim, and whether its judgment can be appealed                  | [#69](https://github.com/pieterjanscheir/belgica/issues/69) |
-| **Judicial holidays and public holidays**                                               | Computing procedural deadlines                                                       | [#61](https://github.com/pieterjanscheir/belgica/issues/61) |
-| **Health index** (gezondheidsindex / indice santé) per month                            | Rent and maintenance indexation                                                      | [#62](https://github.com/pieterjanscheir/belgica/issues/62) |
-| **Damages and interest caps for consumer debts** (Book XIX WER / CDE)                   | What can be charged to a consumer who pays late                                      | [#63](https://github.com/pieterjanscheir/belgica/issues/63) |
-| **Garnishment limits** (beslagbare bedragen / quotités saisissables, art. 1409 Ger.W.)  | How much of a wage or benefit can be seized, indexed every year                      | [#67](https://github.com/pieterjanscheir/belgica/issues/67) |
-| **Tax interest rates**: late-payment and moratorium interest                            | Interest in tax disputes, next to the [legal and commercial rates](./interest-rates) | [#68](https://github.com/pieterjanscheir/belgica/issues/68) |
+| Dataset                                                                                               | Why it's useful                                                                        | Issue                                                         |
+| ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| **Court fees** (rolrechten / droits de mise au rôle, griffierechten / droits de greffe)               | Cost estimates and e-filing; the fee depends on the filing date                        | [#59](https://github.com/pieterjanscheir/belgica/issues/59)   |
+| **Procedural indemnity** (rechtsplegingsvergoeding / indemnité de procédure)                          | The brackets and their indexation, for every cost estimate and judgment                | [#60](https://github.com/pieterjanscheir/belgica/issues/60)   |
+| **Amount thresholds for competence and appeal** (art. 590, 617 Ger.W.)                                | Which court hears a claim, and whether its judgment can be appealed                    | [#69](https://github.com/pieterjanscheir/belgica/issues/69)   |
+| **Judicial holidays and public holidays**                                                             | Computing procedural deadlines                                                         | [#61](https://github.com/pieterjanscheir/belgica/issues/61)   |
+| **Health index** (gezondheidsindex / indice santé) per month                                          | Rent and maintenance indexation                                                        | [#62](https://github.com/pieterjanscheir/belgica/issues/62)   |
+| **Damages and interest caps for consumer debts** (Book XIX WER / CDE)                                 | What can be charged to a consumer who pays late                                        | [#63](https://github.com/pieterjanscheir/belgica/issues/63)   |
+| **Garnishment limits** (beslagbare bedragen / quotités saisissables, art. 1409 Ger.W.)                | How much of a wage or benefit can be seized, indexed every year                        | [#67](https://github.com/pieterjanscheir/belgica/issues/67)   |
+| **Tax interest rates**: late-payment and moratorium interest                                          | Interest in tax disputes, next to the [legal and commercial rates](./interest-rates)   | [#68](https://github.com/pieterjanscheir/belgica/issues/68)   |
+| **Bailiffs' tariff** in civil and commercial matters (KB 30 november 1976)                            | What service and enforcement cost, next to the court fees and the procedural indemnity | [#102](https://github.com/pieterjanscheir/belgica/issues/102) |
+| **Income limits for legal aid** (juridische tweedelijnsbijstand / aide juridique, art. 508/13 Ger.W.) | Whether someone gets a pro bono lawyer, fully or partly; indexed every year            | [#100](https://github.com/pieterjanscheir/belgica/issues/100) |
+| **Multiplier for criminal fines** (opdeciemen / décimes additionnels, Wet 5 maart 1952)               | The fine actually due: the statutory amount times the factor on the day of the offence | [#101](https://github.com/pieterjanscheir/belgica/issues/101) |
 
 ## Why some datasets aren't here yet
 
