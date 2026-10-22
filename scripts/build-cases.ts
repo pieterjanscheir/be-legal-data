@@ -8,7 +8,9 @@
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { dirname } from 'node:path'
 import type * as Root from '../src/index.ts'
+import type * as ArrondissementBoundaries from '../src/arrondissement-boundaries.ts'
 import type * as Boundaries from '../src/canton-boundaries.ts'
+import type * as CourtLocations from '../src/court-locations.ts'
 import type * as Courts from '../src/courts.ts'
 import type * as Houses from '../src/houses-of-justice.ts'
 import type * as Postal from '../src/postal-codes.ts'
@@ -45,6 +47,10 @@ const {
 } = await load<typeof Root>('index')
 const { cantonBoundaries, cantonBoundariesCoverage, findCantonsAt } =
     await load<typeof Boundaries>('canton-boundaries')
+const { arrondissementBoundaries, arrondissementBoundariesCoverage, findArrondissementsAt } =
+    await load<typeof ArrondissementBoundaries>('arrondissement-boundaries')
+const { courtLocationsCoverage, getCourtLocation } =
+    await load<typeof CourtLocations>('court-locations')
 const { courtsCoverage } = await load<typeof Courts>('courts')
 const { housesOfJusticeCoverage } = await load<typeof Houses>('houses-of-justice')
 const { postalCodesCoverage } = await load<typeof Postal>('postal-codes')
@@ -174,6 +180,7 @@ for (let lat = 49.45; lat <= 51.55; lat += 0.05) {
             latitude: y,
             on: today,
             cantons: ids(findCantonsAt(x, y, { on: today })),
+            arrondissements: ids(findArrondissementsAt(x, y, { on: today })),
         })
     }
 }
@@ -186,8 +193,28 @@ for (const boundary of cantonBoundaries) {
         latitude: y,
         on: today,
         cantons: ids(findCantonsAt(x, y, { on: today })),
+        arrondissements: ids(findArrondissementsAt(x, y, { on: today })),
     })
 }
+// And of each arrondissement's boundary
+for (const boundary of arrondissementBoundaries) {
+    const [x, y] = boundary.geometry.coordinates[0]?.[0]?.[0] ?? []
+    if (x === undefined || y === undefined) continue
+    pointCases.push({
+        longitude: x,
+        latitude: y,
+        on: today,
+        cantons: ids(findCantonsAt(x, y, { on: today })),
+        arrondissements: ids(findArrondissementsAt(x, y, { on: today })),
+    })
+}
+
+// Every court, with or without a point
+const locationCases = courtIds.map((id) => ({
+    id,
+    on: today,
+    location: getCourtLocation(id, { on: today }) ?? null,
+}))
 
 mkdirSync(dirname(out), { recursive: true })
 writeFileSync(
@@ -201,6 +228,8 @@ writeFileSync(
             prisons: prisonsCoverage.from,
             housesOfJustice: housesOfJusticeCoverage.from,
             cantonBoundaries: cantonBoundariesCoverage.from,
+            arrondissementBoundaries: arrondissementBoundariesCoverage.from,
+            courtLocations: courtLocationsCoverage.from,
         },
         municipalities: municipalityCases,
         postalCodes: postalCodeCases,
@@ -214,6 +243,7 @@ writeFileSync(
         },
         phoneNumbers: phones.map((e164) => ({ e164, national: formatPhoneNumber(e164) })),
         points: pointCases,
+        courtLocations: locationCases,
     }),
 )
 console.log(`Wrote ${out}`)

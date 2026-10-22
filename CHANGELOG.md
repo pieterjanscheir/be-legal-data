@@ -11,11 +11,12 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 **A Python package: `pip install belgica`.** The same data and helpers on PyPI, in snake case,
 with the same version number: `get_court`, `find_courts`, `get_cantons_for_municipality`,
-`find_competent_courts`, `find_courts_for_postal_code`, `find_cantons_at`, `format_court_name`,
-`get_interest_rate` and the rest. Records are the dicts from the JSON, typed with `TypedDict`s in
+`find_competent_courts`, `find_courts_for_postal_code`, `find_cantons_at`,
+`find_arrondissements_at`, `get_court_location`, `format_court_name`, `get_interest_rate` and the
+rest. Records are the dicts from the JSON, typed with `TypedDict`s in
 `belgica.types`. Python 3.11 or later, no dependencies. `pnpm build:cases` writes the answers of
 the TypeScript helpers for every municipality, postal code, canton and court, a grid of points
-and interest rates since 1969, and the Python tests check the package gives the same ones.
+(their canton and arrondissement), every court's location and interest rates since 1969, and the Python tests check the package gives the same ones.
 
 **Smaller files for apps that need only some courts.** JSON can't be tree-shaken, so a browser
 app that imported `findCourts` and `formatCourtName` from `belgica/courts` shipped every court:

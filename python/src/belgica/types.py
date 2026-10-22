@@ -254,6 +254,35 @@ class CantonBoundary(Validity):
     sources: list[SourceRef]
 
 
+class ArrondissementBoundary(Validity):
+    """The boundary of a judicial arrondissement, as the NGI digitised it: the union of its
+    cantons' boundaries. The legal text is the law; where the two disagree, the text wins."""
+
+    id: str
+    arrondissement: str
+    ngiId: str
+    geometry: MultiPolygon
+    sources: list[SourceRef]
+
+
+class Point(TypedDict):
+    type: Literal['Point']
+    coordinates: Position
+
+
+class CourtLocation(Validity):
+    """Where a court is on the map: a point the NGI publishes for each justice of the peace, kept
+    only where the NGI's address and the court's own agree on the house number"""
+
+    id: str
+    court: str
+    ngiId: str
+    address: str
+    """The address the NGI gives with the point, as published: 'Neerstraat 11'"""
+    geometry: Point
+    sources: list[SourceRef]
+
+
 InterestRatePeriod = TypedDict(
     'InterestRatePeriod',
     {

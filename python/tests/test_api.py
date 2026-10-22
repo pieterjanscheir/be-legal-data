@@ -33,6 +33,10 @@ def test_readme_examples() -> None:
     gent = belgica.get_cantons_for_municipality('44021', on='2025-09-15')
     assert [c['id'] for c in gent] == ['gent-1', 'gent-2', 'gent-3', 'gent-4', 'gent-5']
     assert [c['id'] for c in belgica.find_cantons_at(3.7268, 51.053)] == ['gent-1']
+    assert [a['id'] for a in belgica.find_arrondissements_at(3.7268, 51.053)] == ['oost-vlaanderen']
+    location = belgica.get_court_location('justice-of-the-peace-gent-1')
+    assert location is not None and location['geometry']['type'] == 'Point'
+    assert belgica.get_court_location('court-of-appeal-gent') is None
     assert [c['id'] for c in belgica.find_competent_courts('23088', 'police-court')] == [
         'police-court-vilvoorde'
     ]

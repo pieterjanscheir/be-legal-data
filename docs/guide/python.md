@@ -40,11 +40,14 @@ if court and 'address' in court:
 ```
 
 Each data file is read on first use and kept. The canton boundaries are 22 MB of JSON: only
-`find_cantons_at`, `get_canton_boundary` and `canton_boundaries()` read them.
+`find_cantons_at`, `get_canton_boundary` and `canton_boundaries()` read them. The arrondissement
+boundaries are read by `find_arrondissements_at`, `get_arrondissement_boundary` and
+`arrondissement_boundaries()`, the court locations by `get_court_location` and
+`court_locations()`.
 
 Every dataset is a function that gives every record, every version: `courts()`, `cantons()`,
 `municipalities()`, `postal_codes()`, `prisons()`, `houses_of_justice()`, `canton_boundaries()`,
-`interest_rates()`, and so on. They give the same tuple of the same dicts on each call: copy a
+`arrondissement_boundaries()`, `court_locations()`, `interest_rates()`, and so on. They give the same tuple of the same dicts on each call: copy a
 record before changing it.
 
 ## Lookups
@@ -59,6 +62,8 @@ The functions are the npm package's, in snake case. Options are keyword argument
 | `findCompetentCourts(id, type, { on })`                 | `find_competent_courts(id, type, on=None)`                    |
 | `findCourtsForPostalCode(code, type, { on })`           | `find_courts_for_postal_code(code, type, on=None)`            |
 | `findCantonsAt(lon, lat, { on })`                       | `find_cantons_at(lon, lat, on=None)`                          |
+| `findArrondissementsAt(lon, lat, { on })`               | `find_arrondissements_at(lon, lat, on=None)`                  |
+| `getCourtLocation(id, { on })`                          | `get_court_location(id, on=None)`                             |
 | `formatCourtName(court, locale, { style })`             | `format_court_name(court, locale, style='official')`          |
 | `getInterestRate(day, type, { contractAfter20130316 })` | `get_interest_rate(day, type, contract_after_20130316=False)` |
 
