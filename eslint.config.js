@@ -14,11 +14,14 @@ export default tseslint.config(
             'src/canton-names.generated.ts',
             'src/data-files.generated.ts',
             'src/court-details-files.generated.ts',
+            'site/.next/',
+            'site/out/',
+            'site/next-env.d.ts',
         ],
     },
     js.configs.recommended,
     {
-        files: ['**/*.ts'],
+        files: ['**/*.ts', '**/*.tsx'],
         extends: [tseslint.configs.strictTypeChecked, tseslint.configs.stylisticTypeChecked],
         languageOptions: {
             parserOptions: { projectService: true, tsconfigRootDir: import.meta.dirname },
@@ -35,7 +38,13 @@ export default tseslint.config(
         extends: [tseslint.configs.disableTypeChecked],
     },
     {
-        files: ['scripts/**', 'test/**', '*.config.*', '**/*.cjs', '**/*.mjs'],
+        // The explorer imports belgica from dist/, which `pnpm check` lints before it builds;
+        // its types are checked by `pnpm --filter belgica-site typecheck` after the build (CI)
+        files: ['site/**'],
+        extends: [tseslint.configs.disableTypeChecked],
+    },
+    {
+        files: ['scripts/**', 'site/scripts/**', 'test/**', '*.config.*', '**/*.cjs', '**/*.mjs'],
         languageOptions: { globals: globals.node },
     },
 )

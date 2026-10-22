@@ -8,6 +8,10 @@ from, and the scraped data is rebuilt from the official sources every week.
 Documentation, with a canton lookup, a court list and interest-rate tables:
 **https://pieterjanscheir.github.io/belgica/**
 
+The [explorer](https://pieterjanscheir.github.io/belgica/explore/) is a site built on the package:
+a page for every court, canton, municipality and postal code, the canton map and an interest
+calculator. Its Next.js source is in [`site/`](site/).
+
 It's reference data, not legal advice: check the official sources before relying on it.
 
 ## What's in it

@@ -188,6 +188,8 @@ function themeConfig(prefix: string, t: Strings): DefaultTheme.Config {
             { text: t.nav.guide, link: `${prefix}/guide/getting-started` },
             { text: t.nav.data, link: `${prefix}/data/` },
             { text: t.nav.api, link: `${prefix}/api` },
+            // The Next.js site in site/, deployed next to the docs; outside VitePress's router
+            { text: 'Explorer', link: '/explore/', target: '_self' },
             {
                 text: `v${pkg.version}`,
                 items: [

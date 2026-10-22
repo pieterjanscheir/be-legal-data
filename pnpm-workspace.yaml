@@ -1,2 +1,7 @@
+packages:
+    - site
+
 allowBuilds:
     esbuild: true
+    sharp: false
+    unrs-resolver: false
