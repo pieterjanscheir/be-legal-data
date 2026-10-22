@@ -26,5 +26,6 @@ jobs:
                   cache: pnpm
             - run: pnpm install --frozen-lockfile
             - run: pnpm build
-            # A data package has nothing to show in a StackBlitz template
-            - run: pnpm exec pkg-pr-new publish --no-template
+            # A data package has nothing to show in a StackBlitz template. pkg.pr.new isn't npm,
+            # so npm trusted publishing doesn't apply
+            - run: pnpm exec pkg-pr-new publish --no-template # zizmor: ignore[use-trusted-publishing]
