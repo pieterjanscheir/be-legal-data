@@ -9,7 +9,8 @@ import { data as stats } from '../../.vitepress/stats.data'
   ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
 - **La compétence s'arrête à la juridiction.** `cantons` et `findCompetentCourts` disent quelle
   juridiction couvre une commune, pas laquelle de ses divisions : le territoire d'une division est
-  fixé par arrêté royal et n'est pas encore dans les données.
+  fixé par arrêté royal et n'est pas encore dans les données
+  ([#58](https://github.com/pieterjanscheir/belgica/issues/58)).
 - **{{ stats.courts.withoutAddress }} juridictions n'ont pas d'adresse unique** : une juridiction
   dont chaque division a la sienne (l'adresse est sur la division), ou qui publie ses adresses
   sous forme de phrase. Leur `address` est absente plutôt que devinée ; les divisions ont la leur.
@@ -37,11 +38,11 @@ import { data as stats } from '../../.vitepress/stats.data'
   exige l'adresse de rue : `findCantonsAt(lon, lat)` le trouve à partir de coordonnées grâce
   aux [limites des cantons](./canton-boundaries), mais géocoder l'adresse vous revient, et les
   limites sont la lecture de l'IGN du texte légal de `territory`, qui l'emporte là où ils
-  divergent.
+  divergent ([#66](https://github.com/pieterjanscheir/belgica/issues/66)).
 - **Les codes postaux s'arrêtent à la commune.** Les sections de commune (deelgemeenten) ne
   sont pas dans les données : la table de Statbel n'en a pas, et la liste de bpost n'est pas
   sous licence ouverte. Trois codes (`1040`, `1050`, `1804`) appartiennent à deux communes ;
-  les recherches renvoient les deux.
+  les recherches renvoient les deux ([#54](https://github.com/pieterjanscheir/belgica/issues/54)).
 - **Une adresse de juridiction sans commune** : la justice de paix d'Etterbeek publie
   `1040 Brussel (Etterbeek)`, un code partagé avec une ligne de localité qui nomme les deux
   communes ; `address.municipality` est donc omis plutôt que deviné. La justice de paix de

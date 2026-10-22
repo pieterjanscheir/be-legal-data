@@ -9,7 +9,7 @@ import { data as stats } from '../../.vitepress/stats.data'
   ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
 - **Właściwość kończy się na sądzie.** `cantons` i `findCompetentCourts` mówią, który sąd
   obejmuje gminę, a nie który z jego wydziałów: obszar wydziału ustala dekret królewski, którego
-  jeszcze nie ma w danych.
+  jeszcze nie ma w danych ([#58](https://github.com/pieterjanscheir/belgica/issues/58)).
 - **{{ stats.courts.withoutAddress }} sądów nie ma jednego adresu**: sąd, którego wydziały mają
   każdy własny (adres jest przy wydziale), albo sąd, który publikuje swoje adresy w postaci
   zdania. Ich `address` jest nieobecny, a nie zgadywany; wydziały mają swoje.
@@ -35,10 +35,12 @@ import { data as stats } from '../../.vitepress/stats.data'
   pocztowy prowadzi do gminy (`findCourtsForPostalCode`); wybór kantonu wymaga adresu z ulicą:
   `findCantonsAt(lon, lat)` znajduje go na podstawie współrzędnych dzięki
   [granicom kantonów](./canton-boundaries), ale geokodowanie adresu należy do ciebie, a granice
-  są odczytaniem tekstu prawnego z `territory` przez NGI, a tekst wygrywa, gdy się różnią.
+  są odczytaniem tekstu prawnego z `territory` przez NGI, a tekst wygrywa, gdy się różnią
+  ([#66](https://github.com/pieterjanscheir/belgica/issues/66)).
 - **Kody pocztowe kończą się na gminie.** Części gmin (deelgemeenten) nie ma w danych: tabela
   Statbel ich nie zawiera, a lista bpost nie jest na otwartej licencji. Trzy kody (`1040`,
-  `1050`, `1804`) należą do dwóch gmin; wyszukiwania zwracają obie.
+  `1050`, `1804`) należą do dwóch gmin; wyszukiwania zwracają obie
+  ([#54](https://github.com/pieterjanscheir/belgica/issues/54)).
 - **Jeden adres sądu bez gminy**: vredegerecht / justice de paix w Etterbeek publikuje
   `1040 Brussel (Etterbeek)`, wspólny kod z nazwą miejscowości wskazującą obie gminy, więc
   `address.municipality` jest pominięte, a nie zgadywane. Justice de paix w Limbourg publikuje

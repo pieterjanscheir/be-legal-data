@@ -8,7 +8,8 @@ import { data as stats } from '../../.vitepress/stats.data'
   وGrondwettelijk Hof / Cour constitutionnelle، وRaad van State / Conseil d'État، والمحاكم
   التأديبية ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
 - **الاختصاص يتوقف عند المحكمة.** يقول `cantons` و`findCompetentCourts` أي محكمة تغطي بلدية ما،
-  لا أي قسم من أقسامها: نطاق القسم يحدده مرسوم ملكي وليس في البيانات بعد.
+  لا أي قسم من أقسامها: نطاق القسم يحدده مرسوم ملكي وليس في البيانات بعد
+  ([#58](https://github.com/pieterjanscheir/belgica/issues/58)).
 - **{{ stats.courts.withoutAddress }} محكمة بلا عنوان واحد**: محكمة لكل قسم من أقسامها عنوانه الخاص
   (العنوان على القسم)، أو محكمة تنشر عناوينها على شكل جملة. يغيب حقل `address` فيها بدلًا من
   تخمينه؛ وللأقسام عناوينها.
@@ -33,10 +34,11 @@ import { data as stats } from '../../.vitepress/stats.data'
   إلى البلدية (`findCourtsForPostalCode`)؛ أما اختيار الكانتون فيحتاج إلى عنوان الشارع: تجده
   `findCantonsAt(lon, lat)` من الإحداثيات بواسطة [حدود الكانتونات](./canton-boundaries)، لكن تحويل
   العنوان إلى إحداثيات عليك، والحدود قراءة NGI للنص القانوني في `territory`، والنص هو الغالب حيث
-  يختلفان.
+  يختلفان ([#66](https://github.com/pieterjanscheir/belgica/issues/66)).
 - **الرموز البريدية تتوقف عند البلدية.** البلديات الفرعية (deelgemeenten) ليست في البيانات: جدول
   Statbel لا يتضمنها، وقائمة bpost ليست بترخيص مفتوح. ثلاثة رموز (`1040` و`1050` و`1804`) تنتمي
-  إلى بلديتين؛ وتُرجع دوال البحث كلتيهما.
+  إلى بلديتين؛ وتُرجع دوال البحث كلتيهما
+  ([#54](https://github.com/pieterjanscheir/belgica/issues/54)).
 - **عنوان محكمة واحد بلا بلدية**: الـvredegerecht / justice de paix في Etterbeek ينشر
   `1040 Brussel (Etterbeek)`، وهو رمز مشترك مع سطر مدينة يسمّي البلديتين، فيُترك
   `address.municipality` بدلًا من تخمينه. والـjustice de paix في Limbourg ينشر مقرًا مؤقتًا في قصر

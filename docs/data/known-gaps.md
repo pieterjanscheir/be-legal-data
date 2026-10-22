@@ -9,7 +9,7 @@ import { data as stats } from '../.vitepress/stats.data'
   ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
 - **Competence stops at the court.** `cantons` and `findCompetentCourts` say which court
   covers a municipality, not which of its divisions: a division's area is set by royal decree
-  and isn't in the data yet.
+  and isn't in the data yet ([#58](https://github.com/pieterjanscheir/belgica/issues/58)).
 - **{{ stats.courts.withoutAddress }} courts have no single address**: a court whose divisions
   each have their own (the address is on the division), or one that publishes its addresses as
   a sentence. Their `address` is missing rather than guessed; the divisions have theirs.
@@ -35,10 +35,11 @@ import { data as stats } from '../.vitepress/stats.data'
   street address: `findCantonsAt(lon, lat)` finds it from coordinates with the
   [canton boundaries](./canton-boundaries), but geocoding the address is up to you, and the
   boundaries are the NGI's reading of the legal text in `territory`, which wins where they
-  disagree.
+  disagree ([#66](https://github.com/pieterjanscheir/belgica/issues/66)).
 - **Postal codes stop at the municipality.** Sub-municipalities (deelgemeenten) aren't in the
   data: Statbel's table has none, and bpost's list isn't openly licensed. Three codes (`1040`,
-  `1050`, `1804`) belong to two municipalities; the lookups return both.
+  `1050`, `1804`) belong to two municipalities; the lookups return both
+  ([#54](https://github.com/pieterjanscheir/belgica/issues/54)).
 - **One court address without a municipality**: the justice of the peace of Etterbeek
   publishes `1040 Brussel (Etterbeek)`, a shared code with a city line that names both
   municipalities, so `address.municipality` is left out rather than guessed. The justice of
