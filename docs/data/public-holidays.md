@@ -66,6 +66,21 @@ and ends during them is extended to the fifteenth day of the new judicial year, 
 (art. 50, second paragraph). `isJudicialHoliday` tells you whether a day is in them; whether
 art. 50 applies depends on the deadline.
 
+## Other packages
+
+General holiday packages list Belgium's holidays too. They answer "is this day a holiday?", but
+they mix in days that don't move a deadline and don't know the art. 50 and 53 rules:
+
+| Package                                                        | Language | Belgium                                                                                                    |
+| -------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| [`date-holidays`](https://www.npmjs.com/package/date-holidays) | JS / TS  | Country `BE`, names in Dutch, French, German and English, with the community holidays as regional holidays |
+| [Nager.Date](https://date.nager.at)                            | REST API | `GET /api/v3/PublicHolidays/{year}/BE`; free, no key                                                       |
+| [`holidays`](https://pypi.org/project/holidays/)               | Python   | Country `BE` with localized names                                                                          |
+| [`workalendar`](https://pypi.org/project/workalendar/)         | Python   | A Belgium calendar with working-day arithmetic (`add_working_days`)                                        |
+
+Use one of them for days off in general, such as a school or office calendar; use this file
+when the day has legal consequences.
+
 ## Use it
 
 ```ts
