@@ -1,19 +1,7 @@
 /** Days, validity periods and coverage: how records relate to time */
+import type { Validity } from './schemas/common'
 
-/** When a record applies, both days included. No `validTo`: it still applies. */
-export interface Validity {
-    /**
-     * First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's
-     * coverage starts.
-     * @format date
-     */
-    validFrom?: string
-    /**
-     * Last day the record applies, YYYY-MM-DD
-     * @format date
-     */
-    validTo?: string
-}
+export type { Validity } from './schemas/common'
 
 /** Options for a lookup on a given day */
 export interface OnDay {

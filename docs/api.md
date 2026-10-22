@@ -25,6 +25,7 @@ import { getMunicipalitiesForPostalCode } from 'belgica/postal-codes'
 | `belgica/houses-of-justice`    | Houses of justice, and the contact helpers                                   |
 | `belgica/interest-rates`       | Interest rates                                                               |
 | `belgica/postal-codes`         | Postal codes, with the municipalities they belong to                         |
+| `belgica/schemas`              | [Zod schemas](/guide/schema#zod-schemas) for every record and data file      |
 | `belgica/data/*.json`          | The raw data files                                                           |
 | `belgica/schema/*.schema.json` | [JSON Schemas](/guide/schema)                                                |
 | `belgica/datapackage.json`     | [Data package descriptor](/guide/schema#datapackage-json)                    |

@@ -2,26 +2,29 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://pieterjanscheir.github.io/belgica/schema/cantons.schema.json",
   "title": "belgica: data/cantons.json",
-  "$ref": "#/definitions/CantonsFile",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Canton"
+  },
   "definitions": {
-    "CantonsFile": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Canton"
-      }
-    },
     "Canton": {
       "type": "object",
       "properties": {
         "validFrom": {
-          "type": "string",
-          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts.",
-          "format": "date"
+          "allOf": [
+            {
+              "$ref": "#/definitions/Day"
+            }
+          ],
+          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts."
         },
         "validTo": {
-          "type": "string",
-          "description": "Last day the record applies, YYYY-MM-DD",
-          "format": "date"
+          "allOf": [
+            {
+              "$ref": "#/definitions/Day"
+            }
+          ],
+          "description": "Last day the record applies, YYYY-MM-DD"
         },
         "id": {
           "$ref": "#/definitions/CantonId",
@@ -33,26 +36,28 @@
         },
         "name": {
           "type": "object",
-          "additionalProperties": false,
           "properties": {
-            "de": {
-              "type": "string"
-            },
             "nl": {
               "type": "string"
             },
             "fr": {
               "type": "string"
+            },
+            "de": {
+              "type": "string"
             }
           },
           "required": [
-            "fr",
-            "nl"
+            "nl",
+            "fr"
           ],
+          "additionalProperties": false,
           "description": "Name of the canton; usually the seat, but not always ('Oudergem' sits in Etterbeek). In Dutch and French from the annex to the Judicial Code; in German only where an official German text names the canton (see `sources`), since the annex has no German translation."
         },
         "number": {
-          "type": "number",
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991,
           "description": "Canton number for places with several cantons (Gent 1–5, …)"
         },
         "seat": {
@@ -60,6 +65,7 @@
           "description": "Where the justice of the peace sits"
         },
         "municipalities": {
+          "minItems": 1,
           "type": "array",
           "items": {
             "type": "object",
@@ -105,6 +111,12 @@
       ],
       "additionalProperties": false,
       "description": "A judicial canton: the area of one justice of the peace"
+    },
+    "Day": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+      "description": "A day as YYYY-MM-DD"
     },
     "CantonId": {
       "type": "string",
@@ -884,9 +896,8 @@
       "type": "object",
       "properties": {
         "url": {
-          "type": "string",
-          "description": "The law's ELI on the Belgian Official Journal's site (ejustice)",
-          "format": "uri"
+          "$ref": "#/definitions/Url",
+          "description": "The law's ELI on the Belgian Official Journal's site (ejustice)"
         },
         "provision": {
           "type": "string",
@@ -900,18 +911,22 @@
       "additionalProperties": false,
       "description": "A provision of Belgian law"
     },
+    "Url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://",
+      "description": "An http(s) URL"
+    },
     "SourceRef": {
       "type": "object",
       "properties": {
         "url": {
-          "type": "string",
-          "description": "The exact official page or file the data comes from",
-          "format": "uri"
+          "$ref": "#/definitions/Url",
+          "description": "The exact official page or file the data comes from"
         },
         "retrieved": {
-          "type": "string",
-          "description": "Day the source was last checked, YYYY-MM-DD",
-          "format": "date"
+          "$ref": "#/definitions/Day",
+          "description": "Day the source was last checked, YYYY-MM-DD"
         }
       },
       "required": [

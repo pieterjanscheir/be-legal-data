@@ -2,6 +2,7 @@ import { readdirSync, readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { Ajv, type AnySchema } from 'ajv'
 import { describe, expect, it } from 'vitest'
+import { dataFileSchemas } from '../src/schemas'
 
 // ajv-formats is CommonJS: require() gives the plugin itself
 const addFormats = createRequire(import.meta.url)(
@@ -20,6 +21,21 @@ interface Resource {
 
 const pkg = read('datapackage.json') as { resources: Resource[] }
 const dataFiles = readdirSync('data').filter((f) => f.endsWith('.json'))
+
+describe('zod schemas', () => {
+    it('cover every data file, and only those', () => {
+        expect(Object.keys(dataFileSchemas).map((name) => `${name}.json`)).toEqual(
+            expect.arrayContaining(dataFiles),
+        )
+        expect(Object.keys(dataFileSchemas)).toHaveLength(dataFiles.length)
+    })
+
+    it.each(dataFiles)('data/%s matches its zod schema', (file) => {
+        const schema = dataFileSchemas[file.replace('.json', '') as keyof typeof dataFileSchemas]
+        const result = schema.safeParse(read(`data/${file}`))
+        expect(result.error?.issues.slice(0, 5) ?? [], file).toEqual([])
+    })
+})
 
 describe('JSON Schemas', () => {
     const ajv = new Ajv({ allErrors: true, strict: true })

@@ -2,26 +2,29 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://pieterjanscheir.github.io/belgica/schema/arrondissements.schema.json",
   "title": "belgica: data/arrondissements.json",
-  "$ref": "#/definitions/ArrondissementsFile",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Arrondissement"
+  },
   "definitions": {
-    "ArrondissementsFile": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Arrondissement"
-      }
-    },
     "Arrondissement": {
       "type": "object",
       "properties": {
         "validFrom": {
-          "type": "string",
-          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts.",
-          "format": "date"
+          "allOf": [
+            {
+              "$ref": "#/definitions/Day"
+            }
+          ],
+          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts."
         },
         "validTo": {
-          "type": "string",
-          "description": "Last day the record applies, YYYY-MM-DD",
-          "format": "date"
+          "allOf": [
+            {
+              "$ref": "#/definitions/Day"
+            }
+          ],
+          "description": "Last day the record applies, YYYY-MM-DD"
         },
         "id": {
           "$ref": "#/definitions/ArrondissementId",
@@ -40,7 +43,14 @@
         "name",
         "judicialArea"
       ],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "description": "A judicial arrondissement"
+    },
+    "Day": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+      "description": "A day as YYYY-MM-DD"
     },
     "ArrondissementId": {
       "type": "string",

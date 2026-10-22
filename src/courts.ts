@@ -1,7 +1,8 @@
 import courtsData from '../data/courts.json'
 import { cantonNames } from './canton-names.generated'
-import type { Address, Contact, Locale, SourceRef, Translated, Url } from './common'
-import type { ArrondissementId, CantonId, CourtId, JudicialAreaId } from './ids.generated'
+import type { Locale } from './common'
+import type { CantonId, CourtId } from './ids.generated'
+import type { Court, CourtType } from './schemas/courts'
 import {
     applyingOn,
     currentVersion,
@@ -17,68 +18,7 @@ import {
 export type { CourtId } from './ids.generated'
 export type { Coverage, OnDay, Validity } from './time'
 export * from './contacts'
-
-export type CourtType =
-    | 'justice-of-the-peace'
-    | 'police-court'
-    | 'court-of-first-instance'
-    | 'enterprise-court'
-    | 'labour-court'
-    | 'court-of-appeal'
-    | 'labour-court-of-appeal'
-    | 'court-of-assize'
-
-/**
- * A court, a division of one (afdeling, division, Abteilung), or one of the seats of a justice
- * of the peace that sits in several places.
- */
-export interface Court extends Validity {
-    /**
-     * Stable id: the type, then the place in the court's own language (Dutch for Brussels, with
-     * `-nl` or `-fr` for the courts split by language); a division or seat adds its place.
-     * 'justice-of-the-peace-gent-1', 'enterprise-court-gent-brugge', 'police-court-brussel-fr'
-     */
-    id: CourtId
-    type: CourtType
-    kind: 'court' | 'division' | 'seat'
-    /** For a division or seat: the court it belongs to */
-    court?: CourtId
-    /**
-     * The court's name as it publishes it, in each language it publishes in: 'Vredegerecht
-     * Gent 1', 'Tribunal de l'entreprise du Hainaut - division Mons'
-     */
-    name: Partial<Translated>
-    judicialArea: JudicialAreaId
-    /** The arrondissement, for a court whose area is one arrondissement or lies within one */
-    arrondissement?: ArrondissementId
-    /** For a justice of the peace: the canton it serves */
-    canton?: CantonId
-    /**
-     * For a court other than a justice of the peace: the cantons it covers, as the annex to the
-     * Judicial Code (art. 3–5) and art. 114 of the Code set them. A justice of the peace covers
-     * its `canton`; a division or seat has neither: see `court`.
-     */
-    cantons?: CantonId[]
-    /**
-     * The court's codes in European Case Law Identifiers (ECLI:BE:<code>:…), one per language
-     * it judges in; only codes seen in published decisions
-     */
-    ecli?: string[]
-    /** Where the registry is; missing when the court publishes no single address */
-    address?: Address
-    contacts: Contact[]
-    /**
-     * When the registry is open, in OpenStreetMap `opening_hours` syntax: 'Mo-Fr
-     * 08:30-12:30,13:30-16:00'. Only when the published text reads to it without doubt.
-     */
-    openingHours?: string
-    /** The opening hours as the court publishes them, per language */
-    openingHoursText?: Partial<Translated>
-    /** The court's page, per language */
-    website: Partial<Record<Locale, Url>>
-    /** The pages the record was read from */
-    sources: SourceRef[]
-}
+export type { Court, CourtType } from './schemas/courts'
 
 /**
  * The courts data describes the situation from this day on, like the territory: which courts
@@ -89,7 +29,7 @@ export interface Court extends Validity {
  */
 export const courtsCoverage: Coverage = { from: '2025-01-01' }
 
-// The data is validated against the JSON Schema generated from these types (test/schema.test.ts)
+// The data is validated against the zod schemas in ./schemas (test/schema.test.ts)
 /** Every record, every version: see `getCourt` and `findCourts` for the ones that apply on a day */
 export const courts = courtsData as readonly Court[]
 

@@ -80,7 +80,9 @@ Every dataset gets the same treatment, so users can rely on it:
    `reviewEveryMonths`.
 5. **Types and helpers**: `src/<name>.ts`, exported from `src/index.ts`, plus an entry point in
    `tsup.config.ts` and `package.json` `exports`.
-6. **Schema**: add the file type to `scripts/schema-types.ts` and `scripts/build-schemas.ts`.
+6. **Schema**: a zod schema in `src/schemas/`, exported from `src/schemas/index.ts` with the
+   file in `dataFileSchemas`. The record type is its `z.infer`; the JSON Schema is generated
+   from it, with the JSDoc comments as descriptions.
 7. **Source and parser**: a walk in `scripts/sources/catalog.ts` that fetches the official
    pages, and a parser in `scripts/parse` that builds the file from the snapshots, with
    fixtures and tests. It reads only what it can read for certain and reports the rest.

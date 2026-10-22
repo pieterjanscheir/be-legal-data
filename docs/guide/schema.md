@@ -1,8 +1,9 @@
 # JSON Schema
 
 Every file in `data/` has a [JSON Schema](https://json-schema.org) (draft-07) in `schema/`.
-The schemas are generated from the TypeScript types, so the types, the schemas and the data
-can't drift apart: CI fails when any of the three disagree.
+The schemas are generated from the [zod schemas](#zod-schemas) the TypeScript types are inferred
+from, so the types, the schemas and the data can't drift apart: CI fails when any of the three
+disagree.
 
 | Data file                     | Schema                                                                                   |
 | ----------------------------- | ---------------------------------------------------------------------------------------- |
@@ -53,8 +54,25 @@ ajv.validate(schema, courts) // true
 
 :::
 
+In TypeScript, the [zod schemas](#zod-schemas) do the same without a JSON Schema validator.
+
 You'll mostly want this when you keep a copy of the data (a fork with extra records, a cached
 download) and want to know it still has the shape the package expects.
+
+## Zod schemas
+
+`belgica/schemas` exports the [zod](https://zod.dev) schemas the package's types are inferred
+from: one per record (`courtSchema`, `cantonSchema`, …), per id (`courtIdSchema`, a `z.enum` of
+every id) and per data file (`dataFileSchemas`).
+
+```ts
+import { courtIdSchema, dataFileSchemas } from 'belgica/schemas'
+
+const courts = dataFileSchemas.courts.parse(json) // throws a ZodError on a record that doesn't fit
+courtIdSchema.safeParse(input).success // whether a string is a known court id
+```
+
+Only `belgica/schemas` loads zod; the datasets import their types alone.
 
 ## Generating types for other languages
 

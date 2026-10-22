@@ -1,72 +1,21 @@
 import boundariesData from '../data/canton-boundaries.json'
-import type { Bilingual, SourceRef } from './common'
 import type { CantonId } from './ids.generated'
+import type { CantonBoundary, MultiPolygon, Position, Ring } from './schemas/canton-boundaries'
 import { getCanton, type Canton } from './territory'
-import {
-    applyingOn,
-    pickVersion,
-    versionsById,
-    type Coverage,
-    type OnDay,
-    type Validity,
-} from './time'
+import { applyingOn, pickVersion, versionsById, type Coverage, type OnDay } from './time'
 
 export type { Bilingual, SourceRef } from './common'
 export type { CantonId } from './ids.generated'
 export type { Canton } from './territory'
 export type { Coverage, OnDay, Validity } from './time'
 
-/** A GeoJSON position: longitude, then latitude, in decimal degrees (WGS 84) */
-export type Position = [number, number]
-
-/**
- * A GeoJSON linear ring: closed (the first position repeated last), so at least four positions
- * @minItems 4
- */
-export type Ring = Position[]
-
-/**
- * The rings of a GeoJSON polygon: the exterior ring first, counter-clockwise, then its holes,
- * clockwise (RFC 7946)
- * @minItems 1
- */
-export type PolygonCoordinates = Ring[]
-
-/** A GeoJSON MultiPolygon geometry (RFC 7946), in WGS 84 */
-export interface MultiPolygon {
-    type: 'MultiPolygon'
-    /** @minItems 1 */
-    coordinates: PolygonCoordinates[]
-}
-
-/**
- * The boundary of a judicial canton, as the National Geographic Institute (NGI) digitised it
- * from the annex to the Judicial Code. The legal text in the canton's `territory` is the law;
- * where the two disagree, the text wins.
- */
-export interface CantonBoundary extends Validity {
-    /** The canton's id: a canton has one boundary, which takes its key */
-    id: CantonId
-    /** The canton the boundary belongs to */
-    canton: CantonId
-    /**
-     * The NGI's identifier of the object (its `tgid`), e.g. '{50412818-C0B7-4FEE-9E9B-DFFF0A768922}'
-     * @pattern ^\{[0-9A-F]{8}(-[0-9A-F]{4}){3}-[0-9A-F]{12}\}$
-     */
-    ngiId: string
-    /**
-     * The canton code in the NGI's data, in Dutch and French: six digits, the same in both
-     * ('248112' for Gent 1), with an 'N' or 'F' prefix per language in Brussels-Capital and in
-     * Sint-Genesius-Rode ('N238104', 'F238104' for Brussel 1)
-     */
-    cantonCode: Bilingual
-    /**
-     * The boundary as the NGI publishes it, without simplification: WGS 84, longitude first,
-     * coordinates rounded to 7 decimals (about a centimetre)
-     */
-    geometry: MultiPolygon
-    sources: SourceRef[]
-}
+export type {
+    CantonBoundary,
+    MultiPolygon,
+    PolygonCoordinates,
+    Position,
+    Ring,
+} from './schemas/canton-boundaries'
 
 /**
  * The boundaries describe the situation from the day the NGI's file was first read. A boundary
@@ -75,8 +24,8 @@ export interface CantonBoundary extends Validity {
  */
 export const cantonBoundariesCoverage: Coverage = { from: '2026-10-21' }
 
-// The data is validated against the JSON Schema generated from these types (test/schema.test.ts).
-// TypeScript reads the file's positions as number[] rather than [number, number], hence unknown.
+// The data is validated against the zod schemas in ./schemas (test/schema.test.ts). TypeScript
+// reads the file's positions as number[] rather than [number, number], hence unknown.
 /** Every record, every version */
 export const cantonBoundaries = boundariesData as unknown as readonly CantonBoundary[]
 
