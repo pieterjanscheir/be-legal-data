@@ -1,0 +1,175 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://pieterjanscheir.github.io/belgica/schema/arrondissement-boundaries.schema.json",
+  "title": "belgica: data/arrondissement-boundaries.json",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/ArrondissementBoundary"
+  },
+  "definitions": {
+    "ArrondissementBoundary": {
+      "type": "object",
+      "properties": {
+        "validFrom": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/Day"
+            }
+          ],
+          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts."
+        },
+        "validTo": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/Day"
+            }
+          ],
+          "description": "Last day the record applies, YYYY-MM-DD"
+        },
+        "id": {
+          "$ref": "#/definitions/ArrondissementId",
+          "description": "The arrondissement's id: an arrondissement has one boundary, which takes its key"
+        },
+        "arrondissement": {
+          "$ref": "#/definitions/ArrondissementId",
+          "description": "The arrondissement the boundary belongs to"
+        },
+        "ngiId": {
+          "$ref": "#/definitions/NgiId",
+          "description": "The NGI's identifier of the object (its `tgid`), e.g. '{26AAD4D5-2C17-4F54-80DE-297C9683B18D}'"
+        },
+        "geometry": {
+          "$ref": "#/definitions/MultiPolygon",
+          "description": "The boundary as the NGI publishes it, without simplification: WGS 84, longitude first, coordinates rounded to 7 decimals (about a centimetre)"
+        },
+        "sources": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SourceRef"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "arrondissement",
+        "ngiId",
+        "geometry",
+        "sources"
+      ],
+      "additionalProperties": false,
+      "description": "The boundary of a judicial arrondissement, as the National Geographic Institute (NGI) digitised it from the annex to the Judicial Code: the union of its cantons' boundaries. The legal text is the law; where the two disagree, the text wins."
+    },
+    "Day": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+      "description": "A day as YYYY-MM-DD"
+    },
+    "ArrondissementId": {
+      "type": "string",
+      "enum": [
+        "antwerpen",
+        "brabant-wallon",
+        "brussel",
+        "eupen",
+        "hainaut",
+        "leuven",
+        "liege",
+        "limburg",
+        "luxembourg",
+        "namur",
+        "oost-vlaanderen",
+        "west-vlaanderen"
+      ],
+      "description": "Id of a record in data/arrondissements.json"
+    },
+    "NgiId": {
+      "type": "string",
+      "pattern": "^\\{[0-9A-F]{8}(-[0-9A-F]{4}){3}-[0-9A-F]{12}\\}$",
+      "description": "The NGI's identifier of an object (its `tgid`): a GUID in braces, uppercase"
+    },
+    "MultiPolygon": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "MultiPolygon"
+        },
+        "coordinates": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PolygonCoordinates"
+          }
+        }
+      },
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "additionalProperties": false,
+      "description": "A GeoJSON MultiPolygon geometry (RFC 7946), in WGS 84"
+    },
+    "PolygonCoordinates": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Ring"
+      },
+      "description": "The rings of a GeoJSON polygon: the exterior ring first, counter-clockwise, then its holes, clockwise (RFC 7946)"
+    },
+    "Ring": {
+      "minItems": 4,
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Position"
+      },
+      "description": "A GeoJSON linear ring: closed (the first position repeated last), so at least four positions"
+    },
+    "Position": {
+      "type": "array",
+      "items": [
+        {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        },
+        {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        }
+      ],
+      "additionalItems": false,
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "A GeoJSON position: longitude, then latitude, in decimal degrees (WGS 84)"
+    },
+    "SourceRef": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "$ref": "#/definitions/Url",
+          "description": "The exact official page or file the data comes from"
+        },
+        "retrieved": {
+          "$ref": "#/definitions/Day",
+          "description": "Day the source was last checked, YYYY-MM-DD"
+        }
+      },
+      "required": [
+        "url",
+        "retrieved"
+      ],
+      "additionalProperties": false,
+      "description": "Where a record's data was taken from"
+    },
+    "Url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://",
+      "description": "An http(s) URL"
+    }
+  }
+}

@@ -3,7 +3,9 @@ import { describe, expect, it } from 'vitest'
 
 import { ID_PATTERN, toId } from '../scripts/id'
 import { DATASETS, lockIds, readLock } from '../scripts/lock-ids'
+import { arrondissementBoundaries } from '../src/arrondissement-boundaries'
 import { cantonBoundaries } from '../src/canton-boundaries'
+import { courtLocations } from '../src/court-locations'
 import {
     arrondissements,
     cantons,
@@ -100,10 +102,12 @@ describe('identifiers', () => {
             arrondissements: arrondissements.map((r) => r.id),
             cantons: cantons.map((r) => r.id),
             'canton-boundaries': cantonBoundaries.map((r) => r.id),
+            'arrondissement-boundaries': arrondissementBoundaries.map((r) => r.id),
             regions: regions.map((r) => r.id),
             provinces: provinces.map((r) => r.id),
             municipalities: municipalities.map((r) => r.id),
             courts: courts.map((r) => r.id),
+            'court-locations': courtLocations.map((r) => r.id),
             prisons: prisons.map((r) => r.id),
             'houses-of-justice': housesOfJustice.map((r) => r.id),
             'postal-codes': postalCodes.map((r) => r.id),

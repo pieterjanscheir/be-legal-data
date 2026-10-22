@@ -55,9 +55,17 @@
             "types": "./dist/canton-boundaries.d.ts",
             "default": "./dist/canton-boundaries.js"
         },
+        "./arrondissement-boundaries": {
+            "types": "./dist/arrondissement-boundaries.d.ts",
+            "default": "./dist/arrondissement-boundaries.js"
+        },
         "./courts": {
             "types": "./dist/courts.d.ts",
             "default": "./dist/courts.js"
+        },
+        "./court-locations": {
+            "types": "./dist/court-locations.d.ts",
+            "default": "./dist/court-locations.js"
         },
         "./courts/format": {
             "types": "./dist/courts-format.d.ts",

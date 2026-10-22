@@ -6,6 +6,7 @@ const { getJusticeOfThePeace } = require('belgica/courts')
 const { getInterestRate } = require('belgica/interest-rates')
 const { getPostalCodes } = require('belgica/postal-codes')
 const { findCantonsAt } = require('belgica/canton-boundaries')
+const { findArrondissementsAt } = require('belgica/arrondissement-boundaries')
 const { formatCourtName } = require('belgica/courts/format')
 const { loadCourtDetails } = require('belgica/courts/load')
 const { getCanton } = require('belgica/cantons')
@@ -25,6 +26,10 @@ assert.equal(
 assert.deepEqual(
     findCantonsAt(3.745, 50.995).map((c) => c.id),
     ['merelbeke-melle'],
+)
+assert.deepEqual(
+    findArrondissementsAt(3.745, 50.995).map((a) => a.id),
+    ['oost-vlaanderen'],
 )
 
 assert.equal(

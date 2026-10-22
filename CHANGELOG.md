@@ -53,6 +53,18 @@ time; for a record without one (saved before this version), `belgica/courts` sti
 
 `belgica/courts`, `belgica/territory` and the root keep their exports and full records.
 
+**Arrondissement boundaries and court locations, from the NGI file the canton boundaries
+already came from.** `data/arrondissement-boundaries.json` has the boundary of each of the 12
+judicial arrondissements as a GeoJSON MultiPolygon, with `findArrondissementsAt(lon, lat)` and
+`getArrondissementBoundary(id)` in `belgica/arrondissement-boundaries`. The build checks each
+against its cantons: the NGI calls the arrondissement of Leuven `Vlaams Brabant`, and the
+areas show it is Leuven, not the province. `data/court-locations.json` has a GeoJSON point for
+139 of the 162 justices of the peace, with `getCourtLocation(courtId)` in
+`belgica/court-locations`. The NGI hasn't moved every point when a court moved, so a point is
+only kept when the NGI's address has the house number of the court's own; the other 23 are left
+out and listed by the build. Both have their own entry point and CSV table, and the root doesn't
+load them. The GeoPackage reader now reads points, and geometries with a Z (dropped).
+
 ### Changed
 
 - The package is half the size: the canton boundaries are in it once. `belgica/canton-boundaries`

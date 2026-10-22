@@ -1,0 +1,2643 @@
+[
+  {
+    "id": "justice-of-the-peace-aalst-1",
+    "court": "justice-of-the-peace-aalst-1",
+    "ngiId": "{FC89EE70-4FCD-4B0C-9BD3-140D8C81C8A4}",
+    "address": "Dr. André Sierensstraat 16/3",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.0409722,
+        50.941518
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-aalst-2",
+    "court": "justice-of-the-peace-aalst-2",
+    "ngiId": "{F7B726E2-14C4-46A7-AE6F-0D8083593138}",
+    "address": "Dr. André Sierensstraat 16/3",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.0409783,
+        50.9413922
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-andenne",
+    "court": "justice-of-the-peace-andenne",
+    "ngiId": "{053DB603-7B0A-4BE3-BAAD-4C338919A4CE}",
+    "address": "Place du Perron 17, 5300 Andenne",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.0985599,
+        50.4860351
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-anderlecht-1",
+    "court": "justice-of-the-peace-anderlecht-1",
+    "ngiId": "{6D4899F0-83F4-41AE-9E3C-5DB2CE9B39A6}",
+    "address": "Place de la Résistance 3",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3115889,
+        50.8363828
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-anderlecht-2",
+    "court": "justice-of-the-peace-anderlecht-2",
+    "ngiId": "{FBD503C1-16CD-4DEB-A475-B2E5265F68B5}",
+    "address": "Place de la Résistance 3",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3114314,
+        50.8363591
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-antwerpen-1",
+    "court": "justice-of-the-peace-antwerpen-1",
+    "ngiId": "{A73F84FB-82F4-4019-9FB9-229D5B8D8B48}",
+    "address": "Bolivarplaats 20/19",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3876278,
+        51.2042709
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-antwerpen-2",
+    "court": "justice-of-the-peace-antwerpen-2",
+    "ngiId": "{A73F84FB-82F4-4019-9FB9-229D5B8D8B48}",
+    "address": "Bolivarplaats 20/19",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3876278,
+        51.2042709
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-antwerpen-3",
+    "court": "justice-of-the-peace-antwerpen-3",
+    "ngiId": "{A73F84FB-82F4-4019-9FB9-229D5B8D8B48}",
+    "address": "Bolivarplaats 20/19",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3876278,
+        51.2042709
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-antwerpen-4",
+    "court": "justice-of-the-peace-antwerpen-4",
+    "ngiId": "{A73F84FB-82F4-4019-9FB9-229D5B8D8B48}",
+    "address": "Bolivarplaats 20/19",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3876278,
+        51.2042709
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-antwerpen-5",
+    "court": "justice-of-the-peace-antwerpen-5",
+    "ngiId": "{A73F84FB-82F4-4019-9FB9-229D5B8D8B48}",
+    "address": "Bolivarplaats 20/19",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3876278,
+        51.2042709
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-antwerpen-6",
+    "court": "justice-of-the-peace-antwerpen-6",
+    "ngiId": "{A73F84FB-82F4-4019-9FB9-229D5B8D8B48}",
+    "address": "Bolivarplaats 20/19",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3876278,
+        51.2042709
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-antwerpen-7",
+    "court": "justice-of-the-peace-antwerpen-7",
+    "ngiId": "{A73F84FB-82F4-4019-9FB9-229D5B8D8B48}",
+    "address": "Bolivarplaats 20/19",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3876278,
+        51.2042709
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-asse",
+    "court": "justice-of-the-peace-asse",
+    "ngiId": "{453FCA79-B9F8-4194-875E-CD73D8AAAAA0}",
+    "address": "Neerstraat 11",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.2011798,
+        50.9095154
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-bastogne",
+    "court": "justice-of-the-peace-bastogne",
+    "ngiId": "{F849F7A3-323C-44D8-930E-22552F1F69D1}",
+    "address": "Rue des Récollets 6, 6600 Bastogne",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.7182015,
+        50.0021935
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-beringen",
+    "court": "justice-of-the-peace-beringen",
+    "ngiId": "{47755910-E6CE-4DB2-83A9-291DD78C3066}",
+    "address": "Pieter Bruegelstraat 8",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.2267729,
+        51.0473726
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-beveren-kruibeke-zwijndrecht",
+    "court": "justice-of-the-peace-beveren-kruibeke-zwijndrecht",
+    "ngiId": "{72A3CDB3-C068-4E99-939B-E7334EEA48CB}",
+    "address": "Gravendreef 3",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.2590712,
+        51.2126299
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-bilzen-hoeselt",
+    "court": "justice-of-the-peace-bilzen-hoeselt",
+    "ngiId": "{D43D105A-765A-4FB2-AEFD-5D8CD476C6F3}",
+    "address": "Brugstraat 2",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.5178008,
+        50.8695207
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-binche",
+    "court": "justice-of-the-peace-binche",
+    "ngiId": "{A92C6B91-84F9-49D4-BA67-B7E1D1F6311C}",
+    "address": "Avenue Charles Deliège 54",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.1662318,
+        50.4129216
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-boom",
+    "court": "justice-of-the-peace-boom",
+    "ngiId": "{CE6176A5-5853-4CCB-8859-10E523E9209C}",
+    "address": "J. Van Cleemputplein 8, 2850 Boom",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3703512,
+        51.0903766
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-boussu-colfontaine-1",
+    "court": "justice-of-the-peace-boussu-colfontaine-1",
+    "ngiId": "{50FAE55A-AFBB-4D63-9142-30D1674132A0}",
+    "address": "Rue Grande Campagne 34, 7301 Boussu",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.8384545,
+        50.4335103
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-boussu-colfontaine-2",
+    "court": "justice-of-the-peace-boussu-colfontaine-2",
+    "ngiId": "{50FAE55A-AFBB-4D63-9142-30D1674132A0}",
+    "address": "Rue Grande Campagne 34, 7301 Boussu",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.8384545,
+        50.4335103
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-braine-l-alleud",
+    "court": "justice-of-the-peace-braine-l-alleud",
+    "ngiId": "{A1B6A971-41C8-40E4-96CB-F43AA69A6EA3}",
+    "address": "Rue Pierre Flamand 64/1er étage, 1420 Braine-l'Alleud",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3710641,
+        50.6874366
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-brasschaat",
+    "court": "justice-of-the-peace-brasschaat",
+    "ngiId": "{83F7DBBF-81F9-4EE7-8995-EFACCF333790}",
+    "address": "Hemelakkers 65",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.48631,
+        51.2854921
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-bree",
+    "court": "justice-of-the-peace-bree",
+    "ngiId": "{7E25C364-72B4-427D-96A8-85143BF4DBB8}",
+    "address": "Kloosterpoort 1A, 3960 Bree",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.5966974,
+        51.139461
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-brugge-1",
+    "court": "justice-of-the-peace-brugge-1",
+    "ngiId": "{FDE746F3-BF59-423D-BDE6-36834ECD7271}",
+    "address": "Kazernevest 4",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.238128,
+        51.2110297
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-brugge-2",
+    "court": "justice-of-the-peace-brugge-2",
+    "ngiId": "{3E745385-80D0-4A40-A45C-B2AAFEF224CD}",
+    "address": "Kazernevest 4",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.2381536,
+        51.2110599
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-brugge-3",
+    "court": "justice-of-the-peace-brugge-3",
+    "ngiId": "{F25CCFBE-23DB-438F-9307-9187553953D5}",
+    "address": "Kazernevest 4",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.2381792,
+        51.2110946
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-brugge-4",
+    "court": "justice-of-the-peace-brugge-4",
+    "ngiId": "{9E468E98-DCF0-4641-821A-9CE40426D3DC}",
+    "address": "Kazernevest 4",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.2382048,
+        51.2111213
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-brussel-1",
+    "court": "justice-of-the-peace-brussel-1",
+    "ngiId": "{31D58D72-86FD-4343-BADC-922DF18BBE14}",
+    "address": "Place Poelaert 3/5",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3531147,
+        50.8381846
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-brussel-2",
+    "court": "justice-of-the-peace-brussel-2",
+    "ngiId": "{7B27C7B0-0075-4913-85F7-BD1260ECBE76}",
+    "address": "Place Poelaert 3/5",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3531676,
+        50.8382146
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-brussel-3",
+    "court": "justice-of-the-peace-brussel-3",
+    "ngiId": "{645B586A-2B6F-47C8-BC78-63A5F10E7133}",
+    "address": "rue Fransman 89",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3451629,
+        50.8793839
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-charleroi-1",
+    "court": "justice-of-the-peace-charleroi-1",
+    "ngiId": "{D8E77576-7A2A-46EE-B369-1D46095D91C7}",
+    "address": "Av. du Général Michel 2, 6000 Charleroi",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.4493295,
+        50.4106183
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-charleroi-2",
+    "court": "justice-of-the-peace-charleroi-2",
+    "ngiId": "{ADBE637F-AD53-4AE5-A716-83F61358429F}",
+    "address": "Av. du Général Michel 2, 6000 Charleroi",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.449226,
+        50.4106562
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-charleroi-3",
+    "court": "justice-of-the-peace-charleroi-3",
+    "ngiId": "{B0B8E09A-4892-4D48-B271-5C634C51C4FA}",
+    "address": "Rue de Beaumont 28",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3955715,
+        50.4059292
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-charleroi-4",
+    "court": "justice-of-the-peace-charleroi-4",
+    "ngiId": "{A34634A7-F7DD-4451-887D-5A6A4F29182E}",
+    "address": "Rue de Beaumont 28",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3955026,
+        50.4060152
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-chatelet",
+    "court": "justice-of-the-peace-chatelet",
+    "ngiId": "{78A0D0A3-3885-4FB1-BC86-DB8525D55DF9}",
+    "address": "Place de l'Hôtel de Ville 9",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.52392,
+        50.404296
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-chimay",
+    "court": "justice-of-the-peace-chimay",
+    "ngiId": "{283DB0D1-773C-4766-A679-84AE7E916A80}",
+    "address": "Grand'Place 13, 6460 Chimay",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3148008,
+        50.0491366
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-ciney",
+    "court": "justice-of-the-peace-ciney",
+    "ngiId": "{4B11B27E-2A83-4BBD-99EF-C1BA772AA3E6}",
+    "address": "Rue Courtejoie 17",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.1019253,
+        50.2942253
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-dendermonde",
+    "court": "justice-of-the-peace-dendermonde",
+    "ngiId": "{E2044EBC-A4A2-4E03-9D32-314AB41F6E9B}",
+    "address": "Noordlaan 31/2",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.0991584,
+        51.0329269
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-deurne",
+    "court": "justice-of-the-peace-deurne",
+    "ngiId": "{E24F591B-6263-4928-869B-178C39D05122}",
+    "address": "Cogelsplein 46",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.4559512,
+        51.2200749
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-diest",
+    "court": "justice-of-the-peace-diest",
+    "ngiId": "{1D8CA499-C5BB-465D-A461-07D34529653C}",
+    "address": "Koning Albertstraat 12",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.0522052,
+        50.9854937
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-dinant",
+    "court": "justice-of-the-peace-dinant",
+    "ngiId": "{5A130165-4B8A-4C33-BB42-1F87C292D7EA}",
+    "address": "RUE ARTHUR DEFOIN 215 BLOC A, 5500 DINANT",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.9207042,
+        50.2412932
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-eeklo",
+    "court": "justice-of-the-peace-eeklo",
+    "ngiId": "{F908E1FF-ED46-4379-89E5-36299D6B5DBF}",
+    "address": "Stationsstraat 21",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.5683639,
+        51.1836988
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-etterbeek",
+    "court": "justice-of-the-peace-etterbeek",
+    "ngiId": "{3DAE7D63-B583-4044-B809-14C3210FF78F}",
+    "address": "Vijverstraat 4",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3799756,
+        50.8359076
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-eupen-sankt-vith-1",
+    "court": "justice-of-the-peace-eupen-sankt-vith-1",
+    "ngiId": "{2053FDAB-A0BC-4DD3-84F8-16F2914CBAB7}",
+    "address": "Rathausplatz 4, 4700 Eupen",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        6.0290236,
+        50.6317547
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-eupen-sankt-vith-2",
+    "court": "justice-of-the-peace-eupen-sankt-vith-2",
+    "ngiId": "{0714C6BA-C690-4D8A-B8F8-A45FF6F8BA82}",
+    "address": "Rathausplatz 4, 4700 Eupen",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        6.0289415,
+        50.6317764
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-fleron",
+    "court": "justice-of-the-peace-fleron",
+    "ngiId": "{318C04A4-F0A7-45EC-BD88-A73A224BB3ED}",
+    "address": "Rue du Bay-Bonnet 15",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.6892488,
+        50.6133843
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-fosses-la-ville",
+    "court": "justice-of-the-peace-fosses-la-ville",
+    "ngiId": "{D95BFB5A-FB33-4CD4-A919-E26F20240639}",
+    "address": "Rue Delmotte-Lemaître 6",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.6970781,
+        50.3954975
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-ganshoren",
+    "court": "justice-of-the-peace-ganshoren",
+    "ngiId": "{CBB5F0C1-11CA-4046-8CB5-967982813DD9}",
+    "address": "Fransmanstraat 89",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3451237,
+        50.8794724
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-gembloux",
+    "court": "justice-of-the-peace-gembloux",
+    "ngiId": "{958F63CD-0513-4F8D-A30D-B0472BFF0A27}",
+    "address": "Chaussée de Wavre 46",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.6866521,
+        50.5776918
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-gent-1",
+    "court": "justice-of-the-peace-gent-1",
+    "ngiId": "{AA055611-4ED0-482C-8FE8-F5BC58C997A4}",
+    "address": "Opgeëistenlaan 401/F",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.7147411,
+        51.0627796
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-gent-2",
+    "court": "justice-of-the-peace-gent-2",
+    "ngiId": "{AA055611-4ED0-482C-8FE8-F5BC58C997A4}",
+    "address": "Opgeëistenlaan 401/F",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.7147411,
+        51.0627796
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-gent-3",
+    "court": "justice-of-the-peace-gent-3",
+    "ngiId": "{AA055611-4ED0-482C-8FE8-F5BC58C997A4}",
+    "address": "Opgeëistenlaan 401/F",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.7147411,
+        51.0627796
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-gent-4",
+    "court": "justice-of-the-peace-gent-4",
+    "ngiId": "{AA055611-4ED0-482C-8FE8-F5BC58C997A4}",
+    "address": "Opgeëistenlaan 401/F",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.7147411,
+        51.0627796
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-gent-5",
+    "court": "justice-of-the-peace-gent-5",
+    "ngiId": "{AA055611-4ED0-482C-8FE8-F5BC58C997A4}",
+    "address": "Opgeëistenlaan 401/F",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.7147411,
+        51.0627796
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-geraardsbergen",
+    "court": "justice-of-the-peace-geraardsbergen",
+    "ngiId": "{A85ED445-38E7-44A1-A7B9-CD593CDF6CCC}",
+    "address": "Kasteelstraat 58",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.7609137,
+        50.8006324
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-grace-hollogne",
+    "court": "justice-of-the-peace-grace-hollogne",
+    "ngiId": "{1397C3E9-B3E9-4954-9890-1B07815AD46D}",
+    "address": "Rue de l'Hotel Communal 30",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.4790984,
+        50.6321084
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-hamme",
+    "court": "justice-of-the-peace-hamme",
+    "ngiId": "{DDD2698D-A72A-4432-84D2-B06F61558160}",
+    "address": "Meulenbroekstraat 20",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.1352486,
+        51.1010733
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-hasselt-1",
+    "court": "justice-of-the-peace-hasselt-1",
+    "ngiId": "{0FBEC88B-0EDF-43D1-A956-CA6A391CF4F2}",
+    "address": "Parklaan 25/7",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.3234996,
+        50.9322434
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-hasselt-2",
+    "court": "justice-of-the-peace-hasselt-2",
+    "ngiId": "{4C5CAF6A-769D-42D2-96B6-A95A8B03E130}",
+    "address": "Parklaan 25/8",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.3232908,
+        50.9322894
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-heist-op-den-berg",
+    "court": "justice-of-the-peace-heist-op-den-berg",
+    "ngiId": "{5C3344AD-DDAB-4EAD-831C-7C1CFAEE3A7D}",
+    "address": "Kerkhofstraat 2",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.7317324,
+        51.0766237
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-herstal",
+    "court": "justice-of-the-peace-herstal",
+    "ngiId": "{E769DB6C-3EA4-42E8-9BC7-5AA5DAE1DEBE}",
+    "address": "Large Voie 49",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.6332816,
+        50.6664512
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-herzele",
+    "court": "justice-of-the-peace-herzele",
+    "ngiId": "{4353BC63-2688-436F-8066-EF7789C0B85C}",
+    "address": "Stationsstraat 6",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.8895449,
+        50.889935
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-houthalen-helchteren",
+    "court": "justice-of-the-peace-houthalen-helchteren",
+    "ngiId": "{8AAAD4B8-F38C-44B7-8220-C9D75E3B770E}",
+    "address": "Pastorijstraat 30, 3530 Houthalen-Hechteren",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.3719398,
+        51.0283866
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-huy-1",
+    "court": "justice-of-the-peace-huy-1",
+    "ngiId": "{991E1A57-F98F-400E-A3E4-ED37D584BC9A}",
+    "address": "Quai d'Arona 4, 4500 Huy",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.2440586,
+        50.5283453
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-huy-2",
+    "court": "justice-of-the-peace-huy-2",
+    "ngiId": "{2661E9BC-4785-403A-B0A1-16A3699C9F67}",
+    "address": "Quai d'Arona 4",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.2428746,
+        50.5275654
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-izegem",
+    "court": "justice-of-the-peace-izegem",
+    "ngiId": "{1D7E0D12-4EE0-4C1D-9CC9-11590098A4CA}",
+    "address": "Kasteelstraat 15",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.2178009,
+        50.919324
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-jette",
+    "court": "justice-of-the-peace-jette",
+    "ngiId": "{C3BA25A4-C871-4786-A9AB-E327E212C1ED}",
+    "address": "Place Cardinal Mercier 11, 1090 Jette",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3276101,
+        50.8801768
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-jodoigne",
+    "court": "justice-of-the-peace-jodoigne",
+    "ngiId": "{F91EFF63-EE7C-4FA9-8D36-43A480BAEC5B}",
+    "address": "Avenue des Commandants Borlée 42",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.8740804,
+        50.7227801
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-kapellen",
+    "court": "justice-of-the-peace-kapellen",
+    "ngiId": "{ABB60547-38FE-43D0-90A8-F5BA3230E6FC}",
+    "address": "Dennenburgdreef 8",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.4206054,
+        51.3266402
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-kontich",
+    "court": "justice-of-the-peace-kontich",
+    "ngiId": "{7260AE5D-1C18-44BB-8E78-6AB72E866B05}",
+    "address": "Mechelsesteenweg 83",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.4466753,
+        51.1315621
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-kortrijk-1",
+    "court": "justice-of-the-peace-kortrijk-1",
+    "ngiId": "{6599D23C-20E7-4CFD-B03F-075169B11F64}",
+    "address": "Beheerstraat 41",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.2568275,
+        50.8267955
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-kortrijk-2",
+    "court": "justice-of-the-peace-kortrijk-2",
+    "ngiId": "{389247E9-B1B8-46A0-87D5-F128F0C1D4EE}",
+    "address": "Beheerstraat 41",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.2567232,
+        50.8268461
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-la-louviere",
+    "court": "justice-of-the-peace-la-louviere",
+    "ngiId": "{03F2B006-2ABF-43FC-958C-2F0FE793ACE9}",
+    "address": "Rue des Carrelages 16",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.1926561,
+        50.482663
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-lennik",
+    "court": "justice-of-the-peace-lennik",
+    "ngiId": "{CFEB3DD9-8167-4D71-AE23-F1CEDE83CA09}",
+    "address": "Alfred Algoetstraat 31",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.1577055,
+        50.8058485
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-leuven-1",
+    "court": "justice-of-the-peace-leuven-1",
+    "ngiId": "{0803B9F5-CFE1-497A-AC75-4F34A6148F25}",
+    "address": "Vaartstraat 24, 3000 Leuven",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.7025747,
+        50.8814688
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-leuven-2",
+    "court": "justice-of-the-peace-leuven-2",
+    "ngiId": "{0803B9F5-CFE1-497A-AC75-4F34A6148F25}",
+    "address": "Vaartstraat 24, 3000 Leuven",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.7025747,
+        50.8814688
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-leuven-3",
+    "court": "justice-of-the-peace-leuven-3",
+    "ngiId": "{0803B9F5-CFE1-497A-AC75-4F34A6148F25}",
+    "address": "Vaartstraat 24, 3000 Leuven",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.7025747,
+        50.8814688
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-leuze-en-hainaut",
+    "court": "justice-of-the-peace-leuze-en-hainaut",
+    "ngiId": "{D2EAE897-5E99-4742-A103-66E7551E05F5}",
+    "address": "Rue d'Ath 33",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.6249039,
+        50.5994951
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-liege-1",
+    "court": "justice-of-the-peace-liege-1",
+    "ngiId": "{6057C71E-BA45-4DF7-9086-FF762F665057}",
+    "address": "RUE DE BRUXELLES 2/0005, 4000 LIEGE",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.5723584,
+        50.6465821
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-liege-2",
+    "court": "justice-of-the-peace-liege-2",
+    "ngiId": "{6A687334-CC52-4C62-84A6-86221028A4F6}",
+    "address": "Rue de Bruxelles 2/0005, 4000 Liège",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.5723124,
+        50.6466044
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-liege-3",
+    "court": "justice-of-the-peace-liege-3",
+    "ngiId": "{7ADE813E-6932-4149-8B80-57706B529187}",
+    "address": "RUE DE BRUXELLES 2/0007 BATIMENT F, 4000 LIEGE",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.5722727,
+        50.6466355
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-lier",
+    "court": "justice-of-the-peace-lier",
+    "ngiId": "{93AB73C0-F9AF-405D-A6F4-F586CC4163A9}",
+    "address": "Kruisbogenhofstraat 24",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.5684838,
+        51.1346391
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-lokeren",
+    "court": "justice-of-the-peace-lokeren",
+    "ngiId": "{3031B38A-7828-4825-8430-E794F438C1ED}",
+    "address": "Markt 8",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.9887546,
+        51.1043837
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-maasmechelen",
+    "court": "justice-of-the-peace-maasmechelen",
+    "ngiId": "{ED0DEA90-DC4A-4608-839A-4E9511CEB841}",
+    "address": "Binnenhof 3",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.6972117,
+        50.9630669
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-marche-en-famenne",
+    "court": "justice-of-the-peace-marche-en-famenne",
+    "ngiId": "{5460D435-4621-4C10-A7B2-6EB91EEF4354}",
+    "address": "Rue Victor Libert 7",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.3407822,
+        50.2279463
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-mechelen",
+    "court": "justice-of-the-peace-mechelen",
+    "ngiId": "{A0059478-7D59-4404-9DEA-8B599E6C681A}",
+    "address": "Voochtstraat 7",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.4872304,
+        51.0284451
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-meise",
+    "court": "justice-of-the-peace-meise",
+    "ngiId": "{0E9CB2AA-87DA-4C7B-B087-C416A4F45510}",
+    "address": "Gemeenteplein 15",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3092604,
+        50.9511203
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-menen",
+    "court": "justice-of-the-peace-menen",
+    "ngiId": "{98E65154-5949-47B9-9558-C106F406ED92}",
+    "address": "Volkslaan 302/0101",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.1210777,
+        50.8073437
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-merelbeke-melle",
+    "court": "justice-of-the-peace-merelbeke-melle",
+    "ngiId": "{D0C7B688-6282-44E4-A3EE-B2AA91712B66}",
+    "address": "Hundelgemsesteenweg 622-624",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.7452183,
+        50.9948406
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-merksem",
+    "court": "justice-of-the-peace-merksem",
+    "ngiId": "{1BE0C6B2-B0B2-4387-A4B8-CC2D8B0D58E4}",
+    "address": "Maantjessteenweg 133",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.4384638,
+        51.2553062
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-mol-geel-1",
+    "court": "justice-of-the-peace-mol-geel-1",
+    "ngiId": "{13FD823F-600D-4037-880B-ECA502FCE383}",
+    "address": "Molderdijk 7",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.1174376,
+        51.1830954
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-mol-geel-2",
+    "court": "justice-of-the-peace-mol-geel-2",
+    "ngiId": "{1AE06A64-0247-4684-9B96-30EA0699CECD}",
+    "address": "Molderdijk 7",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.1173771,
+        51.1830382
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-mons-1",
+    "court": "justice-of-the-peace-mons-1",
+    "ngiId": "{D91031CA-9A49-4C15-A809-6ED1C26BC000}",
+    "address": "Rue de Nimy 16/1, 7000 Mons",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.9536867,
+        50.4554468
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-mons-2",
+    "court": "justice-of-the-peace-mons-2",
+    "ngiId": "{FC0EFA24-8317-4CAB-946F-DCF9CC5F4BDC}",
+    "address": "Rue de Nimy 16/2, 7000 Mons",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.9538898,
+        50.4554814
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-neufchateau",
+    "court": "justice-of-the-peace-neufchateau",
+    "ngiId": "{52C764C0-F940-4B62-940C-EE9ACE7D3C51}",
+    "address": "Place Charles Bergh 7",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.4358908,
+        49.8421451
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-ninove",
+    "court": "justice-of-the-peace-ninove",
+    "ngiId": "{F642E8E9-504A-4F7C-9E1D-4FEE3D0BD130}",
+    "address": "Onderwijslaan 71",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.018644,
+        50.8323574
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-nivelles",
+    "court": "justice-of-the-peace-nivelles",
+    "ngiId": "{ACC2A9F4-9AC9-4CCD-B621-EE3907B7CD6D}",
+    "address": "Rue Clarisse 115",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.344975,
+        50.5984708
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-oudenaarde",
+    "court": "justice-of-the-peace-oudenaarde",
+    "ngiId": "{CC619C4F-BA41-4EAB-AD27-588A449CEEC5}",
+    "address": "Beverestraat 7, 9700 Oudenaarde",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.6008261,
+        50.8478207
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-pelt",
+    "court": "justice-of-the-peace-pelt",
+    "ngiId": "{5C4CECB6-B5CE-4A39-9842-071C6747D232}",
+    "address": "Justitielaan 31, 3910 Pelt",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.4252952,
+        51.2296023
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-poperinge",
+    "court": "justice-of-the-peace-poperinge",
+    "ngiId": "{19B6E98B-E41B-4CEE-AC04-8B6CB8EC8E3D}",
+    "address": "Burgemeester Bertenplein 21",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.7248458,
+        50.8540805
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-roeselare",
+    "court": "justice-of-the-peace-roeselare",
+    "ngiId": "{49A9F213-59DB-4D57-BF39-9679614BAFC5}",
+    "address": "Rondekomstraat 22",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.1266211,
+        50.9523532
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-schaarbeek-1",
+    "court": "justice-of-the-peace-schaarbeek-1",
+    "ngiId": "{D52599BD-5166-4709-A1B6-5B3D52136611}",
+    "address": "Rue Royale 271-273",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3685203,
+        50.8581574
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-schaarbeek-2",
+    "court": "justice-of-the-peace-schaarbeek-2",
+    "ngiId": "{86D18E1C-9CD2-47D7-B9EC-B37A496B7DBA}",
+    "address": "Rue Royale 271-273",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3685375,
+        50.8581881
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-seneffe",
+    "court": "justice-of-the-peace-seneffe",
+    "ngiId": "{04CD6B09-B5A4-44DC-87E6-C2E84A8043B9}",
+    "address": "Rue de la Rouge Croix 3, 7180 Seneffe",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.2589159,
+        50.5314854
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-seraing",
+    "court": "justice-of-the-peace-seraing",
+    "ngiId": "{56F19F6E-B47E-4919-B659-81F8EB3135F8}",
+    "address": "Rue de l'Ecureuil 74",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.5029285,
+        50.5851174
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-sint-genesius-rode",
+    "court": "justice-of-the-peace-sint-genesius-rode",
+    "ngiId": "{5605F2CA-DBC7-4B53-A0A8-903153A474DD}",
+    "address": "Avenue de la Forêt de Soignes 83",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3449579,
+        50.7437617
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-sint-gillis",
+    "court": "justice-of-the-peace-sint-gillis",
+    "ngiId": "{C422B84F-CE5E-45BF-90C7-23AE15009A15}",
+    "address": "Parvis Saint-Gilles 1",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3438594,
+        50.8302754
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-sint-jans-molenbeek",
+    "court": "justice-of-the-peace-sint-jans-molenbeek",
+    "ngiId": "{40D49974-F9AE-4F03-80A7-D5FC91622DB8}",
+    "address": "Rue du Niveau 7",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3380245,
+        50.8550638
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-sint-joost-ten-node",
+    "court": "justice-of-the-peace-sint-joost-ten-node",
+    "ngiId": "{E2CF4AF0-8BED-4EEB-BDCE-F7F67BEABE4B}",
+    "address": "Sterrenkundelaan 30",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3699216,
+        50.8522138
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-sint-niklaas",
+    "court": "justice-of-the-peace-sint-niklaas",
+    "ngiId": "{A2121690-9ABF-4C83-8908-8219F47DDAF3}",
+    "address": "Kazernestraat 4-6",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.1375059,
+        51.1708609
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-sint-pieters-woluwe",
+    "court": "justice-of-the-peace-sint-pieters-woluwe",
+    "ngiId": "{CA1C0A5C-17DD-4117-9928-0735D2D61732}",
+    "address": "Avenue Grandchamp 147",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.4552357,
+        50.8382183
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-sint-truiden",
+    "court": "justice-of-the-peace-sint-truiden",
+    "ngiId": "{1910CD5A-5060-4A12-B5BA-DE803E1DBC40}",
+    "address": "Kazernevest 10, 3800 Sint-Truiden",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.1815734,
+        50.8170698
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-soignies",
+    "court": "justice-of-the-peace-soignies",
+    "ngiId": "{8421410F-4F38-41A2-97CB-12C58C57EF7A}",
+    "address": "Rue de la Station 82",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.0690763,
+        50.5745296
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-spa",
+    "court": "justice-of-the-peace-spa",
+    "ngiId": "{30876E82-3F99-4D99-89BF-F1B64D83F959}",
+    "address": "Avenue Reine Astrid 77a",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.8577341,
+        50.4919378
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-sprimont",
+    "court": "justice-of-the-peace-sprimont",
+    "ngiId": "{DD36057A-C96E-488D-B8E4-CD3D46675108}",
+    "address": "Rue du Pérréon 34",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.7107975,
+        50.5302866
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-thuin",
+    "court": "justice-of-the-peace-thuin",
+    "ngiId": "{6D6565BB-46A4-46FD-B1E9-FB0446869835}",
+    "address": "Grand'Rue 46",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.2896045,
+        50.3390614
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-tielt",
+    "court": "justice-of-the-peace-tielt",
+    "ngiId": "{997C25C0-CB07-40F9-82B9-BDBCF4951139}",
+    "address": "Tramstraat 48",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.3303849,
+        51.0031106
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-tongeren-borgloon",
+    "court": "justice-of-the-peace-tongeren-borgloon",
+    "ngiId": "{4491126A-8097-44C8-9178-6EABE43AD2A6}",
+    "address": "Kielenstraat 22/5",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.46714,
+        50.7817269
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-torhout",
+    "court": "justice-of-the-peace-torhout",
+    "ngiId": "{21044256-5349-424F-B4C1-F431D48E0F30}",
+    "address": "Elisabethlaan 29, 8820 Torhout",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.1053515,
+        51.0614542
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-tournai-1",
+    "court": "justice-of-the-peace-tournai-1",
+    "ngiId": "{15C38EFD-1B51-44F9-A588-A2990B03F64B}",
+    "address": "Boulevard Léopold 72",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.3772198,
+        50.6090092
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-tournai-2",
+    "court": "justice-of-the-peace-tournai-2",
+    "ngiId": "{1AECFE51-58C2-4DD0-8563-2F6C28ACB636}",
+    "address": "Boulevard Léopold 72",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.3772633,
+        50.6089717
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-turnhout-1",
+    "court": "justice-of-the-peace-turnhout-1",
+    "ngiId": "{E80B0D96-31EF-4E00-9332-0F4020B33558}",
+    "address": "Kasteelplein 11",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.9459064,
+        51.3240168
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-turnhout-2",
+    "court": "justice-of-the-peace-turnhout-2",
+    "ngiId": "{E74D211C-DDF8-42B3-A5EA-2CBB2336B756}",
+    "address": "Kasteelplein 11",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.9458306,
+        51.3240296
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-verviers-1",
+    "court": "justice-of-the-peace-verviers-1",
+    "ngiId": "{E152FA3E-1E20-4BF6-82E5-6E28308BCA46}",
+    "address": "RUE DU TRIBUNAL 9, 4800 VERVIERS",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.8666035,
+        50.5916271
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-verviers-2",
+    "court": "justice-of-the-peace-verviers-2",
+    "ngiId": "{E152FA3E-1E20-4BF6-82E5-6E28308BCA46}",
+    "address": "RUE DU TRIBUNAL 9, 4800 VERVIERS",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.8666035,
+        50.5916271
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-veurne",
+    "court": "justice-of-the-peace-veurne",
+    "ngiId": "{D99D6411-209E-4D18-878F-D5771DACD67A}",
+    "address": "Peter Benoitlaan 2",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.6624754,
+        51.0689291
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-vilvoorde",
+    "court": "justice-of-the-peace-vilvoorde",
+    "ngiId": "{119D25A8-65DC-4A14-9E8A-D02510ED2256}",
+    "address": "Luchthavenlaan 4",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.4362185,
+        50.9250956
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-virton",
+    "court": "justice-of-the-peace-virton",
+    "ngiId": "{43CAE974-5160-49B8-9853-607B42382622}",
+    "address": "Av. Bouvier 27, 6760 Virton",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.5289729,
+        49.5661069
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-vise",
+    "court": "justice-of-the-peace-vise",
+    "ngiId": "{AAE6E235-78F9-4A92-BA1E-0C66FE8DFD32}",
+    "address": "Pl. Jean Donnay 1, 4602 Visé",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.6703223,
+        50.6836209
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-vorst",
+    "court": "justice-of-the-peace-vorst",
+    "ngiId": "{B5DDD90D-5F76-45E2-8E63-D20579F32EE7}",
+    "address": "Alsembergse Steenweg 296",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3409389,
+        50.8179388
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-waregem",
+    "court": "justice-of-the-peace-waregem",
+    "ngiId": "{E3B39EE7-E8D9-4985-98E6-E38104D6B4B4}",
+    "address": "Stationsstraat 127, 8790 Waregem",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.4283524,
+        50.8906629
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-waremme",
+    "court": "justice-of-the-peace-waremme",
+    "ngiId": "{D1C8EEED-063A-4624-A728-B0D198156421}",
+    "address": "Avenue Emile Vandervelde 31f",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        5.2605108,
+        50.6952951
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-wavre-2",
+    "court": "justice-of-the-peace-wavre-2",
+    "ngiId": "{6662454C-A5B7-4DB8-92D6-41E0C7D5230F}",
+    "address": "Chaussée de Bruxelles 8",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.6123612,
+        50.7190703
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-westerlo",
+    "court": "justice-of-the-peace-westerlo",
+    "ngiId": "{D5EBFB5B-CCA7-49B6-837E-56FB884EB3B2}",
+    "address": "Bistplein 13, 2260 Westerlo",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.9203166,
+        51.0924406
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-willebroek",
+    "court": "justice-of-the-peace-willebroek",
+    "ngiId": "{B523A142-F1E1-408C-B284-6EB639962800}",
+    "address": "Kloosterstraat 18",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.3622447,
+        51.062441
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-zandhoven",
+    "court": "justice-of-the-peace-zandhoven",
+    "ngiId": "{FACDD927-EFAC-4806-A93B-F40DBF847E9D}",
+    "address": "Amelbergastraat 13, 2240 Zandhoven",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.6618602,
+        51.2155848
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-zaventem",
+    "court": "justice-of-the-peace-zaventem",
+    "ngiId": "{057484DF-BFC5-4626-9F39-450025121BCE}",
+    "address": "Leuvensesteenweg 510/36",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        4.4803552,
+        50.8709535
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  },
+  {
+    "id": "justice-of-the-peace-zelzate",
+    "court": "justice-of-the-peace-zelzate",
+    "ngiId": "{30493174-8419-4A9B-9DD3-0A5FADC5A30F}",
+    "address": "Suikerkaai 10",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        3.8115746,
+        51.1966296
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://ac.ngi.be/remoteclient-open/ngi-standard-open/Vectordata/TerritorialDivisions/TerritorialDivisions-JudicialCanton/e1f61c40-623a-11eb-9e7c-186571a04de3_geopackage+sqlite3_4326.zip",
+        "retrieved": "2026-10-21"
+      }
+    ]
+  }
+]

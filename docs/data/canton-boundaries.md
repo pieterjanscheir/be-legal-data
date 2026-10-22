@@ -91,7 +91,7 @@ so nothing loads them unless it asks:
 <table v-if="stats.sizes">
 <thead><tr><th>Entry point</th><th style="text-align:right">JavaScript loaded</th><th style="text-align:right">gzip</th></tr></thead>
 <tbody>
-<tr v-for="s in stats.sizes.filter((s) => s.entry === 'belgica' || s.entry.endsWith('canton-boundaries'))" :key="s.entry">
+<tr v-for="s in stats.sizes.filter((s) => s.entry === 'belgica' || s.entry.endsWith('-boundaries'))" :key="s.entry">
 <td><code>{{ s.entry }}</code></td><td style="text-align:right">{{ mb(s.raw) }}</td><td style="text-align:right">{{ mb(s.gzip) }}</td>
 </tr>
 </tbody>
@@ -120,6 +120,33 @@ for a point exactly on the line between two. It needs no dependency: a plain poi
 test over the boundaries, about a millisecond per lookup. Geocoding the address (street and
 number to coordinates) is up to you: the regions' address registers (Flanders' Adressenregister,
 Brussels' UrbIS, Wallonia's ICAR) and the federal BeSt address data on geo.be do that.
+
+## Arrondissement boundaries
+
+File: `data/arrondissement-boundaries.json`, entry point `belgica/arrondissement-boundaries`.
+The boundary of each of the 12 judicial arrondissements, from the same NGI file (feature type
+`judicialarrondissement`), in the same shape: `id` and `arrondissement` (the
+`ArrondissementId`), `ngiId`, `geometry` (a `MultiPolygon`), `sources`, and the validity
+fields.
+
+```ts
+import { findArrondissementsAt, getArrondissementBoundary } from 'belgica/arrondissement-boundaries'
+
+findArrondissementsAt(4.2372, 50.7339) // Halle → [brussel]
+getArrondissementBoundary('leuven').geometry // the MultiPolygon
+```
+
+An arrondissement is the union of its cantons, so the same answer follows from
+`findCantonsAt(lon, lat)[0].arrondissement`. The arrondissement boundaries are there for maps,
+and for drawing an arrondissement without merging 20 cantons.
+
+The NGI names each feature once, in one language (`Oost Vlaanderen`, `Liège`, `Bruxelles -
+Brussel`). A name matches an arrondissement when it gives its id or one of its names; two are
+mapped by hand in `ARRONDISSEMENT_ALIASES`. One of those is a trap: the NGI calls the
+arrondissement of Leuven `Vlaams Brabant`, after its province, though the arrondissement leaves
+out Halle-Vilvoorde, which belongs to the arrondissement of Brussels. So the build checks every
+arrondissement against its cantons: its area must be the sum of theirs, within 0.1 %, or the
+build fails.
 
 ## In other languages
 
