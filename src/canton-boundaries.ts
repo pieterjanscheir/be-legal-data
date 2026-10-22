@@ -1,4 +1,5 @@
-import boundariesData from '../data/canton-boundaries.json'
+// Not inlined by tsup: dist/ imports the file from data/ (tsup.config.ts)
+import boundariesData from '../data/canton-boundaries.json' with { type: 'json' }
 import type { CantonId } from './ids.generated'
 import type { CantonBoundary, MultiPolygon, Position, Ring } from './schemas/canton-boundaries'
 import { getCanton, type Canton } from './territory'

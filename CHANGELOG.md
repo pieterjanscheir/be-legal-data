@@ -9,6 +9,11 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ### Changed
 
+- The package is half the size: the canton boundaries are in it once. `belgica/canton-boundaries`
+  used to inline `data/canton-boundaries.json` into its JavaScript, so the 22 MB of geometry was
+  in the package twice. It now imports the file from `data/` with `with { type: 'json' }`, which
+  Node ≥ 22.12 and current bundlers support. The API is the same. The package went from 51 MB to
+  about 27 MB unpacked (#80).
 - Releases are prepared by a workflow, which opens the release pull request, and published when
   it's merged. Pull requests get a preview package on pkg.pr.new. CI adds CodeQL, OpenSSF
   Scorecard, zizmor and dependency review, and every action is pinned to a commit.
