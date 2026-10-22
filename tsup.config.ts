@@ -45,6 +45,7 @@ export default defineConfig({
         prisons: 'src/prisons.ts',
         'houses-of-justice': 'src/houses-of-justice.ts',
         'interest-rates': 'src/interest-rates.ts',
+        calendar: 'src/calendar.ts',
         'postal-codes': 'src/postal-codes.ts',
         schemas: 'src/schemas/index.ts',
     },

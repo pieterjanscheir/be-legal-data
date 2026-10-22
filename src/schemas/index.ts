@@ -18,6 +18,7 @@ import { courtSchema } from './courts.ts'
 import { houseOfJusticeSchema, prisonSchema } from './places.ts'
 import { postalCodeSchema } from './postal-codes.ts'
 import { interestRateSeriesSchema } from './interest-rates.ts'
+import { publicHolidaysSchema } from './public-holidays.ts'
 
 export * from '../ids.generated.ts'
 export * from './common.ts'
@@ -30,6 +31,7 @@ export * from './court-locations.ts'
 export * from './places.ts'
 export * from './postal-codes.ts'
 export * from './interest-rates.ts'
+export * from './public-holidays.ts'
 
 /** The schema of each file in data/, by file name */
 export const dataFileSchemas = {
@@ -50,4 +52,5 @@ export const dataFileSchemas = {
         legal: interestRateSeriesSchema,
         commercial: interestRateSeriesSchema,
     }),
+    'public-holidays': publicHolidaysSchema,
 }

@@ -20,6 +20,7 @@ the date it was last checked against them.
 | [Prisons](./prisons)                                                       | 39       | Addresses and contacts of every prison and detention house                          |
 | [Houses of justice](./houses-of-justice)                                   | 27       | Probation, victim support and social studies for the family courts                  |
 | [Interest rates](./interest-rates)                                         | 2 series | Calculating late-payment interest on a claim                                        |
+| [Public holidays](./public-holidays)                                       | 10 rules | Moving the last day of a deadline to the next working day (art. 53 Ger.W.)          |
 
 ## How the datasets fit together
 

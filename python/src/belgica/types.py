@@ -304,3 +304,55 @@ class InterestRateSeries(TypedDict):
 class InterestRates(TypedDict):
     legal: InterestRateSeries
     commercial: InterestRateSeries
+
+
+PublicHolidayId: TypeAlias = Literal[
+    'new-year',
+    'easter-monday',
+    'labour-day',
+    'ascension',
+    'whit-monday',
+    'national-day',
+    'assumption',
+    'all-saints',
+    'armistice',
+    'christmas',
+]
+
+
+class FixedDayRule(TypedDict):
+    """The same day every year"""
+
+    type: Literal['fixed']
+    month: int
+    day: int
+
+
+class EasterRule(TypedDict):
+    """A number of days after Easter Sunday (Gregorian calendar)"""
+
+    type: Literal['easter']
+    daysAfterEaster: int
+
+
+class PublicHolidayDefinition(TypedDict):
+    id: PublicHolidayId
+    name: Translated
+    rule: FixedDayRule | EasterRule
+
+
+class PublicHolidayReplacement(TypedDict):
+    """A year in which a holiday was moved to another day by royal decree"""
+
+    holiday: PublicHolidayId
+    replaces: str
+    day: str
+    legalBasis: str
+
+
+class PublicHolidays(TypedDict):
+    description: str
+    legalBasis: str
+    fromYear: int
+    holidays: list[PublicHolidayDefinition]
+    replacements: list[PublicHolidayReplacement]

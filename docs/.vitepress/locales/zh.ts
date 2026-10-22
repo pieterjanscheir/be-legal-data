@@ -25,6 +25,7 @@ export default {
             prisons: '监狱',
             housesOfJustice: 'Justitiehuizen / maisons de justice',
             interestRates: '利率',
+            publicHolidays: '公共假日',
             postalCodes: '邮政编码',
             knownGaps: '已知缺口',
             roadmap: '路线图',

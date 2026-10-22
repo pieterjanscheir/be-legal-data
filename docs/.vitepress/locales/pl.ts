@@ -25,6 +25,7 @@ export default {
             prisons: 'Więzienia',
             housesOfJustice: 'Justitiehuizen / maisons de justice',
             interestRates: 'Stopy procentowe',
+            publicHolidays: 'Dni ustawowo wolne',
             postalCodes: 'Kody pocztowe',
             knownGaps: 'Znane luki',
             roadmap: 'Plan rozwoju',
