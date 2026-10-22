@@ -10,6 +10,10 @@ export function fetchJson<T>(path: string): Promise<T> {
             if (!r.ok) throw new Error(`${path}: ${r.status}`)
             return r.json()
         })
+        // A failed request isn't kept, so the next caller tries again
+        promise.catch(() => {
+            cache.delete(path)
+        })
         cache.set(path, promise)
     }
     return promise as Promise<T>

@@ -1,12 +1,42 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { getLatestKnownRateDate, interestRates, type InterestType } from 'belgica/interest-rates'
 
 const DAY = 86_400_000
 const toTime = (day: string) => Date.parse(`${day}T00:00:00Z`)
 const toDay = (time: number) => new Date(time).toISOString().slice(0, 10)
 const euro = new Intl.NumberFormat('en-BE', { style: 'currency', currency: 'EUR' })
+
+/**
+ * An amount as people type it in Belgium or in English: '10000', '10 000', '10.000,50',
+ * '10,000.50', '1234,5'. One separator followed by exactly three digits ('10,000', '10.000')
+ * could be either a thousands separator or a decimal one, so it's rejected rather than guessed.
+ */
+function parseAmount(input: string): number | 'ambiguous' | null {
+    const text = input.replace(/[\s\u00a0']/g, '')
+    if (!/^\d[\d.,]*$/.test(text)) return null
+    const separators = text.match(/[.,]/g) ?? []
+    let normalised: string
+    if (separators.length === 0) normalised = text
+    else if (new Set(separators).size === 2) {
+        // Both kinds: the last one is the decimal separator, the others group thousands
+        const decimal = text.lastIndexOf(',') > text.lastIndexOf('.') ? ',' : '.'
+        const grouping = decimal === ',' ? '.' : ','
+        if (text.indexOf(grouping) > text.lastIndexOf(decimal)) return null
+        normalised = text.replaceAll(grouping, '').replace(decimal, '.')
+    } else if (separators.length > 1) {
+        // The same separator several times can only group thousands: 1.000.000
+        if (!/^\d{1,3}([.,]\d{3})+$/.test(text)) return null
+        normalised = text.replace(/[.,]/g, '')
+    } else {
+        const decimals = text.length - 1 - text.search(/[.,]/)
+        if (decimals === 3) return 'ambiguous'
+        normalised = text.replace(',', '.')
+    }
+    const value = Number(normalised)
+    return Number.isFinite(value) && value > 0 ? value : null
+}
 
 interface Row {
     from: string
@@ -70,12 +100,18 @@ export function InterestCalculator() {
     const [type, setType] = useState<InterestType>('legal')
     const [amount, setAmount] = useState('10000')
     const [from, setFrom] = useState('2023-03-15')
-    const [to, setTo] = useState(() => new Date().toISOString().slice(0, 10))
+    // Today, once mounted: the page is rendered at build time, so a day set during rendering
+    // would be the build's and wouldn't match in the browser
+    const [to, setTo] = useState('')
+    useEffect(() => {
+        setTo(new Date().toISOString().slice(0, 10))
+    }, [])
     const [newer, setNewer] = useState(true)
     const latest = getLatestKnownRateDate(type)
 
-    const value = Number(amount.replace(',', '.'))
-    const valid = Number.isFinite(value) && value > 0 && from && to && toTime(from) < toTime(to)
+    const parsed = parseAmount(amount)
+    const value = typeof parsed === 'number' ? parsed : 0
+    const valid = value > 0 && from !== '' && to !== '' && toTime(from) < toTime(to)
     const rows = useMemo(
         () => (valid ? calculate(value, from, to, type, newer) : []),
         [valid, value, from, to, type, newer],
@@ -143,12 +179,19 @@ export function InterestCalculator() {
                                 setNewer(e.target.checked)
                             }}
                         />
-                        Contract concluded after 16 March 2013
+                        Contract concluded on or after 16 March 2013
                     </label>
                 )}
             </form>
 
-            {!valid ?
+            {to === '' ?
+                null
+            : parsed === 'ambiguous' ?
+                <p className="warn" role="alert">
+                    Is the separator in {amount} for thousands or for decimals? Write the amount
+                    without one (10000) or with decimals (10000,00).
+                </p>
+            : !valid ?
                 <p className="muted">
                     Enter a positive amount and a start date before the end date.
                 </p>
