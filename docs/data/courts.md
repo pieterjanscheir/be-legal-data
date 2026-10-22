@@ -175,7 +175,8 @@ import east from 'belgica/data/courts/justice-of-the-peace/oost-vlaanderen.json'
 import west from 'belgica/data/courts/justice-of-the-peace/west-vlaanderen.json' with { type: 'json' }
 import { formatCourtName, type CourtSummary } from 'belgica/courts/format'
 
-const courts: CourtSummary[] = [...east, ...west]
+// A JSON import types `type` and `kind` as string: cast to the summary type
+const courts = [...east, ...west] as CourtSummary[]
 courts.map((court) => formatCourtName(court, 'nl', { style: 'canton' }))
 ```
 

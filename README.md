@@ -114,9 +114,11 @@ and use one `import()` per file, so a bundler makes a chunk of each.
 ```ts
 import east from 'belgica/data/courts/justice-of-the-peace/oost-vlaanderen.json' with { type: 'json' }
 import west from 'belgica/data/courts/justice-of-the-peace/west-vlaanderen.json' with { type: 'json' }
-import { formatCourtName } from 'belgica/courts/format'
+import { formatCourtName, type CourtSummary } from 'belgica/courts/format'
 
-;[...east, ...west].map((court) => formatCourtName(court, 'nl', { style: 'canton' })) // 'Vredegerecht 1e kanton Gent', …
+// A JSON import types `type` and `kind` as string: cast to the summary type
+const courts = [...east, ...west] as CourtSummary[]
+courts.map((court) => formatCourtName(court, 'nl', { style: 'canton' })) // 'Vredegerecht 1e kanton Gent', …
 ```
 
 Bundled for the browser (esbuild, minified):
