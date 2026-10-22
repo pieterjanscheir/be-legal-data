@@ -20,7 +20,7 @@ const keepDataFilesApart: NonNullable<Options['esbuildPlugins']>[number] = {
 // second copy of the data. The JSON is inlined, except the canton boundaries, which
 // belgica/canton-boundaries imports from data/ with `with { type: 'json' }`. Each dataset
 // has its own entry point, so importing only the interest rates doesn't pull in the cantons, and
-// the canton boundaries (the largest by far) are only in theirs: the root doesn't re-export them.
+// the boundaries (the largest by far) are only in theirs: the root doesn't re-export them.
 // The zod schemas have their own entry point too: the datasets only import their types, so zod
 // isn't in their bundles. belgica/courts/format and belgica/courts/load import no data of their
 // own; belgica/cantons is the cantons without their territory texts, which are in
@@ -30,7 +30,9 @@ export default defineConfig({
         index: 'src/index.ts',
         territory: 'src/territory.ts',
         'canton-boundaries': 'src/canton-boundaries.ts',
+        'arrondissement-boundaries': 'src/arrondissement-boundaries.ts',
         courts: 'src/courts.ts',
+        'court-locations': 'src/court-locations.ts',
         'courts-format': 'src/court-format.ts',
         'courts-load': 'src/courts-load.ts',
         cantons: 'src/cantons.ts',

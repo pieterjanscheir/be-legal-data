@@ -15,6 +15,9 @@ Pin a tag rather than `main`, so the data only changes when you choose to upgrad
 
 ## Python
 
+For Python there is a package with the data and the helpers: see [Python](./python). To read
+the files yourself instead:
+
 ```python
 import json
 from urllib.request import urlopen
@@ -50,26 +53,29 @@ Every [release](https://github.com/pieterjanscheir/belgica/releases) has a zip w
 data as JSON and as CSV tables (UTF-8, comma-separated), with the schemas and
 `datapackage.json`. Nested values are tables of their own: a court's contacts are in
 `court-contacts.csv`, keyed by court id; a canton's municipalities in
-`canton-municipalities.csv`. The canton boundaries' geometry isn't tabular and stays in the
-JSON; `canton-boundaries.csv` has the NGI's identifiers per canton. In Excel, open them with
+`canton-municipalities.csv`. The boundaries' geometry isn't tabular and stays in the JSON;
+`canton-boundaries.csv` and `arrondissement-boundaries.csv` have the NGI's identifiers.
+`court-locations.csv` has each point as a `longitude` and a `latitude` column. In Excel, open them with
 Data > From Text/CSV.
 
 ## Files
 
-| File                          | Contents                                                     |
-| ----------------------------- | ------------------------------------------------------------ |
-| `data/judicial-areas.json`    | The 5 judicial areas (courts of appeal)                      |
-| `data/arrondissements.json`   | The 12 judicial arrondissements and their judicial area      |
-| `data/cantons.json`           | All 162 judicial cantons                                     |
-| `data/canton-boundaries.json` | The boundary of every canton as GeoJSON geometry (23 MB)     |
-| `data/municipalities.json`    | The 565 municipalities with REFNIS code, province and region |
-| `data/regions.json`           | The 3 regions, named in three languages                      |
-| `data/provinces.json`         | The 10 provinces, with their region                          |
-| `data/courts.json`            | Every court, division and seat on the courts' portal         |
-| `data/prisons.json`           | The prisons and detention houses                             |
-| `data/houses-of-justice.json` | The houses of justice of the Flemish and French Communities  |
-| `data/postal-codes.json`      | Every postal code with the municipality it belongs to        |
-| `data/interest-rates.json`    | Legal and commercial-transaction interest rates              |
+| File                                  | Contents                                                        |
+| ------------------------------------- | --------------------------------------------------------------- |
+| `data/judicial-areas.json`            | The 5 judicial areas (courts of appeal)                         |
+| `data/arrondissements.json`           | The 12 judicial arrondissements and their judicial area         |
+| `data/cantons.json`                   | All 162 judicial cantons                                        |
+| `data/canton-boundaries.json`         | The boundary of every canton as GeoJSON geometry (23 MB)        |
+| `data/arrondissement-boundaries.json` | The boundary of every arrondissement as GeoJSON geometry (8 MB) |
+| `data/municipalities.json`            | The 565 municipalities with REFNIS code, province and region    |
+| `data/regions.json`                   | The 3 regions, named in three languages                         |
+| `data/provinces.json`                 | The 10 provinces, with their region                             |
+| `data/courts.json`                    | Every court, division and seat on the courts' portal            |
+| `data/court-locations.json`           | A GeoJSON point for most justices of the peace                  |
+| `data/prisons.json`                   | The prisons and detention houses                                |
+| `data/houses-of-justice.json`         | The houses of justice of the Flemish and French Communities     |
+| `data/postal-codes.json`              | Every postal code with the municipality it belongs to           |
+| `data/interest-rates.json`            | Legal and commercial-transaction interest rates                 |
 
 Generated from `data/courts.json` and `data/cantons.json`, for apps that need only part of them
 (see [only the courts you need](/data/courts#only-the-courts-you-need)):
@@ -95,4 +101,5 @@ The shapes are described on the [data pages](/data/territory) and in the [API re
 
 The data is [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse it freely,
 including commercially, with credit to this project and to the sources listed for each dataset.
-Municipality data © Statbel; canton boundaries © National Geographic Institute (NGI).
+Municipality data © Statbel; canton and arrondissement boundaries and court locations ©
+National Geographic Institute (NGI).

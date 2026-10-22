@@ -9,6 +9,15 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ### Added
 
+**A Python package: `pip install belgica`.** The same data and helpers on PyPI, in snake case,
+with the same version number: `get_court`, `find_courts`, `get_cantons_for_municipality`,
+`find_competent_courts`, `find_courts_for_postal_code`, `find_cantons_at`,
+`find_arrondissements_at`, `get_court_location`, `format_court_name`, `get_interest_rate` and the
+rest. Records are the dicts from the JSON, typed with `TypedDict`s in
+`belgica.types`. Python 3.11 or later, no dependencies. `pnpm build:cases` writes the answers of
+the TypeScript helpers for every municipality, postal code, canton and court, a grid of points
+(their canton and arrondissement), every court's location and interest rates since 1969, and the Python tests check the package gives the same ones.
+
 **Smaller files for apps that need only some courts.** JSON can't be tree-shaken, so a browser
 app that imported `findCourts` and `formatCourtName` from `belgica/courts` shipped every court:
 410 KB minified (46 KB gzip). `data/courts.json` stays the complete file and the source of
@@ -52,6 +61,18 @@ time; for a record without one (saved before this version), `belgica/courts` sti
 `belgica/territory` keeps the full records, so `getCanton(id).territory` works as before.
 
 `belgica/courts`, `belgica/territory` and the root keep their exports and full records.
+
+**Arrondissement boundaries and court locations, from the NGI file the canton boundaries
+already came from.** `data/arrondissement-boundaries.json` has the boundary of each of the 12
+judicial arrondissements as a GeoJSON MultiPolygon, with `findArrondissementsAt(lon, lat)` and
+`getArrondissementBoundary(id)` in `belgica/arrondissement-boundaries`. The build checks each
+against its cantons: the NGI calls the arrondissement of Leuven `Vlaams Brabant`, and the
+areas show it is Leuven, not the province. `data/court-locations.json` has a GeoJSON point for
+139 of the 162 justices of the peace, with `getCourtLocation(courtId)` in
+`belgica/court-locations`. The NGI hasn't moved every point when a court moved, so a point is
+only kept when the NGI's address has the house number of the court's own; the other 23 are left
+out and listed by the build. Both have their own entry point and CSV table, and the root doesn't
+load them. The GeoPackage reader now reads points, and geometries with a Z (dropped).
 
 ### Changed
 

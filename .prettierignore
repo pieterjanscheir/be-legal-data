@@ -12,10 +12,12 @@ src/canton-names.generated.ts
 # Generated and committed as written by their scripts
 data/cantons.json
 data/canton-boundaries.json
+data/arrondissement-boundaries.json
 data/municipalities.json
 data/regions.json
 data/provinces.json
 data/courts.json
+data/court-locations.json
 data/prisons.json
 data/houses-of-justice.json
 schema/

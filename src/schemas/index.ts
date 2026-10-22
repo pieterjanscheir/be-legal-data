@@ -3,7 +3,9 @@
  * Schemas in schema/. Use them to validate a copy of the data, or data built on it.
  */
 import { z } from 'zod'
+import { arrondissementBoundarySchema } from './arrondissement-boundaries.ts'
 import { cantonBoundarySchema } from './canton-boundaries.ts'
+import { courtLocationSchema } from './court-locations.ts'
 import {
     arrondissementSchema,
     cantonSchema,
@@ -20,8 +22,11 @@ import { interestRateSeriesSchema } from './interest-rates.ts'
 export * from '../ids.generated.ts'
 export * from './common.ts'
 export * from './territory.ts'
+export * from './geometry.ts'
 export * from './canton-boundaries.ts'
+export * from './arrondissement-boundaries.ts'
 export * from './courts.ts'
+export * from './court-locations.ts'
 export * from './places.ts'
 export * from './postal-codes.ts'
 export * from './interest-rates.ts'
@@ -32,10 +37,12 @@ export const dataFileSchemas = {
     arrondissements: z.array(arrondissementSchema),
     cantons: z.array(cantonSchema),
     'canton-boundaries': z.array(cantonBoundarySchema),
+    'arrondissement-boundaries': z.array(arrondissementBoundarySchema),
     regions: z.array(regionSchema),
     provinces: z.array(provinceSchema),
     municipalities: z.array(municipalitySchema),
     courts: z.array(courtSchema),
+    'court-locations': z.array(courtLocationSchema),
     prisons: z.array(prisonSchema),
     'houses-of-justice': z.array(houseOfJusticeSchema),
     'postal-codes': z.array(postalCodeSchema),

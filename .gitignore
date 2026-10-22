@@ -9,3 +9,14 @@ csv/
 # Generated from data/courts.json and data/cantons.json by pnpm build:data-files; published, not committed
 data/courts/
 data/cantons/
+# Python package: the data and licences are copied in at build time
+python/src/belgica/data/
+python/LICENSE
+python/LICENSE-DATA
+python/tests/.cases/
+python/.venv/
+python/dist/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

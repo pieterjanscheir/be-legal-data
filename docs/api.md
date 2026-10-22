@@ -12,29 +12,33 @@ import { formatCourtName } from 'belgica/courts/format'
 import { loadCourts, loadCourtDetails } from 'belgica/courts/load'
 import { getCanton, getCantonsForMunicipality } from 'belgica/territory'
 import { findCantonsAt } from 'belgica/canton-boundaries'
+import { findArrondissementsAt } from 'belgica/arrondissement-boundaries'
+import { getCourtLocation } from 'belgica/court-locations'
 import { getPrison } from 'belgica/prisons'
 import { getHouseOfJustice } from 'belgica/houses-of-justice'
 import { getMunicipalitiesForPostalCode } from 'belgica/postal-codes'
 ```
 
-| Entry point                    | Contents                                                                     |
-| ------------------------------ | ---------------------------------------------------------------------------- |
-| `belgica`                      | Everything below, except the canton boundaries                               |
-| `belgica/territory`            | Judicial areas, arrondissements, cantons, municipalities, provinces, regions |
-| `belgica/canton-boundaries`    | The cantons' geometry, and `findCantonsAt`                                   |
-| `belgica/courts`               | Courts, and the contact helpers                                              |
-| `belgica/courts/format`        | `formatCourtName` and the contact helpers, without any data                  |
-| `belgica/courts/load`          | [Loading court files on demand](#loading-courts-on-demand)                   |
-| `belgica/cantons`              | The cantons without their `territory` texts                                  |
-| `belgica/cantons/territory`    | `getCantonTerritory`: the texts alone                                        |
-| `belgica/prisons`              | Prisons, and the contact helpers                                             |
-| `belgica/houses-of-justice`    | Houses of justice, and the contact helpers                                   |
-| `belgica/interest-rates`       | Interest rates                                                               |
-| `belgica/postal-codes`         | Postal codes, with the municipalities they belong to                         |
-| `belgica/schemas`              | [Zod schemas](/guide/schema#zod-schemas) for every record and data file      |
-| `belgica/data/*`               | The raw data files, including the [split ones](/guide/raw-json#files)        |
-| `belgica/schema/*.schema.json` | [JSON Schemas](/guide/schema)                                                |
-| `belgica/datapackage.json`     | [Data package descriptor](/guide/schema#datapackage-json)                    |
+| Entry point                         | Contents                                                                     |
+| ----------------------------------- | ---------------------------------------------------------------------------- |
+| `belgica`                           | Everything below, except the boundaries and the court locations              |
+| `belgica/territory`                 | Judicial areas, arrondissements, cantons, municipalities, provinces, regions |
+| `belgica/canton-boundaries`         | The cantons' geometry, and `findCantonsAt`                                   |
+| `belgica/arrondissement-boundaries` | The arrondissements' geometry, and `findArrondissementsAt`                   |
+| `belgica/courts`                    | Courts, and the contact helpers                                              |
+| `belgica/court-locations`           | The justices of the peace on the map: `getCourtLocation`                     |
+| `belgica/courts/format`             | `formatCourtName` and the contact helpers, without any data                  |
+| `belgica/courts/load`               | [Loading court files on demand](#loading-courts-on-demand)                   |
+| `belgica/cantons`                   | The cantons without their `territory` texts                                  |
+| `belgica/cantons/territory`         | `getCantonTerritory`: the texts alone                                        |
+| `belgica/prisons`                   | Prisons, and the contact helpers                                             |
+| `belgica/houses-of-justice`         | Houses of justice, and the contact helpers                                   |
+| `belgica/interest-rates`            | Interest rates                                                               |
+| `belgica/postal-codes`              | Postal codes, with the municipalities they belong to                         |
+| `belgica/schemas`                   | [Zod schemas](/guide/schema#zod-schemas) for every record and data file      |
+| `belgica/data/*`                    | The raw data files, including the [split ones](/guide/raw-json#files)        |
+| `belgica/schema/*.schema.json`      | [JSON Schemas](/guide/schema)                                                |
+| `belgica/datapackage.json`          | [Data package descriptor](/guide/schema#datapackage-json)                    |
 
 Conventions:
 
@@ -202,6 +206,38 @@ function getCantonBoundary(id: string, options?: OnDay): CantonBoundary | undefi
 
 ```ts
 getCantonBoundary('gent-1').geometry.type // 'MultiPolygon'
+```
+
+## Arrondissement boundaries
+
+Only in `belgica/arrondissement-boundaries`, for the same reason. See the
+[data page](/data/canton-boundaries#arrondissement-boundaries).
+
+### `findArrondissementsAt(longitude, latitude)`
+
+```ts
+function findArrondissementsAt(
+    longitude: number,
+    latitude: number,
+    options?: OnDay,
+): Arrondissement[]
+```
+
+The arrondissements whose boundary holds a point, as `findCantonsAt` does for cantons.
+
+```ts
+findArrondissementsAt(4.2372, 50.7339).map((a) => a.id) // ['brussel']: Halle
+```
+
+### `getArrondissementBoundary(arrondissementId)`
+
+```ts
+function getArrondissementBoundary(id: ArrondissementId): ArrondissementBoundary
+function getArrondissementBoundary(id: string, options?: OnDay): ArrondissementBoundary | undefined
+```
+
+```ts
+getArrondissementBoundary('leuven').geometry.type // 'MultiPolygon'
 ```
 
 ## Courts

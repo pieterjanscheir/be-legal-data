@@ -132,6 +132,38 @@ interface Contact {
 }
 ```
 
+## Locations
+
+File: `data/court-locations.json`, entry point `belgica/court-locations`. A point on the map
+for each justice of the peace, from the National Geographic Institute's peace court layer in
+the [file the canton boundaries come from](/data/canton-boundaries#source-and-updates).
+
+```ts
+import { getCourtLocation } from 'belgica/court-locations'
+
+getCourtLocation('justice-of-the-peace-aalst-1')?.geometry
+// { type: 'Point', coordinates: [4.0409722, 50.941518] }: longitude, latitude (WGS 84)
+```
+
+| Field                  | Type                   | Description                                                                        |
+| ---------------------- | ---------------------- | ---------------------------------------------------------------------------------- |
+| `id`, `court`          | `CourtId`              | The court, or seat of one, the point is the location of                            |
+| `validFrom`, `validTo` | string?                | The days the record applies. See [time](/api#time)                                 |
+| `ngiId`                | string                 | The NGI's identifier of the point (its `tgid`), a GUID                             |
+| `address`              | string                 | The address the NGI gives with the point, as published: `Place de la Résistance 3` |
+| `geometry`             | `Point`                | GeoJSON, WGS 84, longitude first, rounded to 7 decimals                            |
+| `sources`              | `{ url, retrieved }[]` | The NGI file the record was read from                                              |
+
+::: warning Not every justice of the peace has one
+The NGI moves a point when it hears of a move, and doesn't always: in its July 2026 file,
+about one point in seven still sits at a building the court has left. A point is only kept
+when the NGI's address has the house number of the court's address on the portal (comparing
+numbers, not streets, keeps the Brussels courts whose address the NGI gives in French and the
+portal in Dutch). The others are left out, and listed by the build. So
+`getCourtLocation` returns `undefined` for those courts, and for every other kind of court,
+which the NGI has no layer for.
+:::
+
 ## Helpers
 
 ```ts

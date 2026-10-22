@@ -1,16 +1,19 @@
 /**
- * Builds the canton boundaries from the snapshot of the NGI's "Judicial cantons and
- * arrondissements" GeoPackage (geo.be, WGS 84). One record per canton of data/cantons.json,
- * keyed by its id; a canton the file doesn't name, or a feature no canton matches, is reported
- * and stops the build: that needs a person, not a guess.
+ * Builds the canton and arrondissement boundaries from the snapshot of the NGI's "Judicial
+ * cantons and arrondissements" GeoPackage (geo.be, WGS 84). One record per canton of
+ * data/cantons.json and per arrondissement of data/arrondissements.json, keyed by its id; one
+ * the file doesn't name, or a feature nothing matches, is reported and stops the build: that
+ * needs a person, not a guess.
  *
  * A feature matches a canton when its Dutch and its French name both give the canton's id
  * (`toId` of the name, with the ordinal as the number), and both agree. Otherwise CANTON_ALIASES
- * maps the feature's canton code to the id by hand.
+ * maps the feature's canton code to the id by hand. An arrondissement feature has a single name,
+ * which matches when it gives the id or one of the arrondissement's names; otherwise
+ * ARRONDISSEMENT_ALIASES maps it by hand.
  */
 import { readFileSync } from 'node:fs'
 
-import type { Canton } from '../../src/territory.ts'
+import type { Arrondissement, Canton } from '../../src/territory.ts'
 import { toId } from '../id.ts'
 import { NGI_CANTONS } from '../sources/catalog.ts'
 import { Snapshots } from '../sources/store.ts'
@@ -21,10 +24,10 @@ import {
     type Position,
     type Ring,
 } from './geopackage.ts'
-import type { CantonBoundary, MultiPolygon } from './types.ts'
+import type { ArrondissementBoundary, CantonBoundary, MultiPolygon } from './types.ts'
 import { zipEntry } from './zip.ts'
 
-export type { CantonBoundary } from './types.ts'
+export type { ArrondissementBoundary, CantonBoundary } from './types.ts'
 
 /**
  * The NGI's canton code (`cantoncodedut`) → our canton id, for a feature whose Dutch and French
@@ -44,6 +47,17 @@ export const CANTON_ALIASES: Record<string, string> = {
     '258202': 'huy-2',
     // 'Gerechtelijk kanton Gembloux': the annex says 'Gembloers'
     '258406': 'gembloux',
+}
+
+/**
+ * The NGI's arrondissement name → our arrondissement id, for a name that gives neither the id
+ * nor one of the arrondissement's names. The NGI names the arrondissement of Leuven after its
+ * province; its area is that of the Leuven cantons, not of the province, which Halle-Vilvoorde
+ * shares with the arrondissement of Brussels.
+ */
+export const ARRONDISSEMENT_ALIASES: Record<string, string> = {
+    'Bruxelles - Brussel': 'brussel',
+    'Vlaams Brabant': 'leuven',
 }
 
 /** The ordinal that opens a numbered canton's name, per language */
@@ -116,9 +130,21 @@ export function matchCanton(
     }
 }
 
+/** The arrondissement an NGI arrondissement name names, if one */
+export function matchArrondissement(
+    name: string,
+    arrondissements: readonly Arrondissement[],
+    aliases: Record<string, string> = ARRONDISSEMENT_ALIASES,
+): Arrondissement | undefined {
+    const id = aliases[name] ?? toId(name)
+    return arrondissements.find(
+        (a) => a.id === id || Object.values(a.name).some((n) => toId(n) === id),
+    )
+}
+
 /** Coordinates are kept to 7 decimals: about a centimetre, below the source's own precision */
 const DECIMALS = 7
-const round = (n: number) => Math.round(n * 10 ** DECIMALS) / 10 ** DECIMALS
+export const round = (n: number) => Math.round(n * 10 ** DECIMALS) / 10 ** DECIMALS
 
 /** Twice the signed area of a ring in coordinate units: positive when counter-clockwise */
 export function signedArea(ring: Ring): number {
@@ -168,6 +194,12 @@ export function toGeoJson(polygons: MultiPolygonRings, label: string): MultiPoly
     }
 }
 
+/** The area of a GeoJSON multipolygon, in square degrees: enough to compare two shapes */
+export function area(geometry: MultiPolygon): number {
+    // Exterior rings wind counter-clockwise and holes clockwise, so the holes subtract
+    return geometry.coordinates.flat().reduce((sum, ring) => sum + signedArea(ring), 0) / 2
+}
+
 export interface BoundaryReport {
     /** Features no canton matches, with why */
     unmatched: string[]
@@ -177,19 +209,27 @@ export interface BoundaryReport {
 
 const read = (path: string): unknown => JSON.parse(readFileSync(path, 'utf8'))
 
-export function buildCantonBoundaries(
-    root: string,
-    dataDir = 'data',
-): { boundaries: CantonBoundary[]; report: BoundaryReport } {
+/** The GeoPackage in the snapshot of the NGI's file, and the day it was retrieved */
+export function readNgiGeoPackage(root: string): { geopackage: Buffer; retrieved: string } {
     const snapshots = new Snapshots(root, 'ngi')
     const entry = snapshots.entry(NGI_CANTONS)
     const path = snapshots.path(NGI_CANTONS)
     if (!entry || !path) throw new Error('No snapshot of the NGI canton boundaries')
+    return {
+        geopackage: zipEntry(readFileSync(path), /\.gpkg$/),
+        retrieved: entry.retrieved,
+    }
+}
+
+export function buildCantonBoundaries(
+    root: string,
+    dataDir = 'data',
+): { boundaries: CantonBoundary[]; report: BoundaryReport } {
+    const { geopackage, retrieved } = readNgiGeoPackage(root)
     const cantons = read(`${dataDir}/cantons.json`) as Canton[]
     const byName = cantonIndex(cantons)
     const report: BoundaryReport = { unmatched: [], missing: [] }
 
-    const geopackage = zipEntry(readFileSync(path), /\.gpkg$/)
     const features = queryGeoPackage(
         geopackage,
         'SELECT tgid, namedut, namefre, cantoncodedut, cantoncodefre, shape ' +
@@ -223,7 +263,7 @@ export function buildCantonBoundaries(
             ngiId: feature.tgid,
             cantonCode: { nl: feature.cantoncodedut, fr: feature.cantoncodefre },
             geometry: toGeoJson(readGeoPackageGeometry(feature.shape), label),
-            sources: [{ url: NGI_CANTONS, retrieved: entry.retrieved }],
+            sources: [{ url: NGI_CANTONS, retrieved }],
         })
     }
     report.missing = cantons.filter((c) => !boundaries.has(c.id)).map((c) => c.id)
@@ -234,10 +274,88 @@ export function buildCantonBoundaries(
 }
 
 /**
+ * An arrondissement's area may differ this much from the sum of its cantons' (as a fraction):
+ * the NGI derives both from the same lines, so more means a feature was matched wrongly
+ */
+const AREA_TOLERANCE = 0.001
+
+/**
+ * The arrondissement boundaries. Each is checked against the cantons of the arrondissement:
+ * their areas must add up to its own, which catches an alias to the wrong arrondissement.
+ * `cantonBoundaries` are the ones `buildCantonBoundaries` built from the same file.
+ */
+export function buildArrondissementBoundaries(
+    root: string,
+    cantonBoundaries: readonly CantonBoundary[],
+    dataDir = 'data',
+): { boundaries: ArrondissementBoundary[]; report: BoundaryReport } {
+    const { geopackage, retrieved } = readNgiGeoPackage(root)
+    const arrondissements = read(`${dataDir}/arrondissements.json`) as Arrondissement[]
+    const cantons = read(`${dataDir}/cantons.json`) as Canton[]
+    const report: BoundaryReport = { unmatched: [], missing: [] }
+
+    const features = queryGeoPackage(
+        geopackage,
+        'SELECT tgid, name, shape FROM judicialarrondissement ORDER BY name',
+        (row) => ({
+            tgid: String(row['tgid']),
+            name: String(row['name']),
+            shape: row['shape'] as Uint8Array,
+        }),
+    )
+
+    const cantonAreas = new Map<string, number>()
+    for (const boundary of cantonBoundaries) {
+        const canton = cantons.find((c) => c.id === boundary.canton)
+        if (!canton) continue
+        const sum = cantonAreas.get(canton.arrondissement) ?? 0
+        cantonAreas.set(canton.arrondissement, sum + area(boundary.geometry))
+    }
+
+    const boundaries = new Map<string, ArrondissementBoundary>()
+    for (const feature of features) {
+        const arrondissement = matchArrondissement(feature.name, arrondissements)
+        if (!arrondissement) {
+            report.unmatched.push(
+                `${feature.name}: no arrondissement has this name; add it to ARRONDISSEMENT_ALIASES`,
+            )
+            continue
+        }
+        const { id } = arrondissement
+        if (boundaries.has(id)) {
+            report.unmatched.push(`${feature.name}: a second feature for arrondissement ${id}`)
+            continue
+        }
+        const geometry = toGeoJson(readGeoPackageGeometry(feature.shape), feature.name)
+        const expected = cantonAreas.get(id) ?? 0
+        if (Math.abs(area(geometry) - expected) > AREA_TOLERANCE * expected) {
+            report.unmatched.push(
+                `${feature.name}: its area isn't that of the cantons of arrondissement ${id}`,
+            )
+            continue
+        }
+        boundaries.set(id, {
+            id,
+            arrondissement: id,
+            ngiId: feature.tgid,
+            geometry,
+            sources: [{ url: NGI_CANTONS, retrieved }],
+        })
+    }
+    report.missing = arrondissements.filter((a) => !boundaries.has(a.id)).map((a) => a.id)
+    return {
+        boundaries: [...boundaries.values()].sort((a, b) => a.id.localeCompare(b.id)),
+        report,
+    }
+}
+
+/**
  * The file's JSON: records indented like the other data files, each ring of a geometry on one
  * line, so a diff shows which ring changed without running to millions of lines.
  */
-export function stringifyBoundaries(boundaries: readonly CantonBoundary[]): string {
+export function stringifyBoundaries(
+    boundaries: readonly (CantonBoundary | ArrondissementBoundary)[],
+): string {
     const records = boundaries.map((boundary) => {
         const rings = boundary.geometry.coordinates
             .map(

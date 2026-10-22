@@ -16,20 +16,22 @@ It's reference data, not legal advice: check the official sources before relying
 
 ## What's in it
 
-| File                                                         | Contents                                                                                                                                                                                                                                                                                                     | Source                                              |
-| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------- |
-| [`data/judicial-areas.json`](data/judicial-areas.json)       | The 5 judicial areas (courts of appeal)                                                                                                                                                                                                                                                                      | Judicial Code, annex art. 5                         |
-| [`data/arrondissements.json`](data/arrondissements.json)     | The 12 judicial arrondissements and their judicial area                                                                                                                                                                                                                                                      | Judicial Code, annex art. 4                         |
-| [`data/cantons.json`](data/cantons.json)                     | All 162 judicial cantons: name, seat, municipalities, the legal description of their area, and its ELI                                                                                                                                                                                                       | Judicial Code, annex art. 1 (generated)             |
-| [`data/canton-boundaries.json`](data/canton-boundaries.json) | The boundary of every canton as GeoJSON geometry (WGS 84), to find the canton of a point in a split city                                                                                                                                                                                                     | NGI, geo.be (fetched weekly)                        |
-| [`data/municipalities.json`](data/municipalities.json)       | The 565 municipalities with REFNIS code, province and region                                                                                                                                                                                                                                                 | Statbel (generated)                                 |
-| [`data/regions.json`](data/regions.json)                     | The 3 regions, named in Dutch, French and German                                                                                                                                                                                                                                                             | Statbel REFNIS code list (generated weekly)         |
-| [`data/provinces.json`](data/provinces.json)                 | The 10 provinces, with their region                                                                                                                                                                                                                                                                          | Statbel REFNIS code list (generated weekly)         |
-| [`data/courts.json`](data/courts.json)                       | Every court, division and seat: every justice of the peace, police court, court of first instance, enterprise and labour court, court of appeal, labour court of appeal and court of assize, with names as published, addresses, registries' contacts, opening hours, ECLI codes and the cantons each covers | tribunaux-rechtbanken.be (scraped weekly)           |
-| [`data/prisons.json`](data/prisons.json)                     | Every prison and detention house, names in three languages                                                                                                                                                                                                                                                   | justitie.belgium.be (scraped weekly)                |
-| [`data/houses-of-justice.json`](data/houses-of-justice.json) | The houses of justice of the Flemish (with OVO number) and French Communities                                                                                                                                                                                                                                | vlaanderen.be, maisonsdejustice.be (scraped weekly) |
-| [`data/postal-codes.json`](data/postal-codes.json)           | Every postal code with the municipality it belongs to, by REFNIS code (three codes belong to two)                                                                                                                                                                                                            | Statbel conversion table (fetched weekly)           |
-| [`data/interest-rates.json`](data/interest-rates.json)       | Legal interest rate (per year, since 1970) and commercial-transaction rate (per semester, since 2002)                                                                                                                                                                                                        | FOD Financiën / Belgisch Staatsblad                 |
+| File                                                                         | Contents                                                                                                                                                                                                                                                                                                     | Source                                              |
+| ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------- |
+| [`data/judicial-areas.json`](data/judicial-areas.json)                       | The 5 judicial areas (courts of appeal)                                                                                                                                                                                                                                                                      | Judicial Code, annex art. 5                         |
+| [`data/arrondissements.json`](data/arrondissements.json)                     | The 12 judicial arrondissements and their judicial area                                                                                                                                                                                                                                                      | Judicial Code, annex art. 4                         |
+| [`data/cantons.json`](data/cantons.json)                                     | All 162 judicial cantons: name, seat, municipalities, the legal description of their area, and its ELI                                                                                                                                                                                                       | Judicial Code, annex art. 1 (generated)             |
+| [`data/canton-boundaries.json`](data/canton-boundaries.json)                 | The boundary of every canton as GeoJSON geometry (WGS 84), to find the canton of a point in a split city                                                                                                                                                                                                     | NGI, geo.be (fetched weekly)                        |
+| [`data/arrondissement-boundaries.json`](data/arrondissement-boundaries.json) | The boundary of every arrondissement as GeoJSON geometry (WGS 84)                                                                                                                                                                                                                                            | NGI, geo.be (fetched weekly)                        |
+| [`data/municipalities.json`](data/municipalities.json)                       | The 565 municipalities with REFNIS code, province and region                                                                                                                                                                                                                                                 | Statbel (generated)                                 |
+| [`data/regions.json`](data/regions.json)                                     | The 3 regions, named in Dutch, French and German                                                                                                                                                                                                                                                             | Statbel REFNIS code list (generated weekly)         |
+| [`data/provinces.json`](data/provinces.json)                                 | The 10 provinces, with their region                                                                                                                                                                                                                                                                          | Statbel REFNIS code list (generated weekly)         |
+| [`data/courts.json`](data/courts.json)                                       | Every court, division and seat: every justice of the peace, police court, court of first instance, enterprise and labour court, court of appeal, labour court of appeal and court of assize, with names as published, addresses, registries' contacts, opening hours, ECLI codes and the cantons each covers | tribunaux-rechtbanken.be (scraped weekly)           |
+| [`data/court-locations.json`](data/court-locations.json)                     | A GeoJSON point for each justice of the peace, where the NGI's address matches the court's                                                                                                                                                                                                                   | NGI, geo.be (fetched weekly)                        |
+| [`data/prisons.json`](data/prisons.json)                                     | Every prison and detention house, names in three languages                                                                                                                                                                                                                                                   | justitie.belgium.be (scraped weekly)                |
+| [`data/houses-of-justice.json`](data/houses-of-justice.json)                 | The houses of justice of the Flemish (with OVO number) and French Communities                                                                                                                                                                                                                                | vlaanderen.be, maisonsdejustice.be (scraped weekly) |
+| [`data/postal-codes.json`](data/postal-codes.json)                           | Every postal code with the municipality it belongs to, by REFNIS code (three codes belong to two)                                                                                                                                                                                                            | Statbel conversion table (fetched weekly)           |
+| [`data/interest-rates.json`](data/interest-rates.json)                       | Legal interest rate (per year, since 1970) and commercial-transaction rate (per semester, since 2002)                                                                                                                                                                                                        | FOD Financiën / Belgisch Staatsblad                 |
 
 The official sources are the truth; the files in `data/` are built from them. Every file has a
 [JSON Schema](schema/), and [`datapackage.json`](datapackage.json) lists each dataset's sources,
@@ -89,8 +91,9 @@ for a day before that data's coverage.
 Import a single dataset to keep bundles small: `belgica/interest-rates`,
 `belgica/courts`, `belgica/prisons`, `belgica/houses-of-justice`,
 `belgica/territory`, `belgica/postal-codes`. The canton boundaries (a million
-positions of GeoJSON) are only in `belgica/canton-boundaries`; the root never loads
-them.
+positions of GeoJSON) are only in `belgica/canton-boundaries`, the arrondissement boundaries
+in `belgica/arrondissement-boundaries` and the court locations in `belgica/court-locations`;
+the root never loads them.
 
 The raw files are also exported: `import courts from 'belgica/data/courts.json' with { type: 'json' }`.
 
@@ -133,7 +136,18 @@ Bundled for the browser (esbuild, minified):
 | `getCanton` from `belgica/territory`                                 | 180 KB   | 30 KB  |
 | The two files above + `formatCourtName` from `belgica/courts/format` | 15 KB    | 2.2 KB |
 
-### Python, spreadsheets and anything else
+### Python
+
+```bash
+pip install belgica
+```
+
+The same data and helpers, in snake case, with the same version number: `get_cantons_for_municipality('44021', on='2025-09-15')`,
+`find_competent_courts('23088', 'police-court')`, `find_cantons_at(3.7268, 51.053)`. Python 3.11 or later, no
+dependencies; the tests check both packages give the same answers. See [Python](https://pieterjanscheir.github.io/belgica/guide/python)
+and [`python/`](python/).
+
+### Spreadsheets and anything else
 
 Read the JSON files in `data/` directly: from the npm package, a git submodule, or a raw URL
 pinned to a tag (`https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.4.0/data/cantons.json`).
@@ -163,7 +177,7 @@ Ids are public API, so versions follow these rules: adding data is a minor versi
 value is a patch, and removing or renaming an id is a major version.
 
 1. Move the Unreleased entries in `CHANGELOG.md` under the new version.
-2. Bump `version` in `package.json` and commit.
+2. Bump `version` in `package.json` and in `python/pyproject.toml` (the tests check they match), and commit.
 3. Tag it and push: `git tag v0.3.0 && git push && git push --tags`.
 
 The [release workflow](.github/workflows/release.yml) runs `pnpm check`, publishes the tag to

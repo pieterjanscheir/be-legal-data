@@ -55,9 +55,17 @@
             "types": "./dist/canton-boundaries.d.ts",
             "default": "./dist/canton-boundaries.js"
         },
+        "./arrondissement-boundaries": {
+            "types": "./dist/arrondissement-boundaries.d.ts",
+            "default": "./dist/arrondissement-boundaries.js"
+        },
         "./courts": {
             "types": "./dist/courts.d.ts",
             "default": "./dist/courts.js"
+        },
+        "./court-locations": {
+            "types": "./dist/court-locations.d.ts",
+            "default": "./dist/court-locations.js"
         },
         "./courts/format": {
             "types": "./dist/courts-format.d.ts",
@@ -104,6 +112,7 @@
         "build:cantons": "node scripts/build-cantons.ts",
         "build:data": "node scripts/parse/build.ts",
         "build:csv": "node scripts/build-csv.ts",
+        "build:cases": "node scripts/build-cases.ts",
         "fetch:sources": "node scripts/sources/fetch.ts",
         "test": "pnpm build:data-files && vitest run",
         "typecheck": "pnpm build:data-files && tsc --noEmit",

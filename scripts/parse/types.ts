@@ -3,10 +3,12 @@
  * and the id unions in src/ids.generated.ts are generated from what they make.
  */
 import type { Address as PublishedAddress } from '../../src/common.ts'
+import type { ArrondissementBoundary as PublishedArrondissementBoundary } from '../../src/arrondissement-boundaries.ts'
 import type {
     CantonBoundary as PublishedCantonBoundary,
     MultiPolygon,
 } from '../../src/canton-boundaries.ts'
+import type { CourtLocation as PublishedCourtLocation } from '../../src/court-locations.ts'
 import type { Court as PublishedCourt } from '../../src/courts.ts'
 import type { HouseOfJustice as PublishedHouseOfJustice } from '../../src/houses-of-justice.ts'
 import type { PostalCode as PublishedPostalCode } from '../../src/postal-codes.ts'
@@ -45,6 +47,14 @@ export type PostalCode = Omit<PublishedPostalCode, 'id' | 'municipality'> & {
 export type CantonBoundary = Omit<PublishedCantonBoundary, 'id' | 'canton'> & {
     id: string
     canton: string
+}
+export type ArrondissementBoundary = Omit<
+    PublishedArrondissementBoundary,
+    'id' | 'arrondissement'
+> & { id: string; arrondissement: string }
+export type CourtLocation = Omit<PublishedCourtLocation, 'id' | 'court'> & {
+    id: string
+    court: string
 }
 export type Region = Omit<PublishedRegion, 'id'> & { id: string }
 export type Province = Omit<PublishedProvince, 'id' | 'region'> & { id: string; region: string }

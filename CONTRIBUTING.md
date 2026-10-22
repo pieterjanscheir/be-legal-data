@@ -10,7 +10,8 @@ The short version:
    See the [id rules](https://pieterjanscheir.github.io/belgica/guide/identifiers).
 3. Don't edit generated files by hand (`data/cantons.json`, `data/municipalities.json`,
    `data/regions.json`, `data/provinces.json`, `data/courts.json`, `data/prisons.json`,
-   `data/houses-of-justice.json`, `data/canton-boundaries.json`, `schema/`,
+   `data/houses-of-justice.json`, `data/canton-boundaries.json`,
+   `data/arrondissement-boundaries.json`, `data/court-locations.json`, `schema/`,
    `src/ids.generated.ts`, `src/data-files.generated.ts`, and the files under `data/courts/` and
    `data/cantons/`): change the parser, script or types and regenerate. The scraped datasets
    are rebuilt from the official sources every week.
