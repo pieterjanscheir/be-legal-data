@@ -77,6 +77,11 @@ def test_interest_rates_match_their_type() -> None:
     check(data, types.InterestRates, 'interest-rates')
 
 
+def test_public_holidays_match_their_type() -> None:
+    data = json.loads((ROOT / 'data' / 'public-holidays.json').read_text(encoding='utf-8'))
+    check(data, types.PublicHolidays, 'public-holidays')
+
+
 def test_every_data_file_has_a_type() -> None:
     names = {file.stem for file in (ROOT / 'data').glob('*.json')}
-    assert names == {*FILES, 'interest-rates'}
+    assert names == {*FILES, 'interest-rates', 'public-holidays'}

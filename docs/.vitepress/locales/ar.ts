@@ -26,6 +26,7 @@ export default {
             prisons: 'السجون',
             housesOfJustice: 'Justitiehuizen / maisons de justice',
             interestRates: 'أسعار الفائدة',
+            publicHolidays: 'العطل الرسمية',
             postalCodes: 'الرموز البريدية',
             knownGaps: 'الثغرات المعروفة',
             roadmap: 'خارطة الطريق',

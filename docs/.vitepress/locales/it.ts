@@ -25,6 +25,7 @@ export default {
             prisons: 'Carceri',
             housesOfJustice: 'Justitiehuizen / maisons de justice',
             interestRates: "Tassi d'interesse",
+            publicHolidays: 'Giorni festivi',
             postalCodes: 'Codici postali',
             knownGaps: 'Lacune note',
             roadmap: 'Roadmap',

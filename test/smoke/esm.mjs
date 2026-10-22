@@ -5,6 +5,7 @@ import { getCourt, getCanton, cantons as allCantons } from 'belgica'
 import { cantons, getCantonsForMunicipality } from 'belgica/territory'
 import { formatCourtName, getJusticeOfThePeace } from 'belgica/courts'
 import { getInterestRate } from 'belgica/interest-rates'
+import { getPublicHolidays, nextWorkingDay } from 'belgica/calendar'
 import { getPrison } from 'belgica/prisons'
 import { getHouseOfJustice } from 'belgica/houses-of-justice'
 import { getMunicipalitiesForPostalCode } from 'belgica/postal-codes'
@@ -32,6 +33,8 @@ assert.deepEqual(
     ['merelbeke-melle'],
 )
 assert.equal(getInterestRate('2024-06-15', 'legal').rate, 5.75)
+assert.equal(nextWorkingDay('2026-04-04'), '2026-04-07')
+assert.equal(getPublicHolidays(2026).length, 10)
 assert.equal(getPrison('gevangenis-gent').address.postalCode, '9000')
 assert.equal(getHouseOfJustice('justitiehuis-gent').ovo, 'OVO001917')
 assert.equal(getMunicipalitiesForPostalCode('9000')[0], getMunicipality('44021'))
