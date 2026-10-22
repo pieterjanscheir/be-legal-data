@@ -35,8 +35,7 @@
           "description": "The canton the boundary belongs to"
         },
         "ngiId": {
-          "type": "string",
-          "pattern": "^\\{[0-9A-F]{8}(-[0-9A-F]{4}){3}-[0-9A-F]{12}\\}$",
+          "$ref": "#/definitions/NgiId",
           "description": "The NGI's identifier of the object (its `tgid`), e.g. '{50412818-C0B7-4FEE-9E9B-DFFF0A768922}'"
         },
         "cantonCode": {
@@ -254,6 +253,11 @@
         "zoutleeuw"
       ],
       "description": "Id of a record in data/cantons.json"
+    },
+    "NgiId": {
+      "type": "string",
+      "pattern": "^\\{[0-9A-F]{8}(-[0-9A-F]{4}){3}-[0-9A-F]{12}\\}$",
+      "description": "The NGI's identifier of an object (its `tgid`): a GUID in braces, uppercase"
     },
     "MultiPolygon": {
       "type": "object",

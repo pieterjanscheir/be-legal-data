@@ -11,7 +11,9 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 
+import type { ArrondissementBoundary } from '../src/arrondissement-boundaries.ts'
 import type { CantonBoundary } from '../src/canton-boundaries.ts'
+import type { CourtLocation } from '../src/court-locations.ts'
 import type {
     Arrondissement,
     Canton,
@@ -37,7 +39,9 @@ const provinces = read('provinces') as Province[]
 const municipalities = read('municipalities') as Municipality[]
 const cantons = read('cantons') as Canton[]
 const cantonBoundaries = read('canton-boundaries') as CantonBoundary[]
+const arrondissementBoundaries = read('arrondissement-boundaries') as ArrondissementBoundary[]
 const courts = read('courts') as Court[]
+const courtLocations = read('court-locations') as CourtLocation[]
 const prisons = read('prisons') as Prison[]
 const housesOfJustice = read('houses-of-justice') as HouseOfJustice[]
 const postalCodes = read('postal-codes') as PostalCode[]
@@ -140,6 +144,12 @@ export const tables: Record<string, Row[]> = {
         canton_code_fr: b.cantonCode.fr,
         ...validity(b),
     })),
+    // The geometry isn't tabular: it stays in data/arrondissement-boundaries.json
+    'arrondissement-boundaries': arrondissementBoundaries.map((b) => ({
+        arrondissement: b.arrondissement,
+        ngi_id: b.ngiId,
+        ...validity(b),
+    })),
     'canton-municipalities': cantons.flatMap((c) =>
         c.municipalities.map((m) => ({
             canton: c.id,
@@ -176,6 +186,14 @@ export const tables: Record<string, Row[]> = {
     'court-cantons': courts.flatMap((c) =>
         (c.cantons ?? []).map((canton) => ({ court: c.id, canton })),
     ),
+    'court-locations': courtLocations.map((l) => ({
+        court: l.court,
+        ...validity(l),
+        ngi_id: l.ngiId,
+        address: l.address,
+        longitude: l.geometry.coordinates[0],
+        latitude: l.geometry.coordinates[1],
+    })),
     prisons: prisons.map((p) => ({
         id: p.id,
         ...validity(p),

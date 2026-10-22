@@ -1,11 +1,15 @@
-// The canton boundaries parser: on a trimmed copy of the NGI's GeoPackage (two cantons) in
-// test/fixtures/sources/ngi, and each reader on what it must accept and refuse
+// The boundaries parser: on a trimmed copy of the NGI's GeoPackage (two cantons, the Eupen
+// arrondissement, two peace courts) in test/fixtures/sources/ngi, and each reader on what it
+// must accept and refuse
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 
 import {
+    area,
+    buildArrondissementBoundaries,
     buildCantonBoundaries,
     cantonIndex,
+    matchArrondissement,
     matchCanton,
     parseName,
     signedArea,
@@ -16,12 +20,14 @@ import {
 } from '../../scripts/parse/boundaries.ts'
 import {
     readGeoPackageGeometry,
+    readGeoPackagePoint,
     type MultiPolygonRings,
     type Ring,
 } from '../../scripts/parse/geopackage.ts'
 import { zipEntries, zipEntry } from '../../scripts/parse/zip.ts'
 import { NGI_CANTONS } from '../../scripts/sources/catalog.ts'
-import { cantons } from '../../src/territory'
+import { cantonBoundaries } from '../../src/canton-boundaries'
+import { arrondissements, cantons } from '../../src/territory'
 
 const root = 'test/fixtures/sources'
 const fixture =
@@ -71,6 +77,65 @@ describe('buildCantonBoundaries', () => {
 
     it('throws without a snapshot', () => {
         expect(() => buildCantonBoundaries('test/fixtures/nowhere')).toThrow()
+    })
+})
+
+describe('buildArrondissementBoundaries', () => {
+    const eupen = cantonBoundaries.filter(
+        (b) => cantons.find((c) => c.id === b.canton)?.arrondissement === 'eupen',
+    )
+
+    it('gives the feature the arrondissement its name gives, when its cantons add up to it', () => {
+        const { boundaries, report } = buildArrondissementBoundaries(root, eupen)
+        expect(report.unmatched).toEqual([])
+        expect(boundaries).toHaveLength(1)
+        expect(boundaries[0]).toMatchObject({
+            id: 'eupen',
+            arrondissement: 'eupen',
+            ngiId: '{8E0333F2-2156-4B5D-92E6-51A61591A579}',
+            geometry: { type: 'MultiPolygon' },
+            sources: [{ url: NGI_CANTONS, retrieved: '2026-10-21' }],
+        })
+        expect(report.missing).toHaveLength(arrondissements.length - 1)
+        expect(report.missing).not.toContain('eupen')
+    })
+
+    it('refuses a feature whose area isn’t that of its cantons', () => {
+        const { boundaries, report } = buildArrondissementBoundaries(root, eupen.slice(0, 1))
+        expect(boundaries).toEqual([])
+        expect(report.unmatched).toEqual([
+            "Eupen: its area isn't that of the cantons of arrondissement eupen",
+        ])
+    })
+})
+
+describe('matchArrondissement', () => {
+    it('matches the id, a name in any language, or an alias', () => {
+        expect(matchArrondissement('Oost Vlaanderen', arrondissements)?.id).toBe('oost-vlaanderen')
+        expect(matchArrondissement('Liège', arrondissements)?.id).toBe('liege')
+        expect(matchArrondissement('Henegouwen', arrondissements)?.id).toBe('hainaut')
+        expect(matchArrondissement('Vlaams Brabant', arrondissements)?.id).toBe('leuven')
+        expect(matchArrondissement('Bruxelles - Brussel', arrondissements)?.id).toBe('brussel')
+        expect(matchArrondissement('Atlantis', arrondissements)).toBeUndefined()
+    })
+})
+
+describe('area', () => {
+    it('takes the holes out', () => {
+        const square = (size: number, clockwise: boolean): Ring => {
+            const ring: Ring = [
+                [0, 0],
+                [size, 0],
+                [size, size],
+                [0, size],
+                [0, 0],
+            ]
+            return clockwise ? ring.reverse() : ring
+        }
+        expect(area({ type: 'MultiPolygon', coordinates: [[square(2, false)]] })).toBe(4)
+        expect(
+            area({ type: 'MultiPolygon', coordinates: [[square(2, false), square(1, true)]] }),
+        ).toBe(3)
     })
 })
 
@@ -230,6 +295,7 @@ describe('readGeoPackageGeometry', () => {
         const end = wkb(view, 8)
         return new Uint8Array(buffer, 0, end)
     }
+    /** A ring of four positions, each with a height of 100 when `type` has a Z */
     const polygon =
         (littleEndian: boolean, type = 3) =>
         (view: DataView, offset: number) => {
@@ -248,10 +314,24 @@ describe('readGeoPackageGeometry', () => {
                 view.setFloat64(at, x ?? 0, littleEndian)
                 view.setFloat64(at + 8, y ?? 0, littleEndian)
                 at += 16
+                if (type > 1000) {
+                    view.setFloat64(at, 100, littleEndian)
+                    at += 8
+                }
             }
             return at
         }
-    const size = 13 + 4 * 16
+    const size = 13 + 4 * 24
+    const point =
+        (littleEndian: boolean, type = 1) =>
+        (view: DataView, offset: number) => {
+            view.setUint8(offset, littleEndian ? 1 : 0)
+            view.setUint32(offset + 1, type, littleEndian)
+            view.setFloat64(offset + 5, 4.5, littleEndian)
+            view.setFloat64(offset + 13, 50.5, littleEndian)
+            if (type === 1001) view.setFloat64(offset + 21, 100, littleEndian)
+            return offset + (type === 1001 ? 29 : 21)
+        }
 
     it('reads a polygon in either byte order', () => {
         const expected = [
@@ -268,6 +348,19 @@ describe('readGeoPackageGeometry', () => {
         expect(readGeoPackageGeometry(blob(polygon(false), size))).toEqual(expected)
     })
 
+    it('drops the Z of a polygon that has one', () => {
+        expect(readGeoPackageGeometry(blob(polygon(true, 1003), size))).toEqual(
+            readGeoPackageGeometry(blob(polygon(true), size)),
+        )
+    })
+
+    it('reads a point, with or without a Z, in either byte order', () => {
+        expect(readGeoPackagePoint(blob(point(true), 29))).toEqual([4.5, 50.5])
+        expect(readGeoPackagePoint(blob(point(false, 1001), 29))).toEqual([4.5, 50.5])
+        expect(() => readGeoPackagePoint(blob(polygon(true), size))).toThrow(/expected a point/)
+        expect(() => readGeoPackageGeometry(blob(point(true), 29))).toThrow(/expected a polygon/)
+    })
+
     it('reads a multipolygon from the fixture', () => {
         const [geometry] = buildCantonBoundaries(root).boundaries
         expect(geometry?.geometry.coordinates.length).toBeGreaterThan(0)
@@ -279,7 +372,8 @@ describe('readGeoPackageGeometry', () => {
         expect(() => readGeoPackageGeometry(blob(polygon(true), size, 0x0b))).toThrow(
             /bad envelope/,
         )
-        expect(() => readGeoPackageGeometry(blob(polygon(true, 1003), size))).toThrow(/Z or M/)
+        expect(() => readGeoPackageGeometry(blob(polygon(true, 2003), size))).toThrow(/with M/)
+        expect(() => readGeoPackageGeometry(blob(polygon(true, 3003), size))).toThrow(/with M/)
         expect(() => readGeoPackageGeometry(blob(polygon(true, 1), size))).toThrow(
             /expected a polygon/,
         )

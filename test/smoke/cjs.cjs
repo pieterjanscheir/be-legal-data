@@ -6,6 +6,7 @@ const { getJusticeOfThePeace } = require('belgica/courts')
 const { getInterestRate } = require('belgica/interest-rates')
 const { getPostalCodes } = require('belgica/postal-codes')
 const { findCantonsAt } = require('belgica/canton-boundaries')
+const { findArrondissementsAt } = require('belgica/arrondissement-boundaries')
 
 assert.equal(getCourt('justice-of-the-peace-gent-1').name.nl, 'Vredegerecht Gent 1')
 assert.equal(getJusticeOfThePeace('gent-1').id, 'justice-of-the-peace-gent-1')
@@ -21,6 +22,10 @@ assert.equal(
 assert.deepEqual(
     findCantonsAt(3.745, 50.995).map((c) => c.id),
     ['merelbeke-melle'],
+)
+assert.deepEqual(
+    findArrondissementsAt(3.745, 50.995).map((a) => a.id),
+    ['oost-vlaanderen'],
 )
 
 console.log(`CJS smoke test passed on Node ${process.version}`)

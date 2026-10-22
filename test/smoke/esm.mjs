@@ -10,6 +10,8 @@ import { getHouseOfJustice } from 'belgica/houses-of-justice'
 import { getMunicipalitiesForPostalCode } from 'belgica/postal-codes'
 import { findCourtsForPostalCode, getMunicipality } from 'belgica'
 import { findCantonsAt, getCantonBoundary } from 'belgica/canton-boundaries'
+import { findArrondissementsAt } from 'belgica/arrondissement-boundaries'
+import { getCourtLocation } from 'belgica/court-locations'
 import { courtIdSchema, dataFileSchemas } from 'belgica/schemas'
 import { createRequire } from 'node:module'
 
@@ -35,6 +37,11 @@ assert.deepEqual(
     findCantonsAt(3.745, 50.995).map((c) => c.id),
     ['merelbeke-melle'],
 )
+assert.deepEqual(
+    findArrondissementsAt(3.745, 50.995).map((a) => a.id),
+    ['oost-vlaanderen'],
+)
+assert.equal(getCourtLocation('justice-of-the-peace-aalst-1').geometry.type, 'Point')
 // The entry points share one copy of the data
 assert.equal(cantons, allCantons)
 
