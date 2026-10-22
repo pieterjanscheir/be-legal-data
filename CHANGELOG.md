@@ -76,6 +76,9 @@ load them. The GeoPackage reader now reads points, and geometries with a Z (drop
 
 ### Changed
 
+- The release pull request and the weekly data pull request run CI when the repository's GitHub
+  App is set up. GitHub releases take their notes from the version's section of this changelog.
+  `CHANGELOG.md` merges with git's union driver, so branches no longer conflict on Unreleased.
 - The package is half the size: the canton boundaries are in it once. `belgica/canton-boundaries`
   used to inline `data/canton-boundaries.json` into its JavaScript, so the 22 MB of geometry was
   in the package twice. It now imports the file from `data/` with `with { type: 'json' }`, which
