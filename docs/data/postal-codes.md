@@ -78,11 +78,13 @@ interface PostalCode {
   and is published under bpost's terms of use (all rights reserved), not an open licence, so
   it isn't used.
 - **The street.** In a city split over cantons (Antwerpen, Gent, Brussel, Luik, …) the postal
-  code gives the municipality, and the municipality gives several cantons; the street then
-  decides, and the boundaries exist only as legal prose in each canton's `territory` until
-  [#29](https://github.com/pieterjanscheir/belgica/issues/29) adds them as geometry.
+  code gives the municipality, and the municipality gives several cantons. The street then
+  decides: with the address's coordinates, `findCantonsAt` finds the canton in the
+  [canton boundaries](./canton-boundaries).
 
 ## Helpers
+
+Each is described, with its results and errors, in the [API reference](/api#postal-codes).
 
 ```ts
 import { getMunicipalitiesForPostalCode, getPostalCodes } from 'belgica/postal-codes'

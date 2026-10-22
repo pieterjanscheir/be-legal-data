@@ -21,11 +21,12 @@ and whether it's extended depend on the procedure.
 | Source       | [Wet 4 januari 1974](https://www.ejustice.just.fgov.be/eli/wet/1974/01/04/1974010407/justel) and [KB 18 april 1974](https://www.ejustice.just.fgov.be/eli/besluit/1974/04/18/1974041801/justel), art. 1, on Justel |
 | Built by     | Hand: the ten rules, and the years a royal decree moved a holiday                                                                                                                                                  |
 | Changes when | A law or decree changes the list, or moves a holiday for one year                                                                                                                                                  |
+| Covers       | 1975 onwards, the first full year of the 1974 law: a day or year before it throws a `RangeError`                                                                                                                   |
 | Checked      | Against the [Royal Observatory's list](https://robinfo.oma.be/nl/astro-info/kalender/belgische-feestdagen/) for 2024–2027 (`test/calendar.test.ts`); reviewed every year                                           |
+| Licence      | CC BY 4.0                                                                                                                                                                                                          |
 
 The file holds rules, not dates: a fixed day, or a number of days after Easter Sunday, which
-`getEasterSunday` computes for the Gregorian calendar. On file from 1975, the first full year of
-the 1974 law.
+`getEasterSunday` computes for the Gregorian calendar.
 
 | Holiday         | id              | Day              |
 | --------------- | --------------- | ---------------- |

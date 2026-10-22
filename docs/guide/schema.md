@@ -21,6 +21,7 @@ disagree.
 | `data/houses-of-justice.json`         | [`houses-of-justice.schema.json`](/schema/houses-of-justice.schema.json){target="_self"}                 |
 | `data/postal-codes.json`              | [`postal-codes.schema.json`](/schema/postal-codes.schema.json){target="_self"}                           |
 | `data/interest-rates.json`            | [`interest-rates.schema.json`](/schema/interest-rates.schema.json){target="_self"}                       |
+| `data/public-holidays.json`           | [`public-holidays.schema.json`](/schema/public-holidays.schema.json){target="_self"}                     |
 
 Each schema's `$id` is its URL on this site, e.g.
 `https://pieterjanscheir.github.io/belgica/schema/courts.schema.json`. They're also in the
@@ -35,11 +36,10 @@ import json
 from urllib.request import urlopen
 from jsonschema import validate  # pip install jsonschema
 
-# Pin a release tag that includes schema/; until the first one is out, use main
-TAG = "main"
-BASE = f"https://raw.githubusercontent.com/pieterjanscheir/belgica/{TAG}"
-courts = json.load(urlopen(f"{BASE}/data/courts.json"))
-schema = json.load(urlopen(f"{BASE}/schema/courts.schema.json"))
+# Pinned to a release, so the data and the schema match
+BASE = "https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.5.0/"
+courts = json.load(urlopen(f"{BASE}data/courts.json"))
+schema = json.load(urlopen(f"{BASE}schema/courts.schema.json"))
 validate(courts, schema)
 ```
 

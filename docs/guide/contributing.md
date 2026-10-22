@@ -15,7 +15,7 @@ For the datasets kept by hand (judicial areas, arrondissements, interest rates):
 3. `pnpm check`: regenerate the id types and schemas, typecheck, lint and format check, build,
    tests with coverage, and package lint. It fails when the generated files aren't committed.
 4. Add a line to `CHANGELOG.md` under Unreleased, and commit (including `schema/`,
-   `data/courts.json`, `src/ids.generated.ts`, `src/data-files.generated.ts` and `ids.lock.json`).
+   `data/courts.json`, the `src/*.generated.ts` files and `ids.lock.json`).
    The build output (`dist/`) isn't committed, nor are the files split into `data/courts/` and
    `data/cantons/`: they're built for every release and published to npm.
 
@@ -48,7 +48,7 @@ the peace of canton `x` has id `justice-of-the-peace-x` and links to it through 
 ```bash
 pnpm fetch:sources            # every source into .sources/ (about 20 minutes, politely)
 pnpm fetch:sources courts     # or one source
-pnpm build:data               # rebuild the courts, prisons, houses of justice, postal codes, regions and provinces from .sources/
+pnpm build:data               # rebuild every scraped dataset from .sources/
 ```
 
 The canton boundaries come from the NGI's GeoPackage (source `ngi`), read with Node's own
@@ -88,7 +88,10 @@ Every dataset gets the same treatment, so users can rely on it:
    pages, and a parser in `scripts/parse` that builds the file from the snapshots, with
    fixtures and tests. It reads only what it can read for certain and reports the rest.
 8. **Tests**: unique ids, references that resolve, and the count the official source gives.
-9. **Docs**: a page under `docs/data/` with why it's useful, source and updates, and a field table.
+9. **Docs**: a page under `docs/data/` with the same sections as the others: what the file holds,
+   why it's useful, a "Source and updates" table (source, built by, changes when, covers,
+   checked, licence), the fields, and an example. Add its functions to the
+   [API reference](/api), each with its signature, results, errors and an example.
 
 ## Checks
 
@@ -167,6 +170,11 @@ you change an English page, change the same page in `docs/nl/` and `docs/fr/` to
 the pull request that the translations lag behind; the other languages may lag a release. The
 words of the theme and the interactive components in those other languages are in
 `docs/.vitepress/locales/`.
+
+Some pages are in English only for now, and every language's sidebar links to the English
+page: the introduction, core concepts, common tasks, entry points, Python and public holidays.
+A new page can start that way too; give its sidebar label an English fallback in
+`docs/.vitepress/locales/types.ts`.
 
 Code, ids, field names and official names stay as they are in every language, and every heading
 keeps the English anchor (`## Heading {#english-anchor}`) so cross-links and the language

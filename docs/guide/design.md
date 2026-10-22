@@ -112,8 +112,7 @@ test. Committed build output goes stale and broke automated dependency updates.
 **So.** `import` and `require()` both work, tested on Node 22.12, 22, 24 and 26. Each dataset
 has its own entry point, so an app that needs only the interest rates loads a few kilobytes,
 not the courts and the legal text of every canton (the
-[getting-started page](./getting-started#import-only-what-you-need) measures each one from the
-build).
+[entry points page](./entry-points#measured-sizes) measures each one from the build).
 
 ## 9. Types that carry the data's guarantees
 
@@ -143,8 +142,8 @@ dataset says from which day it describes the situation (`territoryCoverage`, and
 on })`, `getCantonsForMunicipality(refnis, { on })`. A day before the coverage throws a
 `RangeError`.
 
-**Why.** Legal questions are about a day: which court was competent when the summons was
-served, which rate applied when the invoice fell due. Cantons, municipalities and courts
+**Why.** Legal questions are about a day: which court had jurisdiction when the summons
+was served, which rate applied when the invoice fell due. Cantons, municipalities and courts
 change; a model that only knows "now" answers questions about the past with today's map, and
 looks right while doing it. Adding time later would change every id and lookup, so it's in the
 model before the history is in the data

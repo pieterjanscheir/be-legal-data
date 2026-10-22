@@ -23,11 +23,14 @@ studies for the family courts. The Communities run them since 2015.
 
 ## Source and updates
 
-|          |                                                                                                                                                                                                                                                     |
-| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Source   | [vlaanderen.be: Justitiehuizen](https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen) (Flemish Community) and [maisonsdejustice.be](https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/) (French Community) |
-| Built by | `scripts/parse` from the weekly snapshots                                                                                                                                                                                                           |
-| Checked  | Every week, by the [sources workflow](/guide/data-quality#how-the-data-is-built)                                                                                                                                                                    |
+|              |                                                                                                                                                                                                                                                     |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Source       | [vlaanderen.be: Justitiehuizen](https://www.vlaanderen.be/agentschap-justitie-en-handhaving/justitie/justitiehuizen) (Flemish Community) and [maisonsdejustice.be](https://www.maisonsdejustice.be/menu-de-droite/trouverunemj/) (French Community) |
+| Built by     | `scripts/parse` from the weekly snapshots                                                                                                                                                                                                           |
+| Changes when | A house of justice moves, or changes its contact details                                                                                                                                                                                            |
+| Covers       | 20 October 2026 onwards, the day the sites were first read: lookups for an earlier day throw a `RangeError` ([time](/guide/concepts#time))                                                                                                          |
+| Checked      | Every week, by the [sources workflow](/guide/data-quality#how-the-data-is-built)                                                                                                                                                                    |
+| Licence      | CC BY 4.0                                                                                                                                                                                                                                           |
 
 Not in the data yet: the German-speaking Community's house of justice in Eupen
 ([#3](https://github.com/pieterjanscheir/belgica/issues/3)). Brussels has both a Flemish

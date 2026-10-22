@@ -49,12 +49,14 @@ Council of State, and the disciplinary courts.
 
 ## Source and updates
 
-|              |                                                                                                                     |
-| ------------ | ------------------------------------------------------------------------------------------------------------------- |
-| Source       | [tribunaux-rechtbanken.be](https://www.tribunaux-rechtbanken.be), the portal of the College of Courts and Tribunals |
-| Built by     | `scripts/parse` from weekly snapshots of every court's page and contact page                                        |
-| Changes when | A court moves, changes its contacts or hours, or the portal adds or renames a court                                 |
-| Checked      | Every week, by the [sources workflow](/guide/data-quality#how-the-data-is-built); changes arrive as a pull request  |
+|              |                                                                                                                                                                                      |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Source       | [tribunaux-rechtbanken.be](https://www.tribunaux-rechtbanken.be), the portal of the College of Courts and Tribunals; the courts' areas from the annex to the Judicial Code, art. 3–5 |
+| Built by     | `scripts/parse` from weekly snapshots of every court's page and contact page                                                                                                         |
+| Changes when | A court moves, changes its contacts or hours, or the portal adds or renames a court                                                                                                  |
+| Covers       | 1 January 2025 onwards: lookups for an earlier day throw a `RangeError` ([time](/guide/concepts#time))                                                                               |
+| Checked      | Every week, by the [sources workflow](/guide/data-quality#how-the-data-is-built); changes arrive as a pull request                                                                   |
+| Licence      | CC BY 4.0                                                                                                                                                                            |
 
 Every record lists the pages it was read from and the day each page's content was first seen
 (`sources`). Contact details change more often than anything else in this package: when it
@@ -165,6 +167,8 @@ which the NGI has no layer for.
 :::
 
 ## Helpers
+
+Each is described, with its results and errors, in the [API reference](/api#courts).
 
 ```ts
 getCourt('justice-of-the-peace-gent-1')

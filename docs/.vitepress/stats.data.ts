@@ -83,6 +83,7 @@ const ENTRIES = [
     'prisons',
     'houses-of-justice',
     'interest-rates',
+    'calendar',
     'postal-codes',
 ]
 
