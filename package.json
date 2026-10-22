@@ -43,6 +43,14 @@
             "types": "./dist/territory.d.ts",
             "default": "./dist/territory.js"
         },
+        "./cantons": {
+            "types": "./dist/cantons.d.ts",
+            "default": "./dist/cantons.js"
+        },
+        "./cantons/territory": {
+            "types": "./dist/canton-territory.d.ts",
+            "default": "./dist/canton-territory.js"
+        },
         "./canton-boundaries": {
             "types": "./dist/canton-boundaries.d.ts",
             "default": "./dist/canton-boundaries.js"
@@ -50,6 +58,14 @@
         "./courts": {
             "types": "./dist/courts.d.ts",
             "default": "./dist/courts.js"
+        },
+        "./courts/format": {
+            "types": "./dist/courts-format.d.ts",
+            "default": "./dist/courts-format.js"
+        },
+        "./courts/load": {
+            "types": "./dist/courts-load.d.ts",
+            "default": "./dist/courts-load.js"
         },
         "./prisons": {
             "types": "./dist/prisons.d.ts",
@@ -84,14 +100,14 @@
         "LICENSE-DATA"
     ],
     "scripts": {
-        "build": "tsup",
+        "build": "pnpm build:data-files && tsup",
         "build:cantons": "node scripts/build-cantons.ts",
         "build:data": "node scripts/parse/build.ts",
         "build:csv": "node scripts/build-csv.ts",
         "fetch:sources": "node scripts/sources/fetch.ts",
-        "test": "vitest run",
-        "typecheck": "tsc --noEmit",
-        "check": "pnpm generate && pnpm typecheck && pnpm lint && pnpm build && pnpm test:coverage && pnpm test:package && pnpm lint:package && git diff --exit-code -- schema src/ids.generated.ts src/canton-names.generated.ts ids.lock.json",
+        "test": "pnpm build:data-files && vitest run",
+        "typecheck": "pnpm build:data-files && tsc --noEmit",
+        "check": "pnpm generate && pnpm typecheck && pnpm lint && pnpm build && pnpm test:coverage && pnpm test:package && pnpm lint:package && git diff --exit-code -- schema data/courts.json src/ids.generated.ts src/canton-names.generated.ts src/data-files.generated.ts src/court-details-files.generated.ts ids.lock.json",
         "prepublishOnly": "pnpm check",
         "docs:dev": "vitepress dev docs",
         "docs:build": "vitepress build docs",
@@ -103,12 +119,14 @@
         "lint:package": "publint --strict && attw --pack . --profile esm-only",
         "build:ids": "node scripts/build-ids.ts",
         "lock:ids": "node scripts/lock-ids.ts",
-        "generate": "pnpm build:ids && pnpm build:canton-names && pnpm build:schemas && pnpm lock:ids",
+        "generate": "pnpm build:court-labels && pnpm build:ids && pnpm build:canton-names && pnpm build:schemas && pnpm lock:ids && pnpm build:data-files",
         "lint": "eslint . && prettier --check .",
         "format": "prettier --write .",
-        "test:coverage": "vitest run --coverage",
-        "test:package": "node test/smoke/esm.mjs && node test/smoke/cjs.cjs && node test/smoke/courts-bundle.mjs",
-        "build:canton-names": "node scripts/build-canton-names.ts"
+        "test:coverage": "pnpm build:data-files && vitest run --coverage",
+        "test:package": "node test/smoke/esm.mjs && node test/smoke/cjs.cjs && node test/smoke/courts-bundle.mjs && node test/smoke/bundle-size.mjs",
+        "build:canton-names": "node scripts/build-canton-names.ts",
+        "build:court-labels": "node scripts/build-court-labels.ts",
+        "build:data-files": "node scripts/build-data-files.ts"
     },
     "devDependencies": {
         "@arethetypeswrong/cli": "^0.18.5",
@@ -117,6 +135,7 @@
         "@vitest/coverage-v8": "^5.0.5",
         "ajv": "^8.20.0",
         "ajv-formats": "^3.0.1",
+        "esbuild": "0.28.2",
         "eslint": "^10.13.0",
         "globals": "^17.13.0",
         "node-html-parser": "^9.0.5",

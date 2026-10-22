@@ -89,6 +89,12 @@ interface Arrondissement {
 All 162 judicial cantons: the area of one justice of the peace each. File: `data/cantons.json`
 (generated from the annex to the Judicial Code, art. 1).
 
+The `territory` texts are most of that file. `data/cantons/summaries.json` has the cantons
+without them and `data/cantons/territory.json` the texts alone, both generated from
+`data/cantons.json`. In code, `belgica/cantons` looks up a canton's name, number, seat,
+arrondissement and municipalities without loading the texts, and `belgica/cantons/territory`
+has `getCantonTerritory(id)`; `belgica/territory` keeps the full records.
+
 ### Fields
 
 | Field            | Type                           | Description                                                                                                    |

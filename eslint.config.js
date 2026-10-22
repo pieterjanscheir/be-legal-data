@@ -12,6 +12,8 @@ export default tseslint.config(
             'docs/.vitepress/cache/',
             'src/ids.generated.ts',
             'src/canton-names.generated.ts',
+            'src/data-files.generated.ts',
+            'src/court-details-files.generated.ts',
             'site/.next/',
             'site/out/',
             'site/next-env.d.ts',
