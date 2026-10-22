@@ -4,34 +4,44 @@
 提案するフィールド、「完了」の定義が記載されています。協力を歓迎します。一つ選んで
 [規約](/ja/guide/contributing#adding-a-dataset)に従ってください。
 
-## 予定 {#planned}
+## 裁判所、事務所、人 {#courts-offices-and-people}
 
-| データセット                                                                                                                                       | 役立つ理由                                                                                         | Issue                                                       |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| **その他の裁判所**：Hof van Cassatie / Cour de cassation、Grondwettelijk Hof / Cour constitutionnelle、Raad van State / Conseil d'État、懲戒裁判所 | 最上級の裁判所は裁判所のポータルに掲載されていないため、独自の情報源が必要                         | [#4](https://github.com/pieterjanscheir/belgica/issues/4)   |
-| **Eupen の justitiehuis / maison de justice**（ドイツ語共同体）                                                                                    | データにまだない唯一の justitiehuis / maison de justice                                            | [#3](https://github.com/pieterjanscheir/belgica/issues/3)   |
-| **履歴**：canton、自治体、裁判所がいつ変わったか                                                                                                   | モデルには有効期間と日付による検索がすでにあり、以前の版のデータがまだ必要                         | [#27](https://github.com/pieterjanscheir/belgica/issues/27) |
-| **住所 → 座標**                                                                                                                                    | [canton の境界](./canton-boundaries)で地点の canton はわかる。欠けているのは住所のジオコーディング | [#66](https://github.com/pieterjanscheir/belgica/issues/66) |
-| **執行官の事務所**（gerechtsdeurwaarders / huissiers de justice）                                                                                  | 送達や強制執行のために、arrondissement 内の執行官を探す                                            | [#6](https://github.com/pieterjanscheir/belgica/issues/6)   |
-| **警察管区**（politiezones / zones de police）                                                                                                     | ある自治体をどの管区が担当するか：被害届、調書の写し                                               | [#7](https://github.com/pieterjanscheir/belgica/issues/7)   |
-| **土地台帳と法的安定性の事務所**（kadaster、旧 hypotheekkantoren）                                                                                 | 管轄の事務所に抵当権証明書や土地台帳の抄本を請求する                                               | [#8](https://github.com/pieterjanscheir/belgica/issues/8)   |
+| データセット                                                                                                                                       | 役立つ理由                                                                       | Issue                                                       |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **その他の裁判所**：Hof van Cassatie / Cour de cassation、Grondwettelijk Hof / Cour constitutionnelle、Raad van State / Conseil d'État、懲戒裁判所 | 最上級の裁判所は裁判所のポータルに掲載されていないため、独自の情報源が必要       | [#4](https://github.com/pieterjanscheir/belgica/issues/4)   |
+| **Eupen の justitiehuis / maison de justice**（ドイツ語共同体）                                                                                    | データにまだない唯一の justitiehuis / maison de justice                          | [#3](https://github.com/pieterjanscheir/belgica/issues/3)   |
+| **裁判所の支部ごとの管轄**（afdelingen / divisions）                                                                                               | 裁判所内のどこに提出するか、そして会社の書類に記載する RPR / RPM の表記          | [#58](https://github.com/pieterjanscheir/belgica/issues/58) |
+| **検察庁**（parketten、arbeidsauditoraten、parketten-generaal、連邦検察庁）                                                                        | 刑事告訴をどこに提出するか、そして社会法の事件における労働検察官                 | [#55](https://github.com/pieterjanscheir/belgica/issues/55) |
+| **執行官の事務所**（gerechtsdeurwaarders / huissiers de justice）                                                                                  | 送達や強制執行のために、arrondissement 内の執行官を探す                          | [#6](https://github.com/pieterjanscheir/belgica/issues/6)   |
+| **警察管区**（politiezones / zones de police）                                                                                                     | ある自治体をどの管区が担当するか：被害届、調書の写し                             | [#7](https://github.com/pieterjanscheir/belgica/issues/7)   |
+| **土地台帳と法的安定性の事務所**（kadaster、旧 hypotheekkantoren）                                                                                 | 管轄の事務所に抵当権証明書や土地台帳の抄本を請求する                             | [#8](https://github.com/pieterjanscheir/belgica/issues/8)   |
+| **公証人と公証人会**                                                                                                                               | 公証人を探す、そして苦情を扱う管轄の公証人会                                     | [#56](https://github.com/pieterjanscheir/belgica/issues/56) |
+| **弁護士会**（balies / barreaux）とその法律扶助事務所                                                                                              | 住所に対応する法律扶助事務所、そして職業倫理の問題を扱う bâtonnier               | [#57](https://github.com/pieterjanscheir/belgica/issues/57) |
+| **司法鑑定人と宣誓翻訳者・通訳者**（国の登録簿）                                                                                                   | 専門分野で鑑定人を、言語の組み合わせで翻訳者を探し、登録されていることを確認する | [#64](https://github.com/pieterjanscheir/belgica/issues/64) |
+| **認定調停人**（erkende bemiddelaars / médiateurs agréés）                                                                                         | 分野と地域で認定調停人を探し、認定を確認する                                     | [#65](https://github.com/pieterjanscheir/belgica/issues/65) |
 
-## 検討に値するもの {#worth-considering}
+## 領域 {#territory}
 
-それぞれに専用の issue があります。おおよそ利用頻度の
-高い順です。
+| データセット                                                                       | 役立つ理由                                                                                         | Issue                                                       |
+| ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **履歴**：canton、自治体、裁判所がいつ変わったか                                   | モデルには有効期間と日付による検索がすでにあり、以前の版のデータがまだ必要                         | [#27](https://github.com/pieterjanscheir/belgica/issues/27) |
+| **旧自治体**と 2019 年・2025 年の合併                                              | 古い REFNIS コードや名称を現在の自治体に対応づける                                                 | [#53](https://github.com/pieterjanscheir/belgica/issues/53) |
+| 郵便番号ごとの**自治体内の旧自治体**（deelgemeenten / sections de commune）        | [郵便番号](./postal-codes)は自治体の単位まで。住所には地区名が書かれる                             | [#54](https://github.com/pieterjanscheir/belgica/issues/54) |
+| BeST Address による**住所 → canton**                                               | [canton の境界](./canton-boundaries)で地点の canton はわかる。欠けているのは住所のジオコーディング | [#66](https://github.com/pieterjanscheir/belgica/issues/66) |
+| 自治体ごとの**言語地域と言語上の便宜措置**（taalgebieden / faciliteitengemeenten） | 手続きの言語と、そこで送達される書類の言語                                                         | [#70](https://github.com/pieterjanscheir/belgica/issues/70) |
 
-- 郵便番号ごとの**自治体内の旧自治体**（deelgemeenten / sections de commune）。
-  [郵便番号](./postal-codes)は自治体の単位までです。bpost の一覧には地区名がありますが、REFNIS
-  コードがなく、オープンなライセンスでもありません（[#54](https://github.com/pieterjanscheir/belgica/issues/54)）。
-- **裁判所手数料**（rolrechten / griffierechten）と **rechtsplegingsvergoeding**（訴訟費用の補償額）
-  の区分。利率と同様に、有効期間と物価スライドつきで（[#59](https://github.com/pieterjanscheir/belgica/issues/59)、[#60](https://github.com/pieterjanscheir/belgica/issues/60)）。
-- 手続き上の期限を計算するための、年ごとの**裁判所休廷期間と祝日** ([#61](https://github.com/pieterjanscheir/belgica/issues/61))。
-- arrondissement ごとの**検察庁**（parketten、arbeidsauditoraten）（[#55](https://github.com/pieterjanscheir/belgica/issues/55)）。
-- **公証人と公証人会**、**弁護士会**（balies / barreaux）（[#56](https://github.com/pieterjanscheir/belgica/issues/56)、[#57](https://github.com/pieterjanscheir/belgica/issues/57)）。
-- **自治体の合併**：2019 年と 2025 年の旧 REFNIS コード → 新 REFNIS コード。古いデータを対応づけ
-  られるように（[#53](https://github.com/pieterjanscheir/belgica/issues/53)）。
-- 家賃の物価スライドのための **gezondheidsindex**（健康指数）（[#62](https://github.com/pieterjanscheir/belgica/issues/62)）。
+## 金額、利率、暦 {#amounts-rates-and-calendars}
+
+| データセット                                                                               | 役立つ理由                                                           | Issue                                                       |
+| ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **裁判所手数料**（rolrechten / droits de mise au rôle、griffierechten / droits de greffe） | 費用の見積もりと電子提出。手数料は提出日によって変わる               | [#59](https://github.com/pieterjanscheir/belgica/issues/59) |
+| **訴訟費用の補償額**（rechtsplegingsvergoeding / indemnité de procédure）                  | あらゆる費用の見積もりと判決のための、区分とその物価スライド         | [#60](https://github.com/pieterjanscheir/belgica/issues/60) |
+| **管轄と上訴の金額基準**（art. 590, 617 Ger.W.）                                           | どの裁判所が請求を審理するか、その判決に上訴できるか                 | [#69](https://github.com/pieterjanscheir/belgica/issues/69) |
+| **裁判所休廷期間と祝日**                                                                   | 手続き上の期限の計算                                                 | [#61](https://github.com/pieterjanscheir/belgica/issues/61) |
+| 月ごとの**健康指数**（gezondheidsindex / indice santé）                                    | 家賃と扶養料の物価スライド                                           | [#62](https://github.com/pieterjanscheir/belgica/issues/62) |
+| **消費者の債務に対する損害賠償と利息の上限**（Book XIX WER / CDE）                         | 支払いが遅れた消費者に何を請求できるか                               | [#63](https://github.com/pieterjanscheir/belgica/issues/63) |
+| **差押えの限度額**（beslagbare bedragen / quotités saisissables、art. 1409 Ger.W.）        | 賃金や給付のうちどれだけを差し押さえられるか。毎年物価スライドされる | [#67](https://github.com/pieterjanscheir/belgica/issues/67) |
+| **税の利率**：延滞利息と還付加算利息                                                       | 税務紛争の利息。[法定利率と商取引の利率](./interest-rates)と並んで   | [#68](https://github.com/pieterjanscheir/belgica/issues/68) |
 
 ## 一部のデータセットがまだない理由 {#why-some-datasets-aren-t-here-yet}
 

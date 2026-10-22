@@ -4,42 +4,44 @@ Planowane zbiory danych, każdy z issue, które go opisuje. Każde issue wymieni
 proponowane pola i to, co oznacza „gotowe”. Pomoc jest mile widziana: wybierz jedno i stosuj
 [konwencje](/pl/guide/contributing#adding-a-dataset).
 
-## Zaplanowane {#planned}
+## Sądy, urzędy i osoby {#courts-offices-and-people}
 
-| Zbiór danych                                                                                                                                               | Do czego się przydaje                                                                                       | Issue                                                       |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| **Pozostałe sądy**: Hof van Cassatie / Cour de cassation, Grondwettelijk Hof / Cour constitutionnelle, Raad van State / Conseil d'État, sądy dyscyplinarne | Najwyższych sądów nie ma na portalu sądów, więc potrzebują własnych źródeł                                  | [#4](https://github.com/pieterjanscheir/belgica/issues/4)   |
-| **Justitiehuis / maison de justice w Eupen** (Wspólnota Niemieckojęzyczna)                                                                                 | Jedyna placówka, której dane jeszcze nie mają                                                               | [#3](https://github.com/pieterjanscheir/belgica/issues/3)   |
-| **Historia**: kiedy zmieniały się kantony, gminy i sądy                                                                                                    | Model ma okresy obowiązywania i wyszukiwania według dnia; wcześniejsze wersje wciąż potrzebują danych       | [#27](https://github.com/pieterjanscheir/belgica/issues/27) |
-| **Adres → współrzędne**                                                                                                                                    | [Granice kantonów](./canton-boundaries) znajdują kanton punktu; brakującym krokiem jest geokodowanie adresu | [#66](https://github.com/pieterjanscheir/belgica/issues/66) |
-| **Kancelarie komornicze** (gerechtsdeurwaarders / huissiers de justice)                                                                                    | Znalezienie komornika w okręgu sądowym do doręczeń lub egzekucji                                            | [#6](https://github.com/pieterjanscheir/belgica/issues/6)   |
-| **Strefy policyjne** (politiezones / zones de police)                                                                                                      | Która strefa obsługuje gminę: skargi, kopie protokołów                                                      | [#7](https://github.com/pieterjanscheir/belgica/issues/7)   |
-| **Urzędy katastralne i urzędy pewności prawnej** (kadaster, dawne hypotheekkantoren)                                                                       | Zamawianie zaświadczeń hipotecznych i wypisów katastralnych we właściwym urzędzie                           | [#8](https://github.com/pieterjanscheir/belgica/issues/8)   |
+| Zbiór danych                                                                                                                                               | Do czego się przydaje                                                                                               | Issue                                                       |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **Pozostałe sądy**: Hof van Cassatie / Cour de cassation, Grondwettelijk Hof / Cour constitutionnelle, Raad van State / Conseil d'État, sądy dyscyplinarne | Najwyższych sądów nie ma na portalu sądów, więc potrzebują własnych źródeł                                          | [#4](https://github.com/pieterjanscheir/belgica/issues/4)   |
+| **Justitiehuis / maison de justice w Eupen** (Wspólnota Niemieckojęzyczna)                                                                                 | Jedyna placówka, której dane jeszcze nie mają                                                                       | [#3](https://github.com/pieterjanscheir/belgica/issues/3)   |
+| **Właściwość według wydziału sądu** (afdelingen / divisions)                                                                                               | Gdzie składać pisma w obrębie sądu oraz wzmianka RPR / RPM na dokumentach spółek                                    | [#58](https://github.com/pieterjanscheir/belgica/issues/58) |
+| **Prokuratury** (parketten, arbeidsauditoraten, parketten-generaal, prokuratura federalna)                                                                 | Gdzie złożyć zawiadomienie o przestępstwie oraz audytor pracy w sprawach z zakresu prawa socjalnego                 | [#55](https://github.com/pieterjanscheir/belgica/issues/55) |
+| **Kancelarie komornicze** (gerechtsdeurwaarders / huissiers de justice)                                                                                    | Znalezienie komornika w okręgu sądowym do doręczeń lub egzekucji                                                    | [#6](https://github.com/pieterjanscheir/belgica/issues/6)   |
+| **Strefy policyjne** (politiezones / zones de police)                                                                                                      | Która strefa obsługuje gminę: skargi, kopie protokołów                                                              | [#7](https://github.com/pieterjanscheir/belgica/issues/7)   |
+| **Urzędy katastralne i urzędy pewności prawnej** (kadaster, dawne hypotheekkantoren)                                                                       | Zamawianie zaświadczeń hipotecznych i wypisów katastralnych we właściwym urzędzie                                   | [#8](https://github.com/pieterjanscheir/belgica/issues/8)   |
+| **Notariusze i izby notarialne**                                                                                                                           | Znalezienie notariusza oraz izby właściwej do rozpatrzenia skargi                                                   | [#56](https://github.com/pieterjanscheir/belgica/issues/56) |
+| **Izby adwokackie** (balies / barreaux) i ich biura pomocy prawnej                                                                                         | Biuro pomocy prawnej właściwe dla adresu oraz bâtonnier w sprawach deontologicznych                                 | [#57](https://github.com/pieterjanscheir/belgica/issues/57) |
+| **Biegli sądowi oraz tłumacze przysięgli** (rejestr krajowy)                                                                                               | Znalezienie biegłego według specjalności lub tłumacza według pary języków i sprawdzenie, czy są wpisani do rejestru | [#64](https://github.com/pieterjanscheir/belgica/issues/64) |
+| **Akredytowani mediatorzy** (erkende bemiddelaars / médiateurs agréés)                                                                                     | Znalezienie akredytowanego mediatora według dziedziny i obszaru oraz sprawdzenie akredytacji                        | [#65](https://github.com/pieterjanscheir/belgica/issues/65) |
 
-## Warte rozważenia {#worth-considering}
+## Terytorium {#territory}
 
-Każdy ma własne issue, mniej więcej według tego, jak często byłyby używane:
+| Zbiór danych                                                                                      | Do czego się przydaje                                                                                       | Issue                                                       |
+| ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **Historia**: kiedy zmieniały się kantony, gminy i sądy                                           | Model ma okresy obowiązywania i wyszukiwania według dnia; wcześniejsze wersje wciąż potrzebują danych       | [#27](https://github.com/pieterjanscheir/belgica/issues/27) |
+| **Dawne gminy** oraz połączenia z 2019 i 2025 roku                                                | Mapowanie starego kodu REFNIS lub nazwy na dzisiejszą gminę                                                 | [#53](https://github.com/pieterjanscheir/belgica/issues/53) |
+| **Części gmin** (deelgemeenten / sections de commune) dla każdego kodu pocztowego                 | [Kody pocztowe](./postal-codes) kończą się na gminie; adresy podają miejscowość                             | [#54](https://github.com/pieterjanscheir/belgica/issues/54) |
+| **Adres → kanton** z BeST Address                                                                 | [Granice kantonów](./canton-boundaries) znajdują kanton punktu; brakującym krokiem jest geokodowanie adresu | [#66](https://github.com/pieterjanscheir/belgica/issues/66) |
+| **Obszary językowe i ułatwienia językowe** w każdej gminie (taalgebieden / faciliteitengemeenten) | Język postępowania i doręczanych tam dokumentów                                                             | [#70](https://github.com/pieterjanscheir/belgica/issues/70) |
 
-- **Części gmin** (deelgemeenten / sections de commune) dla każdego kodu pocztowego.
-  [Kody pocztowe](./postal-codes) kończą się na gminie; lista bpost podaje miejscowości, ale nie
-  ma kodu REFNIS ani otwartej licencji
-  ([#54](https://github.com/pieterjanscheir/belgica/issues/54)).
-- **Opłaty sądowe** (rolrechten / griffierechten) i przedziały **rechtsplegingsvergoeding /
-  indemnité de procédure** (zryczałtowanego zwrotu kosztów postępowania), z okresami
-  obowiązywania i indeksacją, podobnie jak stopy procentowe
-  ([#59](https://github.com/pieterjanscheir/belgica/issues/59),
-  [#60](https://github.com/pieterjanscheir/belgica/issues/60)).
-- **Ferie sądowe i dni ustawowo wolne od pracy** na każdy rok, do obliczania terminów
-  procesowych ([#61](https://github.com/pieterjanscheir/belgica/issues/61)).
-- **Prokuratury** (parketten, arbeidsauditoraten) dla każdego okręgu sądowego
-  ([#55](https://github.com/pieterjanscheir/belgica/issues/55)).
-- **Notariusze i izby notarialne**, **izby adwokackie** (balies / barreaux)
-  ([#56](https://github.com/pieterjanscheir/belgica/issues/56),
-  [#57](https://github.com/pieterjanscheir/belgica/issues/57)).
-- **Połączenia gmin**: stare → nowe kody REFNIS dla 2019 i 2025, żeby można było mapować
-  starsze dane ([#53](https://github.com/pieterjanscheir/belgica/issues/53)).
-- **Indeks zdrowia** (gezondheidsindex) do indeksacji czynszów
-  ([#62](https://github.com/pieterjanscheir/belgica/issues/62)).
+## Kwoty, stawki i kalendarze {#amounts-rates-and-calendars}
+
+| Zbiór danych                                                                                            | Do czego się przydaje                                                                | Issue                                                       |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
+| **Opłaty sądowe** (rolrechten / droits de mise au rôle, griffierechten / droits de greffe)              | Szacowanie kosztów i e-wnoszenie pism; opłata zależy od daty wniesienia              | [#59](https://github.com/pieterjanscheir/belgica/issues/59) |
+| **Zryczałtowany zwrot kosztów postępowania** (rechtsplegingsvergoeding / indemnité de procédure)        | Przedziały i ich indeksacja, do każdego szacunku kosztów i każdego wyroku            | [#60](https://github.com/pieterjanscheir/belgica/issues/60) |
+| **Progi kwotowe dla właściwości i apelacji** (art. 590, 617 Ger.W.)                                     | Który sąd rozpoznaje roszczenie i czy od jego wyroku przysługuje apelacja            | [#69](https://github.com/pieterjanscheir/belgica/issues/69) |
+| **Ferie sądowe i dni ustawowo wolne od pracy**                                                          | Obliczanie terminów procesowych                                                      | [#61](https://github.com/pieterjanscheir/belgica/issues/61) |
+| **Indeks zdrowia** (gezondheidsindex / indice santé) dla każdego miesiąca                               | Indeksacja czynszów i alimentów                                                      | [#62](https://github.com/pieterjanscheir/belgica/issues/62) |
+| **Limity odszkodowań i odsetek od długów konsumenckich** (Księga XIX WER / CDE)                         | Co można naliczyć konsumentowi, który płaci z opóźnieniem                            | [#63](https://github.com/pieterjanscheir/belgica/issues/63) |
+| **Granice zajęcia** (beslagbare bedragen / quotités saisissables, art. 1409 Ger.W.)                     | Jaka część wynagrodzenia lub świadczenia może zostać zajęta, indeksowana co roku     | [#67](https://github.com/pieterjanscheir/belgica/issues/67) |
+| **Podatkowe stopy procentowe**: odsetki za zwłokę od podatnika i odsetki moratoryjne należne od państwa | Odsetki w sporach podatkowych, obok [stóp ustawowych i handlowych](./interest-rates) | [#68](https://github.com/pieterjanscheir/belgica/issues/68) |
 
 ## Dlaczego niektórych zbiorów danych jeszcze nie ma {#why-some-datasets-aren-t-here-yet}
 
