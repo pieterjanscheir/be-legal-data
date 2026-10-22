@@ -16,7 +16,7 @@ import { fmt, inLang, useLocale, useStrings } from '../i18n'
 const courts = findCourts({})
 
 const { dataLang } = useLocale()
-const t = useStrings({
+const t = useStrings('CourtList', {
     root: {
         search: 'Search',
         searchPlaceholder: 'Name, city or id',

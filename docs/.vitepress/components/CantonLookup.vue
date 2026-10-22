@@ -10,7 +10,7 @@ import {
 import { fmt, inLang, useLocale, useStrings } from '../i18n'
 
 const { dataLang } = useLocale()
-const t = useStrings({
+const t = useStrings('CantonLookup', {
     root: {
         municipality: 'Municipality or REFNIS code',
         placeholder: 'e.g. Gent, Liège, 44021',

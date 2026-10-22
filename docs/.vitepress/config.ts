@@ -2,67 +2,12 @@ import { cpSync } from 'node:fs'
 import { join } from 'node:path'
 import { defineConfig, type DefaultTheme, type LocaleConfig } from 'vitepress'
 import pkg from '../../package.json'
+import { extraLocales } from './locales'
+import type { Strings } from './locales/types'
 
 const repo = 'https://github.com/pieterjanscheir/belgica'
 // GitHub Pages serves the site from /belgica/; DOCS_BASE overrides it for a custom domain
 const base = process.env.DOCS_BASE ?? '/belgica/'
-
-/**
- * Everything the theme shows in words, per language. English (`root`) is the source: the
- * Dutch and French pages under docs/nl and docs/fr mirror the English tree, so each locale's
- * nav and sidebar are the English ones with the locale's prefix and labels.
- */
-interface Strings {
-    description: string
-    nav: { guide: string; data: string; api: string; releases: string }
-    sidebar: {
-        guide: string
-        gettingStarted: string
-        rawJson: string
-        design: string
-        identifiers: string
-        schema: string
-        dataQuality: string
-        contributing: string
-        changelog: string
-        data: string
-        overview: string
-        territory: string
-        cantonBoundaries: string
-        courts: string
-        prisons: string
-        housesOfJustice: string
-        interestRates: string
-        postalCodes: string
-        knownGaps: string
-        roadmap: string
-        api: string
-    }
-    editLink: string
-    lastUpdated: string
-    prev: string
-    next: string
-    outline: string
-    returnToTop: string
-    sidebarMenu: string
-    darkModeSwitch: string
-    lightModeTitle: string
-    darkModeTitle: string
-    langMenu: string
-    notFound: { title: string; quote: string; linkLabel: string; linkText: string }
-    footer: string
-    search: {
-        button: string
-        buttonAria: string
-        displayDetails: string
-        reset: string
-        back: string
-        noResults: string
-        select: string
-        navigate: string
-        close: string
-    }
-}
 
 const en: Strings = {
     description: pkg.description,
@@ -343,6 +288,18 @@ const locales: LocaleConfig<DefaultTheme.Config> = {
         description: fr.description,
         themeConfig: themeConfig('/fr', fr),
     },
+    ...Object.fromEntries(
+        Object.entries(extraLocales).map(([code, l]) => [
+            code,
+            {
+                label: l.label,
+                lang: l.lang,
+                dir: l.dir,
+                description: l.site.description,
+                themeConfig: themeConfig(`/${code}`, l.site),
+            },
+        ]),
+    ),
 }
 
 export default defineConfig({
@@ -368,6 +325,12 @@ export default defineConfig({
                     root: { translations: searchTranslations(en) },
                     nl: { translations: searchTranslations(nl) },
                     fr: { translations: searchTranslations(fr) },
+                    ...Object.fromEntries(
+                        Object.entries(extraLocales).map(([code, l]) => [
+                            code,
+                            { translations: searchTranslations(l.site) },
+                        ]),
+                    ),
                 },
             },
         },

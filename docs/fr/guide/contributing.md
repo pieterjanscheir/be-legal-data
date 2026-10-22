@@ -145,11 +145,19 @@ une page cassée est donc détectée avant la fusion.
 
 ### Traductions {#translations}
 
-Les pages anglaises sous `docs/` font foi. Les pages néerlandaises (`docs/nl/`) et françaises
-(`docs/fr/`) en sont des traductions, mises à jour après la modification de la page anglaise.
-Quand vous modifiez une page anglaise, modifiez aussi la même page dans `docs/nl/` et
-`docs/fr/`, ou signalez dans la pull request que les traductions sont en retard. Le code, les
-ids, les noms de champs et les noms officiels restent tels quels dans chaque langue, et chaque
-titre garde son ancre anglaise (`## Titre {#english-anchor}`), de sorte que les liens entre
-pages et le sélecteur de langue continuent de fonctionner. Le changelog n'est tenu qu'en
-anglais.
+Les pages anglaises sous `docs/` font foi. Chaque autre langue a la même arborescence dans son
+propre dossier : néerlandais (`docs/nl/`) et français (`docs/fr/`), ainsi qu'allemand, espagnol,
+italien, portugais, polonais, turc, arabe, ukrainien, chinois et japonais (`docs/de/`,
+`docs/es/`, etc.). Ce sont des traductions de la page anglaise, mises à jour après sa
+modification. Quand vous modifiez une page anglaise, modifiez aussi la même page dans
+`docs/nl/` et `docs/fr/`, ou signalez dans la pull request que les traductions sont en retard ;
+les autres langues peuvent avoir une version de retard. Les textes du thème et des composants
+interactifs dans ces autres langues se trouvent dans `docs/.vitepress/locales/`.
+
+Le code, les ids, les noms de champs et les noms officiels restent tels quels dans chaque
+langue, et chaque titre garde son ancre anglaise (`## Titre {#english-anchor}`), de sorte que
+les liens entre pages et le sélecteur de langue continuent de fonctionner. Une institution ou
+une notion juridique belge garde son nom officiel néerlandais ou français (ou allemand, quand
+la Belgique en publie un) plutôt qu'une traduction inventée : une page chinoise dit
+vredegerecht / justice de paix, pas un mot forgé pour l'occasion. Le changelog n'est tenu
+qu'en anglais.
