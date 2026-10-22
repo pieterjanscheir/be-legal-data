@@ -106,7 +106,7 @@ Megabytes an HTML belastet wird. Die Parser werden an gekürzten Kopien echter S
 Seite, die der Parser nicht zuordnen kann, stoppt den Build, statt einen halb richtigen Eintrag zu
 erzeugen. Zwei Quellen verweigern sich den Servern von GitHub (ejustice, police.be); sie werden
 von einem gewöhnlichen Rechner abgerufen
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## 8. Verteilung: nur ESM, Node 22.12+, beim Release gebaut {#_8-distribution-esm-only-node-22-12-built-on-release}
 

@@ -98,7 +98,7 @@ request, якщо щось змінилося. Нічого не вводить�
 Парсери тестуються на скорочених копіях справжніх сторінок. Сторінка, яку парсер не може
 розпізнати, зупиняє збірку, а не породжує напівправильний запис. Два джерела відмовляють
 серверам GitHub (ejustice, police.be); їх завантажують зі звичайної машини
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## 8. Розповсюдження: лише ESM, Node 22.12+, збірка під час релізу {#_8-distribution-esm-only-node-22-12-built-on-release}
 

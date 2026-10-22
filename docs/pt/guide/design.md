@@ -104,7 +104,7 @@ sobrecarregado com megabytes de HTML. Os parsers são testados com cópias reduz
 reais. Uma página que o parser não consegue situar interrompe a build em vez de produzir um
 registo meio certo. Duas fontes recusam os servidores do GitHub (ejustice, police.be); são
 obtidas a partir de uma máquina normal
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## 8. Distribuição: só ESM, Node 22.12+, construído na release {#_8-distribution-esm-only-node-22-12-built-on-release}
 

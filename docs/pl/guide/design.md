@@ -101,7 +101,7 @@ pętli: dane w `main` nigdy nie zmieniają się bez przeglądu.
 megabajtami HTML-a. Parsery są testowane na przyciętych kopiach prawdziwych stron. Strona, której
 parser nie potrafi umiejscowić, zatrzymuje build, zamiast tworzyć w połowie poprawny rekord. Dwa
 źródła odrzucają serwery GitHuba (ejustice, police.be); są pobierane ze zwykłego komputera
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## 8. Dystrybucja: tylko ESM, Node 22.12+, budowane przy wydaniu {#_8-distribution-esm-only-node-22-12-built-on-release}
 
