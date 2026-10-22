@@ -40,9 +40,9 @@ export function findJusticesOfThePeace(municipalityId: string, options: OnDay = 
 
 /**
  * The courts of a type with jurisdiction over a municipality on a day (today by default), by
- * REFNIS code: the courts whose area, as the law sets it, holds one of its cantons. One court for most
- * municipalities; in Brussels the Dutch- and the French-speaking court; for a city split over
- * cantons, every justice of the peace that serves one of them (the street address decides, see
+ * REFNIS code: the courts whose area, as the law sets it, holds one of its cantons. One court
+ * for most municipalities; in Brussels the Dutch- and the French-speaking court; for a city split
+ * over cantons, every justice of the peace that serves one of them (the street address decides, see
  * `findJusticesOfThePeace`). The court as a whole: which of its divisions hears a case is set
  * by royal decree and isn't in the data; see `getDivisions`. Empty for an unknown code.
  */

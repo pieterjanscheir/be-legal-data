@@ -49,11 +49,11 @@ def find_courts_with_jurisdiction(
     municipality_id: str, type: CourtType, on: Day | None = None
 ) -> list[Court]:
     """The courts of a type with jurisdiction over a municipality on a day (today by default), by
-    REFNIS code: the courts whose area, as the law sets it, holds one of its cantons. One court for most
-    municipalities; in Brussels the Dutch- and the French-speaking court; for a city split over
-    cantons, every justice of the peace that serves one of them (the street address decides, see
-    `find_justices_of_the_peace`). The court as a whole: which of its divisions hears a case is
-    set by royal decree and isn't in the data; see `get_divisions`. Empty for an unknown code."""
+    REFNIS code: the courts whose area, as the law sets it, holds one of its cantons. One court
+    for most municipalities; in Brussels the Dutch- and the French-speaking court; for a city split
+    over cantons, every justice of the peace that serves one of them (the street address decides,
+    see `find_justices_of_the_peace`). The court as a whole: which of its divisions hears a case
+    is set by royal decree and isn't in the data; see `get_divisions`. Empty for an unknown code."""
     found: dict[int, Court] = {}
     for canton in get_cantons_for_municipality(municipality_id, on):
         for court in get_courts_for_canton(canton['id'], on):

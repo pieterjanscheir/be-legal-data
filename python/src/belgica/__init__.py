@@ -18,14 +18,6 @@ from ._canton_boundaries import (
     find_cantons_at,
     get_canton_boundary,
 )
-from ._jurisdiction import (
-    CantonCourt,
-    PostalCodeCourts,
-    find_competent_courts,
-    find_courts_with_jurisdiction,
-    find_courts_for_postal_code,
-    find_justices_of_the_peace,
-)
 from ._contacts import format_iban, format_phone_number, get_contact
 from ._court_locations import COURT_LOCATIONS_COVERAGE_FROM, court_locations, get_court_location
 from ._courts import (
@@ -43,6 +35,14 @@ from ._interest_rates import (
     get_interest_rate,
     get_latest_known_rate_date,
     interest_rates,
+)
+from ._jurisdiction import (
+    CantonCourt,
+    PostalCodeCourts,
+    find_competent_courts,
+    find_courts_for_postal_code,
+    find_courts_with_jurisdiction,
+    find_justices_of_the_peace,
 )
 from ._places import (
     HOUSES_OF_JUSTICE_COVERAGE_FROM,
