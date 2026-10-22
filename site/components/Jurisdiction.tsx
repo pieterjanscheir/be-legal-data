@@ -14,11 +14,11 @@ const otherTypes: CourtType[] = [
     'court-of-assize',
 ]
 
-/** The justices of the peace and every other competent court for a municipality */
-export function Competence({ municipality }: { municipality: string }) {
+/** The justices of the peace and every other court with jurisdiction over a municipality */
+export function Jurisdiction({ municipality }: { municipality: string }) {
     const justices = findJusticesOfThePeace(municipality)
     const split = justices.some((j) => j.partial)
-    const t = useTranslations('competence')
+    const t = useTranslations('jurisdiction')
     return (
         <>
             <h3>{t('justiceOfThePeace')}</h3>

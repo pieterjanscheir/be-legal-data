@@ -11,7 +11,7 @@ import {
 } from 'belgica'
 import { CantonMap } from '@/components/CantonMap'
 import { Code } from '@/components/Code'
-import { Competence } from '@/components/Competence'
+import { Jurisdiction } from '@/components/Jurisdiction'
 import { Name } from '@/components/Name'
 import { bilingual, currentCantons, currentMunicipalities } from '@/lib/data'
 
@@ -108,8 +108,8 @@ getCantonsForMunicipality('${id}').map((c) => c.id)
                 />
             </div>
             <section className="block">
-                <h2>{t('competentCourts')}</h2>
-                <Competence municipality={id} />
+                <h2>{t('courtsWithJurisdiction')}</h2>
+                <Jurisdiction municipality={id} />
             </section>
         </>
     )

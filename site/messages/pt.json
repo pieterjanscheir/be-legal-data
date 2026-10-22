@@ -69,7 +69,7 @@
         "featureCourtsTitle": "Todos os tribunais, em três idiomas",
         "featureCourts": "Nomes tal como cada tribunal os publica, moradas, números de telefone em formato nacional, IBAN, horários de abertura e códigos ECLI. Alterne entre NL · FR · DE no topo."
     },
-    "competence": {
+    "jurisdiction": {
         "justiceOfThePeace": "Julgado de paz",
         "split": "Este município está dividido em {count} cantões: decide a morada. A área de cada cantão, tal como o Código Judiciário a descreve:",
         "areaOf": "Área do cantão <link>{name}</link>",
@@ -100,7 +100,7 @@
         "province": "Província",
         "arrondissement": "Distrito judicial",
         "postalCodes": "Códigos postais",
-        "competentCourts": "Tribunais competentes",
+        "courtsWithJurisdiction": "Tribunais competentes",
         "mapLabel": "Cantões de {arrondissement}, com os de {municipality} destacados"
     },
     "cantons": {

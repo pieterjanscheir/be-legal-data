@@ -69,7 +69,7 @@
         "featureCourtsTitle": "所有法院，三种语言",
         "featureCourts": "各法院公布的名称、地址、国内格式的电话号码、IBAN、办公时间和 ECLI 代码。可在顶部切换 NL · FR · DE。"
     },
-    "competence": {
+    "jurisdiction": {
         "justiceOfThePeace": "治安法院",
         "split": "该市镇分属 {count} 个司法区，由街道地址决定。《司法法典》对各司法区区域的描述如下：",
         "areaOf": "<link>{name}</link> 司法区的区域",
@@ -100,7 +100,7 @@
         "province": "省",
         "arrondissement": "司法辖区",
         "postalCodes": "邮政编码",
-        "competentCourts": "有管辖权的法院",
+        "courtsWithJurisdiction": "有管辖权的法院",
         "mapLabel": "{arrondissement} 的司法区，突出显示 {municipality} 所属的司法区"
     },
     "cantons": {

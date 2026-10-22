@@ -69,7 +69,7 @@
         "featureCourtsTitle": "Wszystkie sądy w trzech językach",
         "featureCourts": "Nazwy w brzmieniu publikowanym przez każdy sąd, adresy, numery telefonów w formacie krajowym, numery IBAN, godziny otwarcia i kody ECLI. Przełączaj NL · FR · DE u góry strony."
     },
-    "competence": {
+    "jurisdiction": {
         "justiceOfThePeace": "Sąd pokoju",
         "split": "Ta gmina jest podzielona na {count, plural, one {# kanton} few {# kantony} many {# kantonów} other {# kantonu}}: decyduje adres. Obszar każdego kantonu według Kodeksu sądowego:",
         "areaOf": "Obszar kantonu <link>{name}</link>",
@@ -100,7 +100,7 @@
         "province": "Prowincja",
         "arrondissement": "Okręg sądowy",
         "postalCodes": "Kody pocztowe",
-        "competentCourts": "Właściwe sądy",
+        "courtsWithJurisdiction": "Właściwe sądy",
         "mapLabel": "Kantony okręgu {arrondissement}, z wyróżnionymi kantonami gminy {municipality}"
     },
     "cantons": {

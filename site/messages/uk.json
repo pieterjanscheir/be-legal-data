@@ -69,7 +69,7 @@
         "featureCourtsTitle": "Усі суди трьома мовами",
         "featureCourts": "Назви в тому вигляді, як їх публікує кожен суд, адреси, номери телефонів у національному форматі, IBAN, години роботи та коди ECLI. Перемикайте NL · FR · DE угорі."
     },
-    "competence": {
+    "jurisdiction": {
         "justiceOfThePeace": "Мировий суд",
         "split": "Цей муніципалітет поділено між кантонами (кількість: {count}): вирішальною є адреса вулиці. Територія кожного кантону за описом Судового кодексу:",
         "areaOf": "Територія кантону <link>{name}</link>",
@@ -100,7 +100,7 @@
         "province": "Провінція",
         "arrondissement": "Судовий округ",
         "postalCodes": "Поштові індекси",
-        "competentCourts": "Компетентні суди",
+        "courtsWithJurisdiction": "Компетентні суди",
         "mapLabel": "Кантони округу {arrondissement}, кантони {municipality} виділено"
     },
     "cantons": {

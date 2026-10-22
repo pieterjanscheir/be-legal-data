@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { findCourtsForPostalCode, getPostalCodes } from 'belgica'
 import { Code } from '@/components/Code'
-import { Competence } from '@/components/Competence'
+import { Jurisdiction } from '@/components/Jurisdiction'
 import { Link } from '@/i18n/navigation'
 import { bilingual, postalCodeList } from '@/lib/data'
 
@@ -54,7 +54,7 @@ export default async function PostalCodePage({ params }: Props) {
                             })}
                         </span>
                     </h2>
-                    <Competence municipality={municipality.id} />
+                    <Jurisdiction municipality={municipality.id} />
                 </section>
             ))}
             <Code>{`

@@ -46,7 +46,7 @@
     },
     "home": {
         "eyebrow": "Built with the belgica package",
-        "title": "Which court is competent, where?",
+        "title": "Which court has jurisdiction where?",
         "lede": "Enter a postal code or a municipality to find its justice of the peace, police court and every other court with their registries' contacts. Or browse the courts, the canton map and the interest rates, all read from the package's data.",
         "try": "Try",
         "example9000": "Gent: one municipality, five cantons",
@@ -61,7 +61,7 @@
         "statPlaces": "prisons and houses of justice",
         "statRates": "interest-rate periods since 1970",
         "featureAddressTitle": "Courts for an address",
-        "featureAddress": "From a postal code to its municipalities, their cantons and every competent court. Split cities list each canton with the legal text of its area.",
+        "featureAddress": "From a postal code to its municipalities, their cantons and every court with jurisdiction there. Split cities list each canton with the legal text of its area.",
         "featureMapTitle": "Canton map",
         "featureMap": "The NGI's boundary of every canton, to find the canton of a point and draw it. Every canton has its legal basis and its municipalities.",
         "featureInterestTitle": "Interest calculator",
@@ -69,7 +69,7 @@
         "featureCourtsTitle": "Every court, in three languages",
         "featureCourts": "Names as each court publishes them, addresses, phone numbers in national form, IBANs, opening hours and ECLI codes. Switch NL · FR · DE at the top."
     },
-    "competence": {
+    "jurisdiction": {
         "justiceOfThePeace": "Justice of the peace",
         "split": "This municipality is split over {count} cantons: the street address decides. Each canton's area, as the Judicial Code describes it:",
         "areaOf": "Area of canton <link>{name}</link>",
@@ -92,7 +92,7 @@
     },
     "municipalities": {
         "title": "Municipalities",
-        "lede": "The {count} municipalities by province, with their REFNIS code. Each page lists its postal codes, cantons and competent courts."
+        "lede": "The {count} municipalities by province, with their REFNIS code. Each page lists its postal codes, cantons and the courts with jurisdiction."
     },
     "municipality": {
         "refnis": "REFNIS code",
@@ -100,7 +100,7 @@
         "province": "Province",
         "arrondissement": "Judicial arrondissement",
         "postalCodes": "Postal codes",
-        "competentCourts": "Competent courts",
+        "courtsWithJurisdiction": "Courts with jurisdiction",
         "mapLabel": "Cantons of {arrondissement}, with those of {municipality} highlighted"
     },
     "cantons": {

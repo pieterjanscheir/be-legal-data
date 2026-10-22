@@ -69,7 +69,7 @@
         "featureCourtsTitle": "Tüm mahkemeler, üç dilde",
         "featureCourts": "Her mahkemenin yayımladığı adlar, adresler, ulusal biçimde telefon numaraları, IBAN'lar, çalışma saatleri ve ECLI kodları. Üst kısımdan NL · FR · DE arasında geçiş yapın."
     },
-    "competence": {
+    "jurisdiction": {
         "justiceOfThePeace": "Sulh mahkemesi",
         "split": "Bu belediye {count} kantona bölünmüştür: sokak adresi belirleyicidir. Yargı Kanunu'nun tanımladığı şekliyle her kantonun alanı:",
         "areaOf": "<link>{name}</link> kantonunun alanı",
@@ -100,7 +100,7 @@
         "province": "İl",
         "arrondissement": "Adli çevre",
         "postalCodes": "Posta kodları",
-        "competentCourts": "Yetkili mahkemeler",
+        "courtsWithJurisdiction": "Yetkili mahkemeler",
         "mapLabel": "{arrondissement} kantonları, {municipality} kantonları vurgulanmış"
     },
     "cantons": {

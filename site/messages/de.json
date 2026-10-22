@@ -69,7 +69,7 @@
         "featureCourtsTitle": "Alle Gerichte, in drei Sprachen",
         "featureCourts": "Namen, wie jedes Gericht sie veröffentlicht, Adressen, Telefonnummern im nationalen Format, IBANs, Öffnungszeiten und ECLI-Codes. Oben zwischen NL · FR · DE wechseln."
     },
-    "competence": {
+    "jurisdiction": {
         "justiceOfThePeace": "Friedensgericht",
         "split": "Diese Gemeinde ist auf {count} Kantone aufgeteilt: Die Straßenadresse entscheidet. Das Gebiet jedes Kantons, wie das Gerichtsgesetzbuch es beschreibt:",
         "areaOf": "Gebiet des Kantons <link>{name}</link>",
@@ -100,7 +100,7 @@
         "province": "Provinz",
         "arrondissement": "Gerichtsbezirk",
         "postalCodes": "Postleitzahlen",
-        "competentCourts": "Zuständige Gerichte",
+        "courtsWithJurisdiction": "Zuständige Gerichte",
         "mapLabel": "Kantone von {arrondissement}, die von {municipality} hervorgehoben"
     },
     "cantons": {
