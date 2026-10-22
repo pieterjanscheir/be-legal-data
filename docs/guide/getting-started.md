@@ -44,6 +44,21 @@ import { getMunicipalitiesForPostalCode } from 'belgica/postal-codes'
 The [canton boundaries](/data/canton-boundaries) are the exception: a million positions of
 geometry, only in `belgica/canton-boundaries`, never loaded by the package root.
 
+A browser app that needs only some courts can go smaller still. JSON can't be tree-shaken, so
+what it ships depends on which files it imports:
+
+| You need                                       | Use                                                                                           |
+| ---------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Every court, with lookups and filters          | `belgica/courts`                                                                              |
+| One type, all of Belgium                       | `belgica/data/courts/<type>.json`, or `loadCourts({ type })`                                  |
+| One type in one arrondissement                 | `belgica/data/courts/<type>/<arrondissement>.json`, or `loadCourts({ type, arrondissement })` |
+| One court by a stored id                       | `loadCourt(id)`                                                                               |
+| One court's contacts, hours and website        | `belgica/data/courts/details/<id>.json`, or `loadCourtDetails(id)`                            |
+| Names and contacts of a court you already hold | `belgica/courts/format`: no data                                                              |
+| Cantons without the legal text of their area   | `belgica/cantons`, and `belgica/cantons/territory` for the text                               |
+
+The loaders are in `belgica/courts/load`. See [only the courts you need](/data/courts#only-the-courts-you-need).
+
 <table v-if="stats.sizes">
 <thead><tr><th>Entry point</th><th style="text-align:right">JavaScript loaded</th><th style="text-align:right">gzip</th></tr></thead>
 <tbody>

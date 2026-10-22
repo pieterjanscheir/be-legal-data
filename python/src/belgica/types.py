@@ -173,6 +173,10 @@ class Court(Validity):
     court: NotRequired[str]
     """For a division or seat: the court it belongs to"""
     name: PartialTranslated
+    label: NotRequired[Translated]
+    """For a justice of the peace (not its seats): a label built from its canton,
+    'Vredegerecht 1e kanton Gent', as `format_court_name(court, locale, 'canton')` gives it. Not
+    the court's official name."""
     judicialArea: str
     arrondissement: NotRequired[str]
     canton: NotRequired[str]

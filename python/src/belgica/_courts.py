@@ -138,14 +138,17 @@ def format_court_name(
     doesn't publish in `locale` gives its name in another language: for Dutch, French then
     German; for French, Dutch then German; for German, French then Dutch.
 
-    With `style='canton'`, a justice of the peace gets a label built from its canton's number and
-    name: 'Vredegerecht 1e kanton Gent', 'Justice de paix 1er canton Gand', 'Friedensgericht 1.
+    With `style='canton'`, a justice of the peace gets its `label`, built from its canton's number
+    and name: 'Vredegerecht 1e kanton Gent', 'Justice de paix 1er canton Gand', 'Friedensgericht 1.
     Kanton Gent', and without a number 'Vredegerecht kanton Deinze'. It is a label for display,
     not the court's official name. Only the cantons of Eupen-Sankt Vith have a German name; for
     the others, German uses the canton's name in the court's own language (French in Brussels).
     Any other court, and a seat of a justice of the peace, gets its official name.
     """
     name = court['name']
+    if style == 'canton' and 'label' in court:
+        return court['label'][locale]
+    # A record without a stored label (saved before 0.5.0): built from the canton
     if style == 'canton' and court['type'] == 'justice-of-the-peace' and court['kind'] == 'court':
         versions = _cantons_by_id().get(court.get('canton', ''))
         # The canton as it was on the court's last day, or today for a court that still applies
