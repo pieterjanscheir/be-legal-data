@@ -7,11 +7,6 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ## [Unreleased]
 
-### Changed
-
-- The [explorer](https://belgica.scheir.eu/) is in the docs' 13 languages, with next-intl, and moved from
-  GitHub Pages to Vercel: a page in every language is about 29,000 pages, over the 1 GB a Pages
-  site may hold. It still isn't part of the package.
 ### Added
 
 **Public and judicial holidays, for deadlines: `belgica/calendar`.** `getPublicHolidays(year)`
@@ -24,6 +19,12 @@ the last day of a deadline off a Saturday, Sunday or holiday (art. 53 Ger.W. / C
 holiday: Ascension Day 2008, which fell on 1 May, moved to 2 May. Community holidays (11 July,
 27 September, 15 November) aren't legal holidays and aren't in it. Tested against the Royal
 Observatory's published lists for 2024 to 2027 ([#61](https://github.com/pieterjanscheir/belgica/issues/61)).
+
+### Changed
+
+- The [explorer](https://belgica.scheir.eu/) is in the docs' 13 languages, with next-intl, and moved from
+  GitHub Pages to Vercel: a page in every language is about 29,000 pages, over the 1 GB a Pages
+  site may hold. It still isn't part of the package.
 
 ## [0.5.0] - 2026-10-22
 
