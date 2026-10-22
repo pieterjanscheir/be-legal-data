@@ -21,4 +21,11 @@ describe('tables', () => {
         for (const [name, rows] of Object.entries(tables))
             expect(rows.length, name).toBeGreaterThan(0)
     })
+
+    it("has each justice of the peace's canton label", () => {
+        const gent1 = tables['courts']?.find((r) => r['id'] === 'justice-of-the-peace-gent-1')
+        expect(gent1?.['label_fr']).toBe('Justice de paix 1er canton Gand')
+        const appeal = tables['courts']?.find((r) => r['id'] === 'court-of-appeal-gent')
+        expect(appeal?.['label_nl']).toBeUndefined()
+    })
 })

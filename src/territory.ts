@@ -12,6 +12,7 @@ import type {
     ProvinceId,
     RegionId,
 } from './ids.generated'
+import { territoryCoverage } from './territory-coverage'
 import type {
     Arrondissement,
     Canton,
@@ -20,18 +21,13 @@ import type {
     Province,
     Region,
 } from './schemas/territory'
-import {
-    applyingOn,
-    pickVersion,
-    versionsById,
-    type Coverage,
-    type OnDay,
-    type Validity,
-} from './time'
+import { applyingOn, pickVersion, versionsById, type OnDay, type Validity } from './time'
 
 export type {
     Arrondissement,
     Canton,
+    CantonSummary,
+    CantonTerritory,
     JudicialArea,
     LegalBasis,
     Municipality,
@@ -49,12 +45,7 @@ export type {
 } from './ids.generated'
 export type { Coverage, OnDay, Validity } from './time'
 
-/**
- * The territory data describes the situation from this day on: the annex to the Judicial Code
- * as amended for the municipal mergers of 1 January 2025, and Statbel's municipalities of that
- * day. Lookups for an earlier day throw a `RangeError` rather than answer with today's map.
- */
-export const territoryCoverage: Coverage = { from: '2025-01-01' }
+export { territoryCoverage } from './territory-coverage'
 
 // The data is validated against the zod schemas in ./schemas (test/schema.test.ts)
 export const judicialAreas = judicialAreasData as readonly JudicialArea[]
