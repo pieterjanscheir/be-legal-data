@@ -7,6 +7,18 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ## [Unreleased]
 
+### Changed
+
+- **Look up an address**: type an address and get its canton and every court, including the
+  justice of the peace in a city split over several cantons. It's a prototype on the
+  [canton boundaries](https://pieterjanscheir.github.io/belgica/data/canton-boundaries) docs
+  page and a new `/address/` page in the explorer. Geocoding uses each region's own address
+  register (Adressenregister, UrbIS, ICAR); the package itself is unchanged
+  ([#95](https://github.com/pieterjanscheir/belgica/pull/95)).
+- The explorer says "has jurisdiction" and "courts with jurisdiction" in English, not
+  "competent", as the package does since `findCourtsWithJurisdiction`
+  ([#107](https://github.com/pieterjanscheir/belgica/pull/107)).
+
 ## [0.6.0] - 2026-10-22
 
 ### Added
