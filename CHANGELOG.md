@@ -7,6 +7,8 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-10-22
+
 ### Added
 
 **A Python package: `pip install belgica`.** The same data and helpers on PyPI, in snake case,
@@ -79,11 +81,15 @@ load them. The GeoPackage reader now reads points, and geometries with a Z (drop
 - The package is half the size: the canton boundaries are in it once. `belgica/canton-boundaries`
   used to inline `data/canton-boundaries.json` into its JavaScript, so the 22 MB of geometry was
   in the package twice. It now imports the file from `data/` with `with { type: 'json' }`, which
-  Node ≥ 22.12 and current bundlers support. The API is the same. The package went from 51 MB to
-  about 27 MB unpacked (#80).
+  Node ≥ 22.12 and current bundlers support, and so does `belgica/arrondissement-boundaries`.
+  The API is the same. The package went from 51 MB to about 36 MB unpacked, with the 8 MB of
+  arrondissement boundaries added since (#80).
 - Releases are prepared by a workflow, which opens the release pull request, and published when
   it's merged. Pull requests get a preview package on pkg.pr.new. CI adds CodeQL, OpenSSF
   Scorecard, zizmor and dependency review, and every action is pinned to a commit.
+- The [explorer](https://pieterjanscheir.github.io/belgica/explore/), a Next.js site built on
+  the package, is deployed with the docs: a page for every court, canton, municipality and postal
+  code, the canton map and an interest calculator. It isn't part of the package.
 
 ## [0.4.0] - 2026-10-22
 
@@ -339,7 +345,8 @@ OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
 - Courts (justices of the peace in East and West Flanders, Ondernemingsrechtbank Gent) and the
   legal and commercial interest rates.
 
-[Unreleased]: https://github.com/pieterjanscheir/belgica/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/pieterjanscheir/belgica/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/pieterjanscheir/belgica/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/pieterjanscheir/belgica/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/pieterjanscheir/belgica/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/pieterjanscheir/belgica/compare/72889e0...v0.3.0

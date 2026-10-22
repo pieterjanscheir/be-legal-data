@@ -1,4 +1,5 @@
-import boundariesData from '../data/arrondissement-boundaries.json'
+// Not inlined by tsup: dist/ imports the file from data/ (tsup.config.ts)
+import boundariesData from '../data/arrondissement-boundaries.json' with { type: 'json' }
 import { boundingBox, contains, inBox, requireCoordinates, type BoundingBox } from './geometry'
 import type { ArrondissementId } from './ids.generated'
 import type { ArrondissementBoundary } from './schemas/arrondissement-boundaries'
