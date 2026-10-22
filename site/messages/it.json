@@ -1,0 +1,187 @@
+{
+    "meta": {
+        "title": "belgica explorer",
+        "description": "Tutti i tribunali, i cantoni giudiziari, i comuni e i codici postali del Belgio, e i tassi di interesse legali: un sito costruito con il pacchetto belgica."
+    },
+    "nav": {
+        "skip": "Vai al contenuto",
+        "main": "Principale",
+        "courts": "Tribunali",
+        "cantons": "Cantoni",
+        "municipalities": "Comuni",
+        "interest": "Interessi",
+        "places": "Carceri e case di giustizia",
+        "siteLanguage": "Lingua",
+        "namesLanguage": "Lingua dei nomi ufficiali"
+    },
+    "footer": {
+        "builtFrom": "Ogni pagina è generata da <npm>belgica</npm> in fase di build: <docs>documentazione</docs> · <source>codice sorgente di questo sito</source>",
+        "disclaimer": "Dati di riferimento, non consulenza legale: verifica le fonti ufficiali prima di farvi affidamento. Dati su comuni e codici postali © Statbel, confini dei cantoni © NGI, CC BY 4.0."
+    },
+    "code": {
+        "caption": "Con belgica"
+    },
+    "courtType": {
+        "justice-of-the-peace": "Giudice di pace",
+        "police-court": "Tribunale di polizia",
+        "court-of-first-instance": "Tribunale di primo grado",
+        "enterprise-court": "Tribunale delle imprese",
+        "labour-court": "Tribunale del lavoro",
+        "court-of-appeal": "Corte d'appello",
+        "labour-court-of-appeal": "Corte d'appello del lavoro",
+        "court-of-assize": "Corte d'assise"
+    },
+    "kind": {
+        "court": "Tribunale",
+        "division": "Sezione",
+        "seat": "Sede"
+    },
+    "search": {
+        "placeholder": "Codice postale, comune, cantone o tribunale",
+        "postalCode": "Codice postale",
+        "municipality": "Comune",
+        "canton": "Cantone",
+        "cantonName": "Cantone {name}"
+    },
+    "home": {
+        "eyebrow": "Costruito con il pacchetto belgica",
+        "title": "Quale tribunale è competente, e dove?",
+        "lede": "Inserisci un codice postale o un comune per trovare il suo giudice di pace, il tribunale di polizia e tutti gli altri tribunali, con i contatti delle loro cancellerie. Oppure consulta i tribunali, la mappa dei cantoni e i tassi di interesse, tutti letti dai dati del pacchetto.",
+        "try": "Prova",
+        "example9000": "Gent: un comune, cinque cantoni",
+        "example1050": "Elsene e Bruxelles lo condividono",
+        "example4700": "Eupen: tribunali in tedesco",
+        "mapLabel": "Mappa dei {count} cantoni giudiziari del Belgio",
+        "statsLabel": "Cosa contengono i dati",
+        "statCourts": "tribunali, sezioni e sedi",
+        "statCantons": "cantoni giudiziari",
+        "statMunicipalities": "comuni",
+        "statPostalCodes": "codici postali",
+        "statPlaces": "carceri e case di giustizia",
+        "statRates": "periodi di tassi di interesse dal 1970",
+        "featureAddressTitle": "I tribunali per un indirizzo",
+        "featureAddress": "Da un codice postale ai suoi comuni, ai loro cantoni e a tutti i tribunali competenti. Per le città divise, ogni cantone è indicato con il testo di legge che ne definisce l'area.",
+        "featureMapTitle": "Mappa dei cantoni",
+        "featureMap": "Il confine di ogni cantone secondo l'NGI, per trovare il cantone di un punto e disegnarlo. Ogni cantone ha la sua base giuridica e i suoi comuni.",
+        "featureInterestTitle": "Calcolatore di interessi",
+        "featureInterest": "I tassi legali e commerciali dal 1970, con la regola per i contratti anteriori al 16 marzo 2013. Il calcolatore carica solo <code>belgica/interest-rates</code>.",
+        "featureCourtsTitle": "Tutti i tribunali, in tre lingue",
+        "featureCourts": "I nomi come li pubblica ogni tribunale, indirizzi, numeri di telefono in formato nazionale, IBAN, orari di apertura e codici ECLI. Passa da NL · FR · DE in alto."
+    },
+    "competence": {
+        "justiceOfThePeace": "Giudice di pace",
+        "split": "Questo comune è diviso in {count} cantoni: decide l'indirizzo. L'area di ogni cantone, come la descrive il Codice giudiziario:",
+        "areaOf": "Area del cantone <link>{name}</link>",
+        "otherCourts": "Altri tribunali",
+        "divisionNote": "Il tribunale nel suo insieme: quale sezione tratta una causa è stabilito con regio decreto."
+    },
+    "contacts": {
+        "phone": "Telefono",
+        "fax": "Fax",
+        "email": "Email",
+        "bank-account": "Conto bancario",
+        "none": "Nessun contatto pubblicato."
+    },
+    "postalCode": {
+        "crumbSearch": "Cerca",
+        "crumb": "Codice postale",
+        "title": "{code} {names}: tribunali",
+        "shared": "{code} appartiene a {count} comuni: decide la via. I tribunali sono indicati per ciascuno.",
+        "refnis": "REFNIS {id} · codici postali {codes}"
+    },
+    "municipalities": {
+        "title": "Comuni",
+        "lede": "I {count} comuni per provincia, con il loro codice REFNIS. Ogni pagina elenca i codici postali, i cantoni e i tribunali competenti."
+    },
+    "municipality": {
+        "refnis": "Codice REFNIS",
+        "region": "Regione",
+        "province": "Provincia",
+        "arrondissement": "Circondario giudiziario",
+        "postalCodes": "Codici postali",
+        "competentCourts": "Tribunali competenti",
+        "mapLabel": "Cantoni di {arrondissement}, con quelli di {municipality} evidenziati"
+    },
+    "cantons": {
+        "title": "Cantoni giudiziari",
+        "lede": "Le {count} aree dei giudici di pace, tracciate dai confini dell'Istituto Geografico Nazionale. Passa il mouse su un cantone per vederne il nome, fai clic per aprirlo.",
+        "mapLabel": "Mappa dei cantoni giudiziari"
+    },
+    "canton": {
+        "title": "Cantone {name}",
+        "seat": "Sede",
+        "arrondissement": "Circondario",
+        "judicialArea": "Distretto giudiziario",
+        "municipalities": "Comuni",
+        "part": "(parte)",
+        "legalBasis": "Base giuridica",
+        "judicialCode": "Codice giudiziario",
+        "area": "Area, come la descrive la legge",
+        "courts": "Tribunali competenti per questo cantone",
+        "courtsNote": "Prima il suo giudice di pace, poi i tribunali nella cui area si trova.",
+        "mapLabel": "I cantoni del circondario, con {name} evidenziato"
+    },
+    "courts": {
+        "title": "Tribunali",
+        "lede": "Tutti i tribunali, le sezioni e le sedi, come pubblicati su tribunaux-rechtbanken.be e aggiornati ogni settimana.",
+        "filterPlaceholder": "Nome o città",
+        "filterLabel": "Filtra per nome o città",
+        "typeLabel": "Tipo di tribunale",
+        "everyType": "Tutti i tipi",
+        "divisions": "Sezioni e sedi",
+        "count": "{shown} di {total}"
+    },
+    "court": {
+        "kindOf": "{kind} di <link>{name}</link>",
+        "publishedNames": "{count, plural, one {Nome pubblicato} other {Nomi pubblicati}}",
+        "cantonLabel": "Denominazione del cantone",
+        "registry": "Cancelleria",
+        "area": "Area",
+        "ecli": "ECLI",
+        "openingHours": "Orari di apertura",
+        "contacts": "Contatti",
+        "coversOne": "Competente per il cantone <link>{name}</link>",
+        "coversMany": "Competente per {count} cantoni",
+        "mapLabel": "{count, plural, one {Mappa con evidenziato il cantone di competenza del tribunale} other {Mappa con evidenziati i # cantoni di competenza del tribunale}}",
+        "hoursPublished": "Orari di apertura, come pubblicati",
+        "seats": "Sedi",
+        "divisions": "Sezioni",
+        "sources": "Fonti",
+        "checked": "verificato il {date}"
+    },
+    "interest": {
+        "title": "Calcolatore di interessi",
+        "lede": "Interesse semplice al tasso legale o al tasso per le transazioni commerciali, ripartito sui periodi di tasso attraversati: giorni × capitale × tasso ÷ 365. Il calcolatore funziona nel tuo browser solo con <code>belgica/interest-rates</code>, senza i dati su tribunali e territorio.",
+        "rate": "Tasso",
+        "legal": "Interesse legale (annuale)",
+        "commercial": "Transazioni commerciali (semestrale)",
+        "principal": "Capitale (€)",
+        "from": "Dal",
+        "to": "Al",
+        "newerContract": "Contratto concluso il 16 marzo 2013 o successivamente",
+        "ambiguous": "Il separatore in {amount} indica le migliaia o i decimali? Scrivi l'importo senza separatore (10000) o con i decimali (10000,00).",
+        "invalid": "Inserisci un importo positivo e una data di inizio precedente alla data di fine.",
+        "interest": "Interessi",
+        "over": "su {amount} per {days} giorni",
+        "missing": "Per una parte del periodo non è registrato alcun tasso (i tassi sono noti fino al {date}); non viene conteggiata.",
+        "days": "Giorni",
+        "sources": "Fonti",
+        "sourcesText": "Tasso legale: {legal}. Tasso commerciale: {commercial}.",
+        "disclaimer": "Un ausilio al calcolo, non una consulenza legale: una sentenza o un contratto possono prevedere altre regole, come la capitalizzazione degli interessi."
+    },
+    "places": {
+        "title": "Carceri e case di giustizia",
+        "lede": "Le {prisons} carceri e case di detenzione del SPF Giustizia, e le {houses} case di giustizia gestite dalle Comunità.",
+        "prisons": "Carceri",
+        "housesOfJustice": "Case di giustizia",
+        "prison": "Carcere",
+        "detentionHouse": "Casa di detenzione",
+        "flemish": "Comunità fiamminga",
+        "french": "Comunità francese",
+        "german": "Comunità germanofona"
+    },
+    "notFound": {
+        "title": "Pagina non trovata",
+        "back": "Torna all'explorer"
+    }
+}

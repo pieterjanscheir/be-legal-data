@@ -1,23 +1,29 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { Link } from '@/i18n/navigation'
 import { arrondissements } from 'belgica'
 import { CantonMap } from '@/components/CantonMap'
 import { Code } from '@/components/Code'
 import { Name } from '@/components/Name'
 import { cantonName, currentCantons } from '@/lib/data'
 
-export const metadata: Metadata = { title: 'Judicial cantons' }
+interface Props {
+    params: Promise<{ locale: string }>
+}
 
-export default function Cantons() {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const t = await getTranslations({ locale: (await params).locale, namespace: 'cantons' })
+    return { title: t('title') }
+}
+
+export default async function Cantons({ params }: Props) {
+    setRequestLocale((await params).locale)
+    const t = await getTranslations('cantons')
     return (
         <>
-            <h1>Judicial cantons</h1>
-            <p className="lede">
-                The {currentCantons.length} areas of the justices of the peace, drawn from the
-                National Geographic Institute&apos;s boundaries. Hover a canton to name it, click it
-                to open it.
-            </p>
-            <CantonMap label="Map of the judicial cantons" />
+            <h1>{t('title')}</h1>
+            <p className="lede">{t('lede', { count: currentCantons.length })}</p>
+            <CantonMap label={t('mapLabel')} />
             <Code>{`
 import { cantonBoundaries, findCantonsAt } from 'belgica/canton-boundaries'
 

@@ -1,12 +1,13 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
+import { formatDay } from '@/lib/labels'
 import { getLatestKnownRateDate, interestRates, type InterestType } from 'belgica/interest-rates'
 
 const DAY = 86_400_000
 const toTime = (day: string) => Date.parse(`${day}T00:00:00Z`)
 const toDay = (time: number) => new Date(time).toISOString().slice(0, 10)
-const euro = new Intl.NumberFormat('en-BE', { style: 'currency', currency: 'EUR' })
 
 /**
  * An amount as people type it in Belgium or in English: '10000', '10 000', '10.000,50',
@@ -97,6 +98,16 @@ function calculate(amount: number, from: string, to: string, type: InterestType,
 }
 
 export function InterestCalculator() {
+    const t = useTranslations('interest')
+    const locale = useLocale()
+    const euro = useMemo(
+        () => new Intl.NumberFormat(locale, { style: 'currency', currency: 'EUR' }),
+        [locale],
+    )
+    const percent = useMemo(
+        () => new Intl.NumberFormat(locale, { style: 'percent', maximumFractionDigits: 3 }),
+        [locale],
+    )
     const [type, setType] = useState<InterestType>('legal')
     const [amount, setAmount] = useState('10000')
     const [from, setFrom] = useState('2023-03-15')
@@ -128,19 +139,19 @@ export function InterestCalculator() {
                 }}
             >
                 <label>
-                    Rate
+                    {t('rate')}
                     <select
                         value={type}
                         onChange={(e) => {
                             setType(e.target.value as InterestType)
                         }}
                     >
-                        <option value="legal">Legal interest (per year)</option>
-                        <option value="commercial">Commercial transactions (per semester)</option>
+                        <option value="legal">{t('legal')}</option>
+                        <option value="commercial">{t('commercial')}</option>
                     </select>
                 </label>
                 <label>
-                    Principal (€)
+                    {t('principal')}
                     <input
                         inputMode="decimal"
                         value={amount}
@@ -150,7 +161,7 @@ export function InterestCalculator() {
                     />
                 </label>
                 <label>
-                    From
+                    {t('from')}
                     <input
                         type="date"
                         value={from}
@@ -161,7 +172,7 @@ export function InterestCalculator() {
                     />
                 </label>
                 <label>
-                    To
+                    {t('to')}
                     <input
                         type="date"
                         value={to}
@@ -179,7 +190,7 @@ export function InterestCalculator() {
                                 setNewer(e.target.checked)
                             }}
                         />
-                        Contract concluded on or after 16 March 2013
+                        {t('newerContract')}
                     </label>
                 )}
             </form>
@@ -188,46 +199,45 @@ export function InterestCalculator() {
                 null
             : parsed === 'ambiguous' ?
                 <p className="warn" role="alert">
-                    Is the separator in {amount} for thousands or for decimals? Write the amount
-                    without one (10000) or with decimals (10000,00).
+                    {t('ambiguous', { amount })}
                 </p>
             : !valid ?
-                <p className="muted">
-                    Enter a positive amount and a start date before the end date.
-                </p>
+                <p className="muted">{t('invalid')}</p>
             :   <>
                     <p className="total">
-                        <span className="muted">Interest</span>
+                        <span className="muted">{t('interest')}</span>
                         <strong>{euro.format(total)}</strong>
                         <span className="muted">
-                            on {euro.format(value)} over {rows.reduce((s, r) => s + r.days, 0)} days
+                            {t('over', {
+                                amount: euro.format(value),
+                                days: rows.reduce((s, r) => s + r.days, 0),
+                            })}
                         </span>
                     </p>
                     {missing && (
                         <p className="warn" role="note">
-                            ⚠ Part of the period has no rate on file (rates are known up to {latest}
-                            ); it isn&apos;t counted.
+                            ⚠ {t('missing', { date: formatDay(latest, locale) })}
                         </p>
                     )}
                     <div className="table-wrap">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>From</th>
-                                    <th>To</th>
-                                    <th className="num">Days</th>
-                                    <th className="num">Rate</th>
-                                    <th className="num">Interest</th>
+                                    <th>{t('from')}</th>
+                                    <th>{t('to')}</th>
+                                    <th className="num">{t('days')}</th>
+                                    <th className="num">{t('rate')}</th>
+                                    <th className="num">{t('interest')}</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {rows.map((r) => (
                                     <tr key={r.from}>
-                                        <td>{r.from}</td>
-                                        <td>{r.to}</td>
+                                        <td>{formatDay(r.from, locale)}</td>
+                                        <td>{formatDay(r.to, locale)}</td>
                                         <td className="num">{r.days}</td>
                                         <td className="num">
-                                            {r.rate === null ? '—' : `${r.rate} %`}
+                                            {r.rate === null ? '—' : percent.format(r.rate / 100)}
                                         </td>
                                         <td className="num">
                                             {r.rate === null ? '—' : euro.format(r.interest)}

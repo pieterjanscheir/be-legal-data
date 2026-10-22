@@ -1,15 +1,16 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import Link from 'next/link'
-import type { CourtType } from 'belgica'
-import { courtTypeLabel, courtTypes, kindLabel, type PerLocale } from '@/lib/labels'
+import { useTranslations } from 'next-intl'
+import type { Court, CourtType } from 'belgica'
+import { Link } from '@/i18n/navigation'
+import { courtTypes, type PerLocale } from '@/lib/labels'
 import { Name } from './Name'
 
 export interface CourtRow {
     id: string
     type: CourtType
-    kind: keyof typeof kindLabel
+    kind: Court['kind']
     name: PerLocale
     /** Every name, folded, for the text filter */
     search: string
@@ -20,6 +21,9 @@ const fold = (s: string) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCas
 
 /** Every court, division and seat, filtered by type and by name or city */
 export function CourtList({ rows }: { rows: CourtRow[] }) {
+    const t = useTranslations('courts')
+    const types = useTranslations('courtType')
+    const kinds = useTranslations('kind')
     const [type, setType] = useState<CourtType | ''>('')
     const [query, setQuery] = useState('')
     const [divisions, setDivisions] = useState(true)
@@ -38,24 +42,24 @@ export function CourtList({ rows }: { rows: CourtRow[] }) {
             <div className="filters">
                 <input
                     type="search"
-                    placeholder="Name or city"
-                    aria-label="Filter by name or city"
+                    placeholder={t('filterPlaceholder')}
+                    aria-label={t('filterLabel')}
                     value={query}
                     onChange={(e) => {
                         setQuery(e.target.value)
                     }}
                 />
                 <select
-                    aria-label="Court type"
+                    aria-label={t('typeLabel')}
                     value={type}
                     onChange={(e) => {
                         setType(e.target.value as CourtType | '')
                     }}
                 >
-                    <option value="">Every type</option>
-                    {courtTypes.map((t) => (
-                        <option key={t} value={t}>
-                            {courtTypeLabel[t]}
+                    <option value="">{t('everyType')}</option>
+                    {courtTypes.map((type) => (
+                        <option key={type} value={type}>
+                            {types(type)}
                         </option>
                     ))}
                 </select>
@@ -67,10 +71,10 @@ export function CourtList({ rows }: { rows: CourtRow[] }) {
                             setDivisions(e.target.checked)
                         }}
                     />
-                    Divisions and seats
+                    {t('divisions')}
                 </label>
                 <span className="muted count" aria-live="polite">
-                    {shown.length} of {rows.length}
+                    {t('count', { shown: shown.length, total: rows.length })}
                 </span>
             </div>
             <ul className="rows">
@@ -82,9 +86,9 @@ export function CourtList({ rows }: { rows: CourtRow[] }) {
                             </span>
                             <span className="row-meta">
                                 {r.kind !== 'court' && (
-                                    <span className="pill">{kindLabel[r.kind]}</span>
+                                    <span className="pill">{kinds(r.kind)}</span>
                                 )}
-                                {courtTypeLabel[r.type]}
+                                {types(r.type)}
                                 {r.city && ` · ${r.city}`}
                             </span>
                         </Link>

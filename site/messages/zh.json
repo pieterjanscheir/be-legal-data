@@ -1,0 +1,187 @@
+{
+    "meta": {
+        "title": "belgica explorer",
+        "description": "比利时所有法院、司法区、市镇和邮政编码，以及法定利率：一个基于 belgica 软件包构建的网站。"
+    },
+    "nav": {
+        "skip": "跳到正文",
+        "main": "主导航",
+        "courts": "法院",
+        "cantons": "司法区",
+        "municipalities": "市镇",
+        "interest": "利息",
+        "places": "监狱与司法之家",
+        "siteLanguage": "语言",
+        "namesLanguage": "官方名称的语言"
+    },
+    "footer": {
+        "builtFrom": "每个页面都在构建时由 <npm>belgica</npm> 生成：<docs>文档</docs> · <source>本站源代码</source>",
+        "disclaimer": "参考数据，并非法律意见：使用前请核对官方来源。市镇和邮政编码数据 © Statbel，司法区边界 © NGI，CC BY 4.0。"
+    },
+    "code": {
+        "caption": "使用 belgica"
+    },
+    "courtType": {
+        "justice-of-the-peace": "治安法院",
+        "police-court": "警察法院",
+        "court-of-first-instance": "初审法院",
+        "enterprise-court": "企业法院",
+        "labour-court": "劳动法院",
+        "court-of-appeal": "上诉法院",
+        "labour-court-of-appeal": "劳动上诉法院",
+        "court-of-assize": "重罪法院"
+    },
+    "kind": {
+        "court": "法院",
+        "division": "分庭",
+        "seat": "驻地"
+    },
+    "search": {
+        "placeholder": "邮政编码、市镇、司法区或法院",
+        "postalCode": "邮政编码",
+        "municipality": "市镇",
+        "canton": "司法区",
+        "cantonName": "{name} 司法区"
+    },
+    "home": {
+        "eyebrow": "基于 belgica 软件包构建",
+        "title": "哪个法院有管辖权，在哪里？",
+        "lede": "输入邮政编码或市镇，即可找到其治安法院、警察法院以及其他所有法院和书记处的联系方式。也可以浏览法院、司法区地图和利率，所有内容均读取自软件包的数据。",
+        "try": "试试",
+        "example9000": "Gent：一个市镇，五个司法区",
+        "example1050": "Elsene 和 Brussels 共用",
+        "example4700": "Eupen：德语法院",
+        "mapLabel": "比利时 {count} 个司法区的地图",
+        "statsLabel": "数据包含的内容",
+        "statCourts": "法院、分庭和驻地",
+        "statCantons": "司法区",
+        "statMunicipalities": "市镇",
+        "statPostalCodes": "邮政编码",
+        "statPlaces": "监狱与司法之家",
+        "statRates": "1970 年以来的利率期间",
+        "featureAddressTitle": "按地址查找法院",
+        "featureAddress": "从邮政编码到其市镇、所属司法区以及每个有管辖权的法院。被分割的城市会列出每个司法区及其区域的法律条文。",
+        "featureMapTitle": "司法区地图",
+        "featureMap": "NGI 提供的每个司法区的边界，可用于查找某个地点所属的司法区并将其绘制出来。每个司法区都有其法律依据和所含市镇。",
+        "featureInterestTitle": "利息计算器",
+        "featureInterest": "1970 年以来的法定利率和商业利率，并包含适用于 2013 年 3 月 16 日之前所订合同的规则。计算器只加载 <code>belgica/interest-rates</code>。",
+        "featureCourtsTitle": "所有法院，三种语言",
+        "featureCourts": "各法院公布的名称、地址、国内格式的电话号码、IBAN、办公时间和 ECLI 代码。可在顶部切换 NL · FR · DE。"
+    },
+    "competence": {
+        "justiceOfThePeace": "治安法院",
+        "split": "该市镇分属 {count} 个司法区，由街道地址决定。《司法法典》对各司法区区域的描述如下：",
+        "areaOf": "<link>{name}</link> 司法区的区域",
+        "otherCourts": "其他法院",
+        "divisionNote": "此为整个法院：由哪个分庭审理案件由王室法令规定。"
+    },
+    "contacts": {
+        "phone": "电话",
+        "fax": "传真",
+        "email": "电子邮件",
+        "bank-account": "银行账户",
+        "none": "未公布联系方式。"
+    },
+    "postalCode": {
+        "crumbSearch": "搜索",
+        "crumb": "邮政编码",
+        "title": "{code} {names}：法院",
+        "shared": "{code} 属于 {count} 个市镇，具体由街道决定。下面分别列出每个市镇的法院。",
+        "refnis": "REFNIS {id} · 邮政编码 {codes}"
+    },
+    "municipalities": {
+        "title": "市镇",
+        "lede": "按省份列出的 {count} 个市镇及其 REFNIS 代码。每个页面列出其邮政编码、司法区和有管辖权的法院。"
+    },
+    "municipality": {
+        "refnis": "REFNIS 代码",
+        "region": "大区",
+        "province": "省",
+        "arrondissement": "司法辖区",
+        "postalCodes": "邮政编码",
+        "competentCourts": "有管辖权的法院",
+        "mapLabel": "{arrondissement} 的司法区，突出显示 {municipality} 所属的司法区"
+    },
+    "cantons": {
+        "title": "司法区",
+        "lede": "治安法院的 {count} 个管辖区域，根据国家地理研究所的边界绘制。将鼠标悬停在司法区上可显示名称，点击即可打开。",
+        "mapLabel": "司法区地图"
+    },
+    "canton": {
+        "title": "{name} 司法区",
+        "seat": "驻地",
+        "arrondissement": "司法辖区",
+        "judicialArea": "司法区域",
+        "municipalities": "市镇",
+        "part": "（部分）",
+        "legalBasis": "法律依据",
+        "judicialCode": "《司法法典》",
+        "area": "法律所描述的区域",
+        "courts": "管辖该司法区的法院",
+        "courtsNote": "首先是本司法区的治安法院，然后是区域涵盖本司法区的法院。",
+        "mapLabel": "该司法辖区的各司法区，突出显示 {name}"
+    },
+    "courts": {
+        "title": "法院",
+        "lede": "tribunaux-rechtbanken.be 上公布的所有法院、分庭和驻地，每周重新生成。",
+        "filterPlaceholder": "名称或城市",
+        "filterLabel": "按名称或城市筛选",
+        "typeLabel": "法院类型",
+        "everyType": "所有类型",
+        "divisions": "分庭和驻地",
+        "count": "{shown} / {total}"
+    },
+    "court": {
+        "kindOf": "<link>{name}</link> 的{kind}",
+        "publishedNames": "{count, plural, other {公布的名称}}",
+        "cantonLabel": "司法区标注",
+        "registry": "书记处",
+        "area": "管辖区域",
+        "ecli": "ECLI",
+        "openingHours": "办公时间",
+        "contacts": "联系方式",
+        "coversOne": "管辖 <link>{name}</link> 司法区",
+        "coversMany": "管辖 {count} 个司法区",
+        "mapLabel": "突出显示该法院所管辖{count, plural, other {的 # 个司法区}}的地图",
+        "hoursPublished": "公布的办公时间",
+        "seats": "驻地",
+        "divisions": "分庭",
+        "sources": "来源",
+        "checked": "核对于 {date}"
+    },
+    "interest": {
+        "title": "利息计算器",
+        "lede": "按法定利率或商业交易利率计算单利，并按所跨越的利率期间分段计算：天数 × 本金 × 利率 ÷ 365。计算器仅依靠 <code>belgica/interest-rates</code> 在浏览器中运行，不需要法院或地域数据。",
+        "rate": "利率",
+        "legal": "法定利息（按年）",
+        "commercial": "商业交易（按半年）",
+        "principal": "本金（€）",
+        "from": "起始日期",
+        "to": "结束日期",
+        "newerContract": "合同于 2013 年 3 月 16 日或之后订立",
+        "ambiguous": "{amount} 中的分隔符表示千位还是小数？请不使用分隔符（10000）或带小数（10000,00）填写金额。",
+        "invalid": "请输入正数金额，并确保起始日期早于结束日期。",
+        "interest": "利息",
+        "over": "{amount}，共 {days} 天",
+        "missing": "部分期间没有利率记录（已知利率截至 {date}），该部分未计入。",
+        "days": "天数",
+        "sources": "来源",
+        "sourcesText": "法定利率：{legal}。商业利率：{commercial}。",
+        "disclaimer": "仅为计算辅助，并非法律意见：判决或合同可能规定其他规则，例如利息资本化。"
+    },
+    "places": {
+        "title": "监狱与司法之家",
+        "lede": "联邦司法部的 {prisons} 所监狱和拘留所，以及各语言共同体管理的 {houses} 个司法之家。",
+        "prisons": "监狱",
+        "housesOfJustice": "司法之家",
+        "prison": "监狱",
+        "detentionHouse": "拘留所",
+        "flemish": "弗拉芒语共同体",
+        "french": "法语共同体",
+        "german": "德语共同体"
+    },
+    "notFound": {
+        "title": "页面未找到",
+        "back": "返回 explorer"
+    }
+}

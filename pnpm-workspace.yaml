@@ -2,6 +2,8 @@ packages:
     - site
 
 allowBuilds:
+    '@parcel/watcher': false
+    '@swc/core': false
     esbuild: true
     sharp: false
     unrs-resolver: false

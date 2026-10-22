@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useLocale } from 'next-intl'
+import { useRouter } from '@/i18n/navigation'
 import { fetchJson } from '@/lib/fetch-json'
 
 export interface Entry {
@@ -21,14 +22,15 @@ const fold = (s: string) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCas
  */
 export function Search({ placeholder }: { placeholder: string }) {
     const router = useRouter()
+    const locale = useLocale()
     const [entries, setEntries] = useState<Entry[]>([])
     const [query, setQuery] = useState('')
     const [active, setActive] = useState(0)
     useEffect(() => {
-        fetchJson<Entry[]>('/search-index.json').then(setEntries, () => {
+        fetchJson<Entry[]>(`/${locale}/search-index.json`).then(setEntries, () => {
             setEntries([])
         })
-    }, [])
+    }, [locale])
     const index = useMemo(
         () => entries.map((e) => ({ e, text: fold(`${e.label} ${e.alt ?? ''}`) })),
         [entries],
