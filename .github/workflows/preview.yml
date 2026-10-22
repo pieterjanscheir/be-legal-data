@@ -1,0 +1,31 @@
+name: Preview
+
+# Publishes each pull request as an installable preview package on pkg.pr.new (not on npm), and
+# comments the install command on the pull request: `npm i https://pkg.pr.new/belgica@<pr>`.
+# Needs the pkg.pr.new GitHub App installed on the repository: https://github.com/apps/pkg-pr-new.
+on:
+    pull_request:
+
+permissions: {}
+
+concurrency:
+    group: preview-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    publish:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  persist-credentials: false
+            - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+            - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+              with:
+                  node-version: 24
+                  cache: pnpm
+            - run: pnpm install --frozen-lockfile
+            - run: pnpm build
+            # A data package has nothing to show in a StackBlitz template. pkg.pr.new isn't npm,
+            # so npm trusted publishing doesn't apply
+            - run: pnpm exec pkg-pr-new publish --no-template # zizmor: ignore[use-trusted-publishing]
