@@ -7,7 +7,18 @@
  */
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { dirname } from 'node:path'
-import {
+import type * as Root from '../src/index.ts'
+import type * as Boundaries from '../src/canton-boundaries.ts'
+import type * as Courts from '../src/courts.ts'
+import type * as Houses from '../src/houses-of-justice.ts'
+import type * as Postal from '../src/postal-codes.ts'
+import type * as Prisons from '../src/prisons.ts'
+import type * as Territory from '../src/territory.ts'
+
+// The built package (pnpm build first), typed from src/: Node can't load src/ itself, which
+// imports JSON without import attributes, and typecheck runs before the build
+const load = <T>(entry: string) => import(`../dist/${entry}.js`) as Promise<T>
+const {
     cantons,
     courts,
     findCompetentCourts,
@@ -31,18 +42,15 @@ import {
     postalCodes,
     prisons,
     toDay,
-    type CourtType,
-} from '../dist/index.js'
-import {
-    cantonBoundaries,
-    cantonBoundariesCoverage,
-    findCantonsAt,
-} from '../dist/canton-boundaries.js'
-import { courtsCoverage } from '../dist/courts.js'
-import { housesOfJusticeCoverage } from '../dist/houses-of-justice.js'
-import { postalCodesCoverage } from '../dist/postal-codes.js'
-import { prisonsCoverage } from '../dist/prisons.js'
-import { territoryCoverage } from '../dist/territory.js'
+} = await load<typeof Root>('index')
+const { cantonBoundaries, cantonBoundariesCoverage, findCantonsAt } =
+    await load<typeof Boundaries>('canton-boundaries')
+const { courtsCoverage } = await load<typeof Courts>('courts')
+const { housesOfJusticeCoverage } = await load<typeof Houses>('houses-of-justice')
+const { postalCodesCoverage } = await load<typeof Postal>('postal-codes')
+const { prisonsCoverage } = await load<typeof Prisons>('prisons')
+const { territoryCoverage } = await load<typeof Territory>('territory')
+type CourtType = Root.CourtType
 
 const out = process.argv[2] ?? 'python/tests/.cases/parity.json'
 const today = toDay(new Date())
