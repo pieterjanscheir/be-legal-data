@@ -69,7 +69,7 @@
         "featureCourtsTitle": "Elke rechtbank, in drie talen",
         "featureCourts": "Namen zoals elke rechtbank ze publiceert, adressen, telefoonnummers in nationaal formaat, IBAN's, openingsuren en ECLI-codes. Wissel bovenaan tussen NL · FR · DE."
     },
-    "competence": {
+    "jurisdiction": {
         "justiceOfThePeace": "Vredegerecht",
         "split": "Deze gemeente is verdeeld over {count} kantons: het straatadres beslist. Het gebied van elk kanton, zoals het Gerechtelijk Wetboek het omschrijft:",
         "areaOf": "Gebied van kanton <link>{name}</link>",
@@ -100,7 +100,7 @@
         "province": "Provincie",
         "arrondissement": "Gerechtelijk arrondissement",
         "postalCodes": "Postcodes",
-        "competentCourts": "Bevoegde rechtbanken",
+        "courtsWithJurisdiction": "Bevoegde rechtbanken",
         "mapLabel": "Kantons van {arrondissement}, met die van {municipality} gemarkeerd"
     },
     "cantons": {

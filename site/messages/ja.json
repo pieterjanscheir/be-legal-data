@@ -69,7 +69,7 @@
         "featureCourtsTitle": "すべての裁判所を3言語で",
         "featureCourts": "各裁判所が公表している名称、住所、国内形式の電話番号、IBAN、開庁時間、ECLI コード。上部で NL · FR · DE を切り替えられます。"
     },
-    "competence": {
+    "jurisdiction": {
         "justiceOfThePeace": "治安判事裁判所",
         "split": "この自治体は {count} のカントンに分かれており、番地によって管轄が決まります。司法法典が定める各カントンの区域：",
         "areaOf": "カントン <link>{name}</link> の区域",
@@ -100,7 +100,7 @@
         "province": "州",
         "arrondissement": "司法管区",
         "postalCodes": "郵便番号",
-        "competentCourts": "管轄の裁判所",
+        "courtsWithJurisdiction": "管轄の裁判所",
         "mapLabel": "{arrondissement} のカントン（{municipality} のカントンを強調表示）"
     },
     "cantons": {

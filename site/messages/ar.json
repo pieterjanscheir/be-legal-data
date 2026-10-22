@@ -69,7 +69,7 @@
         "featureCourtsTitle": "جميع المحاكم، بثلاث لغات",
         "featureCourts": "الأسماء كما تنشرها كل محكمة، والعناوين، وأرقام الهاتف بالصيغة الوطنية، وأرقام IBAN، وساعات العمل، ورموز ECLI. بدّل بين NL · FR · DE في أعلى الصفحة."
     },
-    "competence": {
+    "jurisdiction": {
         "justiceOfThePeace": "محكمة الصلح",
         "split": "هذه البلدية مقسّمة على {count} كانتونات: عنوان الشارع هو الذي يحدد. نطاق كل كانتون كما يصفه القانون القضائي:",
         "areaOf": "نطاق كانتون <link>{name}</link>",
@@ -100,7 +100,7 @@
         "province": "المقاطعة",
         "arrondissement": "الدائرة القضائية",
         "postalCodes": "الرموز البريدية",
-        "competentCourts": "المحاكم المختصة",
+        "courtsWithJurisdiction": "المحاكم المختصة",
         "mapLabel": "كانتونات {arrondissement}، مع إبراز كانتونات {municipality}"
     },
     "cantons": {
