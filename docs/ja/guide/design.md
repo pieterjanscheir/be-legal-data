@@ -99,7 +99,7 @@ pull request を作成します。手で入力するものは何もありませ�
 で重くならないようにしています。パーサーは実際のページを切り詰めたコピーでテストします。
 パーサーが位置づけられないページがあると、半分だけ正しいレコードを作る代わりにビルドを止めます。
 二つの情報源（ejustice、police.be）は GitHub のサーバーからのアクセスを拒否するため、通常の
-マシンから取得しています（[#24](https://github.com/pieterjanscheir/belgica/issues/24)）。
+マシンから取得しています（[#52](https://github.com/pieterjanscheir/belgica/issues/52)）。
 
 ## 8. 配布：ESM のみ、Node 22.12+、release 時にビルド {#_8-distribution-esm-only-node-22-12-built-on-release}
 

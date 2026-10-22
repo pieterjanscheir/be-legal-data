@@ -57,7 +57,7 @@ Pour l'exécuter vous-même : `pnpm fetch:sources` (écrit dans `.sources/`), pu
 
 Les cantons et les communes sont reconstruits à la main avec `pnpm build:cantons` : le site du
 Moniteur belge refuse les serveurs de GitHub
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## Contrôles automatiques {#automatic-checks}
 

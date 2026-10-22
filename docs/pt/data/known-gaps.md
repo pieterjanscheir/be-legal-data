@@ -9,7 +9,7 @@ import { data as stats } from '../../.vitepress/stats.data'
   tribunais disciplinares ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
 - **A competência para no tribunal.** `cantons` e `findCompetentCourts` dizem que tribunal
   abrange um município, não qual das suas divisões: a área de uma divisão é fixada por decreto
-  real e ainda não está nos dados.
+  real e ainda não está nos dados ([#58](https://github.com/pieterjanscheir/belgica/issues/58)).
 - **{{ stats.courts.withoutAddress }} tribunais não têm uma morada única**: um tribunal cujas
   divisões têm cada uma a sua (a morada está na divisão), ou um que publica as suas moradas como
   frase. O seu `address` falta em vez de ser adivinhado; as divisões têm a delas.
@@ -36,11 +36,13 @@ import { data as stats } from '../../.vitepress/stats.data'
   Um código postal leva-o até ao município (`findCourtsForPostalCode`); escolher o cantão exige a
   morada completa: `findCantonsAt(lon, lat)` encontra-o a partir de coordenadas com os
   [limites dos cantões](./canton-boundaries), mas a geocodificação da morada fica a seu cargo, e
-  os limites são a leitura do NGI do texto legal em `territory`, que prevalece quando discordam.
+  os limites são a leitura do NGI do texto legal em `territory`, que prevalece quando discordam
+  ([#66](https://github.com/pieterjanscheir/belgica/issues/66)).
 - **Os códigos postais param no município.** As subdivisões dos municípios (deelgemeenten /
   sections de commune, os antigos municípios anteriores às fusões) não estão nos dados: a tabela do Statbel não as tem, e a
   lista da bpost não tem licença aberta. Três códigos (`1040`, `1050`, `1804`) pertencem a dois
-  municípios; as pesquisas devolvem ambos.
+  municípios; as pesquisas devolvem ambos
+  ([#54](https://github.com/pieterjanscheir/belgica/issues/54)).
 - **Uma morada de tribunal sem município**: o justice de paix de Etterbeek publica
   `1040 Brussel (Etterbeek)`, um código partilhado com uma linha de localidade que menciona os
   dois municípios, por isso `address.municipality` fica de fora em vez de ser adivinhado. O

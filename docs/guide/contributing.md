@@ -103,16 +103,25 @@ Every dataset gets the same treatment, so users can rely on it:
 | `pnpm test:freshness`       | Date-based checks: missing rates, overdue reviews. Not part of `check`; `FRESHNESS_ONLINE=1` also checks the source URLs                                      |
 | `pnpm fetch:sources`        | Fetch the official sources into `.sources/`                                                                                                                   |
 | `pnpm build:data`           | Rebuild the courts, prisons, houses of justice, postal codes, regions, provinces and canton boundaries from `.sources/`                                       |
+| `pnpm build:cases`          | Write the TypeScript helpers' answers for the Python package's tests into `python/tests/.cases/` (after `pnpm build`)                                         |
 | `pnpm build:csv`            | Write the data as CSV tables into `csv/`                                                                                                                      |
 
 ## Releasing
 
-1. Move the Unreleased entries in `CHANGELOG.md` under the new version.
-2. Bump `version` in `package.json` and commit.
-3. Tag it and push: `git tag v0.3.0 && git push && git push --tags`.
+1. Run the **Prepare release** workflow from the Actions tab and pick patch, minor or major by
+   the id rules at the top of `CHANGELOG.md`. It moves the Unreleased entries under the new
+   version, bumps `version` in `package.json` and the Python package (`python/pyproject.toml`
+   and `python/uv.lock`), points the raw data links in the docs at the new
+   tag (`scripts/prepare-release.ts`), and opens the release pull request.
+2. Close and reopen that pull request to run CI, check it, and merge it.
 
-The release workflow runs `pnpm check`, publishes the tag to npm with provenance, and creates
-a GitHub release with the data, schemas and CSV tables attached. The tag has to match `version`.
+Merging a new `version` into main starts the release workflow: it runs `pnpm check`, publishes
+to npm with provenance and to PyPI, tags the commit, and creates a GitHub release with the data, schemas and
+CSV tables attached. Bumping the version by hand in a pull request, or pushing a `v*` tag that
+matches `version`, releases the same way.
+
+Every pull request also gets a preview package from [pkg.pr.new](https://pkg.pr.new), with the
+install command in a comment, to try a change before it's released.
 
 ## This website
 

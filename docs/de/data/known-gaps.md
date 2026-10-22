@@ -9,7 +9,8 @@ import { data as stats } from '../../.vitepress/stats.data'
   ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
 - **Die Zuständigkeit endet beim Gericht.** `cantons` und `findCompetentCourts` sagen, welches
   Gericht eine Gemeinde abdeckt, nicht welche seiner Abteilungen: Das Gebiet einer Abteilung wird
-  durch Königlichen Erlass festgelegt und ist noch nicht in den Daten.
+  durch Königlichen Erlass festgelegt und ist noch nicht in den Daten
+  ([#58](https://github.com/pieterjanscheir/belgica/issues/58)).
 - **{{ stats.courts.withoutAddress }} Gerichte haben keine einheitliche Adresse**: ein Gericht,
   dessen Abteilungen je eine eigene haben (die Adresse steht bei der Abteilung), oder eines, das
   seine Adressen als Satz veröffentlicht. Ihr `address` fehlt, statt geraten zu werden; die
@@ -37,11 +38,12 @@ import { data as stats } from '../../.vitepress/stats.data'
   Postleitzahl führt zur Gemeinde (`findCourtsForPostalCode`); für die Wahl des Kantons braucht es
   die Straßenadresse: `findCantonsAt(lon, lat)` findet ihn aus Koordinaten mit den
   [Kantonsgrenzen](./canton-boundaries), aber das Geocodieren der Adresse liegt bei Ihnen, und die
-  Grenzen sind die Lesart des NGI des Gesetzestexts in `territory`, der bei Abweichungen gewinnt.
+  Grenzen sind die Lesart des NGI des Gesetzestexts in `territory`, der bei Abweichungen gewinnt
+  ([#66](https://github.com/pieterjanscheir/belgica/issues/66)).
 - **Postleitzahlen enden bei der Gemeinde.** Teilgemeinden (deelgemeenten) sind nicht in den Daten:
   Die Tabelle von Statbel enthält keine, und die Liste von bpost steht nicht unter einer offenen
   Lizenz. Drei Codes (`1040`, `1050`, `1804`) gehören zu zwei Gemeinden; die Nachschlagefunktionen
-  geben beide zurück.
+  geben beide zurück ([#54](https://github.com/pieterjanscheir/belgica/issues/54)).
 - **Eine Gerichtsadresse ohne Gemeinde**: Das Friedensgericht Etterbeek veröffentlicht
   `1040 Brussel (Etterbeek)`, einen geteilten Code mit einer Ortszeile, die beide Gemeinden nennt;
   `address.municipality` wird daher weggelassen, statt geraten zu werden. Das Friedensgericht

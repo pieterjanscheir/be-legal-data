@@ -54,7 +54,7 @@ Um es selbst auszuführen: `pnpm fetch:sources` (schreibt `.sources/`), dann `pn
 
 Die Kantone und Gemeinden werden von Hand mit `pnpm build:cantons` neu gebaut: Die Website des
 Belgischen Staatsblatts verweigert sich den Servern von GitHub
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## Automatische Prüfungen {#automatic-checks}
 

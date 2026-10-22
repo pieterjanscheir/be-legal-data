@@ -113,7 +113,7 @@ soit pas alourdi de mégaoctets de HTML. Les analyseurs sont testés sur des cop
 vraies pages. Une page que l'analyseur ne parvient pas à situer arrête la construction au lieu de
 produire un enregistrement à moitié correct. Deux sources refusent les serveurs de GitHub
 (ejustice, police.be) ; elles sont récupérées depuis une machine ordinaire
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## 8. Distribution : ESM uniquement, Node 22.12+, construit à la release {#_8-distribution-esm-only-node-22-12-built-on-release}
 

@@ -4,34 +4,44 @@
 джерела, запропоновані поля і що означає «готово». Допомога вітається: виберіть одне і
 дотримуйтеся [домовленостей](/uk/guide/contributing#adding-a-dataset).
 
-## Заплановано {#planned}
+## Суди, установи й особи {#courts-offices-and-people}
 
-| Набір даних                                                                                                                                           | Чим він корисний                                                                              | Issue                                                       |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| **Інші суди**: Hof van Cassatie / Cour de cassation, Grondwettelijk Hof / Cour constitutionnelle, Raad van State / Conseil d'État, дисциплінарні суди | Найвищих судів немає на порталі судів, тож для них потрібні власні джерела                    | [#4](https://github.com/pieterjanscheir/belgica/issues/4)   |
-| **Justitiehuis в Eupen** (Німецькомовна спільнота)                                                                                                    | Єдиний justitiehuis / maison de justice, якого в даних поки немає                             | [#3](https://github.com/pieterjanscheir/belgica/issues/3)   |
-| **Історія**: коли змінювалися кантони, громади й суди                                                                                                 | Модель має періоди чинності і пошук за днем; для попередніх версій ще бракує даних            | [#27](https://github.com/pieterjanscheir/belgica/issues/27) |
-| **Адреса → координати**                                                                                                                               | [Межі кантонів](./canton-boundaries) знаходять кантон точки; бракує кроку геокодування адреси | [#28](https://github.com/pieterjanscheir/belgica/issues/28) |
-| **Контори судових виконавців** (gerechtsdeurwaarders / huissiers de justice)                                                                          | Знайти судового виконавця в судовому окрузі для вручення документів чи примусового виконання  | [#6](https://github.com/pieterjanscheir/belgica/issues/6)   |
-| **Поліцейські зони** (politiezones / zones de police)                                                                                                 | Яка зона обслуговує громаду: скарги, копії протоколів                                         | [#7](https://github.com/pieterjanscheir/belgica/issues/7)   |
-| **Кадастр і управління правової визначеності** (kadaster, колишні hypotheekkantoren)                                                                  | Запитувати іпотечні довідки й кадастрові витяги в компетентному управлінні                    | [#8](https://github.com/pieterjanscheir/belgica/issues/8)   |
+| Набір даних                                                                                                                                           | Чим він корисний                                                                                  | Issue                                                       |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **Інші суди**: Hof van Cassatie / Cour de cassation, Grondwettelijk Hof / Cour constitutionnelle, Raad van State / Conseil d'État, дисциплінарні суди | Найвищих судів немає на порталі судів, тож для них потрібні власні джерела                        | [#4](https://github.com/pieterjanscheir/belgica/issues/4)   |
+| **Justitiehuis в Eupen** (Німецькомовна спільнота)                                                                                                    | Єдиний justitiehuis / maison de justice, якого в даних поки немає                                 | [#3](https://github.com/pieterjanscheir/belgica/issues/3)   |
+| **Компетенція за відділеннями суду** (afdelingen / divisions)                                                                                         | Куди подавати в межах суду, і позначка RPR / RPM на документах компаній                           | [#58](https://github.com/pieterjanscheir/belgica/issues/58) |
+| **Прокуратури** (parketten, arbeidsauditoraten, parketten-generaal, федеральна прокуратура)                                                           | Куди подати кримінальну скаргу, і трудовий прокурор у справах соціального права                   | [#55](https://github.com/pieterjanscheir/belgica/issues/55) |
+| **Контори судових виконавців** (gerechtsdeurwaarders / huissiers de justice)                                                                          | Знайти судового виконавця в судовому окрузі для вручення документів чи примусового виконання      | [#6](https://github.com/pieterjanscheir/belgica/issues/6)   |
+| **Поліцейські зони** (politiezones / zones de police)                                                                                                 | Яка зона обслуговує громаду: скарги, копії протоколів                                             | [#7](https://github.com/pieterjanscheir/belgica/issues/7)   |
+| **Кадастр і управління правової визначеності** (kadaster, колишні hypotheekkantoren)                                                                  | Запитувати іпотечні довідки й кадастрові витяги в компетентному управлінні                        | [#8](https://github.com/pieterjanscheir/belgica/issues/8)   |
+| **Нотаріуси і нотаріальні палати**                                                                                                                    | Знайти нотаріуса, і палату, компетентну щодо скарги                                               | [#56](https://github.com/pieterjanscheir/belgica/issues/56) |
+| **Адвокатські колегії** (balies / barreaux) та їхні бюро правової допомоги                                                                            | Бюро правової допомоги для адреси, і bâtonnier для деонтологічних питань                          | [#57](https://github.com/pieterjanscheir/belgica/issues/57) |
+| **Судові експерти та присяжні перекладачі й усні перекладачі** (національний реєстр)                                                                  | Знайти експерта за спеціальністю чи перекладача за мовною парою і перевірити, що їх зареєстровано | [#64](https://github.com/pieterjanscheir/belgica/issues/64) |
+| **Акредитовані медіатори** (erkende bemiddelaars / médiateurs agréés)                                                                                 | Знайти акредитованого медіатора за галуззю і місцевістю та перевірити акредитацію                 | [#65](https://github.com/pieterjanscheir/belgica/issues/65) |
 
-## Варто розглянути {#worth-considering}
+## Територія {#territory}
 
-Зібрано в [#9](https://github.com/pieterjanscheir/belgica/issues/9), приблизно в порядку того,
-як часто ними користувалися б:
+| Набір даних                                                                                   | Чим він корисний                                                                                   | Issue                                                       |
+| --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **Історія**: коли змінювалися кантони, громади й суди                                         | Модель має періоди чинності і пошук за днем; для попередніх версій ще бракує даних                 | [#27](https://github.com/pieterjanscheir/belgica/issues/27) |
+| **Колишні громади** та об'єднання 2019 і 2025 років                                           | Зіставити старий код REFNIS чи назву з сьогоднішньою громадою                                      | [#53](https://github.com/pieterjanscheir/belgica/issues/53) |
+| **Частини громад** (deelgemeenten / sections de commune) для кожного поштового індексу        | [Поштові індекси](./postal-codes) закінчуються на рівні громади; в адресах указано населений пункт | [#54](https://github.com/pieterjanscheir/belgica/issues/54) |
+| **Адреса → кантон** через BeST Address                                                        | [Межі кантонів](./canton-boundaries) знаходять кантон точки; бракує кроку геокодування адреси      | [#66](https://github.com/pieterjanscheir/belgica/issues/66) |
+| **Мовні території та мовні пільги** для кожної громади (taalgebieden / faciliteitengemeenten) | Мова провадження і документів, що там вручаються                                                   | [#70](https://github.com/pieterjanscheir/belgica/issues/70) |
 
-- **Частини громад** (deelgemeenten, sections de commune) для кожного поштового індексу.
-  [Поштові індекси](./postal-codes) закінчуються на рівні громади; список bpost називає
-  населені пункти, але не має коду REFNIS і відкритої ліцензії.
-- **Судові збори** (rolrechten / griffierechten) і шкала **процесуального відшкодування**
-  (rechtsplegingsvergoeding), з періодами чинності та індексацією, як і процентні ставки.
-- **Судові канікули і державні свята** за кожен рік, для обчислення процесуальних строків.
-- **Прокуратури** (parketten, arbeidsauditoraten) для кожного судового округу.
-- **Нотаріуси і нотаріальні палати**, **адвокатські колегії** (balies / barreaux).
-- **Об'єднання громад**: старі → нові коди REFNIS за 2019 і 2025 роки, щоб можна було
-  зіставити старіші дані.
-- **Індекс здоров'я** (gezondheidsindex) для індексації орендної плати.
+## Суми, ставки й календарі {#amounts-rates-and-calendars}
+
+| Набір даних                                                                               | Чим він корисний                                                                           | Issue                                                       |
+| ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
+| **Судові збори** (rolrechten / droits de mise au rôle, griffierechten / droits de greffe) | Кошториси витрат і електронне подання; збір залежить від дати подання                      | [#59](https://github.com/pieterjanscheir/belgica/issues/59) |
+| **Процесуальне відшкодування** (rechtsplegingsvergoeding / indemnité de procédure)        | Шкала та її індексація, для кожного кошторису витрат і рішення                             | [#60](https://github.com/pieterjanscheir/belgica/issues/60) |
+| **Порогові суми для компетенції та апеляції** (art. 590, 617 Ger.W.)                      | Який суд розглядає позов і чи можна оскаржити його рішення                                 | [#69](https://github.com/pieterjanscheir/belgica/issues/69) |
+| **Судові канікули і державні свята**                                                      | Обчислення процесуальних строків                                                           | [#61](https://github.com/pieterjanscheir/belgica/issues/61) |
+| **Індекс здоров'я** (gezondheidsindex / indice santé) за кожен місяць                     | Індексація орендної плати й аліментів                                                      | [#62](https://github.com/pieterjanscheir/belgica/issues/62) |
+| **Граничні суми збитків і відсотків за споживчими боргами** (Book XIX WER / CDE)          | Що можна стягнути зі споживача, який платить із запізненням                                | [#63](https://github.com/pieterjanscheir/belgica/issues/63) |
+| **Межі стягнення** (beslagbare bedragen / quotités saisissables, art. 1409 Ger.W.)        | Яку частину заробітку чи допомоги можна арештувати; індексується щороку                    | [#67](https://github.com/pieterjanscheir/belgica/issues/67) |
+| **Податкові процентні ставки**: відсотки за прострочення і мораторні відсотки             | Відсотки в податкових спорах, поряд із [законною і комерційною ставками](./interest-rates) | [#68](https://github.com/pieterjanscheir/belgica/issues/68) |
 
 ## Чому деяких наборів даних тут ще немає {#why-some-datasets-aren-t-here-yet}
 
@@ -40,6 +50,6 @@
 більшість джерел щотижня завантажує GitHub Actions. Два поки що не можна: сайт Belgisch
 Staatsblad / Moniteur belge (ejustice), з якого беруться кантони, і police.be відмовляють у
 з'єднанні серверам GitHub; натомість їх завантажують зі звичайної машини
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)). Довідник судових виконавців
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)). Довідник судових виконавців
 будується в браузері, тож для його читання потрібен браузер або дані Національної палати
 ([#6](https://github.com/pieterjanscheir/belgica/issues/6)).

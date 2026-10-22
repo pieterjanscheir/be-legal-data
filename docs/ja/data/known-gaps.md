@@ -9,7 +9,7 @@ import { data as stats } from '../../.vitepress/stats.data'
   （[#4](https://github.com/pieterjanscheir/belgica/issues/4)）。
 - **管轄は裁判所の単位までです。** `cantons` と `findCompetentCourts` は、ある自治体をどの裁判所が
   管轄するかを示しますが、その裁判所のどの部かは示しません。部の管轄区域は勅令で定められており、
-  まだデータに入っていません。
+  まだデータに入っていません（[#58](https://github.com/pieterjanscheir/belgica/issues/58)）。
 - **{{ stats.courts.withoutAddress }} の裁判所には単一の住所がありません**：部ごとに住所がある
   裁判所（住所は部の側にあります）、または住所を文章で公表している裁判所です。これらの `address`
   は推測せずに欠落させており、部にはそれぞれの住所があります。
@@ -34,10 +34,10 @@ import { data as stats } from '../../.vitepress/stats.data'
   番号から自治体まではたどれますが（`findCourtsForPostalCode`）、canton を選ぶには通りの住所が必要
   です。`findCantonsAt(lon, lat)` は [canton の境界](./canton-boundaries)を使って座標から canton を
   見つけますが、住所のジオコーディングは利用者側で行う必要があります。また境界は `territory` に
-  ある法令の条文を NGI が解釈したものであり、食い違う場合は条文が優先します。
+  ある法令の条文を NGI が解釈したものであり、食い違う場合は条文が優先します（[#66](https://github.com/pieterjanscheir/belgica/issues/66)）。
 - **郵便番号は自治体の単位までです。** 自治体内の旧自治体（deelgemeenten）はデータにありません。
   Statbel の表にはなく、bpost の一覧はオープンなライセンスではないためです。3 つのコード（`1040`、
-  `1050`、`1804`）は 2 つの自治体に属しており、検索では両方を返します。
+  `1050`、`1804`）は 2 つの自治体に属しており、検索では両方を返します（[#54](https://github.com/pieterjanscheir/belgica/issues/54)）。
 - **自治体のない裁判所の住所が一つあります**：Etterbeek の vredegerecht / justice de paix は
   `1040 Brussel (Etterbeek)` と公表しています。これは共有のコードで、都市名の行も両方の自治体を
   挙げているため、`address.municipality` は推測せずに除外しています。Limbourg の vredegerecht /

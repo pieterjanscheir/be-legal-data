@@ -17,6 +17,12 @@ with the same version number: `get_court`, `find_courts`, `get_cantons_for_munic
 the TypeScript helpers for every municipality, postal code, canton and court, a grid of points
 and interest rates since 1969, and the Python tests check the package gives the same ones.
 
+### Changed
+
+- Releases are prepared by a workflow, which opens the release pull request, and published when
+  it's merged. Pull requests get a preview package on pkg.pr.new. CI adds CodeQL, OpenSSF
+  Scorecard, zizmor and dependency review, and every action is pinned to a commit.
+
 ## [0.4.0] - 2026-10-22
 
 ### Added

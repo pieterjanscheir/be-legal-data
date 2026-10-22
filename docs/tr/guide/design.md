@@ -103,7 +103,7 @@ sürecin içinde tutar: `main` içindeki veriler gözden geçirilmeden asla değ
 ile şişmez. Ayrıştırıcılar gerçek sayfaların kırpılmış kopyaları üzerinde test edilir.
 Ayrıştırıcının yerleştiremediği bir sayfa, yarı doğru bir kayıt üretmek yerine derlemeyi
 durdurur. İki kaynak GitHub'ın sunucularını reddeder (ejustice, police.be); bunlar sıradan bir
-makineden indirilir ([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+makineden indirilir ([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## 8. Dağıtım: yalnızca ESM, Node 22.12+, sürümde derlenir {#_8-distribution-esm-only-node-22-12-built-on-release}
 

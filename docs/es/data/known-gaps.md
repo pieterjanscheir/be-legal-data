@@ -10,7 +10,7 @@ import { data as stats } from '../../.vitepress/stats.data'
   ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
 - **La competencia se detiene en el tribunal.** `cantons` y `findCompetentCourts` dicen qué
   tribunal cubre un municipio, no cuál de sus divisiones: el área de una división la fija un real
-  decreto y aún no está en los datos.
+  decreto y aún no está en los datos ([#58](https://github.com/pieterjanscheir/belgica/issues/58)).
 - **{{ stats.courts.withoutAddress }} tribunales no tienen una dirección única**: un tribunal
   cuyas divisiones tienen cada una la suya (la dirección está en la división), o uno que publica
   sus direcciones como una frase. Su `address` falta en lugar de adivinarse; las divisiones tienen
@@ -38,11 +38,11 @@ import { data as stats } from '../../.vitepress/stats.data'
   requiere la dirección postal: `findCantonsAt(lon, lat)` lo encuentra a partir de coordenadas
   con los [límites de los cantones](./canton-boundaries), pero geocodificar la dirección corre de
   tu cuenta, y los límites son la lectura que hace el NGI del texto legal de `territory`, que
-  prevalece donde discrepan.
+  prevalece donde discrepan ([#66](https://github.com/pieterjanscheir/belgica/issues/66)).
 - **Los códigos postales se detienen en el municipio.** Las secciones de municipio
   (deelgemeenten) no están en los datos: la tabla de Statbel no las tiene, y la lista de bpost no
   tiene licencia abierta. Tres códigos (`1040`, `1050`, `1804`) pertenecen a dos municipios; las
-  búsquedas devuelven ambos.
+  búsquedas devuelven ambos ([#54](https://github.com/pieterjanscheir/belgica/issues/54)).
 - **Una dirección de tribunal sin municipio**: la justice de paix de Etterbeek publica
   `1040 Brussel (Etterbeek)`, un código compartido con una línea de ciudad que nombra ambos
   municipios, así que `address.municipality` se deja fuera en lugar de adivinarse. La justice de
