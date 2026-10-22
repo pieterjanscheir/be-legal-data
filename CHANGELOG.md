@@ -7,6 +7,12 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ## [Unreleased]
 
+### Changed
+
+- Releases are prepared by a workflow, which opens the release pull request, and published when
+  it's merged. Pull requests get a preview package on pkg.pr.new. CI adds CodeQL, OpenSSF
+  Scorecard, zizmor and dependency review, and every action is pinned to a commit.
+
 ## [0.4.0] - 2026-10-22
 
 ### Added
