@@ -532,18 +532,22 @@ for an unknown code.
 getPostalCodes('44021').map((p) => p.postalCode) // ['9000', '9030', '9031', …]
 ```
 
-## Competence
+## Jurisdiction
 
 Questions that combine datasets. They're in the package root only, since they need both the
 territory and the courts.
 
-### `findCompetentCourts(municipalityId, type)`
+### `findCourtsWithJurisdiction(municipalityId, type)`
 
 ```ts
-function findCompetentCourts(municipalityId: string, type: CourtType, options?: OnDay): Court[]
+function findCourtsWithJurisdiction(
+    municipalityId: string,
+    type: CourtType,
+    options?: OnDay,
+): Court[]
 ```
 
-The courts of a type competent for a municipality on a day (today by default), by REFNIS code:
+The courts of a type with jurisdiction over a municipality on a day (today by default), by REFNIS code:
 the courts whose area, as the law sets it (`cantons`), holds one of the municipality's cantons.
 One court for most municipalities; in Brussels the Dutch- and the French-speaking court; for a
 city split over cantons, every justice of the peace that serves one of them. It gives the court
@@ -551,11 +555,13 @@ as a whole: which of its divisions hears a case is set by royal decree and isn't
 yet, so pick among `getDivisions(court.id)`. Empty for an unknown code.
 
 ```ts
-findCompetentCourts('23088', 'police-court').map((c) => c.id) // ['police-court-vilvoorde']
-findCompetentCourts('21004', 'court-of-first-instance').map((c) => c.id)
+findCourtsWithJurisdiction('23088', 'police-court').map((c) => c.id) // ['police-court-vilvoorde']
+findCourtsWithJurisdiction('21004', 'court-of-first-instance').map((c) => c.id)
 // ['court-of-first-instance-brussel-fr', 'court-of-first-instance-brussel-nl']
-findCompetentCourts('44021', 'labour-court').map((c) => c.id) // ['labour-court-gent']
+findCourtsWithJurisdiction('44021', 'labour-court').map((c) => c.id) // ['labour-court-gent']
 ```
+
+It used to be called `findCompetentCourts`; that name still works, but is deprecated and goes in 1.0.
 
 ### `findJusticesOfThePeace(municipalityId)`
 
@@ -592,7 +598,7 @@ function findCourtsForPostalCode(
 interface PostalCodeCourts {
     municipality: Municipality
     justicesOfThePeace: CantonCourt[] // findJusticesOfThePeace(municipality.id)
-    courts: Court[] // findCompetentCourts(municipality.id, type)
+    courts: Court[] // findCourtsWithJurisdiction(municipality.id, type)
 }
 ```
 

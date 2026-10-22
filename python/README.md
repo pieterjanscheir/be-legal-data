@@ -21,7 +21,7 @@ It's reference data, not legal advice: check the official sources before relying
 from belgica import (
     find_arrondissements_at,
     find_cantons_at,
-    find_competent_courts,
+    find_courts_with_jurisdiction,
     find_courts,
     find_courts_for_postal_code,
     get_cantons_for_municipality,
@@ -42,7 +42,7 @@ get_cantons_for_municipality('44021', on='2025-09-15')  # Gent 1–5 on that day
 find_cantons_at(3.7268, 51.053)  # [gent-1]: the canton of a point
 find_arrondissements_at(3.7268, 51.053)  # [oost-vlaanderen]: and its arrondissement
 get_court_location('justice-of-the-peace-gent-1')['geometry']  # the court on the map, a GeoJSON Point
-find_competent_courts('23088', 'police-court')  # [police-court-vilvoorde]: which court, by REFNIS code
+find_courts_with_jurisdiction('23088', 'police-court')  # [police-court-vilvoorde]: which court, by REFNIS code
 find_courts_for_postal_code('1040', 'police-court')  # per municipality: Brussel and Etterbeek share the code
 
 get_interest_rate('2024-06-15', 'legal')  # InterestRateResult(rate=5.75, period_from='2024-01-01', period_to='2024-12-31')

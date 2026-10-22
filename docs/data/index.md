@@ -7,8 +7,8 @@ the date it was last checked against them.
 | Dataset                                                                    | Records  | What you'd use it for                                                               |
 | -------------------------------------------------------------------------- | -------- | ----------------------------------------------------------------------------------- |
 | [Judicial areas](./territory#judicial-areas)                               | 5        | Which court of appeal (and labour court of appeal) hears an appeal                  |
-| [Arrondissements](./territory#arrondissements)                             | 12       | Grouping courts, prosecutors and bailiffs; the unit most competence rules use       |
-| [Cantons](./territory#cantons)                                             | 162      | Which justice of the peace is competent for an address                              |
+| [Arrondissements](./territory#arrondissements)                             | 12       | Grouping courts, prosecutors and bailiffs; the unit most jurisdiction rules use     |
+| [Cantons](./territory#cantons)                                             | 162      | Which justice of the peace has jurisdiction over an address                         |
 | [Canton boundaries](./canton-boundaries)                                   | 162      | The canton of a point in a split city; the cantons on a map (GeoJSON)               |
 | [Arrondissement boundaries](./canton-boundaries#arrondissement-boundaries) | 12       | The arrondissements on a map (GeoJSON)                                              |
 | [Municipalities](./territory#municipalities)                               | 565      | Joining any Belgian address or statistic to the judicial map by REFNIS code         |
@@ -48,7 +48,7 @@ municipality. Names change spelling between sources and languages; ids don't.
 Belgian legal work runs into the same lookups over and over, and the official sources are hard
 to use from code:
 
-- **Competence.** The justice of the peace, police court and many other courts are competent
+- **Jurisdiction.** The justice of the peace, police court and many other courts have jurisdiction
   by place. The law (the annex to the Judicial Code) describes those areas in prose, partly
   street by street. `cantons.json` turns that into a lookup from municipality to canton, and
   keeps the legal text for the split cities; `canton-boundaries.json` adds the NGI's geometry,

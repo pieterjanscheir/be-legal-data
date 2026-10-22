@@ -68,7 +68,7 @@ def test_municipalities() -> None:
                 for c in belgica.find_justices_of_the_peace(id, on)
             ],
             'competentCourts': {
-                type: ids(belgica.find_competent_courts(id, type, on))
+                type: ids(belgica.find_courts_with_jurisdiction(id, type, on))
                 for type in case['competentCourts']
             },
         }

@@ -7,7 +7,7 @@ import { data as stats } from '../../.vitepress/stats.data'
 - **ポータルに掲載されていない裁判所**はデータにありません：Hof van Cassatie / Cour de cassation、
   Grondwettelijk Hof / Cour constitutionnelle、Raad van State / Conseil d'État、懲戒裁判所
   （[#4](https://github.com/pieterjanscheir/belgica/issues/4)）。
-- **管轄は裁判所の単位までです。** `cantons` と `findCompetentCourts` は、ある自治体をどの裁判所が
+- **管轄は裁判所の単位までです。** `cantons` と `findCourtsWithJurisdiction` は、ある自治体をどの裁判所が
   管轄するかを示しますが、その裁判所のどの部かは示しません。部の管轄区域は勅令で定められており、
   まだデータに入っていません（[#58](https://github.com/pieterjanscheir/belgica/issues/58)）。
 - **{{ stats.courts.withoutAddress }} の裁判所には単一の住所がありません**：部ごとに住所がある

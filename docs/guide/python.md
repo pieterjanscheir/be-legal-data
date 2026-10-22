@@ -59,7 +59,7 @@ The functions are the npm package's, in snake case. Options are keyword argument
 | `getCourt(id, { on })`                                  | `get_court(id, on=None)`                                      |
 | `findCourts({ type, kind, arrondissement }, { on })`    | `find_courts(type=…, kind=…, arrondissement=…, on=…)`         |
 | `getCantonsForMunicipality(id, { on })`                 | `get_cantons_for_municipality(id, on=None)`                   |
-| `findCompetentCourts(id, type, { on })`                 | `find_competent_courts(id, type, on=None)`                    |
+| `findCourtsWithJurisdiction(id, type, { on })`          | `find_courts_with_jurisdiction(id, type, on=None)`            |
 | `findCourtsForPostalCode(code, type, { on })`           | `find_courts_for_postal_code(code, type, on=None)`            |
 | `findCantonsAt(lon, lat, { on })`                       | `find_cantons_at(lon, lat, on=None)`                          |
 | `findArrondissementsAt(lon, lat, { on })`               | `find_arrondissements_at(lon, lat, on=None)`                  |
@@ -70,7 +70,7 @@ The functions are the npm package's, in snake case. Options are keyword argument
 ```python
 from belgica import (
     find_cantons_at,
-    find_competent_courts,
+    find_courts_with_jurisdiction,
     find_courts_for_postal_code,
     find_justices_of_the_peace,
     format_court_name,
@@ -87,7 +87,7 @@ find_cantons_at(3.7268, 51.053)  # [gent-1]
 for entry in find_justices_of_the_peace('44021'):
     print(entry.canton['id'], entry.court['id'], entry.partial)
 
-find_competent_courts('23088', 'police-court')  # [police-court-vilvoorde]
+find_courts_with_jurisdiction('23088', 'police-court')  # [police-court-vilvoorde]
 for entry in find_courts_for_postal_code('1040', 'police-court'):  # Brussel and Etterbeek
     print(entry.municipality['name']['nl'], [c['id'] for c in entry.courts])
 

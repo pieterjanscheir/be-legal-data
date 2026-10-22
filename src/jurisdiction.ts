@@ -39,14 +39,14 @@ export function findJusticesOfThePeace(municipalityId: string, options: OnDay = 
 }
 
 /**
- * The courts of a type competent for a municipality on a day (today by default), by REFNIS
- * code: the courts whose area, as the law sets it, holds one of its cantons. One court for most
- * municipalities; in Brussels the Dutch- and the French-speaking court; for a city split over
- * cantons, every justice of the peace that serves one of them (the street address decides, see
+ * The courts of a type with jurisdiction over a municipality on a day (today by default), by
+ * REFNIS code: the courts whose area, as the law sets it, holds one of its cantons. One court
+ * for most municipalities; in Brussels the Dutch- and the French-speaking court; for a city split
+ * over cantons, every justice of the peace that serves one of them (the street address decides, see
  * `findJusticesOfThePeace`). The court as a whole: which of its divisions hears a case is set
  * by royal decree and isn't in the data; see `getDivisions`. Empty for an unknown code.
  */
-export function findCompetentCourts(
+export function findCourtsWithJurisdiction(
     municipalityId: string,
     type: CourtType,
     options: OnDay = {},
@@ -59,12 +59,15 @@ export function findCompetentCourts(
     return [...found]
 }
 
+/** @deprecated Renamed to `findCourtsWithJurisdiction`; it goes in 1.0. */
+export const findCompetentCourts = findCourtsWithJurisdiction
+
 export interface PostalCodeCourts {
     /** One of the municipalities the postal code belongs to */
     municipality: Municipality
     /** Its justices of the peace: one, or several for a city split over cantons */
     justicesOfThePeace: CantonCourt[]
-    /** Its courts of the type asked for, as `findCompetentCourts` gives them */
+    /** Its courts of the type asked for, as `findCourtsWithJurisdiction` gives them */
     courts: Court[]
 }
 
@@ -73,7 +76,7 @@ export interface PostalCodeCourts {
  * belongs to one municipality for almost every code; 1040, 1050 and 1804 belong to two, and
  * the street then decides which, so the answer is one entry per municipality and is never
  * collapsed to one. For each: its justices of the peace (`findJusticesOfThePeace`) and its
- * courts of the type asked for (`findCompetentCourts`). Empty for an unknown postal code. A
+ * courts of the type asked for (`findCourtsWithJurisdiction`). Empty for an unknown postal code. A
  * street address in a city split over cantons still needs the cantons' `territory` to pick one.
  */
 export function findCourtsForPostalCode(
@@ -84,6 +87,6 @@ export function findCourtsForPostalCode(
     return getMunicipalitiesForPostalCode(postalCode, options).map((municipality) => ({
         municipality,
         justicesOfThePeace: findJusticesOfThePeace(municipality.id, options),
-        courts: findCompetentCourts(municipality.id, type, options),
+        courts: findCourtsWithJurisdiction(municipality.id, type, options),
     }))
 }

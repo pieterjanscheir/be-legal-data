@@ -37,7 +37,7 @@ def test_readme_examples() -> None:
     location = belgica.get_court_location('justice-of-the-peace-gent-1')
     assert location is not None and location['geometry']['type'] == 'Point'
     assert belgica.get_court_location('court-of-appeal-gent') is None
-    assert [c['id'] for c in belgica.find_competent_courts('23088', 'police-court')] == [
+    assert [c['id'] for c in belgica.find_courts_with_jurisdiction('23088', 'police-court')] == [
         'police-court-vilvoorde'
     ]
     assert [

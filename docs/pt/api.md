@@ -397,15 +397,19 @@ Vazio para um código desconhecido.
 getPostalCodes('44021').map((p) => p.postalCode) // ['9000', '9030', '9031', …]
 ```
 
-## Competência {#competence}
+## Competência {#jurisdiction}
 
 Perguntas que combinam conjuntos de dados. Estão só na raiz do pacote, porque precisam tanto do
 território como dos tribunais.
 
-### `findCompetentCourts(municipalityId, type)` {#findcompetentcourts-municipalityid-type}
+### `findCourtsWithJurisdiction(municipalityId, type)` {#findcourtswithjurisdiction-municipalityid-type}
 
 ```ts
-function findCompetentCourts(municipalityId: string, type: CourtType, options?: OnDay): Court[]
+function findCourtsWithJurisdiction(
+    municipalityId: string,
+    type: CourtType,
+    options?: OnDay,
+): Court[]
 ```
 
 Os tribunais de um tipo competentes para um município num dia (hoje por omissão), por código
@@ -417,10 +421,10 @@ não está nos dados, por isso escolha entre `getDivisions(court.id)`. Vazio par
 desconhecido.
 
 ```ts
-findCompetentCourts('23088', 'police-court').map((c) => c.id) // ['police-court-vilvoorde']
-findCompetentCourts('21004', 'court-of-first-instance').map((c) => c.id)
+findCourtsWithJurisdiction('23088', 'police-court').map((c) => c.id) // ['police-court-vilvoorde']
+findCourtsWithJurisdiction('21004', 'court-of-first-instance').map((c) => c.id)
 // ['court-of-first-instance-brussel-fr', 'court-of-first-instance-brussel-nl']
-findCompetentCourts('44021', 'labour-court').map((c) => c.id) // ['labour-court-gent']
+findCourtsWithJurisdiction('44021', 'labour-court').map((c) => c.id) // ['labour-court-gent']
 ```
 
 ### `findJusticesOfThePeace(municipalityId)` {#findjusticesofthepeace-municipalityid}
@@ -458,7 +462,7 @@ function findCourtsForPostalCode(
 interface PostalCodeCourts {
     municipality: Municipality
     justicesOfThePeace: CantonCourt[] // findJusticesOfThePeace(municipality.id)
-    courts: Court[] // findCompetentCourts(municipality.id, type)
+    courts: Court[] // findCourtsWithJurisdiction(municipality.id, type)
 }
 ```
 

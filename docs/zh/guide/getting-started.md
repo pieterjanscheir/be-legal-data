@@ -108,17 +108,17 @@ const court = getJusticeOfThePeace(canton.id)
 
 ### 某个市镇由哪个法院管辖？ {#which-court-for-a-municipality}
 
-除治安法院外，每个法院都按法律规定列出它覆盖的 canton（`cantons`）。`findCompetentCourts` 会在这些列表中查找
+除治安法院外，每个法院都按法律规定列出它覆盖的 canton（`cantons`）。`findCourtsWithJurisdiction` 会在这些列表中查找
 市镇所属的 canton。
 
 ```ts
-import { findCompetentCourts, getDivisions } from 'belgica'
+import { findCourtsWithJurisdiction, getDivisions } from 'belgica'
 
-findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde]，而不是 Brussel
-findCompetentCourts('21004', 'labour-court') // 布鲁塞尔的荷兰语法院和法语法院
+findCourtsWithJurisdiction('23088', 'police-court') // [police-court-vilvoorde]，而不是 Brussel
+findCourtsWithJurisdiction('21004', 'labour-court') // 布鲁塞尔的荷兰语法院和法语法院
 
 // 返回的是整个法院；由哪个分部审理案件，数据中还没有
-const [court] = findCompetentCourts('44021', 'enterprise-court')
+const [court] = findCourtsWithJurisdiction('44021', 'enterprise-court')
 getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brugge, …
 ```
 

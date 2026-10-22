@@ -111,16 +111,16 @@ const court = getJusticeOfThePeace(canton.id)
 ### Który sąd dla danej gminy? {#which-court-for-a-municipality}
 
 Każdy sąd poza vredegerecht / justice de paix wymienia kantony, które obejmuje (`cantons`), tak jak
-określa je ustawa. `findCompetentCourts` szuka w nich kantonów danej gminy.
+określa je ustawa. `findCourtsWithJurisdiction` szuka w nich kantonów danej gminy.
 
 ```ts
-import { findCompetentCourts, getDivisions } from 'belgica'
+import { findCourtsWithJurisdiction, getDivisions } from 'belgica'
 
-findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde], nie Bruksela
-findCompetentCourts('21004', 'labour-court') // niderlandzkojęzyczny i francuskojęzyczny sąd w Brukseli
+findCourtsWithJurisdiction('23088', 'police-court') // [police-court-vilvoorde], nie Bruksela
+findCourtsWithJurisdiction('21004', 'labour-court') // niderlandzkojęzyczny i francuskojęzyczny sąd w Brukseli
 
 // Sąd jako całość; który wydział rozpatruje sprawę, nie ma jeszcze w danych
-const [court] = findCompetentCourts('44021', 'enterprise-court')
+const [court] = findCourtsWithJurisdiction('44021', 'enterprise-court')
 getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brugge, …
 ```
 

@@ -20,6 +20,13 @@ holiday: Ascension Day 2008, which fell on 1 May, moved to 2 May. Community holi
 27 September, 15 November) aren't legal holidays and aren't in it. Tested against the Royal
 Observatory's published lists for 2024 to 2027 ([#61](https://github.com/pieterjanscheir/belgica/issues/61)).
 
+### Changed
+
+**`findCompetentCourts` is now `findCourtsWithJurisdiction`, and `find_competent_courts` is now
+`find_courts_with_jurisdiction`.** "Jurisdiction" is the English term for _bevoegdheid_ /
+_compétence_. The old names still work, are deprecated, and go in 1.0. The API docs'
+"Competence" section is now "Jurisdiction" (`#jurisdiction`).
+
 ## [0.5.0] - 2026-10-22
 
 ### Added
