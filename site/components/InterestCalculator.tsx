@@ -9,13 +9,44 @@ const DAY = 86_400_000
 const toTime = (day: string) => Date.parse(`${day}T00:00:00Z`)
 const toDay = (time: number) => new Date(time).toISOString().slice(0, 10)
 
+// Arabic-Indic and Extended Arabic-Indic (Persian) digits, by the code of their zero, and the
+// Arabic decimal and thousands separators: unambiguous, unlike '.' and ','
+const arabicZeros = [0x0660, 0x06f0]
+const arabicDecimal = String.fromCharCode(0x066b)
+const arabicThousands = String.fromCharCode(0x066c)
+
+/** Arabic digits as the digits 0–9 */
+function westernDigits(text: string): string {
+    let out = ''
+    for (const character of text) {
+        const code = character.charCodeAt(0)
+        const zero = arabicZeros.find((z) => code >= z && code <= z + 9)
+        out += zero === undefined ? character : String(code - zero)
+    }
+    return out
+}
+
 /**
  * An amount as people type it in Belgium or in English: '10000', '10 000', '10.000,50',
  * '10,000.50', '1234,5'. One separator followed by exactly three digits ('10,000', '10.000')
  * could be either a thousands separator or a decimal one, so it's rejected rather than guessed.
+ * Arabic digits are read too, and with the Arabic separators the amount is never ambiguous:
+ * '١٠٬٠٠٠٫٥٠'.
  */
 function parseAmount(input: string): number | 'ambiguous' | null {
     const text = input.replace(/[\s\u00a0']/g, '')
+    if (text.includes(arabicDecimal) || text.includes(arabicThousands)) {
+        const western = westernDigits(text)
+            .replaceAll(arabicThousands, '')
+            .replace(arabicDecimal, '.')
+        if (!/^\d+(\.\d+)?$/.test(western)) return null
+        const value = Number(western)
+        return value > 0 ? value : null
+    }
+    return parseWestern(westernDigits(text))
+}
+
+function parseWestern(text: string): number | 'ambiguous' | null {
     if (!/^\d[\d.,]*$/.test(text)) return null
     const separators = text.match(/[.,]/g) ?? []
     let normalised: string

@@ -171,11 +171,11 @@
     },
     "places": {
         "title": "Więzienia i domy sprawiedliwości",
-        "lede": "{prisons, plural, one {# zakład karny lub areszt śledczy podległy} few {# zakłady karne i areszty śledcze podległe} many {# zakładów karnych i aresztów śledczych podległych} other {# zakładu karnego i aresztu śledczego podległego}} FPS Justice oraz {houses, plural, one {# dom sprawiedliwości prowadzony} few {# domy sprawiedliwości prowadzone} many {# domów sprawiedliwości prowadzonych} other {# domu sprawiedliwości prowadzonego}} przez Wspólnoty.",
+        "lede": "{prisons, plural, one {# zakład karny lub dom detencyjny podległy} few {# zakłady karne i domy detencyjne podległe} many {# zakładów karnych i domów detencyjnych podległych} other {# zakładu karnego i domu detencyjnego podległego}} FPS Justice oraz {houses, plural, one {# dom sprawiedliwości prowadzony} few {# domy sprawiedliwości prowadzone} many {# domów sprawiedliwości prowadzonych} other {# domu sprawiedliwości prowadzonego}} przez Wspólnoty.",
         "prisons": "Więzienia",
         "housesOfJustice": "Domy sprawiedliwości",
         "prison": "Zakład karny",
-        "detentionHouse": "Areszt śledczy",
+        "detentionHouse": "Dom detencyjny",
         "flemish": "Wspólnota Flamandzka",
         "french": "Wspólnota Francuska",
         "german": "Wspólnota Niemieckojęzyczna"
