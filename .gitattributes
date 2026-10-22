@@ -1,0 +1,4 @@
+# Every pull request adds its own lines under Unreleased: merging main into a branch keeps
+# both sides instead of stopping at a conflict. Git applies this locally; GitHub's merge button
+# and its conflict check don't, so a branch may still need main merged in by hand.
+CHANGELOG.md merge=union

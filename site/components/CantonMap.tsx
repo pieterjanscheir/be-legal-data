@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState, type PointerEvent } from 'react'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { fetchJson } from '@/lib/fetch-json'
 
 interface MapData {

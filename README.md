@@ -2,15 +2,15 @@
 
 Belgian legal reference data as JSON and CSV, with TypeScript types and helpers: every court
 with its registries' contacts, prisons, houses of justice, judicial cantons and arrondissements,
-municipalities and their postal codes, and the legal and commercial interest rates. Every record says where it comes
+municipalities and their postal codes, the legal and commercial interest rates, and the public holidays. Every record says where it comes
 from, and the scraped data is rebuilt from the official sources every week.
 
 Documentation, with a canton lookup, a court list and interest-rate tables:
 **https://pieterjanscheir.github.io/belgica/**
 
-The [explorer](https://pieterjanscheir.github.io/belgica/explore/) is a site built on the package:
-a page for every court, canton, municipality and postal code, the canton map and an interest
-calculator. Its Next.js source is in [`site/`](site/).
+The [explorer](https://belgica.scheir.eu/) is a site built on the package, in 13 languages: a page for every
+court, canton, municipality and postal code, the canton map and an interest calculator. Its
+Next.js source is in [`site/`](site/).
 
 It's reference data, not legal advice: check the official sources before relying on it.
 
@@ -32,6 +32,7 @@ It's reference data, not legal advice: check the official sources before relying
 | [`data/houses-of-justice.json`](data/houses-of-justice.json)                 | The houses of justice of the Flemish (with OVO number) and French Communities                                                                                                                                                                                                                                | vlaanderen.be, maisonsdejustice.be (scraped weekly) |
 | [`data/postal-codes.json`](data/postal-codes.json)                           | Every postal code with the municipality it belongs to, by REFNIS code (three codes belong to two)                                                                                                                                                                                                            | Statbel conversion table (fetched weekly)           |
 | [`data/interest-rates.json`](data/interest-rates.json)                       | Legal interest rate (per year, since 1970) and commercial-transaction rate (per semester, since 2002)                                                                                                                                                                                                        | FOD Financiën / Belgisch Staatsblad                 |
+| [`data/public-holidays.json`](data/public-holidays.json)                     | The rules for the ten legal public holidays, three of them from Easter, for moving a deadline to the next working day                                                                                                                                                                                        | Wet 4 januari 1974, KB 18 april 1974                |
 
 The official sources are the truth; the files in `data/` are built from them. Every file has a
 [JSON Schema](schema/), and [`datapackage.json`](datapackage.json) lists each dataset's sources,
@@ -64,7 +65,7 @@ import {
     findCourts,
     getJusticeOfThePeace,
     getCantonsForMunicipality,
-    findCompetentCourts,
+    findCourtsWithJurisdiction,
     findCourtsForPostalCode,
     getInterestRate,
 } from 'belgica'
@@ -77,7 +78,7 @@ const [canton] = getCantonsForMunicipality('44088') // merelbeke-melle
 getJusticeOfThePeace(canton.id).address // where to file
 getCantonsForMunicipality('44021', { on: '2025-09-15' }) // Gent 1–5 on that day: a split city
 findCantonsAt(3.7268, 51.053) // [gent-1]: the canton of a point (belgica/canton-boundaries)
-findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde]: which court, by REFNIS code
+findCourtsWithJurisdiction('23088', 'police-court') // [police-court-vilvoorde]: which court, by REFNIS code
 findCourtsForPostalCode('1040', 'police-court') // per municipality: Brussel and Etterbeek share the code
 
 getInterestRate('2024-06-15', 'legal') // { rate: 5.75, period: { from: '2024-01-01', to: '2024-12-31' } }
@@ -88,7 +89,7 @@ getInterestRate(new Date(2014, 5, 15), 'commercial', { contractAfter20130316: tr
 silently using 0 %. Malformed days throw a `RangeError`, and so do territory and court lookups
 for a day before that data's coverage.
 
-Import a single dataset to keep bundles small: `belgica/interest-rates`,
+Import a single dataset to keep bundles small: `belgica/interest-rates`, `belgica/calendar`,
 `belgica/courts`, `belgica/prisons`, `belgica/houses-of-justice`,
 `belgica/territory`, `belgica/postal-codes`. The canton boundaries (a million
 positions of GeoJSON) are only in `belgica/canton-boundaries`, the arrondissement boundaries
@@ -143,14 +144,14 @@ pip install belgica
 ```
 
 The same data and helpers, in snake case, with the same version number: `get_cantons_for_municipality('44021', on='2025-09-15')`,
-`find_competent_courts('23088', 'police-court')`, `find_cantons_at(3.7268, 51.053)`. Python 3.11 or later, no
+`find_courts_with_jurisdiction('23088', 'police-court')`, `find_cantons_at(3.7268, 51.053)`. Python 3.11 or later, no
 dependencies; the tests check both packages give the same answers. See [Python](https://pieterjanscheir.github.io/belgica/guide/python)
 and [`python/`](python/).
 
 ### Spreadsheets and anything else
 
 Read the JSON files in `data/` directly: from the npm package, a git submodule, or a raw URL
-pinned to a tag (`https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.4.0/data/cantons.json`).
+pinned to a tag (`https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.5.0/data/cantons.json`).
 For spreadsheets, take the CSV tables from a [release](https://github.com/pieterjanscheir/belgica/releases).
 
 ## How the data is kept up to date

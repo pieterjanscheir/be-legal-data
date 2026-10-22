@@ -137,13 +137,16 @@ code,
 .center {
     text-align: center;
 }
+/* Hidden by clipping, not by moving it off-screen, which scrolls a right-to-left page */
 .skip {
     position: absolute;
-    left: -999px;
+    inset-inline-start: 16px;
+    top: 8px;
+    clip-path: inset(50%);
+    white-space: nowrap;
 }
 .skip:focus {
-    left: 16px;
-    top: 8px;
+    clip-path: none;
     z-index: 10;
     background: var(--bg);
     padding: 8px;
@@ -194,6 +197,22 @@ code,
 .top nav a {
     color: var(--text);
     font-size: 0.95rem;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+.site-lang select {
+    font: 500 0.85rem var(--font);
+    color: var(--text);
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 4px 10px;
 }
 .lang {
     display: flex;
@@ -315,8 +334,7 @@ code,
 }
 .search ul {
     position: absolute;
-    left: 0;
-    right: 0;
+    inset-inline: 0;
     top: calc(100% + 6px);
     margin: 0;
     padding: 6px;
@@ -461,9 +479,10 @@ address {
 blockquote {
     margin: 0;
     padding: 12px 16px;
-    border-left: 3px solid var(--brand);
+    border-inline-start: 3px solid var(--brand);
     background: var(--bg-soft);
-    border-radius: 0 8px 8px 0;
+    border-start-end-radius: 8px;
+    border-end-end-radius: 8px;
     font-size: 0.92rem;
 }
 .prose {
@@ -489,7 +508,7 @@ blockquote {
     border-radius: 999px;
     background: var(--brand-soft);
     color: var(--brand);
-    margin-right: 6px;
+    margin-inline-end: 6px;
     vertical-align: 1px;
 }
 .cards {
@@ -556,7 +575,7 @@ blockquote {
     overflow-wrap: anywhere;
 }
 .sources {
-    padding-left: 18px;
+    padding-inline-start: 18px;
     overflow-wrap: anywhere;
 }
 
@@ -604,7 +623,7 @@ blockquote {
     align-items: center;
 }
 .count {
-    margin-left: auto;
+    margin-inline-start: auto;
     font-variant-numeric: tabular-nums;
 }
 .rows {
@@ -627,7 +646,7 @@ blockquote {
 .row-meta {
     color: var(--muted);
     font-size: 0.88rem;
-    text-align: right;
+    text-align: end;
 }
 .places {
     display: grid;
@@ -693,7 +712,7 @@ table {
 }
 th,
 td {
-    text-align: left;
+    text-align: start;
     padding: 6px 10px;
     border-bottom: 1px solid var(--line);
     white-space: nowrap;
@@ -703,7 +722,7 @@ th {
     font-weight: 600;
 }
 .num {
-    text-align: right;
+    text-align: end;
     font-variant-numeric: tabular-nums;
 }
 
@@ -747,6 +766,6 @@ th {
         gap: 2px;
     }
     .row-meta {
-        text-align: left;
+        text-align: start;
     }
 }

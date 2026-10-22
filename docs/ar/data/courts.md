@@ -148,7 +148,7 @@ getCourt('justice-of-the-peace-gent-1')
 getJusticeOfThePeace('gent-1') // المحكمة نفسها، بمعرّف الكانتون
 getDivisions('enterprise-court-gent') // أقسامها الثمانية
 getCourtsForCanton('gent-1') // الـvredegerecht الخاص به، ومحكمة واحدة من كل نوع آخر
-findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde]، برمز REFNIS
+findCourtsWithJurisdiction('23088', 'police-court') // [police-court-vilvoorde]، برمز REFNIS
 findCourts({ type: 'police-court', kind: 'court', judicialArea: 'gent' })
 getContact(court, 'email', 'Greffe pénal') // قيمة أول جهة اتصال مطابقة
 formatPhoneNumber('+3253820701') // '053 82 07 01'

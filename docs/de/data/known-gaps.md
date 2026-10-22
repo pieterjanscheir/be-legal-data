@@ -7,7 +7,7 @@ import { data as stats } from '../../.vitepress/stats.data'
 - **Gerichte, die nicht auf dem Portal stehen**, sind nicht in den Daten: der Kassationshof, der
   Verfassungsgerichtshof, der Staatsrat und die Disziplinargerichte
   ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
-- **Die Zuständigkeit endet beim Gericht.** `cantons` und `findCompetentCourts` sagen, welches
+- **Die Zuständigkeit endet beim Gericht.** `cantons` und `findCourtsWithJurisdiction` sagen, welches
   Gericht eine Gemeinde abdeckt, nicht welche seiner Abteilungen: Das Gebiet einer Abteilung wird
   durch Königlichen Erlass festgelegt und ist noch nicht in den Daten
   ([#58](https://github.com/pieterjanscheir/belgica/issues/58)).

@@ -24,6 +24,7 @@ export interface Strings {
         prisons: string
         housesOfJustice: string
         interestRates: string
+        publicHolidays: string
         postalCodes: string
         knownGaps: string
         roadmap: string

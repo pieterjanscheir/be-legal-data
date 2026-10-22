@@ -125,16 +125,16 @@ const court = getJusticeOfThePeace(canton.id)
 ### Which court for a municipality?
 
 Every court other than a justice of the peace lists the cantons it covers (`cantons`), as the
-law sets them. `findCompetentCourts` looks a municipality's cantons up in them.
+law sets them. `findCourtsWithJurisdiction` looks a municipality's cantons up in them.
 
 ```ts
-import { findCompetentCourts, getDivisions } from 'belgica'
+import { findCourtsWithJurisdiction, getDivisions } from 'belgica'
 
-findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde], not Brussels
-findCompetentCourts('21004', 'labour-court') // the Dutch- and the French-speaking court of Brussels
+findCourtsWithJurisdiction('23088', 'police-court') // [police-court-vilvoorde], not Brussels
+findCourtsWithJurisdiction('21004', 'labour-court') // the Dutch- and the French-speaking court of Brussels
 
 // The court as a whole; which division hears the case isn't in the data yet
-const [court] = findCompetentCourts('44021', 'enterprise-court')
+const [court] = findCourtsWithJurisdiction('44021', 'enterprise-court')
 getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brugge, …
 ```
 

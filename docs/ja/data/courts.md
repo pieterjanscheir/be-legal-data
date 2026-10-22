@@ -149,7 +149,7 @@ getCourt('justice-of-the-peace-gent-1')
 getJusticeOfThePeace('gent-1') // 同じ裁判所を canton の id で
 getDivisions('enterprise-court-gent') // その 8 つの部
 getCourtsForCanton('gent-1') // その vredegerecht と、他の各種類の裁判所を一つずつ
-findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde]、REFNIS コードで
+findCourtsWithJurisdiction('23088', 'police-court') // [police-court-vilvoorde]、REFNIS コードで
 findCourts({ type: 'police-court', kind: 'court', judicialArea: 'gent' })
 getContact(court, 'email', 'Greffe pénal') // 最初に一致した連絡先の値
 formatPhoneNumber('+3253820701') // '053 82 07 01'

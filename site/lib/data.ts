@@ -11,7 +11,7 @@ import {
     type Court,
 } from 'belgica'
 import type { Entry } from '@/components/Search'
-import { courtTypeLabel, locales, type PerLocale } from './labels'
+import { locales, type PerLocale } from './labels'
 
 export const buildDay = toDay(new Date())
 
@@ -40,8 +40,17 @@ export const cantonName = (canton: { name: { nl: string; fr: string }; number?: 
     return bilingual({ nl: `${canton.name.nl}${n}`, fr: `${canton.name.fr}${n}` })
 }
 
-/** Everything the search box on the home page finds */
-export function searchEntries(): Entry[] {
+/** The labels the search box shows next to each result, in the site's language */
+export interface SearchLabels {
+    postalCode: string
+    municipality: string
+    canton: string
+    cantonName: (name: string) => string
+    courtType: (type: Court['type']) => string
+}
+
+/** Everything the search box on the home page finds; the names stay as published */
+export function searchEntries(labels: SearchLabels): Entry[] {
     const postal: Entry[] = postalCodeList.map((code) => {
         const names = currentPostalCodes
             .filter((p) => p.postalCode === code)
@@ -49,24 +58,25 @@ export function searchEntries(): Entry[] {
         return {
             label: `${code} ${names.map((m) => m.name.nl).join(', ')}`,
             alt: names.map((m) => m.name.fr).join(' '),
-            kind: 'Postal code',
+            kind: labels.postalCode,
             href: `/postal-codes/${code}/`,
         }
     })
     const munis: Entry[] = currentMunicipalities.map((m) => ({
         label: bilingual(m.name),
-        kind: 'Municipality',
+        kind: labels.municipality,
         href: `/municipalities/${m.id}/`,
     }))
     const cantonEntries: Entry[] = currentCantons.map((c) => ({
-        label: `Canton ${cantonName(c)}`,
-        kind: 'Canton',
+        label: labels.cantonName(cantonName(c)),
+        alt: c.id,
+        kind: labels.canton,
         href: `/cantons/${c.id}/`,
     }))
     const courtEntries: Entry[] = currentCourts.map((c) => ({
         label: formatCourtName(c, 'nl'),
         alt: [c.name.fr, c.name.de, formatCourtName(c, 'nl', { style: 'canton' })].join(' '),
-        kind: courtTypeLabel[c.type],
+        kind: labels.courtType(c.type),
         href: `/courts/${c.id}/`,
     }))
     return [...postal, ...munis, ...cantonEntries, ...courtEntries]

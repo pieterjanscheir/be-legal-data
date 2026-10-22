@@ -113,16 +113,16 @@ const court = getJusticeOfThePeace(canton.id)
 ### Bir belediye için hangi mahkeme? {#which-court-for-a-municipality}
 
 Vredegerecht dışındaki her mahkeme, yasanın belirlediği şekilde kapsadığı kantonları listeler
-(`cantons`). `findCompetentCourts`, bir belediyenin kantonlarını bu listelerde arar.
+(`cantons`). `findCourtsWithJurisdiction`, bir belediyenin kantonlarını bu listelerde arar.
 
 ```ts
-import { findCompetentCourts, getDivisions } from 'belgica'
+import { findCourtsWithJurisdiction, getDivisions } from 'belgica'
 
-findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde], Brüksel değil
-findCompetentCourts('21004', 'labour-court') // Brüksel'in Hollandaca ve Fransızca konuşan mahkemeleri
+findCourtsWithJurisdiction('23088', 'police-court') // [police-court-vilvoorde], Brüksel değil
+findCourtsWithJurisdiction('21004', 'labour-court') // Brüksel'in Hollandaca ve Fransızca konuşan mahkemeleri
 
 // Mahkeme bir bütün olarak; davaya hangi bölümün baktığı henüz verilerde yok
-const [court] = findCompetentCourts('44021', 'enterprise-court')
+const [court] = findCourtsWithJurisdiction('44021', 'enterprise-court')
 getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brugge, …
 ```
 

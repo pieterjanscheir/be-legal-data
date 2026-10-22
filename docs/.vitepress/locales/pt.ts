@@ -25,6 +25,7 @@ export default {
             prisons: 'Prisões',
             housesOfJustice: 'Maisons de justice',
             interestRates: 'Taxas de juro',
+            publicHolidays: 'Feriados',
             postalCodes: 'Códigos postais',
             knownGaps: 'Lacunas conhecidas',
             roadmap: 'Roadmap',

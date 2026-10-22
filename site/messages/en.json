@@ -1,0 +1,187 @@
+{
+    "meta": {
+        "title": "belgica explorer",
+        "description": "Every Belgian court, judicial canton, municipality and postal code, and the legal interest rates: a site built from the belgica package."
+    },
+    "nav": {
+        "skip": "Skip to content",
+        "main": "Main",
+        "courts": "Courts",
+        "cantons": "Cantons",
+        "municipalities": "Municipalities",
+        "interest": "Interest",
+        "places": "Prisons & houses of justice",
+        "siteLanguage": "Language",
+        "namesLanguage": "Language of official names"
+    },
+    "footer": {
+        "builtFrom": "Every page is built from <npm>belgica</npm> at build time: <docs>documentation</docs> · <source>this site's source</source>",
+        "disclaimer": "Reference data, not legal advice: check the official sources before relying on it. Municipality and postal-code data © Statbel, canton boundaries © NGI, CC BY 4.0."
+    },
+    "code": {
+        "caption": "With belgica"
+    },
+    "courtType": {
+        "justice-of-the-peace": "Justice of the peace",
+        "police-court": "Police court",
+        "court-of-first-instance": "Court of first instance",
+        "enterprise-court": "Enterprise court",
+        "labour-court": "Labour court",
+        "court-of-appeal": "Court of appeal",
+        "labour-court-of-appeal": "Labour court of appeal",
+        "court-of-assize": "Court of assize"
+    },
+    "kind": {
+        "court": "Court",
+        "division": "Division",
+        "seat": "Seat"
+    },
+    "search": {
+        "placeholder": "Postal code, municipality, canton or court",
+        "postalCode": "Postal code",
+        "municipality": "Municipality",
+        "canton": "Canton",
+        "cantonName": "Canton {name}"
+    },
+    "home": {
+        "eyebrow": "Built with the belgica package",
+        "title": "Which court is competent, where?",
+        "lede": "Enter a postal code or a municipality to find its justice of the peace, police court and every other court with their registries' contacts. Or browse the courts, the canton map and the interest rates, all read from the package's data.",
+        "try": "Try",
+        "example9000": "Gent: one municipality, five cantons",
+        "example1050": "Elsene and Brussels share it",
+        "example4700": "Eupen: courts in German",
+        "mapLabel": "Map of Belgium's {count} judicial cantons",
+        "statsLabel": "What's in the data",
+        "statCourts": "courts, divisions and seats",
+        "statCantons": "judicial cantons",
+        "statMunicipalities": "municipalities",
+        "statPostalCodes": "postal codes",
+        "statPlaces": "prisons and houses of justice",
+        "statRates": "interest-rate periods since 1970",
+        "featureAddressTitle": "Courts for an address",
+        "featureAddress": "From a postal code to its municipalities, their cantons and every competent court. Split cities list each canton with the legal text of its area.",
+        "featureMapTitle": "Canton map",
+        "featureMap": "The NGI's boundary of every canton, to find the canton of a point and draw it. Every canton has its legal basis and its municipalities.",
+        "featureInterestTitle": "Interest calculator",
+        "featureInterest": "The legal and commercial rates since 1970, with the rule for contracts from before 16 March 2013. The calculator loads only <code>belgica/interest-rates</code>.",
+        "featureCourtsTitle": "Every court, in three languages",
+        "featureCourts": "Names as each court publishes them, addresses, phone numbers in national form, IBANs, opening hours and ECLI codes. Switch NL · FR · DE at the top."
+    },
+    "competence": {
+        "justiceOfThePeace": "Justice of the peace",
+        "split": "This municipality is split over {count} cantons: the street address decides. Each canton's area, as the Judicial Code describes it:",
+        "areaOf": "Area of canton <link>{name}</link>",
+        "otherCourts": "Other courts",
+        "divisionNote": "The court as a whole: which of its divisions hears a case is set by royal decree."
+    },
+    "contacts": {
+        "phone": "Phone",
+        "fax": "Fax",
+        "email": "Email",
+        "bank-account": "Bank account",
+        "none": "No contacts published."
+    },
+    "postalCode": {
+        "crumbSearch": "Search",
+        "crumb": "Postal code",
+        "title": "{code} {names}: courts",
+        "shared": "{code} belongs to {count} municipalities: the street decides which. The courts are listed for each.",
+        "refnis": "REFNIS {id} · postal codes {codes}"
+    },
+    "municipalities": {
+        "title": "Municipalities",
+        "lede": "The {count} municipalities by province, with their REFNIS code. Each page lists its postal codes, cantons and competent courts."
+    },
+    "municipality": {
+        "refnis": "REFNIS code",
+        "region": "Region",
+        "province": "Province",
+        "arrondissement": "Judicial arrondissement",
+        "postalCodes": "Postal codes",
+        "competentCourts": "Competent courts",
+        "mapLabel": "Cantons of {arrondissement}, with those of {municipality} highlighted"
+    },
+    "cantons": {
+        "title": "Judicial cantons",
+        "lede": "The {count} areas of the justices of the peace, drawn from the National Geographic Institute's boundaries. Hover a canton to name it, click it to open it.",
+        "mapLabel": "Map of the judicial cantons"
+    },
+    "canton": {
+        "title": "Canton {name}",
+        "seat": "Seat",
+        "arrondissement": "Arrondissement",
+        "judicialArea": "Judicial area",
+        "municipalities": "Municipalities",
+        "part": "(part)",
+        "legalBasis": "Legal basis",
+        "judicialCode": "Judicial Code",
+        "area": "Area, as the law describes it",
+        "courts": "Courts that cover this canton",
+        "courtsNote": "Its own justice of the peace first, then the courts whose area holds it.",
+        "mapLabel": "The cantons of the arrondissement, with {name} highlighted"
+    },
+    "courts": {
+        "title": "Courts",
+        "lede": "Every court, division and seat, as published on tribunaux-rechtbanken.be and rebuilt every week.",
+        "filterPlaceholder": "Name or city",
+        "filterLabel": "Filter by name or city",
+        "typeLabel": "Court type",
+        "everyType": "Every type",
+        "divisions": "Divisions and seats",
+        "count": "{shown} of {total}"
+    },
+    "court": {
+        "kindOf": "{kind} of <link>{name}</link>",
+        "publishedNames": "{count, plural, one {Published name} other {Published names}}",
+        "cantonLabel": "Canton label",
+        "registry": "Registry",
+        "area": "Area",
+        "ecli": "ECLI",
+        "openingHours": "Opening hours",
+        "contacts": "Contacts",
+        "coversOne": "Covers canton <link>{name}</link>",
+        "coversMany": "Covers {count} cantons",
+        "mapLabel": "Map with the {count, plural, one {canton} other {# cantons}} the court covers highlighted",
+        "hoursPublished": "Opening hours, as published",
+        "seats": "Seats",
+        "divisions": "Divisions",
+        "sources": "Sources",
+        "checked": "checked {date}"
+    },
+    "interest": {
+        "title": "Interest calculator",
+        "lede": "Simple interest at the legal rate or the rate for commercial transactions, split over the rate periods it crosses: days × principal × rate ÷ 365. The calculator runs in your browser on <code>belgica/interest-rates</code> alone, without the court or territory data.",
+        "rate": "Rate",
+        "legal": "Legal interest (per year)",
+        "commercial": "Commercial transactions (per semester)",
+        "principal": "Principal (€)",
+        "from": "From",
+        "to": "To",
+        "newerContract": "Contract concluded on or after 16 March 2013",
+        "ambiguous": "Is the separator in {amount} for thousands or for decimals? Write the amount without one (10000) or with decimals (10000,00).",
+        "invalid": "Enter a positive amount and a start date before the end date.",
+        "interest": "Interest",
+        "over": "on {amount} over {days} days",
+        "missing": "Part of the period has no rate on file (rates are known up to {date}); it isn't counted.",
+        "days": "Days",
+        "sources": "Sources",
+        "sourcesText": "Legal rate: {legal}. Commercial rate: {commercial}.",
+        "disclaimer": "A calculation aid, not legal advice: a judgment or contract can set other rules, such as capitalised interest."
+    },
+    "places": {
+        "title": "Prisons and houses of justice",
+        "lede": "The {prisons} prisons and detention houses of the FPS Justice, and the {houses} houses of justice the Communities run.",
+        "prisons": "Prisons",
+        "housesOfJustice": "Houses of justice",
+        "prison": "Prison",
+        "detentionHouse": "Detention house",
+        "flemish": "Flemish Community",
+        "french": "French Community",
+        "german": "German-speaking Community"
+    },
+    "notFound": {
+        "title": "Page not found",
+        "back": "Back to the explorer"
+    }
+}

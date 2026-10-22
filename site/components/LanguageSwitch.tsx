@@ -1,11 +1,48 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
 import type { Locale } from 'belgica'
+import { getPathname, usePathname } from '@/i18n/navigation'
+import { localeNames, routing, type SiteLocale } from '@/i18n/routing'
 import { locales } from '@/lib/labels'
 
-/** Sets html[data-lang], which picks the language every <Name> shows; remembered per browser */
-export function LanguageSwitch() {
+const base = process.env.NEXT_PUBLIC_SITE_BASE ?? ''
+
+/**
+ * The site's language: the same page in another language. A full page load, not a client-side
+ * navigation, so the new page's <head> script sets the language of official names.
+ */
+export function SiteLanguage() {
+    const t = useTranslations('nav')
+    const locale = useLocale() as SiteLocale
+    const pathname = usePathname()
+    return (
+        <label className="site-lang">
+            <span className="sr-only">{t('siteLanguage')}</span>
+            <select
+                value={locale}
+                onChange={(e) => {
+                    const next = e.target.value as SiteLocale
+                    window.location.assign(base + getPathname({ href: pathname, locale: next }))
+                }}
+            >
+                {routing.locales.map((l) => (
+                    <option key={l} value={l} lang={l}>
+                        {localeNames[l]}
+                    </option>
+                ))}
+            </select>
+        </label>
+    )
+}
+
+/**
+ * The language official names show in, of the three they're published in. Sets html[data-lang],
+ * which picks the language every <Name> shows; remembered per browser.
+ */
+export function NamesLanguage() {
+    const t = useTranslations('nav')
     const [lang, setLang] = useState<Locale>('nl')
     useEffect(() => {
         setLang((document.documentElement.dataset.lang as Locale | undefined) ?? 'nl')
@@ -20,7 +57,7 @@ export function LanguageSwitch() {
         }
     }
     return (
-        <div className="lang" role="group" aria-label="Language of names">
+        <div className="lang" role="group" aria-label={t('namesLanguage')}>
             {locales.map((l) => (
                 <button
                     key={l}
@@ -36,6 +73,3 @@ export function LanguageSwitch() {
         </div>
     )
 }
-
-/** Runs before the first paint so names don't flash in the wrong language */
-export const languageScript = `try{var l=localStorage.getItem('belgica-lang');if(!l){var n=(navigator.language||'').slice(0,2);l=['nl','fr','de'].indexOf(n)>=0?n:'nl'}document.documentElement.dataset.lang=l}catch(e){document.documentElement.dataset.lang='nl'}`

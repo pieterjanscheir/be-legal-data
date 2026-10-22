@@ -7,7 +7,7 @@ import { data as stats } from '../../.vitepress/stats.data'
 - **Les juridictions absentes du portail** ne sont pas dans les données : la Cour de cassation,
   la Cour constitutionnelle, le Conseil d'État et les juridictions disciplinaires
   ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
-- **La compétence s'arrête à la juridiction.** `cantons` et `findCompetentCourts` disent quelle
+- **La compétence s'arrête à la juridiction.** `cantons` et `findCourtsWithJurisdiction` disent quelle
   juridiction couvre une commune, pas laquelle de ses divisions : le territoire d'une division est
   fixé par arrêté royal et n'est pas encore dans les données
   ([#58](https://github.com/pieterjanscheir/belgica/issues/58)).

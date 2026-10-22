@@ -25,6 +25,7 @@ export default {
             prisons: "В'язниці",
             housesOfJustice: 'Justitiehuizen / maisons de justice',
             interestRates: 'Процентні ставки',
+            publicHolidays: 'Державні свята',
             postalCodes: 'Поштові індекси',
             knownGaps: 'Відомі прогалини',
             roadmap: 'Дорожня карта',
