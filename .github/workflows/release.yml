@@ -102,7 +102,16 @@ jobs:
                   mkdir "$name"
                   cp -r data schema datapackage.json LICENSE-DATA csv "$name"/
                   zip -qr "$name.zip" "$name"
-                  gh release create "$TAG" --verify-tag --generate-notes "$name.zip"
+                  # The notes: this version's section of CHANGELOG.md, then GitHub's list of the
+                  # pull requests and the full diff
+                  awk -v heading="## [${TAG#v}]" '
+                      index($0, heading) == 1 { found = 1; next }
+                      found && (/^## \[/ || /^\[[^]]+\]: /) { exit }
+                      found { print }
+                  ' CHANGELOG.md > notes.md
+                  # One line per paragraph: a release keeps single line breaks
+                  pnpm exec prettier --prose-wrap never --write notes.md
+                  gh release create "$TAG" --verify-tag --notes-file notes.md --generate-notes "$name.zip"
 
     # The same version to PyPI. The npm job has run pnpm check on the same commit, and CI the
     # Python tests.

@@ -1,0 +1,187 @@
+{
+    "meta": {
+        "title": "belgica explorer",
+        "description": "Wszystkie belgijskie sądy, kantony sądowe, gminy i kody pocztowe oraz ustawowe stopy procentowe: serwis zbudowany na pakiecie belgica."
+    },
+    "nav": {
+        "skip": "Przejdź do treści",
+        "main": "Główne",
+        "courts": "Sądy",
+        "cantons": "Kantony",
+        "municipalities": "Gminy",
+        "interest": "Odsetki",
+        "places": "Więzienia i domy sprawiedliwości",
+        "siteLanguage": "Język",
+        "namesLanguage": "Język nazw urzędowych"
+    },
+    "footer": {
+        "builtFrom": "Każda strona jest generowana z <npm>belgica</npm> podczas budowania: <docs>dokumentacja</docs> · <source>kod źródłowy tego serwisu</source>",
+        "disclaimer": "Dane referencyjne, a nie porada prawna: przed skorzystaniem z nich sprawdź oficjalne źródła. Dane o gminach i kodach pocztowych © Statbel, granice kantonów © NGI, CC BY 4.0."
+    },
+    "code": {
+        "caption": "Z belgica"
+    },
+    "courtType": {
+        "justice-of-the-peace": "Sąd pokoju",
+        "police-court": "Sąd policyjny",
+        "court-of-first-instance": "Sąd pierwszej instancji",
+        "enterprise-court": "Sąd gospodarczy",
+        "labour-court": "Sąd pracy",
+        "court-of-appeal": "Sąd apelacyjny",
+        "labour-court-of-appeal": "Apelacyjny sąd pracy",
+        "court-of-assize": "Sąd przysięgłych"
+    },
+    "kind": {
+        "court": "Sąd",
+        "division": "Wydział",
+        "seat": "Siedziba"
+    },
+    "search": {
+        "placeholder": "Kod pocztowy, gmina, kanton lub sąd",
+        "postalCode": "Kod pocztowy",
+        "municipality": "Gmina",
+        "canton": "Kanton",
+        "cantonName": "Kanton {name}"
+    },
+    "home": {
+        "eyebrow": "Zbudowane na pakiecie belgica",
+        "title": "Który sąd jest właściwy i gdzie?",
+        "lede": "Wpisz kod pocztowy lub gminę, aby znaleźć jej sąd pokoju, sąd policyjny i wszystkie inne sądy wraz z danymi kontaktowymi ich sekretariatów. Możesz też przeglądać sądy, mapę kantonów i stopy procentowe, wszystko odczytane z danych pakietu.",
+        "try": "Wypróbuj",
+        "example9000": "Gent: jedna gmina, pięć kantonów",
+        "example1050": "Wspólny dla Elsene i Brukseli",
+        "example4700": "Eupen: sądy w języku niemieckim",
+        "mapLabel": "Mapa {count} kantonów sądowych Belgii",
+        "statsLabel": "Co zawierają dane",
+        "statCourts": "sądy, wydziały i siedziby",
+        "statCantons": "kantony sądowe",
+        "statMunicipalities": "gminy",
+        "statPostalCodes": "kody pocztowe",
+        "statPlaces": "więzienia i domy sprawiedliwości",
+        "statRates": "okresy stóp procentowych od 1970 r.",
+        "featureAddressTitle": "Sądy dla adresu",
+        "featureAddress": "Od kodu pocztowego do jego gmin, ich kantonów i wszystkich właściwych sądów. W podzielonych miastach każdy kanton jest podany z tekstem prawnym opisującym jego obszar.",
+        "featureMapTitle": "Mapa kantonów",
+        "featureMap": "Granice każdego kantonu według NGI, aby znaleźć kanton dla danego punktu i go narysować. Każdy kanton ma swoją podstawę prawną i swoje gminy.",
+        "featureInterestTitle": "Kalkulator odsetek",
+        "featureInterest": "Stopy ustawowe i handlowe od 1970 r., wraz z zasadą dla umów zawartych przed 16 marca 2013 r. Kalkulator wczytuje tylko <code>belgica/interest-rates</code>.",
+        "featureCourtsTitle": "Wszystkie sądy w trzech językach",
+        "featureCourts": "Nazwy w brzmieniu publikowanym przez każdy sąd, adresy, numery telefonów w formacie krajowym, numery IBAN, godziny otwarcia i kody ECLI. Przełączaj NL · FR · DE u góry strony."
+    },
+    "competence": {
+        "justiceOfThePeace": "Sąd pokoju",
+        "split": "Ta gmina jest podzielona na {count, plural, one {# kanton} few {# kantony} many {# kantonów} other {# kantonu}}: decyduje adres. Obszar każdego kantonu według Kodeksu sądowego:",
+        "areaOf": "Obszar kantonu <link>{name}</link>",
+        "otherCourts": "Inne sądy",
+        "divisionNote": "Sąd jako całość: o tym, który z jego wydziałów rozpoznaje sprawę, decyduje dekret królewski."
+    },
+    "contacts": {
+        "phone": "Telefon",
+        "fax": "Faks",
+        "email": "E-mail",
+        "bank-account": "Rachunek bankowy",
+        "none": "Brak opublikowanych danych kontaktowych."
+    },
+    "postalCode": {
+        "crumbSearch": "Szukaj",
+        "crumb": "Kod pocztowy",
+        "title": "{code} {names}: sądy",
+        "shared": "{code} należy do {count} gmin: o tym, do której, decyduje ulica. Sądy są podane dla każdej z nich.",
+        "refnis": "REFNIS {id} · kody pocztowe {codes}"
+    },
+    "municipalities": {
+        "title": "Gminy",
+        "lede": "{count, plural, one {# gmina} few {# gminy} many {# gmin} other {# gminy}} według prowincji, z kodem REFNIS. Każda strona podaje kody pocztowe, kantony i właściwe sądy."
+    },
+    "municipality": {
+        "refnis": "Kod REFNIS",
+        "region": "Region",
+        "province": "Prowincja",
+        "arrondissement": "Okręg sądowy",
+        "postalCodes": "Kody pocztowe",
+        "competentCourts": "Właściwe sądy",
+        "mapLabel": "Kantony okręgu {arrondissement}, z wyróżnionymi kantonami gminy {municipality}"
+    },
+    "cantons": {
+        "title": "Kantony sądowe",
+        "lede": "{count, plural, one {# obszar} few {# obszary} many {# obszarów} other {# obszaru}} właściwości sądów pokoju, wyznaczone na podstawie granic Narodowego Instytutu Geograficznego. Najedź na kanton, aby zobaczyć jego nazwę, kliknij, aby go otworzyć.",
+        "mapLabel": "Mapa kantonów sądowych"
+    },
+    "canton": {
+        "title": "Kanton {name}",
+        "seat": "Siedziba",
+        "arrondissement": "Okręg",
+        "judicialArea": "Obszar sądowy",
+        "municipalities": "Gminy",
+        "part": "(część)",
+        "legalBasis": "Podstawa prawna",
+        "judicialCode": "Kodeks sądowy",
+        "area": "Obszar w brzmieniu ustawy",
+        "courts": "Sądy właściwe dla tego kantonu",
+        "courtsNote": "Najpierw jego własny sąd pokoju, potem sądy, w których obszarze się znajduje.",
+        "mapLabel": "Kantony okręgu, z wyróżnionym kantonem {name}"
+    },
+    "courts": {
+        "title": "Sądy",
+        "lede": "Wszystkie sądy, wydziały i siedziby, w brzmieniu publikowanym na tribunaux-rechtbanken.be, aktualizowane co tydzień.",
+        "filterPlaceholder": "Nazwa lub miejscowość",
+        "filterLabel": "Filtruj według nazwy lub miejscowości",
+        "typeLabel": "Rodzaj sądu",
+        "everyType": "Wszystkie rodzaje",
+        "divisions": "Wydziały i siedziby",
+        "count": "{shown} z {total}"
+    },
+    "court": {
+        "kindOf": "{kind}: <link>{name}</link>",
+        "publishedNames": "{count, plural, one {Opublikowana nazwa} few {Opublikowane nazwy} many {Opublikowane nazwy} other {Opublikowane nazwy}}",
+        "cantonLabel": "Oznaczenie kantonu",
+        "registry": "Sekretariat",
+        "area": "Obszar",
+        "ecli": "ECLI",
+        "openingHours": "Godziny otwarcia",
+        "contacts": "Kontakt",
+        "coversOne": "Obejmuje kanton <link>{name}</link>",
+        "coversMany": "Obejmuje {count, plural, one {# kanton} few {# kantony} many {# kantonów} other {# kantonu}}",
+        "mapLabel": "{count, plural, one {Mapa z wyróżnionym kantonem, który obejmuje sąd} few {Mapa z wyróżnionymi # kantonami, które obejmuje sąd} many {Mapa z wyróżnionymi # kantonami, które obejmuje sąd} other {Mapa z wyróżnionymi # kantonu, które obejmuje sąd}}",
+        "hoursPublished": "Godziny otwarcia, w brzmieniu opublikowanym",
+        "seats": "Siedziby",
+        "divisions": "Wydziały",
+        "sources": "Źródła",
+        "checked": "sprawdzono {date}"
+    },
+    "interest": {
+        "title": "Kalkulator odsetek",
+        "lede": "Odsetki proste według stopy ustawowej lub stopy dla transakcji handlowych, rozłożone na okresy stóp, przez które przechodzą: dni × kwota główna × stopa ÷ 365. Kalkulator działa w Twojej przeglądarce wyłącznie na <code>belgica/interest-rates</code>, bez danych o sądach i terytorium.",
+        "rate": "Stopa",
+        "legal": "Odsetki ustawowe (rocznie)",
+        "commercial": "Transakcje handlowe (półrocznie)",
+        "principal": "Kwota główna (€)",
+        "from": "Od",
+        "to": "Do",
+        "newerContract": "Umowa zawarta 16 marca 2013 r. lub później",
+        "ambiguous": "Czy separator w {amount} oddziela tysiące czy miejsca dziesiętne? Wpisz kwotę bez separatora (10000) lub z częścią dziesiętną (10000,00).",
+        "invalid": "Wpisz kwotę dodatnią i datę początkową wcześniejszą niż data końcowa.",
+        "interest": "Odsetki",
+        "over": "od {amount} za {days, plural, one {# dzień} few {# dni} many {# dni} other {# dnia}}",
+        "missing": "Dla części okresu brak stopy w danych (stopy są znane do {date}); ta część nie jest liczona.",
+        "days": "Dni",
+        "sources": "Źródła",
+        "sourcesText": "Stopa ustawowa: {legal}. Stopa handlowa: {commercial}.",
+        "disclaimer": "Pomoc w obliczeniach, a nie porada prawna: wyrok lub umowa mogą przewidywać inne zasady, np. kapitalizację odsetek."
+    },
+    "places": {
+        "title": "Więzienia i domy sprawiedliwości",
+        "lede": "{prisons, plural, one {# zakład karny lub dom detencyjny podległy} few {# zakłady karne i domy detencyjne podległe} many {# zakładów karnych i domów detencyjnych podległych} other {# zakładu karnego i domu detencyjnego podległego}} FPS Justice oraz {houses, plural, one {# dom sprawiedliwości prowadzony} few {# domy sprawiedliwości prowadzone} many {# domów sprawiedliwości prowadzonych} other {# domu sprawiedliwości prowadzonego}} przez Wspólnoty.",
+        "prisons": "Więzienia",
+        "housesOfJustice": "Domy sprawiedliwości",
+        "prison": "Zakład karny",
+        "detentionHouse": "Dom detencyjny",
+        "flemish": "Wspólnota Flamandzka",
+        "french": "Wspólnota Francuska",
+        "german": "Wspólnota Niemieckojęzyczna"
+    },
+    "notFound": {
+        "title": "Nie znaleziono strony",
+        "back": "Wróć do eksploratora"
+    }
+}

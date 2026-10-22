@@ -34,6 +34,7 @@ import { getMunicipalitiesForPostalCode } from 'belgica/postal-codes'
 | `belgica/prisons`                   | Prisons, and the contact helpers                                             |
 | `belgica/houses-of-justice`         | Houses of justice, and the contact helpers                                   |
 | `belgica/interest-rates`            | Interest rates                                                               |
+| `belgica/calendar`                  | Public and judicial holidays, and `nextWorkingDay`                           |
 | `belgica/postal-codes`              | Postal codes, with the municipalities they belong to                         |
 | `belgica/schemas`                   | [Zod schemas](/guide/schema#zod-schemas) for every record and data file      |
 | `belgica/data/*`                    | The raw data files, including the [split ones](/guide/raw-json#files)        |
@@ -531,18 +532,22 @@ for an unknown code.
 getPostalCodes('44021').map((p) => p.postalCode) // ['9000', '9030', '9031', …]
 ```
 
-## Competence
+## Jurisdiction
 
 Questions that combine datasets. They're in the package root only, since they need both the
 territory and the courts.
 
-### `findCompetentCourts(municipalityId, type)`
+### `findCourtsWithJurisdiction(municipalityId, type)`
 
 ```ts
-function findCompetentCourts(municipalityId: string, type: CourtType, options?: OnDay): Court[]
+function findCourtsWithJurisdiction(
+    municipalityId: string,
+    type: CourtType,
+    options?: OnDay,
+): Court[]
 ```
 
-The courts of a type competent for a municipality on a day (today by default), by REFNIS code:
+The courts of a type with jurisdiction over a municipality on a day (today by default), by REFNIS code:
 the courts whose area, as the law sets it (`cantons`), holds one of the municipality's cantons.
 One court for most municipalities; in Brussels the Dutch- and the French-speaking court; for a
 city split over cantons, every justice of the peace that serves one of them. It gives the court
@@ -550,11 +555,13 @@ as a whole: which of its divisions hears a case is set by royal decree and isn't
 yet, so pick among `getDivisions(court.id)`. Empty for an unknown code.
 
 ```ts
-findCompetentCourts('23088', 'police-court').map((c) => c.id) // ['police-court-vilvoorde']
-findCompetentCourts('21004', 'court-of-first-instance').map((c) => c.id)
+findCourtsWithJurisdiction('23088', 'police-court').map((c) => c.id) // ['police-court-vilvoorde']
+findCourtsWithJurisdiction('21004', 'court-of-first-instance').map((c) => c.id)
 // ['court-of-first-instance-brussel-fr', 'court-of-first-instance-brussel-nl']
-findCompetentCourts('44021', 'labour-court').map((c) => c.id) // ['labour-court-gent']
+findCourtsWithJurisdiction('44021', 'labour-court').map((c) => c.id) // ['labour-court-gent']
 ```
+
+It used to be called `findCompetentCourts`; that name still works, but is deprecated and goes in 1.0.
 
 ### `findJusticesOfThePeace(municipalityId)`
 
@@ -591,7 +598,7 @@ function findCourtsForPostalCode(
 interface PostalCodeCourts {
     municipality: Municipality
     justicesOfThePeace: CantonCourt[] // findJusticesOfThePeace(municipality.id)
-    courts: Court[] // findCompetentCourts(municipality.id, type)
+    courts: Court[] // findCourtsWithJurisdiction(municipality.id, type)
 }
 ```
 
@@ -644,6 +651,74 @@ function getLatestKnownRateDate(type: InterestType): string
 ```
 
 The last day for which a rate is on file, `YYYY-MM-DD`.
+
+## Calendar
+
+From `belgica/calendar` (and the root). See [public holidays](/data/public-holidays) for the
+rules and their legal basis. Days are `Date | string` as everywhere: a `Date` is read as a local
+day, a malformed string throws a `RangeError`, and so does a day before 1975.
+
+### `getPublicHolidays(year)`
+
+```ts
+function getPublicHolidays(year: number): PublicHoliday[]
+
+interface PublicHoliday {
+    id: PublicHolidayId // 'easter-monday', 'national-day', …
+    day: string // YYYY-MM-DD
+    name: Translated
+}
+```
+
+The ten legal public holidays of a year, by day. A holiday moved by royal decree is on the day
+it was moved to (Ascension Day 2008 on 2 May). Community holidays aren't in it.
+
+### `getPublicHoliday(date)` and `isPublicHoliday(date)`
+
+```ts
+function getPublicHoliday(date: Date | string): PublicHoliday | undefined
+function isPublicHoliday(date: Date | string): boolean
+```
+
+### `isWorkingDay(date)`
+
+```ts
+function isWorkingDay(date: Date | string): boolean
+```
+
+Not a Saturday, a Sunday or a legal public holiday.
+
+### `nextWorkingDay(date)`
+
+```ts
+function nextWorkingDay(date: Date | string): string
+```
+
+The last day of a deadline as art. 53 Ger.W. / C. jud. moves it: the day itself when it's a
+working day, otherwise the first working day after it.
+
+```ts
+nextWorkingDay('2026-04-03') // '2026-04-03'
+nextWorkingDay('2026-04-04') // '2026-04-07': Saturday, Sunday, Easter Monday
+```
+
+### `isJudicialHoliday(date)`
+
+```ts
+function isJudicialHoliday(date: Date | string): boolean
+```
+
+1 July to 31 August (art. 334). An appeal or opposition deadline that starts and ends in them is
+extended to 15 September (art. 50); this tells you whether a day is in them, not whether art. 50
+applies.
+
+### `getEasterSunday(year)`
+
+```ts
+function getEasterSunday(year: number): string
+```
+
+Easter Sunday in the Gregorian calendar, `YYYY-MM-DD`.
 
 ## Time
 

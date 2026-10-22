@@ -396,15 +396,19 @@ Vacío para un código desconocido.
 getPostalCodes('44021').map((p) => p.postalCode) // ['9000', '9030', '9031', …]
 ```
 
-## Competencia {#competence}
+## Competencia {#jurisdiction}
 
 Preguntas que combinan conjuntos de datos. Solo están en la raíz del paquete, ya que necesitan
 tanto el territorio como los tribunales.
 
-### `findCompetentCourts(municipalityId, type)` {#findcompetentcourts-municipalityid-type}
+### `findCourtsWithJurisdiction(municipalityId, type)` {#findcourtswithjurisdiction-municipalityid-type}
 
 ```ts
-function findCompetentCourts(municipalityId: string, type: CourtType, options?: OnDay): Court[]
+function findCourtsWithJurisdiction(
+    municipalityId: string,
+    type: CourtType,
+    options?: OnDay,
+): Court[]
 ```
 
 Los tribunales de un tipo competentes para un municipio en un día (hoy por defecto), por código
@@ -416,10 +420,10 @@ real decreto y aún no está en los datos, así que elige entre `getDivisions(co
 un código desconocido.
 
 ```ts
-findCompetentCourts('23088', 'police-court').map((c) => c.id) // ['police-court-vilvoorde']
-findCompetentCourts('21004', 'court-of-first-instance').map((c) => c.id)
+findCourtsWithJurisdiction('23088', 'police-court').map((c) => c.id) // ['police-court-vilvoorde']
+findCourtsWithJurisdiction('21004', 'court-of-first-instance').map((c) => c.id)
 // ['court-of-first-instance-brussel-fr', 'court-of-first-instance-brussel-nl']
-findCompetentCourts('44021', 'labour-court').map((c) => c.id) // ['labour-court-gent']
+findCourtsWithJurisdiction('44021', 'labour-court').map((c) => c.id) // ['labour-court-gent']
 ```
 
 ### `findJusticesOfThePeace(municipalityId)` {#findjusticesofthepeace-municipalityid}
@@ -457,7 +461,7 @@ function findCourtsForPostalCode(
 interface PostalCodeCourts {
     municipality: Municipality
     justicesOfThePeace: CantonCourt[] // findJusticesOfThePeace(municipality.id)
-    courts: Court[] // findCompetentCourts(municipality.id, type)
+    courts: Court[] // findCourtsWithJurisdiction(municipality.id, type)
 }
 ```
 

@@ -1,7 +1,7 @@
 {
     "name": "belgica",
-    "version": "0.4.0",
-    "description": "Belgian legal reference data: courts, judicial cantons and arrondissements, municipalities and postal codes, and legal and commercial interest rates.",
+    "version": "0.5.0",
+    "description": "Belgian legal reference data: courts, judicial cantons and arrondissements, municipalities and postal codes, legal and commercial interest rates, and the public and judicial holidays.",
     "keywords": [
         "belgium",
         "belgian",
@@ -14,6 +14,8 @@
         "postal-codes",
         "geojson",
         "interest-rates",
+        "public-holidays",
+        "deadlines",
         "vredegerecht",
         "justice-of-the-peace"
     ],
@@ -86,6 +88,10 @@
         "./interest-rates": {
             "types": "./dist/interest-rates.d.ts",
             "default": "./dist/interest-rates.js"
+        },
+        "./calendar": {
+            "types": "./dist/calendar.d.ts",
+            "default": "./dist/calendar.js"
         },
         "./postal-codes": {
             "types": "./dist/postal-codes.d.ts",

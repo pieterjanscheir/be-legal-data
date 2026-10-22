@@ -1,0 +1,187 @@
+{
+    "meta": {
+        "title": "belgica explorer",
+        "description": "Tous les tribunaux belges, cantons judiciaires, communes et codes postaux, et les taux d'intérêt légaux : un site construit à partir du package belgica."
+    },
+    "nav": {
+        "skip": "Aller au contenu",
+        "main": "Menu principal",
+        "courts": "Juridictions",
+        "cantons": "Cantons",
+        "municipalities": "Communes",
+        "interest": "Intérêts",
+        "places": "Prisons & maisons de justice",
+        "siteLanguage": "Langue",
+        "namesLanguage": "Langue des noms officiels"
+    },
+    "footer": {
+        "builtFrom": "Chaque page est générée à partir de <npm>belgica</npm> lors du build : <docs>documentation</docs> · <source>code source de ce site</source>",
+        "disclaimer": "Données de référence, pas un avis juridique : vérifiez les sources officielles avant de vous y fier. Données des communes et codes postaux © Statbel, limites des cantons © NGI, CC BY 4.0."
+    },
+    "code": {
+        "caption": "Avec belgica"
+    },
+    "courtType": {
+        "justice-of-the-peace": "Justice de paix",
+        "police-court": "Tribunal de police",
+        "court-of-first-instance": "Tribunal de première instance",
+        "enterprise-court": "Tribunal de l'entreprise",
+        "labour-court": "Tribunal du travail",
+        "court-of-appeal": "Cour d'appel",
+        "labour-court-of-appeal": "Cour du travail",
+        "court-of-assize": "Cour d'assises"
+    },
+    "kind": {
+        "court": "Juridiction",
+        "division": "Division",
+        "seat": "Siège"
+    },
+    "search": {
+        "placeholder": "Code postal, commune, canton ou juridiction",
+        "postalCode": "Code postal",
+        "municipality": "Commune",
+        "canton": "Canton",
+        "cantonName": "Canton de {name}"
+    },
+    "home": {
+        "eyebrow": "Construit avec le package belgica",
+        "title": "Quel tribunal est compétent, et où ?",
+        "lede": "Saisissez un code postal ou une commune pour trouver sa justice de paix, son tribunal de police et toutes les autres juridictions, avec les coordonnées de leurs greffes. Ou parcourez les juridictions, la carte des cantons et les taux d'intérêt, tous lus dans les données du package.",
+        "try": "Essayez",
+        "example9000": "Gand : une commune, cinq cantons",
+        "example1050": "Partagé par Ixelles et Bruxelles",
+        "example4700": "Eupen : des tribunaux en allemand",
+        "mapLabel": "Carte des {count} cantons judiciaires de Belgique",
+        "statsLabel": "Contenu des données",
+        "statCourts": "juridictions, divisions et sièges",
+        "statCantons": "cantons judiciaires",
+        "statMunicipalities": "communes",
+        "statPostalCodes": "codes postaux",
+        "statPlaces": "prisons et maisons de justice",
+        "statRates": "périodes de taux d'intérêt depuis 1970",
+        "featureAddressTitle": "Les tribunaux d'une adresse",
+        "featureAddress": "D'un code postal à ses communes, leurs cantons et chaque juridiction compétente. Pour les villes partagées, chaque canton est listé avec le texte légal de son territoire.",
+        "featureMapTitle": "Carte des cantons",
+        "featureMap": "Les limites de chaque canton selon le NGI, pour trouver le canton d'un point et le dessiner. Chaque canton a sa base légale et ses communes.",
+        "featureInterestTitle": "Calculateur d'intérêts",
+        "featureInterest": "Le taux d'intérêt légal et le taux des transactions commerciales depuis 1970, avec la règle pour les contrats antérieurs au 16 mars 2013. Le calculateur ne charge que <code>belgica/interest-rates</code>.",
+        "featureCourtsTitle": "Toutes les juridictions, en trois langues",
+        "featureCourts": "Les noms tels que chaque juridiction les publie, adresses, numéros de téléphone au format national, IBAN, heures d'ouverture et codes ECLI. Basculez NL · FR · DE en haut de page."
+    },
+    "competence": {
+        "justiceOfThePeace": "Justice de paix",
+        "split": "Cette commune est répartie sur {count} cantons : l'adresse décide. Le territoire de chaque canton, tel que le Code judiciaire le décrit :",
+        "areaOf": "Territoire du canton de <link>{name}</link>",
+        "otherCourts": "Autres juridictions",
+        "divisionNote": "La juridiction dans son ensemble : la division qui connaît d'une affaire est fixée par arrêté royal."
+    },
+    "contacts": {
+        "phone": "Téléphone",
+        "fax": "Fax",
+        "email": "E-mail",
+        "bank-account": "Compte bancaire",
+        "none": "Aucune coordonnée publiée."
+    },
+    "postalCode": {
+        "crumbSearch": "Recherche",
+        "crumb": "Code postal",
+        "title": "{code} {names} : juridictions",
+        "shared": "{code} couvre {count} communes : la rue détermine laquelle. Les juridictions sont listées pour chacune.",
+        "refnis": "REFNIS {id} · codes postaux {codes}"
+    },
+    "municipalities": {
+        "title": "Communes",
+        "lede": "Les {count} communes par province, avec leur code REFNIS. Chaque page indique ses codes postaux, ses cantons et ses juridictions compétentes."
+    },
+    "municipality": {
+        "refnis": "Code REFNIS",
+        "region": "Région",
+        "province": "Province",
+        "arrondissement": "Arrondissement judiciaire",
+        "postalCodes": "Codes postaux",
+        "competentCourts": "Juridictions compétentes",
+        "mapLabel": "Cantons de {arrondissement}, ceux de {municipality} mis en évidence"
+    },
+    "cantons": {
+        "title": "Cantons judiciaires",
+        "lede": "Les {count} territoires des justices de paix, tracés d'après les limites de l'Institut géographique national. Survolez un canton pour voir son nom, cliquez pour l'ouvrir.",
+        "mapLabel": "Carte des cantons judiciaires"
+    },
+    "canton": {
+        "title": "Canton de {name}",
+        "seat": "Siège",
+        "arrondissement": "Arrondissement",
+        "judicialArea": "Ressort",
+        "municipalities": "Communes",
+        "part": "(partie)",
+        "legalBasis": "Base légale",
+        "judicialCode": "Code judiciaire",
+        "area": "Territoire, tel que la loi le décrit",
+        "courts": "Juridictions compétentes pour ce canton",
+        "courtsNote": "D'abord sa propre justice de paix, puis les juridictions dont le ressort le comprend.",
+        "mapLabel": "Les cantons de l'arrondissement, {name} mis en évidence"
+    },
+    "courts": {
+        "title": "Juridictions",
+        "lede": "Toutes les juridictions, divisions et sièges, tels que publiés sur tribunaux-rechtbanken.be et reconstruits chaque semaine.",
+        "filterPlaceholder": "Nom ou ville",
+        "filterLabel": "Filtrer par nom ou ville",
+        "typeLabel": "Type de juridiction",
+        "everyType": "Tous les types",
+        "divisions": "Divisions et sièges",
+        "count": "{shown} sur {total}"
+    },
+    "court": {
+        "kindOf": "{kind} de <link>{name}</link>",
+        "publishedNames": "{count, plural, one {Nom publié} other {Noms publiés}}",
+        "cantonLabel": "Libellé du canton",
+        "registry": "Greffe",
+        "area": "Ressort",
+        "ecli": "ECLI",
+        "openingHours": "Heures d'ouverture",
+        "contacts": "Coordonnées",
+        "coversOne": "Compétente pour le canton de <link>{name}</link>",
+        "coversMany": "Compétente pour {count} cantons",
+        "mapLabel": "Carte mettant en évidence {count, plural, one {le canton} other {les # cantons}} couverts par la juridiction",
+        "hoursPublished": "Heures d'ouverture, telles que publiées",
+        "seats": "Sièges",
+        "divisions": "Divisions",
+        "sources": "Sources",
+        "checked": "vérifié le {date}"
+    },
+    "interest": {
+        "title": "Calculateur d'intérêts",
+        "lede": "Intérêts simples au taux légal ou au taux des transactions commerciales, répartis sur les périodes de taux traversées : jours × capital × taux ÷ 365. Le calculateur tourne dans votre navigateur avec <code>belgica/interest-rates</code> seul, sans les données des juridictions ni du territoire.",
+        "rate": "Taux",
+        "legal": "Intérêt légal (par an)",
+        "commercial": "Transactions commerciales (par semestre)",
+        "principal": "Capital (€)",
+        "from": "Du",
+        "to": "Au",
+        "newerContract": "Contrat conclu le 16 mars 2013 ou après",
+        "ambiguous": "Le séparateur dans {amount} indique-t-il les milliers ou les décimales ? Écrivez le montant sans séparateur (10000) ou avec des décimales (10000,00).",
+        "invalid": "Saisissez un montant positif et une date de début antérieure à la date de fin.",
+        "interest": "Intérêts",
+        "over": "sur {amount} pendant {days} jours",
+        "missing": "Une partie de la période n'a pas de taux connu (les taux sont connus jusqu'au {date}) ; elle n'est pas comptée.",
+        "days": "Jours",
+        "sources": "Sources",
+        "sourcesText": "Taux légal : {legal}. Taux des transactions commerciales : {commercial}.",
+        "disclaimer": "Une aide au calcul, pas un avis juridique : un jugement ou un contrat peut prévoir d'autres règles, comme la capitalisation des intérêts."
+    },
+    "places": {
+        "title": "Prisons et maisons de justice",
+        "lede": "Les {prisons} prisons et maisons de détention du SPF Justice, et les {houses} maisons de justice gérées par les Communautés.",
+        "prisons": "Prisons",
+        "housesOfJustice": "Maisons de justice",
+        "prison": "Prison",
+        "detentionHouse": "Maison de détention",
+        "flemish": "Communauté flamande",
+        "french": "Communauté française",
+        "german": "Communauté germanophone"
+    },
+    "notFound": {
+        "title": "Page introuvable",
+        "back": "Retour à l'explorer"
+    }
+}

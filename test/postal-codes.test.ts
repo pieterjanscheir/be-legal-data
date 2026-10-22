@@ -3,7 +3,7 @@ import { describe, expect, expectTypeOf, it } from 'vitest'
 import {
     appliesOn,
     courts,
-    findCompetentCourts,
+    findCourtsWithJurisdiction,
     findCourtsForPostalCode,
     findJusticesOfThePeace,
     getArrondissement,
@@ -134,7 +134,7 @@ describe('getPostalCode', () => {
 })
 
 describe('findCourtsForPostalCode', () => {
-    it('chains a postal code to the justices of the peace and the competent courts', () => {
+    it('chains a postal code to the justices of the peace and the courts with jurisdiction', () => {
         const result = findCourtsForPostalCode('9050', 'labour-court')
         expect(result).toHaveLength(1)
         const [gent] = result
@@ -147,7 +147,7 @@ describe('findCourtsForPostalCode', () => {
             'gent-4',
             'gent-5',
         ])
-        expect(gent?.courts).toEqual(findCompetentCourts('44021', 'labour-court'))
+        expect(gent?.courts).toEqual(findCourtsWithJurisdiction('44021', 'labour-court'))
         expect(gent?.courts.map((c) => c.id)).toEqual(['labour-court-gent'])
     })
 

@@ -1,0 +1,187 @@
+{
+    "meta": {
+        "title": "belgica explorer",
+        "description": "ベルギーのすべての裁判所、司法カントン、自治体、郵便番号、そして法定利率。belgica パッケージから作られたサイトです。"
+    },
+    "nav": {
+        "skip": "本文へスキップ",
+        "main": "メイン",
+        "courts": "裁判所",
+        "cantons": "カントン",
+        "municipalities": "自治体",
+        "interest": "利息",
+        "places": "刑務所と司法の家",
+        "siteLanguage": "言語",
+        "namesLanguage": "公式名称の言語"
+    },
+    "footer": {
+        "builtFrom": "すべてのページはビルド時に <npm>belgica</npm> から生成されています：<docs>ドキュメント</docs> · <source>このサイトのソースコード</source>",
+        "disclaimer": "参考データであり、法的助言ではありません。利用する前に公式の情報源を確認してください。自治体と郵便番号のデータ © Statbel、カントンの境界 © NGI、CC BY 4.0。"
+    },
+    "code": {
+        "caption": "belgica を使うと"
+    },
+    "courtType": {
+        "justice-of-the-peace": "治安判事裁判所",
+        "police-court": "警察裁判所",
+        "court-of-first-instance": "第一審裁判所",
+        "enterprise-court": "企業裁判所",
+        "labour-court": "労働裁判所",
+        "court-of-appeal": "控訴院",
+        "labour-court-of-appeal": "労働控訴院",
+        "court-of-assize": "重罪院"
+    },
+    "kind": {
+        "court": "裁判所",
+        "division": "支部",
+        "seat": "開廷地"
+    },
+    "search": {
+        "placeholder": "郵便番号、自治体、カントンまたは裁判所",
+        "postalCode": "郵便番号",
+        "municipality": "自治体",
+        "canton": "カントン",
+        "cantonName": "カントン {name}"
+    },
+    "home": {
+        "eyebrow": "belgica パッケージで構築",
+        "title": "どこで、どの裁判所が管轄するのか？",
+        "lede": "郵便番号または自治体を入力すると、その治安判事裁判所、警察裁判所、その他すべての裁判所と書記課の連絡先が見つかります。裁判所、カントンの地図、利率を閲覧することもできます。すべてパッケージのデータから読み込んでいます。",
+        "try": "例",
+        "example9000": "Gent：1つの自治体に5つのカントン",
+        "example1050": "Elsene と Brussels が共有",
+        "example4700": "Eupen：ドイツ語の裁判所",
+        "mapLabel": "ベルギーの {count} の司法カントンの地図",
+        "statsLabel": "データの内容",
+        "statCourts": "裁判所、支部、開廷地",
+        "statCantons": "司法カントン",
+        "statMunicipalities": "自治体",
+        "statPostalCodes": "郵便番号",
+        "statPlaces": "刑務所と司法の家",
+        "statRates": "1970年以降の利率期間",
+        "featureAddressTitle": "住所から裁判所を探す",
+        "featureAddress": "郵便番号から、その自治体、カントン、そして管轄するすべての裁判所へ。分割された都市では、各カントンとその区域を定める法文を一覧にします。",
+        "featureMapTitle": "カントンの地図",
+        "featureMap": "NGI によるすべてのカントンの境界。ある地点のカントンを特定し、地図に描くことができます。各カントンには法的根拠と自治体の一覧があります。",
+        "featureInterestTitle": "利息計算機",
+        "featureInterest": "1970年以降の法定利率と商取引の利率。2013年3月16日より前の契約に適用される規則にも対応しています。計算機は <code>belgica/interest-rates</code> だけを読み込みます。",
+        "featureCourtsTitle": "すべての裁判所を3言語で",
+        "featureCourts": "各裁判所が公表している名称、住所、国内形式の電話番号、IBAN、開庁時間、ECLI コード。上部で NL · FR · DE を切り替えられます。"
+    },
+    "competence": {
+        "justiceOfThePeace": "治安判事裁判所",
+        "split": "この自治体は {count} のカントンに分かれており、番地によって管轄が決まります。司法法典が定める各カントンの区域：",
+        "areaOf": "カントン <link>{name}</link> の区域",
+        "otherCourts": "その他の裁判所",
+        "divisionNote": "裁判所全体です。どの支部が事件を審理するかは王令で定められます。"
+    },
+    "contacts": {
+        "phone": "電話",
+        "fax": "ファックス",
+        "email": "メール",
+        "bank-account": "銀行口座",
+        "none": "公表されている連絡先はありません。"
+    },
+    "postalCode": {
+        "crumbSearch": "検索",
+        "crumb": "郵便番号",
+        "title": "{code} {names}：裁判所",
+        "shared": "{code} は {count} の自治体に属しており、どれに当たるかは通りによって決まります。裁判所は自治体ごとに一覧にしています。",
+        "refnis": "REFNIS {id} · 郵便番号 {codes}"
+    },
+    "municipalities": {
+        "title": "自治体",
+        "lede": "州ごとの {count} の自治体と REFNIS コード。各ページに郵便番号、カントン、管轄の裁判所を掲載しています。"
+    },
+    "municipality": {
+        "refnis": "REFNIS コード",
+        "region": "地域",
+        "province": "州",
+        "arrondissement": "司法管区",
+        "postalCodes": "郵便番号",
+        "competentCourts": "管轄の裁判所",
+        "mapLabel": "{arrondissement} のカントン（{municipality} のカントンを強調表示）"
+    },
+    "cantons": {
+        "title": "司法カントン",
+        "lede": "治安判事裁判所の {count} の管轄区域。国立地理院の境界データから描画しています。カントンにカーソルを合わせると名前が表示され、クリックすると開きます。",
+        "mapLabel": "司法カントンの地図"
+    },
+    "canton": {
+        "title": "カントン {name}",
+        "seat": "所在地",
+        "arrondissement": "司法管区",
+        "judicialArea": "司法地域",
+        "municipalities": "自治体",
+        "part": "（一部）",
+        "legalBasis": "法的根拠",
+        "judicialCode": "司法法典",
+        "area": "法律が定める区域",
+        "courts": "このカントンを管轄する裁判所",
+        "courtsNote": "まずこのカントンの治安判事裁判所、次にこのカントンを区域に含む裁判所です。",
+        "mapLabel": "司法管区のカントン（{name} を強調表示）"
+    },
+    "courts": {
+        "title": "裁判所",
+        "lede": "tribunaux-rechtbanken.be で公表されているすべての裁判所、支部、開廷地。毎週更新しています。",
+        "filterPlaceholder": "名称または都市",
+        "filterLabel": "名称または都市で絞り込む",
+        "typeLabel": "裁判所の種類",
+        "everyType": "すべての種類",
+        "divisions": "支部と開廷地",
+        "count": "{total} 件中 {shown} 件"
+    },
+    "court": {
+        "kindOf": "<link>{name}</link> の{kind}",
+        "publishedNames": "{count, plural, other {公表名称}}",
+        "cantonLabel": "カントン表示",
+        "registry": "書記課",
+        "area": "管轄区域",
+        "ecli": "ECLI",
+        "openingHours": "開庁時間",
+        "contacts": "連絡先",
+        "coversOne": "カントン <link>{name}</link> を管轄",
+        "coversMany": "{count} のカントンを管轄",
+        "mapLabel": "この裁判所が管轄する{count, plural, other {# のカントン}}を強調表示した地図",
+        "hoursPublished": "公表されている開庁時間",
+        "seats": "開廷地",
+        "divisions": "支部",
+        "sources": "出典",
+        "checked": "{date} 確認"
+    },
+    "interest": {
+        "title": "利息計算機",
+        "lede": "法定利率または商取引の利率による単利を、またがる利率期間ごとに分けて計算します：日数 × 元本 × 利率 ÷ 365。計算機は裁判所や地域のデータを使わず、<code>belgica/interest-rates</code> だけでブラウザ上で動作します。",
+        "rate": "利率",
+        "legal": "法定利息（年ごと）",
+        "commercial": "商取引（半期ごと）",
+        "principal": "元本（€）",
+        "from": "開始日",
+        "to": "終了日",
+        "newerContract": "2013年3月16日以降に締結された契約",
+        "ambiguous": "{amount} の区切り記号は千の位ですか、それとも小数点ですか？区切り記号なし（10000）か、小数付き（10000,00）で入力してください。",
+        "invalid": "正の金額と、終了日より前の開始日を入力してください。",
+        "interest": "利息",
+        "over": "{amount} に対する {days} 日分",
+        "missing": "期間の一部に利率のデータがありません（利率は {date} まで判明しています）。その部分は計算に含まれません。",
+        "days": "日数",
+        "sources": "出典",
+        "sourcesText": "法定利率：{legal}。商取引の利率：{commercial}。",
+        "disclaimer": "計算の補助であり、法的助言ではありません。判決や契約で、利息の元本組入れなど別の規則が定められている場合があります。"
+    },
+    "places": {
+        "title": "刑務所と司法の家",
+        "lede": "連邦司法省の {prisons} の刑務所と拘禁施設、および各共同体が運営する {houses} の司法の家。",
+        "prisons": "刑務所",
+        "housesOfJustice": "司法の家",
+        "prison": "刑務所",
+        "detentionHouse": "拘禁施設",
+        "flemish": "フラマン語共同体",
+        "french": "フランス語共同体",
+        "german": "ドイツ語共同体"
+    },
+    "notFound": {
+        "title": "ページが見つかりません",
+        "back": "explorer に戻る"
+    }
+}

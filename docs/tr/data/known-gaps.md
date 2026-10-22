@@ -7,7 +7,7 @@ import { data as stats } from '../../.vitepress/stats.data'
 - **Portalda bulunmayan mahkemeler** verilerde yok: Hof van Cassatie / Cour de cassation,
   Grondwettelijk Hof / Cour constitutionnelle, Raad van State / Conseil d'État ve disiplin
   mahkemeleri ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
-- **Yetki mahkeme düzeyinde durur.** `cantons` ve `findCompetentCourts` bir belediyeyi hangi
+- **Yetki mahkeme düzeyinde durur.** `cantons` ve `findCourtsWithJurisdiction` bir belediyeyi hangi
   mahkemenin kapsadığını söyler, mahkemenin hangi bölümünün (afdeling / division) kapsadığını
   değil: bir bölümün alanı kraliyet kararnamesiyle belirlenir ve henüz verilerde yoktur
   ([#58](https://github.com/pieterjanscheir/belgica/issues/58)).

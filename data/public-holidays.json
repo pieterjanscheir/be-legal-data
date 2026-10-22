@@ -1,0 +1,69 @@
+{
+  "description": "De tien wettelijke feestdagen. Valt de vervaldag van een termijn op een zaterdag, een zondag of een wettelijke feestdag, dan wordt hij verplaatst op de eerstvolgende werkdag (art. 53 Ger.W.).",
+  "legalBasis": "Wet van 4 januari 1974 betreffende de feestdagen; KB van 18 april 1974 tot bepaling van de algemene wijze van uitvoering van de wet van 4 januari 1974 betreffende de feestdagen, art. 1",
+  "fromYear": 1975,
+  "holidays": [
+    {
+      "id": "new-year",
+      "name": { "nl": "Nieuwjaar", "fr": "Jour de l'an", "de": "Neujahr" },
+      "rule": { "type": "fixed", "month": 1, "day": 1 }
+    },
+    {
+      "id": "easter-monday",
+      "name": { "nl": "Paasmaandag", "fr": "Lundi de Pâques", "de": "Ostermontag" },
+      "rule": { "type": "easter", "daysAfterEaster": 1 }
+    },
+    {
+      "id": "labour-day",
+      "name": { "nl": "Feest van de Arbeid", "fr": "Fête du Travail", "de": "Tag der Arbeit" },
+      "rule": { "type": "fixed", "month": 5, "day": 1 }
+    },
+    {
+      "id": "ascension",
+      "name": { "nl": "Hemelvaartsdag", "fr": "Ascension", "de": "Christi Himmelfahrt" },
+      "rule": { "type": "easter", "daysAfterEaster": 39 }
+    },
+    {
+      "id": "whit-monday",
+      "name": { "nl": "Pinkstermaandag", "fr": "Lundi de Pentecôte", "de": "Pfingstmontag" },
+      "rule": { "type": "easter", "daysAfterEaster": 50 }
+    },
+    {
+      "id": "national-day",
+      "name": { "nl": "Nationale feestdag", "fr": "Fête nationale", "de": "Nationalfeiertag" },
+      "rule": { "type": "fixed", "month": 7, "day": 21 }
+    },
+    {
+      "id": "assumption",
+      "name": {
+        "nl": "Onze-Lieve-Vrouw-Hemelvaart",
+        "fr": "Assomption",
+        "de": "Mariä Himmelfahrt"
+      },
+      "rule": { "type": "fixed", "month": 8, "day": 15 }
+    },
+    {
+      "id": "all-saints",
+      "name": { "nl": "Allerheiligen", "fr": "Toussaint", "de": "Allerheiligen" },
+      "rule": { "type": "fixed", "month": 11, "day": 1 }
+    },
+    {
+      "id": "armistice",
+      "name": { "nl": "Wapenstilstand", "fr": "Armistice", "de": "Waffenstillstand" },
+      "rule": { "type": "fixed", "month": 11, "day": 11 }
+    },
+    {
+      "id": "christmas",
+      "name": { "nl": "Kerstmis", "fr": "Noël", "de": "Weihnachten" },
+      "rule": { "type": "fixed", "month": 12, "day": 25 }
+    }
+  ],
+  "replacements": [
+    {
+      "holiday": "ascension",
+      "replaces": "2008-05-01",
+      "day": "2008-05-02",
+      "legalBasis": "KB van 10 februari 2008 (2008-02-10/31), art. 1: Hemelvaartsdag viel samen met 1 mei"
+    }
+  ]
+}

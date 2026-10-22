@@ -9,6 +9,32 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ### Added
 
+**Public and judicial holidays, for deadlines: `belgica/calendar`.** `getPublicHolidays(year)`
+gives the ten legal public holidays of any year from 1975 (law of 4 January 1974, royal decree
+of 18 April 1974, art. 1), with the three that depend on Easter computed. `nextWorkingDay` moves
+the last day of a deadline off a Saturday, Sunday or holiday (art. 53 Ger.W. / C. jud.), and
+`isJudicialHoliday` tells whether a day is in the judicial holidays, 1 July to 31 August
+(art. 334). Also `getPublicHoliday`, `isPublicHoliday`, `isWorkingDay` and `getEasterSunday`.
+`data/public-holidays.json` holds the rules, not dates, and the one year a decree moved a
+holiday: Ascension Day 2008, which fell on 1 May, moved to 2 May. Community holidays (11 July,
+27 September, 15 November) aren't legal holidays and aren't in it. Tested against the Royal
+Observatory's published lists for 2024 to 2027 ([#61](https://github.com/pieterjanscheir/belgica/issues/61)).
+
+### Changed
+
+**`findCompetentCourts` is now `findCourtsWithJurisdiction`, and `find_competent_courts` is now
+`find_courts_with_jurisdiction`.** "Jurisdiction" is the English term for _bevoegdheid_ /
+_compétence_. The old names still work, are deprecated, and go in 1.0. The API docs'
+"Competence" section is now "Jurisdiction" (`#jurisdiction`).
+
+- The [explorer](https://belgica.scheir.eu/) is in the docs' 13 languages, with next-intl, and moved from
+  GitHub Pages to Vercel: a page in every language is about 29,000 pages, over the 1 GB a Pages
+  site may hold. It still isn't part of the package.
+
+## [0.5.0] - 2026-10-22
+
+### Added
+
 **A Python package: `pip install belgica`.** The same data and helpers on PyPI, in snake case,
 with the same version number: `get_court`, `find_courts`, `get_cantons_for_municipality`,
 `find_competent_courts`, `find_courts_for_postal_code`, `find_cantons_at`,
@@ -76,14 +102,21 @@ load them. The GeoPackage reader now reads points, and geometries with a Z (drop
 
 ### Changed
 
+- The release pull request and the weekly data pull request run CI when the repository's GitHub
+  App is set up. GitHub releases take their notes from the version's section of this changelog.
+  `CHANGELOG.md` merges with git's union driver, so branches no longer conflict on Unreleased.
 - The package is half the size: the canton boundaries are in it once. `belgica/canton-boundaries`
   used to inline `data/canton-boundaries.json` into its JavaScript, so the 22 MB of geometry was
   in the package twice. It now imports the file from `data/` with `with { type: 'json' }`, which
-  Node ≥ 22.12 and current bundlers support. The API is the same. The package went from 51 MB to
-  about 27 MB unpacked (#80).
+  Node ≥ 22.12 and current bundlers support, and so does `belgica/arrondissement-boundaries`.
+  The API is the same. The package went from 51 MB to about 36 MB unpacked, with the 8 MB of
+  arrondissement boundaries added since (#80).
 - Releases are prepared by a workflow, which opens the release pull request, and published when
   it's merged. Pull requests get a preview package on pkg.pr.new. CI adds CodeQL, OpenSSF
   Scorecard, zizmor and dependency review, and every action is pinned to a commit.
+- The [explorer](https://pieterjanscheir.github.io/belgica/explore/), a Next.js site built on
+  the package, is deployed with the docs: a page for every court, canton, municipality and postal
+  code, the canton map and an interest calculator. It isn't part of the package.
 
 ## [0.4.0] - 2026-10-22
 
@@ -339,7 +372,8 @@ OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
 - Courts (justices of the peace in East and West Flanders, Ondernemingsrechtbank Gent) and the
   legal and commercial interest rates.
 
-[Unreleased]: https://github.com/pieterjanscheir/belgica/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/pieterjanscheir/belgica/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/pieterjanscheir/belgica/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/pieterjanscheir/belgica/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/pieterjanscheir/belgica/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/pieterjanscheir/belgica/compare/72889e0...v0.3.0

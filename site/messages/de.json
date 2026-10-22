@@ -1,0 +1,187 @@
+{
+    "meta": {
+        "title": "belgica explorer",
+        "description": "Alle belgischen Gerichte, Gerichtskantone, Gemeinden und Postleitzahlen sowie die gesetzlichen Zinssätze: eine Website auf Grundlage des Pakets belgica."
+    },
+    "nav": {
+        "skip": "Zum Inhalt",
+        "main": "Hauptmenü",
+        "courts": "Gerichte",
+        "cantons": "Kantone",
+        "municipalities": "Gemeinden",
+        "interest": "Zinsen",
+        "places": "Gefängnisse & Justizhäuser",
+        "siteLanguage": "Sprache",
+        "namesLanguage": "Sprache der offiziellen Namen"
+    },
+    "footer": {
+        "builtFrom": "Jede Seite wird beim Build aus <npm>belgica</npm> erstellt: <docs>Dokumentation</docs> · <source>Quellcode dieser Website</source>",
+        "disclaimer": "Referenzdaten, keine Rechtsberatung: Prüfen Sie die offiziellen Quellen, bevor Sie sich darauf verlassen. Daten zu Gemeinden und Postleitzahlen © Statbel, Kantonsgrenzen © NGI, CC BY 4.0."
+    },
+    "code": {
+        "caption": "Mit belgica"
+    },
+    "courtType": {
+        "justice-of-the-peace": "Friedensgericht",
+        "police-court": "Polizeigericht",
+        "court-of-first-instance": "Gericht Erster Instanz",
+        "enterprise-court": "Unternehmensgericht",
+        "labour-court": "Arbeitsgericht",
+        "court-of-appeal": "Appellationshof",
+        "labour-court-of-appeal": "Arbeitsgerichtshof",
+        "court-of-assize": "Assisenhof"
+    },
+    "kind": {
+        "court": "Gericht",
+        "division": "Abteilung",
+        "seat": "Sitz"
+    },
+    "search": {
+        "placeholder": "Postleitzahl, Gemeinde, Kanton oder Gericht",
+        "postalCode": "Postleitzahl",
+        "municipality": "Gemeinde",
+        "canton": "Kanton",
+        "cantonName": "Kanton {name}"
+    },
+    "home": {
+        "eyebrow": "Erstellt mit dem Paket belgica",
+        "title": "Welches Gericht ist wo zuständig?",
+        "lede": "Geben Sie eine Postleitzahl oder eine Gemeinde ein, um das Friedensgericht, das Polizeigericht und alle anderen Gerichte mit den Kontaktdaten ihrer Kanzleien zu finden. Oder durchsuchen Sie die Gerichte, die Kantonskarte und die Zinssätze, alle aus den Daten des Pakets gelesen.",
+        "try": "Probieren Sie",
+        "example9000": "Gent: eine Gemeinde, fünf Kantone",
+        "example1050": "Ixelles und Brüssel teilen sie sich",
+        "example4700": "Eupen: Gerichte auf Deutsch",
+        "mapLabel": "Karte der {count} Gerichtskantone Belgiens",
+        "statsLabel": "Was die Daten enthalten",
+        "statCourts": "Gerichte, Abteilungen und Sitze",
+        "statCantons": "Gerichtskantone",
+        "statMunicipalities": "Gemeinden",
+        "statPostalCodes": "Postleitzahlen",
+        "statPlaces": "Gefängnisse und Justizhäuser",
+        "statRates": "Zinsperioden seit 1970",
+        "featureAddressTitle": "Gerichte für eine Adresse",
+        "featureAddress": "Von einer Postleitzahl zu ihren Gemeinden, deren Kantonen und jedem zuständigen Gericht. Bei geteilten Städten wird jeder Kanton mit dem Gesetzestext seines Gebiets aufgeführt.",
+        "featureMapTitle": "Kantonskarte",
+        "featureMap": "Die Grenze jedes Kantons laut NGI, um den Kanton eines Punktes zu finden und ihn zu zeichnen. Zu jedem Kanton gehören seine Rechtsgrundlage und seine Gemeinden.",
+        "featureInterestTitle": "Zinsrechner",
+        "featureInterest": "Der gesetzliche Zinssatz und der Zinssatz für Handelsgeschäfte seit 1970, mit der Regel für Verträge vor dem 16. März 2013. Der Rechner lädt nur <code>belgica/interest-rates</code>.",
+        "featureCourtsTitle": "Alle Gerichte, in drei Sprachen",
+        "featureCourts": "Namen, wie jedes Gericht sie veröffentlicht, Adressen, Telefonnummern im nationalen Format, IBANs, Öffnungszeiten und ECLI-Codes. Oben zwischen NL · FR · DE wechseln."
+    },
+    "competence": {
+        "justiceOfThePeace": "Friedensgericht",
+        "split": "Diese Gemeinde ist auf {count} Kantone aufgeteilt: Die Straßenadresse entscheidet. Das Gebiet jedes Kantons, wie das Gerichtsgesetzbuch es beschreibt:",
+        "areaOf": "Gebiet des Kantons <link>{name}</link>",
+        "otherCourts": "Andere Gerichte",
+        "divisionNote": "Das Gericht als Ganzes: Welche Abteilung eine Sache verhandelt, wird durch Königlichen Erlass bestimmt."
+    },
+    "contacts": {
+        "phone": "Telefon",
+        "fax": "Fax",
+        "email": "E-Mail",
+        "bank-account": "Bankkonto",
+        "none": "Keine Kontaktdaten veröffentlicht."
+    },
+    "postalCode": {
+        "crumbSearch": "Suche",
+        "crumb": "Postleitzahl",
+        "title": "{code} {names}: Gerichte",
+        "shared": "{code} gehört zu {count} Gemeinden: Die Straße entscheidet, zu welcher. Die Gerichte werden für jede aufgeführt.",
+        "refnis": "REFNIS {id} · Postleitzahlen {codes}"
+    },
+    "municipalities": {
+        "title": "Gemeinden",
+        "lede": "Die {count} Gemeinden nach Provinz, mit ihrem REFNIS-Code. Jede Seite zeigt ihre Postleitzahlen, Kantone und zuständigen Gerichte."
+    },
+    "municipality": {
+        "refnis": "REFNIS-Code",
+        "region": "Region",
+        "province": "Provinz",
+        "arrondissement": "Gerichtsbezirk",
+        "postalCodes": "Postleitzahlen",
+        "competentCourts": "Zuständige Gerichte",
+        "mapLabel": "Kantone von {arrondissement}, die von {municipality} hervorgehoben"
+    },
+    "cantons": {
+        "title": "Gerichtskantone",
+        "lede": "Die {count} Gebiete der Friedensgerichte, gezeichnet nach den Grenzen des Nationalen Geographischen Instituts. Fahren Sie über einen Kanton, um seinen Namen zu sehen, und klicken Sie, um ihn zu öffnen.",
+        "mapLabel": "Karte der Gerichtskantone"
+    },
+    "canton": {
+        "title": "Kanton {name}",
+        "seat": "Sitz",
+        "arrondissement": "Bezirk",
+        "judicialArea": "Gerichtshofbereich",
+        "municipalities": "Gemeinden",
+        "part": "(teilweise)",
+        "legalBasis": "Rechtsgrundlage",
+        "judicialCode": "Gerichtsgesetzbuch",
+        "area": "Gebiet, wie das Gesetz es beschreibt",
+        "courts": "Für diesen Kanton zuständige Gerichte",
+        "courtsNote": "Zuerst das eigene Friedensgericht, dann die Gerichte, zu deren Bereich er gehört.",
+        "mapLabel": "Die Kantone des Bezirks, mit {name} hervorgehoben"
+    },
+    "courts": {
+        "title": "Gerichte",
+        "lede": "Alle Gerichte, Abteilungen und Sitze, wie auf tribunaux-rechtbanken.be veröffentlicht und jede Woche neu erstellt.",
+        "filterPlaceholder": "Name oder Stadt",
+        "filterLabel": "Nach Name oder Stadt filtern",
+        "typeLabel": "Gerichtsart",
+        "everyType": "Alle Arten",
+        "divisions": "Abteilungen und Sitze",
+        "count": "{shown} von {total}"
+    },
+    "court": {
+        "kindOf": "{kind} des <link>{name}</link>",
+        "publishedNames": "{count, plural, one {Veröffentlichter Name} other {Veröffentlichte Namen}}",
+        "cantonLabel": "Kantonsbezeichnung",
+        "registry": "Kanzlei",
+        "area": "Bereich",
+        "ecli": "ECLI",
+        "openingHours": "Öffnungszeiten",
+        "contacts": "Kontakt",
+        "coversOne": "Zuständig für den Kanton <link>{name}</link>",
+        "coversMany": "Zuständig für {count} Kantone",
+        "mapLabel": "Karte, die {count, plural, one {den Kanton hervorhebt, für den} other {die # Kantone hervorhebt, für die}} das Gericht zuständig ist",
+        "hoursPublished": "Öffnungszeiten, wie veröffentlicht",
+        "seats": "Sitze",
+        "divisions": "Abteilungen",
+        "sources": "Quellen",
+        "checked": "geprüft am {date}"
+    },
+    "interest": {
+        "title": "Zinsrechner",
+        "lede": "Einfache Zinsen zum gesetzlichen Zinssatz oder zum Zinssatz für Handelsgeschäfte, aufgeteilt auf die betroffenen Zinsperioden: Tage × Hauptsumme × Zinssatz ÷ 365. Der Rechner läuft in Ihrem Browser allein mit <code>belgica/interest-rates</code>, ohne die Gerichts- oder Gebietsdaten.",
+        "rate": "Zinssatz",
+        "legal": "Gesetzliche Zinsen (pro Jahr)",
+        "commercial": "Handelsgeschäfte (pro Halbjahr)",
+        "principal": "Hauptsumme (€)",
+        "from": "Von",
+        "to": "Bis",
+        "newerContract": "Vertrag am oder nach dem 16. März 2013 geschlossen",
+        "ambiguous": "Steht das Trennzeichen in {amount} für Tausender oder für Dezimalstellen? Schreiben Sie den Betrag ohne Trennzeichen (10000) oder mit Dezimalstellen (10000,00).",
+        "invalid": "Geben Sie einen positiven Betrag und ein Anfangsdatum vor dem Enddatum ein.",
+        "interest": "Zinsen",
+        "over": "auf {amount} über {days} Tage",
+        "missing": "Für einen Teil des Zeitraums ist kein Zinssatz hinterlegt (Zinssätze sind bis {date} bekannt); dieser Teil wird nicht berechnet.",
+        "days": "Tage",
+        "sources": "Quellen",
+        "sourcesText": "Gesetzlicher Zinssatz: {legal}. Zinssatz für Handelsgeschäfte: {commercial}.",
+        "disclaimer": "Eine Rechenhilfe, keine Rechtsberatung: Ein Urteil oder Vertrag kann andere Regeln vorsehen, etwa die Kapitalisierung von Zinsen."
+    },
+    "places": {
+        "title": "Gefängnisse und Justizhäuser",
+        "lede": "Die {prisons} Gefängnisse und Haftzentren des FÖD Justiz und die {houses} Justizhäuser der Gemeinschaften.",
+        "prisons": "Gefängnisse",
+        "housesOfJustice": "Justizhäuser",
+        "prison": "Gefängnis",
+        "detentionHouse": "Haftzentrum",
+        "flemish": "Flämische Gemeinschaft",
+        "french": "Französische Gemeinschaft",
+        "german": "Deutschsprachige Gemeinschaft"
+    },
+    "notFound": {
+        "title": "Seite nicht gefunden",
+        "back": "Zurück zum Explorer"
+    }
+}

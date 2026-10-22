@@ -23,7 +23,7 @@ const load = <T>(entry: string) => import(`../dist/${entry}.js`) as Promise<T>
 const {
     cantons,
     courts,
-    findCompetentCourts,
+    findCourtsWithJurisdiction,
     findCourts,
     findCourtsForPostalCode,
     findJusticesOfThePeace,
@@ -95,7 +95,7 @@ const municipalityCases = days.flatMap((on) =>
             partial: c.partial,
         })),
         competentCourts: Object.fromEntries(
-            types.map((type) => [type, ids(findCompetentCourts(id, type, { on }))]),
+            types.map((type) => [type, ids(findCourtsWithJurisdiction(id, type, { on }))]),
         ),
     })),
 )

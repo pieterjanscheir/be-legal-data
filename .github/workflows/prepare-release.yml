@@ -37,9 +37,22 @@ jobs:
               env:
                   BUMP: ${{ inputs.bump }}
               run: echo "version=$(node scripts/prepare-release.ts "$BUMP")" >> "$GITHUB_OUTPUT"
+            # A token from the repository's GitHub App when it's set up (the BOT_CLIENT_ID variable
+            # and the BOT_PRIVATE_KEY secret): a pull request it opens or pushes to starts CI, which
+            # one from the workflow's own token doesn't. Without the app, the workflow's token is used.
+            - name: Get the bot's token
+              id: bot
+              if: vars.BOT_CLIENT_ID != ''
+              uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+              with:
+                  client-id: ${{ vars.BOT_CLIENT_ID }}
+                  private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+                  permission-contents: write
+                  permission-pull-requests: write
             - name: Open the release pull request
               env:
-                  GH_TOKEN: ${{ github.token }}
+                  GH_TOKEN: ${{ steps.bot.outputs.token || github.token }}
+                  BOT: ${{ steps.bot.outcome == 'success' }}
                   VERSION: ${{ steps.version.outputs.version }}
               run: |
                   git config user.name github-actions[bot]
@@ -50,8 +63,10 @@ jobs:
                   {
                     echo "Moves the Unreleased changes under $VERSION. Merging this pull request publishes"
                     echo "$VERSION to npm and PyPI and creates the GitHub release."
-                    echo
-                    echo "Pull requests opened by a workflow don't start CI themselves: close and reopen"
-                    echo "this one to run it. The release workflow runs \`pnpm check\` again before publishing."
+                    if [ "$BOT" != true ]; then
+                      echo
+                      echo "Pull requests opened with the workflow's own token don't start CI: close and"
+                      echo "reopen this one to run it, or set up the bot (docs/guide/contributing.md)."
+                    fi
                   } > body.md
                   gh pr create --base main --head "release/v$VERSION" --title "Release $VERSION" --body-file body.md
