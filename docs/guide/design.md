@@ -98,7 +98,7 @@ changes unreviewed.
 megabytes of HTML. The parsers are tested on trimmed copies of real pages. A page the parser
 can't place stops the build instead of producing a half-right record. Two sources refuse
 GitHub's servers (ejustice, police.be); they're fetched from a regular machine
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## 8. Distribution: ESM only, Node 22.12+, built on release
 

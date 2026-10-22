@@ -53,7 +53,7 @@ Para ejecutarlo tú mismo: `pnpm fetch:sources` (escribe `.sources/`), y luego `
 
 Los cantones y los municipios se reconstruyen a mano con `pnpm build:cantons`: el sitio del
 Moniteur belge / Belgisch Staatsblad (el diario oficial belga) rechaza los servidores de GitHub
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## Comprobaciones automáticas {#automatic-checks}
 

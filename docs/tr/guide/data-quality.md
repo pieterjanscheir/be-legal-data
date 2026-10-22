@@ -53,7 +53,7 @@ Kendiniz çalıştırmak için: `pnpm fetch:sources` (`.sources/` klasörünü y
 
 Kantonlar ve belediyeler `pnpm build:cantons` ile elle yeniden oluşturulur: Belgisch Staatsblad /
 Moniteur belge'nin (Belçika resmî gazetesi) sitesi GitHub sunucularını reddediyor
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## Otomatik kontroller {#automatic-checks}
 

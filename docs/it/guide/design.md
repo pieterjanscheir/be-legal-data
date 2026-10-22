@@ -104,7 +104,7 @@ una persona nel processo: i dati in `main` non cambiano mai senza revisione.
 appesantita da megabyte di HTML. I parser sono testati su copie ridotte di pagine reali. Una
 pagina che il parser non sa collocare blocca la build invece di produrre un record mezzo giusto.
 Due fonti rifiutano i server di GitHub (ejustice, police.be); vengono scaricate da una macchina
-normale ([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+normale ([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## 8. Distribuzione: solo ESM, Node 22.12+, build al momento della release {#_8-distribution-esm-only-node-22-12-built-on-release}
 

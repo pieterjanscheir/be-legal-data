@@ -11,26 +11,33 @@ volg de [conventies](/nl/guide/contributing#adding-a-dataset).
 | **De andere rechtscolleges**: Hof van Cassatie, Grondwettelijk Hof, Raad van State, tuchtrechtbanken | De hoogste rechtscolleges staan niet op het portaal van de hoven en rechtbanken, dus ze hebben eigen bronnen nodig  | [#4](https://github.com/pieterjanscheir/belgica/issues/4)   |
 | **Het justitiehuis in Eupen** (Duitstalige Gemeenschap)                                              | Het ene justitiehuis dat de data nog niet heeft                                                                     | [#3](https://github.com/pieterjanscheir/belgica/issues/3)   |
 | **Historiek**: wanneer kantons, gemeenten en gerechten veranderden                                   | Het model heeft geldigheidsperiodes en opzoekingen per dag; de vroegere versies hebben nog de data nodig            | [#27](https://github.com/pieterjanscheir/belgica/issues/27) |
-| **Adres → coördinaten**                                                                              | De [kantongrenzen](./canton-boundaries) vinden het kanton van een punt; het adres geocoderen is de ontbrekende stap | [#28](https://github.com/pieterjanscheir/belgica/issues/28) |
+| **Adres → coördinaten**                                                                              | De [kantongrenzen](./canton-boundaries) vinden het kanton van een punt; het adres geocoderen is de ontbrekende stap | [#66](https://github.com/pieterjanscheir/belgica/issues/66) |
 | **Gerechtsdeurwaarderskantoren** (gerechtsdeurwaarders / huissiers de justice)                       | Een gerechtsdeurwaarder in een arrondissement vinden voor betekening of tenuitvoerlegging                           | [#6](https://github.com/pieterjanscheir/belgica/issues/6)   |
 | **Politiezones** (politiezones / zones de police)                                                    | Welke zone een gemeente behandelt: klachten, afschriften van processen-verbaal                                      | [#7](https://github.com/pieterjanscheir/belgica/issues/7)   |
 | **Kantoren van het kadaster en van de rechtszekerheid** (kadaster, vroegere hypotheekkantoren)       | Hypothecaire getuigschriften en kadastrale uittreksels aanvragen bij het bevoegde kantoor                           | [#8](https://github.com/pieterjanscheir/belgica/issues/8)   |
 
 ## Het overwegen waard {#worth-considering}
 
-Verzameld in [#9](https://github.com/pieterjanscheir/belgica/issues/9), ruwweg in volgorde
-van hoe vaak ze gebruikt zouden worden:
+Elk met een eigen issue, ruwweg in volgorde van hoe vaak ze gebruikt zouden worden:
 
 - **Deelgemeenten** per postcode. De [postcodes](./postal-codes) stoppen bij de gemeente; de
-  lijst van bpost noemt de deelgemeenten, maar heeft geen REFNIS-code en geen open licentie.
+  lijst van bpost noemt de deelgemeenten, maar heeft geen REFNIS-code en geen open licentie
+  ([#54](https://github.com/pieterjanscheir/belgica/issues/54)).
 - **Rolrechten** (griffierechten) en de schijven van de **rechtsplegingsvergoeding**, met hun
-  geldigheidsperiodes en indexering, zoals de rentevoeten.
-- **Gerechtelijk verlof en feestdagen** per jaar, om proceduretermijnen te berekenen.
-- **Parketten** (parketten, arbeidsauditoraten) per arrondissement.
-- **Notarissen en notariële kamers**, **balies** (balies / barreaux).
+  geldigheidsperiodes en indexering, zoals de rentevoeten
+  ([#59](https://github.com/pieterjanscheir/belgica/issues/59),
+  [#60](https://github.com/pieterjanscheir/belgica/issues/60)).
+- **Gerechtelijk verlof en feestdagen** per jaar, om proceduretermijnen te berekenen
+  ([#61](https://github.com/pieterjanscheir/belgica/issues/61)).
+- **Parketten** (parketten, arbeidsauditoraten) per arrondissement
+  ([#55](https://github.com/pieterjanscheir/belgica/issues/55)).
+- **Notarissen en notariële kamers**, **balies** (balies / barreaux)
+  ([#56](https://github.com/pieterjanscheir/belgica/issues/56),
+  [#57](https://github.com/pieterjanscheir/belgica/issues/57)).
 - **Gemeentefusies**: oude → nieuwe REFNIS-codes voor 2019 en 2025, zodat oudere data te mappen
-  is.
-- **De gezondheidsindex** voor de indexering van huurprijzen.
+  is ([#53](https://github.com/pieterjanscheir/belgica/issues/53)).
+- **De gezondheidsindex** voor de indexering van huurprijzen
+  ([#62](https://github.com/pieterjanscheir/belgica/issues/62)).
 
 ## Waarom sommige datasets er nog niet zijn {#why-some-datasets-aren-t-here-yet}
 
@@ -40,7 +47,7 @@ snapshots van zijn bron, en de meeste bronnen worden elke week door GitHub Actio
 Twee kunnen dat voorlopig niet: de site van het Belgisch Staatsblad (ejustice), waar de kantons
 uit komen, en police.be weigeren allebei verbindingen van de servers van GitHub; ze worden in
 de plaats daarvan vanaf een gewone machine opgehaald
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)). De
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)). De
 gerechtsdeurwaardersgids wordt in de browser opgebouwd, dus die vereist een browser om te
 lezen, of de data van de Nationale Kamer
 ([#6](https://github.com/pieterjanscheir/belgica/issues/6)).

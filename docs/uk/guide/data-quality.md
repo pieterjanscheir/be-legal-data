@@ -52,7 +52,7 @@ official site ──fetch──> snapshots (sources branch) ──parse──> d
 
 Кантони й громади перебудовуються вручну командою `pnpm build:cantons`: сайт Belgisch
 Staatsblad / Moniteur belge (офіційного вісника Бельгії) відмовляє серверам GitHub
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## Автоматичні перевірки {#automatic-checks}
 
