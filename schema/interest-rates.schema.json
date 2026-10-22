@@ -2,24 +2,21 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://pieterjanscheir.github.io/belgica/schema/interest-rates.schema.json",
   "title": "belgica: data/interest-rates.json",
-  "$ref": "#/definitions/InterestRatesFile",
-  "definitions": {
-    "InterestRatesFile": {
-      "type": "object",
-      "properties": {
-        "legal": {
-          "$ref": "#/definitions/InterestRateSeries"
-        },
-        "commercial": {
-          "$ref": "#/definitions/InterestRateSeries"
-        }
-      },
-      "required": [
-        "legal",
-        "commercial"
-      ],
-      "additionalProperties": false
+  "type": "object",
+  "properties": {
+    "legal": {
+      "$ref": "#/definitions/InterestRateSeries"
     },
+    "commercial": {
+      "$ref": "#/definitions/InterestRateSeries"
+    }
+  },
+  "required": [
+    "legal",
+    "commercial"
+  ],
+  "additionalProperties": false,
+  "definitions": {
     "InterestRateSeries": {
       "type": "object",
       "properties": {
@@ -30,6 +27,7 @@
           "type": "string"
         },
         "periods": {
+          "minItems": 1,
           "type": "array",
           "items": {
             "$ref": "#/definitions/InterestRatePeriod"
@@ -47,23 +45,23 @@
       "type": "object",
       "properties": {
         "from": {
-          "type": "string",
-          "description": "First day of the period (inclusive), YYYY-MM-DD",
-          "format": "date"
+          "$ref": "#/definitions/Day",
+          "description": "First day of the period (inclusive), YYYY-MM-DD"
         },
         "to": {
-          "type": "string",
-          "description": "Last day of the period (inclusive), YYYY-MM-DD",
-          "format": "date"
+          "$ref": "#/definitions/Day",
+          "description": "Last day of the period (inclusive), YYYY-MM-DD"
         },
         "rate": {
           "type": "number",
-          "description": "Rate in percent",
           "minimum": 0,
-          "maximum": 100
+          "maximum": 100,
+          "description": "Rate in percent"
         },
         "rateForContractsBefore20130316": {
           "type": "number",
+          "minimum": 0,
+          "maximum": 100,
           "description": "Commercial rates 2013 – 15 March 2015 only: the rate for contracts concluded before 16 March 2013, when it differs from `rate`."
         },
         "note": {
@@ -76,6 +74,12 @@
         "rate"
       ],
       "additionalProperties": false
+    },
+    "Day": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+      "description": "A day as YYYY-MM-DD"
     }
   }
 }

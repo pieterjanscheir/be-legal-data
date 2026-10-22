@@ -1,40 +1,10 @@
 import interestRatesData from '../data/interest-rates.json'
+import type { InterestRateSeries, InterestType } from './schemas/interest-rates'
 import { toDay } from './time'
 
-/** 'legal' = wettelijke interest, 'commercial' = handelstransacties */
-export type InterestType = 'legal' | 'commercial'
+export type { InterestRatePeriod, InterestRateSeries, InterestType } from './schemas/interest-rates'
 
-export interface InterestRatePeriod {
-    /**
-     * First day of the period (inclusive), YYYY-MM-DD
-     * @format date
-     */
-    from: string
-    /**
-     * Last day of the period (inclusive), YYYY-MM-DD
-     * @format date
-     */
-    to: string
-    /**
-     * Rate in percent
-     * @minimum 0
-     * @maximum 100
-     */
-    rate: number
-    /**
-     * Commercial rates 2013 – 15 March 2015 only: the rate for contracts
-     * concluded before 16 March 2013, when it differs from `rate`.
-     */
-    rateForContractsBefore20130316?: number
-    note?: string
-}
-
-export interface InterestRateSeries {
-    description: string
-    source: string
-    periods: InterestRatePeriod[]
-}
-
+// The data is validated against the zod schemas in ./schemas (test/schema.test.ts)
 export const interestRates: Readonly<Record<InterestType, InterestRateSeries>> = interestRatesData
 
 export interface InterestRateResult {

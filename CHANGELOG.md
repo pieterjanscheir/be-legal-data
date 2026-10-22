@@ -9,6 +9,20 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ### Added
 
+**Zod schemas for every record: `belgica/schemas`.** The types are now inferred from
+[zod](https://zod.dev) schemas, which are the single source for the TypeScript types, the JSON
+Schemas in `schema/` and the data checks in CI. Import them to validate a copy of the data, or
+data built on it: `dataFileSchemas.courts.parse(json)`, `courtSchema`, `cantonIdSchema`, and so
+on. The datasets only import the types, so zod isn't in their bundles (`belgica/courts` is the
+same size), but it is now a dependency, as the type declarations import it.
+
+The schemas are stricter than the old types, and the data passes them all: objects reject
+unknown keys; optional fields are absent rather than `undefined`; a `Contact` is a union by
+`type`, so a phone number, an email address and an IBAN each have their own pattern; URLs must
+be http(s); a canton's `number` is a positive integer; coordinates are within WGS 84 ranges;
+ECLI codes are capitals; `sources`, `periods` and a canton's `municipalities` are never empty.
+The JSON Schemas say the same, and now describe every field, including those of a contact.
+
 **Court names in a language: `formatCourtName(court, locale, { style })`**, in the root and
 `belgica/courts`. `style: 'official'` (the default) gives the name as the court publishes it,
 falling back to another language when it doesn't publish in `locale` (for German: French, then

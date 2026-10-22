@@ -4,7 +4,6 @@ import judicialAreasData from '../data/judicial-areas.json'
 import municipalitiesData from '../data/municipalities.json'
 import provincesData from '../data/provinces.json'
 import regionsData from '../data/regions.json'
-import type { Bilingual, SourceRef, Translated } from './common'
 import type {
     ArrondissementId,
     CantonId,
@@ -13,6 +12,14 @@ import type {
     ProvinceId,
     RegionId,
 } from './ids.generated'
+import type {
+    Arrondissement,
+    Canton,
+    JudicialArea,
+    Municipality,
+    Province,
+    Region,
+} from './schemas/territory'
 import {
     applyingOn,
     pickVersion,
@@ -22,6 +29,15 @@ import {
     type Validity,
 } from './time'
 
+export type {
+    Arrondissement,
+    Canton,
+    JudicialArea,
+    LegalBasis,
+    Municipality,
+    Province,
+    Region,
+} from './schemas/territory'
 export type { Bilingual, Locale, SourceRef, Translated } from './common'
 export type {
     ArrondissementId,
@@ -40,100 +56,7 @@ export type { Coverage, OnDay, Validity } from './time'
  */
 export const territoryCoverage: Coverage = { from: '2025-01-01' }
 
-/** Area of a court of appeal (rechtsgebied): Antwerpen, Brussel, Gent, Luik or Bergen */
-export interface JudicialArea extends Validity {
-    /** Stable id from the local-language name, e.g. 'gent' */
-    id: JudicialAreaId
-    name: Translated
-}
-
-export interface Arrondissement extends Validity {
-    /** Stable id from the local-language name, e.g. 'oost-vlaanderen' */
-    id: ArrondissementId
-    name: Translated
-    /** The judicial area the arrondissement belongs to */
-    judicialArea: JudicialAreaId
-}
-
-/** One of the three regions (gewesten, régions): Flemish, Walloon and Brussels-Capital */
-export interface Region extends Validity {
-    /** The region's Statbel REFNIS code: '02000' Flemish, '03000' Walloon, '04000' Brussels-Capital */
-    id: RegionId
-    /** The name as Statbel publishes it: 'Vlaams Gewest', 'Région flamande', 'Flämische Region' */
-    name: Translated
-    /** Statbel's REFNIS code list, and the day its content was first seen */
-    sources: SourceRef[]
-}
-
-/** One of the ten provinces. The Brussels-Capital Region has none. */
-export interface Province extends Validity {
-    /** The province's Statbel REFNIS code, e.g. '40000' for Oost-Vlaanderen */
-    id: ProvinceId
-    /**
-     * The name as Statbel publishes it: 'Provincie Oost-Vlaanderen', 'Province de Flandre
-     * orientale', 'Provinz Ostflandern'
-     */
-    name: Translated
-    /** The region the province lies in */
-    region: RegionId
-    /** Statbel's REFNIS code list, and the day its content was first seen */
-    sources: SourceRef[]
-}
-
-export interface Municipality extends Validity {
-    /** The municipality's Statbel REFNIS (NIS) code, e.g. '44021' for Gent */
-    id: MunicipalityId
-    name: Bilingual
-    /**
-     * REFNIS code of the province. The 19 municipalities of the Brussels-Capital Region have no
-     * province and carry the region's code, '04000', as Statbel's files do.
-     */
-    province: ProvinceId | '04000'
-    /** REFNIS code of the region */
-    region: RegionId
-}
-
-/** A provision of Belgian law */
-export interface LegalBasis {
-    /**
-     * The law's ELI on the Belgian Official Journal's site (ejustice)
-     * @format uri
-     */
-    url: string
-    /** The provision within it, as the law numbers it: 'Bijvoegsel art. 1, afdeling 1.1' */
-    provision: string
-}
-
-/** A judicial canton: the area of one justice of the peace */
-export interface Canton extends Validity {
-    /** Stable id from the local-language name, plus the number if any: 'gent-1', 'merelbeke-melle' */
-    id: CantonId
-    /** The judicial arrondissement */
-    arrondissement: ArrondissementId
-    /**
-     * Name of the canton; usually the seat, but not always ('Oudergem' sits in Etterbeek). In
-     * Dutch and French from the annex to the Judicial Code; in German only where an official
-     * German text names the canton (see `sources`), since the annex has no German translation.
-     */
-    name: Bilingual & { de?: string }
-    /** Canton number for places with several cantons (Gent 1–5, …) */
-    number?: number
-    /** Where the justice of the peace sits */
-    seat: Bilingual
-    /**
-     * The municipalities the canton covers. `partial` marks a municipality that is split over
-     * several cantons; `territory` then says which part belongs to this one.
-     */
-    municipalities: { municipality: MunicipalityId; partial?: boolean }[]
-    /** The canton's area, verbatim from the annex to the Judicial Code */
-    territory: Bilingual
-    /** Where the law defines the canton */
-    legalBasis: LegalBasis
-    /** The official texts the German name is taken from, for a canton that has one */
-    sources?: SourceRef[]
-}
-
-// The data is validated against the JSON Schemas generated from these types (test/schema.test.ts)
+// The data is validated against the zod schemas in ./schemas (test/schema.test.ts)
 export const judicialAreas = judicialAreasData as readonly JudicialArea[]
 export const arrondissements = arrondissementsData as readonly Arrondissement[]
 export const regions = regionsData as readonly Region[]

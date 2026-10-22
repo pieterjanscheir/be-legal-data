@@ -67,6 +67,10 @@
             "types": "./dist/postal-codes.d.ts",
             "default": "./dist/postal-codes.js"
         },
+        "./schemas": {
+            "types": "./dist/schemas.d.ts",
+            "default": "./dist/schemas.js"
+        },
         "./data/*": "./data/*",
         "./schema/*": "./schema/*",
         "./datapackage.json": "./datapackage.json",
@@ -116,11 +120,13 @@
         "node-html-parser": "^9.0.5",
         "prettier": "^3.9.10",
         "publint": "^0.3.25",
-        "ts-json-schema-generator": "^2.9.0",
         "tsup": "^9.0.0",
         "typescript": "^6.0.3",
         "typescript-eslint": "^8.71.2",
         "vitepress": "^1.6.4",
         "vitest": "^5.0.5"
+    },
+    "dependencies": {
+        "zod": "^4.6.7"
     }
 }

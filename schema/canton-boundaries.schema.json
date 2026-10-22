@@ -2,26 +2,29 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://pieterjanscheir.github.io/belgica/schema/canton-boundaries.schema.json",
   "title": "belgica: data/canton-boundaries.json",
-  "$ref": "#/definitions/CantonBoundariesFile",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/CantonBoundary"
+  },
   "definitions": {
-    "CantonBoundariesFile": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/CantonBoundary"
-      }
-    },
     "CantonBoundary": {
       "type": "object",
       "properties": {
         "validFrom": {
-          "type": "string",
-          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts.",
-          "format": "date"
+          "allOf": [
+            {
+              "$ref": "#/definitions/Day"
+            }
+          ],
+          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts."
         },
         "validTo": {
-          "type": "string",
-          "description": "Last day the record applies, YYYY-MM-DD",
-          "format": "date"
+          "allOf": [
+            {
+              "$ref": "#/definitions/Day"
+            }
+          ],
+          "description": "Last day the record applies, YYYY-MM-DD"
         },
         "id": {
           "$ref": "#/definitions/CantonId",
@@ -33,11 +36,26 @@
         },
         "ngiId": {
           "type": "string",
-          "description": "The NGI's identifier of the object (its `tgid`), e.g. '{50412818-C0B7-4FEE-9E9B-DFFF0A768922}'",
-          "pattern": "^\\{[0-9A-F]{8}(-[0-9A-F]{4}){3}-[0-9A-F]{12}\\}$"
+          "pattern": "^\\{[0-9A-F]{8}(-[0-9A-F]{4}){3}-[0-9A-F]{12}\\}$",
+          "description": "The NGI's identifier of the object (its `tgid`), e.g. '{50412818-C0B7-4FEE-9E9B-DFFF0A768922}'"
         },
         "cantonCode": {
-          "$ref": "#/definitions/Bilingual",
+          "type": "object",
+          "properties": {
+            "nl": {
+              "type": "string",
+              "pattern": "^N?\\d{6}$"
+            },
+            "fr": {
+              "type": "string",
+              "pattern": "^F?\\d{6}$"
+            }
+          },
+          "required": [
+            "nl",
+            "fr"
+          ],
+          "additionalProperties": false,
           "description": "The canton code in the NGI's data, in Dutch and French: six digits, the same in both ('248112' for Gent 1), with an 'N' or 'F' prefix per language in Brussels-Capital and in Sint-Genesius-Rode ('N238104', 'F238104' for Brussel 1)"
         },
         "geometry": {
@@ -45,6 +63,7 @@
           "description": "The boundary as the NGI publishes it, without simplification: WGS 84, longitude first, coordinates rounded to 7 decimals (about a centimetre)"
         },
         "sources": {
+          "minItems": 1,
           "type": "array",
           "items": {
             "$ref": "#/definitions/SourceRef"
@@ -61,6 +80,12 @@
       ],
       "additionalProperties": false,
       "description": "The boundary of a judicial canton, as the National Geographic Institute (NGI) digitised it from the annex to the Judicial Code. The legal text in the canton's `territory` is the law; where the two disagree, the text wins."
+    },
+    "Day": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+      "description": "A day as YYYY-MM-DD"
     },
     "CantonId": {
       "type": "string",
@@ -230,23 +255,6 @@
       ],
       "description": "Id of a record in data/cantons.json"
     },
-    "Bilingual": {
-      "type": "object",
-      "properties": {
-        "nl": {
-          "type": "string"
-        },
-        "fr": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "nl",
-        "fr"
-      ],
-      "additionalProperties": false,
-      "description": "A name as the Judicial Code gives it, in Dutch and French"
-    },
     "MultiPolygon": {
       "type": "object",
       "properties": {
@@ -255,11 +263,11 @@
           "const": "MultiPolygon"
         },
         "coordinates": {
+          "minItems": 1,
           "type": "array",
           "items": {
             "$ref": "#/definitions/PolygonCoordinates"
-          },
-          "minItems": 1
+          }
         }
       },
       "required": [
@@ -270,26 +278,36 @@
       "description": "A GeoJSON MultiPolygon geometry (RFC 7946), in WGS 84"
     },
     "PolygonCoordinates": {
+      "minItems": 1,
       "type": "array",
       "items": {
         "$ref": "#/definitions/Ring"
       },
-      "description": "The rings of a GeoJSON polygon: the exterior ring first, counter-clockwise, then its holes, clockwise (RFC 7946)",
-      "minItems": 1
+      "description": "The rings of a GeoJSON polygon: the exterior ring first, counter-clockwise, then its holes, clockwise (RFC 7946)"
     },
     "Ring": {
+      "minItems": 4,
       "type": "array",
       "items": {
         "$ref": "#/definitions/Position"
       },
-      "description": "A GeoJSON linear ring: closed (the first position repeated last), so at least four positions",
-      "minItems": 4
+      "description": "A GeoJSON linear ring: closed (the first position repeated last), so at least four positions"
     },
     "Position": {
       "type": "array",
-      "items": {
-        "type": "number"
-      },
+      "items": [
+        {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        },
+        {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        }
+      ],
+      "additionalItems": false,
       "minItems": 2,
       "maxItems": 2,
       "description": "A GeoJSON position: longitude, then latitude, in decimal degrees (WGS 84)"
@@ -298,14 +316,12 @@
       "type": "object",
       "properties": {
         "url": {
-          "type": "string",
-          "description": "The exact official page or file the data comes from",
-          "format": "uri"
+          "$ref": "#/definitions/Url",
+          "description": "The exact official page or file the data comes from"
         },
         "retrieved": {
-          "type": "string",
-          "description": "Day the source was last checked, YYYY-MM-DD",
-          "format": "date"
+          "$ref": "#/definitions/Day",
+          "description": "Day the source was last checked, YYYY-MM-DD"
         }
       },
       "required": [
@@ -314,6 +330,12 @@
       ],
       "additionalProperties": false,
       "description": "Where a record's data was taken from"
+    },
+    "Url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://",
+      "description": "An http(s) URL"
     }
   }
 }

@@ -10,6 +10,7 @@ import { getHouseOfJustice } from 'belgica/houses-of-justice'
 import { getMunicipalitiesForPostalCode } from 'belgica/postal-codes'
 import { findCourtsForPostalCode, getMunicipality } from 'belgica'
 import { findCantonsAt, getCantonBoundary } from 'belgica/canton-boundaries'
+import { courtIdSchema, dataFileSchemas } from 'belgica/schemas'
 import { createRequire } from 'node:module'
 
 assert.equal(getCourt('justice-of-the-peace-gent-1').name.nl, 'Vredegerecht Gent 1')
@@ -27,6 +28,8 @@ assert.equal(getPrison('gevangenis-gent').address.postalCode, '9000')
 assert.equal(getHouseOfJustice('justitiehuis-gent').ovo, 'OVO001917')
 assert.equal(getMunicipalitiesForPostalCode('9000')[0], getMunicipality('44021'))
 assert.equal(findCourtsForPostalCode('1040', 'police-court').length, 2)
+assert.equal(dataFileSchemas.cantons.safeParse(cantons).success, true)
+assert.equal(courtIdSchema.safeParse('justice-of-the-peace-gent-1').success, true)
 assert.equal(getCantonBoundary('gent-1').geometry.type, 'MultiPolygon')
 assert.deepEqual(
     findCantonsAt(3.745, 50.995).map((c) => c.id),

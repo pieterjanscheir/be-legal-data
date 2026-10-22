@@ -2,26 +2,29 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://pieterjanscheir.github.io/belgica/schema/postal-codes.schema.json",
   "title": "belgica: data/postal-codes.json",
-  "$ref": "#/definitions/PostalCodesFile",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/PostalCode"
+  },
   "definitions": {
-    "PostalCodesFile": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/PostalCode"
-      }
-    },
     "PostalCode": {
       "type": "object",
       "properties": {
         "validFrom": {
-          "type": "string",
-          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts.",
-          "format": "date"
+          "allOf": [
+            {
+              "$ref": "#/definitions/Day"
+            }
+          ],
+          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts."
         },
         "validTo": {
-          "type": "string",
-          "description": "Last day the record applies, YYYY-MM-DD",
-          "format": "date"
+          "allOf": [
+            {
+              "$ref": "#/definitions/Day"
+            }
+          ],
+          "description": "Last day the record applies, YYYY-MM-DD"
         },
         "id": {
           "$ref": "#/definitions/PostalCodeId",
@@ -29,8 +32,8 @@
         },
         "postalCode": {
           "type": "string",
-          "description": "The four-digit postal code",
-          "pattern": "^\\d{4}$"
+          "pattern": "^\\d{4}$",
+          "description": "The four-digit postal code"
         },
         "municipality": {
           "$ref": "#/definitions/MunicipalityId",
@@ -44,6 +47,12 @@
       ],
       "additionalProperties": false,
       "description": "A postal code and one of the municipalities it belongs to, from Statbel's conversion table. A municipality has one or more postal codes; a postal code belongs to one municipality, except 1040 (Brussel and Etterbeek), 1050 (Brussel and Elsene) and 1804 (Vilvoorde and Zemst), which have a record per municipality."
+    },
+    "Day": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+      "description": "A day as YYYY-MM-DD"
     },
     "PostalCodeId": {
       "type": "string",

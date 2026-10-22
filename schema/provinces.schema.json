@@ -2,26 +2,29 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://pieterjanscheir.github.io/belgica/schema/provinces.schema.json",
   "title": "belgica: data/provinces.json",
-  "$ref": "#/definitions/ProvincesFile",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Province"
+  },
   "definitions": {
-    "ProvincesFile": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Province"
-      }
-    },
     "Province": {
       "type": "object",
       "properties": {
         "validFrom": {
-          "type": "string",
-          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts.",
-          "format": "date"
+          "allOf": [
+            {
+              "$ref": "#/definitions/Day"
+            }
+          ],
+          "description": "First day the record applies, YYYY-MM-DD. No `validFrom`: since before the dataset's coverage starts."
         },
         "validTo": {
-          "type": "string",
-          "description": "Last day the record applies, YYYY-MM-DD",
-          "format": "date"
+          "allOf": [
+            {
+              "$ref": "#/definitions/Day"
+            }
+          ],
+          "description": "Last day the record applies, YYYY-MM-DD"
         },
         "id": {
           "$ref": "#/definitions/ProvinceId",
@@ -36,6 +39,7 @@
           "description": "The region the province lies in"
         },
         "sources": {
+          "minItems": 1,
           "type": "array",
           "items": {
             "$ref": "#/definitions/SourceRef"
@@ -51,6 +55,12 @@
       ],
       "additionalProperties": false,
       "description": "One of the ten provinces. The Brussels-Capital Region has none."
+    },
+    "Day": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+      "description": "A day as YYYY-MM-DD"
     },
     "ProvinceId": {
       "type": "string",
@@ -102,14 +112,12 @@
       "type": "object",
       "properties": {
         "url": {
-          "type": "string",
-          "description": "The exact official page or file the data comes from",
-          "format": "uri"
+          "$ref": "#/definitions/Url",
+          "description": "The exact official page or file the data comes from"
         },
         "retrieved": {
-          "type": "string",
-          "description": "Day the source was last checked, YYYY-MM-DD",
-          "format": "date"
+          "$ref": "#/definitions/Day",
+          "description": "Day the source was last checked, YYYY-MM-DD"
         }
       },
       "required": [
@@ -118,6 +126,12 @@
       ],
       "additionalProperties": false,
       "description": "Where a record's data was taken from"
+    },
+    "Url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://",
+      "description": "An http(s) URL"
     }
   }
 }

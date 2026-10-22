@@ -1,7 +1,8 @@
 import municipalitiesData from '../data/municipalities.json'
 import postalCodesData from '../data/postal-codes.json'
-import type { MunicipalityId, PostalCodeId } from './ids.generated'
-import type { Municipality } from './territory'
+import type { PostalCodeId } from './ids.generated'
+import type { PostalCode } from './schemas/postal-codes'
+import type { Municipality } from './schemas/territory'
 import {
     applyingOn,
     pickVersion,
@@ -14,28 +15,7 @@ import {
 
 export type { MunicipalityId, PostalCodeId } from './ids.generated'
 export type { Coverage, OnDay, Validity } from './time'
-
-/**
- * A postal code and one of the municipalities it belongs to, from Statbel's conversion table.
- * A municipality has one or more postal codes; a postal code belongs to one municipality,
- * except 1040 (Brussel and Etterbeek), 1050 (Brussel and Elsene) and 1804 (Vilvoorde and
- * Zemst), which have a record per municipality.
- */
-export interface PostalCode extends Validity {
-    /**
-     * The postal code and the municipality's REFNIS code, joined: '9000-44021'. Neither code
-     * alone names a record (a postal code can belong to two municipalities, a municipality has
-     * several postal codes); together they're both official and unique.
-     */
-    id: PostalCodeId
-    /**
-     * The four-digit postal code
-     * @pattern ^\d{4}$
-     */
-    postalCode: string
-    /** The municipality, by REFNIS code */
-    municipality: MunicipalityId
-}
+export type { PostalCode } from './schemas/postal-codes'
 
 /**
  * The postal codes describe the situation from this day on: Statbel's conversion table as
@@ -44,7 +24,7 @@ export interface PostalCode extends Validity {
  */
 export const postalCodesCoverage: Coverage = { from: '2025-01-01' }
 
-// The data is validated against the JSON Schema generated from these types (test/schema.test.ts)
+// The data is validated against the zod schemas in ./schemas (test/schema.test.ts)
 /** Every record, every version */
 export const postalCodes = postalCodesData as readonly PostalCode[]
 

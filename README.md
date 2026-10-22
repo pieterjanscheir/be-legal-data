@@ -46,7 +46,8 @@ Geographic Institute (NGI), both [CC BY 4.0](https://creativecommons.org/license
 pnpm add belgica
 ```
 
-ESM with TypeScript types and no runtime dependencies. Node 22.12 or later (where `require()`
+ESM with TypeScript types inferred from [zod](https://zod.dev) schemas, which `belgica/schemas`
+exports for validation; the datasets don't load zod at run time. Node 22.12 or later (where `require()`
 loads it too), Deno, Bun and browsers. Design choices are explained in
 [design decisions](https://pieterjanscheir.github.io/belgica/guide/design).
 

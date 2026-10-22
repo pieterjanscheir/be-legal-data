@@ -1,30 +1,12 @@
 import prisonsData from '../data/prisons.json'
-import type { Address, Contact, SourceRef, Translated, Url, Locale } from './common'
+import type { Prison } from './schemas/places'
 import type { PrisonId } from './ids.generated'
-import { pickVersion, versionsById, type Coverage, type OnDay, type Validity } from './time'
+import { pickVersion, versionsById, type Coverage, type OnDay } from './time'
 
 export type { PrisonId } from './ids.generated'
 export type { Coverage, OnDay, Validity } from './time'
 export * from './contacts'
-
-/** A prison or detention house of the FPS Justice (DG EPI) */
-export interface Prison extends Validity {
-    /**
-     * Stable id from the name in the local language (Dutch in Brussels), without articles:
-     * 'gevangenis-gent', 'prison-lantin', 'detentiehuis-kortrijk'
-     */
-    id: PrisonId
-    /** A detention house (detentiehuis) holds people for short sentences, close to home */
-    kind: 'prison' | 'detention-house'
-    /** The name in each national language, as FPS Justice publishes it */
-    name: Partial<Translated>
-    /** In the local language */
-    address: Address
-    contacts: Contact[]
-    /** The prison's page on justitie.belgium.be, per language */
-    website: Partial<Record<Locale, Url>>
-    sources: SourceRef[]
-}
+export type { Prison } from './schemas/places'
 
 /**
  * The prisons data describes the situation from the day the FPS Justice site was first read.
@@ -33,7 +15,7 @@ export interface Prison extends Validity {
  */
 export const prisonsCoverage: Coverage = { from: '2026-10-20' }
 
-// The data is validated against the JSON Schema generated from these types (test/schema.test.ts)
+// The data is validated against the zod schemas in ./schemas (test/schema.test.ts)
 /** Every record, every version */
 export const prisons = prisonsData as readonly Prison[]
 
