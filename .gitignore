@@ -6,3 +6,14 @@ dist/
 coverage/
 .sources/
 csv/
+# Python package: the data and licences are copied in at build time
+python/src/belgica/data/
+python/LICENSE
+python/LICENSE-DATA
+python/tests/.cases/
+python/.venv/
+python/dist/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

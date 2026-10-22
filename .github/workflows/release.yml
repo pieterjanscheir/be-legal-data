@@ -1,7 +1,8 @@
 name: Release
 
-# Publishes to npm when a version tag is pushed. Uses npm trusted publishing (OIDC), so no
-# token is stored: link this workflow to the package under its settings on npmjs.com.
+# Publishes to npm and PyPI when a version tag is pushed. Uses trusted publishing (OIDC) on both,
+# so no token is stored: link this workflow to the package under its settings on npmjs.com, and
+# add it as a trusted publisher on pypi.org (workflow release.yml, environment pypi).
 on:
     push:
         tags: ['v*']
@@ -53,3 +54,30 @@ jobs:
                   cp -r data schema datapackage.json LICENSE-DATA csv "$name"/
                   zip -qr "$name.zip" "$name"
                   gh release create "$GITHUB_REF_NAME" --verify-tag --generate-notes "$name.zip"
+
+    pypi:
+        needs: publish
+        runs-on: ubuntu-latest
+        environment: pypi
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - uses: actions/checkout@v7
+            - uses: astral-sh/setup-uv@v7
+            - name: Check the tag matches pyproject.toml
+              run: |
+                  version=$(uv version --short --project python)
+                  if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+                      echo "Tag $GITHUB_REF_NAME doesn't match version $version in python/pyproject.toml"
+                      exit 1
+                  fi
+            # The build copies data/ in. The npm job has run pnpm check on the same commit, and
+            # CI the Python tests.
+            - run: uv build
+              working-directory: python
+            # skip-existing: a rerun doesn't fail on a version that's already on PyPI
+            - uses: pypa/gh-action-pypi-publish@release/v1
+              with:
+                  packages-dir: python/dist
+                  skip-existing: true

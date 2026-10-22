@@ -59,3 +59,35 @@ jobs:
             - run: npm install --omit=dev --ignore-scripts --no-package-lock --no-audit --no-fund
             - run: node test/smoke/esm.mjs
             - run: node test/smoke/cjs.cjs
+
+    # The Python package: lint, types, and the same answers as the TypeScript helpers, on every
+    # supported Python
+    python:
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                python: ['3.11', '3.12', '3.13', '3.14']
+        defaults:
+            run:
+                working-directory: python
+        steps:
+            - uses: actions/checkout@v7
+            - uses: pnpm/action-setup@v6
+            - uses: actions/setup-node@v7
+              with:
+                  node-version: 24
+                  cache: pnpm
+            - run: pnpm install --frozen-lockfile
+              working-directory: .
+            - run: pnpm build && pnpm build:cases
+              working-directory: .
+            - uses: astral-sh/setup-uv@v7
+              with:
+                  python-version: ${{ matrix.python }}
+            - run: uv sync --locked
+            - run: uv run ruff format --check .
+            - run: uv run ruff check .
+            - run: uv run mypy
+            - run: uv run pytest
+            - run: uv build
