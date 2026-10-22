@@ -10,6 +10,7 @@ import {
     contactSchema,
     sourceRefSchema,
     partialTranslatedSchema,
+    translatedSchema,
     validityShape,
     websiteSchema,
 } from './common.ts'
@@ -47,6 +48,13 @@ export const courtSchema = z.strictObject({
      * Gent 1', 'Tribunal de l'entreprise du Hainaut - division Mons'
      */
     name: partialTranslatedSchema,
+    /**
+     * For a justice of the peace (not its seats): a label built from its canton's number and name,
+     * in each language, as `formatCourtName(court, locale, { style: 'canton' })` gives it:
+     * 'Vredegerecht 1e kanton Gent'. Not the court's official name. Generated from the cantons
+     * data by the build.
+     */
+    label: translatedSchema.exactOptional(),
     judicialArea: judicialAreaIdSchema,
     /** The arrondissement, for a court whose area is one arrondissement or lies within one */
     arrondissement: arrondissementIdSchema.exactOptional(),
@@ -83,3 +91,40 @@ export const courtSchema = z.strictObject({
  * of the peace that sits in several places.
  */
 export type Court = z.infer<typeof courtSchema>
+
+/** The fields of a court that the list files in data/courts/ hold: who and where it is */
+export const courtSummarySchema = courtSchema.pick({
+    id: true,
+    validFrom: true,
+    validTo: true,
+    type: true,
+    kind: true,
+    court: true,
+    name: true,
+    label: true,
+    judicialArea: true,
+    arrondissement: true,
+    canton: true,
+    cantons: true,
+    address: true,
+})
+/** A court as the list files in data/courts/ hold it: who and where it is, without its contacts */
+export type CourtSummary = z.infer<typeof courtSummarySchema>
+
+/**
+ * The fields of a court that data/courts/details/<id>.json holds, per version: how to reach it,
+ * and where the record was read
+ */
+export const courtDetailsSchema = courtSchema.pick({
+    id: true,
+    validFrom: true,
+    validTo: true,
+    ecli: true,
+    contacts: true,
+    openingHours: true,
+    openingHoursText: true,
+    website: true,
+    sources: true,
+})
+/** How to reach a court, and where its record was read: the fields a court summary leaves out */
+export type CourtDetails = z.infer<typeof courtDetailsSchema>

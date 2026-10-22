@@ -7,6 +7,52 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ## [Unreleased]
 
+### Added
+
+**Smaller files for apps that need only some courts.** JSON can't be tree-shaken, so a browser
+app that imported `findCourts` and `formatCourtName` from `belgica/courts` shipped every court:
+410 KB minified (46 KB gzip). `data/courts.json` stays the complete file and the source of
+truth; the build now splits it, and the package ships the result (it isn't committed):
+
+- `data/courts/<type>.json`: one court type, all of Belgium;
+- `data/courts/<type>/<arrondissement>.json`: one type in one arrondissement, the building
+  blocks (every court is in exactly one). A court without an arrondissement, whose area covers
+  several, is in `data/courts/<type>/judicial-area/<area>.json`;
+- `data/courts/details/<id>.json`: one court's `contacts`, `openingHours`, `openingHoursText`,
+  `website`, `sources` and `ecli`, which the list files leave out;
+- `data/courts/index.json`: each court id and the file it is in.
+
+The list files hold summaries (`CourtSummary`); a summary and its details (`CourtDetails`)
+together are the full record. Every path under `data/` is public API from now on: renaming or
+removing one is a major version. An app that imports the justices of the peace of East and West
+Flanders (38 courts) and formats their names ships 15 KB minified (2.2 KB gzip); CI checks it
+stays under 30 KB and holds nothing of the other courts or the cantons.
+
+**`belgica/courts/load`**: `loadCourts({ type, arrondissement? })`, `loadCourt(id)` and
+`loadCourtDetails(id)` load those files on demand, one `import()` per file, so a bundler makes
+a chunk of each and a browser downloads only what it asks for. The loader itself is 8 KB
+minified (2 KB gzip); the first `loadCourtDetails` also loads the map of the details files,
+31 KB (5 KB gzip).
+
+**`belgica/courts/format`**: `formatCourtName`, `getContact`, `formatPhoneNumber` and
+`formatIban` without any data, for a court you already hold.
+
+**A canton label on every justice of the peace: `label: { nl, fr, de }`**, exactly what
+`formatCourtName(court, locale, { style: 'canton' })` gave: `Vredegerecht 1e kanton Gent`. It is
+generated from the cantons, in the JSON Schema and in the CSV (`label_nl`, `label_fr`,
+`label_de`). `formatCourtName` uses it, so building a label doesn't need the cantons at run
+time; for a record without one (saved before this version), `belgica/courts` still builds it,
+`belgica/courts/format` gives the official name. The labels add 3 KB gzip to `belgica/courts`
+(52.1 to 55.0 KB), so its size limit in CI goes from 54 to 57 KB.
+
+**The cantons without their territory texts: `belgica/cantons`**, with `cantons` and
+`getCanton(id)` for a canton's name, number, seat, arrondissement and municipalities, from
+`data/cantons/summaries.json`. The texts, most of the cantons data, are in
+`data/cantons/territory.json` and `getCantonTerritory(id)` from `belgica/cantons/territory`.
+`belgica/territory` keeps the full records, so `getCanton(id).territory` works as before.
+
+`belgica/courts`, `belgica/territory` and the root keep their exports and full records.
+
 ### Changed
 
 - The package is half the size: the canton boundaries are in it once. `belgica/canton-boundaries`

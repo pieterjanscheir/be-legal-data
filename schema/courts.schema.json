@@ -53,6 +53,14 @@
           "$ref": "#/definitions/PartialTranslated",
           "description": "The court's name as it publishes it, in each language it publishes in: 'Vredegerecht Gent 1', 'Tribunal de l'entreprise du Hainaut - division Mons'"
         },
+        "label": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/Translated"
+            }
+          ],
+          "description": "For a justice of the peace (not its seats): a label built from its canton's number and name, in each language, as `formatCourtName(court, locale, { style: 'canton' })` gives it: 'Vredegerecht 1e kanton Gent'. Not the court's official name. Generated from the cantons data by the build."
+        },
         "judicialArea": {
           "$ref": "#/definitions/JudicialAreaId"
         },
@@ -526,6 +534,27 @@
       },
       "additionalProperties": false,
       "description": "A name in the national languages it's published in"
+    },
+    "Translated": {
+      "type": "object",
+      "properties": {
+        "nl": {
+          "type": "string"
+        },
+        "fr": {
+          "type": "string"
+        },
+        "de": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nl",
+        "fr",
+        "de"
+      ],
+      "additionalProperties": false,
+      "description": "A name in the three national languages"
     },
     "JudicialAreaId": {
       "type": "string",

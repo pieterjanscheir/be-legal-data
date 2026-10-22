@@ -1,7 +1,7 @@
 // Imports the built package by name, as a consumer would. Plain Node, no test runner, so CI
 // can run it on every supported Node version.
 import assert from 'node:assert/strict'
-import { getCourt, cantons as allCantons } from 'belgica'
+import { getCourt, getCanton, cantons as allCantons } from 'belgica'
 import { cantons, getCantonsForMunicipality } from 'belgica/territory'
 import { formatCourtName, getJusticeOfThePeace } from 'belgica/courts'
 import { getInterestRate } from 'belgica/interest-rates'
@@ -12,6 +12,11 @@ import { findCourtsForPostalCode, getMunicipality } from 'belgica'
 import { findCantonsAt, getCantonBoundary } from 'belgica/canton-boundaries'
 import { courtIdSchema, dataFileSchemas } from 'belgica/schemas'
 import { createRequire } from 'node:module'
+import { formatCourtName as formatWithoutData } from 'belgica/courts/format'
+import { loadCourt, loadCourtDetails, loadCourts } from 'belgica/courts/load'
+import { getCanton as getCantonSummary } from 'belgica/cantons'
+import { getCantonTerritory } from 'belgica/cantons/territory'
+import east from 'belgica/data/courts/justice-of-the-peace/oost-vlaanderen.json' with { type: 'json' }
 import { statSync } from 'node:fs'
 
 assert.equal(getCourt('justice-of-the-peace-gent-1').name.nl, 'Vredegerecht Gent 1')
@@ -38,6 +43,24 @@ assert.deepEqual(
 )
 // The entry points share one copy of the data
 assert.equal(cantons, allCantons)
+
+// The split data files: static, loaded on demand, and the cantons without their territory
+assert.equal(
+    formatWithoutData(
+        east.find((c) => c.canton === 'gent-1'),
+        'nl',
+        { style: 'canton' },
+    ),
+    'Vredegerecht 1e kanton Gent',
+)
+assert.equal(
+    (await loadCourts({ type: 'justice-of-the-peace', arrondissement: 'oost-vlaanderen' })).length,
+    east.length,
+)
+assert.equal((await loadCourt('court-of-appeal-gent')).judicialArea, 'gent')
+assert.equal((await loadCourtDetails('justice-of-the-peace-gent-1')).contacts.length > 0, true)
+assert.equal(getCantonSummary('gent-1').territory, undefined)
+assert.equal(getCantonTerritory('gent-1').nl, getCanton('gent-1').territory.nl)
 
 const require = createRequire(import.meta.url)
 assert.equal(require('belgica/data/courts.json').length > 0, true)

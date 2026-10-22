@@ -90,6 +90,45 @@ them.
 
 The raw files are also exported: `import courts from 'belgica/data/courts.json' with { type: 'json' }`.
 
+#### Only the courts you need
+
+JSON can't be tree-shaken, so a browser app ships whichever data files it imports.
+`data/courts.json` stays the complete file; the build splits it into smaller ones, published
+with the package:
+
+| You need                                       | Use                                                                                                   |
+| ---------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Everything, with lookups and filters           | `belgica/courts` (or the root)                                                                        |
+| One court type, all of Belgium                 | `belgica/data/courts/<type>.json`, or `loadCourts({ type })`                                          |
+| One type in one arrondissement                 | `belgica/data/courts/<type>/<arrondissement>.json`, or `loadCourts({ type, arrondissement })`         |
+| One court by a stored id                       | `loadCourt(id)`: reads `data/courts/index.json`, then the court's file                                |
+| One court's contacts, opening hours, website   | `belgica/data/courts/details/<id>.json`, or `loadCourtDetails(id)`                                    |
+| Names and contacts of a court you already hold | `belgica/courts/format` (`formatCourtName`, `getContact`, `formatPhoneNumber`, `formatIban`): no data |
+| Cantons without the legal text of their area   | `belgica/cantons`; the text in `belgica/cantons/territory` (`getCantonTerritory`)                     |
+
+The list files hold summaries (id, type, name, canton label, canton, arrondissement, address,
+…); the details files the rest. Courts without an arrondissement (a court of appeal, for one)
+are in `data/courts/<type>/judicial-area/<area>.json`. The loaders are in `belgica/courts/load`
+and use one `import()` per file, so a bundler makes a chunk of each.
+
+```ts
+import east from 'belgica/data/courts/justice-of-the-peace/oost-vlaanderen.json' with { type: 'json' }
+import west from 'belgica/data/courts/justice-of-the-peace/west-vlaanderen.json' with { type: 'json' }
+import { formatCourtName, type CourtSummary } from 'belgica/courts/format'
+
+// A JSON import types `type` and `kind` as string: cast to the summary type
+const courts = [...east, ...west] as CourtSummary[]
+courts.map((court) => formatCourtName(court, 'nl', { style: 'canton' })) // 'Vredegerecht 1e kanton Gent', …
+```
+
+Bundled for the browser (esbuild, minified):
+
+| App                                                                  | Minified | gzip   |
+| -------------------------------------------------------------------- | -------- | ------ |
+| `findCourts` + `formatCourtName` from `belgica/courts` (0.4.0)       | 410 KB   | 46 KB  |
+| `getCanton` from `belgica/territory`                                 | 180 KB   | 30 KB  |
+| The two files above + `formatCourtName` from `belgica/courts/format` | 15 KB    | 2.2 KB |
+
 ### Python, spreadsheets and anything else
 
 Read the JSON files in `data/` directly: from the npm package, a git submodule, or a raw URL
