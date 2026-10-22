@@ -51,7 +51,7 @@ To run it yourself: `pnpm fetch:sources` (writes `.sources/`), then `pnpm build:
 
 The cantons and municipalities are rebuilt by hand with `pnpm build:cantons`: the Belgian
 Official Journal's site refuses GitHub's servers
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## Automatic checks
 

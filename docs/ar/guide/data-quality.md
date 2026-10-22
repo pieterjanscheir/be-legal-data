@@ -48,7 +48,7 @@ official site ──fetch──> snapshots (sources branch) ──parse──> d
 
 تُعاد بناء الكانتونات والبلديات يدويًا بـ`pnpm build:cantons`: موقع Belgisch Staatsblad /
 Moniteur belge (الجريدة الرسمية البلجيكية) يرفض خوادم GitHub
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## الفحوص الآلية {#automatic-checks}
 

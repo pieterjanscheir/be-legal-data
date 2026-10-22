@@ -92,7 +92,7 @@ pull request حين تتغير. لا شيء يُكتب يدويًا. ومهمة 
 **النتيجة.** تعيش اللقطات على فرعها الخاص، كي لا يُثقَل تاريخ الحزمة بميغابايتات من HTML.
 تُختبر المحلّلات على نسخ مقتطعة من صفحات حقيقية. والصفحة التي لا يستطيع المحلّل تصنيفها توقف
 البناء بدلًا من إنتاج سجل نصف صحيح. مصدران يرفضان خوادم GitHub ‏(ejustice وpolice.be)؛ فيُجلبان
-من جهاز عادي ([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+من جهاز عادي ([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## 8. التوزيع: ESM فقط، Node 22.12+، يُبنى عند الإصدار {#_8-distribution-esm-only-node-22-12-built-on-release}
 

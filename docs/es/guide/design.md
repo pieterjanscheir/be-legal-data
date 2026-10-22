@@ -106,7 +106,7 @@ mantiene a una persona en el proceso: los datos de `main` nunca cambian sin revi
 con megabytes de HTML. Los parsers se prueban con copias recortadas de páginas reales. Una página
 que el parser no sabe ubicar detiene la build en lugar de producir un registro a medias. Dos
 fuentes rechazan los servidores de GitHub (ejustice, police.be); se descargan desde una máquina
-normal ([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+normal ([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## 8. Distribución: solo ESM, Node 22.12+, construido en cada release {#_8-distribution-esm-only-node-22-12-built-on-release}
 

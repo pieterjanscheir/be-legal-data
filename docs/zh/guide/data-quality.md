@@ -44,7 +44,7 @@ official site ──fetch──> snapshots (sources branch) ──parse──> d
 自己运行：先运行 `pnpm fetch:sources`（写入 `.sources/`），再运行 `pnpm build:data`。
 
 canton 和市镇用 `pnpm build:cantons` 手工重建：Belgisch Staatsblad / Moniteur belge（比利时政府公报）的网站拒绝
-GitHub 服务器的访问（[#24](https://github.com/pieterjanscheir/belgica/issues/24)）。
+GitHub 服务器的访问（[#52](https://github.com/pieterjanscheir/belgica/issues/52)）。
 
 ## 自动检查 {#automatic-checks}
 

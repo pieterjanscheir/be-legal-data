@@ -53,7 +53,7 @@ official site ──fetch──> snapshots (sources branch) ──parse──> d
 
 canton と自治体は `pnpm build:cantons` で手動で作り直します。Belgisch Staatsblad / Moniteur belge
 （官報）のサイトが GitHub のサーバーからのアクセスを拒否するためです
-（[#24](https://github.com/pieterjanscheir/belgica/issues/24)）。
+（[#52](https://github.com/pieterjanscheir/belgica/issues/52)）。
 
 ## 自動チェック {#automatic-checks}
 
