@@ -1,10 +1,11 @@
 import { localeNames, routing } from '@/i18n/routing'
+import { scriptLiteral } from '@/lib/inline-script'
 
 const base = process.env.NEXT_PUBLIC_SITE_BASE ?? ''
 
 // A static export has no server to read Accept-Language, so the browser picks: the first of its
 // languages the site has, else English. Without JavaScript, the links below.
-const redirect = `(function(){var l=${JSON.stringify(routing.locales)},p=(navigator.languages||[navigator.language||'']).map(function(x){return x.slice(0,2).toLowerCase()}),m='${routing.defaultLocale}';for(var i=0;i<p.length;i++){if(l.indexOf(p[i])>=0){m=p[i];break}}location.replace('${base}/'+m+'/')})()`
+const redirect = `(function(){var l=${scriptLiteral(routing.locales)},p=(navigator.languages||[navigator.language||'']).map(function(x){return x.slice(0,2).toLowerCase()}),m=${scriptLiteral(routing.defaultLocale)};for(var i=0;i<p.length;i++){if(l.indexOf(p[i])>=0){m=p[i];break}}location.replace(${scriptLiteral(base)}+'/'+m+'/')})()`
 
 export default function Root() {
     return (
