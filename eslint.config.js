@@ -38,6 +38,12 @@ export default tseslint.config(
         extends: [tseslint.configs.disableTypeChecked],
     },
     {
+        // The explorer imports belgica from dist/, which `pnpm check` lints before it builds;
+        // its types are checked by `pnpm --filter belgica-site typecheck` after the build (CI)
+        files: ['site/**'],
+        extends: [tseslint.configs.disableTypeChecked],
+    },
+    {
         files: ['scripts/**', 'site/scripts/**', 'test/**', '*.config.*', '**/*.cjs', '**/*.mjs'],
         languageOptions: { globals: globals.node },
     },
