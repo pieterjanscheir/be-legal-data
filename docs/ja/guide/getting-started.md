@@ -109,16 +109,16 @@ const court = getJusticeOfThePeace(canton.id)
 ### ある自治体を管轄する裁判所はどこか {#which-court-for-a-municipality}
 
 vredegerecht / justice de paix 以外の裁判所はすべて、法律の定めるとおりに管轄する canton を
-列挙しています（`cantons`）。`findCompetentCourts` は自治体の canton をそこから探します。
+列挙しています（`cantons`）。`findCourtsWithJurisdiction` は自治体の canton をそこから探します。
 
 ```ts
-import { findCompetentCourts, getDivisions } from 'belgica'
+import { findCourtsWithJurisdiction, getDivisions } from 'belgica'
 
-findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde]、ブリュッセルではない
-findCompetentCourts('21004', 'labour-court') // ブリュッセルのオランダ語の裁判所とフランス語の裁判所
+findCourtsWithJurisdiction('23088', 'police-court') // [police-court-vilvoorde]、ブリュッセルではない
+findCourtsWithJurisdiction('21004', 'labour-court') // ブリュッセルのオランダ語の裁判所とフランス語の裁判所
 
 // 裁判所全体。どの部が事件を扱うかはまだデータにない
-const [court] = findCompetentCourts('44021', 'enterprise-court')
+const [court] = findCourtsWithJurisdiction('44021', 'enterprise-court')
 getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brugge, …
 ```
 

@@ -1,6 +1,6 @@
 import { findCantonsAt } from '../../../src/canton-boundaries'
 import {
-    findCompetentCourts,
+    findCourtsWithJurisdiction,
     findJusticesOfThePeace,
     getCourtsForCanton,
     getMunicipalitiesForPostalCode,
@@ -62,7 +62,7 @@ function forMunicipality(id: string, type: CourtType, options: OnDay): PlaceCour
         const found = findJusticesOfThePeace(id, options)
         return { courts: found.map((f) => f.court), ambiguous: found.some((f) => f.partial) }
     }
-    return { courts: findCompetentCourts(id, type, options), ambiguous: false }
+    return { courts: findCourtsWithJurisdiction(id, type, options), ambiguous: false }
 }
 
 // Two municipalities of a postal code with different courts: the street decides

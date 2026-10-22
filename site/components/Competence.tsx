@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import { findCompetentCourts, findJusticesOfThePeace, type CourtType } from 'belgica'
+import { findCourtsWithJurisdiction, findJusticesOfThePeace, type CourtType } from 'belgica'
 import { Link } from '@/i18n/navigation'
 import { cantonName } from '@/lib/data'
 import { CourtCard } from './CourtCard'
@@ -46,7 +46,7 @@ export function Competence({ municipality }: { municipality: string }) {
             <h3>{t('otherCourts')}</h3>
             <div className="cards">
                 {otherTypes.flatMap((type) =>
-                    findCompetentCourts(municipality, type).map((court) => (
+                    findCourtsWithJurisdiction(municipality, type).map((court) => (
                         <CourtCard key={court.id} court={court} />
                     )),
                 )}

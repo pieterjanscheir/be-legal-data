@@ -111,16 +111,16 @@ const court = getJusticeOfThePeace(canton.id)
 ### أي محكمة تختص ببلدية ما؟ {#which-court-for-a-municipality}
 
 كل محكمة غير الـvredegerecht / justice de paix تذكر الكانتونات التي تغطيها (`cantons`)، كما
-يحددها القانون. وتبحث `findCompetentCourts` عن كانتونات البلدية فيها.
+يحددها القانون. وتبحث `findCourtsWithJurisdiction` عن كانتونات البلدية فيها.
 
 ```ts
-import { findCompetentCourts, getDivisions } from 'belgica'
+import { findCourtsWithJurisdiction, getDivisions } from 'belgica'
 
-findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde]، لا Brussel
-findCompetentCourts('21004', 'labour-court') // المحكمة الناطقة بالهولندية والمحكمة الناطقة بالفرنسية في Brussel
+findCourtsWithJurisdiction('23088', 'police-court') // [police-court-vilvoorde]، لا Brussel
+findCourtsWithJurisdiction('21004', 'labour-court') // المحكمة الناطقة بالهولندية والمحكمة الناطقة بالفرنسية في Brussel
 
 // المحكمة ككل؛ أما القسم الذي ينظر في القضية فليس في البيانات بعد
-const [court] = findCompetentCourts('44021', 'enterprise-court')
+const [court] = findCourtsWithJurisdiction('44021', 'enterprise-court')
 getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brugge, …
 ```
 

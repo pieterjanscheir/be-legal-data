@@ -1,4 +1,4 @@
-"""Which courts are competent for a municipality or a postal code"""
+"""Which courts have jurisdiction over a municipality or a postal code"""
 
 from dataclasses import dataclass
 
@@ -26,7 +26,7 @@ class PostalCodeCourts:
     justices_of_the_peace: list[CantonCourt]
     """Its justices of the peace: one, or several for a city split over cantons"""
     courts: list[Court]
-    """Its courts of the type asked for, as `find_competent_courts` gives them"""
+    """Its courts of the type asked for, as `find_courts_with_jurisdiction` gives them"""
 
 
 def find_justices_of_the_peace(municipality_id: str, on: Day | None = None) -> list[CantonCourt]:
@@ -45,21 +45,25 @@ def find_justices_of_the_peace(municipality_id: str, on: Day | None = None) -> l
     return found
 
 
-def find_competent_courts(
+def find_courts_with_jurisdiction(
     municipality_id: str, type: CourtType, on: Day | None = None
 ) -> list[Court]:
-    """The courts of a type competent for a municipality on a day (today by default), by REFNIS
-    code: the courts whose area, as the law sets it, holds one of its cantons. One court for most
-    municipalities; in Brussels the Dutch- and the French-speaking court; for a city split over
-    cantons, every justice of the peace that serves one of them (the street address decides, see
-    `find_justices_of_the_peace`). The court as a whole: which of its divisions hears a case is
-    set by royal decree and isn't in the data; see `get_divisions`. Empty for an unknown code."""
+    """The courts of a type with jurisdiction over a municipality on a day (today by default), by
+    REFNIS code: the courts whose area, as the law sets it, holds one of its cantons. One court
+    for most municipalities; in Brussels the Dutch- and the French-speaking court; for a city split
+    over cantons, every justice of the peace that serves one of them (the street address decides,
+    see `find_justices_of_the_peace`). The court as a whole: which of its divisions hears a case
+    is set by royal decree and isn't in the data; see `get_divisions`. Empty for an unknown code."""
     found: dict[int, Court] = {}
     for canton in get_cantons_for_municipality(municipality_id, on):
         for court in get_courts_for_canton(canton['id'], on):
             if court['type'] == type:
                 found.setdefault(id(court), court)
     return list(found.values())
+
+
+# Deprecated: renamed to `find_courts_with_jurisdiction`; it goes in 1.0
+find_competent_courts = find_courts_with_jurisdiction
 
 
 def find_courts_for_postal_code(
@@ -74,7 +78,7 @@ def find_courts_for_postal_code(
         PostalCodeCourts(
             municipality,
             find_justices_of_the_peace(municipality['id'], on),
-            find_competent_courts(municipality['id'], type, on),
+            find_courts_with_jurisdiction(municipality['id'], type, on),
         )
         for municipality in get_municipalities_for_postal_code(postal_code, on)
     ]

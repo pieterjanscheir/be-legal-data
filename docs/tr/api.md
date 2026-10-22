@@ -398,15 +398,19 @@ sıralı olarak. Bilinmeyen bir kod için boş.
 getPostalCodes('44021').map((p) => p.postalCode) // ['9000', '9030', '9031', …]
 ```
 
-## Yetki {#competence}
+## Yetki {#jurisdiction}
 
 Veri kümelerini birleştiren sorular. Hem coğrafyaya hem de mahkemelere ihtiyaç duydukları için
 yalnızca paketin kökünde bulunurlar.
 
-### `findCompetentCourts(municipalityId, type)` {#findcompetentcourts-municipalityid-type}
+### `findCourtsWithJurisdiction(municipalityId, type)` {#findcourtswithjurisdiction-municipalityid-type}
 
 ```ts
-function findCompetentCourts(municipalityId: string, type: CourtType, options?: OnDay): Court[]
+function findCourtsWithJurisdiction(
+    municipalityId: string,
+    type: CourtType,
+    options?: OnDay,
+): Court[]
 ```
 
 Belirli bir günde (varsayılan olarak bugün) bir belediye için yetkili olan, belirli türdeki
@@ -418,10 +422,10 @@ bakacağı kraliyet kararnamesiyle (koninklijk besluit / arrêté royal) belirle
 yoktur; bu yüzden `getDivisions(court.id)` arasından seçin. Bilinmeyen bir kod için boş.
 
 ```ts
-findCompetentCourts('23088', 'police-court').map((c) => c.id) // ['police-court-vilvoorde']
-findCompetentCourts('21004', 'court-of-first-instance').map((c) => c.id)
+findCourtsWithJurisdiction('23088', 'police-court').map((c) => c.id) // ['police-court-vilvoorde']
+findCourtsWithJurisdiction('21004', 'court-of-first-instance').map((c) => c.id)
 // ['court-of-first-instance-brussel-fr', 'court-of-first-instance-brussel-nl']
-findCompetentCourts('44021', 'labour-court').map((c) => c.id) // ['labour-court-gent']
+findCourtsWithJurisdiction('44021', 'labour-court').map((c) => c.id) // ['labour-court-gent']
 ```
 
 ### `findJusticesOfThePeace(municipalityId)` {#findjusticesofthepeace-municipalityid}
@@ -459,7 +463,7 @@ function findCourtsForPostalCode(
 interface PostalCodeCourts {
     municipality: Municipality
     justicesOfThePeace: CantonCourt[] // findJusticesOfThePeace(municipality.id)
-    courts: Court[] // findCompetentCourts(municipality.id, type)
+    courts: Court[] // findCourtsWithJurisdiction(municipality.id, type)
 }
 ```
 

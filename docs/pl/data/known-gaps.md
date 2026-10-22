@@ -7,7 +7,7 @@ import { data as stats } from '../../.vitepress/stats.data'
 - **Sądów spoza portalu** nie ma w danych: Hof van Cassatie / Cour de cassation, Grondwettelijk
   Hof / Cour constitutionnelle, Raad van State / Conseil d'État i sądów dyscyplinarnych
   ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
-- **Właściwość kończy się na sądzie.** `cantons` i `findCompetentCourts` mówią, który sąd
+- **Właściwość kończy się na sądzie.** `cantons` i `findCourtsWithJurisdiction` mówią, który sąd
   obejmuje gminę, a nie który z jego wydziałów: obszar wydziału ustala dekret królewski, którego
   jeszcze nie ma w danych ([#58](https://github.com/pieterjanscheir/belgica/issues/58)).
 - **{{ stats.courts.withoutAddress }} sądów nie ma jednego adresu**: sąd, którego wydziały mają

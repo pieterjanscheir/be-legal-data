@@ -7,7 +7,7 @@ import { data as stats } from '../../.vitepress/stats.data'
 - **Gerechten die niet op het portaal staan** zitten niet in de data: het Hof van Cassatie, het
   Grondwettelijk Hof, de Raad van State en de tuchtrechtbanken
   ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
-- **De bevoegdheid stopt bij het gerecht.** `cantons` en `findCompetentCourts` zeggen welk gerecht
+- **De bevoegdheid stopt bij het gerecht.** `cantons` en `findCourtsWithJurisdiction` zeggen welk gerecht
   een gemeente bestrijkt, niet welke van zijn afdelingen: het gebied van een afdeling wordt bij
   koninklijk besluit bepaald en zit nog niet in de data
   ([#58](https://github.com/pieterjanscheir/belgica/issues/58)).
