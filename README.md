@@ -93,7 +93,7 @@ The raw files are also exported: `import courts from 'belgica/data/courts.json' 
 ### Python, spreadsheets and anything else
 
 Read the JSON files in `data/` directly: from the npm package, a git submodule, or a raw URL
-pinned to a tag (`https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.3.0/data/cantons.json`).
+pinned to a tag (`https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.4.0/data/cantons.json`).
 For spreadsheets, take the CSV tables from a [release](https://github.com/pieterjanscheir/belgica/releases).
 
 ## How the data is kept up to date
