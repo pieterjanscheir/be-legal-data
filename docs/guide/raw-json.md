@@ -76,6 +76,7 @@ Data > From Text/CSV.
 | `data/houses-of-justice.json`         | The houses of justice of the Flemish and French Communities     |
 | `data/postal-codes.json`              | Every postal code with the municipality it belongs to           |
 | `data/interest-rates.json`            | Legal and commercial-transaction interest rates                 |
+| `data/public-holidays.json`           | The rules for the ten legal public holidays                     |
 
 Generated from `data/courts.json` and `data/cantons.json`, for apps that need only part of them
 (see [only the courts you need](/data/courts#only-the-courts-you-need)):

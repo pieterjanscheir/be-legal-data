@@ -1,9 +1,10 @@
 # Python
 
-The [`belgica` package on PyPI](https://pypi.org/project/belgica/) has the same data and helpers as
-the npm package, with the same version number: belgica 0.4.0 on PyPI is the data of v0.4.0. The
-tests check that both packages give the same answers for every municipality, postal code, canton
-and court, for a grid of points over Belgium and for interest rates since 1969.
+The [`belgica` package on PyPI](https://pypi.org/project/belgica/) has the same data and lookups as
+the npm package, with the same version number: the same version on PyPI and on npm holds the same
+data. The tests check that both packages give the same answers for every municipality, postal
+code, canton and court, for a grid of points over Belgium, and for the interest rates of every
+month since 1969.
 
 ::: code-group
 
@@ -39,7 +40,7 @@ if court and 'address' in court:
     print(court['address']['street'])
 ```
 
-Each data file is read on first use and kept. The canton boundaries are 22 MB of JSON: only
+Each data file is read on first use and kept. The canton boundaries are 23 MB of JSON: only
 `find_cantons_at`, `get_canton_boundary` and `canton_boundaries()` read them. The arrondissement
 boundaries are read by `find_arrondissements_at`, `get_arrondissement_boundary` and
 `arrondissement_boundaries()`, the court locations by `get_court_location` and
@@ -112,5 +113,12 @@ today without it. A lookup by id without `on` always finds a known record, as it
 starts, and a guess would look like an answer. The coverage is in `TERRITORY_COVERAGE_FROM`,
 `COURTS_COVERAGE_FROM` and the other `*_COVERAGE_FROM` constants.
 
-See [design decisions](./design) for why the helpers work this way, and the
+## Not in Python yet
+
+The calendar functions (`getPublicHolidays`, `nextWorkingDay`, `isJudicialHoliday`, …) and the
+loaders of `belgica/courts/load`, which exist for browser bundles, have no Python version.
+The package does include `public-holidays.json`, the rules the calendar functions read, and
+`belgica.types` types it.
+
+See [design decisions](./design) for why the functions work this way, and the
 [API reference](../api) for what each one does: the Python functions do the same.

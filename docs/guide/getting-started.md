@@ -1,10 +1,9 @@
-<script setup>
-import { data as stats } from '../.vitepress/stats.data'
-
-const kb = (bytes) => `${Math.round(bytes / 1024)} KB`
-</script>
-
 # Getting started
+
+This page installs the npm package and takes you from a municipality to the court that has
+jurisdiction over it, with the court's name, address and phone number. For Python, see
+[Python](./python). For the JSON or CSV files without a package, see
+[without JavaScript](./raw-json).
 
 ## Install
 
@@ -24,184 +23,125 @@ yarn add belgica
 
 :::
 
-The package is ESM, ships its own type definitions, has no runtime dependencies, and runs in
-browsers and on Node 22.12 or later, where `require()` loads it too. It's tested on Node 22.12,
-22, 24 and 26.
+The package is ESM and ships its own type definitions. It runs in browsers and on Node 22.12 or
+later, where `require()` loads it too, and is tested on Node 22.12, 22, 24 and 26. Its one
+dependency, [zod](https://zod.dev), is only loaded by `belgica/schemas`.
 
-### Import only what you need
+## Your first lookup
 
-The data is bundled into the JavaScript, so importing from the package root loads every
-dataset. Each dataset has its own entry point, and the courts and the cantons (with the legal
-text of their territories) are by far the largest:
-
-```ts
-import { getInterestRate } from 'belgica/interest-rates'
-import { getCourt } from 'belgica/courts'
-import { getCanton } from 'belgica/territory'
-import { getMunicipalitiesForPostalCode } from 'belgica/postal-codes'
-```
-
-The [canton boundaries](/data/canton-boundaries) are the exception: a million positions of
-geometry, only in `belgica/canton-boundaries`, never loaded by the package root.
-
-A browser app that needs only some courts can go smaller still. JSON can't be tree-shaken, so
-what it ships depends on which files it imports:
-
-| You need                                       | Use                                                                                           |
-| ---------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| Every court, with lookups and filters          | `belgica/courts`                                                                              |
-| One type, all of Belgium                       | `belgica/data/courts/<type>.json`, or `loadCourts({ type })`                                  |
-| One type in one arrondissement                 | `belgica/data/courts/<type>/<arrondissement>.json`, or `loadCourts({ type, arrondissement })` |
-| One court by a stored id                       | `loadCourt(id)`                                                                               |
-| One court's contacts, hours and website        | `belgica/data/courts/details/<id>.json`, or `loadCourtDetails(id)`                            |
-| Names and contacts of a court you already hold | `belgica/courts/format`: no data                                                              |
-| Cantons without the legal text of their area   | `belgica/cantons`, and `belgica/cantons/territory` for the text                               |
-
-The loaders are in `belgica/courts/load`. See [only the courts you need](/data/courts#only-the-courts-you-need).
-
-<table v-if="stats.sizes">
-<thead><tr><th>Entry point</th><th style="text-align:right">JavaScript loaded</th><th style="text-align:right">gzip</th></tr></thead>
-<tbody>
-<tr v-for="s in stats.sizes" :key="s.entry">
-<td><code>{{ s.entry }}</code></td><td style="text-align:right">{{ kb(s.raw) }}</td><td style="text-align:right">{{ kb(s.gzip) }}</td>
-</tr>
-</tbody>
-</table>
-<p v-else class="bld-muted">Sizes are measured from the build when the site is built (<code>pnpm build</code> first).</p>
-
-## A first look
+Municipalities are identified by their REFNIS code, the code Statbel assigns. Merelbeke-Melle is
+`44088`. Find its canton, then the canton's justice of the peace:
 
 ```ts
 import {
-    getCourt,
-    findCourts,
-    getCanton,
+    formatCourtName,
+    formatPhoneNumber,
     getCantonsForMunicipality,
-    getInterestRate,
+    getContact,
+    getJusticeOfThePeace,
 } from 'belgica'
 
-getCourt('justice-of-the-peace-gent-1').name.nl // 'Vredegerecht Gent 1'
-findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' })
+const [canton] = getCantonsForMunicipality('44088')
+canton.id // 'merelbeke-melle'
 
-getCantonsForMunicipality('44088') // [Canton merelbeke-melle]
-getCantonsForMunicipality('44021') // Gent 1–5: split city, see each canton's `territory`
-getCanton('oudergem').seat.nl // 'Etterbeek'
-
-getInterestRate('2024-06-15', 'legal') // { rate: 5.75, period: { from: '2024-01-01', to: '2024-12-31' } }
-getInterestRate(new Date(2014, 5, 15), 'commercial', { contractAfter20130316: true }) // { rate: 8.5, … }
-```
-
-## Common tasks
-
-### Which justice of the peace handles an address?
-
-Look up the municipality's REFNIS code and get its cantons, then the canton's court.
-
-```ts
-import { getCantonsForMunicipality, getJusticeOfThePeace } from 'belgica'
-
-const cantons = getCantonsForMunicipality('44088')
-if (cantons.length === 1) {
-    const court = getJusticeOfThePeace(cantons[0].id) // every canton has its court
-}
-
-// On the day the summons was served, rather than today
-getCantonsForMunicipality('44088', { on: '2025-09-15' })
-```
-
-When a city is split over several cantons (Antwerpen, Gent, Brussel, Luik, …), you get more than
-one result. The street address decides, and each canton's `territory` holds the legal
-description of its part. Try it on the [territory page](/data/territory#find-the-canton-for-a-municipality).
-
-With the address's coordinates, the [canton boundaries](/data/canton-boundaries) settle it:
-
-```ts
-import { findCantonsAt } from 'belgica/canton-boundaries'
-
-const [canton] = findCantonsAt(3.7268, 51.053) // longitude, latitude: gent-1
 const court = getJusticeOfThePeace(canton.id)
+formatCourtName(court, 'nl') // 'Vredegerecht Merelbeke-Melle'
+court.address
+// { street: 'Hundelgemsesteenweg 622-624', postalCode: '9820', city: 'Merelbeke', municipality: '44088' }
+
+const phone = getContact(court, 'phone') // '+3226820240'
+if (phone) formatPhoneNumber(phone) // '02 682 02 40'
 ```
 
-### Which court for a municipality?
+Every record is a plain, read-only object with the fields described on its
+[data page](/data/courts#fields). Phone numbers are stored in E.164 form, and `formatPhoneNumber`
+writes them the Belgian way for display.
 
-Every court other than a justice of the peace lists the cantons it covers (`cantons`), as the
-law sets them. `findCourtsWithJurisdiction` looks a municipality's cantons up in them.
+### Cities split over several cantons
+
+Merelbeke-Melle lies in one canton. Antwerpen, Gent, Brussel, Luik and other large cities are
+split over several, and the street decides:
 
 ```ts
-import { findCourtsWithJurisdiction, getDivisions } from 'belgica'
-
-findCourtsWithJurisdiction('23088', 'police-court') // [police-court-vilvoorde], not Brussels
-findCourtsWithJurisdiction('21004', 'labour-court') // the Dutch- and the French-speaking court of Brussels
-
-// The court as a whole; which division hears the case isn't in the data yet
-const [court] = findCourtsWithJurisdiction('44021', 'enterprise-court')
-getDivisions(court.id) // enterprise-court-gent-gent, enterprise-court-gent-brugge, …
+getCantonsForMunicipality('44021').map((c) => c.id) // Gent: ['gent-1', 'gent-2', 'gent-3', 'gent-4', 'gent-5']
 ```
 
-#### From a postal code
+Each of these cantons has the law's description of its part of the city in `territory`. With the
+address's coordinates, `findCantonsAt` picks the canton for you. See
+[which justice of the peace for an address](./common-tasks#which-justice-of-the-peace-for-an-address).
 
-An address comes with a postal code, not a REFNIS code. `findCourtsForPostalCode` goes from the
-postal code to the municipality ([postal codes](/data/postal-codes)) and from there to the
-justices of the peace and the courts of a type. It answers per municipality: three postal codes
-(`1040`, `1050`, `1804`) belong to two municipalities, and the street then decides.
+## Look up by id
+
+Every record has an `id`, and each dataset has a `get…` function that takes one. Ids are stable,
+so store them rather than names:
 
 ```ts
-import { findCourtsForPostalCode, getMunicipalitiesForPostalCode } from 'belgica'
+import { getCourt, getMunicipality } from 'belgica'
 
-const [gent] = findCourtsForPostalCode('9050', 'labour-court')
-gent.municipality.name.nl // 'Gent'
-gent.courts.map((c) => c.id) // ['labour-court-gent']
-gent.justicesOfThePeace.map((c) => c.canton.id) // ['gent-1', …, 'gent-5']: the street decides
-
-findCourtsForPostalCode('1040', 'police-court').map((r) => r.municipality.name.nl) // ['Brussel', 'Etterbeek']
-getMunicipalitiesForPostalCode('9050').map((m) => m.id) // ['44021']
+getCourt('court-of-appeal-brussel').name // { nl: 'Hof van Beroep Brussel', fr: "Cour d'appel de Bruxelles" }
+getMunicipality('44021').name // { nl: 'Gent', fr: 'Gand' }
 ```
 
-In a city split over cantons, the postal code narrows the question to the municipality; the
-canton still needs the street, and its boundaries are legal prose until
-[#29](https://github.com/pieterjanscheir/belgica/issues/29) adds them as geometry.
+In TypeScript, an id the compiler knows (a literal, or a value typed `CourtId`) returns the
+record itself. Any other string returns the record or `undefined`, so input from a user or a
+database has to be checked:
 
-### Interest due on a day
+```ts
+getCourt('court-of-appeal-brussel') // Court
+getCourt(input) // Court | undefined
+```
+
+## Ask about a day
+
+Courts, cantons and municipalities change. Every lookup answers for today, or for the day you
+pass as `on`:
+
+```ts
+getCantonsForMunicipality('44088', { on: '2025-09-15' }) // the day the summons was served
+getCantonsForMunicipality('44088', { on: '2020-01-01' }) // RangeError: before the data's coverage
+```
+
+The data describes the territory and the courts from 1 January 2025. For an earlier day a lookup
+throws rather than answer with today's map. [Core concepts](./concepts#time) explains validity
+periods and coverage.
+
+## Handle what the data doesn't know
+
+The functions never guess. They tell you when they have no answer:
+
+| Situation                               | Result                        |
+| --------------------------------------- | ----------------------------- |
+| An id that isn't in the data            | `undefined`                   |
+| A search that matches nothing           | `[]`                          |
+| A day with no interest rate on file     | `null` from `getInterestRate` |
+| A malformed day, or one before coverage | a `RangeError` is thrown      |
 
 ```ts
 import { getInterestRate, getLatestKnownRateDate } from 'belgica'
 
-const result = getInterestRate(new Date(), 'commercial')
-if (!result) {
-    console.warn(`No rate on file; latest known day is ${getLatestKnownRateDate('commercial')}`)
+const result = getInterestRate('2024-06-15', 'legal')
+// { rate: 5.75, period: { from: '2024-01-01', to: '2024-12-31' } }
+
+if (result === null) {
+    console.warn(`No rate on file; the data reaches ${getLatestKnownRateDate('legal')}`)
 }
 ```
 
-`getInterestRate` returns `null` for a day with no rate on file, so you can warn instead of
-silently using 0 %. It throws a `RangeError` for a malformed day such as `'2024-6-1'`: pass
-`YYYY-MM-DD` or a `Date`.
+## Import less
 
-### Court names in another language
-
-Names are as each court publishes them, in every language it has a page in. A court in
-Flanders publishes in Dutch only; bilingual courts in Brussels in Dutch and French; the courts
-in Eupen in German and French.
+Importing from `belgica` loads every dataset except the boundaries and the court locations. Each
+dataset also has its own entry point, which keeps a browser bundle small:
 
 ```ts
-getCourt('court-of-appeal-brussel').name.fr // "Cour d'appel de Bruxelles"
-getCourt('police-court-eupen-sankt-vith').name.de // 'Polizeigericht Eupen, Abteilung Sankt Vith'
+import { getInterestRate } from 'belgica/interest-rates' // a few kilobytes
+import { getCourt } from 'belgica/courts'
 ```
 
-## Raw JSON
+[Entry points and bundle size](./entry-points) lists them all with their measured sizes.
 
-The data files are exported too:
+## Next steps
 
-```ts
-import courts from 'belgica/data/courts.json' with { type: 'json' }
-```
-
-## Ids are public API
-
-Projects store ids such as `justice-of-the-peace-gent-1` or `oost-vlaanderen`, so they never change within a
-major version (see [identifiers](./identifiers)), and versions follow these rules:
-
-| Change                     | Version |
-| -------------------------- | ------- |
-| Adding data                | minor   |
-| Fixing a value             | patch   |
-| Removing or renaming an id | major   |
+- [Core concepts](./concepts): ids, links between records, days and coverage, languages.
+- [Common tasks](./common-tasks): the usual questions, and which function answers each.
+- [API reference](/api): every function, with its signature, results and errors.
+- [Data](/data/): what each dataset holds, where it comes from and how current it is.

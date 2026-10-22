@@ -35,6 +35,12 @@ const en: Strings = {
         knownGaps: 'Known gaps',
         roadmap: 'Roadmap',
         api: 'API reference',
+        introduction: 'Introduction',
+        concepts: 'Core concepts',
+        commonTasks: 'Common tasks',
+        entryPoints: 'Entry points and bundle size',
+        usingTheData: 'Using the data',
+        project: 'Project',
     },
     editLink: 'Edit this page on GitHub',
     lastUpdated: 'Last updated',
@@ -186,9 +192,12 @@ const fr: Strings = {
 }
 
 function themeConfig(prefix: string, t: Strings): DefaultTheme.Config {
+    // Labels a language doesn't have yet are English
+    const s = { ...en.sidebar, ...t.sidebar }
     return {
         nav: [
-            { text: t.nav.guide, link: `${prefix}/guide/getting-started` },
+            // The introduction is in English only; the other languages start at getting started
+            { text: t.nav.guide, link: prefix ? `${prefix}/guide/getting-started` : '/guide/' },
             { text: t.nav.data, link: `${prefix}/data/` },
             { text: t.nav.api, link: `${prefix}/api` },
             // The Next.js site in site/, deployed on Vercel
@@ -202,43 +211,53 @@ function themeConfig(prefix: string, t: Strings): DefaultTheme.Config {
                 ],
             },
         ],
+        // A link without `prefix` is a page in English only, for every language, for now
         sidebar: [
             {
-                text: t.sidebar.guide,
+                text: s.guide,
                 items: [
-                    { text: t.sidebar.gettingStarted, link: `${prefix}/guide/getting-started` },
-                    { text: t.sidebar.rawJson, link: `${prefix}/guide/raw-json` },
-                    // In English for every language, for now
-                    { text: 'Python', link: '/guide/python' },
-                    { text: t.sidebar.design, link: `${prefix}/guide/design` },
-                    { text: t.sidebar.identifiers, link: `${prefix}/guide/identifiers` },
-                    { text: t.sidebar.schema, link: `${prefix}/guide/schema` },
-                    { text: t.sidebar.dataQuality, link: `${prefix}/guide/data-quality` },
-                    { text: t.sidebar.contributing, link: `${prefix}/guide/contributing` },
-                    { text: t.sidebar.changelog, link: `${prefix}/guide/changelog` },
+                    { text: s.introduction, link: '/guide/' },
+                    { text: s.gettingStarted, link: `${prefix}/guide/getting-started` },
+                    { text: s.concepts, link: '/guide/concepts' },
+                    { text: s.commonTasks, link: '/guide/common-tasks' },
                 ],
             },
             {
-                text: t.sidebar.data,
+                text: s.usingTheData,
                 items: [
-                    { text: t.sidebar.overview, link: `${prefix}/data/` },
-                    { text: t.sidebar.territory, link: `${prefix}/data/territory` },
-                    {
-                        text: t.sidebar.cantonBoundaries,
-                        link: `${prefix}/data/canton-boundaries`,
-                    },
-                    { text: t.sidebar.courts, link: `${prefix}/data/courts` },
-                    { text: t.sidebar.prisons, link: `${prefix}/data/prisons` },
-                    { text: t.sidebar.housesOfJustice, link: `${prefix}/data/houses-of-justice` },
-                    { text: t.sidebar.postalCodes, link: `${prefix}/data/postal-codes` },
-                    { text: t.sidebar.interestRates, link: `${prefix}/data/interest-rates` },
-                    // In English for every language, for now
-                    { text: t.sidebar.publicHolidays, link: '/data/public-holidays' },
-                    { text: t.sidebar.knownGaps, link: `${prefix}/data/known-gaps` },
-                    { text: t.sidebar.roadmap, link: `${prefix}/data/roadmap` },
+                    { text: s.entryPoints, link: '/guide/entry-points' },
+                    { text: 'Python', link: '/guide/python' },
+                    { text: s.rawJson, link: `${prefix}/guide/raw-json` },
+                    { text: s.schema, link: `${prefix}/guide/schema` },
                 ],
             },
-            { text: t.sidebar.api, link: `${prefix}/api` },
+            {
+                text: s.data,
+                items: [
+                    { text: s.overview, link: `${prefix}/data/` },
+                    { text: s.territory, link: `${prefix}/data/territory` },
+                    { text: s.cantonBoundaries, link: `${prefix}/data/canton-boundaries` },
+                    { text: s.courts, link: `${prefix}/data/courts` },
+                    { text: s.prisons, link: `${prefix}/data/prisons` },
+                    { text: s.housesOfJustice, link: `${prefix}/data/houses-of-justice` },
+                    { text: s.postalCodes, link: `${prefix}/data/postal-codes` },
+                    { text: s.interestRates, link: `${prefix}/data/interest-rates` },
+                    { text: s.publicHolidays, link: '/data/public-holidays' },
+                    { text: s.knownGaps, link: `${prefix}/data/known-gaps` },
+                    { text: s.roadmap, link: `${prefix}/data/roadmap` },
+                ],
+            },
+            { text: s.api, link: `${prefix}/api` },
+            {
+                text: s.project,
+                items: [
+                    { text: s.identifiers, link: `${prefix}/guide/identifiers` },
+                    { text: s.design, link: `${prefix}/guide/design` },
+                    { text: s.dataQuality, link: `${prefix}/guide/data-quality` },
+                    { text: s.contributing, link: `${prefix}/guide/contributing` },
+                    { text: s.changelog, link: `${prefix}/guide/changelog` },
+                ],
+            },
         ],
         editLink: {
             pattern: `${repo}/edit/main/docs/:path`,

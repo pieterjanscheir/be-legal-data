@@ -1,12 +1,16 @@
 # belgica
 
-Belgian legal reference data as JSON and CSV, with TypeScript types and helpers: every court
-with its registries' contacts, prisons, houses of justice, judicial cantons and arrondissements,
-municipalities and their postal codes, the legal and commercial interest rates, and the public holidays. Every record says where it comes
-from, and the scraped data is rebuilt from the official sources every week.
+Belgian legal reference data for developers of legal software: every court with its
+registries' contacts, prisons, houses of justice, judicial cantons and arrondissements,
+municipalities and their postal codes, the legal and commercial interest rates, and the public
+holidays. As JSON and CSV, with typed lookups for TypeScript and Python. Every record says where
+it comes from, and the scraped data is rebuilt from the official sources every week.
 
-Documentation, with a canton lookup, a court list and interest-rate tables:
-**https://pieterjanscheir.github.io/belgica/**
+It answers questions such as: which justice of the peace has jurisdiction over this address,
+what is this court's registry e-mail, which interest rate applied on that day, and on which day
+does a deadline that ends on Easter Monday end instead.
+
+**Documentation: https://pieterjanscheir.github.io/belgica/**
 
 The [explorer](https://belgica.scheir.eu/) is a site built on the package, in 13 languages: a page for every
 court, canton, municipality and postal code, the canton map and an interest calculator. Its
@@ -42,9 +46,6 @@ has the data as JSON and CSV in one zip.
 Planned: the highest courts, history before 2025, bailiffs, police zones and the cadastre
 offices. See the [roadmap](https://pieterjanscheir.github.io/belgica/data/roadmap).
 
-Municipality, province, region and postal-code data © Statbel, canton boundaries © National
-Geographic Institute (NGI), both [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
 ## Using it
 
 ### TypeScript / JavaScript
@@ -54,9 +55,10 @@ pnpm add belgica
 ```
 
 ESM with TypeScript types inferred from [zod](https://zod.dev) schemas, which `belgica/schemas`
-exports for validation; the datasets don't load zod at run time. Node 22.12 or later (where `require()`
-loads it too), Deno, Bun and browsers. Design choices are explained in
-[design decisions](https://pieterjanscheir.github.io/belgica/guide/design).
+exports for validation; the datasets don't load zod at run time. Node 22.12 or later (where
+`require()` loads it too) and browsers. Start with
+[getting started](https://pieterjanscheir.github.io/belgica/guide/getting-started); every function
+is in the [API reference](https://pieterjanscheir.github.io/belgica/api).
 
 ```ts
 import {
@@ -68,7 +70,9 @@ import {
     findCourtsWithJurisdiction,
     findCourtsForPostalCode,
     getInterestRate,
+    nextWorkingDay,
 } from 'belgica'
+import { findCantonsAt } from 'belgica/canton-boundaries'
 
 getCourt('court-of-appeal-brussel').name // { nl: 'Hof van Beroep Brussel', fr: "Cour d'appel de Bruxelles" }
 getContact(getCourt('court-of-appeal-liege'), 'email', 'Greffe pénal') // 'liege.ca.greffepenal@just.fgov.be'
@@ -77,17 +81,18 @@ findCourts({ type: 'enterprise-court', arrondissement: 'west-vlaanderen' })
 const [canton] = getCantonsForMunicipality('44088') // merelbeke-melle
 getJusticeOfThePeace(canton.id).address // where to file
 getCantonsForMunicipality('44021', { on: '2025-09-15' }) // Gent 1–5 on that day: a split city
-findCantonsAt(3.7268, 51.053) // [gent-1]: the canton of a point (belgica/canton-boundaries)
+findCantonsAt(3.7268, 51.053) // [gent-1]: the canton of a point
 findCourtsWithJurisdiction('23088', 'police-court') // [police-court-vilvoorde]: which court, by REFNIS code
 findCourtsForPostalCode('1040', 'police-court') // per municipality: Brussel and Etterbeek share the code
 
 getInterestRate('2024-06-15', 'legal') // { rate: 5.75, period: { from: '2024-01-01', to: '2024-12-31' } }
 getInterestRate(new Date(2014, 5, 15), 'commercial', { contractAfter20130316: true }) // { rate: 8.5, … }
+nextWorkingDay('2026-04-04') // '2026-04-07': a deadline ending on a Saturday moves past Easter Monday
 ```
 
-`getInterestRate` returns `null` for a day with no rate on file, so callers can warn instead of
-silently using 0 %. Malformed days throw a `RangeError`, and so do territory and court lookups
-for a day before that data's coverage.
+Lookups return `undefined`, `[]` or `null` when the data has no answer, so callers can warn
+instead of silently using 0 %. Malformed days throw a `RangeError`, and so do lookups for a day
+before a dataset's coverage.
 
 Import a single dataset to keep bundles small: `belgica/interest-rates`, `belgica/calendar`,
 `belgica/courts`, `belgica/prisons`, `belgica/houses-of-justice`,
@@ -129,11 +134,11 @@ const courts = [...east, ...west] as CourtSummary[]
 courts.map((court) => formatCourtName(court, 'nl', { style: 'canton' })) // 'Vredegerecht 1e kanton Gent', …
 ```
 
-Bundled for the browser (esbuild, minified):
+Bundled for the browser (esbuild, minified, measured on 0.4.0):
 
 | App                                                                  | Minified | gzip   |
 | -------------------------------------------------------------------- | -------- | ------ |
-| `findCourts` + `formatCourtName` from `belgica/courts` (0.4.0)       | 410 KB   | 46 KB  |
+| `findCourts` + `formatCourtName` from `belgica/courts`               | 410 KB   | 46 KB  |
 | `getCanton` from `belgica/territory`                                 | 180 KB   | 30 KB  |
 | The two files above + `formatCourtName` from `belgica/courts/format` | 15 KB    | 2.2 KB |
 
@@ -143,10 +148,12 @@ Bundled for the browser (esbuild, minified):
 pip install belgica
 ```
 
-The same data and helpers, in snake case, with the same version number: `get_cantons_for_municipality('44021', on='2025-09-15')`,
-`find_courts_with_jurisdiction('23088', 'police-court')`, `find_cantons_at(3.7268, 51.053)`. Python 3.11 or later, no
-dependencies; the tests check both packages give the same answers. See [Python](https://pieterjanscheir.github.io/belgica/guide/python)
-and [`python/`](python/).
+The same data and lookups, in snake case, with the same version number:
+`get_cantons_for_municipality('44021', on='2025-09-15')`,
+`find_courts_with_jurisdiction('23088', 'police-court')`, `find_cantons_at(3.7268, 51.053)`.
+Python 3.11 or later, no dependencies; the tests check both packages give the same answers. The
+calendar functions aren't in Python yet. See
+[Python](https://pieterjanscheir.github.io/belgica/guide/python) and [`python/`](python/).
 
 ### Spreadsheets and anything else
 
@@ -158,13 +165,13 @@ For spreadsheets, take the CSV tables from a [release](https://github.com/pieter
 
 Every Monday the [sources workflow](.github/workflows/sources.yml) fetches every page of the
 official sources, keeps them as snapshots on the [`sources`](../../tree/sources) branch, rebuilds
-the courts, prisons, houses of justice and canton boundaries from them, tests the result, and
+every scraped dataset from them, tests the result, and
 opens a pull request when anything changed. A [freshness check](.github/workflows/freshness.yml) opens an issue when a
 new interest rate is missing, a dataset is overdue for review or a source is gone.
 
 ```bash
 pnpm fetch:sources   # the official sources into .sources/
-pnpm build:data      # rebuild the courts, prisons, houses of justice and postal codes from them
+pnpm build:data      # rebuild every scraped dataset from them
 pnpm build:cantons   # rebuild cantons and municipalities from the law and Statbel
 pnpm check           # everything CI runs
 ```
@@ -175,15 +182,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) and the
 ### Releasing
 
 Ids are public API, so versions follow these rules: adding data is a minor version, fixing a
-value is a patch, and removing or renaming an id is a major version.
-
-1. Move the Unreleased entries in `CHANGELOG.md` under the new version.
-2. Bump `version` in `package.json` and in `python/pyproject.toml` (the tests check they match), and commit.
-3. Tag it and push: `git tag v0.3.0 && git push && git push --tags`.
-
-The [release workflow](.github/workflows/release.yml) runs `pnpm check`, publishes the tag to
-npm with provenance and creates a GitHub release with the data, schemas and CSV tables. The tag
-has to match `version`.
+value is a patch, and removing or renaming an id is a major version. A release is prepared by the
+**Prepare release** workflow and published to npm and PyPI when its pull request is merged; see
+[releasing](https://pieterjanscheir.github.io/belgica/guide/contributing#releasing).
 
 ## Known gaps
 
@@ -195,4 +196,7 @@ canton.
 ## Licence
 
 The code is [MIT](LICENSE). The data in `data/` is [CC BY 4.0](LICENSE-DATA): reuse it freely,
-including commercially, with credit to this project and to the sources listed there.
+including commercially, with credit to this project and to the sources listed in
+`datapackage.json`. Municipality, province, region and postal-code data © Statbel; canton and
+arrondissement boundaries and court locations © National Geographic Institute (NGI), both
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

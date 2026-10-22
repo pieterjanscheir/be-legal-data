@@ -29,6 +29,13 @@ export interface Strings {
         knownGaps: string
         roadmap: string
         api: string
+        // Added after the translations: English until a language has its own
+        introduction?: string
+        concepts?: string
+        commonTasks?: string
+        entryPoints?: string
+        usingTheData?: string
+        project?: string
     }
     editLink: string
     lastUpdated: string

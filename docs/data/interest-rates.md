@@ -23,7 +23,9 @@ when the rate isn't published yet.
 | Source       | [FOD Financiën](https://financien.belgium.be/nl/over_de_fod/structuur_en_diensten/algemene_administraties/thesaurie/rentevoet_betalingsachterstand_handelstransacties) (commercial); annual notice in the Belgisch Staatsblad (legal) |
 | Built by     | Hand: add a period when a new rate is published                                                                                                                                                                                       |
 | Changes when | Every calendar year (legal); every semester (commercial)                                                                                                                                                                              |
+| Covers       | The legal rate from 1 July 1970, the commercial rate from 1 July 2002: `getInterestRate` returns `null` for a day outside the periods on file                                                                                         |
 | Checked      | Weekly: the freshness check opens an issue when today, or the next two weeks, has no rate                                                                                                                                             |
+| Licence      | CC BY 4.0                                                                                                                                                                                                                             |
 
 - **Legal** (`legal`, wettelijke interest, Wet 5 mei 1865): set per calendar year; on file since 1970.
 - **Commercial** (`commercial`, late payment in commercial transactions, Wet 2 augustus 2002):
