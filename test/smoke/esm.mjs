@@ -75,7 +75,9 @@ assert.equal(require('belgica/datapackage.json').name, 'belgica')
 assert.equal(require('belgica/schema/courts.schema.json').title, 'belgica: data/courts.json')
 
 // The boundaries are read from data/, not inlined: the package holds them once (#80)
-const boundariesEntry = new URL(import.meta.resolve('belgica/canton-boundaries'))
-assert.ok(statSync(boundariesEntry).size < 100_000, 'dist/ inlines the canton boundaries')
+for (const dataset of ['canton', 'arrondissement']) {
+    const entry = new URL(import.meta.resolve(`belgica/${dataset}-boundaries`))
+    assert.ok(statSync(entry).size < 100_000, `dist/ inlines the ${dataset} boundaries`)
+}
 
 console.log(`ESM smoke test passed on Node ${process.version}`)
