@@ -17,6 +17,7 @@ import { loadCourt, loadCourtDetails, loadCourts } from 'belgica/courts/load'
 import { getCanton as getCantonSummary } from 'belgica/cantons'
 import { getCantonTerritory } from 'belgica/cantons/territory'
 import east from 'belgica/data/courts/justice-of-the-peace/oost-vlaanderen.json' with { type: 'json' }
+import { statSync } from 'node:fs'
 
 assert.equal(getCourt('justice-of-the-peace-gent-1').name.nl, 'Vredegerecht Gent 1')
 assert.equal(getJusticeOfThePeace('gent-1').id, 'justice-of-the-peace-gent-1')
@@ -65,5 +66,9 @@ const require = createRequire(import.meta.url)
 assert.equal(require('belgica/data/courts.json').length > 0, true)
 assert.equal(require('belgica/datapackage.json').name, 'belgica')
 assert.equal(require('belgica/schema/courts.schema.json').title, 'belgica: data/courts.json')
+
+// The boundaries are read from data/, not inlined: the package holds them once (#80)
+const boundariesEntry = new URL(import.meta.resolve('belgica/canton-boundaries'))
+assert.ok(statSync(boundariesEntry).size < 100_000, 'dist/ inlines the canton boundaries')
 
 console.log(`ESM smoke test passed on Node ${process.version}`)
