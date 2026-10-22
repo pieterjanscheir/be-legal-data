@@ -9,6 +9,7 @@ export type BoundingBox = [minLon: number, minLat: number, maxLon: number, maxLa
 /** A point within a centimetre of an edge counts as on it (degrees; a metre is about 1e-5) */
 const ON_EDGE = 1e-7
 
+/** The smallest box around a multipolygon: `[minLon, minLat, maxLon, maxLat]` */
 export function boundingBox(geometry: MultiPolygon): BoundingBox {
     const box: BoundingBox = [Infinity, Infinity, -Infinity, -Infinity]
     // The holes lie within the exterior ring, so every ring may go in
@@ -53,6 +54,7 @@ function inRing(ring: Ring, lon: number, lat: number): boolean {
     return inside
 }
 
+/** Whether a point lies within a multipolygon, outside its holes; a point on an edge counts as inside */
 export function contains(geometry: MultiPolygon, lon: number, lat: number): boolean {
     return geometry.coordinates.some(
         ([exterior, ...holes]) =>

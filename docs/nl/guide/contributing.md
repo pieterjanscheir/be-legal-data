@@ -104,7 +104,7 @@ Elke dataset krijgt dezelfde behandeling, zodat gebruikers erop kunnen rekenen:
 | `pnpm test`                 | Unit-, integriteits-, schema- en typetests op de broncode (geen build nodig)                                                                                                |
 | `pnpm test:package`         | Smoketests van het gebouwde package met `import` en `require()`: draai eerst `pnpm build`                                                                                   |
 | `pnpm test:coverage`        | Hetzelfde, maar faalt onder 100 % dekking van `src/`                                                                                                                        |
-| `pnpm lint` / `pnpm format` | ESLint en Prettier: controleren / herstellen                                                                                                                                |
+| `pnpm lint` / `pnpm format` | ESLint en Prettier: controleren / herstellen. ESLint eist ook een doc-commentaar bij elke export in `src/`                                                                  |
 | `pnpm generate`             | Genereert `src/ids.generated.ts` (id-types) en `schema/` opnieuw uit de data en de types, en voegt nieuwe ids toe aan `ids.lock.json`                                       |
 | `pnpm lint:package`         | `publint` en `arethetypeswrong` op het gepackte package                                                                                                                     |
 | `pnpm test:freshness`       | Datumgebonden controles: ontbrekende rentevoeten, achterstallig nazicht. Geen deel van `check`; `FRESHNESS_ONLINE=1` controleert ook de bron-URL's                          |

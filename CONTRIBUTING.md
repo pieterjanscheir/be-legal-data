@@ -23,6 +23,8 @@ The short version:
    date: `schema/`, `data/courts.json`, `src/*.generated.ts` and `ids.lock.json`. The build
    output (`dist/`) isn't committed, and neither are the files `pnpm generate` splits into
    `data/courts/` and `data/cantons/`.
-5. Add a line to `CHANGELOG.md` under Unreleased.
-6. If you change an English documentation page, say in the pull request whether the
+5. Give every export in `src/` a doc comment: it is what editors show on hover, and
+   `pnpm lint` fails without it.
+6. Add a line to `CHANGELOG.md` under Unreleased.
+7. If you change an English documentation page, say in the pull request whether the
    translations under `docs/<language>/` still need updating.

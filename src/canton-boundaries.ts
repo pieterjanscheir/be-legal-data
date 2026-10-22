@@ -36,6 +36,11 @@ const boundariesById = versionsById(cantonBoundaries)
 
 /** The boundary of a canton, by canton id: today's version, or the one of a given day */
 export function getCantonBoundary(id: CantonId): CantonBoundary
+/**
+ * The boundary of a canton, by canton id, as on a given day (today by default). `undefined` for
+ * an unknown id or one not in force that day. A day before the data's coverage throws a
+ * `RangeError`.
+ */
 export function getCantonBoundary(id: string, options?: OnDay): CantonBoundary | undefined
 export function getCantonBoundary(id: string, options?: OnDay): CantonBoundary | undefined {
     return pickVersion(boundariesById.get(id), options, cantonBoundariesCoverage, DATASET)

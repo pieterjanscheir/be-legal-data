@@ -860,7 +860,8 @@
           ],
           "additionalProperties": false
         }
-      ]
+      ],
+      "description": "A phone or fax number, an email address or a bank account, by `type`"
     },
     "Website": {
       "type": "object",

@@ -110,7 +110,7 @@ Chaque jeu de données reçoit le même traitement, pour que les utilisateurs pu
 | `pnpm test`                 | Tests unitaires, d'intégrité, de schéma et de types sur la source (sans build)                                                                                               |
 | `pnpm test:package`         | Tests de fumée du package construit avec `import` et `require()` : lancez `pnpm build` d'abord                                                                               |
 | `pnpm test:coverage`        | Les mêmes, en échouant sous 100 % de couverture de `src/`                                                                                                                    |
-| `pnpm lint` / `pnpm format` | ESLint et Prettier : contrôle / correction                                                                                                                                   |
+| `pnpm lint` / `pnpm format` | ESLint et Prettier : contrôle / correction. ESLint exige aussi un commentaire de documentation sur chaque export de `src/`                                                   |
 | `pnpm generate`             | Régénère `src/ids.generated.ts` (types d'identifiants) et `schema/` à partir des données et des types, et ajoute les nouveaux identifiants à `ids.lock.json`                 |
 | `pnpm lint:package`         | `publint` et `arethetypeswrong` sur le package empaqueté                                                                                                                     |
 | `pnpm test:freshness`       | Contrôles liés à la date : taux manquants, vérifications en retard. Ne fait pas partie de `check` ; `FRESHNESS_ONLINE=1` vérifie aussi les URL des sources                   |

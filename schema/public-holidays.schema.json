@@ -42,7 +42,8 @@
         "holidays",
         "replacements"
       ],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "description": "The public holidays data file: the ten holidays and the years one was moved"
     },
     "PublicHolidayDefinition": {
       "type": "object",
@@ -62,7 +63,8 @@
         "name",
         "rule"
       ],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "description": "One public holiday: its id, its name and the rule that dates it"
     },
     "PublicHolidayId": {
       "type": "string",

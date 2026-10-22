@@ -27,6 +27,9 @@ Observatory's published lists for 2024 to 2027 ([#61](https://github.com/pieterj
 _compétence_. The old names still work, are deprecated, and go in 1.0. The API docs'
 "Competence" section is now "Jurisdiction" (`#jurisdiction`).
 
+- Every exported function, constant and schema in `src/` has a doc comment, so editor hovers
+  describe the whole API, and `pnpm lint` (`eslint-plugin-jsdoc`) keeps it that way
+  ([#85](https://github.com/pieterjanscheir/belgica/issues/85)).
 - The [explorer](https://belgica.scheir.eu/) is in the docs' 13 languages, with next-intl, and moved from
   GitHub Pages to Vercel: a page in every language is about 29,000 pages, over the 1 GB a Pages
   site may hold. It still isn't part of the package.

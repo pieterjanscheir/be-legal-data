@@ -517,7 +517,8 @@
         "court-of-appeal",
         "labour-court-of-appeal",
         "court-of-assize"
-      ]
+      ],
+      "description": "The kind of court, from the justice of the peace up to the court of assize"
     },
     "PartialTranslated": {
       "type": "object",
@@ -1470,7 +1471,8 @@
           ],
           "additionalProperties": false
         }
-      ]
+      ],
+      "description": "A phone or fax number, an email address or a bank account, by `type`"
     },
     "Website": {
       "type": "object",

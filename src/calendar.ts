@@ -16,6 +16,7 @@ export type {
 } from './schemas/public-holidays'
 
 // The data is validated against the zod schemas in ./schemas (test/schema.test.ts)
+/** The public holiday rules and the years a holiday was moved, as published */
 export const publicHolidays = publicHolidaysData as Readonly<PublicHolidays>
 
 export interface PublicHoliday {

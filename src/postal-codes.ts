@@ -40,6 +40,10 @@ const pick = <T extends Validity>(list: T[] | undefined, options: OnDay | undefi
 
 /** A postal code record by id, e.g. '9000-44021': today's version, or the one of a given day */
 export function getPostalCode(id: PostalCodeId): PostalCode
+/**
+ * A postal code record by id, as on a given day (today by default). `undefined` for an unknown
+ * id or one not in force that day. A day before the data's coverage throws a `RangeError`.
+ */
 export function getPostalCode(id: string, options?: OnDay): PostalCode | undefined
 export function getPostalCode(id: string, options?: OnDay): PostalCode | undefined {
     return pick(postalCodesById.get(id), options)
