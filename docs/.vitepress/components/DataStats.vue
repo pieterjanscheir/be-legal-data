@@ -15,7 +15,7 @@ import {
 import { fmt, useLocale, useStrings } from '../i18n'
 
 const { prefix } = useLocale()
-const t = useStrings({
+const t = useStrings('DataStats', {
     root: {
         dataset: 'Dataset',
         records: 'Records',

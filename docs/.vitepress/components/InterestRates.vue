@@ -6,10 +6,10 @@ import {
     getLatestKnownRateDate,
     type InterestType,
 } from '../../../src'
-import { fmt, useLocale, useStrings } from '../i18n'
+import { fmt, useLocale, usePageLang, useStrings } from '../i18n'
 
 const { locale } = useLocale()
-const t = useStrings({
+const t = useStrings('InterestRates', {
     root: {
         rate: 'Rate',
         legal: 'Legal (wettelijke interest)',
@@ -75,8 +75,9 @@ const latest = computed(() => getLatestKnownRateDate(type.value))
 const series = computed(() => interestRates[type.value])
 const periods = computed(() => [...series.value.periods].reverse())
 
-// Belgian number formatting in every language: 5,75 %
-const numberLocale = computed(() => (locale.value === 'fr' ? 'fr-BE' : 'nl-BE'))
+// Belgian number formatting in English (5,75 %), the page's own everywhere else
+const pageLang = usePageLang()
+const numberLocale = computed(() => (locale.value === 'root' ? 'nl-BE' : pageLang.value))
 const fmtRate = (rate: number) => `${rate.toLocaleString(numberLocale.value)} %`
 </script>
 

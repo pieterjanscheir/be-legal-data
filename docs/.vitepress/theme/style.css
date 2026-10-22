@@ -1,24 +1,119 @@
-/* Belgian-flag accents on top of the default theme */
+/*
+ * Ink and indigo, with Belgium in the details: the logo's yellow and red cells come back in the
+ * hero glow, the text selection and the underline of the active nav link.
+ */
 :root {
-    --vp-c-brand-1: #b8860b;
-    --vp-c-brand-2: #a0740a;
-    --vp-c-brand-3: #8a6408;
-    --vp-c-brand-soft: rgba(253, 218, 36, 0.16);
+    --bg-yellow: #fdda24;
+    --bg-red: #ef3340;
+    --bg-ink: #1c2033;
+
+    --vp-c-brand-1: #3d4fd1;
+    --vp-c-brand-2: #3343b8;
+    --vp-c-brand-3: #2a389e;
+    --vp-c-brand-soft: rgb(61 79 209 / 0.1);
+
+    --vp-c-bg-alt: #f7f7fa;
+    --vp-c-bg-soft: #f3f3f7;
+
+    --vp-c-tip-1: var(--vp-c-brand-1);
+    --vp-c-tip-2: var(--vp-c-brand-2);
+    --vp-c-tip-3: var(--vp-c-brand-3);
+    --vp-c-tip-soft: var(--vp-c-brand-soft);
+
     --vp-home-hero-name-color: transparent;
-    --vp-home-hero-name-background: linear-gradient(120deg, #1a1a1a 10%, #fdda24 50%, #ef3340 90%);
+    --vp-home-hero-name-background: linear-gradient(115deg, #1c2033 30%, #3d4fd1 75%);
+    --vp-home-hero-image-background-image: radial-gradient(
+        circle at 50% 50%,
+        rgb(253 218 36 / 0.55),
+        rgb(239 51 64 / 0.2) 55%,
+        transparent 72%
+    );
+    --vp-home-hero-image-filter: blur(56px);
+
+    --vp-button-brand-bg: var(--bg-ink);
+    --vp-button-brand-hover-bg: #2c3150;
+    --vp-button-brand-active-bg: #121420;
+    --vp-button-brand-border: transparent;
+    --vp-button-brand-hover-border: transparent;
+    --vp-button-brand-active-border: transparent;
 }
 
 .dark {
-    --vp-c-brand-1: #fdda24;
-    --vp-c-brand-2: #e8c51b;
-    --vp-c-brand-3: #cfae12;
-    --vp-home-hero-name-background: linear-gradient(120deg, #f5f5f5 10%, #fdda24 50%, #ef3340 90%);
+    --bg-ink: #eef0f8;
+
+    --vp-c-bg: #111219;
+    --vp-c-bg-alt: #0c0d13;
+    --vp-c-bg-soft: #191b25;
+    --vp-c-bg-elv: #181a24;
+    --vp-c-divider: #262938;
+    --vp-c-gutter: #08090d;
+
+    --vp-c-brand-1: #9aa6ff;
+    --vp-c-brand-2: #808df5;
+    --vp-c-brand-3: #6573e6;
+    --vp-c-brand-soft: rgb(154 166 255 / 0.14);
+
+    --vp-home-hero-name-background: linear-gradient(115deg, #ffffff 30%, #9aa6ff 75%);
+    --vp-home-hero-image-background-image: radial-gradient(
+        circle at 50% 50%,
+        rgb(253 218 36 / 0.32),
+        rgb(239 51 64 / 0.16) 55%,
+        transparent 72%
+    );
+
+    --vp-button-brand-bg: #eef0f8;
+    --vp-button-brand-text: #111219;
+    --vp-button-brand-hover-bg: #ffffff;
+    --vp-button-brand-hover-text: #111219;
+    --vp-button-brand-active-bg: #d9dcea;
+    --vp-button-brand-active-text: #111219;
+}
+
+::selection {
+    background: rgb(253 218 36 / 0.45);
+}
+
+/* Headings a touch tighter than the default */
+.vp-doc h1,
+.vp-doc h2,
+.VPHero .heading {
+    letter-spacing: -0.02em;
+}
+
+/* The active top-nav link: a short yellow-red underline, like the logo's two coloured cells */
+.VPNavBarMenuLink.active {
+    position: relative;
+}
+
+.VPNavBarMenuLink.active::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 14px;
+    height: 2px;
+    border-radius: 1px;
+    background: linear-gradient(90deg, var(--bg-yellow) 50%, var(--bg-red) 50%);
+}
+
+/* Home: feature cards lift on hover, with the brand colour on the border */
+.VPFeature {
+    transition:
+        border-color 0.25s,
+        transform 0.25s,
+        box-shadow 0.25s;
+}
+
+.VPFeatures .item:hover .VPFeature {
+    border-color: var(--vp-c-brand-1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -12px rgb(28 32 51 / 0.25);
 }
 
 /* Shared styles for the interactive components */
 .bld-panel {
     border: 1px solid var(--vp-c-divider);
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 16px;
     margin: 16px 0;
     background: var(--vp-c-bg-soft);

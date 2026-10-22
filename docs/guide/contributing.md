@@ -128,10 +128,18 @@ page is caught before merging.
 
 ### Translations
 
-The English pages in `docs/` are the source of truth. The Dutch (`docs/nl/`) and French
-(`docs/fr/`) pages are translations of them and are updated after the English page changes.
-When you change an English page, change the same page in `docs/nl/` and `docs/fr/` too, or say
-in the pull request that the translations lag behind. Code, ids, field names and official names
-stay as they are in every language, and every heading keeps the English anchor
-(`## Kop {#english-anchor}`) so cross-links and the language switcher keep working. The
-changelog is kept in English only.
+The English pages in `docs/` are the source of truth. Every other language has the same tree
+under its own folder: Dutch (`docs/nl/`) and French (`docs/fr/`), and German, Spanish, Italian,
+Portuguese, Polish, Turkish, Arabic, Ukrainian, Chinese and Japanese (`docs/de/`, `docs/es/`,
+and so on). They are translations of the English page and are updated after it changes. When
+you change an English page, change the same page in `docs/nl/` and `docs/fr/` too, or say in
+the pull request that the translations lag behind; the other languages may lag a release. The
+words of the theme and the interactive components in those other languages are in
+`docs/.vitepress/locales/`.
+
+Code, ids, field names and official names stay as they are in every language, and every heading
+keeps the English anchor (`## Heading {#english-anchor}`) so cross-links and the language
+switcher keep working. A Belgian institution or legal term keeps its official Dutch or French
+name (or German, where Belgium publishes one) instead of a coined translation: a Chinese page
+says vredegerecht / justice de paix, not a made-up word for it. The changelog is kept in English
+only.

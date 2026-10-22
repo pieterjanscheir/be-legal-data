@@ -139,10 +139,18 @@ een kapotte pagina vóór het mergen opvalt.
 
 ### Vertalingen {#translations}
 
-De Engelse pagina's in `docs/` zijn de bron. De Nederlandse (`docs/nl/`) en Franse
-(`docs/fr/`) pagina's zijn vertalingen ervan en worden bijgewerkt nadat de Engelse pagina
-verandert. Wijzig je een Engelse pagina, wijzig dan ook dezelfde pagina in `docs/nl/` en
-`docs/fr/`, of zeg in de pull request dat de vertalingen achterlopen. Code, ids, veldnamen en
-officiële namen blijven in elke taal zoals ze zijn, en elke kop behoudt het Engelse anker
-(`## Kop {#english-anchor}`), zodat links tussen pagina's en de taalkeuze blijven werken. Het
-changelog wordt alleen in het Engels bijgehouden.
+De Engelse pagina's in `docs/` zijn de bron. Elke andere taal heeft dezelfde boom in een eigen
+map: Nederlands (`docs/nl/`) en Frans (`docs/fr/`), en Duits, Spaans, Italiaans, Portugees,
+Pools, Turks, Arabisch, Oekraïens, Chinees en Japans (`docs/de/`, `docs/es/`, enzovoort). Ze
+zijn vertalingen van de Engelse pagina en worden bijgewerkt nadat die verandert. Wijzig je een
+Engelse pagina, wijzig dan ook dezelfde pagina in `docs/nl/` en `docs/fr/`, of zeg in de pull
+request dat de vertalingen achterlopen; de andere talen mogen een release achterlopen. De
+woorden van het thema en van de interactieve componenten in die andere talen staan in
+`docs/.vitepress/locales/`.
+
+Code, ids, veldnamen en officiële namen blijven in elke taal zoals ze zijn, en elke kop behoudt
+het Engelse anker (`## Kop {#english-anchor}`), zodat links tussen pagina's en de taalkeuze
+blijven werken. Een Belgische instelling of juridische term houdt haar officiële Nederlandse of
+Franse naam (of de Duitse, waar België er een publiceert) in plaats van een verzonnen
+vertaling: een Chinese pagina zegt vredegerecht / justice de paix, geen bedacht woord ervoor.
+Het changelog wordt alleen in het Engels bijgehouden.
