@@ -189,7 +189,7 @@ function themeConfig(prefix: string, t: Strings): DefaultTheme.Config {
             { text: t.nav.data, link: `${prefix}/data/` },
             { text: t.nav.api, link: `${prefix}/api` },
             // The Next.js site in site/, deployed on Vercel
-            { text: 'Explorer', link: 'https://belgica-scheir.vercel.app/' },
+            { text: 'Explorer', link: 'https://belgica.scheir.eu/' },
             {
                 text: `v${pkg.version}`,
                 items: [

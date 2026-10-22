@@ -1,6 +1,6 @@
 # belgica explorer
 
-A Next.js site built on the package, deployed on Vercel at https://belgica-scheir.vercel.app/. It's
+A Next.js site built on the package, deployed on Vercel at https://belgica.scheir.eu/. It's
 a static export: every page is rendered from the package's data at build time, in each of the
 docs' 13 languages, so it needs no server.
 

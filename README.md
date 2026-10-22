@@ -8,7 +8,7 @@ from, and the scraped data is rebuilt from the official sources every week.
 Documentation, with a canton lookup, a court list and interest-rate tables:
 **https://pieterjanscheir.github.io/belgica/**
 
-The [explorer](https://belgica-scheir.vercel.app/) is a site built on the package, in 13 languages: a page for every
+The [explorer](https://belgica.scheir.eu/) is a site built on the package, in 13 languages: a page for every
 court, canton, municipality and postal code, the canton map and an interest calculator. Its
 Next.js source is in [`site/`](site/).
 

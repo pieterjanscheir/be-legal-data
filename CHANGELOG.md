@@ -9,7 +9,7 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ### Changed
 
-- The [explorer](https://belgica-scheir.vercel.app/) is in the docs' 13 languages, with next-intl, and moved from
+- The [explorer](https://belgica.scheir.eu/) is in the docs' 13 languages, with next-intl, and moved from
   GitHub Pages to Vercel: a page in every language is about 29,000 pages, over the 1 GB a Pages
   site may hold. It still isn't part of the package.
 
