@@ -5,8 +5,9 @@ houses of justice, judicial cantons and arrondissements, municipalities and thei
 and the legal and commercial interest rates. Every record says where it comes from, and the
 scraped data is rebuilt from the official sources every week.
 
-The same data and helpers as the [`belgica` npm package](https://www.npmjs.com/package/belgica),
-with the same version number. The tests check that both give the same answers.
+The same data and lookups as the [`belgica` npm package](https://www.npmjs.com/package/belgica),
+with the same version number. The tests check that both give the same answers. The calendar
+functions of the npm package (public holidays, next working day) aren't in Python yet.
 
 ```bash
 pip install belgica
@@ -50,11 +51,13 @@ get_interest_rate('2024-06-15', 'legal')  # InterestRateResult(rate=5.75, period
 
 The records are the dicts from the JSON files, with their keys as in the JSON (`validFrom`,
 `postalCode`), typed with the `TypedDict`s in `belgica.types`. Each data file is read on first
-use; the canton boundaries (22 MB) only by `find_cantons_at` and `get_canton_boundary`, the
+use; the canton boundaries (23 MB) only by `find_cantons_at` and `get_canton_boundary`, the
 arrondissement boundaries only by `find_arrondissements_at` and `get_arrondissement_boundary`.
 
-Lookups take `on`, a day as a `datetime.date` or `'YYYY-MM-DD'`, and answer for today without it.
-A day before a dataset's coverage raises a `ValueError` rather than answer with today's data.
+Lookups take `on`, a day as a `datetime.date`, a `datetime` or `'YYYY-MM-DD'`, and answer for
+today without it. A day before a dataset's coverage raises a `ValueError` rather than answer with
+today's data. A lookup by an unknown id returns `None`, and a search that matches nothing an
+empty list.
 
 ## Licence
 

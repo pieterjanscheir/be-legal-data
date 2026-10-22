@@ -7,7 +7,7 @@ import { data as stats } from '../.vitepress/stats.data'
 - **Courts not on the portal** aren't in the data: the Court of Cassation, the Constitutional
   Court, the Council of State and the disciplinary courts
   ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
-- **Competence stops at the court.** `cantons` and `findCourtsWithJurisdiction` say which court
+- **Jurisdiction stops at the court.** `cantons` and `findCourtsWithJurisdiction` say which court
   covers a municipality, not which of its divisions: a division's area is set by royal decree
   and isn't in the data yet ([#58](https://github.com/pieterjanscheir/belgica/issues/58)).
 - **{{ stats.courts.withoutAddress }} courts have no single address**: a court whose divisions

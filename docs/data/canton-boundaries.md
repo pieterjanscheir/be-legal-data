@@ -2,9 +2,6 @@
 
 <script setup>
 import { data as stats } from '../.vitepress/stats.data'
-
-const kb = (bytes) => `${Math.round(bytes / 1024)} KB`
-const mb = (bytes) => `${(bytes / 1024 / 1024).toFixed(1)} MB`
 </script>
 
 File: `data/canton-boundaries.json`. The boundary of each of the {{ stats.cantons }} judicial
@@ -34,11 +31,11 @@ text; it names the streets and the house numbers.
 |              |                                                                                                                                                                                                                                                   |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Source       | NGI, [Judicial cantons and arrondissements](https://www.geo.be/catalog/details/e1f61c40-623a-11eb-9e7c-186571a04de3) (Territorial Divisions) on geo.be: the GeoPackage in WGS 84 (EPSG:4326), feature type `judicialcanton`, revised 16 July 2026 |
-| Licence      | © NGI, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)                                                                                                                                                                                  |
 | Built by     | `scripts/parse/boundaries.ts` from the weekly snapshot of the GeoPackage                                                                                                                                                                          |
 | Changes when | The NGI publishes a new version: every year, when the FPS Finance's municipal boundaries are updated, or when a law changes the annex                                                                                                             |
 | Covers       | 21 October 2026 onwards, the day the file was first read: lookups for an earlier day throw a `RangeError` ([time](/api#time))                                                                                                                     |
 | Checked      | Every week, by the [sources workflow](/guide/data-quality#how-the-data-is-built): the build fails when a canton has no boundary or a boundary matches no canton                                                                                   |
+| Licence      | © NGI, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)                                                                                                                                                                                  |
 
 How the NGI drew the boundaries, in its own words: where the annex refers to municipal
 boundaries, it used the cadastral boundaries of the FPS Finance; where it refers to
@@ -84,19 +81,12 @@ Anything else stops the build.
 
 ## Size
 
-The boundaries are by far the largest dataset: about a million positions. They have their own
-entry point, `belgica/canton-boundaries`, and the package root doesn't re-export them,
-so nothing loads them unless it asks:
-
-<table v-if="stats.sizes">
-<thead><tr><th>Entry point</th><th style="text-align:right">JavaScript loaded</th><th style="text-align:right">gzip</th></tr></thead>
-<tbody>
-<tr v-for="s in stats.sizes.filter((s) => s.entry === 'belgica' || s.entry.endsWith('-boundaries'))" :key="s.entry">
-<td><code>{{ s.entry }}</code></td><td style="text-align:right">{{ mb(s.raw) }}</td><td style="text-align:right">{{ mb(s.gzip) }}</td>
-</tr>
-</tbody>
-</table>
-<p v-else class="bld-muted">Sizes are measured from the build when the site is built (<code>pnpm build</code> first).</p>
+The boundaries are by far the largest dataset: about a million positions, 23 MB of JSON for the
+cantons and 8 MB for the arrondissements. They have their own entry points,
+`belgica/canton-boundaries` and `belgica/arrondissement-boundaries`, which read the geometry from
+`data/` with a JSON import, and the package root doesn't re-export them, so nothing loads them
+unless it asks. In a browser, load the entry point when the map opens, with `import()`, rather
+than in the main bundle.
 
 The raw file, `data/canton-boundaries.json`, is in the npm package and in every release, so
 Python, PostGIS and GIS tools can read it without the JavaScript.
