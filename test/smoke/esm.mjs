@@ -3,7 +3,7 @@
 import assert from 'node:assert/strict'
 import { getCourt, cantons as allCantons } from 'belgica'
 import { cantons, getCantonsForMunicipality } from 'belgica/territory'
-import { getJusticeOfThePeace } from 'belgica/courts'
+import { formatCourtName, getJusticeOfThePeace } from 'belgica/courts'
 import { getInterestRate } from 'belgica/interest-rates'
 import { getPrison } from 'belgica/prisons'
 import { getHouseOfJustice } from 'belgica/houses-of-justice'
@@ -14,6 +14,10 @@ import { createRequire } from 'node:module'
 
 assert.equal(getCourt('justice-of-the-peace-gent-1').name.nl, 'Vredegerecht Gent 1')
 assert.equal(getJusticeOfThePeace('gent-1').id, 'justice-of-the-peace-gent-1')
+assert.equal(
+    formatCourtName(getJusticeOfThePeace('gent-1'), 'fr', { style: 'canton' }),
+    'Justice de paix 1er canton Gand',
+)
 assert.deepEqual(
     getCantonsForMunicipality('44088').map((c) => c.id),
     ['merelbeke-melle'],

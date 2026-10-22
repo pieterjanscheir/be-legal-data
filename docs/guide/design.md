@@ -30,7 +30,9 @@ names an earlier `formatCourtName` built were wrong (`Tribunal de paix …`, whe
 A stored value can be checked against its source.
 
 **So.** Court names are stored as each court publishes them, in every language it publishes
-in, and `formatCourtName` is gone. Canton territories stay verbatim legal text, with their
+in. `formatCourtName` looks a name up (`style: 'official'`); its `'canton'` style builds a
+display label from the canton's number and name ('Vredegerecht 1e kanton Gent'), documented as
+a label and never as the official name. Canton territories stay verbatim legal text, with their
 legal basis as an ELI link. Where a source is missing, the field is missing: nothing is filled
 in by guesswork. The same goes for parsing: an opening-hours text with a note in it, a phone
 number without its area code or an address written as a sentence is left out, not guessed.

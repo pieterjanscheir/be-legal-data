@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
+import { germanCantonNames } from '../scripts/german-canton-names.ts'
+
 import {
     appliesOn,
     arrondissements,
@@ -215,6 +217,20 @@ describe('data integrity', () => {
             if (p.rateForContractsBefore20130316 === undefined) continue
             expect(p.from >= '2013-01-01' && p.to <= '2015-03-15', p.from).toBe(true)
         }
+    })
+})
+
+describe('German canton names', () => {
+    // Only from an official German text, recorded in the canton's sources; never by hand
+    it('match scripts/german-canton-names.ts, each with its source', () => {
+        const withGerman = cantons.filter((c) => c.name.de !== undefined)
+        expect(withGerman.map((c) => c.id).sort()).toEqual(Object.keys(germanCantonNames).sort())
+        for (const canton of withGerman) {
+            const german = germanCantonNames[canton.id]
+            expect(canton.name.de).toBe(german?.name)
+            expect(canton.sources).toEqual(german?.sources)
+        }
+        expect(cantons.filter((c) => c.sources !== undefined)).toEqual(withGerman)
     })
 })
 

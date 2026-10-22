@@ -1,6 +1,6 @@
 {
     "name": "belgica",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Belgian legal reference data: courts, judicial cantons and arrondissements, municipalities and postal codes, and legal and commercial interest rates.",
     "keywords": [
         "belgium",
@@ -87,7 +87,7 @@
         "fetch:sources": "node scripts/sources/fetch.ts",
         "test": "vitest run",
         "typecheck": "tsc --noEmit",
-        "check": "pnpm generate && pnpm typecheck && pnpm lint && pnpm build && pnpm test:coverage && pnpm test:package && pnpm lint:package && git diff --exit-code -- schema src/ids.generated.ts ids.lock.json",
+        "check": "pnpm generate && pnpm typecheck && pnpm lint && pnpm build && pnpm test:coverage && pnpm test:package && pnpm lint:package && git diff --exit-code -- schema src/ids.generated.ts src/canton-names.generated.ts ids.lock.json",
         "prepublishOnly": "pnpm check",
         "docs:dev": "vitepress dev docs",
         "docs:build": "vitepress build docs",
@@ -97,11 +97,12 @@
         "lint:package": "publint --strict && attw --pack . --profile esm-only",
         "build:ids": "node scripts/build-ids.ts",
         "lock:ids": "node scripts/lock-ids.ts",
-        "generate": "pnpm build:ids && pnpm build:schemas && pnpm lock:ids",
+        "generate": "pnpm build:ids && pnpm build:canton-names && pnpm build:schemas && pnpm lock:ids",
         "lint": "eslint . && prettier --check .",
         "format": "prettier --write .",
         "test:coverage": "vitest run --coverage",
-        "test:package": "node test/smoke/esm.mjs && node test/smoke/cjs.cjs"
+        "test:package": "node test/smoke/esm.mjs && node test/smoke/cjs.cjs && node test/smoke/courts-bundle.mjs",
+        "build:canton-names": "node scripts/build-canton-names.ts"
     },
     "devDependencies": {
         "@arethetypeswrong/cli": "^0.18.5",

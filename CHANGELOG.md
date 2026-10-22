@@ -7,6 +7,45 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ## [Unreleased]
 
+### Added
+
+**Court names in a language: `formatCourtName(court, locale, { style })`**, in the root and
+`belgica/courts`. `style: 'official'` (the default) gives the name as the court publishes it,
+falling back to another language when it doesn't publish in `locale` (for German: French, then
+Dutch). `style: 'canton'` gives a justice of the peace a display label built from its canton:
+`Vredegerecht 1e kanton Gent`, `Justice de paix 1er canton Gand`, `Friedensgericht 1. Kanton
+Gent`, `Vredegerecht kanton Deinze`. It is documented as a label, not the court's official name,
+so the rule that legal facts are stored, not built, still holds for names. The French label
+uses `Justice de paix`, as the courts call themselves, not `Tribunal de paix`
+([#10](https://github.com/pieterjanscheir/belgica/issues/10)). Other courts and the seats of a
+justice of the peace get their official name in both styles. German labels use the canton's
+German name where it has one, and otherwise its name in the court's own language, French in
+Brussels ([#45](https://github.com/pieterjanscheir/belgica/issues/45)).
+
+**German names for the cantons of Eupen-Sankt Vith.** `name.de` is `Eupen-Sankt Vith` for
+`eupen-sankt-vith-1` and `-2`, from the official German translation of the ministerial decree of
+31 October 2023 (Belgisches Staatsblatt of 18 July 2024, numac 2024006205), which names the second
+canton; the first is also named on its court's German page on the courts' portal ("Friedensgericht
+des ersten Kantons Eupen-Sankt Vith"). Both are in the cantons' new `sources` field, and the
+decree in `datapackage.json`. The annex to the Judicial Code has no German
+translation, so no other canton has a German name: `scripts/german-canton-names.ts` lists the
+sourced ones, and a test checks the data against it. `cantons.csv` gets a `name_de` column.
+
+**`belgica/courts` stays small.** The labels read each canton's name and number from
+`src/canton-names.generated.ts`, generated from `data/cantons.json` by `pnpm generate`, so the
+courts entry point doesn't load the cantons' territory texts. It grows by about 2 KB gzipped,
+to 52 KB. `pnpm test:package` fails if `belgica/courts` loads the cantons data or goes over
+54 KB gzipped.
+
+## [0.3.1] - 2026-10-21
+
+### Fixed
+
+The README said a day before a dataset's coverage throws a `RangeError`, right under
+`getInterestRate`. `getInterestRate` returns `null` for any day without a rate, early days
+included; only territory and court lookups throw for a day before their coverage. No code or
+data changed.
+
 ## [0.3.0] - 2026-10-21
 
 ### Added
@@ -206,7 +245,8 @@ OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
 - Courts (justices of the peace in East and West Flanders, Ondernemingsrechtbank Gent) and the
   legal and commercial interest rates.
 
-[Unreleased]: https://github.com/pieterjanscheir/belgica/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/pieterjanscheir/belgica/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/pieterjanscheir/belgica/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/pieterjanscheir/belgica/compare/72889e0...v0.3.0
 [0.2.0]: https://github.com/pieterjanscheir/belgica/commit/72889e0
 [0.1.0]: https://github.com/pieterjanscheir/belgica/commit/c113197
