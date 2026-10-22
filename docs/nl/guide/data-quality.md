@@ -52,7 +52,7 @@ Om het zelf te draaien: `pnpm fetch:sources` (schrijft `.sources/`), daarna `pnp
 
 De kantons en gemeenten worden met de hand herbouwd met `pnpm build:cantons`: de site van het
 Belgisch Staatsblad weigert de servers van GitHub
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## Automatische controles {#automatic-checks}
 

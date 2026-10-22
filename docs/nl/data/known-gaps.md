@@ -9,7 +9,8 @@ import { data as stats } from '../../.vitepress/stats.data'
   ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
 - **De bevoegdheid stopt bij het gerecht.** `cantons` en `findCompetentCourts` zeggen welk gerecht
   een gemeente bestrijkt, niet welke van zijn afdelingen: het gebied van een afdeling wordt bij
-  koninklijk besluit bepaald en zit nog niet in de data.
+  koninklijk besluit bepaald en zit nog niet in de data
+  ([#58](https://github.com/pieterjanscheir/belgica/issues/58)).
 - **{{ stats.courts.withoutAddress }} gerechten hebben geen enkel adres**: een gerecht waarvan elke
   afdeling haar eigen adres heeft (het adres staat op de afdeling), of een dat zijn adressen als
   een zin publiceert. Hun `address` ontbreekt in plaats van geraden te zijn; de afdelingen hebben
@@ -37,10 +38,11 @@ import { data as stats } from '../../.vitepress/stats.data'
   straatadres: `findCantonsAt(lon, lat)` vindt het aan de hand van coördinaten met de
   [kantongrenzen](./canton-boundaries), maar het adres geocoderen is aan jou, en de grenzen
   zijn de lezing van het NGI van de wettekst in `territory`, die voorrang heeft waar ze van
-  elkaar afwijken.
+  elkaar afwijken ([#66](https://github.com/pieterjanscheir/belgica/issues/66)).
 - **Postcodes stoppen bij de gemeente.** Deelgemeenten zitten niet in de data: de tabel van
   Statbel heeft er geen, en de lijst van bpost heeft geen open licentie. Drie codes (`1040`,
-  `1050`, `1804`) horen bij twee gemeenten; de opzoekingen geven beide terug.
+  `1050`, `1804`) horen bij twee gemeenten; de opzoekingen geven beide terug
+  ([#54](https://github.com/pieterjanscheir/belgica/issues/54)).
 - **Eén gerechtsadres zonder gemeente**: het vredegerecht van Etterbeek publiceert
   `1040 Brussel (Etterbeek)`, een gedeelde code met een plaatsregel die beide gemeenten noemt,
   dus `address.municipality` is weggelaten in plaats van geraden. Het vredegerecht van Limbourg

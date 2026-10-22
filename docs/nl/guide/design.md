@@ -106,7 +106,7 @@ verzwaard wordt met megabytes HTML. De parsers worden getest op ingekorte kopie√
 pagina's. Een pagina die de parser niet kan plaatsen, stopt de build in plaats van een half juist
 record op te leveren. Twee bronnen weigeren de servers van GitHub (ejustice, police.be); die
 worden vanaf een gewone machine opgehaald
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## 8. Distributie: alleen ESM, Node 22.12+, gebouwd bij release {#_8-distribution-esm-only-node-22-12-built-on-release}
 

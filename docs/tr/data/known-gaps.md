@@ -9,7 +9,8 @@ import { data as stats } from '../../.vitepress/stats.data'
   mahkemeleri ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
 - **Yetki mahkeme düzeyinde durur.** `cantons` ve `findCompetentCourts` bir belediyeyi hangi
   mahkemenin kapsadığını söyler, mahkemenin hangi bölümünün (afdeling / division) kapsadığını
-  değil: bir bölümün alanı kraliyet kararnamesiyle belirlenir ve henüz verilerde yoktur.
+  değil: bir bölümün alanı kraliyet kararnamesiyle belirlenir ve henüz verilerde yoktur
+  ([#58](https://github.com/pieterjanscheir/belgica/issues/58)).
 - **{{ stats.courts.withoutAddress }} mahkemenin tek bir adresi yok**: bölümlerinin her birinin
   kendi adresi olan bir mahkeme (adres bölümdedir) ya da adreslerini bir cümle olarak yayımlayan
   bir mahkeme. Bunların `address` alanı tahmin edilmek yerine boş bırakılır; bölümlerin kendi
@@ -39,10 +40,12 @@ import { data as stats } from '../../.vitepress/stats.data'
   için sokak adresi gerekir: `findCantonsAt(lon, lat)` onu
   [kanton sınırları](./canton-boundaries) yardımıyla koordinatlardan bulur, ancak adresi
   coğrafi olarak kodlamak size kalmıştır ve sınırlar NGI'nin `territory` içindeki yasal metni
-  yorumlamasıdır; ikisi uyuşmadığında yasal metin geçerlidir.
+  yorumlamasıdır; ikisi uyuşmadığında yasal metin geçerlidir
+  ([#66](https://github.com/pieterjanscheir/belgica/issues/66)).
 - **Posta kodları belediye düzeyinde durur.** Alt belediyeler (deelgemeenten) verilerde yok:
   Statbel'in tablosunda yer almazlar ve bpost'un listesi açık lisanslı değildir. Üç kod (`1040`,
-  `1050`, `1804`) iki belediyeye aittir; sorgular ikisini de döndürür.
+  `1050`, `1804`) iki belediyeye aittir; sorgular ikisini de döndürür
+  ([#54](https://github.com/pieterjanscheir/belgica/issues/54)).
 - **Belediyesi olmayan bir mahkeme adresi**: Etterbeek vredegerecht'i
   `1040 Brussel (Etterbeek)` yayımlar; bu, her iki belediyeyi de anan bir şehir satırıyla
   birlikte ortak bir koddur, bu yüzden `address.municipality` tahmin edilmek yerine boş

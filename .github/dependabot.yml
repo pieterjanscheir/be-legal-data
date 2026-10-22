@@ -4,6 +4,10 @@ updates:
       directory: /
       schedule:
           interval: monthly
+      # A week before a new version is proposed: most compromised releases are caught and pulled
+      # within days
+      cooldown:
+          default-days: 7
       groups:
           dev-dependencies:
               dependency-type: development
@@ -19,3 +23,8 @@ updates:
       directory: /
       schedule:
           interval: monthly
+      cooldown:
+          default-days: 7
+      groups:
+          actions:
+              patterns: ['*']

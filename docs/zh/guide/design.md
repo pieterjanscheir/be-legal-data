@@ -78,7 +78,7 @@ id）和测试来校验。
 
 **所以。** 快照放在单独的分支上，这样包的历史就不会被几 MB 的 HTML 拖累。解析器用真实页面的精简副本进行测试。解析器
 无法归位的页面会让构建停止，而不是产生一条半对半错的记录。有两个来源（ejustice、police.be）拒绝 GitHub 的服务器
-访问，因此改从一台普通机器上抓取（[#24](https://github.com/pieterjanscheir/belgica/issues/24)）。
+访问，因此改从一台普通机器上抓取（[#52](https://github.com/pieterjanscheir/belgica/issues/52)）。
 
 ## 8. 分发：仅 ESM、Node 22.12+、在发布时构建 {#_8-distribution-esm-only-node-22-12-built-on-release}
 

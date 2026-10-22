@@ -1,0 +1,57 @@
+name: Prepare release
+
+# Run it from the Actions tab: it raises the version, moves the Unreleased section of
+# CHANGELOG.md under it (scripts/prepare-release.ts) and opens the release pull request. Merging
+# that pull request publishes the release (release.yml). The changelog stays hand-written: add
+# to Unreleased as changes land.
+on:
+    workflow_dispatch:
+        inputs:
+            bump:
+                description: 'Version to raise, by the id rules in CHANGELOG.md'
+                type: choice
+                options: [patch, minor, major]
+                required: true
+
+permissions: {}
+
+concurrency:
+    group: prepare-release
+    cancel-in-progress: false
+
+jobs:
+    prepare:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            pull-requests: write
+        steps:
+            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  persist-credentials: false
+            - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+              with:
+                  node-version: 24
+            - name: Raise the version
+              id: version
+              env:
+                  BUMP: ${{ inputs.bump }}
+              run: echo "version=$(node scripts/prepare-release.ts "$BUMP")" >> "$GITHUB_OUTPUT"
+            - name: Open the release pull request
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  VERSION: ${{ steps.version.outputs.version }}
+              run: |
+                  git config user.name github-actions[bot]
+                  git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+                  git switch -c "release/v$VERSION"
+                  git commit -q -am "Release $VERSION"
+                  git push "https://x-access-token:$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git" "release/v$VERSION"
+                  {
+                    echo "Moves the Unreleased changes under $VERSION. Merging this pull request publishes"
+                    echo "$VERSION to npm and creates the GitHub release."
+                    echo
+                    echo "Pull requests opened by a workflow don't start CI themselves: close and reopen"
+                    echo "this one to run it. The release workflow runs \`pnpm check\` again before publishing."
+                  } > body.md
+                  gh pr create --base main --head "release/v$VERSION" --title "Release $VERSION" --body-file body.md

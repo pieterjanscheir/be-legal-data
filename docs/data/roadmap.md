@@ -4,35 +4,44 @@ Datasets that are planned, with the issue that specifies each one. Each issue li
 official sources, the proposed fields and what "done" means. Help is welcome: pick one and
 follow the [conventions](/guide/contributing#adding-a-dataset).
 
-## Planned
+## Courts, offices and people
 
-| Dataset                                                                                               | Why it's useful                                                                                                    | Issue                                                       |
-| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
-| **The other courts**: Court of Cassation, Constitutional Court, Council of State, disciplinary courts | The highest courts aren't on the courts' portal, so they need their own sources                                    | [#4](https://github.com/pieterjanscheir/belgica/issues/4)   |
-| **The house of justice in Eupen** (German-speaking Community)                                         | The one house of justice the data doesn't have yet                                                                 | [#3](https://github.com/pieterjanscheir/belgica/issues/3)   |
-| **History**: when cantons, municipalities and courts changed                                          | The model has validity periods and lookups by day; the earlier versions still need the data                        | [#27](https://github.com/pieterjanscheir/belgica/issues/27) |
-| **Address → coordinates**                                                                             | The [canton boundaries](./canton-boundaries) find the canton of a point; geocoding the address is the missing step | [#28](https://github.com/pieterjanscheir/belgica/issues/28) |
-| **Bailiff offices** (gerechtsdeurwaarders / huissiers de justice)                                     | Find a bailiff in an arrondissement for service or enforcement                                                     | [#6](https://github.com/pieterjanscheir/belgica/issues/6)   |
-| **Police zones** (politiezones / zones de police)                                                     | Which zone handles a municipality: complaints, copies of reports                                                   | [#7](https://github.com/pieterjanscheir/belgica/issues/7)   |
-| **Cadastre and legal-certainty offices** (kadaster, former hypotheekkantoren)                         | Request mortgage certificates and cadastral extracts from the competent office                                     | [#8](https://github.com/pieterjanscheir/belgica/issues/8)   |
+| Dataset                                                                                               | Why it's useful                                                                                  | Issue                                                       |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
+| **The other courts**: Court of Cassation, Constitutional Court, Council of State, disciplinary courts | The highest courts aren't on the courts' portal, so they need their own sources                  | [#4](https://github.com/pieterjanscheir/belgica/issues/4)   |
+| **The house of justice in Eupen** (German-speaking Community)                                         | The one house of justice the data doesn't have yet                                               | [#3](https://github.com/pieterjanscheir/belgica/issues/3)   |
+| **Competence per court division** (afdelingen / divisions)                                            | Where to file within a court, and the RPR / RPM mention on company documents                     | [#58](https://github.com/pieterjanscheir/belgica/issues/58) |
+| **Prosecutors' offices** (parketten, arbeidsauditoraten, parketten-generaal, federal prosecutor)      | Where to file a criminal complaint, and the labour prosecutor in social-law cases                | [#55](https://github.com/pieterjanscheir/belgica/issues/55) |
+| **Bailiff offices** (gerechtsdeurwaarders / huissiers de justice)                                     | Find a bailiff in an arrondissement for service or enforcement                                   | [#6](https://github.com/pieterjanscheir/belgica/issues/6)   |
+| **Police zones** (politiezones / zones de police)                                                     | Which zone handles a municipality: complaints, copies of reports                                 | [#7](https://github.com/pieterjanscheir/belgica/issues/7)   |
+| **Cadastre and legal-certainty offices** (kadaster, former hypotheekkantoren)                         | Request mortgage certificates and cadastral extracts from the competent office                   | [#8](https://github.com/pieterjanscheir/belgica/issues/8)   |
+| **Notaries and chambers of notaries**                                                                 | Find a notary, and the chamber competent for a complaint                                         | [#56](https://github.com/pieterjanscheir/belgica/issues/56) |
+| **Bars** (balies / barreaux) and their legal aid offices                                              | The legal aid office for an address, and the bâtonnier for deontological questions               | [#57](https://github.com/pieterjanscheir/belgica/issues/57) |
+| **Judicial experts and sworn translators and interpreters** (national register)                       | Find an expert by speciality or a translator by language pair, and check that they're registered | [#64](https://github.com/pieterjanscheir/belgica/issues/64) |
+| **Accredited mediators** (erkende bemiddelaars / médiateurs agréés)                                   | Find an accredited mediator by field and area, and check the accreditation                       | [#65](https://github.com/pieterjanscheir/belgica/issues/65) |
 
-## Worth considering
+## Territory
 
-Collected in [#9](https://github.com/pieterjanscheir/belgica/issues/9), roughly in order
-of how often they'd be used:
+| Dataset                                                                                            | Why it's useful                                                                                                    | Issue                                                       |
+| -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
+| **History**: when cantons, municipalities and courts changed                                       | The model has validity periods and lookups by day; the earlier versions still need the data                        | [#27](https://github.com/pieterjanscheir/belgica/issues/27) |
+| **Former municipalities** and the 2019 and 2025 mergers                                            | Map an old REFNIS code or name to today's municipality                                                             | [#53](https://github.com/pieterjanscheir/belgica/issues/53) |
+| **Sub-municipalities** (deelgemeenten / sections de commune) per postal code                       | The [postal codes](./postal-codes) stop at the municipality; addresses name the locality                           | [#54](https://github.com/pieterjanscheir/belgica/issues/54) |
+| **Address → canton** with BeST Address                                                             | The [canton boundaries](./canton-boundaries) find the canton of a point; geocoding the address is the missing step | [#66](https://github.com/pieterjanscheir/belgica/issues/66) |
+| **Language areas and language facilities** per municipality (taalgebieden / faciliteitengemeenten) | The language of the proceedings and of documents served there                                                      | [#70](https://github.com/pieterjanscheir/belgica/issues/70) |
 
-- **Sub-municipalities** (deelgemeenten, sections de commune) per postal code. The
-  [postal codes](./postal-codes) stop at the municipality; bpost's list names the localities but
-  has no REFNIS code and no open licence.
-- **Court fees** (rolrechten / griffierechten) and the **procedural indemnity**
-  (rechtsplegingsvergoeding) brackets, with their validity periods and indexation, like the
-  interest rates.
-- **Judicial holidays and public holidays** per year, for computing procedural deadlines.
-- **Prosecutors' offices** (parketten, arbeidsauditoraten) per arrondissement.
-- **Notaries and notarial chambers**, **bars** (balies / barreaux).
-- **Municipality mergers**: old → new REFNIS codes for 2019 and 2025, so older data can be
-  mapped.
-- **The health index** (gezondheidsindex) for rent indexation.
+## Amounts, rates and calendars
+
+| Dataset                                                                                 | Why it's useful                                                                      | Issue                                                       |
+| --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
+| **Court fees** (rolrechten / droits de mise au rôle, griffierechten / droits de greffe) | Cost estimates and e-filing; the fee depends on the filing date                      | [#59](https://github.com/pieterjanscheir/belgica/issues/59) |
+| **Procedural indemnity** (rechtsplegingsvergoeding / indemnité de procédure)            | The brackets and their indexation, for every cost estimate and judgment              | [#60](https://github.com/pieterjanscheir/belgica/issues/60) |
+| **Amount thresholds for competence and appeal** (art. 590, 617 Ger.W.)                  | Which court hears a claim, and whether its judgment can be appealed                  | [#69](https://github.com/pieterjanscheir/belgica/issues/69) |
+| **Judicial holidays and public holidays**                                               | Computing procedural deadlines                                                       | [#61](https://github.com/pieterjanscheir/belgica/issues/61) |
+| **Health index** (gezondheidsindex / indice santé) per month                            | Rent and maintenance indexation                                                      | [#62](https://github.com/pieterjanscheir/belgica/issues/62) |
+| **Damages and interest caps for consumer debts** (Book XIX WER / CDE)                   | What can be charged to a consumer who pays late                                      | [#63](https://github.com/pieterjanscheir/belgica/issues/63) |
+| **Garnishment limits** (beslagbare bedragen / quotités saisissables, art. 1409 Ger.W.)  | How much of a wage or benefit can be seized, indexed every year                      | [#67](https://github.com/pieterjanscheir/belgica/issues/67) |
+| **Tax interest rates**: late-payment and moratorium interest                            | Interest in tax disputes, next to the [legal and commercial rates](./interest-rates) | [#68](https://github.com/pieterjanscheir/belgica/issues/68) |
 
 ## Why some datasets aren't here yet
 
@@ -41,6 +50,6 @@ added by hand from memory. Each dataset is built by a script from snapshots of i
 most sources are fetched every week by GitHub Actions. Two can't be, for now: the site of the
 Belgian Official Journal (ejustice), which the cantons come from, and police.be both refuse
 connections from GitHub's servers; they're fetched from a regular machine instead
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)). The bailiffs' directory is
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)). The bailiffs' directory is
 built in the browser, so it needs a browser to read, or the National Chamber's data
 ([#6](https://github.com/pieterjanscheir/belgica/issues/6)).

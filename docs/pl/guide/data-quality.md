@@ -53,7 +53,7 @@ Aby uruchomić to samodzielnie: `pnpm fetch:sources` (zapisuje `.sources/`), a p
 
 Kantony i gminy są przebudowywane ręcznie przez `pnpm build:cantons`: strona Belgisch
 Staatsblad / Moniteur belge (belgijskiego dziennika urzędowego) odrzuca serwery GitHuba
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)).
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)).
 
 ## Automatyczne kontrole {#automatic-checks}
 

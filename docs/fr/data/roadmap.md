@@ -4,35 +4,44 @@ Les jeux de données prévus, avec l'issue qui spécifie chacun d'eux. Chaque is
 sources officielles, les champs proposés et ce que « terminé » veut dire. L'aide est la
 bienvenue : choisissez-en un et suivez les [conventions](/fr/guide/contributing#adding-a-dataset).
 
-## Prévus {#planned}
+## Juridictions, services et personnes {#courts-offices-and-people}
 
-| Jeu de données                                                                                                       | À quoi ça sert                                                                                                          | Issue                                                       |
-| -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| **Les autres juridictions** : Cour de cassation, Cour constitutionnelle, Conseil d'État, juridictions disciplinaires | Les juridictions suprêmes ne sont pas sur le portail des cours et tribunaux ; il leur faut donc leurs propres sources   | [#4](https://github.com/pieterjanscheir/belgica/issues/4)   |
-| **La maison de justice d'Eupen** (Communauté germanophone)                                                           | La seule maison de justice que les données n'ont pas encore                                                             | [#3](https://github.com/pieterjanscheir/belgica/issues/3)   |
-| **Historique** : quand les cantons, les communes et les juridictions ont changé                                      | Le modèle a des périodes de validité et des recherches par jour ; les versions antérieures attendent encore les données | [#27](https://github.com/pieterjanscheir/belgica/issues/27) |
-| **Adresse → coordonnées**                                                                                            | Les [limites des cantons](./canton-boundaries) trouvent le canton d'un point ; géocoder l'adresse est l'étape manquante | [#28](https://github.com/pieterjanscheir/belgica/issues/28) |
-| **Études d'huissiers de justice** (gerechtsdeurwaarders / huissiers de justice)                                      | Trouver un huissier dans un arrondissement pour une signification ou une exécution                                      | [#6](https://github.com/pieterjanscheir/belgica/issues/6)   |
-| **Zones de police** (politiezones / zones de police)                                                                 | Quelle zone couvre une commune : plaintes, copies de procès-verbaux                                                     | [#7](https://github.com/pieterjanscheir/belgica/issues/7)   |
-| **Cadastre et bureaux de la sécurité juridique** (kadaster, anciens hypotheekkantoren)                               | Demander des certificats hypothécaires et des extraits cadastraux au bureau compétent                                   | [#8](https://github.com/pieterjanscheir/belgica/issues/8)   |
+| Jeu de données                                                                                                       | À quoi ça sert                                                                                                        | Issue                                                       |
+| -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **Les autres juridictions** : Cour de cassation, Cour constitutionnelle, Conseil d'État, juridictions disciplinaires | Les juridictions suprêmes ne sont pas sur le portail des cours et tribunaux ; il leur faut donc leurs propres sources | [#4](https://github.com/pieterjanscheir/belgica/issues/4)   |
+| **La maison de justice d'Eupen** (Communauté germanophone)                                                           | La seule maison de justice que les données n'ont pas encore                                                           | [#3](https://github.com/pieterjanscheir/belgica/issues/3)   |
+| **Compétence par division de tribunal** (afdelingen / divisions)                                                     | Où déposer au sein d'un tribunal, et la mention RPM sur les documents des sociétés                                    | [#58](https://github.com/pieterjanscheir/belgica/issues/58) |
+| **Parquets** (parquets, auditorats du travail, parquets généraux, parquet fédéral)                                   | Où déposer une plainte pénale, et l'auditeur du travail dans les affaires de droit social                             | [#55](https://github.com/pieterjanscheir/belgica/issues/55) |
+| **Études d'huissiers de justice** (gerechtsdeurwaarders / huissiers de justice)                                      | Trouver un huissier dans un arrondissement pour une signification ou une exécution                                    | [#6](https://github.com/pieterjanscheir/belgica/issues/6)   |
+| **Zones de police** (politiezones / zones de police)                                                                 | Quelle zone couvre une commune : plaintes, copies de procès-verbaux                                                   | [#7](https://github.com/pieterjanscheir/belgica/issues/7)   |
+| **Cadastre et bureaux de la sécurité juridique** (kadaster, anciens hypotheekkantoren)                               | Demander des certificats hypothécaires et des extraits cadastraux au bureau compétent                                 | [#8](https://github.com/pieterjanscheir/belgica/issues/8)   |
+| **Notaires et chambres des notaires**                                                                                | Trouver un notaire, et la chambre compétente pour une plainte                                                         | [#56](https://github.com/pieterjanscheir/belgica/issues/56) |
+| **Barreaux** (balies / barreaux) et leurs bureaux d'aide juridique                                                   | Le bureau d'aide juridique pour une adresse, et le bâtonnier pour les questions déontologiques                        | [#57](https://github.com/pieterjanscheir/belgica/issues/57) |
+| **Experts judiciaires et traducteurs et interprètes jurés** (registre national)                                      | Trouver un expert par spécialité ou un traducteur par combinaison de langues, et vérifier son inscription             | [#64](https://github.com/pieterjanscheir/belgica/issues/64) |
+| **Médiateurs agréés** (erkende bemiddelaars / médiateurs agréés)                                                     | Trouver un médiateur agréé par domaine et par région, et vérifier l'agrément                                          | [#65](https://github.com/pieterjanscheir/belgica/issues/65) |
 
-## À envisager {#worth-considering}
+## Territoire {#territory}
 
-Rassemblés dans [#9](https://github.com/pieterjanscheir/belgica/issues/9), à peu près
-par ordre de fréquence d'utilisation :
+| Jeu de données                                                                                          | À quoi ça sert                                                                                                          | Issue                                                       |
+| ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **Historique** : quand les cantons, les communes et les juridictions ont changé                         | Le modèle a des périodes de validité et des recherches par jour ; les versions antérieures attendent encore les données | [#27](https://github.com/pieterjanscheir/belgica/issues/27) |
+| **Anciennes communes** et les fusions de 2019 et 2025                                                   | Faire correspondre un ancien code REFNIS ou un ancien nom à la commune d'aujourd'hui                                    | [#53](https://github.com/pieterjanscheir/belgica/issues/53) |
+| **Sections de commune** (deelgemeenten / sections de commune) par code postal                           | Les [codes postaux](./postal-codes) s'arrêtent à la commune ; les adresses nomment la localité                          | [#54](https://github.com/pieterjanscheir/belgica/issues/54) |
+| **Adresse → canton** avec BeST Address                                                                  | Les [limites des cantons](./canton-boundaries) trouvent le canton d'un point ; géocoder l'adresse est l'étape manquante | [#66](https://github.com/pieterjanscheir/belgica/issues/66) |
+| **Régions linguistiques et facilités linguistiques** par commune (taalgebieden / faciliteitengemeenten) | La langue de la procédure et des actes qui y sont signifiés                                                             | [#70](https://github.com/pieterjanscheir/belgica/issues/70) |
 
-- **Les sections de commune** (deelgemeenten) par code postal. Les
-  [codes postaux](./postal-codes) s'arrêtent à la commune ; la liste de bpost nomme les localités,
-  mais sans code REFNIS ni licence ouverte.
-- **Droits de mise au rôle et droits de greffe** (rolrechten / griffierechten) et les tranches
-  de l'**indemnité de procédure** (rechtsplegingsvergoeding), avec leurs périodes de validité et
-  leur indexation, comme les taux d'intérêt.
-- **Vacances judiciaires et jours fériés** par année, pour le calcul des délais de procédure.
-- **Parquets et auditorats du travail** (parketten, arbeidsauditoraten) par arrondissement.
-- **Notaires et chambres des notaires**, **barreaux** (balies / barreaux).
-- **Fusions de communes** : anciens → nouveaux codes REFNIS pour 2019 et 2025, pour pouvoir
-  convertir des données plus anciennes.
-- **L'indice santé** (gezondheidsindex) pour l'indexation des loyers.
+## Montants, taux et calendriers {#amounts-rates-and-calendars}
+
+| Jeu de données                                                                                           | À quoi ça sert                                                                                   | Issue                                                       |
+| -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
+| **Frais de justice** (rolrechten / droits de mise au rôle, griffierechten / droits de greffe)            | Estimations de coûts et dépôt électronique ; le droit dépend de la date du dépôt                 | [#59](https://github.com/pieterjanscheir/belgica/issues/59) |
+| **Indemnité de procédure** (rechtsplegingsvergoeding / indemnité de procédure)                           | Les tranches et leur indexation, pour chaque estimation de coûts et chaque jugement              | [#60](https://github.com/pieterjanscheir/belgica/issues/60) |
+| **Seuils de montant pour la compétence et l'appel** (art. 590, 617 C. jud.)                              | Quel juge connaît d'une demande, et si son jugement est susceptible d'appel                      | [#69](https://github.com/pieterjanscheir/belgica/issues/69) |
+| **Vacances judiciaires et jours fériés**                                                                 | Le calcul des délais de procédure                                                                | [#61](https://github.com/pieterjanscheir/belgica/issues/61) |
+| **Indice santé** (gezondheidsindex / indice santé) par mois                                              | Indexation des loyers et des pensions alimentaires                                               | [#62](https://github.com/pieterjanscheir/belgica/issues/62) |
+| **Clauses indemnitaires et plafonds d'intérêts pour les dettes des consommateurs** (Livre XIX WER / CDE) | Ce qui peut être réclamé à un consommateur qui paie en retard                                    | [#63](https://github.com/pieterjanscheir/belgica/issues/63) |
+| **Quotités saisissables** (beslagbare bedragen / quotités saisissables, art. 1409 C. jud.)               | Quelle part d'un salaire ou d'une allocation peut être saisie, indexée chaque année              | [#67](https://github.com/pieterjanscheir/belgica/issues/67) |
+| **Taux d'intérêt fiscaux** : intérêts de retard et intérêts moratoires                                   | Les intérêts dans les litiges fiscaux, à côté des [taux légaux et commerciaux](./interest-rates) | [#68](https://github.com/pieterjanscheir/belgica/issues/68) |
 
 ## Pourquoi certains jeux de données ne sont pas encore là {#why-some-datasets-aren-t-here-yet}
 
@@ -42,6 +51,6 @@ rien n'est donc ajouté à la main, de mémoire. Chaque jeu de données est cons
 GitHub Actions. Deux ne peuvent pas l'être, pour l'instant : le site du Moniteur belge
 (ejustice), d'où viennent les cantons, et police.be refusent tous deux les connexions depuis les
 serveurs de GitHub ; ils sont récupérés depuis une machine ordinaire à la place
-([#24](https://github.com/pieterjanscheir/belgica/issues/24)). L'annuaire des huissiers
+([#52](https://github.com/pieterjanscheir/belgica/issues/52)). L'annuaire des huissiers
 est construit dans le navigateur, il faut donc un navigateur pour le lire, ou les données de la
 Chambre nationale ([#6](https://github.com/pieterjanscheir/belgica/issues/6)).

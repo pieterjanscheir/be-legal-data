@@ -8,7 +8,7 @@ import { data as stats } from '../../.vitepress/stats.data'
   constitutionnelle（宪法法院）、Raad van State / Conseil d'État（国务委员会）以及各纪律审判机构
   （[#4](https://github.com/pieterjanscheir/belgica/issues/4)）。
 - **管辖权只确定到法院这一级。** `cantons` 和 `findCompetentCourts` 告诉你哪个法院管辖某个市镇，但不告诉你是其中哪个分部：
-  分部的辖区由王室法令规定，目前尚未纳入数据。
+  分部的辖区由王室法令规定，目前尚未纳入数据（[#58](https://github.com/pieterjanscheir/belgica/issues/58)）。
 - **{{ stats.courts.withoutAddress }} 个法院没有统一地址**：要么法院的每个分部都有自己的地址（地址记录在分部上），要么法院以一句话的形式发布其地址。
   这些法院的 `address` 缺省，而不是猜测填写；各分部有自己的地址。
 - **开放时间**：在发布开放时间的 {{ stats.courts.hoursParsed + stats.courts.hoursTextOnly }} 个法院中，有
@@ -23,9 +23,9 @@ import { data as stats } from '../../.vitepress/stats.data'
 - **Canton 名称和所在地**只有荷兰语和法语：Gerechtelijk Wetboek / Code judiciaire（司法法典）的附件没有经过合并整理的德语文本。
 - **被分割的市镇**（Antwerpen、Gent、Brussel、Luik 等）对应多个 canton。邮政编码可以把你带到市镇（`findCourtsForPostalCode`）；
   要确定 canton 则需要街道地址：`findCantonsAt(lon, lat)` 可借助 [canton 边界](./canton-boundaries)根据坐标找到 canton，
-  但地址的地理编码需要你自己完成；而且这些边界是 NGI 对 `territory` 中法律文本的解读，两者不一致时以法律文本为准。
+  但地址的地理编码需要你自己完成；而且这些边界是 NGI 对 `territory` 中法律文本的解读，两者不一致时以法律文本为准（[#66](https://github.com/pieterjanscheir/belgica/issues/66)）。
 - **邮政编码只确定到市镇这一级。** 数据中不包含 deelgemeente / section（合并前的原市镇）：Statbel 的表格中没有它们，而 bpost
-  的列表不是以开放许可发布的。有三个邮编（`1040`、`1050`、`1804`）同时属于两个市镇；查询会同时返回这两个市镇。
+  的列表不是以开放许可发布的。有三个邮编（`1040`、`1050`、`1804`）同时属于两个市镇；查询会同时返回这两个市镇（[#54](https://github.com/pieterjanscheir/belgica/issues/54)）。
 - **有一个法院地址没有市镇**：Etterbeek 治安法院发布的是 `1040 Brussel (Etterbeek)`，这是一个共用邮编，城市一行同时提到了两个市镇，
   因此省略了 `address.municipality`，而不是猜测填写。Limbourg 治安法院发布的是位于 Eupen 法院大楼内的临时所在地，
   因此其市镇位于其 arrondissement 之外，与其网页上所写的一致。

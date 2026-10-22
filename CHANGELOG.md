@@ -53,6 +53,12 @@ time; for a record without one (saved before this version), `belgica/courts` sti
 
 `belgica/courts`, `belgica/territory` and the root keep their exports and full records.
 
+### Changed
+
+- Releases are prepared by a workflow, which opens the release pull request, and published when
+  it's merged. Pull requests get a preview package on pkg.pr.new. CI adds CodeQL, OpenSSF
+  Scorecard, zizmor and dependency review, and every action is pinned to a commit.
+
 ## [0.4.0] - 2026-10-22
 
 ### Added
