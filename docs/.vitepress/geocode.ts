@@ -31,7 +31,8 @@ const SOURCE_BY_REGION: Record<string, GeocodeSource> = {
 
 /** The registers to ask: the region of the postal code in the address, or all three */
 export function sourcesFor(address: string): GeocodeSource[] {
-    const postalCode = /\b\d{4}\b/.exec(address)?.[0]
+    // The last four digits: a house number of four comes before the postal code
+    const postalCode = address.match(/\b\d{4}\b/g)?.at(-1)
     const region = postalCode && getMunicipalitiesForPostalCode(postalCode)[0]?.region
     const source = region ? SOURCE_BY_REGION[region] : undefined
     return source ? [source] : ['flanders', 'brussels', 'wallonia']
@@ -125,11 +126,13 @@ async function brussels(address: string, signal?: AbortSignal): Promise<AddressC
         .slice(0, 5)
 }
 
-// ICAR, the Walloon Region's address register, through the SPW's geocodeWS
 interface Point {
     coordinates: [number, number]
 }
+
 interface WalloniaResponse {
+    /** The address as ICAR read it */
+    address?: { street?: { name: string }; house?: { name: string } }
     candidates?: {
         city: { name: string }
         zone?: { ident: string }
@@ -138,20 +141,62 @@ interface WalloniaResponse {
     }[]
 }
 
+/** Lower case, without accents, brackets or punctuation: 'Chaussée de Bruxelles (JT)' → chaussee de bruxelles */
+const words = (s: string) =>
+    s
+        .normalize('NFD')
+        .replace(/\p{M}/gu, '')
+        .toLowerCase()
+        .replace(/\([^)]*\)/g, ' ')
+        .split(/[^\p{L}\p{N}]+/u)
+        .filter(Boolean)
+
+const within = (a: string[], b: string[]) => a.every((word) => b.includes(word))
+
+/**
+ * Whether the register's street is the one asked. ICAR answers a street it doesn't know with
+ * others that look alike, the house number and all: 'Place Charles II 1, 6000 Charleroi' gives
+ * 'Place Harpigny 1' in Jumet, another canton. Its names are the full ones ('Boulevard Joseph
+ * Tirou' for 'Boulevard Tirou') and sometimes shorter ('Avenue Pastur' for 'Avenue Paul
+ * Pastur'), so either may hold the other's words.
+ */
+export function sameStreet(street: string, asked: string): boolean {
+    const [a, b] = [words(street), words(asked)]
+    return within(a, b) || within(b, a)
+}
+
+// ICAR, the Walloon Region's address register, through the SPW's geocodeWS
 async function wallonia(address: string, signal?: AbortSignal): Promise<AddressCandidate[]> {
     const url = `https://geoservices.wallonie.be/geocodeWS/geocode?crs=EPSG:4326&address=${encodeURIComponent(address)}`
-    const { candidates = [] } = (await getJson(url, signal)) as WalloniaResponse
-    return candidates.flatMap((c) => {
+    const response = (await getJson(url, signal)) as WalloniaResponse
+    const askedStreet = response.address?.street?.name
+    const askedNumber = response.address?.house?.name?.toLowerCase()
+    const matching = (response.candidates ?? []).filter(
+        (c) => !askedStreet || !c.street || sameStreet(c.street.name, askedStreet),
+    )
+    // The very name, when the register has it, over one that only shares its words
+    const exact = matching.filter(
+        (c) => c.street && words(c.street.name).join(' ') === words(askedStreet ?? '').join(' '),
+    )
+    // A building with several mailboxes comes once per box
+    const seen = new Set<string>()
+    return (exact.length ? exact : matching).flatMap((c) => {
         const point = c.house?.geometry ?? c.street?.geometry
         if (!point) return []
         const street = [c.street?.name, c.house?.name].filter(Boolean).join(' ')
         const place = [c.zone?.ident, c.city.name].filter(Boolean).join(' ')
+        const label = street ? `${street}, ${place}` : place
+        if (seen.has(label)) return []
+        seen.add(label)
         return [
             {
-                label: street ? `${street}, ${place}` : place,
+                label,
                 longitude: point.coordinates[0],
                 latitude: point.coordinates[1],
-                precise: Boolean(c.house?.geometry),
+                // ICAR gives the nearest number it knows: 4 for 2 is another house
+                precise:
+                    Boolean(c.house?.geometry) &&
+                    (!askedNumber || c.house?.name.toLowerCase() === askedNumber),
                 source: 'wallonia' as const,
             },
         ]
@@ -182,8 +227,15 @@ export async function geocode(address: string, signal?: AbortSignal): Promise<Ge
         ),
     )
     const result: GeocodeResult = { candidates: [], failed: [] }
+    // Without a postal code all three are asked, and Flanders' API knows Brussels too (in Dutch)
+    const seen = new Set<string>()
     for (const { source, candidates, error } of answers) {
-        result.candidates.push(...candidates)
+        for (const candidate of candidates) {
+            const key = candidate.label.toLowerCase()
+            if (seen.has(key)) continue
+            seen.add(key)
+            result.candidates.push(candidate)
+        }
         if (error) result.failed.push({ source, error })
     }
     // Stable: each register's own ranking stays within the precise and the imprecise ones

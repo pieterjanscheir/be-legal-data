@@ -193,16 +193,16 @@ function distanceToSegment(a: [number, number], b: [number, number]): number {
 
 /** Metres from the point to the nearest edge of a boundary, or Infinity when far away */
 function distanceTo(boundary: CantonBoundary, at: AddressCandidate): number {
-    // About 100 m in degrees: a cheap first filter on each vertex
+    // About 100 m in degrees: a cheap first filter on each segment. Both ends on the same side,
+    // not merely both far: a long straight edge passes the point with its ends far either side.
     const margin = 0.0015
+    const far = (a: number, b: number, at: number) =>
+        Math.min(a, b) > at + margin || Math.max(a, b) < at - margin
     let best = Infinity
     for (const ring of boundary.geometry.coordinates.flat()) {
         for (let i = 1; i < ring.length; i++) {
             const [p, q] = [ring[i - 1]!, ring[i]!]
-            if (Math.abs(p[0] - at.longitude) > margin && Math.abs(q[0] - at.longitude) > margin)
-                continue
-            if (Math.abs(p[1] - at.latitude) > margin && Math.abs(q[1] - at.latitude) > margin)
-                continue
+            if (far(p[0], q[0], at.longitude) || far(p[1], q[1], at.latitude)) continue
             best = Math.min(
                 best,
                 distanceToSegment(toMetres(p[0], p[1], at), toMetres(q[0], q[1], at)),
