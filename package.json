@@ -96,6 +96,8 @@
         "docs:dev": "vitepress dev docs",
         "docs:build": "vitepress build docs",
         "docs:preview": "vitepress preview docs",
+        "site:dev": "pnpm --filter belgica-site dev",
+        "site:build": "pnpm --filter belgica-site build",
         "build:schemas": "node scripts/build-schemas.ts",
         "test:freshness": "vitest run --config vitest.freshness.config.ts",
         "lint:package": "publint --strict && attw --pack . --profile esm-only",

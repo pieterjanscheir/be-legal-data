@@ -2,6 +2,10 @@ dist/
 coverage/
 docs/.vitepress/dist/
 docs/.vitepress/cache/
+site/.next/
+site/out/
+site/public/canton-map.json
+site/next-env.d.ts
 pnpm-lock.yaml
 src/ids.generated.ts
 src/canton-names.generated.ts

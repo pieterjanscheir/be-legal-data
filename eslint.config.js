@@ -12,11 +12,14 @@ export default tseslint.config(
             'docs/.vitepress/cache/',
             'src/ids.generated.ts',
             'src/canton-names.generated.ts',
+            'site/.next/',
+            'site/out/',
+            'site/next-env.d.ts',
         ],
     },
     js.configs.recommended,
     {
-        files: ['**/*.ts'],
+        files: ['**/*.ts', '**/*.tsx'],
         extends: [tseslint.configs.strictTypeChecked, tseslint.configs.stylisticTypeChecked],
         languageOptions: {
             parserOptions: { projectService: true, tsconfigRootDir: import.meta.dirname },
@@ -33,7 +36,7 @@ export default tseslint.config(
         extends: [tseslint.configs.disableTypeChecked],
     },
     {
-        files: ['scripts/**', 'test/**', '*.config.*', '**/*.cjs', '**/*.mjs'],
+        files: ['scripts/**', 'site/scripts/**', 'test/**', '*.config.*', '**/*.cjs', '**/*.mjs'],
         languageOptions: { globals: globals.node },
     },
 )
