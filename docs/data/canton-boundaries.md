@@ -138,6 +138,18 @@ out Halle-Vilvoorde, which belongs to the arrondissement of Brussels. So the bui
 arrondissement against its cantons: its area must be the sum of theirs, within 0.1 %, or the
 build fails.
 
+## From an address to the court
+
+A prototype: type an address, and the region's own address register geocodes it (the
+Adressenregister in Flanders, UrbIS in Brussels, ICAR in Wallonia). The point goes to
+`findCantonsAt`, and the canton to `getCourtsForCanton`. For an address the register knows down
+to the house number, the point is on the building, so the even and odd sides of a boundary
+street fall in the right canton. When it knows only the street, the point is somewhere on the
+street, and the lookup says so. Within 25 m of another canton the lookup warns and shows the
+law's text for both.
+
+<AddressLookup />
+
 ## In other languages
 
 The file is plain GeoJSON geometry per record, so any GIS reads it. In Python with Shapely:

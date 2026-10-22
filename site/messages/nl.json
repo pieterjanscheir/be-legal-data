@@ -9,6 +9,7 @@
         "courts": "Rechtbanken",
         "cantons": "Kantons",
         "municipalities": "Gemeenten",
+        "address": "Adres",
         "interest": "Interest",
         "places": "Gevangenissen & justitiehuizen",
         "siteLanguage": "Taal",
@@ -183,5 +184,30 @@
     "notFound": {
         "title": "Pagina niet gevonden",
         "back": "Terug naar de explorer"
+    },
+    "address": {
+        "title": "Adres opzoeken",
+        "lede": "Typ een adres en krijg het gerechtelijk kanton en alle rechtbanken ervoor. In een stad die over meerdere kantons verdeeld is, beslist het huisnummer, en dat zegt een postcode niet.",
+        "label": "Adres",
+        "placeholder": "Straat en nummer, postcode en gemeente",
+        "find": "Zoek de rechtbanken",
+        "try": "Probeer:",
+        "searching": "Adres opzoeken…",
+        "none": "Geen adres gevonden. Controleer de spelling, schrijf de straatnaam voluit en geef de postcode.",
+        "failed": "{source} niet bereikbaar: {error}",
+        "match": "Resultaat",
+        "map": "Toon op OpenStreetMap",
+        "streetOnly": "Het register kent de straat maar niet dit huisnummer: het punt ligt ergens in de straat, die zelf de grens tussen twee kantons kan zijn. Controleer het nummer.",
+        "canton": "Kanton",
+        "outside": "Dit punt ligt in geen enkel kanton: ligt het in België?",
+        "onLine": "Het adres ligt op de grens tussen {cantons}: de rechtbanken van elk staan hieronder, en de wet beslist. Lees hieronder het gebied van elk kanton.",
+        "near": "Het adres ligt {metres} m van de grens met {other}. Het NGI tekende de grens naar de wet, en de wet beslist: lees hieronder het gebied van beide kantons.",
+        "split": "<name></name> is verdeeld over meerdere kantons; het adres beslist welk.",
+        "legalText": "Het gebied van de kantons volgens de wet",
+        "courts": "Rechtbanken voor dit adres",
+        "source": "Adres uit {register}. Referentiedata, geen juridisch advies.",
+        "howTitle": "Hoe het werkt",
+        "how": "Je browser stuurt het adres naar het eigen register van het gewest: het Adressenregister in Vlaanderen, UrbIS in Brussel, ICAR in Wallonië. Voor een huisnummer dat het register kent, ligt het punt op het gebouw, zodat de even en oneven kant van een grensstraat in het juiste kanton vallen. Het punt wordt dan opgezocht in de kantongrenzen van het NGI, zoals findCantonsAt doet, en het kanton geeft zijn rechtbanken, zoals getCourtsForCanton doet. Binnen 25 m van een ander kanton waarschuwt de zoekopdracht en toont ze de wettekst van beide.",
+        "disclaimer": "De kantongrenzen zijn de tekening van het NGI van de bijlage bij het Gerechtelijk Wetboek: waar ze verschillen, beslist de wet. Referentiedata, geen juridisch advies."
     }
 }

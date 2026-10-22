@@ -36,6 +36,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         ['/courts/', t('courts')],
         ['/cantons/', t('cantons')],
         ['/municipalities/', t('municipalities')],
+        ['/address/', t('address')],
         ['/interest/', t('interest')],
         ['/places/', t('places')],
     ] as const

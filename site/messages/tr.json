@@ -9,6 +9,7 @@
         "courts": "Mahkemeler",
         "cantons": "Kantonlar",
         "municipalities": "Belediyeler",
+        "address": "Adres",
         "interest": "Faiz",
         "places": "Cezaevleri ve adalet evleri",
         "siteLanguage": "Dil",
@@ -183,5 +184,30 @@
     "notFound": {
         "title": "Sayfa bulunamadı",
         "back": "explorer'a dön"
+    },
+    "address": {
+        "title": "Adresle arama",
+        "lede": "Bir adres yazın; adli kantonunu ve yetkili tüm mahkemeleri görün. Birden çok kantona bölünmüş bir şehirde kapı numarası belirler; posta kodu bunu söylemez.",
+        "label": "Adres",
+        "placeholder": "Sokak ve numara, posta kodu ve belediye",
+        "find": "Mahkemeleri bul",
+        "try": "Deneyin:",
+        "searching": "Adres aranıyor…",
+        "none": "Adres bulunamadı. Yazımı kontrol edin, sokak adını tam yazın ve posta kodunu ekleyin.",
+        "failed": "{source} adresine ulaşılamadı: {error}",
+        "match": "Sonuç",
+        "map": "OpenStreetMap’te göster",
+        "streetOnly": "Kayıt sokağı biliyor ama bu numarayı bilmiyor: nokta sokak üzerinde bir yerde ve sokak kendisi iki kanton arasındaki sınır olabilir. Numarayı kontrol edin.",
+        "canton": "Kanton",
+        "outside": "Bu nokta hiçbir kantonda değil: Belçika’da mı?",
+        "onLine": "Adres {cantons} arasındaki sınırda: her birinin mahkemeleri listeleniyor ve kanun belirler. Aşağıda her kantonun alanını okuyun.",
+        "near": "Adres {other} ile sınıra {metres} m uzaklıkta. NGI sınırı kanuna göre çizdi ve kanun belirler: aşağıda iki kantonun alanını okuyun.",
+        "split": "<name></name> birden çok kantona bölünmüştür; hangisi olduğunu adres belirler.",
+        "legalText": "Kanuna göre kantonların alanı",
+        "courts": "Bu adres için mahkemeler",
+        "source": "Adres kaynağı: {register}. Referans verisidir, hukuki danışmanlık değildir.",
+        "howTitle": "Nasıl çalışır",
+        "how": "Tarayıcınız adresi bölgesinin kendi kaydına gönderir: Flandre’da Adressenregister, Brüksel’de UrbIS, Valonya’da ICAR. Kaydın bildiği bir kapı numarası için nokta binanın üzerindedir; böylece sınır sokağının çift ve tek tarafları doğru kantona düşer. Nokta sonra findCantonsAt gibi NGI’nin kanton sınırlarında aranır ve kanton, getCourtsForCanton gibi, mahkemelerini verir. Başka bir kantona 25 m’den yakınsa arama uyarır ve ikisinin kanun metnini gösterir.",
+        "disclaimer": "Kanton sınırları, NGI’nin Yargı Kanunu ekine göre çizimidir: farklı oldukları yerde kanun belirler. Referans verisidir, hukuki danışmanlık değildir."
     }
 }

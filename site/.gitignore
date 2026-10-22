@@ -2,4 +2,5 @@
 out/
 next-env.d.ts
 public/canton-map.json
+public/address/
 *.tsbuildinfo

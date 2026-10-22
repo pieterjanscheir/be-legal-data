@@ -9,6 +9,7 @@
         "courts": "Sądy",
         "cantons": "Kantony",
         "municipalities": "Gminy",
+        "address": "Adres",
         "interest": "Odsetki",
         "places": "Więzienia i domy sprawiedliwości",
         "siteLanguage": "Język",
@@ -183,5 +184,30 @@
     "notFound": {
         "title": "Nie znaleziono strony",
         "back": "Wróć do eksploratora"
+    },
+    "address": {
+        "title": "Wyszukiwanie po adresie",
+        "lede": "Wpisz adres, a otrzymasz jego kanton sądowy i wszystkie właściwe sądy. W mieście podzielonym na kilka kantonów decyduje numer domu, czego kod pocztowy nie mówi.",
+        "label": "Adres",
+        "placeholder": "Ulica i numer, kod pocztowy i gmina",
+        "find": "Znajdź sądy",
+        "try": "Spróbuj:",
+        "searching": "Wyszukiwanie adresu…",
+        "none": "Nie znaleziono adresu. Sprawdź pisownię, wpisz pełną nazwę ulicy i podaj kod pocztowy.",
+        "failed": "Nie można połączyć się z {source}: {error}",
+        "match": "Wynik",
+        "map": "Pokaż w OpenStreetMap",
+        "streetOnly": "Rejestr zna ulicę, ale nie ten numer: punkt leży gdzieś na ulicy, która sama może być granicą między dwoma kantonami. Sprawdź numer.",
+        "canton": "Kanton",
+        "outside": "Ten punkt nie leży w żadnym kantonie: czy jest w Belgii?",
+        "onLine": "Adres leży na granicy między {cantons}: podano sądy każdego z nich, a rozstrzyga ustawa. Przeczytaj poniżej obszar każdego kantonu.",
+        "near": "Adres leży {metres} m od granicy z {other}. NGI wyrysował granicę według ustawy, a rozstrzyga ustawa: przeczytaj poniżej obszar obu kantonów.",
+        "split": "<name></name> jest podzielona na kilka kantonów; o tym, który, decyduje adres.",
+        "legalText": "Obszar kantonów według ustawy",
+        "courts": "Sądy dla tego adresu",
+        "source": "Adres z {register}. Dane referencyjne, nie porada prawna.",
+        "howTitle": "Jak to działa",
+        "how": "Przeglądarka wysyła adres do rejestru jego regionu: Adressenregister we Flandrii, UrbIS w Brukseli, ICAR w Walonii. Dla numeru znanego rejestrowi punkt leży na budynku, więc parzysta i nieparzysta strona ulicy granicznej trafiają do właściwego kantonu. Punkt jest następnie wyszukiwany w granicach kantonów NGI, tak jak robi to findCantonsAt, a kanton podaje swoje sądy, jak getCourtsForCanton. W odległości do 25 m od innego kantonu wyszukiwanie ostrzega i pokazuje tekst ustawy dla obu.",
+        "disclaimer": "Granice kantonów to rysunek NGI według załącznika do Kodeksu sądowego: tam, gdzie się różnią, rozstrzyga ustawa. Dane referencyjne, nie porada prawna."
     }
 }

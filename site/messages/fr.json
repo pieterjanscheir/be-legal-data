@@ -9,6 +9,7 @@
         "courts": "Juridictions",
         "cantons": "Cantons",
         "municipalities": "Communes",
+        "address": "Adresse",
         "interest": "Intérêts",
         "places": "Prisons & maisons de justice",
         "siteLanguage": "Langue",
@@ -183,5 +184,30 @@
     "notFound": {
         "title": "Page introuvable",
         "back": "Retour à l'explorer"
+    },
+    "address": {
+        "title": "Recherche par adresse",
+        "lede": "Tapez une adresse et obtenez son canton judiciaire et toutes ses juridictions. Dans une ville répartie sur plusieurs cantons, le numéro décide, ce qu’un code postal ne dit pas.",
+        "label": "Adresse",
+        "placeholder": "Rue et numéro, code postal et commune",
+        "find": "Trouver les juridictions",
+        "try": "Essayez :",
+        "searching": "Recherche de l’adresse…",
+        "none": "Aucune adresse trouvée. Vérifiez l’orthographe, écrivez le nom de rue en entier et indiquez le code postal.",
+        "failed": "{source} injoignable : {error}",
+        "match": "Résultat",
+        "map": "Voir sur OpenStreetMap",
+        "streetOnly": "Le registre connaît la rue mais pas ce numéro : le point est quelque part dans la rue, qui peut elle-même être la limite entre deux cantons. Vérifiez le numéro.",
+        "canton": "Canton",
+        "outside": "Ce point ne se trouve dans aucun canton : est-il en Belgique ?",
+        "onLine": "L’adresse se trouve sur la limite entre {cantons} : les juridictions de chacun sont listées, et la loi décide. Lisez ci-dessous le territoire de chaque canton.",
+        "near": "L’adresse est à {metres} m de la limite avec {other}. L’IGN a tracé la limite d’après la loi, et la loi décide : lisez ci-dessous le territoire des deux cantons.",
+        "split": "<name></name> est répartie sur plusieurs cantons ; l’adresse décide lequel.",
+        "legalText": "Le territoire des cantons selon la loi",
+        "courts": "Juridictions pour cette adresse",
+        "source": "Adresse issue de {register}. Données de référence, pas un avis juridique.",
+        "howTitle": "Comment ça marche",
+        "how": "Votre navigateur envoie l’adresse au registre de sa région : l’Adressenregister en Flandre, UrbIS à Bruxelles, ICAR en Wallonie. Pour un numéro que le registre connaît, le point est sur le bâtiment, si bien que les côtés pair et impair d’une rue limite tombent dans le bon canton. Le point est ensuite cherché dans les limites des cantons de l’IGN, comme le fait findCantonsAt, et le canton donne ses juridictions, comme getCourtsForCanton. À moins de 25 m d’un autre canton, la recherche avertit et montre le texte de la loi pour les deux.",
+        "disclaimer": "Les limites des cantons sont le tracé par l’IGN de l’annexe du Code judiciaire : là où elles diffèrent, la loi décide. Données de référence, pas un avis juridique."
     }
 }

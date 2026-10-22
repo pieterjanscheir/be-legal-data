@@ -9,6 +9,7 @@
         "courts": "Courts",
         "cantons": "Cantons",
         "municipalities": "Municipalities",
+        "address": "Address",
         "interest": "Interest",
         "places": "Prisons & houses of justice",
         "siteLanguage": "Language",
@@ -183,5 +184,30 @@
     "notFound": {
         "title": "Page not found",
         "back": "Back to the explorer"
+    },
+    "address": {
+        "title": "Address lookup",
+        "lede": "Type a street address and get its judicial canton and every court for it. In a city split over several cantons the house number decides, which a postal code can’t tell.",
+        "label": "Address",
+        "placeholder": "Street and number, postal code and municipality",
+        "find": "Find the courts",
+        "try": "Try:",
+        "searching": "Looking up the address…",
+        "none": "No address found. Check the spelling, write the street name in full and give the postal code.",
+        "failed": "Couldn’t reach {source}: {error}",
+        "match": "Match",
+        "map": "Show on OpenStreetMap",
+        "streetOnly": "The register knows the street but not this house number: the point is somewhere on the street, which may itself be the boundary between two cantons. Check the number.",
+        "canton": "Canton",
+        "outside": "This point lies in no canton: is it in Belgium?",
+        "onLine": "The address lies on the boundary between {cantons}: the courts of each are listed, and the law decides. Read each canton’s area below.",
+        "near": "The address is {metres} m from the boundary with {other}. The NGI drew the boundary from the law, and the law decides: read both cantons’ areas below.",
+        "split": "<name></name> is split over several cantons; the address decides which.",
+        "legalText": "The cantons’ areas, as the law describes them",
+        "courts": "Courts for this address",
+        "source": "Address from {register}. Reference data, not legal advice.",
+        "howTitle": "How it works",
+        "how": "Your browser sends the address to its region’s own register: the Adressenregister in Flanders, UrbIS in Brussels, ICAR in Wallonia. For a house number the register knows, the point is on the building, so the even and odd sides of a boundary street fall in the right canton. The point is then looked up in the NGI’s canton boundaries, as findCantonsAt does, and the canton gives its courts, as getCourtsForCanton does. Within 25 m of another canton the lookup warns and shows the law’s text for both.",
+        "disclaimer": "The canton boundaries are the NGI’s drawing of the Judicial Code’s annex: where they differ, the law decides. Reference data, not legal advice."
     }
 }

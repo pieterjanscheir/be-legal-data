@@ -64,7 +64,8 @@ export interface Strings {
 }
 
 /** The interactive components that show words: each takes its strings from `useStrings(name, …)` */
-export type ComponentName = 'CantonLookup' | 'CourtList' | 'DataStats' | 'InterestRates'
+export type ComponentName =
+    'AddressLookup' | 'CantonLookup' | 'CourtList' | 'DataStats' | 'InterestRates'
 
 /**
  * A language beyond English, Dutch and French: one file per language in this folder, next to its
@@ -79,6 +80,11 @@ export interface LocaleFile {
     /** 'rtl' for Arabic */
     dir?: 'ltr' | 'rtl'
     site: Strings
-    /** Every key of the component's English (`root`) strings, translated */
-    components: Record<ComponentName, Record<string, string>>
+    /**
+     * Every key of the component's English (`root`) strings, translated. AddressLookup is a
+     * prototype: English, Dutch and French only until it settles.
+     */
+    components: Record<Exclude<ComponentName, 'AddressLookup'>, Record<string, string>> & {
+        AddressLookup?: Record<string, string>
+    }
 }
