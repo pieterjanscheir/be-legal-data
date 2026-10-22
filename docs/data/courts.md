@@ -171,7 +171,7 @@ getCourt('justice-of-the-peace-gent-1')
 getJusticeOfThePeace('gent-1') // the same court, by canton id
 getDivisions('enterprise-court-gent') // its eight divisions
 getCourtsForCanton('gent-1') // its justice of the peace, and one court of each other type
-findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde], by REFNIS code
+findCourtsWithJurisdiction('23088', 'police-court') // [police-court-vilvoorde], by REFNIS code
 findCourts({ type: 'police-court', kind: 'court', judicialArea: 'gent' })
 getContact(court, 'email', 'Greffe pénal') // the first matching contact's value
 formatPhoneNumber('+3253820701') // '053 82 07 01'

@@ -146,7 +146,7 @@ getCourt('justice-of-the-peace-gent-1')
 getJusticeOfThePeace('gent-1') // 同一个法院，通过 canton id 获取
 getDivisions('enterprise-court-gent') // 它的八个分部
 getCourtsForCanton('gent-1') // 它的治安法院，以及其他每种类型各一个法院
-findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde]，按 REFNIS 代码
+findCourtsWithJurisdiction('23088', 'police-court') // [police-court-vilvoorde]，按 REFNIS 代码
 findCourts({ type: 'police-court', kind: 'court', judicialArea: 'gent' })
 getContact(court, 'email', 'Greffe pénal') // 第一个匹配联系方式的值
 formatPhoneNumber('+3253820701') // '053 82 07 01'

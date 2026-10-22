@@ -18,10 +18,11 @@ from ._canton_boundaries import (
     find_cantons_at,
     get_canton_boundary,
 )
-from ._competence import (
+from ._jurisdiction import (
     CantonCourt,
     PostalCodeCourts,
     find_competent_courts,
+    find_courts_with_jurisdiction,
     find_courts_for_postal_code,
     find_justices_of_the_peace,
 )
@@ -104,6 +105,7 @@ __all__ = [
     'find_competent_courts',
     'find_courts',
     'find_courts_for_postal_code',
+    'find_courts_with_jurisdiction',
     'find_justices_of_the_peace',
     'format_court_name',
     'format_iban',

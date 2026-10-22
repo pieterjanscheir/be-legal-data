@@ -7,7 +7,7 @@ import { data as stats } from '../../.vitepress/stats.data'
 - **Le giurisdizioni che non sono sul portale** non sono nei dati: l'Hof van Cassatie / Cour de
   cassation, il Grondwettelijk Hof / Cour constitutionnelle, il Raad van State / Conseil d'État
   e i tribunali disciplinari ([#4](https://github.com/pieterjanscheir/belgica/issues/4)).
-- **La competenza si ferma al tribunale.** `cantons` e `findCompetentCourts` dicono quale
+- **La competenza si ferma al tribunale.** `cantons` e `findCourtsWithJurisdiction` dicono quale
   tribunale copre un comune, non quale delle sue sezioni: l'area di una sezione è stabilita da un
   regio decreto e non è ancora nei dati
   ([#58](https://github.com/pieterjanscheir/belgica/issues/58)).

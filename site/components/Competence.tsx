@@ -1,4 +1,4 @@
-import { findCompetentCourts, findJusticesOfThePeace, type CourtType } from 'belgica'
+import { findCourtsWithJurisdiction, findJusticesOfThePeace, type CourtType } from 'belgica'
 import Link from 'next/link'
 import { cantonName } from '@/lib/data'
 import { CourtCard } from './CourtCard'
@@ -47,7 +47,7 @@ export function Competence({ municipality }: { municipality: string }) {
             <h3>Other courts</h3>
             <div className="cards">
                 {otherTypes.flatMap((type) =>
-                    findCompetentCourts(municipality, type).map((court) => (
+                    findCourtsWithJurisdiction(municipality, type).map((court) => (
                         <CourtCard key={court.id} court={court} />
                     )),
                 )}

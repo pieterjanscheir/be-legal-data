@@ -7,6 +7,13 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ## [Unreleased]
 
+### Changed
+
+**`findCompetentCourts` is now `findCourtsWithJurisdiction`, and `find_competent_courts` is now
+`find_courts_with_jurisdiction`.** "Jurisdiction" is the English term for _bevoegdheid_ /
+_compétence_. The old names still work, are deprecated, and go in 1.0. The API docs'
+"Competence" section is now "Jurisdiction" (`#jurisdiction`).
+
 ## [0.5.0] - 2026-10-22
 
 ### Added

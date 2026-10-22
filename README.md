@@ -64,7 +64,7 @@ import {
     findCourts,
     getJusticeOfThePeace,
     getCantonsForMunicipality,
-    findCompetentCourts,
+    findCourtsWithJurisdiction,
     findCourtsForPostalCode,
     getInterestRate,
 } from 'belgica'
@@ -77,7 +77,7 @@ const [canton] = getCantonsForMunicipality('44088') // merelbeke-melle
 getJusticeOfThePeace(canton.id).address // where to file
 getCantonsForMunicipality('44021', { on: '2025-09-15' }) // Gent 1–5 on that day: a split city
 findCantonsAt(3.7268, 51.053) // [gent-1]: the canton of a point (belgica/canton-boundaries)
-findCompetentCourts('23088', 'police-court') // [police-court-vilvoorde]: which court, by REFNIS code
+findCourtsWithJurisdiction('23088', 'police-court') // [police-court-vilvoorde]: which court, by REFNIS code
 findCourtsForPostalCode('1040', 'police-court') // per municipality: Brussel and Etterbeek share the code
 
 getInterestRate('2024-06-15', 'legal') // { rate: 5.75, period: { from: '2024-01-01', to: '2024-12-31' } }
@@ -143,7 +143,7 @@ pip install belgica
 ```
 
 The same data and helpers, in snake case, with the same version number: `get_cantons_for_municipality('44021', on='2025-09-15')`,
-`find_competent_courts('23088', 'police-court')`, `find_cantons_at(3.7268, 51.053)`. Python 3.11 or later, no
+`find_courts_with_jurisdiction('23088', 'police-court')`, `find_cantons_at(3.7268, 51.053)`. Python 3.11 or later, no
 dependencies; the tests check both packages give the same answers. See [Python](https://pieterjanscheir.github.io/belgica/guide/python)
 and [`python/`](python/).
 

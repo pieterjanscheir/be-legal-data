@@ -366,23 +366,27 @@ function getPostalCodes(municipalityId: string, options?: OnDay): PostalCode[]
 getPostalCodes('44021').map((p) => p.postalCode) // ['9000', '9030', '9031', …]
 ```
 
-## 管辖权 {#competence}
+## 管辖权 {#jurisdiction}
 
 组合多个数据集的查询。它们只在 package 根中提供，因为同时需要地域和法院数据。
 
-### `findCompetentCourts(municipalityId, type)` {#findcompetentcourts-municipalityid-type}
+### `findCourtsWithJurisdiction(municipalityId, type)` {#findcourtswithjurisdiction-municipalityid-type}
 
 ```ts
-function findCompetentCourts(municipalityId: string, type: CourtType, options?: OnDay): Court[]
+function findCourtsWithJurisdiction(
+    municipalityId: string,
+    type: CourtType,
+    options?: OnDay,
+): Court[]
 ```
 
 按 REFNIS 代码返回某一天（默认今天）对某个市镇有管辖权的某类型法院：即依法律规定（`cantons`）其管辖范围包含该市镇某个 canton 的法院。大多数市镇只有一个法院；在布鲁塞尔是荷兰语法院和法语法院；对于被分割到多个 canton 的城市，则是服务其中任一 canton 的每个治安法院。返回的是法院整体：由哪个分部审理案件由王室法令规定，目前尚未收入数据，所以请自行从 `getDivisions(court.id)` 中选择。未知代码返回空数组。
 
 ```ts
-findCompetentCourts('23088', 'police-court').map((c) => c.id) // ['police-court-vilvoorde']
-findCompetentCourts('21004', 'court-of-first-instance').map((c) => c.id)
+findCourtsWithJurisdiction('23088', 'police-court').map((c) => c.id) // ['police-court-vilvoorde']
+findCourtsWithJurisdiction('21004', 'court-of-first-instance').map((c) => c.id)
 // ['court-of-first-instance-brussel-fr', 'court-of-first-instance-brussel-nl']
-findCompetentCourts('44021', 'labour-court').map((c) => c.id) // ['labour-court-gent']
+findCourtsWithJurisdiction('44021', 'labour-court').map((c) => c.id) // ['labour-court-gent']
 ```
 
 ### `findJusticesOfThePeace(municipalityId)` {#findjusticesofthepeace-municipalityid}
@@ -418,7 +422,7 @@ function findCourtsForPostalCode(
 interface PostalCodeCourts {
     municipality: Municipality
     justicesOfThePeace: CantonCourt[] // findJusticesOfThePeace(municipality.id)
-    courts: Court[] // findCompetentCourts(municipality.id, type)
+    courts: Court[] // findCourtsWithJurisdiction(municipality.id, type)
 }
 ```
 
