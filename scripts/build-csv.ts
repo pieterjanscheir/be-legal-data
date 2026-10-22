@@ -26,6 +26,7 @@ import type {
     Municipality,
     PostalCode,
     Prison,
+    PublicHolidays,
     Province,
     Region,
     Validity,
@@ -46,6 +47,7 @@ const prisons = read('prisons') as Prison[]
 const housesOfJustice = read('houses-of-justice') as HouseOfJustice[]
 const postalCodes = read('postal-codes') as PostalCode[]
 const interestRates = read('interest-rates') as Record<InterestType, InterestRateSeries>
+const publicHolidays = read('public-holidays') as PublicHolidays
 
 type Cell = string | number | boolean | undefined
 type Row = Record<string, Cell>
@@ -234,6 +236,15 @@ export const tables: Record<string, Row[]> = {
             rate_contracts_before_20130316: p.rateForContractsBefore20130316,
         })),
     ),
+    'public-holidays': publicHolidays.holidays.map((h) => ({
+        id: h.id,
+        name_nl: h.name.nl,
+        name_fr: h.name.fr,
+        name_de: h.name.de,
+        month: h.rule.type === 'fixed' ? h.rule.month : undefined,
+        day: h.rule.type === 'fixed' ? h.rule.day : undefined,
+        days_after_easter: h.rule.type === 'easter' ? h.rule.daysAfterEaster : undefined,
+    })),
 }
 
 // Run as a script, not imported by the tests. pathToFileURL escapes spaces and the like, which

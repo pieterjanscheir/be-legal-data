@@ -4,6 +4,7 @@ const { getCourt } = require('belgica')
 const { getCantonsForMunicipality } = require('belgica/territory')
 const { getJusticeOfThePeace } = require('belgica/courts')
 const { getInterestRate } = require('belgica/interest-rates')
+const { nextWorkingDay } = require('belgica/calendar')
 const { getPostalCodes } = require('belgica/postal-codes')
 const { findCantonsAt } = require('belgica/canton-boundaries')
 const { findArrondissementsAt } = require('belgica/arrondissement-boundaries')
@@ -19,6 +20,7 @@ assert.deepEqual(
     ['merelbeke-melle'],
 )
 assert.equal(getInterestRate('2024-06-15', 'legal').rate, 5.75)
+assert.equal(nextWorkingDay('2026-04-04'), '2026-04-07')
 assert.equal(
     getPostalCodes('44021').some((p) => p.postalCode === '9000'),
     true,
