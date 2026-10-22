@@ -4,13 +4,16 @@ Datasets that are planned, with the issue that specifies each one. Each issue li
 official sources, the proposed fields and what "done" means. Help is welcome: pick one and
 follow the [conventions](/guide/contributing#adding-a-dataset).
 
+The public and judicial holidays ([#61](https://github.com/pieterjanscheir/belgica/issues/61))
+were on this list and have shipped: see [public holidays](./public-holidays).
+
 ## Courts, offices and people
 
 | Dataset                                                                                               | Why it's useful                                                                                  | Issue                                                       |
 | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
 | **The other courts**: Court of Cassation, Constitutional Court, Council of State, disciplinary courts | The highest courts aren't on the courts' portal, so they need their own sources                  | [#4](https://github.com/pieterjanscheir/belgica/issues/4)   |
 | **The house of justice in Eupen** (German-speaking Community)                                         | The one house of justice the data doesn't have yet                                               | [#3](https://github.com/pieterjanscheir/belgica/issues/3)   |
-| **Competence per court division** (afdelingen / divisions)                                            | Where to file within a court, and the RPR / RPM mention on company documents                     | [#58](https://github.com/pieterjanscheir/belgica/issues/58) |
+| **Jurisdiction per court division** (afdelingen / divisions)                                          | Where to file within a court, and the RPR / RPM mention on company documents                     | [#58](https://github.com/pieterjanscheir/belgica/issues/58) |
 | **Prosecutors' offices** (parketten, arbeidsauditoraten, parketten-generaal, federal prosecutor)      | Where to file a criminal complaint, and the labour prosecutor in social-law cases                | [#55](https://github.com/pieterjanscheir/belgica/issues/55) |
 | **Bailiff offices** (gerechtsdeurwaarders / huissiers de justice)                                     | Find a bailiff in an arrondissement for service or enforcement                                   | [#6](https://github.com/pieterjanscheir/belgica/issues/6)   |
 | **Police zones** (politiezones / zones de police)                                                     | Which zone handles a municipality: complaints, copies of reports                                 | [#7](https://github.com/pieterjanscheir/belgica/issues/7)   |
@@ -37,7 +40,6 @@ follow the [conventions](/guide/contributing#adding-a-dataset).
 | **Court fees** (rolrechten / droits de mise au rôle, griffierechten / droits de greffe) | Cost estimates and e-filing; the fee depends on the filing date                      | [#59](https://github.com/pieterjanscheir/belgica/issues/59) |
 | **Procedural indemnity** (rechtsplegingsvergoeding / indemnité de procédure)            | The brackets and their indexation, for every cost estimate and judgment              | [#60](https://github.com/pieterjanscheir/belgica/issues/60) |
 | **Amount thresholds for competence and appeal** (art. 590, 617 Ger.W.)                  | Which court hears a claim, and whether its judgment can be appealed                  | [#69](https://github.com/pieterjanscheir/belgica/issues/69) |
-| **Judicial holidays and public holidays**                                               | Computing procedural deadlines                                                       | [#61](https://github.com/pieterjanscheir/belgica/issues/61) |
 | **Health index** (gezondheidsindex / indice santé) per month                            | Rent and maintenance indexation                                                      | [#62](https://github.com/pieterjanscheir/belgica/issues/62) |
 | **Damages and interest caps for consumer debts** (Book XIX WER / CDE)                   | What can be charged to a consumer who pays late                                      | [#63](https://github.com/pieterjanscheir/belgica/issues/63) |
 | **Garnishment limits** (beslagbare bedragen / quotités saisissables, art. 1409 Ger.W.)  | How much of a wage or benefit can be seized, indexed every year                      | [#67](https://github.com/pieterjanscheir/belgica/issues/67) |
