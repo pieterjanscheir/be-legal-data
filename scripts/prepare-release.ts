@@ -71,8 +71,12 @@ for (const [file, from, to] of [
     writeFileSync(file, text.replace(from, to))
 }
 
-// Links to the raw data pinned to a tag, in the README and the docs in every language
-const pinned = `pieterjanscheir/belgica/v${previous}/`
+// Links to the raw data pinned to a tag or a version, in the README and the docs in every
+// language: raw.githubusercontent.com by tag, jsDelivr by npm version
+const pinned = [
+    [`pieterjanscheir/belgica/v${previous}/`, `pieterjanscheir/belgica/v${version}/`],
+    [`npm/belgica@${previous}/`, `npm/belgica@${version}/`],
+] as const
 const markdown = [
     'README.md',
     ...readdirSync('docs', { recursive: true, encoding: 'utf8' })
@@ -81,9 +85,8 @@ const markdown = [
 ]
 for (const file of markdown) {
     const text = readFileSync(file, 'utf8')
-    if (text.includes(pinned)) {
-        writeFileSync(file, text.replaceAll(pinned, `pieterjanscheir/belgica/v${version}/`))
-    }
+    const updated = pinned.reduce((t, [from, to]) => t.replaceAll(from, to), text)
+    if (updated !== text) writeFileSync(file, updated)
 }
 
 console.log(version)

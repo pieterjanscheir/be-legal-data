@@ -94,7 +94,7 @@ Generated from `data/courts.json` and `data/cantons.json`, for apps that need on
 These are built when the package is, so they're in the npm package and the release zip but not
 in the git repository: read them from `node_modules/belgica/data/` or from a CDN that serves
 the npm package, pinned to a version
-(`https://cdn.jsdelivr.net/npm/belgica@0.5.0/data/courts/index.json`).
+(`https://cdn.jsdelivr.net/npm/belgica@0.6.0/data/courts/index.json`).
 
 The shapes are described on the [data pages](/data/territory) and in the [API reference](/api#types).
 
