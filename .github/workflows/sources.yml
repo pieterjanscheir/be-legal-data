@@ -23,8 +23,11 @@ jobs:
             pull-requests: write
             issues: write
         steps:
-            # Keeps the credentials: the steps below push the snapshots and the data branch
-            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1 # zizmor: ignore[artipacked]
+            # The pushes below pass their token explicitly; don't leave one in .git/config while
+            # the parsers run
+            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  persist-credentials: false
             - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
             - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
               with:
@@ -46,6 +49,8 @@ jobs:
               run: pnpm fetch:sources
 
             - name: Commit the snapshots
+              env:
+                  GH_TOKEN: ${{ github.token }}
               run: |
                   cd .sources
                   git config user.name github-actions[bot]
@@ -55,7 +60,7 @@ jobs:
                     echo "No changes"
                   else
                     git commit -q -m "Snapshots of $(date -u +%F)"
-                    git push origin sources
+                    git push "https://x-access-token:$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git" sources
                   fi
 
             # Fails, and changes nothing, when a page can't be placed: that needs a person
@@ -74,10 +79,25 @@ jobs:
                   pnpm typecheck 2>&1 | tee test.log
                   pnpm test 2>&1 | tee -a test.log
 
+            # A token from the repository's GitHub App when it's set up (the BOT_CLIENT_ID variable
+            # and the BOT_PRIVATE_KEY secret): a pull request it opens or pushes to starts CI, which
+            # one from the workflow's own token doesn't. Without the app, the workflow's token is used.
+            - name: Get the bot's token
+              id: bot
+              if: vars.BOT_CLIENT_ID != '' && steps.build.outputs.changed == 'true' && github.ref == 'refs/heads/main'
+              uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+              with:
+                  client-id: ${{ vars.BOT_CLIENT_ID }}
+                  private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+                  permission-contents: write
+                  permission-pull-requests: write
             - name: Open or update the data pull request
               if: steps.build.outputs.changed == 'true' && github.ref == 'refs/heads/main'
               env:
-                  GH_TOKEN: ${{ github.token }}
+                  GH_TOKEN: ${{ steps.bot.outputs.token || github.token }}
+                  BOT: ${{ steps.bot.outcome == 'success' }}
+                  # The issue below: the bot's token can only touch contents and pull requests
+                  WORKFLOW_TOKEN: ${{ github.token }}
                   RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
               run: |
                   git config user.name github-actions[bot]
@@ -85,7 +105,7 @@ jobs:
                   git switch -c data/sources
                   git add data src/ids.generated.ts schema ids.lock.json
                   git commit -q -m "Update the data from the official sources ($(date -u +%F))"
-                  git push -f origin data/sources
+                  git push -f "https://x-access-token:$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git" data/sources
                   {
                     echo "The weekly fetch of the official sources changed the data: $RUN_URL"
                     echo
@@ -99,16 +119,19 @@ jobs:
                     grep '^unreadable' build.log | head -40 || true
                     echo '```'
                     echo
-                    echo "Review the diff against the sources before merging. Pull requests opened"
-                    echo "by this workflow don't start CI themselves: the workflow ran the typecheck"
-                    echo "and tests above; close and reopen the pull request to run the full CI."
+                    echo "Review the diff against the sources before merging."
+                    if [ "$BOT" != true ]; then
+                      echo "Pull requests opened with the workflow's own token don't start CI: the workflow"
+                      echo "ran the typecheck and tests above; close and reopen the pull request to run the"
+                      echo "full CI, or set up the bot (docs/guide/contributing.md)."
+                    fi
                   } > body.md
                   number=$(gh pr list --head data/sources --state open --json number --jq '.[0].number')
                   if [ -n "$number" ]; then
                     gh pr edit "$number" --body-file body.md
                   else
                     gh pr create --base main --head data/sources --title "Data update from the official sources" --body-file body.md --label data-update \
-                      || gh issue create --title "Data update from the official sources is ready on branch data/sources" --body-file body.md
+                      || GH_TOKEN="$WORKFLOW_TOKEN" gh issue create --title "Data update from the official sources is ready on branch data/sources" --body-file body.md
                   fi
 
             # A failed page, an interrupted walk or a page the parser can't place: nothing was

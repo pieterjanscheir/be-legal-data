@@ -114,12 +114,31 @@ Every dataset gets the same treatment, so users can rely on it:
    version, bumps `version` in `package.json` and the Python package (`python/pyproject.toml`
    and `python/uv.lock`), points the raw data links in the docs at the new
    tag (`scripts/prepare-release.ts`), and opens the release pull request.
-2. Close and reopen that pull request to run CI, check it, and merge it.
+2. Tidy the version's section if it needs it (two branches can each add an `### Added`), check
+   the pull request, and merge it.
 
 Merging a new `version` into main starts the release workflow: it runs `pnpm check`, publishes
 to npm with provenance and to PyPI, tags the commit, and creates a GitHub release with the data, schemas and
-CSV tables attached. Bumping the version by hand in a pull request, or pushing a `v*` tag that
-matches `version`, releases the same way.
+CSV tables attached. The release notes are the version's section of `CHANGELOG.md`, followed by
+the list of pull requests. Bumping the version by hand in a pull request, or pushing a `v*` tag
+that matches `version`, releases the same way.
+
+`CHANGELOG.md` merges with git's union driver (`.gitattributes`): merging main into a branch
+keeps both sides' Unreleased entries instead of stopping at a conflict. GitHub's merge button
+doesn't use it, so merge main into the branch locally when GitHub reports a conflict there.
+
+### The bot
+
+The release pull request and the weekly data pull request are opened by a workflow. With the
+workflow's own token GitHub doesn't run CI on them, so they're opened with a token from a GitHub
+App when one is set up. Without it, close and reopen those pull requests to run CI. To set it up:
+
+1. Create a GitHub App under Settings → Developer settings → GitHub Apps → New GitHub App: any
+   name, any homepage URL, webhook off, repository permissions **Contents: read and write** and
+   **Pull requests: read and write**, installable only on this account.
+2. Note its **Client ID**, generate a **private key**, and install the app on this repository.
+3. In the repository's Settings → Secrets and variables → Actions, add the variable
+   `BOT_CLIENT_ID` and the secret `BOT_PRIVATE_KEY` (the whole `.pem` file).
 
 Every pull request also gets a preview package from [pkg.pr.new](https://pkg.pr.new), with the
 install command in a comment, to try a change before it's released.
