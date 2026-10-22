@@ -94,13 +94,3 @@ licence, and two fields of our own:
 - `lastReviewed`: the day the dataset was last checked against its sources;
 - `reviewEveryMonths`: how often it must be checked again. The
   [freshness check](./data-quality#automatic-checks) opens an issue when a dataset is overdue.
-
-## Why not Swagger / OpenAPI?
-
-Swagger (OpenAPI) describes **HTTP APIs**: endpoints, parameters, responses. This package has
-no server and no endpoints. It's a library plus static JSON files, so there's nothing for
-OpenAPI to describe. JSON Schema is the matching standard for describing data files (OpenAPI
-itself uses JSON Schema for its data models), and it's what the files above provide.
-
-If an HTTP API is added later (for example a small read-only service over the same data),
-it would get an OpenAPI document, and its response models could reuse these schemas directly.

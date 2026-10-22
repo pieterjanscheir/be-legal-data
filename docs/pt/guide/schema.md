@@ -78,15 +78,3 @@ schema, fontes oficiais, licença e dois campos próprios:
 - `reviewEveryMonths`: com que frequência tem de voltar a ser verificado. A
   [verificação de atualidade](./data-quality#automatic-checks) abre uma issue quando um conjunto
   de dados está em atraso.
-
-## Porquê não Swagger / OpenAPI? {#why-not-swagger-openapi}
-
-O Swagger (OpenAPI) descreve **APIs HTTP**: endpoints, parâmetros, respostas. Este pacote não tem
-servidor nem endpoints. É uma biblioteca mais ficheiros JSON estáticos, por isso não há nada para
-o OpenAPI descrever. O JSON Schema é o standard adequado para descrever ficheiros de dados (o
-próprio OpenAPI usa JSON Schema para os seus modelos de dados), e é isso que os ficheiros acima
-fornecem.
-
-Se mais tarde for acrescentada uma API HTTP (por exemplo, um pequeno serviço só de leitura sobre
-os mesmos dados), terá um documento OpenAPI, e os seus modelos de resposta poderão reutilizar
-diretamente estes schemas.

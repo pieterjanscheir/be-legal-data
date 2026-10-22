@@ -76,13 +76,3 @@ datamodel-codegen --input courts.schema.json --input-file-type jsonschema --outp
 - `lastReviewed`: آخر يوم رُوجعت فيه مجموعة البيانات مقابل مصادرها؛
 - `reviewEveryMonths`: كم مرة يجب مراجعتها من جديد. يفتح
   [فحص الحداثة](./data-quality#automatic-checks) issue حين تتأخر مراجعة مجموعة بيانات.
-
-## لماذا لا Swagger / OpenAPI؟ {#why-not-swagger-openapi}
-
-يصف Swagger ‏(OpenAPI) **واجهات HTTP**: نقاط النهاية (endpoints) والمعاملات والاستجابات. هذه
-الحزمة بلا خادم وبلا نقاط نهاية. إنها مكتبة مع ملفات JSON ثابتة، فلا شيء فيها يصفه OpenAPI.
-JSON Schema هو المعيار المناسب لوصف ملفات البيانات (يستخدم OpenAPI نفسه JSON Schema لنماذج
-بياناته)، وهو ما توفره الملفات أعلاه.
-
-إذا أُضيفت واجهة HTTP لاحقًا (مثل خدمة صغيرة للقراءة فقط فوق البيانات نفسها)، فستحصل على وثيقة
-OpenAPI، ويمكن لنماذج استجاباتها إعادة استخدام هذه المخططات مباشرة.

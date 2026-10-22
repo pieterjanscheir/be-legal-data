@@ -82,15 +82,3 @@ propres :
 - `reviewEveryMonths` : la fréquence à laquelle il doit être vérifié à nouveau. Le
   [contrôle de fraîcheur](./data-quality#automatic-checks) ouvre une issue quand un jeu de
   données est en retard.
-
-## Pourquoi pas Swagger / OpenAPI ? {#why-not-swagger-openapi}
-
-Swagger (OpenAPI) décrit des **API HTTP** : des endpoints, des paramètres, des réponses. Ce
-package n'a ni serveur ni endpoint. C'est une bibliothèque accompagnée de fichiers JSON
-statiques ; OpenAPI n'aurait donc rien à décrire. JSON Schema est le standard qui convient pour
-décrire des fichiers de données (OpenAPI lui-même s'appuie sur JSON Schema pour ses modèles de
-données), et c'est ce que fournissent les fichiers ci-dessus.
-
-Si une API HTTP est ajoutée plus tard (par exemple un petit service en lecture seule au-dessus
-des mêmes données), elle recevra un document OpenAPI, et ses modèles de réponse pourront
-réutiliser ces schémas tels quels.

@@ -77,14 +77,3 @@ datamodel-codegen --input courts.schema.json --input-file-type jsonschema --outp
 - `reviewEveryMonths`: як часто його треба перевіряти знову.
   [Перевірка актуальності](./data-quality#automatic-checks) відкриває issue, коли перевірку
   набору даних прострочено.
-
-## Чому не Swagger / OpenAPI? {#why-not-swagger-openapi}
-
-Swagger (OpenAPI) описує **HTTP API**: endpoints, параметри, відповіді. Цей пакет не має ні
-сервера, ні endpoints. Це бібліотека плюс статичні JSON-файли, тож OpenAPI нема чого описувати.
-JSON Schema — відповідний стандарт для опису файлів даних (сам OpenAPI використовує JSON Schema
-для своїх моделей даних), і саме його надають файли вище.
-
-Якщо згодом з'явиться HTTP API (наприклад, невеликий сервіс лише для читання над тими самими
-даними), він отримає документ OpenAPI, а його моделі відповідей зможуть напряму
-використовувати ці схеми.
