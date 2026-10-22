@@ -6,6 +6,10 @@ const { getJusticeOfThePeace } = require('belgica/courts')
 const { getInterestRate } = require('belgica/interest-rates')
 const { getPostalCodes } = require('belgica/postal-codes')
 const { findCantonsAt } = require('belgica/canton-boundaries')
+const { formatCourtName } = require('belgica/courts/format')
+const { loadCourtDetails } = require('belgica/courts/load')
+const { getCanton } = require('belgica/cantons')
+const { getCantonTerritory } = require('belgica/cantons/territory')
 
 assert.equal(getCourt('justice-of-the-peace-gent-1').name.nl, 'Vredegerecht Gent 1')
 assert.equal(getJusticeOfThePeace('gent-1').id, 'justice-of-the-peace-gent-1')
@@ -23,4 +27,14 @@ assert.deepEqual(
     ['merelbeke-melle'],
 )
 
-console.log(`CJS smoke test passed on Node ${process.version}`)
+assert.equal(
+    formatCourtName(getJusticeOfThePeace('gent-1'), 'de', { style: 'canton' }),
+    'Friedensgericht 1. Kanton Gent',
+)
+assert.equal(getCanton('gent-1').territory, undefined)
+assert.equal(typeof getCantonTerritory('gent-1').fr, 'string')
+
+loadCourtDetails('justice-of-the-peace-gent-1').then((details) => {
+    assert.equal(details.id, 'justice-of-the-peace-gent-1')
+    console.log(`CJS smoke test passed on Node ${process.version}`)
+})

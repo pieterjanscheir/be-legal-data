@@ -17,3 +17,5 @@ data/houses-of-justice.json
 schema/
 test/fixtures/
 ids.lock.json
+src/data-files.generated.ts
+src/court-details-files.generated.ts

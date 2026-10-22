@@ -64,26 +64,27 @@ matters, check the court's page (`website`).
 
 ## Fields
 
-| Field              | Type                                  | Description                                                                                                                                                                                                |
-| ------------------ | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`               | `CourtId`                             | Stable id: the `type`, then the place in the court's own language: `justice-of-the-peace-gent-1`, `police-court-brussel-fr`, `enterprise-court-gent-brugge`. See [identifiers](/guide/identifiers)         |
-| `validFrom`        | string?                               | First day the record applies, `YYYY-MM-DD`: the day the portal first listed it. None: since the coverage starts                                                                                            |
-| `validTo`          | string?                               | Last day the record applies: the day before the weekly check found it gone from the portal. None: still applies                                                                                            |
-| `type`             | `CourtType`                           | `justice-of-the-peace`, `police-court`, `court-of-first-instance`, `enterprise-court`, `labour-court`, `court-of-appeal`, `labour-court-of-appeal`, `court-of-assize`                                      |
-| `kind`             | `'court'` \| `'division'` \| `'seat'` | The court itself, one of its divisions (afdeling, division, Abteilung), or one of the places a justice of the peace sits                                                                                   |
-| `court`            | `CourtId`?                            | For a division or seat: the court it belongs to                                                                                                                                                            |
-| `name`             | `{ nl?, fr?, de? }`                   | The name as the court publishes it, in each language it has a page in: `Vredegerecht Gent 1`, `Tribunal de l'entreprise du Hainaut - division Mons`                                                        |
-| `judicialArea`     | `JudicialAreaId`                      | The judicial area                                                                                                                                                                                          |
-| `arrondissement`   | `ArrondissementId`?                   | The arrondissement, for a court or division whose area is one arrondissement or lies within one                                                                                                            |
-| `canton`           | `CantonId`?                           | For a justice of the peace: the canton it serves                                                                                                                                                           |
-| `cantons`          | `CantonId[]`?                         | For every other court (not its divisions): the cantons it covers, as the annex to the Judicial Code (art. 3–5) and art. 114 of the Code set them                                                           |
-| `ecli`             | `string[]`?                           | The court's ECLI codes, one per language it judges in; only codes seen in published decisions                                                                                                              |
-| `address`          | `Address`?                            | Where the registry is, with the municipality its postal code belongs to (`municipality`, by REFNIS code). Missing when the court publishes no single address (a court whose divisions each have their own) |
-| `contacts`         | `Contact[]`                           | Phone, fax, e-mail and bank account, each with the registry it belongs to (`label`) and the text published with it (`note`)                                                                                |
-| `openingHours`     | string?                               | Registry hours in OpenStreetMap [`opening_hours`](https://wiki.openstreetmap.org/wiki/Key:opening_hours) syntax: `Mo-Fr 08:30-12:30,13:30-16:00`, only when the published text says exactly that           |
-| `openingHoursText` | `{ nl?, fr?, de? }`?                  | The opening hours as published, per language                                                                                                                                                               |
-| `website`          | `{ nl?, fr?, de? }`                   | The court's page on the portal, per language                                                                                                                                                               |
-| `sources`          | `{ url, retrieved }[]`                | The pages the record was read from, and when their content was first seen                                                                                                                                  |
+| Field              | Type                                  | Description                                                                                                                                                                                                           |
+| ------------------ | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`               | `CourtId`                             | Stable id: the `type`, then the place in the court's own language: `justice-of-the-peace-gent-1`, `police-court-brussel-fr`, `enterprise-court-gent-brugge`. See [identifiers](/guide/identifiers)                    |
+| `validFrom`        | string?                               | First day the record applies, `YYYY-MM-DD`: the day the portal first listed it. None: since the coverage starts                                                                                                       |
+| `validTo`          | string?                               | Last day the record applies: the day before the weekly check found it gone from the portal. None: still applies                                                                                                       |
+| `type`             | `CourtType`                           | `justice-of-the-peace`, `police-court`, `court-of-first-instance`, `enterprise-court`, `labour-court`, `court-of-appeal`, `labour-court-of-appeal`, `court-of-assize`                                                 |
+| `kind`             | `'court'` \| `'division'` \| `'seat'` | The court itself, one of its divisions (afdeling, division, Abteilung), or one of the places a justice of the peace sits                                                                                              |
+| `court`            | `CourtId`?                            | For a division or seat: the court it belongs to                                                                                                                                                                       |
+| `name`             | `{ nl?, fr?, de? }`                   | The name as the court publishes it, in each language it has a page in: `Vredegerecht Gent 1`, `Tribunal de l'entreprise du Hainaut - division Mons`                                                                   |
+| `label`            | `{ nl, fr, de }`?                     | For a justice of the peace (not its seats): a display label built from its canton, `Vredegerecht 1e kanton Gent`, as `formatCourtName(court, locale, { style: 'canton' })` gives it. Generated, not the official name |
+| `judicialArea`     | `JudicialAreaId`                      | The judicial area                                                                                                                                                                                                     |
+| `arrondissement`   | `ArrondissementId`?                   | The arrondissement, for a court or division whose area is one arrondissement or lies within one                                                                                                                       |
+| `canton`           | `CantonId`?                           | For a justice of the peace: the canton it serves                                                                                                                                                                      |
+| `cantons`          | `CantonId[]`?                         | For every other court (not its divisions): the cantons it covers, as the annex to the Judicial Code (art. 3–5) and art. 114 of the Code set them                                                                      |
+| `ecli`             | `string[]`?                           | The court's ECLI codes, one per language it judges in; only codes seen in published decisions                                                                                                                         |
+| `address`          | `Address`?                            | Where the registry is, with the municipality its postal code belongs to (`municipality`, by REFNIS code). Missing when the court publishes no single address (a court whose divisions each have their own)            |
+| `contacts`         | `Contact[]`                           | Phone, fax, e-mail and bank account, each with the registry it belongs to (`label`) and the text published with it (`note`)                                                                                           |
+| `openingHours`     | string?                               | Registry hours in OpenStreetMap [`opening_hours`](https://wiki.openstreetmap.org/wiki/Key:opening_hours) syntax: `Mo-Fr 08:30-12:30,13:30-16:00`, only when the published text says exactly that                      |
+| `openingHoursText` | `{ nl?, fr?, de? }`?                  | The opening hours as published, per language                                                                                                                                                                          |
+| `website`          | `{ nl?, fr?, de? }`                   | The court's page on the portal, per language                                                                                                                                                                          |
+| `sources`          | `{ url, retrieved }[]`                | The pages the record was read from, and when their content was first seen                                                                                                                                             |
 
 ::: tip New court types
 `type` may gain values (the Court of Cassation, for one). If you `switch` on it, keep a
@@ -101,6 +102,7 @@ interface Court {
     kind: 'court' | 'division' | 'seat'
     court?: CourtId
     name: Partial<Translated>
+    label?: Translated
     judicialArea: JudicialAreaId
     arrondissement?: ArrondissementId
     canton?: CantonId
@@ -143,6 +145,56 @@ getContact(court, 'email', 'Greffe pénal') // the first matching contact's valu
 formatPhoneNumber('+3253820701') // '053 82 07 01'
 formatIban('BE73679200844560') // 'BE73 6792 0084 4560'
 ```
+
+## Only the courts you need
+
+`data/courts.json` is the complete file, about 580 KB. An app that needs some courts, in a
+browser above all, can load smaller files generated from it. Every path below is public API, like
+the ids.
+
+| File                                           | Contents                                                                                                           |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `data/courts/<type>.json`                      | Every court, division and seat of a type, in all of Belgium                                                        |
+| `data/courts/<type>/<arrondissement>.json`     | Those of one type in one arrondissement                                                                            |
+| `data/courts/<type>/judicial-area/<area>.json` | Those of one type without an arrondissement, by judicial area                                                      |
+| `data/courts/details/<id>.json`                | One court's `contacts`, `openingHours`, `openingHoursText`, `website`, `sources` and `ecli`, one entry per version |
+| `data/courts/index.json`                       | Each court id → its file under `data/courts/`, without `.json`                                                     |
+
+The list files hold summaries (`CourtSummary`): `id`, `validFrom`, `validTo`, `type`, `kind`,
+`court`, `name`, `label`, `canton`, `cantons`, `arrondissement`, `judicialArea` and `address`.
+A summary and its details together are the full record. Every court is in exactly one
+`<type>/…` file; a court whose area covers several arrondissements (a court of appeal, the
+labour courts of Antwerpen and Liège, …) has no `arrondissement` and is in the file of its
+judicial area. Like `data/courts.json`, the files hold every version of a record.
+
+Import a file statically when you know which one you need. The 38 justices of the peace of East
+and West Flanders are 15 KB minified (2 KB gzip), against 410 KB for `belgica/courts`:
+
+```ts
+import east from 'belgica/data/courts/justice-of-the-peace/oost-vlaanderen.json' with { type: 'json' }
+import west from 'belgica/data/courts/justice-of-the-peace/west-vlaanderen.json' with { type: 'json' }
+import { formatCourtName, type CourtSummary } from 'belgica/courts/format'
+
+const courts: CourtSummary[] = [...east, ...west]
+courts.map((court) => formatCourtName(court, 'nl', { style: 'canton' }))
+```
+
+Or load them when they're needed, with `belgica/courts/load`. Each file is its own `import()`,
+so a bundler makes a chunk of it and a browser downloads only what you ask for:
+
+```ts
+import { loadCourts, loadCourt, loadCourtDetails } from 'belgica/courts/load'
+
+await loadCourts({ type: 'justice-of-the-peace', arrondissement: 'oost-vlaanderen' })
+await loadCourt('justice-of-the-peace-gent-1') // an id from a saved file: index.json, then its file
+await loadCourtDetails('justice-of-the-peace-gent-1') // its contacts, for the one court you show
+```
+
+The loader is 8 KB minified (2 KB gzip). Every file needs an entry in it, so the map of the 347
+details files is a chunk of its own, 31 KB (5 KB gzip), that the first `loadCourtDetails` loads.
+
+`belgica/courts/format` has `formatCourtName`, `getContact`, `formatPhoneNumber` and
+`formatIban`, and loads no data: they work on a court you already hold.
 
 ## How the data is read
 

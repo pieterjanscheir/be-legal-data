@@ -133,3 +133,18 @@ export const cantonSchema = z.strictObject({
 })
 /** A judicial canton: the area of one justice of the peace */
 export type Canton = z.infer<typeof cantonSchema>
+
+/** A canton without its `territory`: what data/cantons/summaries.json holds */
+export const cantonSummarySchema = cantonSchema.omit({ territory: true })
+/** A canton without its `territory`: what data/cantons/summaries.json holds */
+export type CantonSummary = z.infer<typeof cantonSummarySchema>
+
+/** A canton's `territory`, per version: what data/cantons/territory.json holds */
+export const cantonTerritorySchema = cantonSchema.pick({
+    id: true,
+    validFrom: true,
+    validTo: true,
+    territory: true,
+})
+/** A canton's `territory`, per version: what data/cantons/territory.json holds */
+export type CantonTerritory = z.infer<typeof cantonTerritorySchema>

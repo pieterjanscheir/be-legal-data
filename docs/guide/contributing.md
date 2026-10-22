@@ -15,8 +15,9 @@ For the datasets kept by hand (judicial areas, arrondissements, interest rates):
 3. `pnpm check`: regenerate the id types and schemas, typecheck, lint and format check, build,
    tests with coverage, and package lint. It fails when the generated files aren't committed.
 4. Add a line to `CHANGELOG.md` under Unreleased, and commit (including `schema/`,
-   `src/ids.generated.ts` and `ids.lock.json`). The build output (`dist/`) isn't committed: it's
-   built for every release and published to npm.
+   `data/courts.json`, `src/ids.generated.ts`, `src/data-files.generated.ts` and `ids.lock.json`).
+   The build output (`dist/`) isn't committed, nor are the files split into `data/courts/` and
+   `data/cantons/`: they're built for every release and published to npm.
 
 An id that was published stays: `ids.lock.json` lists them all and the tests fail when one is
 missing from the data. If a source renamed a record, map the new name to the existing id in the
@@ -98,7 +99,7 @@ Every dataset gets the same treatment, so users can rely on it:
 | `pnpm test:package`         | Smoke tests of the built package with `import` and `require()`: run `pnpm build` first                                                                        |
 | `pnpm test:coverage`        | The same, failing below 100 % coverage of `src/`                                                                                                              |
 | `pnpm lint` / `pnpm format` | ESLint and Prettier: check / fix                                                                                                                              |
-| `pnpm generate`             | Regenerate `src/ids.generated.ts` (id types) and `schema/` from the data and types, and add new ids to `ids.lock.json`                                        |
+| `pnpm generate`             | Regenerate the courts' `label`, `src/ids.generated.ts` (id types) and `schema/`, add new ids to `ids.lock.json`, and split `data/courts/` and `data/cantons/` |
 | `pnpm lint:package`         | `publint` and `arethetypeswrong` on the packed package                                                                                                        |
 | `pnpm test:freshness`       | Date-based checks: missing rates, overdue reviews. Not part of `check`; `FRESHNESS_ONLINE=1` also checks the source URLs                                      |
 | `pnpm fetch:sources`        | Fetch the official sources into `.sources/`                                                                                                                   |

@@ -107,9 +107,12 @@ describe('formatCourtName', () => {
         }
     })
 
+    // A record without a stored label, such as one saved before 0.5.0: the label is built from
+    // the canton
     it('gives the official name for a justice of the peace whose canton is unknown', () => {
         const court: Court = { ...getCourt('justice-of-the-peace-gent-1') }
         delete court.canton
+        delete court.label
         expect(formatCourtName(court, 'fr', { style: 'canton' })).toBe('Vredegerecht Gent 1')
         const elsewhere: Court = { ...court, canton: 'no-such-canton' as CantonId }
         expect(formatCourtName(elsewhere, 'fr', { style: 'canton' })).toBe('Vredegerecht Gent 1')
@@ -117,6 +120,7 @@ describe('formatCourtName', () => {
 
     it('labels a court that has ended with its canton as it was then', () => {
         const court: Court = { ...getCourt('justice-of-the-peace-gent-1'), validTo: '2025-06-30' }
+        delete court.label
         expect(formatCourtName(court, 'nl', { style: 'canton' })).toBe(
             'Vredegerecht 1e kanton Gent',
         )

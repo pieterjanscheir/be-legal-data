@@ -71,6 +71,24 @@ Data > From Text/CSV.
 | `data/postal-codes.json`      | Every postal code with the municipality it belongs to        |
 | `data/interest-rates.json`    | Legal and commercial-transaction interest rates              |
 
+Generated from `data/courts.json` and `data/cantons.json`, for apps that need only part of them
+(see [only the courts you need](/data/courts#only-the-courts-you-need)):
+
+| File                                           | Contents                                                       |
+| ---------------------------------------------- | -------------------------------------------------------------- |
+| `data/courts/<type>.json`                      | The courts of one type, as summaries without contacts          |
+| `data/courts/<type>/<arrondissement>.json`     | The courts of one type in one arrondissement                   |
+| `data/courts/<type>/judicial-area/<area>.json` | The courts of one type without an arrondissement               |
+| `data/courts/details/<id>.json`                | One court's contacts, opening hours, website, ECLI and sources |
+| `data/courts/index.json`                       | Each court id and the file it is in                            |
+| `data/cantons/summaries.json`                  | The cantons without their `territory`                          |
+| `data/cantons/territory.json`                  | Each canton's `territory`                                      |
+
+These are built when the package is, so they're in the npm package and the release zip but not
+in the git repository: read them from `node_modules/belgica/data/` or from a CDN that serves
+the npm package, pinned to a version
+(`https://cdn.jsdelivr.net/npm/belgica@0.5.0/data/courts/index.json`).
+
 The shapes are described on the [data pages](/data/territory) and in the [API reference](/api#types).
 
 ## Licence

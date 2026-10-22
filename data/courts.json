@@ -7120,6 +7120,11 @@
     "name": {
       "nl": "Vredegerecht Aalst 1"
     },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Aalst",
+      "fr": "Justice de paix 1er canton Alost",
+      "de": "Friedensgericht 1. Kanton Aalst"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "aalst-1",
@@ -7163,6 +7168,11 @@
     "name": {
       "nl": "Vredegerecht Aalst 2"
     },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Aalst",
+      "fr": "Justice de paix 2e canton Alost",
+      "de": "Friedensgericht 2. Kanton Aalst"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "aalst-2",
@@ -7205,6 +7215,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Aarschot"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Aarschot",
+      "fr": "Justice de paix canton Aarschot",
+      "de": "Friedensgericht Kanton Aarschot"
     },
     "judicialArea": "brussel",
     "arrondissement": "leuven",
@@ -7254,6 +7269,11 @@
     "name": {
       "fr": "Justice de paix d'Andenne"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Andenne",
+      "fr": "Justice de paix canton Andenne",
+      "de": "Friedensgericht Kanton Andenne"
+    },
     "judicialArea": "liege",
     "arrondissement": "namur",
     "canton": "andenne",
@@ -7302,6 +7322,11 @@
     "name": {
       "nl": "Vredegerecht Anderlecht 1e kanton",
       "fr": "Justice de paix d'Anderlecht 1er canton"
+    },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Anderlecht",
+      "fr": "Justice de paix 1er canton Anderlecht",
+      "de": "Friedensgericht 1. Kanton Anderlecht"
     },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
@@ -7361,6 +7386,11 @@
       "nl": "Vredegerecht Anderlecht 2e kanton",
       "fr": "Justice de paix d'Anderlecht 2ième canton"
     },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Anderlecht",
+      "fr": "Justice de paix 2e canton Anderlecht",
+      "de": "Friedensgericht 2. Kanton Anderlecht"
+    },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
     "canton": "anderlecht-2",
@@ -7418,6 +7448,11 @@
     "name": {
       "nl": "Vredegerecht Antwerpen 1"
     },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Antwerpen",
+      "fr": "Justice de paix 1er canton Anvers",
+      "de": "Friedensgericht 1. Kanton Antwerpen"
+    },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
     "canton": "antwerpen-1",
@@ -7461,6 +7496,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Antwerpen 2"
+    },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Antwerpen",
+      "fr": "Justice de paix 2e canton Anvers",
+      "de": "Friedensgericht 2. Kanton Antwerpen"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
@@ -7506,6 +7546,11 @@
     "name": {
       "nl": "Vredegerecht Antwerpen 3"
     },
+    "label": {
+      "nl": "Vredegerecht 3e kanton Antwerpen",
+      "fr": "Justice de paix 3e canton Anvers",
+      "de": "Friedensgericht 3. Kanton Antwerpen"
+    },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
     "canton": "antwerpen-3",
@@ -7549,6 +7594,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Antwerpen 4"
+    },
+    "label": {
+      "nl": "Vredegerecht 4e kanton Antwerpen",
+      "fr": "Justice de paix 4e canton Anvers",
+      "de": "Friedensgericht 4. Kanton Antwerpen"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
@@ -7594,6 +7644,11 @@
     "name": {
       "nl": "Vredegerecht Antwerpen 5"
     },
+    "label": {
+      "nl": "Vredegerecht 5e kanton Antwerpen",
+      "fr": "Justice de paix 5e canton Anvers",
+      "de": "Friedensgericht 5. Kanton Antwerpen"
+    },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
     "canton": "antwerpen-5",
@@ -7637,6 +7692,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Antwerpen 6"
+    },
+    "label": {
+      "nl": "Vredegerecht 6e kanton Antwerpen",
+      "fr": "Justice de paix 6e canton Anvers",
+      "de": "Friedensgericht 6. Kanton Antwerpen"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
@@ -7682,6 +7742,11 @@
     "name": {
       "nl": "Vredegerecht Antwerpen 7"
     },
+    "label": {
+      "nl": "Vredegerecht 7e kanton Antwerpen",
+      "fr": "Justice de paix 7e canton Anvers",
+      "de": "Friedensgericht 7. Kanton Antwerpen"
+    },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
     "canton": "antwerpen-7",
@@ -7726,6 +7791,11 @@
     "name": {
       "fr": "Justice de paix d'Arlon"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Aarlen",
+      "fr": "Justice de paix canton Arlon",
+      "de": "Friedensgericht Kanton Arlon"
+    },
     "judicialArea": "liege",
     "arrondissement": "luxembourg",
     "canton": "arlon",
@@ -7768,6 +7838,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Asse"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Asse",
+      "fr": "Justice de paix canton Asse",
+      "de": "Friedensgericht Kanton Asse"
     },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
@@ -7812,6 +7887,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix d'Ath"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Aat",
+      "fr": "Justice de paix canton Ath",
+      "de": "Friedensgericht Kanton Ath"
     },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
@@ -7861,6 +7941,11 @@
     "name": {
       "fr": "Justice de paix de Bastogne"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Bastenaken",
+      "fr": "Justice de paix canton Bastogne",
+      "de": "Friedensgericht Kanton Bastogne"
+    },
     "judicialArea": "liege",
     "arrondissement": "luxembourg",
     "canton": "bastogne",
@@ -7904,6 +7989,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Beringen"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Beringen",
+      "fr": "Justice de paix canton Beringen",
+      "de": "Friedensgericht Kanton Beringen"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "limburg",
@@ -7949,6 +8039,11 @@
     "name": {
       "nl": "Vredegerecht Beveren-Kruibeke-Zwijndrecht"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Beveren-Kruibeke-Zwijndrecht",
+      "fr": "Justice de paix canton Beveren-Kruibeke-Zwijndrecht",
+      "de": "Friedensgericht Kanton Beveren-Kruibeke-Zwijndrecht"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "beveren-kruibeke-zwijndrecht",
@@ -7991,6 +8086,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Bilzen-Hoeselt"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Bilzen-Hoeselt",
+      "fr": "Justice de paix canton Bilzen-Hoeselt",
+      "de": "Friedensgericht Kanton Bilzen-Hoeselt"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "limburg",
@@ -8036,6 +8136,11 @@
     "name": {
       "fr": "Justice de paix de Binche"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Binche",
+      "fr": "Justice de paix canton Binche",
+      "de": "Friedensgericht Kanton Binche"
+    },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
     "canton": "binche",
@@ -8080,6 +8185,11 @@
     "name": {
       "nl": "Vredegerecht Boom"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Boom",
+      "fr": "Justice de paix canton Boom",
+      "de": "Friedensgericht Kanton Boom"
+    },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
     "canton": "boom",
@@ -8123,6 +8233,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Boussu-Colfontaine I"
+    },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Boussu-Colfontaine",
+      "fr": "Justice de paix 1er canton Boussu-Colfontaine",
+      "de": "Friedensgericht 1. Kanton Boussu-Colfontaine"
     },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
@@ -8171,6 +8286,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Boussu-Colfontaine II"
+    },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Boussu-Colfontaine",
+      "fr": "Justice de paix 2e canton Boussu-Colfontaine",
+      "de": "Friedensgericht 2. Kanton Boussu-Colfontaine"
     },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
@@ -8224,6 +8344,11 @@
     "name": {
       "fr": "Justice de paix de Braine-l'Alleud"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Eigenbrakel",
+      "fr": "Justice de paix canton Braine-l'Alleud",
+      "de": "Friedensgericht Kanton Braine-l'Alleud"
+    },
     "judicialArea": "brussel",
     "arrondissement": "brabant-wallon",
     "canton": "braine-l-alleud",
@@ -8267,6 +8392,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Brasschaat"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Brasschaat",
+      "fr": "Justice de paix canton Brasschaat",
+      "de": "Friedensgericht Kanton Brasschaat"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
@@ -8312,6 +8442,11 @@
     "name": {
       "nl": "Vredegerecht Bree"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Bree",
+      "fr": "Justice de paix canton Bree",
+      "de": "Friedensgericht Kanton Bree"
+    },
     "judicialArea": "antwerpen",
     "arrondissement": "limburg",
     "canton": "bree",
@@ -8355,6 +8490,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Brugge I"
+    },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Brugge",
+      "fr": "Justice de paix 1er canton Bruges",
+      "de": "Friedensgericht 1. Kanton Brugge"
     },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
@@ -8438,6 +8578,11 @@
     "name": {
       "nl": "Vredegerecht Brugge II"
     },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Brugge",
+      "fr": "Justice de paix 2e canton Bruges",
+      "de": "Friedensgericht 2. Kanton Brugge"
+    },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
     "canton": "brugge-2",
@@ -8520,6 +8665,11 @@
     "name": {
       "nl": "Vredegerecht Brugge III"
     },
+    "label": {
+      "nl": "Vredegerecht 3e kanton Brugge",
+      "fr": "Justice de paix 3e canton Bruges",
+      "de": "Friedensgericht 3. Kanton Brugge"
+    },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
     "canton": "brugge-3",
@@ -8601,6 +8751,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Brugge IV"
+    },
+    "label": {
+      "nl": "Vredegerecht 4e kanton Brugge",
+      "fr": "Justice de paix 4e canton Bruges",
+      "de": "Friedensgericht 4. Kanton Brugge"
     },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
@@ -8685,6 +8840,11 @@
       "nl": "Vredegerecht Brussel 1e kanton",
       "fr": "Justice de paix de Bruxelles 1er canton"
     },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Brussel",
+      "fr": "Justice de paix 1er canton Bruxelles",
+      "de": "Friedensgericht 1. Kanton Bruxelles"
+    },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
     "canton": "brussel-1",
@@ -8743,6 +8903,11 @@
     "name": {
       "nl": "Vredegerecht Brussel 2e kanton",
       "fr": "Justice de paix de Bruxelles 2ième canton"
+    },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Brussel",
+      "fr": "Justice de paix 2e canton Bruxelles",
+      "de": "Friedensgericht 2. Kanton Bruxelles"
     },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
@@ -8803,6 +8968,11 @@
       "nl": "Vredegerecht Brussel 3e kanton",
       "fr": "Justice de paix de Bruxelles 3ième canton"
     },
+    "label": {
+      "nl": "Vredegerecht 3e kanton Brussel",
+      "fr": "Justice de paix 3e canton Bruxelles",
+      "de": "Friedensgericht 3. Kanton Bruxelles"
+    },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
     "canton": "brussel-3",
@@ -8860,6 +9030,11 @@
     "name": {
       "nl": "Vredegerecht Brussel 4e kanton",
       "fr": "Justice de paix de Bruxelles 4ième canton"
+    },
+    "label": {
+      "nl": "Vredegerecht 4e kanton Brussel",
+      "fr": "Justice de paix 4e canton Bruxelles",
+      "de": "Friedensgericht 4. Kanton Bruxelles"
     },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
@@ -8919,6 +9094,11 @@
     "name": {
       "fr": "Justice de paix de Charleroi I"
     },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Charleroi",
+      "fr": "Justice de paix 1er canton Charleroi",
+      "de": "Friedensgericht 1. Kanton Charleroi"
+    },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
     "canton": "charleroi-1",
@@ -8963,6 +9143,11 @@
     "name": {
       "fr": "Justice de paix de Charleroi II"
     },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Charleroi",
+      "fr": "Justice de paix 2e canton Charleroi",
+      "de": "Friedensgericht 2. Kanton Charleroi"
+    },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
     "canton": "charleroi-2",
@@ -9006,6 +9191,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Charleroi III"
+    },
+    "label": {
+      "nl": "Vredegerecht 3e kanton Charleroi",
+      "fr": "Justice de paix 3e canton Charleroi",
+      "de": "Friedensgericht 3. Kanton Charleroi"
     },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
@@ -9055,6 +9245,11 @@
     "name": {
       "fr": "Justice de paix de Charleroi IV"
     },
+    "label": {
+      "nl": "Vredegerecht 4e kanton Charleroi",
+      "fr": "Justice de paix 4e canton Charleroi",
+      "de": "Friedensgericht 4. Kanton Charleroi"
+    },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
     "canton": "charleroi-4",
@@ -9103,6 +9298,11 @@
     "name": {
       "fr": "Justice de paix de Châtelet"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Châtelet",
+      "fr": "Justice de paix canton Châtelet",
+      "de": "Friedensgericht Kanton Châtelet"
+    },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
     "canton": "chatelet",
@@ -9149,6 +9349,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Chimay"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Chimay",
+      "fr": "Justice de paix canton Chimay",
+      "de": "Friedensgericht Kanton Chimay"
     },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
@@ -9198,6 +9403,11 @@
     "name": {
       "fr": "Justice de paix de Ciney"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Ciney",
+      "fr": "Justice de paix canton Ciney",
+      "de": "Friedensgericht Kanton Ciney"
+    },
     "judicialArea": "liege",
     "arrondissement": "namur",
     "canton": "ciney",
@@ -9246,6 +9456,11 @@
     "name": {
       "nl": "Vredegerecht Deinze"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Deinze",
+      "fr": "Justice de paix canton Deinze",
+      "de": "Friedensgericht Kanton Deinze"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "deinze",
@@ -9288,6 +9503,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Dendermonde"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Dendermonde",
+      "fr": "Justice de paix canton Termonde",
+      "de": "Friedensgericht Kanton Dendermonde"
     },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
@@ -9332,6 +9552,11 @@
     "name": {
       "nl": "Vredegerecht Deurne"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Deurne",
+      "fr": "Justice de paix canton Deurne",
+      "de": "Friedensgericht Kanton Deurne"
+    },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
     "canton": "deurne",
@@ -9375,6 +9600,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Diest"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Diest",
+      "fr": "Justice de paix canton Diest",
+      "de": "Friedensgericht Kanton Diest"
     },
     "judicialArea": "brussel",
     "arrondissement": "leuven",
@@ -9424,6 +9654,11 @@
     "name": {
       "fr": "Justice de paix de Dinant"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Dinant",
+      "fr": "Justice de paix canton Dinant",
+      "de": "Friedensgericht Kanton Dinant"
+    },
     "judicialArea": "liege",
     "arrondissement": "namur",
     "canton": "dinant",
@@ -9472,6 +9707,11 @@
     "name": {
       "nl": "Vredegerecht Eeklo"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Eeklo",
+      "fr": "Justice de paix canton Eeklo",
+      "de": "Friedensgericht Kanton Eeklo"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "eeklo",
@@ -9515,6 +9755,11 @@
     "name": {
       "nl": "Vredegerecht Elsene",
       "fr": "Justice de paix d'Ixelles"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Elsene",
+      "fr": "Justice de paix canton Ixelles",
+      "de": "Friedensgericht Kanton Ixelles"
     },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
@@ -9575,6 +9820,11 @@
       "nl": "Vredegerecht Etterbeek",
       "fr": "Justice de paix d'Etterbeek"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Etterbeek",
+      "fr": "Justice de paix canton Etterbeek",
+      "de": "Friedensgericht Kanton Etterbeek"
+    },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
     "canton": "etterbeek",
@@ -9632,6 +9882,11 @@
     "name": {
       "de": "Friedensgericht des ersten Kantons Eupen-Sankt Vith",
       "fr": "Justice de paix du premier canton d'Eupen-Saint Vith"
+    },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Eupen-Sankt-Vith",
+      "fr": "Justice de paix 1er canton Eupen-Saint-Vith",
+      "de": "Friedensgericht 1. Kanton Eupen-Sankt Vith"
     },
     "judicialArea": "liege",
     "arrondissement": "eupen",
@@ -9691,6 +9946,11 @@
       "de": "Friedensgericht des zweiten Kantons Eupen-Sankt Vith",
       "fr": "Justice de paix du second canton d'Eupen-Saint Vith"
     },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Eupen-Sankt-Vith",
+      "fr": "Justice de paix 2e canton Eupen-Saint-Vith",
+      "de": "Friedensgericht 2. Kanton Eupen-Sankt Vith"
+    },
     "judicialArea": "liege",
     "arrondissement": "eupen",
     "canton": "eupen-sankt-vith-2",
@@ -9748,6 +10008,11 @@
     "name": {
       "fr": "Justice de paix de Fléron"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Fléron",
+      "fr": "Justice de paix canton Fléron",
+      "de": "Friedensgericht Kanton Fléron"
+    },
     "judicialArea": "liege",
     "arrondissement": "liege",
     "canton": "fleron",
@@ -9791,6 +10056,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Fosses-la-Ville"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Fosses-la-Ville",
+      "fr": "Justice de paix canton Fosses-la-Ville",
+      "de": "Friedensgericht Kanton Fosses-la-Ville"
     },
     "judicialArea": "liege",
     "arrondissement": "namur",
@@ -9840,6 +10110,11 @@
     "name": {
       "nl": "Vredegerecht Ganshoren",
       "fr": "Justice de paix de Ganshoren"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Ganshoren",
+      "fr": "Justice de paix canton Ganshoren",
+      "de": "Friedensgericht Kanton Ganshoren"
     },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
@@ -9895,6 +10170,11 @@
     "name": {
       "fr": "Justice de paix de Gembloux"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Gembloers",
+      "fr": "Justice de paix canton Gembloux",
+      "de": "Friedensgericht Kanton Gembloux"
+    },
     "judicialArea": "liege",
     "arrondissement": "namur",
     "canton": "gembloux",
@@ -9943,6 +10223,11 @@
     "name": {
       "nl": "Vredegerecht Genk"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Genk",
+      "fr": "Justice de paix canton Genk",
+      "de": "Friedensgericht Kanton Genk"
+    },
     "judicialArea": "antwerpen",
     "arrondissement": "limburg",
     "canton": "genk",
@@ -9982,6 +10267,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Gent 1"
+    },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Gent",
+      "fr": "Justice de paix 1er canton Gand",
+      "de": "Friedensgericht 1. Kanton Gent"
     },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
@@ -10026,6 +10316,11 @@
     "name": {
       "nl": "Vredegerecht Gent 2"
     },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Gent",
+      "fr": "Justice de paix 2e canton Gand",
+      "de": "Friedensgericht 2. Kanton Gent"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "gent-2",
@@ -10068,6 +10363,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Gent 3"
+    },
+    "label": {
+      "nl": "Vredegerecht 3e kanton Gent",
+      "fr": "Justice de paix 3e canton Gand",
+      "de": "Friedensgericht 3. Kanton Gent"
     },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
@@ -10112,6 +10412,11 @@
     "name": {
       "nl": "Vredegerecht Gent 4"
     },
+    "label": {
+      "nl": "Vredegerecht 4e kanton Gent",
+      "fr": "Justice de paix 4e canton Gand",
+      "de": "Friedensgericht 4. Kanton Gent"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "gent-4",
@@ -10154,6 +10459,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Gent 5"
+    },
+    "label": {
+      "nl": "Vredegerecht 5e kanton Gent",
+      "fr": "Justice de paix 5e canton Gand",
+      "de": "Friedensgericht 5. Kanton Gent"
     },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
@@ -10198,6 +10508,11 @@
     "name": {
       "nl": "Vredegerecht Geraardsbergen"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Geraardsbergen",
+      "fr": "Justice de paix canton Grammont",
+      "de": "Friedensgericht Kanton Geraardsbergen"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "geraardsbergen",
@@ -10240,6 +10555,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Grâce-Hollogne"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Grâce-Hollogne",
+      "fr": "Justice de paix canton Grâce-Hollogne",
+      "de": "Friedensgericht Kanton Grâce-Hollogne"
     },
     "judicialArea": "liege",
     "arrondissement": "liege",
@@ -10285,6 +10605,11 @@
     "name": {
       "nl": "Vredegerecht Halle"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Halle",
+      "fr": "Justice de paix canton Hal",
+      "de": "Friedensgericht Kanton Halle"
+    },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
     "canton": "halle",
@@ -10329,6 +10654,11 @@
     "name": {
       "nl": "Vredegerecht Hamme"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Hamme",
+      "fr": "Justice de paix canton Hamme",
+      "de": "Friedensgericht Kanton Hamme"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "hamme",
@@ -10371,6 +10701,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Hasselt 1"
+    },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Hasselt",
+      "fr": "Justice de paix 1er canton Hasselt",
+      "de": "Friedensgericht 1. Kanton Hasselt"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "limburg",
@@ -10416,6 +10751,11 @@
     "name": {
       "nl": "Vredegerecht Hasselt 2"
     },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Hasselt",
+      "fr": "Justice de paix 2e canton Hasselt",
+      "de": "Friedensgericht 2. Kanton Hasselt"
+    },
     "judicialArea": "antwerpen",
     "arrondissement": "limburg",
     "canton": "hasselt-2",
@@ -10459,6 +10799,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Heist-op-den-Berg"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Heist-op-den-Berg",
+      "fr": "Justice de paix canton Heist-op-den-Berg",
+      "de": "Friedensgericht Kanton Heist-op-den-Berg"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
@@ -10504,6 +10849,11 @@
     "name": {
       "fr": "Justice de paix de Herstal"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Herstal",
+      "fr": "Justice de paix canton Herstal",
+      "de": "Friedensgericht Kanton Herstal"
+    },
     "judicialArea": "liege",
     "arrondissement": "liege",
     "canton": "herstal",
@@ -10548,6 +10898,11 @@
     "name": {
       "nl": "Vredegerecht Herzele"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Herzele",
+      "fr": "Justice de paix canton Herzele",
+      "de": "Friedensgericht Kanton Herzele"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "herzele",
@@ -10590,6 +10945,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Houthalen - Helchteren"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Houthalen-Helchteren",
+      "fr": "Justice de paix canton Houthalen-Helchteren",
+      "de": "Friedensgericht Kanton Houthalen-Helchteren"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "limburg",
@@ -10635,6 +10995,11 @@
     "name": {
       "fr": "Justice de paix de Huy I"
     },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Hoei",
+      "fr": "Justice de paix 1er canton Huy",
+      "de": "Friedensgericht 1. Kanton Huy"
+    },
     "judicialArea": "liege",
     "arrondissement": "liege",
     "canton": "huy-1",
@@ -10679,6 +11044,11 @@
     "name": {
       "fr": "Justice de paix de Huy II"
     },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Hoei",
+      "fr": "Justice de paix 2e canton Huy",
+      "de": "Friedensgericht 2. Kanton Huy"
+    },
     "judicialArea": "liege",
     "arrondissement": "liege",
     "canton": "huy-2",
@@ -10722,6 +11092,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Ieper"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Ieper",
+      "fr": "Justice de paix canton Ypres",
+      "de": "Friedensgericht Kanton Ieper"
     },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
@@ -10771,6 +11146,11 @@
     "name": {
       "nl": "Vredegerecht Izegem"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Izegem",
+      "fr": "Justice de paix canton Izegem",
+      "de": "Friedensgericht Kanton Izegem"
+    },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
     "canton": "izegem",
@@ -10819,6 +11199,11 @@
     "name": {
       "nl": "Vredegerecht Jette",
       "fr": "Justice de paix de Jette"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Jette",
+      "fr": "Justice de paix canton Jette",
+      "de": "Friedensgericht Kanton Jette"
     },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
@@ -10878,6 +11263,11 @@
     "name": {
       "fr": "Justice de paix de Jodoigne"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Geldenaken",
+      "fr": "Justice de paix canton Jodoigne",
+      "de": "Friedensgericht Kanton Jodoigne"
+    },
     "judicialArea": "brussel",
     "arrondissement": "brabant-wallon",
     "canton": "jodoigne",
@@ -10921,6 +11311,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Kapellen"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Kapellen",
+      "fr": "Justice de paix canton Kapellen",
+      "de": "Friedensgericht Kanton Kapellen"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
@@ -10966,6 +11361,11 @@
     "name": {
       "nl": "Vredegerecht Kontich"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Kontich",
+      "fr": "Justice de paix canton Kontich",
+      "de": "Friedensgericht Kanton Kontich"
+    },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
     "canton": "kontich",
@@ -11009,6 +11409,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Kortrijk I"
+    },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Kortrijk",
+      "fr": "Justice de paix 1er canton Courtrai",
+      "de": "Friedensgericht 1. Kanton Kortrijk"
     },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
@@ -11068,6 +11473,11 @@
     "name": {
       "nl": "Vredegerecht Kortrijk II"
     },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Kortrijk",
+      "fr": "Justice de paix 2e canton Courtrai",
+      "de": "Friedensgericht 2. Kanton Kortrijk"
+    },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
     "canton": "kortrijk-2",
@@ -11126,6 +11536,11 @@
     "name": {
       "fr": "Justice de paix de La Louvière"
     },
+    "label": {
+      "nl": "Vredegerecht kanton La Louvière",
+      "fr": "Justice de paix canton La Louvière",
+      "de": "Friedensgericht Kanton La Louvière"
+    },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
     "canton": "la-louviere",
@@ -11174,6 +11589,11 @@
     "name": {
       "nl": "Vredegerecht Lennik"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Lennik",
+      "fr": "Justice de paix canton Lennik",
+      "de": "Friedensgericht Kanton Lennik"
+    },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
     "canton": "lennik",
@@ -11216,6 +11636,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Leuven 1"
+    },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Leuven",
+      "fr": "Justice de paix 1er canton Louvain",
+      "de": "Friedensgericht 1. Kanton Leuven"
     },
     "judicialArea": "brussel",
     "arrondissement": "leuven",
@@ -11265,6 +11690,11 @@
     "name": {
       "nl": "Vredegerecht Leuven 2"
     },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Leuven",
+      "fr": "Justice de paix 2e canton Louvain",
+      "de": "Friedensgericht 2. Kanton Leuven"
+    },
     "judicialArea": "brussel",
     "arrondissement": "leuven",
     "canton": "leuven-2",
@@ -11312,6 +11742,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Leuven 3"
+    },
+    "label": {
+      "nl": "Vredegerecht 3e kanton Leuven",
+      "fr": "Justice de paix 3e canton Louvain",
+      "de": "Friedensgericht 3. Kanton Leuven"
     },
     "judicialArea": "brussel",
     "arrondissement": "leuven",
@@ -11361,6 +11796,11 @@
     "name": {
       "fr": "Justice de paix de Leuze-en-Hainaut"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Leuze-en-Hainaut",
+      "fr": "Justice de paix canton Leuze-en-Hainaut",
+      "de": "Friedensgericht Kanton Leuze-en-Hainaut"
+    },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
     "canton": "leuze-en-hainaut",
@@ -11409,6 +11849,11 @@
     "name": {
       "fr": "Justice de paix de Liège I"
     },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Luik",
+      "fr": "Justice de paix 1er canton Liège",
+      "de": "Friedensgericht 1. Kanton Liège"
+    },
     "judicialArea": "liege",
     "arrondissement": "liege",
     "canton": "liege-1",
@@ -11452,6 +11897,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Liège II"
+    },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Luik",
+      "fr": "Justice de paix 2e canton Liège",
+      "de": "Friedensgericht 2. Kanton Liège"
     },
     "judicialArea": "liege",
     "arrondissement": "liege",
@@ -11497,6 +11947,11 @@
     "name": {
       "fr": "Justice de paix de Liège III"
     },
+    "label": {
+      "nl": "Vredegerecht 3e kanton Luik",
+      "fr": "Justice de paix 3e canton Liège",
+      "de": "Friedensgericht 3. Kanton Liège"
+    },
     "judicialArea": "liege",
     "arrondissement": "liege",
     "canton": "liege-3",
@@ -11540,6 +11995,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Liège IV"
+    },
+    "label": {
+      "nl": "Vredegerecht 4e kanton Luik",
+      "fr": "Justice de paix 4e canton Liège",
+      "de": "Friedensgericht 4. Kanton Liège"
     },
     "judicialArea": "liege",
     "arrondissement": "liege",
@@ -11585,6 +12045,11 @@
     "name": {
       "nl": "Vredegerecht Lier"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Lier",
+      "fr": "Justice de paix canton Lierre",
+      "de": "Friedensgericht Kanton Lier"
+    },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
     "canton": "lier",
@@ -11628,6 +12093,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Limbourg"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Limburg",
+      "fr": "Justice de paix canton Limbourg",
+      "de": "Friedensgericht Kanton Limbourg"
     },
     "judicialArea": "liege",
     "arrondissement": "liege",
@@ -11673,6 +12143,11 @@
     "name": {
       "nl": "Vredegerecht Lokeren"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Lokeren",
+      "fr": "Justice de paix canton Lokeren",
+      "de": "Friedensgericht Kanton Lokeren"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "lokeren",
@@ -11715,6 +12190,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Maasmechelen"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Maasmechelen",
+      "fr": "Justice de paix canton Maasmechelen",
+      "de": "Friedensgericht Kanton Maasmechelen"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "limburg",
@@ -11760,6 +12240,11 @@
     "name": {
       "fr": "Justice de paix de Marche-en-Famenne"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Marche-en-Famenne",
+      "fr": "Justice de paix canton Marche-en-Famenne",
+      "de": "Friedensgericht Kanton Marche-en-Famenne"
+    },
     "judicialArea": "liege",
     "arrondissement": "luxembourg",
     "canton": "marche-en-famenne",
@@ -11803,6 +12288,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Mechelen"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Mechelen",
+      "fr": "Justice de paix canton Malines",
+      "de": "Friedensgericht Kanton Mechelen"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
@@ -11848,6 +12338,11 @@
     "name": {
       "nl": "Vredegerecht Meise",
       "fr": "Justice de paix de Meise"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Meise",
+      "fr": "Justice de paix canton Meise",
+      "de": "Friedensgericht Kanton Meise"
     },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
@@ -11902,6 +12397,11 @@
     "name": {
       "nl": "Vredegerecht Menen"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Menen",
+      "fr": "Justice de paix canton Menin",
+      "de": "Friedensgericht Kanton Menen"
+    },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
     "canton": "menen",
@@ -11950,6 +12450,11 @@
     "name": {
       "nl": "Vredegerecht Merelbeke-Melle"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Merelbeke-Melle",
+      "fr": "Justice de paix canton Merelbeke-Melle",
+      "de": "Friedensgericht Kanton Merelbeke-Melle"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "merelbeke-melle",
@@ -11992,6 +12497,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Merksem"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Merksem",
+      "fr": "Justice de paix canton Merksem",
+      "de": "Friedensgericht Kanton Merksem"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
@@ -12037,6 +12547,11 @@
     "name": {
       "nl": "Vredegerecht eerste kanton Mol-Geel"
     },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Mol-Geel",
+      "fr": "Justice de paix 1er canton Mol-Geel",
+      "de": "Friedensgericht 1. Kanton Mol-Geel"
+    },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
     "canton": "mol-geel-1",
@@ -12080,6 +12595,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht tweede kanton Mol-Geel"
+    },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Mol-Geel",
+      "fr": "Justice de paix 2e canton Mol-Geel",
+      "de": "Friedensgericht 2. Kanton Mol-Geel"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
@@ -12125,6 +12645,11 @@
     "name": {
       "fr": "Justice de paix de Mons I"
     },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Bergen",
+      "fr": "Justice de paix 1er canton Mons",
+      "de": "Friedensgericht 1. Kanton Mons"
+    },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
     "canton": "mons-1",
@@ -12168,6 +12693,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Mons II"
+    },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Bergen",
+      "fr": "Justice de paix 2e canton Mons",
+      "de": "Friedensgericht 2. Kanton Mons"
     },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
@@ -12217,6 +12747,11 @@
     "name": {
       "fr": "Justice de paix de Mouscron"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Moeskroen",
+      "fr": "Justice de paix canton Mouscron",
+      "de": "Friedensgericht Kanton Mouscron"
+    },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
     "canton": "mouscron",
@@ -12264,6 +12799,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Namur I"
+    },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Namen",
+      "fr": "Justice de paix 1er canton Namur",
+      "de": "Friedensgericht 1. Kanton Namur"
     },
     "judicialArea": "liege",
     "arrondissement": "namur",
@@ -12313,6 +12853,11 @@
     "name": {
       "fr": "Justice de paix de Namur II"
     },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Namen",
+      "fr": "Justice de paix 2e canton Namur",
+      "de": "Friedensgericht 2. Kanton Namur"
+    },
     "judicialArea": "liege",
     "arrondissement": "namur",
     "canton": "namur-2",
@@ -12361,6 +12906,11 @@
     "name": {
       "fr": "Justice de paix de Neufchâteau"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Neufchâteau",
+      "fr": "Justice de paix canton Neufchâteau",
+      "de": "Friedensgericht Kanton Neufchâteau"
+    },
     "judicialArea": "liege",
     "arrondissement": "luxembourg",
     "canton": "neufchateau",
@@ -12405,6 +12955,11 @@
     "name": {
       "nl": "Vredegerecht Ninove"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Ninove",
+      "fr": "Justice de paix canton Ninove",
+      "de": "Friedensgericht Kanton Ninove"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "ninove",
@@ -12447,6 +13002,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Nivelles"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Nijvel",
+      "fr": "Justice de paix canton Nivelles",
+      "de": "Friedensgericht Kanton Nivelles"
     },
     "judicialArea": "brussel",
     "arrondissement": "brabant-wallon",
@@ -12491,6 +13051,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Oostende I"
+    },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Oostende",
+      "fr": "Justice de paix 1er canton Ostende",
+      "de": "Friedensgericht 1. Kanton Oostende"
     },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
@@ -12550,6 +13115,11 @@
     "name": {
       "nl": "Vredegerecht Oostende II"
     },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Oostende",
+      "fr": "Justice de paix 2e canton Ostende",
+      "de": "Friedensgericht 2. Kanton Oostende"
+    },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
     "canton": "oostende-2",
@@ -12608,6 +13178,11 @@
     "name": {
       "nl": "Vredegerecht Oudenaarde"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Oudenaarde",
+      "fr": "Justice de paix canton Audenarde",
+      "de": "Friedensgericht Kanton Oudenaarde"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "oudenaarde",
@@ -12651,6 +13226,11 @@
     "name": {
       "nl": "Vredegerecht Oudergem",
       "fr": "Justice de paix d'Auderghem"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Oudergem",
+      "fr": "Justice de paix canton Auderghem",
+      "de": "Friedensgericht Kanton Auderghem"
     },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
@@ -12710,6 +13290,11 @@
     "name": {
       "nl": "Vredegerecht Pelt"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Pelt",
+      "fr": "Justice de paix canton Pelt",
+      "de": "Friedensgericht Kanton Pelt"
+    },
     "judicialArea": "antwerpen",
     "arrondissement": "limburg",
     "canton": "pelt",
@@ -12753,6 +13338,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Philippeville"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Philippeville",
+      "fr": "Justice de paix canton Philippeville",
+      "de": "Friedensgericht Kanton Philippeville"
     },
     "judicialArea": "liege",
     "arrondissement": "namur",
@@ -12875,6 +13465,11 @@
     "name": {
       "nl": "Vredegerecht Poperinge"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Poperinge",
+      "fr": "Justice de paix canton Poperinge",
+      "de": "Friedensgericht Kanton Poperinge"
+    },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
     "canton": "poperinge",
@@ -12922,6 +13517,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Roeselare"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Roeselare",
+      "fr": "Justice de paix canton Roulers",
+      "de": "Friedensgericht Kanton Roeselare"
     },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
@@ -12971,6 +13571,11 @@
     "name": {
       "nl": "Vredegerecht Schaarbeek 1e kanton",
       "fr": "Justice de paix de Schaerbeek 1er canton"
+    },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Schaarbeek",
+      "fr": "Justice de paix 1er canton Schaerbeek",
+      "de": "Friedensgericht 1. Kanton Schaerbeek"
     },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
@@ -13027,6 +13632,11 @@
       "nl": "Vredegerecht Schaarbeek 2e kanton",
       "fr": "Justice de paix de Schaerbeek 2ième canton"
     },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Schaarbeek",
+      "fr": "Justice de paix 2e canton Schaerbeek",
+      "de": "Friedensgericht 2. Kanton Schaerbeek"
+    },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
     "canton": "schaarbeek-2",
@@ -13081,6 +13691,11 @@
     "name": {
       "fr": "Justice de paix de Seneffe"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Seneffe",
+      "fr": "Justice de paix canton Seneffe",
+      "de": "Friedensgericht Kanton Seneffe"
+    },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
     "canton": "seneffe",
@@ -13129,6 +13744,11 @@
     "name": {
       "fr": "Justice de paix de Seraing"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Seraing",
+      "fr": "Justice de paix canton Seraing",
+      "de": "Friedensgericht Kanton Seraing"
+    },
     "judicialArea": "liege",
     "arrondissement": "liege",
     "canton": "seraing",
@@ -13173,6 +13793,11 @@
     "name": {
       "nl": "Vredegerecht Sint-Genesius-Rode",
       "fr": "Justice de paix de Rhode-Saint-Genèse"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Sint-Genesius-Rode",
+      "fr": "Justice de paix canton Rhode-Saint-Genèse",
+      "de": "Friedensgericht Kanton Rhode-Saint-Genèse"
     },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
@@ -13233,6 +13858,11 @@
       "nl": "Vredegerecht Sint-Gillis",
       "fr": "Justice de paix de Saint-Gilles"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Sint-Gillis",
+      "fr": "Justice de paix canton Saint-Gilles",
+      "de": "Friedensgericht Kanton Saint-Gilles"
+    },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
     "canton": "sint-gillis",
@@ -13291,6 +13921,11 @@
       "nl": "Vredegerecht Sint-Jans-Molenbeek",
       "fr": "Justice de paix de Molenbeek-Saint-Jean"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Sint-Jans-Molenbeek",
+      "fr": "Justice de paix canton Molenbeek-Saint-Jean",
+      "de": "Friedensgericht Kanton Molenbeek-Saint-Jean"
+    },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
     "canton": "sint-jans-molenbeek",
@@ -13346,6 +13981,11 @@
       "nl": "Vredegerecht Sint-Joost-ten-Node",
       "fr": "Justice de paix de Saint-Josse-ten-Noode"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Sint-Joost-ten-Node",
+      "fr": "Justice de paix canton Saint-Josse-ten-Noode",
+      "de": "Friedensgericht Kanton Saint-Josse-ten-Noode"
+    },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
     "canton": "sint-joost-ten-node",
@@ -13400,6 +14040,11 @@
     "name": {
       "nl": "Vredegerecht Sint-Niklaas"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Sint-Niklaas",
+      "fr": "Justice de paix canton Saint-Nicolas",
+      "de": "Friedensgericht Kanton Sint-Niklaas"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "sint-niklaas",
@@ -13443,6 +14088,11 @@
     "name": {
       "nl": "Vredegerecht Sint-Pieters-Woluwe",
       "fr": "Justice de paix de Woluwe-Saint-Pierre"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Sint-Pieters-Woluwe",
+      "fr": "Justice de paix canton Woluwé-Saint-Pierre",
+      "de": "Friedensgericht Kanton Woluwé-Saint-Pierre"
     },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
@@ -13506,6 +14156,11 @@
     "name": {
       "nl": "Vredegerecht Sint-Truiden"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Sint-Truiden",
+      "fr": "Justice de paix canton Saint-Trond",
+      "de": "Friedensgericht Kanton Sint-Truiden"
+    },
     "judicialArea": "antwerpen",
     "arrondissement": "limburg",
     "canton": "sint-truiden",
@@ -13549,6 +14204,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Soignies"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Zinnik",
+      "fr": "Justice de paix canton Soignies",
+      "de": "Friedensgericht Kanton Soignies"
     },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
@@ -13598,6 +14258,11 @@
     "name": {
       "fr": "Justice de paix de Spa"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Spa",
+      "fr": "Justice de paix canton Spa",
+      "de": "Friedensgericht Kanton Spa"
+    },
     "judicialArea": "liege",
     "arrondissement": "liege",
     "canton": "spa",
@@ -13642,6 +14307,11 @@
     "name": {
       "fr": "Justice de paix de Sprimont"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Sprimont",
+      "fr": "Justice de paix canton Sprimont",
+      "de": "Friedensgericht Kanton Sprimont"
+    },
     "judicialArea": "liege",
     "arrondissement": "liege",
     "canton": "sprimont",
@@ -13685,6 +14355,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Thuin"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Thuin",
+      "fr": "Justice de paix canton Thuin",
+      "de": "Friedensgericht Kanton Thuin"
     },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
@@ -13734,6 +14409,11 @@
     "name": {
       "nl": "Vredegerecht Tielt"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Tielt",
+      "fr": "Justice de paix canton Tielt",
+      "de": "Friedensgericht Kanton Tielt"
+    },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
     "canton": "tielt",
@@ -13781,6 +14461,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Tienen"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Tienen",
+      "fr": "Justice de paix canton Tirlemont",
+      "de": "Friedensgericht Kanton Tienen"
     },
     "judicialArea": "brussel",
     "arrondissement": "leuven",
@@ -13830,6 +14515,11 @@
     "name": {
       "nl": "Vredegerecht Tongeren-Borgloon",
       "fr": "Justice de paix de Tongres-Fourons"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Tongeren-Borgloon",
+      "fr": "Justice de paix canton Tongres-Looz",
+      "de": "Friedensgericht Kanton Tongres-Looz"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "limburg",
@@ -13885,6 +14575,11 @@
     "name": {
       "nl": "Vredegerecht Torhout"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Torhout",
+      "fr": "Justice de paix canton Torhout",
+      "de": "Friedensgericht Kanton Torhout"
+    },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
     "canton": "torhout",
@@ -13932,6 +14627,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Tournai I"
+    },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Doornik",
+      "fr": "Justice de paix 1er canton Tournai",
+      "de": "Friedensgericht 1. Kanton Tournai"
     },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
@@ -13981,6 +14681,11 @@
     "name": {
       "fr": "Justice de paix de Tournai II"
     },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Doornik",
+      "fr": "Justice de paix 2e canton Tournai",
+      "de": "Friedensgericht 2. Kanton Tournai"
+    },
     "judicialArea": "mons",
     "arrondissement": "hainaut",
     "canton": "tournai-2",
@@ -14029,6 +14734,11 @@
     "name": {
       "nl": "Vredegerecht eerste kanton Turnhout"
     },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Turnhout",
+      "fr": "Justice de paix 1er canton Turnhout",
+      "de": "Friedensgericht 1. Kanton Turnhout"
+    },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
     "canton": "turnhout-1",
@@ -14072,6 +14782,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht tweede kanton Turnhout"
+    },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Turnhout",
+      "fr": "Justice de paix 2e canton Turnhout",
+      "de": "Friedensgericht 2. Kanton Turnhout"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
@@ -14117,6 +14832,11 @@
     "name": {
       "nl": "Vredegerecht Ukkel",
       "fr": "Justice de paix d'Uccle"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Ukkel",
+      "fr": "Justice de paix canton Uccle",
+      "de": "Friedensgericht Kanton Uccle"
     },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
@@ -14175,6 +14895,11 @@
     "name": {
       "fr": "Justice de paix de Verviers I"
     },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Verviers",
+      "fr": "Justice de paix 1er canton Verviers",
+      "de": "Friedensgericht 1. Kanton Verviers"
+    },
     "judicialArea": "liege",
     "arrondissement": "liege",
     "canton": "verviers-1",
@@ -14219,6 +14944,11 @@
     "name": {
       "fr": "Justice de paix de Verviers II"
     },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Verviers",
+      "fr": "Justice de paix 2e canton Verviers",
+      "de": "Friedensgericht 2. Kanton Verviers"
+    },
     "judicialArea": "liege",
     "arrondissement": "liege",
     "canton": "verviers-2",
@@ -14262,6 +14992,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Veurne"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Veurne",
+      "fr": "Justice de paix canton Furnes",
+      "de": "Friedensgericht Kanton Veurne"
     },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
@@ -14311,6 +15046,11 @@
     "name": {
       "nl": "Vredegerecht Vilvoorde"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Vilvoorde",
+      "fr": "Justice de paix canton Vilvorde",
+      "de": "Friedensgericht Kanton Vilvoorde"
+    },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
     "canton": "vilvoorde",
@@ -14354,6 +15094,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Virton"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Virton",
+      "fr": "Justice de paix canton Virton",
+      "de": "Friedensgericht Kanton Virton"
     },
     "judicialArea": "liege",
     "arrondissement": "luxembourg",
@@ -14399,6 +15144,11 @@
     "name": {
       "fr": "Justice de paix de Visé"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Wezet",
+      "fr": "Justice de paix canton Visé",
+      "de": "Friedensgericht Kanton Visé"
+    },
     "judicialArea": "liege",
     "arrondissement": "liege",
     "canton": "vise",
@@ -14443,6 +15193,11 @@
     "name": {
       "nl": "Vredegerecht Vorst",
       "fr": "Justice de paix de Forest"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Vorst",
+      "fr": "Justice de paix canton Forest",
+      "de": "Friedensgericht Kanton Forest"
     },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
@@ -14502,6 +15257,11 @@
     "name": {
       "nl": "Vredegerecht Waregem"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Waregem",
+      "fr": "Justice de paix canton Waregem",
+      "de": "Friedensgericht Kanton Waregem"
+    },
     "judicialArea": "gent",
     "arrondissement": "west-vlaanderen",
     "canton": "waregem",
@@ -14550,6 +15310,11 @@
     "name": {
       "fr": "Justice de paix de Waremme"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Borgworm",
+      "fr": "Justice de paix canton Waremme",
+      "de": "Friedensgericht Kanton Waremme"
+    },
     "judicialArea": "liege",
     "arrondissement": "liege",
     "canton": "waremme",
@@ -14593,6 +15358,11 @@
     "kind": "court",
     "name": {
       "fr": "Justice de paix de Wavre I"
+    },
+    "label": {
+      "nl": "Vredegerecht 1e kanton Waver",
+      "fr": "Justice de paix 1er canton Wavre",
+      "de": "Friedensgericht 1. Kanton Wavre"
     },
     "judicialArea": "brussel",
     "arrondissement": "brabant-wallon",
@@ -14638,6 +15408,11 @@
     "name": {
       "fr": "Justice de paix de Wavre II"
     },
+    "label": {
+      "nl": "Vredegerecht 2e kanton Waver",
+      "fr": "Justice de paix 2e canton Wavre",
+      "de": "Friedensgericht 2. Kanton Wavre"
+    },
     "judicialArea": "brussel",
     "arrondissement": "brabant-wallon",
     "canton": "wavre-2",
@@ -14681,6 +15456,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Westerlo"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Westerlo",
+      "fr": "Justice de paix canton Westerlo",
+      "de": "Friedensgericht Kanton Westerlo"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
@@ -14726,6 +15506,11 @@
     "name": {
       "nl": "Vredegerecht Wetteren"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Wetteren",
+      "fr": "Justice de paix canton Wetteren",
+      "de": "Friedensgericht Kanton Wetteren"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "wetteren",
@@ -14768,6 +15553,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Willebroek"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Willebroek",
+      "fr": "Justice de paix canton Willebroek",
+      "de": "Friedensgericht Kanton Willebroek"
     },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
@@ -14813,6 +15603,11 @@
     "name": {
       "nl": "Vredegerecht Zandhoven"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Zandhoven",
+      "fr": "Justice de paix canton Zandhoven",
+      "de": "Friedensgericht Kanton Zandhoven"
+    },
     "judicialArea": "antwerpen",
     "arrondissement": "antwerpen",
     "canton": "zandhoven",
@@ -14856,6 +15651,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Zaventem"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Zaventem",
+      "fr": "Justice de paix canton Zaventem",
+      "de": "Friedensgericht Kanton Zaventem"
     },
     "judicialArea": "brussel",
     "arrondissement": "brussel",
@@ -14901,6 +15701,11 @@
     "name": {
       "nl": "Vredegerecht Zelzate"
     },
+    "label": {
+      "nl": "Vredegerecht kanton Zelzate",
+      "fr": "Justice de paix canton Zelzate",
+      "de": "Friedensgericht Kanton Zelzate"
+    },
     "judicialArea": "gent",
     "arrondissement": "oost-vlaanderen",
     "canton": "zelzate",
@@ -14943,6 +15748,11 @@
     "kind": "court",
     "name": {
       "nl": "Vredegerecht Zoutleeuw"
+    },
+    "label": {
+      "nl": "Vredegerecht kanton Zoutleeuw",
+      "fr": "Justice de paix canton Léau",
+      "de": "Friedensgericht Kanton Zoutleeuw"
     },
     "judicialArea": "brussel",
     "arrondissement": "leuven",
