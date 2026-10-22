@@ -7,6 +7,8 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-10-22
+
 ### Added
 
 **Public and judicial holidays, for deadlines: `belgica/calendar`.** `getPublicHolidays(year)`
@@ -33,6 +35,11 @@ _compétence_. The old names still work, are deprecated, and go in 1.0. The API 
 - The [explorer](https://belgica.scheir.eu/) is in the docs' 13 languages, with next-intl, and moved from
   GitHub Pages to Vercel: a page in every language is about 29,000 pages, over the 1 GB a Pages
   site may hold. It still isn't part of the package.
+- The English documentation is rewritten: an introduction, core concepts (ids, validity, `on`,
+  coverage, missing data versus errors), common tasks with a "which function?" table, and a
+  page on entry points and bundle size. Every API entry now has its signature, results, errors
+  and an example, and every data page the same "Source and updates" rows. The 12 translations
+  follow later.
 
 ## [0.5.0] - 2026-10-22
 
@@ -375,7 +382,8 @@ OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
 - Courts (justices of the peace in East and West Flanders, Ondernemingsrechtbank Gent) and the
   legal and commercial interest rates.
 
-[Unreleased]: https://github.com/pieterjanscheir/belgica/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/pieterjanscheir/belgica/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/pieterjanscheir/belgica/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/pieterjanscheir/belgica/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/pieterjanscheir/belgica/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/pieterjanscheir/belgica/compare/v0.3.0...v0.3.1

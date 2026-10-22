@@ -8,7 +8,7 @@ You can read them from any language:
 - from a raw URL pinned to a release tag.
 
 ```
-https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.5.0/data/cantons.json
+https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.6.0/data/cantons.json
 ```
 
 Pin a tag rather than `main`, so the data only changes when you choose to upgrade.
@@ -22,7 +22,7 @@ the files yourself instead:
 import json
 from urllib.request import urlopen
 
-BASE = "https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.5.0/data"
+BASE = "https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.6.0/data"
 
 cantons = json.load(urlopen(f"{BASE}/cantons.json"))
 
