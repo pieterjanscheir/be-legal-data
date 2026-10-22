@@ -3,7 +3,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build:map": "node scripts/build-map.ts",
+        "build:map": "node scripts/build-map.ts && node scripts/build-address.ts",
         "dev": "pnpm build:map && next dev",
         "build": "pnpm build:map && next build",
         "typecheck": "pnpm build:map && tsc --noEmit"

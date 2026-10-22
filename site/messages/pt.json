@@ -9,6 +9,7 @@
         "courts": "Tribunais",
         "cantons": "Cantões",
         "municipalities": "Municípios",
+        "address": "Endereço",
         "interest": "Juros",
         "places": "Prisões e casas de justiça",
         "siteLanguage": "Idioma",
@@ -183,5 +184,30 @@
     "notFound": {
         "title": "Página não encontrada",
         "back": "Voltar ao explorador"
+    },
+    "address": {
+        "title": "Pesquisa por endereço",
+        "lede": "Escreva um endereço e obtenha o seu cantão judicial e todos os tribunais competentes. Numa cidade dividida por vários cantões decide o número da porta, o que o código postal não diz.",
+        "label": "Endereço",
+        "placeholder": "Rua e número, código postal e município",
+        "find": "Encontrar os tribunais",
+        "try": "Experimente:",
+        "searching": "A procurar o endereço…",
+        "none": "Nenhum endereço encontrado. Verifique a ortografia, escreva o nome da rua por extenso e indique o código postal.",
+        "failed": "Não foi possível contactar {source}: {error}",
+        "match": "Resultado",
+        "map": "Ver no OpenStreetMap",
+        "streetOnly": "O registo conhece a rua mas não este número: o ponto está algures na rua, que pode ser ela própria o limite entre dois cantões. Verifique o número.",
+        "canton": "Cantão",
+        "outside": "Este ponto não está em nenhum cantão: está na Bélgica?",
+        "onLine": "O endereço está no limite entre {cantons}: são listados os tribunais de cada um, e decide a lei. Leia abaixo o território de cada cantão.",
+        "near": "O endereço está a {metres} m do limite com {other}. O NGI traçou o limite segundo a lei, e decide a lei: leia abaixo o território de ambos os cantões.",
+        "split": "<name></name> está dividido por vários cantões; o endereço decide qual.",
+        "legalText": "O território dos cantões segundo a lei",
+        "courts": "Tribunais para este endereço",
+        "source": "Endereço de {register}. Dados de referência, não aconselhamento jurídico.",
+        "howTitle": "Como funciona",
+        "how": "O seu navegador envia o endereço ao registo da sua região: o Adressenregister na Flandres, o UrbIS em Bruxelas, o ICAR na Valónia. Para um número que o registo conhece, o ponto está no edifício, pelo que os lados par e ímpar de uma rua-limite caem no cantão certo. O ponto é depois procurado nos limites dos cantões do NGI, como faz findCantonsAt, e o cantão dá os seus tribunais, como getCourtsForCanton. A menos de 25 m de outro cantão, a pesquisa avisa e mostra o texto da lei de ambos.",
+        "disclaimer": "Os limites dos cantões são o traçado do NGI do anexo do Código Judiciário: onde diferem, decide a lei. Dados de referência, não aconselhamento jurídico."
     }
 }

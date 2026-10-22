@@ -9,6 +9,7 @@
         "courts": "Tribunali",
         "cantons": "Cantoni",
         "municipalities": "Comuni",
+        "address": "Indirizzo",
         "interest": "Interessi",
         "places": "Carceri e case di giustizia",
         "siteLanguage": "Lingua",
@@ -183,5 +184,30 @@
     "notFound": {
         "title": "Pagina non trovata",
         "back": "Torna all'explorer"
+    },
+    "address": {
+        "title": "Ricerca per indirizzo",
+        "lede": "Scrivete un indirizzo e ottenete il suo cantone giudiziario e tutti i tribunali competenti. In una città divisa tra più cantoni decide il numero civico, cosa che il codice postale non dice.",
+        "label": "Indirizzo",
+        "placeholder": "Via e numero, codice postale e comune",
+        "find": "Trova i tribunali",
+        "try": "Provate:",
+        "searching": "Ricerca dell’indirizzo…",
+        "none": "Nessun indirizzo trovato. Controllate l’ortografia, scrivete il nome della via per intero e indicate il codice postale.",
+        "failed": "Impossibile raggiungere {source}: {error}",
+        "match": "Risultato",
+        "map": "Mostra su OpenStreetMap",
+        "streetOnly": "Il registro conosce la via ma non questo numero: il punto è da qualche parte sulla via, che può essere essa stessa il confine tra due cantoni. Controllate il numero.",
+        "canton": "Cantone",
+        "outside": "Questo punto non è in alcun cantone: è in Belgio?",
+        "onLine": "L’indirizzo è sul confine tra {cantons}: sono elencati i tribunali di ciascuno, e decide la legge. Leggete sotto il territorio di ogni cantone.",
+        "near": "L’indirizzo è a {metres} m dal confine con {other}. L’NGI ha tracciato il confine secondo la legge, e decide la legge: leggete sotto il territorio di entrambi i cantoni.",
+        "split": "<name></name> è divisa tra più cantoni; l’indirizzo decide quale.",
+        "legalText": "Il territorio dei cantoni secondo la legge",
+        "courts": "Tribunali per questo indirizzo",
+        "source": "Indirizzo da {register}. Dati di riferimento, non consulenza legale.",
+        "howTitle": "Come funziona",
+        "how": "Il browser invia l’indirizzo al registro della sua regione: l’Adressenregister nelle Fiandre, UrbIS a Bruxelles, ICAR in Vallonia. Per un numero civico noto al registro, il punto è sull’edificio, così i lati pari e dispari di una via di confine cadono nel cantone giusto. Il punto viene poi cercato nei confini dei cantoni dell’NGI, come fa findCantonsAt, e il cantone dà i suoi tribunali, come getCourtsForCanton. Entro 25 m da un altro cantone la ricerca avvisa e mostra il testo di legge di entrambi.",
+        "disclaimer": "I confini dei cantoni sono il tracciato dell’NGI dell’allegato al Codice giudiziario: dove differiscono, decide la legge. Dati di riferimento, non consulenza legale."
     }
 }

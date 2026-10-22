@@ -9,6 +9,7 @@
         "courts": "Gerichte",
         "cantons": "Kantone",
         "municipalities": "Gemeinden",
+        "address": "Adresse",
         "interest": "Zinsen",
         "places": "Gefängnisse & Justizhäuser",
         "siteLanguage": "Sprache",
@@ -183,5 +184,30 @@
     "notFound": {
         "title": "Seite nicht gefunden",
         "back": "Zurück zum Explorer"
+    },
+    "address": {
+        "title": "Adresssuche",
+        "lede": "Geben Sie eine Adresse ein und erhalten Sie den Gerichtskanton und alle zuständigen Gerichte. In einer Stadt, die auf mehrere Kantone verteilt ist, entscheidet die Hausnummer, und das verrät eine Postleitzahl nicht.",
+        "label": "Adresse",
+        "placeholder": "Straße und Hausnummer, Postleitzahl und Gemeinde",
+        "find": "Gerichte finden",
+        "try": "Beispiele:",
+        "searching": "Adresse wird gesucht…",
+        "none": "Keine Adresse gefunden. Prüfen Sie die Schreibweise, schreiben Sie den Straßennamen aus und geben Sie die Postleitzahl an.",
+        "failed": "{source} nicht erreichbar: {error}",
+        "match": "Treffer",
+        "map": "Auf OpenStreetMap zeigen",
+        "streetOnly": "Das Register kennt die Straße, aber nicht diese Hausnummer: Der Punkt liegt irgendwo auf der Straße, die selbst die Grenze zwischen zwei Kantonen sein kann. Prüfen Sie die Nummer.",
+        "canton": "Kanton",
+        "outside": "Dieser Punkt liegt in keinem Kanton: Liegt er in Belgien?",
+        "onLine": "Die Adresse liegt auf der Grenze zwischen {cantons}: Die Gerichte beider sind aufgeführt, und das Gesetz entscheidet. Lesen Sie unten das Gebiet jedes Kantons.",
+        "near": "Die Adresse liegt {metres} m von der Grenze zu {other}. Das NGI hat die Grenze nach dem Gesetz gezeichnet, und das Gesetz entscheidet: Lesen Sie unten das Gebiet beider Kantone.",
+        "split": "<name></name> ist auf mehrere Kantone verteilt; die Adresse entscheidet, welcher.",
+        "legalText": "Das Gebiet der Kantone laut Gesetz",
+        "courts": "Gerichte für diese Adresse",
+        "source": "Adresse aus {register}. Referenzdaten, keine Rechtsberatung.",
+        "howTitle": "So funktioniert es",
+        "how": "Ihr Browser schickt die Adresse an das Register ihrer Region: das Adressenregister in Flandern, UrbIS in Brüssel, ICAR in der Wallonie. Für eine Hausnummer, die das Register kennt, liegt der Punkt auf dem Gebäude, sodass die gerade und die ungerade Seite einer Grenzstraße in den richtigen Kanton fallen. Der Punkt wird dann in den Kantonsgrenzen des NGI gesucht, wie findCantonsAt es tut, und der Kanton liefert seine Gerichte, wie getCourtsForCanton. Weniger als 25 m von einem anderen Kanton warnt die Suche und zeigt den Gesetzestext für beide.",
+        "disclaimer": "Die Kantonsgrenzen sind die Zeichnung des NGI nach dem Anhang des Gerichtsgesetzbuchs: Wo sie abweichen, entscheidet das Gesetz. Referenzdaten, keine Rechtsberatung."
     }
 }
