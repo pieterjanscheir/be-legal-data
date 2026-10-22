@@ -55,5 +55,7 @@ jobs:
             - uses: actions/setup-node@v7
               with:
                   node-version: ${{ matrix.node }}
+            # The runtime dependencies only, from the registry, as a consumer installs them
+            - run: npm install --omit=dev --ignore-scripts --no-package-lock --no-audit --no-fund
             - run: node test/smoke/esm.mjs
             - run: node test/smoke/cjs.cjs
