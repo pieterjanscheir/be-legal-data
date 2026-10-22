@@ -43,6 +43,8 @@ def test_coverage() -> None:
         'prisons': belgica.PRISONS_COVERAGE_FROM,
         'housesOfJustice': belgica.HOUSES_OF_JUSTICE_COVERAGE_FROM,
         'cantonBoundaries': belgica.CANTON_BOUNDARIES_COVERAGE_FROM,
+        'arrondissementBoundaries': belgica.ARRONDISSEMENT_BOUNDARIES_COVERAGE_FROM,
+        'courtLocations': belgica.COURT_LOCATIONS_COVERAGE_FROM,
     }
 
 
@@ -137,5 +139,11 @@ def test_phone_numbers() -> None:
 
 def test_points() -> None:
     for case in cases['points']:
-        found = belgica.find_cantons_at(case['longitude'], case['latitude'], case['on'])
-        assert ids(found) == case['cantons'], case
+        lon, lat, on = case['longitude'], case['latitude'], case['on']
+        assert ids(belgica.find_cantons_at(lon, lat, on)) == case['cantons'], case
+        assert ids(belgica.find_arrondissements_at(lon, lat, on)) == case['arrondissements'], case
+
+
+def test_court_locations() -> None:
+    for case in cases['courtLocations']:
+        assert belgica.get_court_location(case['id'], case['on']) == case['location'], case['id']

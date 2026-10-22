@@ -6,6 +6,12 @@ on first use. Lookups take `on`, a day as a `date` or 'YYYY-MM-DD', and give tod
 without it. Documentation: https://pieterjanscheir.github.io/belgica/guide/python
 """
 
+from ._arrondissement_boundaries import (
+    ARRONDISSEMENT_BOUNDARIES_COVERAGE_FROM,
+    arrondissement_boundaries,
+    find_arrondissements_at,
+    get_arrondissement_boundary,
+)
 from ._canton_boundaries import (
     CANTON_BOUNDARIES_COVERAGE_FROM,
     canton_boundaries,
@@ -20,6 +26,7 @@ from ._competence import (
     find_justices_of_the_peace,
 )
 from ._contacts import format_iban, format_phone_number, get_contact
+from ._court_locations import COURT_LOCATIONS_COVERAGE_FROM, court_locations, get_court_location
 from ._courts import (
     COURTS_COVERAGE_FROM,
     courts,
@@ -73,8 +80,10 @@ from ._territory import (
 from ._time import Day, applies_on, to_day
 
 __all__ = [
+    'ARRONDISSEMENT_BOUNDARIES_COVERAGE_FROM',
     'CANTON_BOUNDARIES_COVERAGE_FROM',
     'COURTS_COVERAGE_FROM',
+    'COURT_LOCATIONS_COVERAGE_FROM',
     'HOUSES_OF_JUSTICE_COVERAGE_FROM',
     'POSTAL_CODES_COVERAGE_FROM',
     'PRISONS_COVERAGE_FROM',
@@ -84,10 +93,13 @@ __all__ = [
     'InterestRateResult',
     'PostalCodeCourts',
     'applies_on',
+    'arrondissement_boundaries',
     'arrondissements',
     'canton_boundaries',
     'cantons',
+    'court_locations',
     'courts',
+    'find_arrondissements_at',
     'find_cantons_at',
     'find_competent_courts',
     'find_courts',
@@ -97,12 +109,14 @@ __all__ = [
     'format_iban',
     'format_phone_number',
     'get_arrondissement',
+    'get_arrondissement_boundary',
     'get_arrondissement_for_municipality',
     'get_canton',
     'get_canton_boundary',
     'get_cantons_for_municipality',
     'get_contact',
     'get_court',
+    'get_court_location',
     'get_courts_for_canton',
     'get_divisions',
     'get_house_of_justice',
