@@ -192,6 +192,7 @@ function themeConfig(prefix: string, t: Strings): DefaultTheme.Config {
                 text: `v${pkg.version}`,
                 items: [
                     { text: 'npm', link: 'https://www.npmjs.com/package/belgica' },
+                    { text: 'PyPI', link: 'https://pypi.org/project/belgica/' },
                     { text: t.nav.releases, link: `${repo}/tags` },
                 ],
             },
@@ -202,6 +203,8 @@ function themeConfig(prefix: string, t: Strings): DefaultTheme.Config {
                 items: [
                     { text: t.sidebar.gettingStarted, link: `${prefix}/guide/getting-started` },
                     { text: t.sidebar.rawJson, link: `${prefix}/guide/raw-json` },
+                    // In English for every language, for now
+                    { text: 'Python', link: '/guide/python' },
                     { text: t.sidebar.design, link: `${prefix}/guide/design` },
                     { text: t.sidebar.identifiers, link: `${prefix}/guide/identifiers` },
                     { text: t.sidebar.schema, link: `${prefix}/guide/schema` },

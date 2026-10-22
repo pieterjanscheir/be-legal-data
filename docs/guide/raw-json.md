@@ -15,6 +15,9 @@ Pin a tag rather than `main`, so the data only changes when you choose to upgrad
 
 ## Python
 
+For Python there is a package with the data and the helpers: see [Python](./python). To read
+the files yourself instead:
+
 ```python
 import json
 from urllib.request import urlopen

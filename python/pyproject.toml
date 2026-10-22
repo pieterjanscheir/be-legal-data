@@ -1,0 +1,84 @@
+[project]
+name = "belgica"
+# The same version as the npm package: test_package.py checks it against ../package.json
+version = "0.4.0"
+description = "Belgian legal reference data: courts, judicial cantons and arrondissements, municipalities and postal codes, and legal and commercial interest rates."
+readme = "README.md"
+license = "MIT AND CC-BY-4.0"
+license-files = ["LICENSE", "LICENSE-DATA"]
+authors = [{ name = "Pieter-Jan Scheir" }]
+requires-python = ">=3.11"
+dependencies = []
+keywords = [
+    "belgium",
+    "belgian",
+    "legal",
+    "courts",
+    "judicial-cantons",
+    "arrondissements",
+    "municipalities",
+    "refnis",
+    "postal-codes",
+    "geojson",
+    "interest-rates",
+    "vredegerecht",
+    "justice-of-the-peace",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Legal Industry",
+    "Natural Language :: Dutch",
+    "Natural Language :: French",
+    "Natural Language :: German",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://pieterjanscheir.github.io/belgica/"
+Documentation = "https://pieterjanscheir.github.io/belgica/guide/python"
+Source = "https://github.com/pieterjanscheir/belgica"
+Issues = "https://github.com/pieterjanscheir/belgica/issues"
+Changelog = "https://github.com/pieterjanscheir/belgica/blob/main/CHANGELOG.md"
+
+[dependency-groups]
+# hatchling: the tests copy the data in with hatch_build.py
+dev = ["hatchling>=1.27", "pytest>=8", "ruff>=0.14", "mypy>=1.18"]
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.hooks.custom]
+# hatch_build.py copies ../data, ../LICENSE and ../LICENSE-DATA in
+
+[tool.hatch.build.targets.sdist]
+# Copied in by the build hook, so not in git
+artifacts = ["src/belgica/data/*.json", "LICENSE", "LICENSE-DATA"]
+# Made by pnpm build:cases for the day they were made
+exclude = ["tests/.cases"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/belgica"]
+artifacts = ["src/belgica/data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+# The examples there are laid out for reading, one call a line
+extend-exclude = ["README.md"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.mypy]
+strict = true
+files = ["src", "tests"]

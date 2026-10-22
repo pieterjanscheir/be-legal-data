@@ -1,5 +1,5 @@
 /**
- * Prepares a release: raises the version in package.json, moves the Unreleased section of
+ * Prepares a release: raises the version in package.json and the Python package, moves the Unreleased section of
  * CHANGELOG.md under the new version with today's date, adds its compare link, and points the
  * docs' raw.githubusercontent.com links at the new tag. Prints the new version.
  *
@@ -56,6 +56,20 @@ writeFileSync(
     'package.json',
     packageJson.replace(`"version": "${previous}"`, `"version": "${version}"`),
 )
+
+// The Python package has the same version: its pyproject.toml and its own entry in uv.lock
+for (const [file, from, to] of [
+    ['python/pyproject.toml', `version = "${previous}"`, `version = "${version}"`],
+    [
+        'python/uv.lock',
+        `name = "belgica"\nversion = "${previous}"`,
+        `name = "belgica"\nversion = "${version}"`,
+    ],
+] as const) {
+    const text = readFileSync(file, 'utf8')
+    if (!text.includes(from)) throw new Error(`${file} doesn't have ${from}`)
+    writeFileSync(file, text.replace(from, to))
+}
 
 // Links to the raw data pinned to a tag, in the README and the docs in every language
 const pinned = `pieterjanscheir/belgica/v${previous}/`

@@ -19,6 +19,16 @@ updates:
           # can't use an API that Node 22 doesn't have. Raise them with the engines field.
           - dependency-name: '@types/node'
             update-types: ['version-update:semver-major']
+    # The Python package's dev tools (it has no runtime dependencies)
+    - package-ecosystem: uv
+      directory: /python
+      schedule:
+          interval: monthly
+      cooldown:
+          default-days: 7
+      groups:
+          dev-dependencies:
+              patterns: ['*']
     - package-ecosystem: github-actions
       directory: /
       schedule:

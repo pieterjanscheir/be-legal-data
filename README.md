@@ -132,7 +132,18 @@ Bundled for the browser (esbuild, minified):
 | `getCanton` from `belgica/territory`                                 | 180 KB   | 30 KB  |
 | The two files above + `formatCourtName` from `belgica/courts/format` | 15 KB    | 2.2 KB |
 
-### Python, spreadsheets and anything else
+### Python
+
+```bash
+pip install belgica
+```
+
+The same data and helpers, in snake case, with the same version number: `get_cantons_for_municipality('44021', on='2025-09-15')`,
+`find_competent_courts('23088', 'police-court')`, `find_cantons_at(3.7268, 51.053)`. Python 3.11 or later, no
+dependencies; the tests check both packages give the same answers. See [Python](https://pieterjanscheir.github.io/belgica/guide/python)
+and [`python/`](python/).
+
+### Spreadsheets and anything else
 
 Read the JSON files in `data/` directly: from the npm package, a git submodule, or a raw URL
 pinned to a tag (`https://raw.githubusercontent.com/pieterjanscheir/belgica/v0.4.0/data/cantons.json`).
@@ -162,7 +173,7 @@ Ids are public API, so versions follow these rules: adding data is a minor versi
 value is a patch, and removing or renaming an id is a major version.
 
 1. Move the Unreleased entries in `CHANGELOG.md` under the new version.
-2. Bump `version` in `package.json` and commit.
+2. Bump `version` in `package.json` and in `python/pyproject.toml` (the tests check they match), and commit.
 3. Tag it and push: `git tag v0.3.0 && git push && git push --tags`.
 
 The [release workflow](.github/workflows/release.yml) runs `pnpm check`, publishes the tag to
