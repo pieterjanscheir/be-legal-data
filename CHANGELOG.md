@@ -7,6 +7,8 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 
 ## [Unreleased]
 
+## [0.6.1] - 2026-10-22
+
 ### Changed
 
 - **Look up an address**: type an address and get its canton and every court, including the
@@ -394,7 +396,8 @@ OpenStreetMap `opening_hours` syntax (`Mo-Fr 08:30-12:30,13:30-16:00`).
 - Courts (justices of the peace in East and West Flanders, Ondernemingsrechtbank Gent) and the
   legal and commercial interest rates.
 
-[Unreleased]: https://github.com/pieterjanscheir/belgica/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/pieterjanscheir/belgica/compare/v0.6.1...HEAD
+[0.6.1]: https://github.com/pieterjanscheir/belgica/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/pieterjanscheir/belgica/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/pieterjanscheir/belgica/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/pieterjanscheir/belgica/compare/v0.3.1...v0.4.0
