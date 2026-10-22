@@ -8,6 +8,8 @@ import { getCanton, getInterestRate /* … */ } from 'belgica'
 // Only what you use: the interest rates alone are a few kilobytes
 import { getInterestRate } from 'belgica/interest-rates'
 import { getCourt, getJusticeOfThePeace } from 'belgica/courts'
+import { formatCourtName } from 'belgica/courts/format'
+import { loadCourts, loadCourtDetails } from 'belgica/courts/load'
 import { getCanton, getCantonsForMunicipality } from 'belgica/territory'
 import { findCantonsAt } from 'belgica/canton-boundaries'
 import { findArrondissementsAt } from 'belgica/arrondissement-boundaries'
@@ -25,12 +27,16 @@ import { getMunicipalitiesForPostalCode } from 'belgica/postal-codes'
 | `belgica/arrondissement-boundaries` | The arrondissements' geometry, and `findArrondissementsAt`                   |
 | `belgica/courts`                    | Courts, and the contact helpers                                              |
 | `belgica/court-locations`           | The justices of the peace on the map: `getCourtLocation`                     |
+| `belgica/courts/format`             | `formatCourtName` and the contact helpers, without any data                  |
+| `belgica/courts/load`               | [Loading court files on demand](#loading-courts-on-demand)                   |
+| `belgica/cantons`                   | The cantons without their `territory` texts                                  |
+| `belgica/cantons/territory`         | `getCantonTerritory`: the texts alone                                        |
 | `belgica/prisons`                   | Prisons, and the contact helpers                                             |
 | `belgica/houses-of-justice`         | Houses of justice, and the contact helpers                                   |
 | `belgica/interest-rates`            | Interest rates                                                               |
 | `belgica/postal-codes`              | Postal codes, with the municipalities they belong to                         |
 | `belgica/schemas`                   | [Zod schemas](/guide/schema#zod-schemas) for every record and data file      |
-| `belgica/data/*.json`               | The raw data files                                                           |
+| `belgica/data/*`                    | The raw data files, including the [split ones](/guide/raw-json#files)        |
 | `belgica/schema/*.schema.json`      | [JSON Schemas](/guide/schema)                                                |
 | `belgica/datapackage.json`          | [Data package descriptor](/guide/schema#datapackage-json)                    |
 
@@ -320,7 +326,7 @@ findCourts({ type: 'court-of-appeal' }) // the five courts of appeal
 
 ```ts
 function formatCourtName(
-    court: Court,
+    court: Court | CourtSummary,
     locale: Locale,
     options?: { style?: 'official' | 'canton' },
 ): string
@@ -345,6 +351,70 @@ formatCourtName(court, 'nl', { style: 'canton' }) // 'Vredegerecht 1e kanton Gen
 formatCourtName(court, 'fr', { style: 'canton' }) // 'Justice de paix 1er canton Gand'
 formatCourtName(court, 'de', { style: 'canton' }) // 'Friedensgericht 1. Kanton Gent'
 formatCourtName(getCourt('justice-of-the-peace-deinze'), 'fr', { style: 'canton' }) // 'Justice de paix canton Deinze'
+```
+
+The label is stored on the record, as `label`, so `belgica/courts/format` gives it without
+loading the cantons. A record without one (saved before 0.5.0) gets its official name there;
+the `formatCourtName` of `belgica/courts` and the root builds the label from the canton.
+
+## Loading courts on demand
+
+In `belgica/courts/load`. Each function loads only the [data files](/data/courts#only-the-courts-you-need)
+it needs, with `import()`, so a bundler makes a chunk of each file. They return promises, and
+like the other lookups take an optional day.
+
+### `loadCourts(filter)`
+
+```ts
+function loadCourts(
+    filter: { type: CourtType; arrondissement?: string },
+    options?: OnDay,
+): Promise<CourtSummary[]>
+```
+
+The courts of a type, or of a type in one arrondissement, that apply on the day, as summaries:
+`data/courts/<type>.json` or `data/courts/<type>/<arrondissement>.json`. Empty for an unknown
+type or arrondissement. A court whose area covers several arrondissements has none: it is only
+in the type's list.
+
+```ts
+await loadCourts({ type: 'justice-of-the-peace', arrondissement: 'west-vlaanderen' })
+```
+
+### `loadCourt(id)`
+
+```ts
+function loadCourt(id: CourtId | string, options?: OnDay): Promise<CourtSummary | undefined>
+```
+
+A court's summary by id, for an id you stored: loads `data/courts/index.json`, then the one list
+file the court is in.
+
+### `loadCourtDetails(id)`
+
+```ts
+function loadCourtDetails(id: CourtId | string, options?: OnDay): Promise<CourtDetails | undefined>
+```
+
+What the summaries leave out, for the one court you show: `contacts`, `openingHours`,
+`openingHoursText`, `website`, `ecli` and `sources`, from `data/courts/details/<id>.json`.
+
+```ts
+const details = await loadCourtDetails('justice-of-the-peace-gent-1')
+details && getContact(details, 'phone') // '+3226820153'
+```
+
+## Cantons without their territory
+
+`belgica/cantons` exports `cantons` and `getCanton(id)` as `belgica/territory` does, without
+each canton's `territory` (`CantonSummary`). `belgica/cantons/territory` has the texts alone:
+
+```ts
+import { getCanton } from 'belgica/cantons'
+import { getCantonTerritory } from 'belgica/cantons/territory'
+
+getCanton('gent-1').seat.nl // 'Gent'
+getCantonTerritory('gent-1').nl // the annex's description of its area
 ```
 
 ## Contacts
@@ -641,6 +711,7 @@ The full datasets, typed:
 | `Bilingual` = `Record<'nl' \| 'fr', string>`: names as the Judicial Code gives them                                                                                                                         |                                                                        |
 | `JudicialArea`, `Arrondissement`, `Canton`, `Region`, `Province`, `Municipality`, `LegalBasis`, `Validity`, `OnDay`                                                                                         | [Territory](/data/territory)                                           |
 | `Court`, `CourtType`, `CourtFilter`, `Address`, `Contact`, `ContactType`, `CantonCourt`                                                                                                                     | [Courts](/data/courts#shape)                                           |
+| `CourtSummary`, `CourtDetails`, `LoadCourtsFilter`, `CantonSummary`, `CantonTerritory`                                                                                                                      | [Only the courts you need](/data/courts#only-the-courts-you-need)      |
 | `PostalCode`, `PostalCodeCourts`                                                                                                                                                                            | [Postal codes](/data/postal-codes)                                     |
 | `Prison`, `HouseOfJustice`                                                                                                                                                                                  | [Prisons](/data/prisons), [Houses of justice](/data/houses-of-justice) |
 | `InterestType`, `InterestRatePeriod`, `InterestRateSeries`, `InterestRateResult`                                                                                                                            | [Interest rates](/data/interest-rates#shape)                           |

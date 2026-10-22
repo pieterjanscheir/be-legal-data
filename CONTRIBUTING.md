@@ -12,8 +12,10 @@ The short version:
    `data/regions.json`, `data/provinces.json`, `data/courts.json`, `data/prisons.json`,
    `data/houses-of-justice.json`, `data/canton-boundaries.json`,
    `data/arrondissement-boundaries.json`, `data/court-locations.json`, `schema/`,
-   `src/ids.generated.ts`): change the parser, script or types and regenerate. The scraped
-   datasets are rebuilt from the official sources every week.
+   `src/ids.generated.ts`, `src/data-files.generated.ts`, and the files under `data/courts/` and
+   `data/cantons/`): change the parser, script or types and regenerate. The scraped datasets
+   are rebuilt from the official sources every week.
 4. Run `pnpm check` before pushing, and commit `schema/`, `src/ids.generated.ts` and
-   `ids.lock.json` with your change. The build output (`dist/`) isn't committed.
+   `ids.lock.json` with your change. The build output (`dist/`) isn't committed, and neither are
+   the files `pnpm generate` splits into `data/courts/` and `data/cantons/`.
 5. Add a line to `CHANGELOG.md` under Unreleased.

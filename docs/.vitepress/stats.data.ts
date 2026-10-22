@@ -76,11 +76,23 @@ const ENTRIES = [
     'arrondissement-boundaries',
     'courts',
     'court-locations',
+    'courts-format',
+    'courts-load',
+    'cantons',
+    'canton-territory',
     'prisons',
     'houses-of-justice',
     'interest-rates',
     'postal-codes',
 ]
+
+// The entry points whose file name isn't their export path
+const NAMES: Record<string, string> = {
+    index: 'belgica',
+    'courts-format': 'belgica/courts/format',
+    'courts-load': 'belgica/courts/load',
+    'canton-territory': 'belgica/cantons/territory',
+}
 
 /** The files an entry point loads: itself and, transitively, the chunks it imports */
 function filesOf(entry: string, seen = new Set<string>()): Set<string> {
@@ -99,7 +111,7 @@ function sizes(): EntrySize[] | null {
         const sources = [...filesOf(entry)].map((f) => readFileSync(join(DIST, f)))
         const raw = sources.reduce((n, buffer) => n + buffer.length, 0)
         const gzip = sources.reduce((n, buffer) => n + gzipSync(buffer).length, 0)
-        return { entry: entry === 'index' ? 'belgica' : `belgica/${entry}`, raw, gzip }
+        return { entry: NAMES[entry] ?? `belgica/${entry}`, raw, gzip }
     })
 }
 
