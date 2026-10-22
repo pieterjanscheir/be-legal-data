@@ -245,6 +245,12 @@ export const tables: Record<string, Row[]> = {
         day: h.rule.type === 'fixed' ? h.rule.day : undefined,
         days_after_easter: h.rule.type === 'easter' ? h.rule.daysAfterEaster : undefined,
     })),
+    'public-holiday-replacements': publicHolidays.replacements.map((r) => ({
+        holiday: r.holiday,
+        replaces: r.replaces,
+        day: r.day,
+        legal_basis: r.legalBasis,
+    })),
 }
 
 // Run as a script, not imported by the tests. pathToFileURL escapes spaces and the like, which

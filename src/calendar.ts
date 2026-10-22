@@ -16,7 +16,7 @@ export type {
 } from './schemas/public-holidays'
 
 // The data is validated against the zod schemas in ./schemas (test/schema.test.ts)
-export const publicHolidays: PublicHolidays = publicHolidaysData as PublicHolidays
+export const publicHolidays = publicHolidaysData as Readonly<PublicHolidays>
 
 export interface PublicHoliday {
     id: PublicHolidayId
@@ -89,7 +89,8 @@ export function getPublicHolidays(year: number): PublicHoliday[] {
             .sort((a, b) => a.day.localeCompare(b.day))
         byYear.set(year, holidays)
     }
-    return holidays.map((holiday) => ({ ...holiday }))
+    // Copies, names included: a caller changing one doesn't change the data for the next
+    return holidays.map((holiday) => ({ ...holiday, name: { ...holiday.name } }))
 }
 
 /**

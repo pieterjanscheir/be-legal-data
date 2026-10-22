@@ -109,8 +109,14 @@ describe('getPublicHolidays', () => {
 
     it("returns copies: changing one doesn't change the next call", () => {
         const [first] = getPublicHolidays(2026)
-        if (first) first.day = '1900-01-01'
+        if (first) {
+            first.day = '1900-01-01'
+            first.name.nl = 'Changed'
+        }
         expect(getPublicHolidays(2026)[0]?.day).toBe('2026-01-01')
+        expect(getPublicHolidays(2026)[0]?.name.nl).toBe('Nieuwjaar')
+        expect(getPublicHoliday('2026-01-01')?.name.nl).toBe('Nieuwjaar')
+        expect(publicHolidays.holidays[0]?.name.nl).toBe('Nieuwjaar')
     })
 
     it.each([1974, 2026.5, 10_000, Number.NaN])('throws a RangeError for %s', (year) => {
