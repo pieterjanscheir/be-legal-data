@@ -12,6 +12,18 @@ minor version, fixing a value a patch, removing or renaming an id a major versio
 - The [explorer](https://belgica.scheir.eu/) is in the docs' 13 languages, with next-intl, and moved from
   GitHub Pages to Vercel: a page in every language is about 29,000 pages, over the 1 GB a Pages
   site may hold. It still isn't part of the package.
+### Added
+
+**Public and judicial holidays, for deadlines: `belgica/calendar`.** `getPublicHolidays(year)`
+gives the ten legal public holidays of any year from 1975 (law of 4 January 1974, royal decree
+of 18 April 1974, art. 1), with the three that depend on Easter computed. `nextWorkingDay` moves
+the last day of a deadline off a Saturday, Sunday or holiday (art. 53 Ger.W. / C. jud.), and
+`isJudicialHoliday` tells whether a day is in the judicial holidays, 1 July to 31 August
+(art. 334). Also `getPublicHoliday`, `isPublicHoliday`, `isWorkingDay` and `getEasterSunday`.
+`data/public-holidays.json` holds the rules, not dates, and the one year a decree moved a
+holiday: Ascension Day 2008, which fell on 1 May, moved to 2 May. Community holidays (11 July,
+27 September, 15 November) aren't legal holidays and aren't in it. Tested against the Royal
+Observatory's published lists for 2024 to 2027 ([#61](https://github.com/pieterjanscheir/belgica/issues/61)).
 
 ## [0.5.0] - 2026-10-22
 

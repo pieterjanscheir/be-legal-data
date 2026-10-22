@@ -25,6 +25,7 @@ export default {
             prisons: 'Cezaevleri',
             housesOfJustice: 'Justitiehuizen / maisons de justice',
             interestRates: 'Faiz oranları',
+            publicHolidays: 'Resmî tatiller',
             postalCodes: 'Posta kodları',
             knownGaps: 'Bilinen eksikler',
             roadmap: 'Yol haritası',

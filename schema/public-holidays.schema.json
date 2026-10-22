@@ -1,0 +1,190 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://pieterjanscheir.github.io/belgica/schema/public-holidays.schema.json",
+  "title": "belgica: data/public-holidays.json",
+  "$ref": "#/definitions/PublicHolidays",
+  "definitions": {
+    "PublicHolidays": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "legalBasis": {
+          "type": "string",
+          "description": "The law and decree that set the holidays"
+        },
+        "fromYear": {
+          "type": "integer",
+          "minimum": -9007199254740991,
+          "maximum": 9007199254740991,
+          "description": "The first year the rules are on file for"
+        },
+        "holidays": {
+          "minItems": 10,
+          "maxItems": 10,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PublicHolidayDefinition"
+          }
+        },
+        "replacements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PublicHolidayReplacement"
+          }
+        }
+      },
+      "required": [
+        "description",
+        "legalBasis",
+        "fromYear",
+        "holidays",
+        "replacements"
+      ],
+      "additionalProperties": false
+    },
+    "PublicHolidayDefinition": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/PublicHolidayId"
+        },
+        "name": {
+          "$ref": "#/definitions/Translated"
+        },
+        "rule": {
+          "$ref": "#/definitions/PublicHolidayRule"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "rule"
+      ],
+      "additionalProperties": false
+    },
+    "PublicHolidayId": {
+      "type": "string",
+      "enum": [
+        "new-year",
+        "easter-monday",
+        "labour-day",
+        "ascension",
+        "whit-monday",
+        "national-day",
+        "assumption",
+        "all-saints",
+        "armistice",
+        "christmas"
+      ],
+      "description": "The ten legal public holidays (KB 18 april 1974, art. 1)"
+    },
+    "Translated": {
+      "type": "object",
+      "properties": {
+        "nl": {
+          "type": "string"
+        },
+        "fr": {
+          "type": "string"
+        },
+        "de": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nl",
+        "fr",
+        "de"
+      ],
+      "additionalProperties": false,
+      "description": "A name in the three national languages"
+    },
+    "PublicHolidayRule": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "fixed",
+              "description": "The same day every year"
+            },
+            "month": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 12
+            },
+            "day": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 31
+            }
+          },
+          "required": [
+            "type",
+            "month",
+            "day"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "easter",
+              "description": "A number of days after Easter Sunday (Gregorian calendar)"
+            },
+            "daysAfterEaster": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            }
+          },
+          "required": [
+            "type",
+            "daysAfterEaster"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "description": "When a holiday falls each year"
+    },
+    "PublicHolidayReplacement": {
+      "type": "object",
+      "properties": {
+        "holiday": {
+          "$ref": "#/definitions/PublicHolidayId"
+        },
+        "replaces": {
+          "$ref": "#/definitions/Day",
+          "description": "The day the rule gives, YYYY-MM-DD"
+        },
+        "day": {
+          "$ref": "#/definitions/Day",
+          "description": "The day the holiday is that year instead, YYYY-MM-DD"
+        },
+        "legalBasis": {
+          "type": "string",
+          "description": "The decree that moved it"
+        }
+      },
+      "required": [
+        "holiday",
+        "replaces",
+        "day",
+        "legalBasis"
+      ],
+      "additionalProperties": false,
+      "description": "A year in which a holiday was moved to another day by royal decree"
+    },
+    "Day": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+      "description": "A day as YYYY-MM-DD"
+    }
+  }
+}

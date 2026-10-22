@@ -2,7 +2,7 @@
   "$schema": "https://datapackage.org/profiles/2.0/datapackage.json",
   "name": "belgica",
   "title": "Belgian legal reference data",
-  "description": "Courts, prisons, houses of justice, judicial areas, arrondissements and cantons with their boundaries, regions, provinces, municipalities and postal codes, and the legal and commercial interest rates of Belgium, with their official sources.",
+  "description": "Courts, prisons, houses of justice, judicial areas, arrondissements and cantons with their boundaries, regions, provinces, municipalities and postal codes, the legal and commercial interest rates and the public holidays of Belgium, with their official sources.",
   "homepage": "https://pieterjanscheir.github.io/belgica/",
   "licenses": [
     {
@@ -382,6 +382,42 @@
       ],
       "lastReviewed": "2026-10-05",
       "reviewEveryMonths": 6
+    },
+    {
+      "name": "public-holidays",
+      "path": "data/public-holidays.json",
+      "title": "Legal public holidays",
+      "description": "The rules for the ten legal public holidays (three of them depend on Easter), for moving the last day of a deadline to the next working day (art. 53 Judicial Code), and the years a holiday was moved.",
+      "format": "json",
+      "mediatype": "application/json",
+      "jsonSchema": "schema/public-holidays.schema.json",
+      "sources": [
+        {
+          "title": "Wet van 4 januari 1974 betreffende de feestdagen (numac 1974010407)",
+          "path": "https://www.ejustice.just.fgov.be/eli/wet/1974/01/04/1974010407/justel"
+        },
+        {
+          "title": "KB van 18 april 1974, art. 1: the ten holidays (numac 1974041801)",
+          "path": "https://www.ejustice.just.fgov.be/eli/besluit/1974/04/18/1974041801/justel"
+        },
+        {
+          "title": "Judicial Code, art. 50 and 53: deadlines (numac 1967101052)",
+          "path": "https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101052/justel"
+        },
+        {
+          "title": "Judicial Code, art. 334: the judicial year and holidays (numac 1967101053)",
+          "path": "https://www.ejustice.just.fgov.be/eli/wet/1967/10/10/1967101053/justel"
+        },
+        {
+          "title": "Koninklijke Sterrenwacht van België: Belgische feestdagen per year (the test fixtures)",
+          "path": "https://robinfo.oma.be/nl/astro-info/kalender/belgische-feestdagen/"
+        }
+      ],
+      "lastReviewed": "2026-10-22",
+      "reviewEveryMonths": 12,
+      "temporalCoverage": {
+        "start": "1975-01-01"
+      }
     }
   ]
 }

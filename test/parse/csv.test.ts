@@ -28,4 +28,15 @@ describe('tables', () => {
         const appeal = tables['courts']?.find((r) => r['id'] === 'court-of-appeal-gent')
         expect(appeal?.['label_nl']).toBeUndefined()
     })
+
+    it('has the years a holiday was moved, next to the rules', () => {
+        expect(tables['public-holidays']).toHaveLength(10)
+        expect(tables['public-holiday-replacements']).toContainEqual(
+            expect.objectContaining({
+                holiday: 'ascension',
+                replaces: '2008-05-01',
+                day: '2008-05-02',
+            }),
+        )
+    })
 })

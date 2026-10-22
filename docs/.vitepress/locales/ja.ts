@@ -25,6 +25,7 @@ export default {
             prisons: '刑務所',
             housesOfJustice: 'Justitiehuizen / Maisons de justice',
             interestRates: '利率',
+            publicHolidays: '祝日',
             postalCodes: '郵便番号',
             knownGaps: '既知の欠落',
             roadmap: 'ロードマップ',
