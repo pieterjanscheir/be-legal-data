@@ -1,0 +1,27 @@
+# CodeRabbit: https://docs.coderabbit.ai/reference/configuration
+language: en-US
+reviews:
+    profile: chill
+    high_level_summary: true
+    poem: false
+    review_status: true
+    auto_review:
+        enabled: true
+        drafts: false
+    # Generated files, and data rebuilt by the parsers: review the code that makes them instead
+    path_filters:
+        - '!src/*.generated.ts'
+        - '!schema/**'
+        - '!data/**'
+        - '!ids.lock.json'
+        - '!test/fixtures/**'
+        - '!pnpm-lock.yaml'
+    path_instructions:
+        - path: '**'
+          instructions: Hold changes to the review guide in .gemini/styleguide.md and the design decisions in docs/guide/design.md.
+        - path: 'scripts/parse/**'
+          instructions: A parser reads only what it can read for certain and reports the rest; flag any value it guesses or fills in.
+        - path: 'docs/{ar,de,es,fr,it,ja,nl,pl,pt,tr,uk,zh}/**'
+          instructions: Translations of the English docs. Check they match the English page; don't review the wording.
+chat:
+    auto_reply: true
