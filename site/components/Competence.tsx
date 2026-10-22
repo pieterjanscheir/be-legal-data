@@ -1,5 +1,6 @@
+import { useTranslations } from 'next-intl'
 import { findCourtsWithJurisdiction, findJusticesOfThePeace, type CourtType } from 'belgica'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { cantonName } from '@/lib/data'
 import { CourtCard } from './CourtCard'
 
@@ -17,15 +18,11 @@ const otherTypes: CourtType[] = [
 export function Competence({ municipality }: { municipality: string }) {
     const justices = findJusticesOfThePeace(municipality)
     const split = justices.some((j) => j.partial)
+    const t = useTranslations('competence')
     return (
         <>
-            <h3>Justice of the peace</h3>
-            {split && (
-                <p className="note">
-                    This municipality is split over {justices.length} cantons: the street address
-                    decides. Each canton&apos;s area, as the Judicial Code describes it:
-                </p>
-            )}
+            <h3>{t('justiceOfThePeace')}</h3>
+            {split && <p className="note">{t('split', { count: justices.length })}</p>}
             <div className={split ? 'split' : 'cards'}>
                 {justices.map(({ canton, court, partial }) => (
                     <div key={canton.id}>
@@ -33,10 +30,12 @@ export function Competence({ municipality }: { municipality: string }) {
                         {partial && (
                             <details className="territory">
                                 <summary>
-                                    Area of canton{' '}
-                                    <Link href={`/cantons/${canton.id}/`}>
-                                        {cantonName(canton)}
-                                    </Link>
+                                    {t.rich('areaOf', {
+                                        name: cantonName(canton),
+                                        link: (c) => (
+                                            <Link href={`/cantons/${canton.id}/`}>{c}</Link>
+                                        ),
+                                    })}
                                 </summary>
                                 <p lang="nl">{canton.territory.nl}</p>
                             </details>
@@ -44,7 +43,7 @@ export function Competence({ municipality }: { municipality: string }) {
                     </div>
                 ))}
             </div>
-            <h3>Other courts</h3>
+            <h3>{t('otherCourts')}</h3>
             <div className="cards">
                 {otherTypes.flatMap((type) =>
                     findCourtsWithJurisdiction(municipality, type).map((court) => (
@@ -52,9 +51,7 @@ export function Competence({ municipality }: { municipality: string }) {
                     )),
                 )}
             </div>
-            <p className="muted small">
-                The court as a whole: which of its divisions hears a case is set by royal decree.
-            </p>
+            <p className="muted small">{t('divisionNote')}</p>
         </>
     )
 }

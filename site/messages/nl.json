@@ -1,0 +1,187 @@
+{
+    "meta": {
+        "title": "belgica explorer",
+        "description": "Elke Belgische rechtbank, elk gerechtelijk kanton, elke gemeente en postcode, en de wettelijke interestvoeten: een site gebouwd op het pakket belgica."
+    },
+    "nav": {
+        "skip": "Naar de inhoud",
+        "main": "Hoofdmenu",
+        "courts": "Rechtbanken",
+        "cantons": "Kantons",
+        "municipalities": "Gemeenten",
+        "interest": "Interest",
+        "places": "Gevangenissen & justitiehuizen",
+        "siteLanguage": "Taal",
+        "namesLanguage": "Taal van de officiële namen"
+    },
+    "footer": {
+        "builtFrom": "Elke pagina wordt bij de build opgebouwd uit <npm>belgica</npm>: <docs>documentatie</docs> · <source>broncode van deze site</source>",
+        "disclaimer": "Referentiegegevens, geen juridisch advies: raadpleeg de officiële bronnen voordat u erop vertrouwt. Gegevens over gemeenten en postcodes © Statbel, kantongrenzen © NGI, CC BY 4.0."
+    },
+    "code": {
+        "caption": "Met belgica"
+    },
+    "courtType": {
+        "justice-of-the-peace": "Vredegerecht",
+        "police-court": "Politierechtbank",
+        "court-of-first-instance": "Rechtbank van eerste aanleg",
+        "enterprise-court": "Ondernemingsrechtbank",
+        "labour-court": "Arbeidsrechtbank",
+        "court-of-appeal": "Hof van beroep",
+        "labour-court-of-appeal": "Arbeidshof",
+        "court-of-assize": "Hof van assisen"
+    },
+    "kind": {
+        "court": "Rechtbank",
+        "division": "Afdeling",
+        "seat": "Zetel"
+    },
+    "search": {
+        "placeholder": "Postcode, gemeente, kanton of rechtbank",
+        "postalCode": "Postcode",
+        "municipality": "Gemeente",
+        "canton": "Kanton",
+        "cantonName": "Kanton {name}"
+    },
+    "home": {
+        "eyebrow": "Gebouwd met het pakket belgica",
+        "title": "Welke rechtbank is bevoegd, en waar?",
+        "lede": "Voer een postcode of gemeente in om het vredegerecht, de politierechtbank en alle andere rechtbanken te vinden, met de contactgegevens van hun griffies. Of blader door de rechtbanken, de kantonkaart en de interestvoeten, allemaal gelezen uit de gegevens van het pakket.",
+        "try": "Probeer",
+        "example9000": "Gent: één gemeente, vijf kantons",
+        "example1050": "Gedeeld door Elsene en Brussel",
+        "example4700": "Eupen: rechtbanken in het Duits",
+        "mapLabel": "Kaart van de {count} gerechtelijke kantons van België",
+        "statsLabel": "Wat er in de gegevens zit",
+        "statCourts": "rechtbanken, afdelingen en zetels",
+        "statCantons": "gerechtelijke kantons",
+        "statMunicipalities": "gemeenten",
+        "statPostalCodes": "postcodes",
+        "statPlaces": "gevangenissen en justitiehuizen",
+        "statRates": "interestperiodes sinds 1970",
+        "featureAddressTitle": "Rechtbanken voor een adres",
+        "featureAddress": "Van een postcode naar de gemeenten, hun kantons en elke bevoegde rechtbank. Bij gesplitste steden staat elk kanton met de wettekst van zijn gebied.",
+        "featureMapTitle": "Kantonkaart",
+        "featureMap": "De grens van elk kanton volgens het NGI, om het kanton van een punt te vinden en het te tekenen. Bij elk kanton staan zijn wettelijke grondslag en zijn gemeenten.",
+        "featureInterestTitle": "Interestcalculator",
+        "featureInterest": "De wettelijke interestvoet en de interestvoet voor handelstransacties sinds 1970, met de regel voor overeenkomsten van vóór 16 maart 2013. De calculator laadt alleen <code>belgica/interest-rates</code>.",
+        "featureCourtsTitle": "Elke rechtbank, in drie talen",
+        "featureCourts": "Namen zoals elke rechtbank ze publiceert, adressen, telefoonnummers in nationaal formaat, IBAN's, openingsuren en ECLI-codes. Wissel bovenaan tussen NL · FR · DE."
+    },
+    "competence": {
+        "justiceOfThePeace": "Vredegerecht",
+        "split": "Deze gemeente is verdeeld over {count} kantons: het straatadres beslist. Het gebied van elk kanton, zoals het Gerechtelijk Wetboek het omschrijft:",
+        "areaOf": "Gebied van kanton <link>{name}</link>",
+        "otherCourts": "Andere rechtbanken",
+        "divisionNote": "De rechtbank als geheel: welke afdeling een zaak behandelt, wordt bij koninklijk besluit bepaald."
+    },
+    "contacts": {
+        "phone": "Telefoon",
+        "fax": "Fax",
+        "email": "E-mail",
+        "bank-account": "Bankrekening",
+        "none": "Geen contactgegevens gepubliceerd."
+    },
+    "postalCode": {
+        "crumbSearch": "Zoeken",
+        "crumb": "Postcode",
+        "title": "{code} {names}: rechtbanken",
+        "shared": "{code} hoort bij {count} gemeenten: de straat beslist welke. De rechtbanken staan bij elke gemeente.",
+        "refnis": "REFNIS {id} · postcodes {codes}"
+    },
+    "municipalities": {
+        "title": "Gemeenten",
+        "lede": "De {count} gemeenten per provincie, met hun REFNIS-code. Elke pagina toont de postcodes, kantons en bevoegde rechtbanken."
+    },
+    "municipality": {
+        "refnis": "REFNIS-code",
+        "region": "Gewest",
+        "province": "Provincie",
+        "arrondissement": "Gerechtelijk arrondissement",
+        "postalCodes": "Postcodes",
+        "competentCourts": "Bevoegde rechtbanken",
+        "mapLabel": "Kantons van {arrondissement}, met die van {municipality} gemarkeerd"
+    },
+    "cantons": {
+        "title": "Gerechtelijke kantons",
+        "lede": "De {count} gebieden van de vredegerechten, getekend volgens de grenzen van het Nationaal Geografisch Instituut. Beweeg over een kanton om de naam te zien, klik erop om het te openen.",
+        "mapLabel": "Kaart van de gerechtelijke kantons"
+    },
+    "canton": {
+        "title": "Kanton {name}",
+        "seat": "Zetel",
+        "arrondissement": "Arrondissement",
+        "judicialArea": "Rechtsgebied",
+        "municipalities": "Gemeenten",
+        "part": "(deel)",
+        "legalBasis": "Wettelijke grondslag",
+        "judicialCode": "Gerechtelijk Wetboek",
+        "area": "Gebied, zoals de wet het omschrijft",
+        "courts": "Rechtbanken bevoegd voor dit kanton",
+        "courtsNote": "Eerst het eigen vredegerecht, dan de rechtbanken tot wier rechtsgebied het behoort.",
+        "mapLabel": "De kantons van het arrondissement, met {name} gemarkeerd"
+    },
+    "courts": {
+        "title": "Rechtbanken",
+        "lede": "Elke rechtbank, afdeling en zetel, zoals gepubliceerd op tribunaux-rechtbanken.be en elke week opnieuw opgebouwd.",
+        "filterPlaceholder": "Naam of stad",
+        "filterLabel": "Filteren op naam of stad",
+        "typeLabel": "Soort rechtbank",
+        "everyType": "Alle soorten",
+        "divisions": "Afdelingen en zetels",
+        "count": "{shown} van {total}"
+    },
+    "court": {
+        "kindOf": "{kind} van <link>{name}</link>",
+        "publishedNames": "{count, plural, one {Gepubliceerde naam} other {Gepubliceerde namen}}",
+        "cantonLabel": "Kantonaanduiding",
+        "registry": "Griffie",
+        "area": "Rechtsgebied",
+        "ecli": "ECLI",
+        "openingHours": "Openingsuren",
+        "contacts": "Contactgegevens",
+        "coversOne": "Bevoegd voor kanton <link>{name}</link>",
+        "coversMany": "Bevoegd voor {count} kantons",
+        "mapLabel": "Kaart met {count, plural, one {het kanton} other {de # kantons}} waarvoor de rechtbank bevoegd is gemarkeerd",
+        "hoursPublished": "Openingsuren, zoals gepubliceerd",
+        "seats": "Zetels",
+        "divisions": "Afdelingen",
+        "sources": "Bronnen",
+        "checked": "gecontroleerd op {date}"
+    },
+    "interest": {
+        "title": "Interestcalculator",
+        "lede": "Enkelvoudige interest tegen de wettelijke interestvoet of de interestvoet voor handelstransacties, verdeeld over de periodes die erin vallen: dagen × hoofdsom × interestvoet ÷ 365. De calculator draait in uw browser op enkel <code>belgica/interest-rates</code>, zonder de gegevens over rechtbanken of grondgebied.",
+        "rate": "Interestvoet",
+        "legal": "Wettelijke interest (per jaar)",
+        "commercial": "Handelstransacties (per semester)",
+        "principal": "Hoofdsom (€)",
+        "from": "Van",
+        "to": "Tot",
+        "newerContract": "Overeenkomst gesloten op of na 16 maart 2013",
+        "ambiguous": "Is het scheidingsteken in {amount} voor duizendtallen of voor decimalen? Schrijf het bedrag zonder scheidingsteken (10000) of met decimalen (10000,00).",
+        "invalid": "Voer een positief bedrag in en een begindatum vóór de einddatum.",
+        "interest": "Interest",
+        "over": "op {amount} over {days} dagen",
+        "missing": "Voor een deel van de periode is geen interestvoet bekend (interestvoeten zijn bekend tot {date}); dat deel wordt niet meegeteld.",
+        "days": "Dagen",
+        "sources": "Bronnen",
+        "sourcesText": "Wettelijke interestvoet: {legal}. Interestvoet voor handelstransacties: {commercial}.",
+        "disclaimer": "Een rekenhulp, geen juridisch advies: een vonnis of overeenkomst kan andere regels bepalen, zoals kapitalisatie van interest."
+    },
+    "places": {
+        "title": "Gevangenissen en justitiehuizen",
+        "lede": "De {prisons} gevangenissen en detentiehuizen van de FOD Justitie, en de {houses} justitiehuizen van de Gemeenschappen.",
+        "prisons": "Gevangenissen",
+        "housesOfJustice": "Justitiehuizen",
+        "prison": "Gevangenis",
+        "detentionHouse": "Detentiehuis",
+        "flemish": "Vlaamse Gemeenschap",
+        "french": "Franse Gemeenschap",
+        "german": "Duitstalige Gemeenschap"
+    },
+    "notFound": {
+        "title": "Pagina niet gevonden",
+        "back": "Terug naar de explorer"
+    }
+}

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { Link } from '@/i18n/navigation'
 import {
     getArrondissement,
     getCanton,
@@ -17,16 +18,21 @@ export const dynamicParams = false
 export const generateStaticParams = () => currentCantons.map((c) => ({ id: c.id }))
 
 interface Props {
-    params: Promise<{ id: string }>
+    params: Promise<{ locale: string; id: string }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const c = getCanton((await params).id)
-    return { title: c ? `Canton ${cantonName(c)}` : 'Canton' }
+    const { locale, id } = await params
+    const t = await getTranslations({ locale, namespace: 'canton' })
+    const c = getCanton(id)
+    return { title: t('title', { name: c ? cantonName(c) : id }) }
 }
 
 export default async function CantonPage({ params }: Props) {
-    const { id } = await params
+    const { locale, id } = await params
+    setRequestLocale(locale)
+    const t = await getTranslations('canton')
+    const nav = await getTranslations('nav')
     const canton = getCanton(id)
     if (!canton) return null
     const arrondissement = getArrondissement(canton.arrondissement)
@@ -39,32 +45,32 @@ export default async function CantonPage({ params }: Props) {
     return (
         <>
             <p className="crumbs">
-                <Link href="/cantons/">Cantons</Link> / {id}
+                <Link href="/cantons/">{nav('cantons')}</Link> / {id}
             </p>
-            <h1>Canton {cantonName(canton)}</h1>
+            <h1>{t('title', { name: cantonName(canton) })}</h1>
             <div className="detail">
                 <div>
                     <dl className="facts">
                         <div>
-                            <dt>Seat</dt>
+                            <dt>{t('seat')}</dt>
                             <dd>
                                 <Name value={canton.seat} />
                             </dd>
                         </div>
                         <div>
-                            <dt>Arrondissement</dt>
+                            <dt>{t('arrondissement')}</dt>
                             <dd>
                                 <Name value={arrondissement.name} />
                             </dd>
                         </div>
                         <div>
-                            <dt>Judicial area</dt>
+                            <dt>{t('judicialArea')}</dt>
                             <dd>
                                 <Name value={area.name} />
                             </dd>
                         </div>
                         <div>
-                            <dt>Municipalities</dt>
+                            <dt>{t('municipalities')}</dt>
                             <dd>
                                 {canton.municipalities.map((m, i) => {
                                     return (
@@ -73,16 +79,18 @@ export default async function CantonPage({ params }: Props) {
                                             <Link href={`/municipalities/${m.municipality}/`}>
                                                 {bilingual(getMunicipality(m.municipality).name)}
                                             </Link>
-                                            {m.partial && <span className="muted"> (part)</span>}
+                                            {m.partial && (
+                                                <span className="muted"> {t('part')}</span>
+                                            )}
                                         </span>
                                     )
                                 })}
                             </dd>
                         </div>
                         <div>
-                            <dt>Legal basis</dt>
+                            <dt>{t('legalBasis')}</dt>
                             <dd>
-                                <a href={canton.legalBasis.url}>Judicial Code</a>,{' '}
+                                <a href={canton.legalBasis.url}>{t('judicialCode')}</a>,{' '}
                                 {canton.legalBasis.provision}
                             </dd>
                         </div>
@@ -91,23 +99,19 @@ export default async function CantonPage({ params }: Props) {
                 <CantonMap
                     only={sameArrondissement}
                     highlight={[id]}
-                    label={`The cantons of the arrondissement, with ${canton.name.nl} highlighted`}
+                    label={t('mapLabel', { name: canton.name.nl })}
                 />
             </div>
             <section className="block">
-                <h2>Area, as the law describes it</h2>
+                <h2>{t('area')}</h2>
                 <div className="two">
                     <blockquote lang="nl">{canton.territory.nl}</blockquote>
                     <blockquote lang="fr">{canton.territory.fr}</blockquote>
                 </div>
             </section>
             <section className="block">
-                <h2>Courts that cover this canton</h2>
-                {justice && (
-                    <p className="muted">
-                        Its own justice of the peace first, then the courts whose area holds it.
-                    </p>
-                )}
+                <h2>{t('courts')}</h2>
+                {justice && <p className="muted">{t('courtsNote')}</p>}
                 <div className="cards">
                     {courts.map((c) => (
                         <CourtCard key={c.id} court={c} />

@@ -1,0 +1,187 @@
+{
+    "meta": {
+        "title": "belgica explorer",
+        "description": "Belçika'daki tüm mahkemeler, adli kantonlar, belediyeler ve posta kodları ile yasal faiz oranları: belgica paketiyle oluşturulmuş bir site."
+    },
+    "nav": {
+        "skip": "İçeriğe geç",
+        "main": "Ana menü",
+        "courts": "Mahkemeler",
+        "cantons": "Kantonlar",
+        "municipalities": "Belediyeler",
+        "interest": "Faiz",
+        "places": "Cezaevleri ve adalet evleri",
+        "siteLanguage": "Dil",
+        "namesLanguage": "Resmî adların dili"
+    },
+    "footer": {
+        "builtFrom": "Her sayfa derleme sırasında <npm>belgica</npm> ile oluşturulur: <docs>belgeler</docs> · <source>bu sitenin kaynak kodu</source>",
+        "disclaimer": "Başvuru verisidir, hukuki tavsiye değildir: güvenmeden önce resmî kaynakları kontrol edin. Belediye ve posta kodu verileri © Statbel, kanton sınırları © NGI, CC BY 4.0."
+    },
+    "code": {
+        "caption": "belgica ile"
+    },
+    "courtType": {
+        "justice-of-the-peace": "Sulh mahkemesi",
+        "police-court": "Polis mahkemesi",
+        "court-of-first-instance": "İlk derece mahkemesi",
+        "enterprise-court": "İşletme mahkemesi",
+        "labour-court": "İş mahkemesi",
+        "court-of-appeal": "İstinaf mahkemesi",
+        "labour-court-of-appeal": "İş istinaf mahkemesi",
+        "court-of-assize": "Ağır ceza mahkemesi"
+    },
+    "kind": {
+        "court": "Mahkeme",
+        "division": "Şube",
+        "seat": "Duruşma yeri"
+    },
+    "search": {
+        "placeholder": "Posta kodu, belediye, kanton veya mahkeme",
+        "postalCode": "Posta kodu",
+        "municipality": "Belediye",
+        "canton": "Kanton",
+        "cantonName": "{name} kantonu"
+    },
+    "home": {
+        "eyebrow": "belgica paketiyle oluşturuldu",
+        "title": "Nerede hangi mahkeme yetkili?",
+        "lede": "Bir posta kodu veya belediye girin; sulh mahkemesini, polis mahkemesini ve diğer tüm mahkemeleri yazı işleri iletişim bilgileriyle birlikte bulun. Ya da mahkemelere, kanton haritasına ve faiz oranlarına göz atın; hepsi paketin verilerinden okunur.",
+        "try": "Deneyin",
+        "example9000": "Gent: bir belediye, beş kanton",
+        "example1050": "Elsene ve Brussels ortak kullanır",
+        "example4700": "Eupen: Almanca mahkemeler",
+        "mapLabel": "Belçika'nın {count} adli kantonunun haritası",
+        "statsLabel": "Verilerde neler var",
+        "statCourts": "mahkeme, şube ve duruşma yeri",
+        "statCantons": "adli kanton",
+        "statMunicipalities": "belediye",
+        "statPostalCodes": "posta kodu",
+        "statPlaces": "cezaevi ve adalet evi",
+        "statRates": "1970'ten bu yana faiz oranı dönemi",
+        "featureAddressTitle": "Bir adres için mahkemeler",
+        "featureAddress": "Posta kodundan belediyelerine, kantonlarına ve yetkili tüm mahkemelere. Bölünmüş şehirlerde her kanton, alanını tanımlayan yasal metinle birlikte listelenir.",
+        "featureMapTitle": "Kanton haritası",
+        "featureMap": "NGI'nin her kanton için sınırı: bir noktanın kantonunu bulmak ve çizmek için. Her kantonun yasal dayanağı ve belediyeleri vardır.",
+        "featureInterestTitle": "Faiz hesaplayıcı",
+        "featureInterest": "1970'ten bu yana yasal ve ticari faiz oranları, 16 Mart 2013'ten önceki sözleşmeler için geçerli kuralla birlikte. Hesaplayıcı yalnızca <code>belgica/interest-rates</code> yükler.",
+        "featureCourtsTitle": "Tüm mahkemeler, üç dilde",
+        "featureCourts": "Her mahkemenin yayımladığı adlar, adresler, ulusal biçimde telefon numaraları, IBAN'lar, çalışma saatleri ve ECLI kodları. Üst kısımdan NL · FR · DE arasında geçiş yapın."
+    },
+    "competence": {
+        "justiceOfThePeace": "Sulh mahkemesi",
+        "split": "Bu belediye {count} kantona bölünmüştür: sokak adresi belirleyicidir. Yargı Kanunu'nun tanımladığı şekliyle her kantonun alanı:",
+        "areaOf": "<link>{name}</link> kantonunun alanı",
+        "otherCourts": "Diğer mahkemeler",
+        "divisionNote": "Mahkemenin bütünü: bir davaya hangi şubenin bakacağı kraliyet kararnamesiyle belirlenir."
+    },
+    "contacts": {
+        "phone": "Telefon",
+        "fax": "Faks",
+        "email": "E-posta",
+        "bank-account": "Banka hesabı",
+        "none": "Yayımlanmış iletişim bilgisi yok."
+    },
+    "postalCode": {
+        "crumbSearch": "Arama",
+        "crumb": "Posta kodu",
+        "title": "{code} {names}: mahkemeler",
+        "shared": "{code} posta kodu {count} belediyeye aittir: hangisi olduğunu sokak belirler. Mahkemeler her biri için listelenmiştir.",
+        "refnis": "REFNIS {id} · posta kodları {codes}"
+    },
+    "municipalities": {
+        "title": "Belediyeler",
+        "lede": "İllere göre {count} belediye ve REFNIS kodları. Her sayfada posta kodları, kantonlar ve yetkili mahkemeler listelenir."
+    },
+    "municipality": {
+        "refnis": "REFNIS kodu",
+        "region": "Bölge",
+        "province": "İl",
+        "arrondissement": "Adli çevre",
+        "postalCodes": "Posta kodları",
+        "competentCourts": "Yetkili mahkemeler",
+        "mapLabel": "{arrondissement} kantonları, {municipality} kantonları vurgulanmış"
+    },
+    "cantons": {
+        "title": "Adli kantonlar",
+        "lede": "Sulh mahkemelerinin {count} yetki alanı, Ulusal Coğrafya Enstitüsü'nün sınırlarından çizilmiştir. Adını görmek için bir kantonun üzerine gelin, açmak için tıklayın.",
+        "mapLabel": "Adli kantonların haritası"
+    },
+    "canton": {
+        "title": "{name} kantonu",
+        "seat": "Duruşma yeri",
+        "arrondissement": "Adli çevre",
+        "judicialArea": "Yargı bölgesi",
+        "municipalities": "Belediyeler",
+        "part": "(kısmen)",
+        "legalBasis": "Yasal dayanak",
+        "judicialCode": "Yargı Kanunu",
+        "area": "Kanunun tanımladığı alan",
+        "courts": "Bu kantonu kapsayan mahkemeler",
+        "courtsNote": "Önce kendi sulh mahkemesi, ardından alanı bu kantonu içeren mahkemeler.",
+        "mapLabel": "Adli çevrenin kantonları, {name} vurgulanmış"
+    },
+    "courts": {
+        "title": "Mahkemeler",
+        "lede": "tribunaux-rechtbanken.be üzerinde yayımlanan tüm mahkemeler, şubeler ve duruşma yerleri; her hafta yeniden oluşturulur.",
+        "filterPlaceholder": "Ad veya şehir",
+        "filterLabel": "Ada veya şehre göre filtrele",
+        "typeLabel": "Mahkeme türü",
+        "everyType": "Tüm türler",
+        "divisions": "Şubeler ve duruşma yerleri",
+        "count": "{shown} / {total}"
+    },
+    "court": {
+        "kindOf": "<link>{name}</link> bünyesinde {kind}",
+        "publishedNames": "{count, plural, one {Yayımlanan ad} other {Yayımlanan adlar}}",
+        "cantonLabel": "Kanton etiketi",
+        "registry": "Yazı işleri",
+        "area": "Yetki alanı",
+        "ecli": "ECLI",
+        "openingHours": "Çalışma saatleri",
+        "contacts": "İletişim",
+        "coversOne": "<link>{name}</link> kantonunu kapsar",
+        "coversMany": "{count} kantonu kapsar",
+        "mapLabel": "Mahkemenin kapsadığı {count, plural, one {kantonun} other {# kantonun}} vurgulandığı harita",
+        "hoursPublished": "Yayımlandığı şekliyle çalışma saatleri",
+        "seats": "Duruşma yerleri",
+        "divisions": "Şubeler",
+        "sources": "Kaynaklar",
+        "checked": "kontrol tarihi: {date}"
+    },
+    "interest": {
+        "title": "Faiz hesaplayıcı",
+        "lede": "Yasal faiz oranı veya ticari işlemler için geçerli oranla basit faiz, geçtiği oran dönemlerine bölünerek hesaplanır: gün × anapara × oran ÷ 365. Hesaplayıcı, mahkeme veya bölge verileri olmadan yalnızca <code>belgica/interest-rates</code> ile tarayıcınızda çalışır.",
+        "rate": "Oran",
+        "legal": "Yasal faiz (yıllık)",
+        "commercial": "Ticari işlemler (altı aylık)",
+        "principal": "Anapara (€)",
+        "from": "Başlangıç",
+        "to": "Bitiş",
+        "newerContract": "Sözleşme 16 Mart 2013 veya sonrasında yapıldı",
+        "ambiguous": "{amount} içindeki ayraç binlik mi, ondalık mı? Tutarı ayraçsız (10000) veya ondalıklı (10000,00) yazın.",
+        "invalid": "Pozitif bir tutar ve bitiş tarihinden önce bir başlangıç tarihi girin.",
+        "interest": "Faiz",
+        "over": "{amount} üzerinden {days} gün için",
+        "missing": "Dönemin bir kısmı için kayıtlı oran yok (oranlar {date} tarihine kadar bilinmektedir); bu kısım hesaba katılmaz.",
+        "days": "Gün",
+        "sources": "Kaynaklar",
+        "sourcesText": "Yasal oran: {legal}. Ticari oran: {commercial}.",
+        "disclaimer": "Bir hesaplama yardımcısıdır, hukuki tavsiye değildir: bir karar veya sözleşme, faizin anaparaya eklenmesi gibi başka kurallar öngörebilir."
+    },
+    "places": {
+        "title": "Cezaevleri ve adalet evleri",
+        "lede": "Federal Adalet Kamu Hizmeti'ne bağlı {prisons} cezaevi ve tutukevi ile toplulukların yönettiği {houses} adalet evi.",
+        "prisons": "Cezaevleri",
+        "housesOfJustice": "Adalet evleri",
+        "prison": "Cezaevi",
+        "detentionHouse": "Tutukevi",
+        "flemish": "Flaman Topluluğu",
+        "french": "Fransız Topluluğu",
+        "german": "Almanca Konuşan Topluluk"
+    },
+    "notFound": {
+        "title": "Sayfa bulunamadı",
+        "back": "explorer'a dön"
+    }
+}

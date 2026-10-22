@@ -1,0 +1,187 @@
+{
+    "meta": {
+        "title": "belgica explorer",
+        "description": "Todos os tribunais, cantões judiciais, municípios e códigos postais da Bélgica, e as taxas de juro legais: um site construído com o pacote belgica."
+    },
+    "nav": {
+        "skip": "Saltar para o conteúdo",
+        "main": "Principal",
+        "courts": "Tribunais",
+        "cantons": "Cantões",
+        "municipalities": "Municípios",
+        "interest": "Juros",
+        "places": "Prisões e casas de justiça",
+        "siteLanguage": "Idioma",
+        "namesLanguage": "Idioma dos nomes oficiais"
+    },
+    "footer": {
+        "builtFrom": "Cada página é gerada a partir de <npm>belgica</npm> no momento da compilação: <docs>documentação</docs> · <source>código-fonte deste site</source>",
+        "disclaimer": "Dados de referência, não aconselhamento jurídico: consulte as fontes oficiais antes de se basear neles. Dados de municípios e códigos postais © Statbel, limites dos cantões © NGI, CC BY 4.0."
+    },
+    "code": {
+        "caption": "Com belgica"
+    },
+    "courtType": {
+        "justice-of-the-peace": "Julgado de paz",
+        "police-court": "Tribunal de polícia",
+        "court-of-first-instance": "Tribunal de primeira instância",
+        "enterprise-court": "Tribunal de empresas",
+        "labour-court": "Tribunal do trabalho",
+        "court-of-appeal": "Tribunal de recurso",
+        "labour-court-of-appeal": "Tribunal de recurso do trabalho",
+        "court-of-assize": "Tribunal do júri"
+    },
+    "kind": {
+        "court": "Tribunal",
+        "division": "Secção",
+        "seat": "Sede"
+    },
+    "search": {
+        "placeholder": "Código postal, município, cantão ou tribunal",
+        "postalCode": "Código postal",
+        "municipality": "Município",
+        "canton": "Cantão",
+        "cantonName": "Cantão {name}"
+    },
+    "home": {
+        "eyebrow": "Construído com o pacote belgica",
+        "title": "Que tribunal é competente, e onde?",
+        "lede": "Introduza um código postal ou um município para encontrar o seu julgado de paz, o tribunal de polícia e todos os outros tribunais, com os contactos das suas secretarias. Ou consulte os tribunais, o mapa dos cantões e as taxas de juro, tudo lido a partir dos dados do pacote.",
+        "try": "Experimente",
+        "example9000": "Gent: um município, cinco cantões",
+        "example1050": "Elsene e Bruxelas partilham-no",
+        "example4700": "Eupen: tribunais em alemão",
+        "mapLabel": "Mapa dos {count} cantões judiciais da Bélgica",
+        "statsLabel": "O que os dados contêm",
+        "statCourts": "tribunais, secções e sedes",
+        "statCantons": "cantões judiciais",
+        "statMunicipalities": "municípios",
+        "statPostalCodes": "códigos postais",
+        "statPlaces": "prisões e casas de justiça",
+        "statRates": "períodos de taxas de juro desde 1970",
+        "featureAddressTitle": "Tribunais para uma morada",
+        "featureAddress": "De um código postal aos seus municípios, aos seus cantões e a todos os tribunais competentes. As cidades divididas indicam cada cantão com o texto legal da sua área.",
+        "featureMapTitle": "Mapa dos cantões",
+        "featureMap": "O limite de cada cantão segundo o NGI, para encontrar o cantão de um ponto e desenhá-lo. Cada cantão tem a sua base jurídica e os seus municípios.",
+        "featureInterestTitle": "Calculadora de juros",
+        "featureInterest": "As taxas legais e comerciais desde 1970, com a regra para os contratos anteriores a 16 de março de 2013. A calculadora carrega apenas <code>belgica/interest-rates</code>.",
+        "featureCourtsTitle": "Todos os tribunais, em três idiomas",
+        "featureCourts": "Nomes tal como cada tribunal os publica, moradas, números de telefone em formato nacional, IBAN, horários de abertura e códigos ECLI. Alterne entre NL · FR · DE no topo."
+    },
+    "competence": {
+        "justiceOfThePeace": "Julgado de paz",
+        "split": "Este município está dividido em {count} cantões: decide a morada. A área de cada cantão, tal como o Código Judiciário a descreve:",
+        "areaOf": "Área do cantão <link>{name}</link>",
+        "otherCourts": "Outros tribunais",
+        "divisionNote": "O tribunal no seu conjunto: a secção que julga um processo é fixada por decreto real."
+    },
+    "contacts": {
+        "phone": "Telefone",
+        "fax": "Fax",
+        "email": "E-mail",
+        "bank-account": "Conta bancária",
+        "none": "Nenhum contacto publicado."
+    },
+    "postalCode": {
+        "crumbSearch": "Pesquisar",
+        "crumb": "Código postal",
+        "title": "{code} {names}: tribunais",
+        "shared": "{code} pertence a {count} municípios: a rua decide qual. Os tribunais são indicados para cada um.",
+        "refnis": "REFNIS {id} · códigos postais {codes}"
+    },
+    "municipalities": {
+        "title": "Municípios",
+        "lede": "Os {count} municípios por província, com o seu código REFNIS. Cada página indica os seus códigos postais, cantões e tribunais competentes."
+    },
+    "municipality": {
+        "refnis": "Código REFNIS",
+        "region": "Região",
+        "province": "Província",
+        "arrondissement": "Distrito judicial",
+        "postalCodes": "Códigos postais",
+        "competentCourts": "Tribunais competentes",
+        "mapLabel": "Cantões de {arrondissement}, com os de {municipality} destacados"
+    },
+    "cantons": {
+        "title": "Cantões judiciais",
+        "lede": "As {count} áreas dos julgados de paz, traçadas a partir dos limites do Instituto Geográfico Nacional. Passe o cursor sobre um cantão para ver o nome e clique para abri-lo.",
+        "mapLabel": "Mapa dos cantões judiciais"
+    },
+    "canton": {
+        "title": "Cantão {name}",
+        "seat": "Sede",
+        "arrondissement": "Distrito",
+        "judicialArea": "Área judicial",
+        "municipalities": "Municípios",
+        "part": "(parte)",
+        "legalBasis": "Base jurídica",
+        "judicialCode": "Código Judiciário",
+        "area": "Área, tal como a lei a descreve",
+        "courts": "Tribunais que abrangem este cantão",
+        "courtsNote": "Primeiro o seu próprio julgado de paz, depois os tribunais em cuja área se encontra.",
+        "mapLabel": "Os cantões do distrito, com {name} destacado"
+    },
+    "courts": {
+        "title": "Tribunais",
+        "lede": "Todos os tribunais, secções e sedes, tal como publicados em tribunaux-rechtbanken.be e atualizados todas as semanas.",
+        "filterPlaceholder": "Nome ou cidade",
+        "filterLabel": "Filtrar por nome ou cidade",
+        "typeLabel": "Tipo de tribunal",
+        "everyType": "Todos os tipos",
+        "divisions": "Secções e sedes",
+        "count": "{shown} de {total}"
+    },
+    "court": {
+        "kindOf": "{kind} de <link>{name}</link>",
+        "publishedNames": "{count, plural, one {Nome publicado} other {Nomes publicados}}",
+        "cantonLabel": "Designação do cantão",
+        "registry": "Secretaria",
+        "area": "Área",
+        "ecli": "ECLI",
+        "openingHours": "Horário de abertura",
+        "contacts": "Contactos",
+        "coversOne": "Abrange o cantão <link>{name}</link>",
+        "coversMany": "Abrange {count} cantões",
+        "mapLabel": "{count, plural, one {Mapa com o cantão abrangido pelo tribunal destacado} other {Mapa com os # cantões abrangidos pelo tribunal destacados}}",
+        "hoursPublished": "Horário de abertura, tal como publicado",
+        "seats": "Sedes",
+        "divisions": "Secções",
+        "sources": "Fontes",
+        "checked": "verificado em {date}"
+    },
+    "interest": {
+        "title": "Calculadora de juros",
+        "lede": "Juros simples à taxa legal ou à taxa para transações comerciais, repartidos pelos períodos de taxa abrangidos: dias × capital × taxa ÷ 365. A calculadora funciona no seu navegador apenas com <code>belgica/interest-rates</code>, sem os dados de tribunais e de território.",
+        "rate": "Taxa",
+        "legal": "Juros legais (por ano)",
+        "commercial": "Transações comerciais (por semestre)",
+        "principal": "Capital (€)",
+        "from": "De",
+        "to": "Até",
+        "newerContract": "Contrato celebrado a 16 de março de 2013 ou depois",
+        "ambiguous": "O separador em {amount} é de milhares ou de decimais? Escreva o montante sem separador (10000) ou com decimais (10000,00).",
+        "invalid": "Introduza um montante positivo e uma data de início anterior à data de fim.",
+        "interest": "Juros",
+        "over": "sobre {amount} durante {days} dias",
+        "missing": "Parte do período não tem taxa registada (as taxas são conhecidas até {date}); essa parte não é contabilizada.",
+        "days": "Dias",
+        "sources": "Fontes",
+        "sourcesText": "Taxa legal: {legal}. Taxa comercial: {commercial}.",
+        "disclaimer": "Uma ajuda ao cálculo, não aconselhamento jurídico: uma sentença ou um contrato podem fixar outras regras, como a capitalização de juros."
+    },
+    "places": {
+        "title": "Prisões e casas de justiça",
+        "lede": "As {prisons} prisões e casas de detenção do SPF Justiça, e as {houses} casas de justiça geridas pelas Comunidades.",
+        "prisons": "Prisões",
+        "housesOfJustice": "Casas de justiça",
+        "prison": "Prisão",
+        "detentionHouse": "Casa de detenção",
+        "flemish": "Comunidade flamenga",
+        "french": "Comunidade francesa",
+        "german": "Comunidade germanófona"
+    },
+    "notFound": {
+        "title": "Página não encontrada",
+        "back": "Voltar ao explorador"
+    }
+}

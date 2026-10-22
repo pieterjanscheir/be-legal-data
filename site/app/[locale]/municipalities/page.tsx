@@ -1,13 +1,23 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { Link } from '@/i18n/navigation'
 import { getRegion, provinces } from 'belgica'
 import { Code } from '@/components/Code'
 import { Name } from '@/components/Name'
 import { bilingual, currentMunicipalities } from '@/lib/data'
 
-export const metadata: Metadata = { title: 'Municipalities' }
+interface Props {
+    params: Promise<{ locale: string }>
+}
 
-export default function Municipalities() {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const t = await getTranslations({ locale: (await params).locale, namespace: 'municipalities' })
+    return { title: t('title') }
+}
+
+export default async function Municipalities({ params }: Props) {
+    setRequestLocale((await params).locale)
+    const t = await getTranslations('municipalities')
     // The ten provinces, then Brussels, which has none
     const groups = [
         ...provinces.map((p) => ({ id: p.id, name: p.name })),
@@ -15,11 +25,8 @@ export default function Municipalities() {
     ]
     return (
         <>
-            <h1>Municipalities</h1>
-            <p className="lede">
-                The {currentMunicipalities.length} municipalities by province, with their REFNIS
-                code. Each page lists its postal codes, cantons and competent courts.
-            </p>
+            <h1>{t('title')}</h1>
+            <p className="lede">{t('lede', { count: currentMunicipalities.length })}</p>
             <Code>{`
 import { municipalities, getProvinceForMunicipality, getCantonsForMunicipality } from 'belgica'
 

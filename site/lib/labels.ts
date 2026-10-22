@@ -19,24 +19,21 @@ export function pick(value: PerLocale, locale: Locale): string {
     return ''
 }
 
-/** The site's labels for each court type, in English */
-export const courtTypeLabel: Record<CourtType, string> = {
-    'justice-of-the-peace': 'Justice of the peace',
-    'police-court': 'Police court',
-    'court-of-first-instance': 'Court of first instance',
-    'enterprise-court': 'Enterprise court',
-    'labour-court': 'Labour court',
-    'court-of-appeal': 'Court of appeal',
-    'labour-court-of-appeal': 'Labour court of appeal',
-    'court-of-assize': 'Court of assize',
-}
+/** Every court type, from the lowest court up; their labels are in messages/ under courtType */
+export const courtTypes: readonly CourtType[] = [
+    'justice-of-the-peace',
+    'police-court',
+    'court-of-first-instance',
+    'enterprise-court',
+    'labour-court',
+    'court-of-appeal',
+    'labour-court-of-appeal',
+    'court-of-assize',
+]
 
-export const courtTypes = Object.keys(courtTypeLabel) as CourtType[]
-
-export const kindLabel = { court: 'Court', division: 'Division', seat: 'Seat' } as const
-
-export function formatDay(day: string): string {
-    return new Date(`${day}T12:00:00Z`).toLocaleDateString('en-GB', {
+/** A day as the site's language writes it: '20 Oct 2026', '20 okt. 2026', '2026年10月20日' */
+export function formatDay(day: string, locale: string): string {
+    return new Date(`${day}T12:00:00Z`).toLocaleDateString(locale, {
         day: 'numeric',
         month: 'short',
         year: 'numeric',

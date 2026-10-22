@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { Link } from '@/i18n/navigation'
 import {
     getArrondissementForMunicipality,
     getCantonsForMunicipality,
@@ -18,16 +19,19 @@ export const dynamicParams = false
 export const generateStaticParams = () => currentMunicipalities.map((m) => ({ id: m.id }))
 
 interface Props {
-    params: Promise<{ id: string }>
+    params: Promise<{ locale: string; id: string }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const m = getMunicipality((await params).id)
-    return { title: m ? bilingual(m.name) : 'Municipality' }
+    return { title: m ? bilingual(m.name) : (await params).id }
 }
 
 export default async function MunicipalityPage({ params }: Props) {
-    const { id } = await params
+    const { locale, id } = await params
+    setRequestLocale(locale)
+    const t = await getTranslations('municipality')
+    const nav = await getTranslations('nav')
     const m = getMunicipality(id)
     if (!m) return null
     const region = getRegionForMunicipality(id)
@@ -40,19 +44,19 @@ export default async function MunicipalityPage({ params }: Props) {
     return (
         <>
             <p className="crumbs">
-                <Link href="/municipalities/">Municipalities</Link> / {m.id}
+                <Link href="/municipalities/">{nav('municipalities')}</Link> / {m.id}
             </p>
             <h1>{bilingual(m.name)}</h1>
             <div className="detail">
                 <div>
                     <dl className="facts">
                         <div>
-                            <dt>REFNIS code</dt>
+                            <dt>{t('refnis')}</dt>
                             <dd className="mono">{m.id}</dd>
                         </div>
                         {region && (
                             <div>
-                                <dt>Region</dt>
+                                <dt>{t('region')}</dt>
                                 <dd>
                                     <Name value={region.name} />
                                 </dd>
@@ -60,7 +64,7 @@ export default async function MunicipalityPage({ params }: Props) {
                         )}
                         {province && (
                             <div>
-                                <dt>Province</dt>
+                                <dt>{t('province')}</dt>
                                 <dd>
                                     <Name value={province.name} />
                                 </dd>
@@ -68,14 +72,14 @@ export default async function MunicipalityPage({ params }: Props) {
                         )}
                         {arrondissement && (
                             <div>
-                                <dt>Judicial arrondissement</dt>
+                                <dt>{t('arrondissement')}</dt>
                                 <dd>
                                     <Name value={arrondissement.name} />
                                 </dd>
                             </div>
                         )}
                         <div>
-                            <dt>Postal codes</dt>
+                            <dt>{t('postalCodes')}</dt>
                             <dd>
                                 {getPostalCodes(id).map((p, i) => (
                                     <span key={p.id}>
@@ -97,11 +101,14 @@ getCantonsForMunicipality('${id}').map((c) => c.id)
                 <CantonMap
                     only={nearby}
                     highlight={cantonIds}
-                    label={`Cantons of ${arrondissement?.name.nl ?? ''}, with those of ${m.name.nl} highlighted`}
+                    label={t('mapLabel', {
+                        arrondissement: arrondissement?.name.nl ?? '',
+                        municipality: m.name.nl,
+                    })}
                 />
             </div>
             <section className="block">
-                <h2>Competent courts</h2>
+                <h2>{t('competentCourts')}</h2>
                 <Competence municipality={id} />
             </section>
         </>
